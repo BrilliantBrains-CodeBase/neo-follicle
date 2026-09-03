@@ -1,0 +1,108 @@
+{
+ "id": 1164,
+ "date": "2025-05-18T21:27:45",
+ "date_gmt": "2025-05-18T15:57:45",
+ "guid": {
+  "rendered": "https://neofollicletransplant.com/?page_id=1164"
+ },
+ "modified": "2025-11-07T18:18:06",
+ "modified_gmt": "2025-11-07T12:48:06",
+ "slug": "nft-brochure-thank-you",
+ "status": "publish",
+ "type": "page",
+ "link": "https://neofollicletransplant.com/nft-brochure-thank-you/",
+ "title": {
+  "rendered": "NFT Brochure &#8211; Thank You"
+ },
+ "content": {
+  "rendered": "<section class=\"bde-section-1164-100 bde-section\">\n  \n  \n\t\n\n\n\n<div class=\"section-container\"><img decoding=\"async\" class=\"bde-image2-1164-101 bde-image2\" src=\"https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-Logo-svg.svg\" alt=\"Neo Follicle Transplant Logo\" loading=\"lazy\" sizes=\"(max-width: 200px) 100vw, 200px\"><h2 class=\"bde-heading-1164-103 bde-heading\">\nThank You.\n</h2><h2 class=\"bde-heading-1164-107 bde-heading\">\nWe have sent the NFT Brochure download link to your email.\n</h2><h2 class=\"bde-heading-1164-106 bde-heading\">\n Please click the same to download the brochure.\n</h2><h3 class=\"bde-heading-1164-104 bde-heading\">\nPlease call +91 -  97312 07940 for appointment with Our Senior Hair Transplant Surgeon - Dr Sandeep Mahapatra.\n</h3><div class=\"bde-button-1164-105 bde-button\">\n        \n    \n    \n    \n    \n            \n                    \n            \n            \n\n    \n    \n    \n    \n    \n    <a class=\"breakdance-link button-atom button-atom--primary bde-button__button\" href=\"tel:+919731207940\" target=\"_self\" data-type=\"url\"  >\n\n    \n        <span class=\"button-atom__text\">Call #  +91 97312 07940</span>\n\n        \n        \n                </a>\n\n    \n\n\n</div></div>\n</section>",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Thank You. We have sent the NFT Brochure download link to your email. Please click the same to download the brochure. Please call +91 &#8211; 97312 07940 for appointment with Our Senior Hair Transplant Surgeon &#8211; Dr Sandeep Mahapatra. Call # +91 97312 07940</p>\n",
+  "protected": false
+ },
+ "author": 1,
+ "featured_media": 0,
+ "parent": 0,
+ "menu_order": 0,
+ "comment_status": "closed",
+ "ping_status": "closed",
+ "template": "",
+ "meta": {
+  "inline_featured_image": false,
+  "slim_seo": {
+   "title": "NFT Brochure - Thank You - Neo Follicle Hair Transplant",
+   "description": "Thank You. We have sent the NFT Brochure download link to your email. Please click the same to download the brochure. Please call +91 - 97312 07940 for appointm"
+  },
+  "_breakdance_hide_in_design_set": false,
+  "_breakdance_tags": "",
+  "footnotes": ""
+ },
+ "class_list": [
+  "post-1164",
+  "page",
+  "type-page",
+  "status-publish",
+  "hentry"
+ ],
+ "meta_box": [],
+ "_links": {
+  "self": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/1164",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/types/page"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/users/1"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/comments?post=1164"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 5,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/1164/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 1536,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/1164/revisions/1536"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/media?parent=1164"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://neofollicletransplant.com/wp-content/plugins/slim-seo/src/Sitemaps/style.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>https://neofollicletransplant.com/sitemap-post-type-post.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://neofollicletransplant.com/sitemap-post-type-page.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://neofollicletransplant.com/sitemap-taxonomy-category.xml</loc>
+	</sitemap>
+</sitemapindex>

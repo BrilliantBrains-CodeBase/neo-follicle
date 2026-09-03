@@ -1,0 +1,137 @@
+Scrape ID: 01a066ac-837a-7031-bf19-ef69e457ce2c
+Scrape ID: 01a066ac-839c-72f9-9bdb-535464e1f7b3
+Scrape ID: 01a066ac-a34d-710b-a573-3656048dddab
+Scrape ID: 01a066ac-a335-71f1-8bfe-e4802be471f2
+Scrape ID: 01a066ac-b931-7465-abcb-c7e57ece62ad
+Scrape ID: 01a066ac-b93a-741a-b2d8-d8c02883e0fc
+Scrape ID: 01a066ac-fe39-736e-9fbc-b2693de62d82
+Scrape ID: 01a066ac-fe10-722c-a1d9-e6829bf92cc9
+Scrape ID: 01a066ad-1b79-729b-92a4-f6322a5a4546
+Scrape ID: 01a066ad-1ae6-738c-b5cd-12198c77730a
+Scrape ID: 01a066ad-97ce-776a-be7f-bddd56cffdf2
+Scrape ID: 01a066ad-97cd-771e-a40d-cc03827c2823
+Scrape ID: 01a066ad-af25-7427-89b8-722f61e1aa82
+Scrape ID: 01a066ad-af97-763f-ab73-d3bf1665a6a4
+Scrape ID: 01a066ad-c65d-731c-8a33-e6403086f97d
+Scrape ID: 01a066ad-c6ae-77ce-85aa-4626f1fe5125
+Scrape ID: 01a066ad-deb4-7210-9095-689f65f4ae6b
+Scrape ID: 01a066ad-dece-728b-b936-ddd05564bcac
+Scrape ID: 01a066ad-f684-735c-a623-515baccaaf22
+Scrape ID: 01a066ad-f690-734d-9970-72404c48be69
+Error: Rate limit exceeded. Consumed (req/min): 12, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 30s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+Error: Rate limit exceeded. Consumed (req/min): 11, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 30s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL female-hair-transplant-in-bangalore
+FAIL fue-hair-transplant-bangalore
+Error: Rate limit exceeded. Consumed (req/min): 13, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 29s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL gfc-hair-treatment-in-bangalore
+Error: Rate limit exceeded. Consumed (req/min): 14, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 29s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL fue-vs-direct-hair-implantation
+Error: Rate limit exceeded. Consumed (req/min): 15, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 28s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL gfc-vs-exosome-vs-qr678-hair-treatment
+Error: Rate limit exceeded. Consumed (req/min): 16, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 28s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL hair-assessment
+Error: Rate limit exceeded. Consumed (req/min): 17, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 27s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL hair-loss-treatment-in-bangalore
+Error: Rate limit exceeded. Consumed (req/min): 18, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 27s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL hair-conditions-we-treat
+Error: Rate limit exceeded. Consumed (req/min): 19, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 26s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL hair-transplant-cost-in-bangalore
+Error: Rate limit exceeded. Consumed (req/min): 20, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 26s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL hair-transplant-for-receding-hairline
+Error: Rate limit exceeded. Consumed (req/min): 21, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 25s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL hair-transplant-india-international-patients
+Error: Rate limit exceeded. Consumed (req/min): 22, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 25s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL hair-transplant-medical-tourism-in-bangalore
+Error: Rate limit exceeded. Consumed (req/min): 23, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 23s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+Error: Rate limit exceeded. Consumed (req/min): 24, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 23s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL hair-transplant-myths-vs-facts
+FAIL hair-transplant-recovery-timeline
+Error: Rate limit exceeded. Consumed (req/min): 25, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 22s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+Error: Rate limit exceeded. Consumed (req/min): 26, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 22s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL how-many-grafts-do-i-need-for-hair-transplant
+FAIL how-to-choose-the-best-hair-transplant-clinic-bangalore
+Error: Rate limit exceeded. Consumed (req/min): 27, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 21s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL is-hair-transplant-painful
+Error: Rate limit exceeded. Consumed (req/min): 28, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 21s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL image-gallery
+Error: Rate limit exceeded. Consumed (req/min): 29, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 19s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL is-hair-transplant-permanent
+Error: Rate limit exceeded. Consumed (req/min): 30, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 19s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL low-level-laser-therapy
+Error: Rate limit exceeded. Consumed (req/min): 31, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 18s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL male-pattern-hair-loss
+Error: Rate limit exceeded. Consumed (req/min): 32, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 18s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL maintenance-page
+Error: Rate limit exceeded. Consumed (req/min): 33, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 17s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL medical-treatments-for-hair-loss
+Error: Rate limit exceeded. Consumed (req/min): 34, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 17s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL natural-hairline-design-hair-transplants
+Error: Rate limit exceeded. Consumed (req/min): 35, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 16s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL nft-brochure
+Error: Rate limit exceeded. Consumed (req/min): 36, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 16s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL nft-brochure-thank-you
+Error: Rate limit exceeded. Consumed (req/min): 37, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+Error: Rate limit exceeded. Consumed (req/min): 38, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL our-blogs
+FAIL privacy-policy
+Error: Rate limit exceeded. Consumed (req/min): 39, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL prp-vs-gfc-for-hair-loss
+Error: Rate limit exceeded. Consumed (req/min): 40, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL qr678-hair-treatment-in-bangalore
+Error: Rate limit exceeded. Consumed (req/min): 42, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+Error: Rate limit exceeded. Consumed (req/min): 41, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL sample-page
+FAIL scalp-micropigmentation-in-bangalore
+Error: Rate limit exceeded. Consumed (req/min): 43, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL terms-of-use
+Error: Rate limit exceeded. Consumed (req/min): 44, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL stem-cell-therapy-for-hair-loss-in-bangalore
+Error: Rate limit exceeded. Consumed (req/min): 45, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL thank-you-lp
+Error: Rate limit exceeded. Consumed (req/min): 46, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL unethical-practices-in-hair-transplantation
+Error: Rate limit exceeded. Consumed (req/min): 47, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL video-gallery
+Error: Rate limit exceeded. Consumed (req/min): 48, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL unshaven-hair-transplant
+Error: Rate limit exceeded. Consumed (req/min): 49, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Thu Sep 03 2026 09:51:47 GMT+0000 (Coordinated Universal Time)
+FAIL why-hair-transplants-fail
+Scrape ID: 01a066ae-db70-756f-a8ee-3b9d22b346c2
+Scrape ID: 01a066b0-20e4-702f-ab05-e1de7bdc5fef
+Scrape ID: 01a066b0-5197-769d-b0b5-133cfab0699d
+Scrape ID: 01a066b0-a1cd-739d-8da8-0d9d2fc02620
+Scrape ID: 01a066b0-d770-754f-a055-01175c5bb2ed
+Scrape ID: 01a066b1-29af-71c0-bfbd-dc173a9bd654
+Scrape ID: 01a066b1-647f-7791-8e14-b4408a5a1ed6
+Scrape ID: 01a066b1-9446-71a3-886b-9fc46da6fba7
+Scrape ID: 01a066b1-c84f-772c-a688-becbbb0f8d8a
+Scrape ID: 01a066b1-f97d-7388-ba40-9238d5dc2ca4
+Scrape ID: 01a066b2-2c21-74dd-983f-9880df851e4b
+Scrape ID: 01a066b2-5dbe-76c9-ab82-4b99e24ad9b4
+Scrape ID: 01a066b2-bd99-747c-b5bb-02a6abe3a857
+Scrape ID: 01a066b3-2bee-775b-bf5a-32030d553c03
+Scrape ID: 01a066b3-5f86-72fb-9542-275582e4d4a2
+Scrape ID: 01a066b3-b369-73ad-8683-87d0e9599d03
+Scrape ID: 01a066b3-e3c0-7248-8aa8-c66ec3fbbf9e
+Scrape ID: 01a066b4-3481-737e-9896-44ef3c645e64
+Scrape ID: 01a066b4-8ac2-753b-b447-e99db314cefa
+Scrape ID: 01a066b4-bb95-7093-a18d-5fb085e7bac1
+Scrape ID: 01a066b4-ed99-7370-bfc1-699e66626bc5
+Scrape ID: 01a066b5-45ab-746e-a1a6-f19d45cdd34d
+Scrape ID: 01a066b5-75e1-723e-a240-978d54d5841f
+Scrape ID: 01a066b5-d2be-7477-b303-97d8391582b6
+Scrape ID: 01a066b6-2e12-742f-a944-58bb6c98cefd
+Scrape ID: 01a066b6-5d6f-700d-a14e-dd3b218a6227
+Scrape ID: 01a066b6-b27f-75e9-83ee-b7e40f3feee1
+Scrape ID: 01a066b6-e6ad-7293-8335-bb0c5cae83b8
+Scrape ID: 01a066b7-1d07-7092-9a68-bc17d8af49ef
+Scrape ID: 01a066b7-50ea-760f-928a-4955e902aca2
+Scrape ID: 01a066b7-8676-728d-94ba-c4c03d733d58
+Scrape ID: 01a066b7-bd99-710a-a649-03c070d72be0
+Scrape ID: 01a066b7-ea04-7590-929e-73d3531cccc2
+Scrape ID: 01a066b8-1eda-77e2-bd5d-2f34b8c71b3d
+Scrape ID: 01a066b8-4e24-73cb-921e-817e6fa69bdf
+Scrape ID: 01a066b8-7e50-73d9-885e-1eb653b414cb
+Scrape ID: 01a066b8-b075-73bf-8d0d-ca5824619793
+Scrape ID: 01a066b8-ed44-769c-a5a1-8c6f021895be
+Scrape ID: 01a066b9-1a1d-75de-b60f-0b8a5a317ac5

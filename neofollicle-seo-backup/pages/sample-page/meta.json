@@ -1,0 +1,147 @@
+{
+ "url": "https://neofollicletransplant.com/sample-page/",
+ "title": "Sample Page – Neo Follicle Hair Transplant",
+ "meta": {
+  "viewport": "width=device-width, initial-scale=1",
+  "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "description": "This is a heading. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+  "og:title": "Sample Page – Neo Follicle Hair Transplant",
+  "og:type": "article",
+  "og:description": "This is a heading. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+  "og:url": "https://neofollicletransplant.com/sample-page/",
+  "og:locale": "en",
+  "og:site_name": "Neo Follicle Hair Transplant",
+  "article:published_time": "2025-03-16T23:18:16+05:30",
+  "article:modified_time": "2025-03-22T21:30:37+05:30",
+  "og:updated_time": "2025-03-22T21:30:37+05:30",
+  "twitter:card": "summary_large_image",
+  "generator": "WordPress 7.0",
+  "msapplication-tileimage": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-Favicon-512.svg"
+ },
+ "link_rel": {
+  "stylesheet": [
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/plugins/breakdance/plugin/themeless/normalize.min.css"
+   },
+   {
+    "id": "flatpickr-css",
+    "media": "all",
+    "data-origin-href": "https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css?ver=4.6.13",
+    "data-href": "https://neofollicletransplant.com/wp-content/cache/flying-press/flatpickr.min.css"
+   },
+   {
+    "id": "phox-facets-css",
+    "media": "all",
+    "data-href": "https://neofollicletransplant.com/wp-content/plugins/Phox%20Elements/assets/phox-facets.css?ver=1781234224"
+   },
+   {
+    "id": "headspin-ds-styles-css",
+    "media": "all",
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/headspin-assets/headspin-base.css?ver=1778904708"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/awesome-menu@1/awesome-menu.css?bd_ver=2.8.0"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/cache/flying-press/82adcf809f51.google-font.css"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/breakdance/css/post-27-defaults.css?v=26d42a2e1be226daa34582bf49b9e973"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/breakdance/css/post-2-defaults.css?v=2867beae2f29c575580e65e436b222e2"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/breakdance/css/post-36-defaults.css?v=2aad49506965800c377310110e966720"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/breakdance/css/post-77-defaults.css?v=193f41807605f7dbc89258ebc530091f"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/breakdance/css/global-settings.css?v=9ef08eb24452e18bd7d6cd8db036c41c"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/breakdance/css/presets.css?v=881026b1ea647180700e99d956a287d5"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/breakdance/css/post-27.css?v=f47e307004eb51bfdc7b662adc65de26"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/breakdance/css/post-2.css?v=ab1c13c25a2bbf14112f138b176606f8"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/breakdance/css/post-36.css?v=972496846bab483f829b3dcd79188f8e"
+   },
+   {
+    "data-href": "https://neofollicletransplant.com/wp-content/uploads/breakdance/css/post-77.css?v=0ef3cdf16ac0b5e1929f660b0b585c91"
+   }
+  ],
+  "preload": [
+   {
+    "href": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-Logo-for-website-header.svg",
+    "as": "image",
+    "imagesrcset": "",
+    "imagesizes": "(max-width: 200px) 100vw, 200px",
+    "fetchpriority": "high"
+   },
+   {
+    "href": "https://neofollicletransplant.com/wp-content/cache/flying-press/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2",
+    "as": "font",
+    "type": "font/woff2",
+    "fetchpriority": "high",
+    "crossorigin": "anonymous"
+   },
+   {
+    "href": "https://neofollicletransplant.com/wp-content/cache/flying-press/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2",
+    "as": "font",
+    "type": "font/woff2",
+    "fetchpriority": "high",
+    "crossorigin": "anonymous"
+   }
+  ],
+  "canonical": [
+   {
+    "href": "https://neofollicletransplant.com/sample-page/"
+   }
+  ],
+  "https://api.w.org/": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/"
+   }
+  ],
+  "alternate": [
+   {
+    "title": "JSON",
+    "type": "application/json",
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/2"
+   }
+  ],
+  "edituri": [
+   {
+    "type": "application/rsd+xml",
+    "title": "RSD",
+    "href": "https://neofollicletransplant.com/xmlrpc.php?rsd"
+   }
+  ],
+  "shortlink": [
+   {
+    "href": "https://neofollicletransplant.com/?p=2"
+   }
+  ],
+  "icon": [
+   {
+    "href": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-Favicon-512.svg",
+    "sizes": "32x32"
+   },
+   {
+    "href": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-Favicon-512.svg",
+    "sizes": "192x192"
+   }
+  ],
+  "apple-touch-icon": [
+   {
+    "href": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-Favicon-512.svg"
+   }
+  ]
+ }
+}

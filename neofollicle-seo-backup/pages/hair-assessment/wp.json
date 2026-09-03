@@ -1,0 +1,109 @@
+{
+ "id": 1500,
+ "date": "2025-10-13T15:19:48",
+ "date_gmt": "2025-10-13T09:49:48",
+ "guid": {
+  "rendered": "https://neofollicletransplant.com/?page_id=1500"
+ },
+ "modified": "2025-10-13T22:21:01",
+ "modified_gmt": "2025-10-13T16:51:01",
+ "slug": "hair-assessment",
+ "status": "publish",
+ "type": "page",
+ "link": "https://neofollicletransplant.com/hair-assessment/",
+ "title": {
+  "rendered": "Hair Assessment"
+ },
+ "content": {
+  "rendered": "<section class=\"bde-section-1500-100 bde-section\">\n  \n  \n\t\n\n\n\n<div class=\"section-container\"><div class=\"bde-code-block-1500-101 bde-code-block\">\n\n  <html>\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n    <title>Landbot | Convert a Landing Page into a Chatbot</title>\n  </head>\n  <body>\n    <script SameSite=\"None; Secure\"  type=\"module\" src=\"https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs\"></script>\n    <script type=\"module\">\n      var myLandbot = new Landbot.Fullpage({\n        configUrl: 'https://storage.googleapis.com/landbot.pro/v3/H-3082458-C4Q4SEVC54EBQLPP/index.json',\n      });\n    </script>\n  </body>\n</html>\n\n\n</div></div>\n</section>",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Landbot | Convert a Landing Page into a Chatbot</p>\n",
+  "protected": false
+ },
+ "author": 1,
+ "featured_media": 0,
+ "parent": 0,
+ "menu_order": 0,
+ "comment_status": "closed",
+ "ping_status": "closed",
+ "template": "",
+ "meta": {
+  "inline_featured_image": false,
+  "slim_seo": {
+   "noindex": "1",
+   "title": "Hair Assessment - Neo Follicle Hair Transplant",
+   "description": "Landbot | Convert a Landing Page into a Chatbot"
+  },
+  "_breakdance_hide_in_design_set": false,
+  "_breakdance_tags": "",
+  "footnotes": ""
+ },
+ "class_list": [
+  "post-1500",
+  "page",
+  "type-page",
+  "status-publish",
+  "hentry"
+ ],
+ "meta_box": [],
+ "_links": {
+  "self": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/1500",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/types/page"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/users/1"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/comments?post=1500"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 3,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/1500/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 1503,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/1500/revisions/1503"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/media?parent=1500"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

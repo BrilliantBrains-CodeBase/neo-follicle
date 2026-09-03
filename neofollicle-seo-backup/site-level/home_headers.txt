@@ -1,0 +1,17 @@
+HTTP/2 200 
+vary: User-Agent
+last-modified: Thu, 03 Sep 2026 09:45:33 GMT
+etag: "3b20207-1039d-65a91035f8289"
+accept-ranges: bytes
+content-length: 66461
+cache-control: no-cache, must-revalidate
+expires: Thu, 03 Sep 2026 09:45:58 GMT
+content-encoding: gzip
+content-type: text/html; charset=UTF-8
+cache-tag: neofollicletransplant.com
+cdn-cache-control: max-age=2592000
+x-flying-press-cache: HIT
+x-flying-press-source: Web Server
+date: Thu, 03 Sep 2026 09:45:58 GMT
+server: Apache
+

@@ -1,0 +1,109 @@
+{
+ "id": 1537,
+ "date": "2025-11-07T18:19:17",
+ "date_gmt": "2025-11-07T12:49:17",
+ "guid": {
+  "rendered": "https://neofollicletransplant.com/?page_id=1537"
+ },
+ "modified": "2026-02-11T15:18:36",
+ "modified_gmt": "2026-02-11T09:48:36",
+ "slug": "thank-you-lp",
+ "status": "publish",
+ "type": "page",
+ "link": "https://neofollicletransplant.com/thank-you-lp/",
+ "title": {
+  "rendered": "Thank You &#8211; LP"
+ },
+ "content": {
+  "rendered": "<section class=\"bde-section-1537-100 bde-section\">\n  \n  \n\t\n\n\n\n<div class=\"section-container\"><img decoding=\"async\" class=\"bde-image2-1537-101 bde-image2\" src=\"https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-Logo-svg.svg\" alt=\"Neo Follicle Transplant Logo\" loading=\"lazy\" sizes=\"(max-width: 200px) 100vw, 200px\"><h3 class=\"bde-heading-1537-103 bde-heading\">\nYour Hair Analysis Report should reach your email in 2 - 3 minutes.\n</h3><h3 class=\"bde-heading-1537-102 bde-heading\">\nThank You\n</h3><h4 class=\"bde-heading-1537-105 bde-heading\">\nOne of Our Team Member will contact you shortly.\n</h4><div class=\"bde-div-1537-110 bde-div\">\n  \n  \n\t\n\n\n\n<div class=\"bde-grid-1537-111 bde-grid\">\n  \n  \n\t\n\n\n\n<div class=\"bde-button-1537-109 bde-button\">\n        \n    \n    \n    \n    \n            \n                    \n            \n            \n\n    \n    \n    \n    \n    \n    <a class=\"breakdance-link button-atom button-atom--primary bde-button__button\" href=\"https://wa.me/919731207940\" target=\"_self\" data-type=\"url\"  >\n\n    \n        <span class=\"button-atom__text\">Whats App</span>\n\n        \n        \n                </a>\n\n    \n\n\n</div><div class=\"bde-button-1537-108 bde-button\">\n        \n    \n    \n    \n    \n            \n                    \n            \n            \n\n    \n    \n    \n    \n    \n    <a class=\"breakdance-link button-atom button-atom--primary bde-button__button\" href=\"tel:+919731207940\" target=\"_self\" data-type=\"url\"  >\n\n    \n        <span class=\"button-atom__text\">Call Now</span>\n\n        \n        \n                </a>\n\n    \n\n\n</div><div class=\"bde-button-1537-107 bde-button\">\n        \n    \n    \n    \n    \n            \n                    \n            \n            \n\n    \n    \n    \n    \n    \n    <a class=\"breakdance-link button-atom button-atom--primary bde-button__button\" href=\"https://neofollicletransplant.com/\" target=\"_self\" data-type=\"url\"  >\n\n    \n        <span class=\"button-atom__text\">Go To Website</span>\n\n        \n        \n                </a>\n\n    \n\n\n</div>\n</div>\n</div></div>\n</section>",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Your Hair Analysis Report should reach your email in 2 &#8211; 3 minutes. Thank You One of Our Team Member will contact you shortly. Whats App Call Now Go To Website</p>\n",
+  "protected": false
+ },
+ "author": 1,
+ "featured_media": 0,
+ "parent": 0,
+ "menu_order": 0,
+ "comment_status": "closed",
+ "ping_status": "closed",
+ "template": "",
+ "meta": {
+  "inline_featured_image": false,
+  "slim_seo": {
+   "noindex": "1",
+   "title": "Thank You - LP - Neo Follicle Hair Transplant",
+   "description": "Your Hair Analysis Report should reach your email in 2 - 3 minutes. Thank You One of Our Team Member will contact you shortly. Whats App Call Now Go To Website"
+  },
+  "_breakdance_hide_in_design_set": false,
+  "_breakdance_tags": "",
+  "footnotes": ""
+ },
+ "class_list": [
+  "post-1537",
+  "page",
+  "type-page",
+  "status-publish",
+  "hentry"
+ ],
+ "meta_box": [],
+ "_links": {
+  "self": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/1537",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/types/page"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/users/1"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/comments?post=1537"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 7,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/1537/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 1611,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/1537/revisions/1611"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/media?parent=1537"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

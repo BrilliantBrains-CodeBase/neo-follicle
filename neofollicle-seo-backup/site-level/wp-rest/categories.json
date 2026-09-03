@@ -1,0 +1,50 @@
+[
+ {
+  "id": 1,
+  "count": 19,
+  "description": "",
+  "link": "https://neofollicletransplant.com/category/uncategorized/",
+  "name": "Uncategorized",
+  "slug": "uncategorized",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": {
+   "slim_seo": []
+  },
+  "meta_box": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://neofollicletransplant.com/wp-json/wp/v2/categories/1",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://neofollicletransplant.com/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://neofollicletransplant.com/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://neofollicletransplant.com/wp-json/wp/v2/posts?categories=1"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ }
+]

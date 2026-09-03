@@ -1,0 +1,108 @@
+{
+ "id": 16,
+ "date": "2025-03-17T07:08:21",
+ "date_gmt": "2025-03-17T01:38:21",
+ "guid": {
+  "rendered": "https://neofollicletransplant.com/?page_id=16"
+ },
+ "modified": "2025-03-27T10:26:09",
+ "modified_gmt": "2025-03-27T04:56:09",
+ "slug": "maintenance-page",
+ "status": "publish",
+ "type": "page",
+ "link": "https://neofollicletransplant.com/maintenance-page/",
+ "title": {
+  "rendered": "Maintenance Page"
+ },
+ "content": {
+  "rendered": "<section class=\"bde-section-16-100 bde-section\">\n  \n  \n\t\n\n\n\n<div class=\"section-container\"><img decoding=\"async\" class=\"bde-image2-16-101 bde-image2\" src=\"https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-Logo-svg.svg\" alt=\"Neo Follicle Transplant Logo\" loading=\"lazy\" sizes=\"(max-width: 200px) 100vw, 200px\"><h1 class=\"bde-heading-16-107 bde-heading\">\nThis Web-Page is Being Redesigned\n</h1><h2 class=\"bde-heading-16-108 bde-heading\">\nThis Page will be available in a couple of days.\n</h2><h3 class=\"bde-heading-16-109 bde-heading\">\nPlease call +91 -  97312 07940 for appointment with Our Senior Hair Transplant Surgeon - Dr Sandeep Mahapatra.\n</h3><div class=\"bde-button-16-105 bde-button\">\n        \n    \n    \n    \n    \n            \n                    \n            \n            \n\n    \n    \n    \n    \n    \n    <a class=\"breakdance-link button-atom button-atom--primary bde-button__button\" href=\"tel:+919731207940\" target=\"_self\" data-type=\"url\"  >\n\n    \n        <span class=\"button-atom__text\">Call #  +91 97312 07940</span>\n\n        \n        \n                </a>\n\n    \n\n\n</div></div>\n</section>",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>This Web-Page is Being Redesigned This Page will be available in a couple of days. Please call +91 &#8211; 97312 07940 for appointment with Our Senior Hair Transplant Surgeon &#8211; Dr Sandeep Mahapatra. Call # +91 97312 07940</p>\n",
+  "protected": false
+ },
+ "author": 1,
+ "featured_media": 0,
+ "parent": 0,
+ "menu_order": 0,
+ "comment_status": "closed",
+ "ping_status": "closed",
+ "template": "",
+ "meta": {
+  "inline_featured_image": false,
+  "slim_seo": {
+   "title": "Maintenance Page - Neo Follicle Hair Transplant",
+   "description": "This Web-Page is Being Redesigned This Page will be available in a couple of days. Please call +91 - 97312 07940 for appointment with Our Senior Hair Transplant"
+  },
+  "_breakdance_hide_in_design_set": false,
+  "_breakdance_tags": "",
+  "footnotes": ""
+ },
+ "class_list": [
+  "post-16",
+  "page",
+  "type-page",
+  "status-publish",
+  "hentry"
+ ],
+ "meta_box": [],
+ "_links": {
+  "self": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/16",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/types/page"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/users/1"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/comments?post=16"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 4,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/16/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 404,
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/pages/16/revisions/404"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://neofollicletransplant.com/wp-json/wp/v2/media?parent=16"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,917 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebSite",
+    "@id": "https://neofollicletransplant.com/#website",
+    "url": "https://neofollicletransplant.com/",
+    "name": "Neo Follicle Hair Transplant Clinic",
+    "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
+    "inLanguage": "en-IN",
+    "potentialAction": {
+     "@id": "https://neofollicletransplant.com/#searchaction"
+    },
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "@context": "https://schema.org",
+    "alternateName": [
+     "Neo Follicle Transplant Clinic",
+     "Neo Follicle Hair Transplant",
+     "Neo Follicle Transplant"
+    ],
+    "about": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "creator": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    }
+   },
+   {
+    "@type": "SearchAction",
+    "@id": "https://neofollicletransplant.com/#searchaction",
+    "target": "https://neofollicletransplant.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "name": "Breadcrumbs",
+    "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#breadcrumblist",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://neofollicletransplant.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Blogs",
+      "item": "https://neofollicletransplant.com/our-blogs/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Uncategorized",
+      "item": "https://neofollicletransplant.com/category/uncategorized/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "The Ultimate Hair Transplant Recovery Timeline: What to Expect Month by Month"
+     }
+    ]
+   },
+   {
+    "@type": "WebPage",
+    "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#webpage",
+    "url": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/",
+    "inLanguage": "en",
+    "name": "Hair Transplant Recovery Timeline: Month-by-Month Guide",
+    "description": "Understand the complete hair transplant recovery timeline from scabs and shedding to new growth, density, and final results with expert guidance from Neo Follicle.",
+    "datePublished": "2026-06-15T07:17:46+05:30",
+    "dateModified": "2026-07-03T12:15:44+05:30",
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "breadcrumb": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#breadcrumblist"
+    },
+    "potentialAction": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#readaction"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#thumbnail"
+    },
+    "image": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#thumbnail"
+    }
+   },
+   {
+    "@type": "ReadAction",
+    "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#readaction",
+    "target": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://neofollicletransplant.com/#organization",
+    "url": "https://neofollicletransplant.com/",
+    "name": "Neo Follicle Hair Transplant"
+   },
+   {
+    "@type": "ImageObject",
+    "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#thumbnail",
+    "url": "https://neofollicletransplant.com/wp-content/uploads/2026/06/Hair-Transplant-Recovery-Timeline.png",
+    "contentUrl": "https://neofollicletransplant.com/wp-content/uploads/2026/06/Hair-Transplant-Recovery-Timeline.png",
+    "width": 1734,
+    "height": 907
+   },
+   {
+    "@type": "Article",
+    "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#article",
+    "url": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/",
+    "headline": "The Ultimate Hair Transplant Recovery Timeline: What to Expect Month by Month",
+    "datePublished": "2026-06-15T07:17:46+05:30",
+    "dateModified": "2026-07-03T12:15:44+05:30",
+    "wordCount": 4455,
+    "articleSection": [
+     "Uncategorized"
+    ],
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#webpage"
+    },
+    "mainEntityOfPage": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#webpage"
+    },
+    "image": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#thumbnail"
+    },
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#organization"
+    },
+    "author": {
+     "@id": "https://neofollicletransplant.com/#/schema/person/b609b3452782d2bcc7173a2c605b276f"
+    }
+   },
+   {
+    "@type": "Person",
+    "@id": "https://neofollicletransplant.com/#/schema/person/b609b3452782d2bcc7173a2c605b276f",
+    "url": "https://neofollicletransplant.com",
+    "name": "Dr Sandeep Mahapatra",
+    "description": "Dr. Sandeep Mahapatra is a Senior Dermatologist and Hair Transplant Surgeon in Bangalore. He is the founder and lead doctor at Neo Follicle Transplant Clinic, where he provides hair transplant, hair restoration and non-surgical hair loss treatments for men, women, celebrities and international patients.\r\n\r\nWith over 10,000+ successful hair transplants and international recognition, Dr. Sandeep Mahapatra is regarded as one of the Best Hair Transplant Surgeons in Bangalore.",
+    "givenName": "Dr Sandeep",
+    "familyName": "Mahapatra",
+    "image": "https://secure.gravatar.com/avatar/664b60b2988d51f577b2cb5630552962b243a07015378bea7e02fd3cc61cbc1c?s=96&d=mm&r=g"
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": [
+     "MedicalClinic",
+     "LocalBusiness"
+    ],
+    "@id": "https://neofollicletransplant.com/#clinic",
+    "name": "Neo Follicle Hair Transplant Clinic",
+    "alternateName": [
+     "Neo Follicle Transplant Clinic",
+     "Neo Follicle Hair Transplant",
+     "Neo Follicle Transplant",
+     "Neo Follicle"
+    ],
+    "url": "https://neofollicletransplant.com/",
+    "logo": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-LOGO-WITH-BG-02.png",
+    "image": "https://neofollicletransplant.com/wp-content/uploads/2025/04/NFT-Clinic-Reception.jpeg",
+    "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
+    "telephone": "+91-9731207940",
+    "email": "info@neofollicletransplant.com",
+    "priceRange": "₹₹₹",
+    "medicalSpecialty": "Dermatology",
+    "knowsAbout": [
+     "Hair transplant surgery",
+     "Hair restoration",
+     "Hair loss treatment",
+     "FUE hair transplant",
+     "FUT hair transplant",
+     "Bio FUE hair transplant",
+     "Beard transplant",
+     "Eyebrow transplant",
+     "Female hair transplant",
+     "PRP therapy for hair loss",
+     "GFC therapy for hair loss",
+     "Hairline restoration",
+     "Baldness treatment",
+     "Alopecia treatment",
+     "Cosmetic dermatology"
+    ],
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "1st floor, Scorpio House, Near Marathahalli Bridge, Munnekolala, Landmark Opposite Purvankara Apt, Marathahalli Bridge Service Road",
+     "addressLocality": "Bengaluru",
+     "addressRegion": "Karnataka",
+     "postalCode": "560037",
+     "addressCountry": "IN"
+    },
+    "geo": {
+     "@type": "GeoCoordinates",
+     "latitude": 12.956429486014592,
+     "longitude": 77.70733394232819
+    },
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+    "openingHoursSpecification": [
+     {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+     }
+    ],
+    "contactPoint": [
+     {
+      "@type": "ContactPoint",
+      "telephone": "+91-9731207940",
+      "contactType": "appointment booking",
+      "availableLanguage": [
+       "English",
+       "Hindi",
+       "Kannada"
+      ],
+      "areaServed": "IN"
+     },
+     {
+      "@type": "ContactPoint",
+      "url": "https://wa.me/919731207940",
+      "contactType": "WhatsApp appointment booking",
+      "availableLanguage": [
+       "English",
+       "Hindi",
+       "Kannada"
+      ],
+      "areaServed": "IN"
+     }
+    ],
+    "founder": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "employee": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "sameAs": [
+     "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+     "https://www.facebook.com/NeoFollicleHairTransplantClinic",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
+     "https://www.youtube.com/@neofollicletransplant",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
+     "https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu",
+     "https://www.justdial.com/Bangalore/Neo-Follicle"
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": [
+     "Person",
+     "Physician"
+    ],
+    "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician",
+    "name": "Dr. Sandeep Mahapatra",
+    "honorificPrefix": "Dr.",
+    "givenName": "Sandeep",
+    "familyName": "Mahapatra",
+    "url": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/",
+    "image": "https://neofollicletransplant.com/wp-content/uploads/2025/05/Dr-Sandeep-Mahapatra-Best-Dermatologist-in-Bangalore.jpg",
+    "priceRange": "₹₹₹",
+    "description": "Dr. Sandeep Mahapatra is a Senior Consultant Dermatologist, Cosmetic Expert and Hair Transplant Surgeon in Bangalore. He is the Founder of Neo Follicle Transplant Clinic in Marathahalli, Whitefield, and has over 20 years of experience in dermatology, cosmetic dermatology and advanced hair restoration procedures.",
+    "jobTitle": [
+     "Senior Consultant Dermatologist",
+     "Cosmetic Expert",
+     "Hair Transplant Surgeon",
+     "Founder, Neo Follicle Transplant Clinic"
+    ],
+    "medicalSpecialty": "Dermatology",
+    "knowsAbout": [
+     "Dermatology",
+     "Cosmetic dermatology",
+     "Hair transplant surgery",
+     "Hair restoration",
+     "Hair loss treatment",
+     "FUE hair transplant",
+     "FUT hair transplant",
+     "DHI hair transplant",
+     "Direct hair implantation",
+     "Beard restoration",
+     "Eyebrow restoration",
+     "Female hair transplant",
+     "Hairline restoration",
+     "PRP therapy for hair loss",
+     "Growth factor concentrate therapy",
+     "Stem cell therapy for hair loss",
+     "Low level laser hair therapy",
+     "Scalp micropigmentation",
+     "Alopecia treatment",
+     "Dermatosurgery",
+     "Aesthetic dermatology",
+     "Botox",
+     "Dermal fillers",
+     "Vitiligo surgery"
+    ],
+    "worksFor": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "workLocation": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "affiliation": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "telephone": "+91-9731207940",
+    "email": "info@neofollicletransplant.com",
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "1st floor, Scorpio House, Near Marathahalli Bridge, Munnekolala, Landmark Opposite Purvankara Apt, Marathahalli Bridge Service Road",
+     "addressLocality": "Bengaluru",
+     "addressRegion": "Karnataka",
+     "postalCode": "560037",
+     "addressCountry": "IN"
+    },
+    "hasCredential": [
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Medical Degree",
+      "name": "MBBS",
+      "recognizedBy": {
+       "@type": "CollegeOrUniversity",
+       "name": "MGM Medical College & Hospital, Jamshedpur"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Postgraduate Medical Degree",
+      "name": "MD Dermatology, Venereology & Leprosy",
+      "recognizedBy": {
+       "@type": "CollegeOrUniversity",
+       "name": "Rajendra Institute of Medical Sciences, Ranchi"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Certified DHI Specialist",
+      "recognizedBy": {
+       "@type": "Organization",
+       "name": "DHI Global, Greece"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Basic and Advanced Botox and Dermal Fillers Certification",
+      "recognizedBy": {
+       "@type": "Organization",
+       "name": "Allergan"
+      }
+     }
+    ],
+    "memberOf": [
+     {
+      "@type": "Organization",
+      "name": "Association of Cutaneous Surgeons of India",
+      "alternateName": "ACSI"
+     },
+     {
+      "@type": "Organization",
+      "name": "Indian Association of Hair Restoration Surgeons",
+      "alternateName": "IAHRS"
+     },
+     {
+      "@type": "Organization",
+      "name": "International Society of Dermatology",
+      "alternateName": "ISD"
+     },
+     {
+      "@type": "Organization",
+      "name": "Indian Association of Dermatologists, Venereologists and Leprologists",
+      "alternateName": "IADVL"
+     },
+     {
+      "@type": "Organization",
+      "name": "International Society of Hair Restoration Surgery",
+      "alternateName": "ISHRS"
+     }
+    ],
+    "award": [
+     "Gold Medalist in MD Dermatology, Venereology & Leprosy",
+     "Honors and Gold Medalist in two subjects during MBBS"
+    ],
+    "hasOccupation": {
+     "@type": "Occupation",
+     "name": "Dermatologist and Hair Transplant Surgeon",
+     "description": "Specializes in dermatology, cosmetic dermatology, hair transplantation, hair restoration, PRP therapy, beard restoration, eyebrow restoration and advanced aesthetic procedures.",
+     "occupationalCategory": "Dermatology"
+    },
+    "sameAs": [
+     "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/",
+     "https://www.practo.com/bangalore/doctor/dr-sandeep-mahapatra-dermatologist-cosmetologist",
+     "https://www.linkedin.com/in/dr-sandeep-mahapatra-315411112/",
+     "https://www.apollo247.com/doctors/dr-sandeep-mahapatra-4115d6e4-68c2-4cca-8548-66cf7e0bbce1",
+     "https://kivihealth.com/iam/sandeep.mahapatra.19945",
+     "https://www.justdial.com/Bangalore/Dr-Sandeep-Mahapatra-Neo-Follicle-Transplant-Clinic-Marathahalli-Below-Bridge-Munekollal/080PXX80-XX80-160108114909-B9U9_BZDET",
+     "https://www.docindia.org/doctors/bangalore/dr-sandeep-mahapatra-dermatology"
+    ]
+   },
+   {
+    "@type": "ContactPage",
+    "@id": "https://neofollicletransplant.com/contact-us/#contactpage",
+    "url": "https://neofollicletransplant.com/contact-us/",
+    "name": "Contact Neo Follicle Hair Transplant Clinic",
+    "description": "Contact Neo Follicle Hair Transplant Clinic in Bangalore to book an appointment for hair transplant, hair loss treatment, PRP therapy, beard transplant, eyebrow transplant, female hair transplant and other hair restoration treatments.",
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "about": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/#appointment-contact"
+    }
+   },
+   {
+    "@type": "ContactPoint",
+    "@id": "https://neofollicletransplant.com/#appointment-contact",
+    "name": "Neo Follicle Hair Transplant Clinic Appointment Booking",
+    "description": "Appointment booking contact point for Neo Follicle Hair Transplant Clinic in Bangalore. Patients can call or send a WhatsApp message to book appointments for hair transplant and hair restoration consultations.",
+    "telephone": "+91-9731207940",
+    "contactType": "appointment booking",
+    "url": "https://neofollicletransplant.com/contact-us/",
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "availableLanguage": [
+     "English",
+     "Hindi",
+     "Kannada"
+    ],
+    "hoursAvailable": [
+     {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+     }
+    ]
+   },
+   {
+    "@type": "ContactPoint",
+    "@id": "https://neofollicletransplant.com/#whatsapp-appointment-contact",
+    "name": "Neo Follicle Hair Transplant Clinic WhatsApp Appointment Booking",
+    "description": "WhatsApp appointment booking contact point for Neo Follicle Hair Transplant Clinic in Bangalore.",
+    "contactType": "WhatsApp appointment booking",
+    "url": "https://wa.me/919731207940",
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "availableLanguage": [
+     "English",
+     "Hindi",
+     "Kannada"
+    ],
+    "hoursAvailable": [
+     {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+     }
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://neofollicletransplant.com/#hair-transplant-service",
+    "name": "Hair Transplant Services in Bangalore",
+    "alternateName": [
+     "Hair Restoration Services in Bangalore",
+     "Hair Transplant Treatment in Bangalore",
+     "Hair Loss Treatment in Bangalore",
+     "Advanced Hair Transplant Services"
+    ],
+    "url": "https://neofollicletransplant.com/",
+    "description": "Neo Follicle Hair Transplant Clinic provides advanced hair transplant and hair restoration services in Bangalore under the guidance of Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers treatment options for male pattern baldness, female hair loss, hairline restoration, beard restoration, eyebrow restoration and non-surgical hair loss therapies.",
+    "serviceType": [
+     "Hair Transplant",
+     "Hair Restoration",
+     "Hair Loss Treatment",
+     "FUE Hair Transplant",
+     "FUT Hair Transplant",
+     "DHI Hair Transplant",
+     "Beard Transplant",
+     "Eyebrow Transplant",
+     "Female Hair Transplant",
+     "Hairline Restoration",
+     "PRP Therapy for Hair Loss",
+     "GFC Therapy for Hair Loss",
+     "Alopecia Treatment"
+    ],
+    "category": "Hair Transplant and Hair Restoration Services",
+    "additionalType": [
+     "https://schema.org/MedicalProcedure",
+     "https://schema.org/TherapeuticProcedure"
+    ],
+    "provider": {
+     "@type": [
+      "Organization",
+      "MedicalClinic",
+      "LocalBusiness"
+     ],
+     "@id": "https://neofollicletransplant.com/#clinic",
+     "name": "Neo Follicle Hair Transplant Clinic",
+     "url": "https://neofollicletransplant.com/",
+     "telephone": "+91-9731207940"
+    },
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "audience": [
+     {
+      "@type": "PeopleAudience",
+      "name": "Men experiencing hair loss or baldness"
+     },
+     {
+      "@type": "PeopleAudience",
+      "name": "Women experiencing hair thinning or hair loss"
+     },
+     {
+      "@type": "PeopleAudience",
+      "name": "Patients seeking beard, eyebrow or hairline restoration"
+     },
+     {
+      "@type": "PeopleAudience",
+      "name": "International patients seeking hair transplant in Bangalore"
+     }
+    ],
+    "availableChannel": [
+     {
+      "@type": "ServiceChannel",
+      "name": "Phone Appointment Booking",
+      "servicePhone": {
+       "@type": "ContactPoint",
+       "@id": "https://neofollicletransplant.com/#appointment-contact",
+       "telephone": "+91-9731207940",
+       "contactType": "appointment booking"
+      },
+      "serviceUrl": "https://neofollicletransplant.com/contact-us/"
+     },
+     {
+      "@type": "ServiceChannel",
+      "name": "WhatsApp Appointment Booking",
+      "serviceUrl": "https://wa.me/919731207940"
+     }
+    ],
+    "mainEntityOfPage": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "sameAs": [
+     "https://www.facebook.com/NeoFollicleHairTransplantClinic",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
+     "https://www.youtube.com/@neofollicletransplant",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
+     "https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu",
+     "https://www.justdial.com/Bangalore/Neo-Follicle"
+    ]
+   },
+   {
+    "@type": [
+     "MedicalWebPage",
+     "WebPage"
+    ],
+    "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#webpage",
+    "url": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/",
+    "name": "The Ultimate Hair Transplant Recovery Timeline: What to Expect Month by Month",
+    "headline": "The Ultimate Hair Transplant Recovery Timeline: What to Expect Month by Month",
+    "description": "A detailed month-by-month guide to hair transplant recovery, covering healing, scabbing, shedding, shock loss, resting phase, new hair growth, density improvement, and final results after hair transplant surgery.",
+    "inLanguage": "en-IN",
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "about": {
+     "@id": "https://neofollicletransplant.com/#hair-transplant-service"
+    },
+    "primaryImageOfPage": {
+     "@type": "ImageObject",
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#primaryimage",
+     "url": "https://neofollicletransplant.com/wp-content/uploads/2026/06/Hair-Transplant-Recovery-Timeline.png",
+     "contentUrl": "https://neofollicletransplant.com/wp-content/uploads/2026/06/Hair-Transplant-Recovery-Timeline.png",
+     "caption": "Hair Transplant Recovery Timeline Month by Month"
+    },
+    "image": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#primaryimage"
+    },
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "author": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "reviewedBy": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "lastReviewed": "2026-06-15",
+    "datePublished": "2026-06-15T07:00:00+05:30",
+    "dateModified": "2026-06-15T07:00:00+05:30",
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#blogposting"
+    },
+    "mentions": [
+     {
+      "@type": "MedicalProcedure",
+      "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#hair-transplant-procedure",
+      "name": "Hair Transplant Surgery",
+      "procedureType": "https://schema.org/PercutaneousProcedure",
+      "bodyLocation": "Scalp",
+      "description": "Hair transplant surgery is a minimally invasive hair restoration procedure in which healthy hair follicles are moved from the donor area to areas of thinning or baldness on the scalp."
+     },
+     {
+      "@type": "MedicalCondition",
+      "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#hair-loss",
+      "name": "Hair Loss",
+      "alternateName": [
+       "Baldness",
+       "Pattern Hair Loss",
+       "Androgenetic Alopecia"
+      ],
+      "description": "Hair loss is a condition where scalp hair gradually thins or sheds, often requiring medical evaluation and treatment depending on the cause, stage, and donor hair availability."
+     }
+    ]
+   },
+   {
+    "@type": "BlogPosting",
+    "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#blogposting",
+    "mainEntityOfPage": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#webpage"
+    },
+    "headline": "The Ultimate Hair Transplant Recovery Timeline: What to Expect Month by Month",
+    "alternativeHeadline": "Hair Transplant Recovery Timeline: Month-by-Month Healing and Growth Guide",
+    "description": "Understand the complete hair transplant recovery timeline from scabs and shedding to new growth, density, and final results with expert guidance from Neo Follicle.",
+    "articleSection": [
+     "Hair Transplant",
+     "Hair Transplant Recovery",
+     "Hair Restoration",
+     "Post-Operative Care"
+    ],
+    "keywords": [
+     "hair transplant recovery timeline",
+     "hair transplant recovery month by month",
+     "what to expect after hair transplant",
+     "hair transplant shedding phase",
+     "shock loss after hair transplant",
+     "hair transplant results timeline",
+     "hair transplant aftercare",
+     "hair transplant in Bangalore",
+     "hair transplant clinic in Bangalore",
+     "Neo Follicle Hair Transplant Clinic"
+    ],
+    "image": {
+     "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#primaryimage"
+    },
+    "thumbnailUrl": "https://neofollicletransplant.com/wp-content/uploads/2026/06/Hair-Transplant-Recovery-Timeline.png",
+    "author": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "editor": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "reviewedBy": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "about": [
+     {
+      "@id": "https://neofollicletransplant.com/#hair-transplant-service"
+     },
+     {
+      "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#hair-transplant-procedure"
+     },
+     {
+      "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#hair-loss"
+     }
+    ],
+    "mentions": [
+     {
+      "@type": "Thing",
+      "name": "Hair transplant recovery"
+     },
+     {
+      "@type": "Thing",
+      "name": "Shock loss after hair transplant"
+     },
+     {
+      "@type": "Thing",
+      "name": "Hair transplant shedding phase"
+     },
+     {
+      "@type": "Thing",
+      "name": "Hair transplant aftercare"
+     },
+     {
+      "@type": "Thing",
+      "name": "Hair transplant growth timeline"
+     },
+     {
+      "@type": "Place",
+      "name": "Bangalore"
+     },
+     {
+      "@type": "Place",
+      "name": "Marathahalli"
+     },
+     {
+      "@type": "Place",
+      "name": "Whitefield"
+     },
+     {
+      "@type": "Place",
+      "name": "Outer Ring Road"
+     },
+     {
+      "@type": "Place",
+      "name": "Bellandur"
+     },
+     {
+      "@type": "Place",
+      "name": "Electronic City"
+     },
+     {
+      "@type": "Place",
+      "name": "HSR Layout"
+     },
+     {
+      "@type": "Place",
+      "name": "Indiranagar"
+     },
+     {
+      "@type": "Place",
+      "name": "Koramangala"
+     }
+    ],
+    "datePublished": "2026-06-15T07:00:00+05:30",
+    "dateModified": "2026-06-15T07:00:00+05:30",
+    "inLanguage": "en-IN",
+    "wordCount": 2500,
+    "citation": [
+     "https://www.aad.org/public/diseases/hair-loss/treatment/transplant",
+     "https://www.nhs.uk/tests-and-treatments/cosmetic-procedures/cosmetic-surgery/hair-transplant/",
+     "https://ishrs.org/patients/treatments-for-hair-loss/surgical-treatments/",
+     "https://my.clevelandclinic.org/health/treatments/21519-hair-transplant",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC8719980/"
+    ],
+    "potentialAction": {
+     "@type": "ReadAction",
+     "target": [
+      "https://neofollicletransplant.com/hair-transplant-recovery-timeline/"
+     ]
+    }
+   },
+   {
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "Is it normal for transplanted hair to fall out 3 weeks after surgery?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, it is usually normal. Many patients notice shedding around 2 to 4 weeks after a hair transplant. This is called shock loss. The visible hair shaft falls out, but the root usually remains safe beneath the skin. This does not mean your transplant has failed. New growth usually begins gradually after the resting phase, often around Month 4 onwards."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "When can I safely wash my hair normally and wear a cap or helmet in Bangalore traffic?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Gentle washing usually begins as per your surgeon’s instructions in the first few days after surgery. Normal washing is resumed gradually once the grafts are secure and the scalp has healed. Avoid tight caps and helmets in the early phase because they can create friction and pressure on the grafts. In Bangalore, many patients need helmets for commuting through Marathahalli, Whitefield, ORR, Bellandur, Electronic City, HSR Layout, Indiranagar, and Koramangala. If you rely on a two-wheeler, discuss your commute with your surgeon before the procedure. Do not restart helmet use without medical clearance."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "When can I resume heavy weightlifting, swimming, or gym workouts?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Light walking may be allowed early, but heavy workouts should be avoided during the initial healing period. Heavy weightlifting, intense cardio, swimming, sauna, steam, and contact sports should be resumed only after your surgeon confirms that your scalp has healed well. Sweating, pressure, friction, and infection risk are the main concerns. Your exact timeline depends on your healing, graft stability, and procedure type."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What should I do if I notice pimples or redness on my scalp in Month 3?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Small pimples can occur when new hairs start emerging through the scalp. Mild redness may also persist in some patients, especially if the skin is sensitive. Do not squeeze pimples aggressively. Do not apply random creams or home remedies. Do not scratch the scalp. If the pimples are painful, increasing, pus-filled, or associated with spreading redness, contact your hair transplant doctor. Your doctor may prescribe appropriate medication or scalp care based on your condition."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "When will I see my final hair transplant result?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Most patients start seeing visible improvement from Months 4 to 6. Density improves significantly between Months 7 and 12. The final mature result usually takes 12 to 18 months, especially for crown areas or larger restoration cases. Hair transplant recovery is slow but progressive. Patience is essential."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I go back to office after a hair transplant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Many patients with desk jobs can return to work within a few days, depending on swelling, comfort, and the nature of their job. If your work involves client meetings, outdoor travel, helmet use, dust exposure, or heavy sweating, you may need a more careful return plan. At Neo Follicle, we often help patients from Bangalore’s IT and business hubs plan recovery around their work schedule."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I touch the transplanted area after surgery?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Avoid touching the transplanted area in the early days. Touching, rubbing, or scratching can disturb grafts and irritate the scalp. Follow your clinic’s washing and care instructions carefully. Once the grafts are secure and the scalp has healed, normal handling gradually becomes safe."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Why does my hair look thinner in Month 2 or Month 3?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "This is usually because of shock shedding and the resting phase. After shedding, the follicles remain beneath the skin but may not yet produce visible hair. This can make the scalp look unchanged or even thinner temporarily. This phase is normal and does not mean failure."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Is redness normal after a hair transplant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Mild redness is common after hair transplant surgery. It usually reduces gradually over days to weeks. In some patients with sensitive skin, redness may last longer. If redness is increasing, painful, hot, swollen, or associated with pus or fever, contact your doctor."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is the most important thing I should remember after a hair transplant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "The most important thing is patience. Do not panic during shedding. Do not judge your result in the first 3 months. Do not skip post-operative instructions. Do not compare your timeline with someone else’s. A good hair transplant result takes time, discipline, and proper follow-up."
+      }
+     }
+    ],
+    "@id": "https://neofollicletransplant.com/hair-transplant-recovery-timeline/#faq_hair_transplant_recovery_timeline"
+   }
+  ]
+ }
+]

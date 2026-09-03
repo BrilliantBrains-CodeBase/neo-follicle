@@ -1,0 +1,778 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebSite",
+    "@id": "https://neofollicletransplant.com/#website",
+    "url": "https://neofollicletransplant.com/",
+    "name": "Neo Follicle Hair Transplant Clinic",
+    "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
+    "inLanguage": "en-IN",
+    "potentialAction": {
+     "@id": "https://neofollicletransplant.com/#searchaction"
+    },
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "@context": "https://schema.org",
+    "alternateName": [
+     "Neo Follicle Transplant Clinic",
+     "Neo Follicle Hair Transplant",
+     "Neo Follicle Transplant"
+    ],
+    "about": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "creator": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    }
+   },
+   {
+    "@type": "SearchAction",
+    "@id": "https://neofollicletransplant.com/#searchaction",
+    "target": "https://neofollicletransplant.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "name": "Breadcrumbs",
+    "@id": "https://neofollicletransplant.com/body-hair-transplant/#breadcrumblist",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://neofollicletransplant.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Body Hair Transplant"
+     }
+    ]
+   },
+   {
+    "@type": "WebPage",
+    "@id": "https://neofollicletransplant.com/body-hair-transplant/#webpage",
+    "url": "https://neofollicletransplant.com/body-hair-transplant/",
+    "inLanguage": "en-IN",
+    "name": "Body Hair Transplant in Bangalore",
+    "description": "Body hair transplant in Bangalore at Neo Follicle Transplant Clinic helps patients with limited scalp donor hair by using suitable body hair from areas such as the beard, chest, shoulders, or back to improve scalp coverage, density, crown coverage, and repair previous failed hair transplant results.",
+    "datePublished": "2025-05-17T12:38:54+05:30",
+    "dateModified": "2026-05-26T16:39:59+05:30",
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "breadcrumb": {
+     "@id": "https://neofollicletransplant.com/body-hair-transplant/#breadcrumblist"
+    },
+    "potentialAction": {
+     "@id": "https://neofollicletransplant.com/body-hair-transplant/#readaction"
+    },
+    "headline": "Body Hair Transplant in Bangalore",
+    "about": {
+     "@id": "https://neofollicletransplant.com/body-hair-transplant/#service"
+    },
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/body-hair-transplant/#service"
+    },
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#medicalclinic"
+    }
+   },
+   {
+    "@type": "ReadAction",
+    "@id": "https://neofollicletransplant.com/body-hair-transplant/#readaction",
+    "target": "https://neofollicletransplant.com/body-hair-transplant/"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://neofollicletransplant.com/#organization",
+    "url": "https://neofollicletransplant.com/",
+    "name": "Neo Follicle Hair Transplant"
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": [
+     "MedicalClinic",
+     "LocalBusiness"
+    ],
+    "@id": "https://neofollicletransplant.com/#clinic",
+    "name": "Neo Follicle Hair Transplant Clinic",
+    "alternateName": [
+     "Neo Follicle Transplant Clinic",
+     "Neo Follicle Hair Transplant",
+     "Neo Follicle Transplant",
+     "Neo Follicle"
+    ],
+    "url": "https://neofollicletransplant.com/",
+    "logo": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-LOGO-WITH-BG-02.png",
+    "image": "https://neofollicletransplant.com/wp-content/uploads/2025/04/NFT-Clinic-Reception.jpeg",
+    "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
+    "telephone": "+91-9731207940",
+    "email": "info@neofollicletransplant.com",
+    "priceRange": "₹₹₹",
+    "medicalSpecialty": "Dermatology",
+    "knowsAbout": [
+     "Hair transplant surgery",
+     "Hair restoration",
+     "Hair loss treatment",
+     "FUE hair transplant",
+     "FUT hair transplant",
+     "Bio FUE hair transplant",
+     "Beard transplant",
+     "Eyebrow transplant",
+     "Female hair transplant",
+     "PRP therapy for hair loss",
+     "GFC therapy for hair loss",
+     "Hairline restoration",
+     "Baldness treatment",
+     "Alopecia treatment",
+     "Cosmetic dermatology"
+    ],
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "1st floor, Scorpio House, Near Marathahalli Bridge, Munnekolala, Landmark Opposite Purvankara Apt, Marathahalli Bridge Service Road",
+     "addressLocality": "Bengaluru",
+     "addressRegion": "Karnataka",
+     "postalCode": "560037",
+     "addressCountry": "IN"
+    },
+    "geo": {
+     "@type": "GeoCoordinates",
+     "latitude": 12.956429486014592,
+     "longitude": 77.70733394232819
+    },
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+    "openingHoursSpecification": [
+     {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+     }
+    ],
+    "contactPoint": [
+     {
+      "@type": "ContactPoint",
+      "telephone": "+91-9731207940",
+      "contactType": "appointment booking",
+      "availableLanguage": [
+       "English",
+       "Hindi",
+       "Kannada"
+      ],
+      "areaServed": "IN"
+     },
+     {
+      "@type": "ContactPoint",
+      "url": "https://wa.me/919731207940",
+      "contactType": "WhatsApp appointment booking",
+      "availableLanguage": [
+       "English",
+       "Hindi",
+       "Kannada"
+      ],
+      "areaServed": "IN"
+     }
+    ],
+    "founder": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "employee": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "sameAs": [
+     "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+     "https://www.facebook.com/NeoFollicleHairTransplantClinic",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
+     "https://www.youtube.com/@neofollicletransplant",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
+     "https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu",
+     "https://www.justdial.com/Bangalore/Neo-Follicle"
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": [
+     "Person",
+     "Physician"
+    ],
+    "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician",
+    "name": "Dr. Sandeep Mahapatra",
+    "honorificPrefix": "Dr.",
+    "givenName": "Sandeep",
+    "familyName": "Mahapatra",
+    "url": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/",
+    "image": "https://neofollicletransplant.com/wp-content/uploads/2025/05/Dr-Sandeep-Mahapatra-Best-Dermatologist-in-Bangalore.jpg",
+    "priceRange": "₹₹₹",
+    "description": "Dr. Sandeep Mahapatra is a Senior Consultant Dermatologist, Cosmetic Expert and Hair Transplant Surgeon in Bangalore. He is the Founder of Neo Follicle Transplant Clinic in Marathahalli, Whitefield, and has over 20 years of experience in dermatology, cosmetic dermatology and advanced hair restoration procedures.",
+    "jobTitle": [
+     "Senior Consultant Dermatologist",
+     "Cosmetic Expert",
+     "Hair Transplant Surgeon",
+     "Founder, Neo Follicle Transplant Clinic"
+    ],
+    "medicalSpecialty": "Dermatology",
+    "knowsAbout": [
+     "Dermatology",
+     "Cosmetic dermatology",
+     "Hair transplant surgery",
+     "Hair restoration",
+     "Hair loss treatment",
+     "FUE hair transplant",
+     "FUT hair transplant",
+     "DHI hair transplant",
+     "Direct hair implantation",
+     "Beard restoration",
+     "Eyebrow restoration",
+     "Female hair transplant",
+     "Hairline restoration",
+     "PRP therapy for hair loss",
+     "Growth factor concentrate therapy",
+     "Stem cell therapy for hair loss",
+     "Low level laser hair therapy",
+     "Scalp micropigmentation",
+     "Alopecia treatment",
+     "Dermatosurgery",
+     "Aesthetic dermatology",
+     "Botox",
+     "Dermal fillers",
+     "Vitiligo surgery"
+    ],
+    "worksFor": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "workLocation": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "affiliation": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "telephone": "+91-9731207940",
+    "email": "info@neofollicletransplant.com",
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "1st floor, Scorpio House, Near Marathahalli Bridge, Munnekolala, Landmark Opposite Purvankara Apt, Marathahalli Bridge Service Road",
+     "addressLocality": "Bengaluru",
+     "addressRegion": "Karnataka",
+     "postalCode": "560037",
+     "addressCountry": "IN"
+    },
+    "hasCredential": [
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Medical Degree",
+      "name": "MBBS",
+      "recognizedBy": {
+       "@type": "CollegeOrUniversity",
+       "name": "MGM Medical College & Hospital, Jamshedpur"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Postgraduate Medical Degree",
+      "name": "MD Dermatology, Venereology & Leprosy",
+      "recognizedBy": {
+       "@type": "CollegeOrUniversity",
+       "name": "Rajendra Institute of Medical Sciences, Ranchi"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Certified DHI Specialist",
+      "recognizedBy": {
+       "@type": "Organization",
+       "name": "DHI Global, Greece"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Basic and Advanced Botox and Dermal Fillers Certification",
+      "recognizedBy": {
+       "@type": "Organization",
+       "name": "Allergan"
+      }
+     }
+    ],
+    "memberOf": [
+     {
+      "@type": "Organization",
+      "name": "Association of Cutaneous Surgeons of India",
+      "alternateName": "ACSI"
+     },
+     {
+      "@type": "Organization",
+      "name": "Indian Association of Hair Restoration Surgeons",
+      "alternateName": "IAHRS"
+     },
+     {
+      "@type": "Organization",
+      "name": "International Society of Dermatology",
+      "alternateName": "ISD"
+     },
+     {
+      "@type": "Organization",
+      "name": "Indian Association of Dermatologists, Venereologists and Leprologists",
+      "alternateName": "IADVL"
+     },
+     {
+      "@type": "Organization",
+      "name": "International Society of Hair Restoration Surgery",
+      "alternateName": "ISHRS"
+     }
+    ],
+    "award": [
+     "Gold Medalist in MD Dermatology, Venereology & Leprosy",
+     "Honors and Gold Medalist in two subjects during MBBS"
+    ],
+    "hasOccupation": {
+     "@type": "Occupation",
+     "name": "Dermatologist and Hair Transplant Surgeon",
+     "description": "Specializes in dermatology, cosmetic dermatology, hair transplantation, hair restoration, PRP therapy, beard restoration, eyebrow restoration and advanced aesthetic procedures.",
+     "occupationalCategory": "Dermatology"
+    },
+    "sameAs": [
+     "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/",
+     "https://www.practo.com/bangalore/doctor/dr-sandeep-mahapatra-dermatologist-cosmetologist",
+     "https://www.linkedin.com/in/dr-sandeep-mahapatra-315411112/",
+     "https://www.apollo247.com/doctors/dr-sandeep-mahapatra-4115d6e4-68c2-4cca-8548-66cf7e0bbce1",
+     "https://kivihealth.com/iam/sandeep.mahapatra.19945",
+     "https://www.justdial.com/Bangalore/Dr-Sandeep-Mahapatra-Neo-Follicle-Transplant-Clinic-Marathahalli-Below-Bridge-Munekollal/080PXX80-XX80-160108114909-B9U9_BZDET",
+     "https://www.docindia.org/doctors/bangalore/dr-sandeep-mahapatra-dermatology"
+    ]
+   },
+   {
+    "@type": "ContactPage",
+    "@id": "https://neofollicletransplant.com/contact-us/#contactpage",
+    "url": "https://neofollicletransplant.com/contact-us/",
+    "name": "Contact Neo Follicle Hair Transplant Clinic",
+    "description": "Contact Neo Follicle Hair Transplant Clinic in Bangalore to book an appointment for hair transplant, hair loss treatment, PRP therapy, beard transplant, eyebrow transplant, female hair transplant and other hair restoration treatments.",
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "about": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/#appointment-contact"
+    }
+   },
+   {
+    "@type": "ContactPoint",
+    "@id": "https://neofollicletransplant.com/#appointment-contact",
+    "name": "Neo Follicle Hair Transplant Clinic Appointment Booking",
+    "description": "Appointment booking contact point for Neo Follicle Hair Transplant Clinic in Bangalore. Patients can call or send a WhatsApp message to book appointments for hair transplant and hair restoration consultations.",
+    "telephone": "+91-9731207940",
+    "contactType": "appointment booking",
+    "url": "https://neofollicletransplant.com/contact-us/",
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "availableLanguage": [
+     "English",
+     "Hindi",
+     "Kannada"
+    ],
+    "hoursAvailable": [
+     {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+     }
+    ]
+   },
+   {
+    "@type": "ContactPoint",
+    "@id": "https://neofollicletransplant.com/#whatsapp-appointment-contact",
+    "name": "Neo Follicle Hair Transplant Clinic WhatsApp Appointment Booking",
+    "description": "WhatsApp appointment booking contact point for Neo Follicle Hair Transplant Clinic in Bangalore.",
+    "contactType": "WhatsApp appointment booking",
+    "url": "https://wa.me/919731207940",
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "availableLanguage": [
+     "English",
+     "Hindi",
+     "Kannada"
+    ],
+    "hoursAvailable": [
+     {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+     }
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://neofollicletransplant.com/#hair-transplant-service",
+    "name": "Hair Transplant Services in Bangalore",
+    "alternateName": [
+     "Hair Restoration Services in Bangalore",
+     "Hair Transplant Treatment in Bangalore",
+     "Hair Loss Treatment in Bangalore",
+     "Advanced Hair Transplant Services"
+    ],
+    "url": "https://neofollicletransplant.com/",
+    "description": "Neo Follicle Hair Transplant Clinic provides advanced hair transplant and hair restoration services in Bangalore under the guidance of Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers treatment options for male pattern baldness, female hair loss, hairline restoration, beard restoration, eyebrow restoration and non-surgical hair loss therapies.",
+    "serviceType": [
+     "Hair Transplant",
+     "Hair Restoration",
+     "Hair Loss Treatment",
+     "FUE Hair Transplant",
+     "FUT Hair Transplant",
+     "DHI Hair Transplant",
+     "Beard Transplant",
+     "Eyebrow Transplant",
+     "Female Hair Transplant",
+     "Hairline Restoration",
+     "PRP Therapy for Hair Loss",
+     "GFC Therapy for Hair Loss",
+     "Alopecia Treatment"
+    ],
+    "category": "Hair Transplant and Hair Restoration Services",
+    "additionalType": [
+     "https://schema.org/MedicalProcedure",
+     "https://schema.org/TherapeuticProcedure"
+    ],
+    "provider": {
+     "@type": [
+      "Organization",
+      "MedicalClinic",
+      "LocalBusiness"
+     ],
+     "@id": "https://neofollicletransplant.com/#clinic",
+     "name": "Neo Follicle Hair Transplant Clinic",
+     "url": "https://neofollicletransplant.com/",
+     "telephone": "+91-9731207940"
+    },
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "audience": [
+     {
+      "@type": "PeopleAudience",
+      "name": "Men experiencing hair loss or baldness"
+     },
+     {
+      "@type": "PeopleAudience",
+      "name": "Women experiencing hair thinning or hair loss"
+     },
+     {
+      "@type": "PeopleAudience",
+      "name": "Patients seeking beard, eyebrow or hairline restoration"
+     },
+     {
+      "@type": "PeopleAudience",
+      "name": "International patients seeking hair transplant in Bangalore"
+     }
+    ],
+    "availableChannel": [
+     {
+      "@type": "ServiceChannel",
+      "name": "Phone Appointment Booking",
+      "servicePhone": {
+       "@type": "ContactPoint",
+       "@id": "https://neofollicletransplant.com/#appointment-contact",
+       "telephone": "+91-9731207940",
+       "contactType": "appointment booking"
+      },
+      "serviceUrl": "https://neofollicletransplant.com/contact-us/"
+     },
+     {
+      "@type": "ServiceChannel",
+      "name": "WhatsApp Appointment Booking",
+      "serviceUrl": "https://wa.me/919731207940"
+     }
+    ],
+    "mainEntityOfPage": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "sameAs": [
+     "https://www.facebook.com/NeoFollicleHairTransplantClinic",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
+     "https://www.youtube.com/@neofollicletransplant",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
+     "https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu",
+     "https://www.justdial.com/Bangalore/Neo-Follicle"
+    ]
+   },
+   {
+    "@type": "Service",
+    "@id": "https://neofollicletransplant.com/body-hair-transplant/#service",
+    "name": "Body Hair Transplant in Bangalore",
+    "alternateName": [
+     "Body Hair Transplant",
+     "BHT Hair Transplant in Bangalore",
+     "Body to Scalp Hair Transplant",
+     "Beard to Scalp Hair Transplant",
+     "Chest Hair Transplant to Scalp",
+     "Body Hair Restoration in Bangalore"
+    ],
+    "description": "Body hair transplant is an advanced hair restoration service for patients who do not have enough scalp donor hair. Suitable hair follicles may be extracted from body areas such as the beard, chest, shoulders, or back using FUE and implanted into thinning or balding scalp areas to improve density, crown coverage, hairline refinement, or repair previous transplant results.",
+    "serviceType": "Body Hair Transplant",
+    "category": "Hair Transplant Services",
+    "provider": {
+     "@id": "https://neofollicletransplant.com/#medicalclinic"
+    },
+    "availableAtOrFrom": {
+     "@id": "https://neofollicletransplant.com/#medicalclinic"
+    },
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bangalore"
+     },
+     {
+      "@type": "Place",
+      "name": "Marathahalli"
+     },
+     {
+      "@type": "Place",
+      "name": "Whitefield"
+     },
+     {
+      "@type": "Place",
+      "name": "Bellandur"
+     },
+     {
+      "@type": "Place",
+      "name": "Brookefield"
+     },
+     {
+      "@type": "Place",
+      "name": "Mahadevapura"
+     },
+     {
+      "@type": "Place",
+      "name": "HSR Layout"
+     },
+     {
+      "@type": "Place",
+      "name": "Koramangala"
+     }
+    ],
+    "audience": {
+     "@type": "PeopleAudience",
+     "audienceType": "Patients with advanced baldness, limited scalp donor hair, poor scalp donor density, previous failed hair transplant results, crown baldness, or need for additional scalp density using beard, chest, or other body hair grafts"
+    },
+    "providerMobility": "static",
+    "offers": {
+     "@type": "Offer",
+     "@id": "https://neofollicletransplant.com/body-hair-transplant/#offer",
+     "name": "Body Hair Transplant Consultation and Treatment",
+     "description": "Personalized body hair transplant plan based on scalp donor availability, body donor hair quality, number of grafts required, donor area used, and overall complexity of the case.",
+     "priceCurrency": "INR",
+     "price": 90000,
+     "availability": "https://schema.org/InStock",
+     "url": "https://neofollicletransplant.com/body-hair-transplant/",
+     "seller": {
+      "@id": "https://neofollicletransplant.com/#medicalclinic"
+     }
+    },
+    "mainEntityOfPage": {
+     "@id": "https://neofollicletransplant.com/body-hair-transplant/#webpage"
+    },
+    "potentialAction": {
+     "@type": "ReserveAction",
+     "name": "Book an appointment for body hair transplant consultation",
+     "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://neofollicletransplant.com/contact/"
+     },
+     "result": {
+      "@type": "Reservation",
+      "name": "Body Hair Transplant Consultation Appointment"
+     }
+    }
+   },
+   {
+    "@type": "ItemList",
+    "@id": "https://neofollicletransplant.com/body-hair-transplant/#ideal-candidates",
+    "name": "Who Needs a Body Hair Transplant",
+    "description": "Common patient situations where body hair transplant may be considered at Neo Follicle Transplant Clinic.",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Advanced Baldness",
+      "description": "Men with advanced baldness, such as Norwood grade 5 to 7, may need additional donor hair beyond the scalp."
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Limited Scalp Donor Hair",
+      "description": "Patients with poor scalp donor density may benefit from suitable beard, chest, or other body hair grafts."
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Previous Hair Transplant with Limited Results",
+      "description": "Body hair transplant may be useful for patients who need additional correction or density after an earlier transplant."
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Crown Coverage",
+      "description": "Body hair can help improve coverage in the crown and mid-scalp areas when scalp donor supply is limited."
+     },
+     {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Hairline Refinement or Density Enhancement",
+      "description": "Selected body hair grafts may be used as part of a customized plan to improve density and overall scalp coverage."
+     }
+    ]
+   },
+   {
+    "@type": "ItemList",
+    "@id": "https://neofollicletransplant.com/body-hair-transplant/#procedure-process",
+    "name": "Body Hair Transplant Process",
+    "description": "Step-by-step body hair transplant process at Neo Follicle Transplant Clinic in Bangalore.",
+    "itemListElement": [
+     {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Consultation and Hair Mapping",
+      "text": "The scalp and body donor areas are assessed to determine whether beard, chest, shoulders, back, or other donor zones are suitable for graft extraction."
+     },
+     {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "FUE Graft Extraction",
+      "text": "Healthy follicles are extracted from suitable body donor areas using FUE with tiny punch tools."
+     },
+     {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Implantation into the Scalp",
+      "text": "Extracted grafts are implanted into balding scalp areas with attention to direction, density, angle, and natural blending with existing scalp hair."
+     },
+     {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Recovery and Regrowth",
+      "text": "Mild redness usually settles within a few days. New growth commonly starts around 3 to 4 months and continues improving over 6 to 12 months."
+     }
+    ]
+   },
+   {
+    "@type": "ItemList",
+    "@id": "https://neofollicletransplant.com/body-hair-transplant/#benefits",
+    "name": "Benefits of Body Hair Transplant",
+    "description": "Key benefits of body hair transplant for suitable patients with limited scalp donor hair.",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Expands Donor Hair Supply",
+      "description": "Body hair transplant allows suitable patients to use donor hair beyond the scalp."
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Helpful for High-Grade Baldness",
+      "description": "It may help patients with advanced baldness where scalp donor hair alone is insufficient."
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Useful for Crown and Density Enhancement",
+      "description": "Body hair grafts can help improve scalp coverage, especially in the crown and mid-scalp areas."
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Supports Repair Cases",
+      "description": "It may be useful in selected cases of previous failed hair transplant or limited earlier results."
+     },
+     {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Minimal Scarring with FUE",
+      "description": "The technique uses FUE extraction, which is designed to reduce visible scarring in the donor area."
+     }
+    ]
+   }
+  ]
+ }
+]
