@@ -28,11 +28,11 @@ export default function Home() {
       <Services />
       <WhyNeoFollicle />
       <Process />
-      <TreatmentGallery />
       <Testimonials />
+      <TreatmentGallery />
       <CommonQuestions />
-      <Insights />
       <ContactUs />
+      <Insights />
 
       {/*
         Still to build from content/home-page/Neo-Follicle-Website-Content.md:
