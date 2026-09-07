@@ -1,0 +1,68 @@
+[
+  {
+    "index": 1,
+    "id": "1b6c90a",
+    "name": "404",
+    "heading": "404",
+    "classes": "elementor-element elementor-element-1b6c90a e-con-full e-flex e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "button",
+      "heading",
+      "text-editor"
+    ],
+    "widgetCount": 4,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-51 .elementor-element.elementor-element-1b6c90a",
+        "declarations": "--display:flex;--min-height:100vh;--flex-direction:column;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:center;--align-items:center;--padding-top:1.25rem;--padding-bottom:1.25rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-51 .elementor-element.elementor-element-1b6c90a",
+        "declarations": "--width:1920px;"
+      },
+      {
+        "selector": ".elementor-51 .elementor-element.elementor-element-1b6c90a",
+        "declarations": "--padding-top:1rem;--padding-bottom:1rem;--padding-left:1rem;--padding-right:1rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "heading",
+        "id": "0de0e1c",
+        "text": "404",
+        "settings": {
+          "_animation": "fadeInUp"
+        }
+      },
+      {
+        "type": "heading",
+        "id": "b703fc5",
+        "text": "Oops! Page Not Found",
+        "settings": {
+          "_animation": "fadeInUp",
+          "_animation_delay": 200
+        }
+      },
+      {
+        "type": "text-editor",
+        "id": "95c3c74",
+        "text": "We can\u2019t seem to locate the page you\u2019re searching for. It might have been removed, renamed, or is temporarily unavailable.",
+        "settings": {
+          "_animation": "fadeInUp",
+          "_animation_delay": 300
+        }
+      },
+      {
+        "type": "button",
+        "id": "490bb4d",
+        "text": "Back To Home",
+        "settings": {
+          "_animation": "fadeInUp",
+          "_animation_delay": 400
+        }
+      }
+    ],
+    "screenshot": "sections/01-404.png"
+  }
+]

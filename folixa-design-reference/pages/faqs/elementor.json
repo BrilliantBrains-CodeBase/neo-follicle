@@ -1,0 +1,144 @@
+{
+  "slug": "faqs",
+  "wpId": 29,
+  "cssFile": "post-29.css",
+  "tree": [
+    {
+      "index": 1,
+      "id": "37ab2c6",
+      "name": "section-1",
+      "widgets": [
+        "image",
+        "ekit-nav-menu",
+        "button"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "6cd84bf",
+      "name": "faqs",
+      "widgets": [
+        "text-editor",
+        "heading"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "1195cd4",
+      "name": "frequently-asked-questions",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "text-editor",
+        "icon",
+        "heading",
+        "icon",
+        "heading",
+        "nested-accordion",
+        "text-editor",
+        "text-editor",
+        "text-editor",
+        "text-editor"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "9549e27",
+      "name": "treatment-process",
+      "widgets": [
+        "nested-accordion",
+        "text-editor",
+        "text-editor",
+        "text-editor",
+        "text-editor",
+        "heading",
+        "text-editor"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "985a7a9",
+      "name": "recovery-aftercare",
+      "widgets": [
+        "heading",
+        "text-editor",
+        "nested-accordion",
+        "text-editor",
+        "text-editor",
+        "text-editor",
+        "text-editor"
+      ]
+    },
+    {
+      "index": 6,
+      "id": "c834ffc",
+      "name": "results-long-term-care",
+      "widgets": [
+        "nested-accordion",
+        "text-editor",
+        "text-editor",
+        "text-editor",
+        "text-editor",
+        "heading",
+        "text-editor"
+      ]
+    },
+    {
+      "index": 7,
+      "id": "2ac0dd7",
+      "name": "need-to-know-more-about-to",
+      "widgets": [
+        "heading",
+        "text-editor",
+        "button"
+      ]
+    },
+    {
+      "index": 8,
+      "id": "8acb047",
+      "name": "section-8",
+      "widgets": [
+        "image",
+        "text-editor",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "text-editor",
+        "text-editor",
+        "metform",
+        "mf-email",
+        "mf-button",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading"
+      ]
+    },
+    {
+      "index": 9,
+      "id": "714913f",
+      "name": "section-9",
+      "widgets": [
+        "mf-email",
+        "mf-button"
+      ]
+    }
+  ]
+}

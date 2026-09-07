@@ -1,0 +1,146 @@
+{
+  "slug": "treatments-details",
+  "wpId": 25,
+  "cssFile": "post-25.css",
+  "tree": [
+    {
+      "index": 1,
+      "id": "37ab2c6",
+      "name": "section-1",
+      "widgets": [
+        "image",
+        "ekit-nav-menu",
+        "button"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "1972df6",
+      "name": "fue-hair-transplant",
+      "widgets": [
+        "text-editor",
+        "heading"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "0b1a014",
+      "name": "fue-hair-transplant",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "text-editor",
+        "button",
+        "image",
+        "icon",
+        "counter"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "5f6a7c8",
+      "name": "precision-meets-artistry",
+      "widgets": [
+        "heading",
+        "text-editor",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "8dca7c5",
+      "name": "the-fue-journey",
+      "widgets": [
+        "heading",
+        "text-editor",
+        "icon-box",
+        "icon-box",
+        "icon-box"
+      ]
+    },
+    {
+      "index": 6,
+      "id": "623ca65",
+      "name": "key-advantages",
+      "widgets": [
+        "heading",
+        "icon-list",
+        "icon-list",
+        "icon-list",
+        "icon-list",
+        "heading",
+        "icon-box",
+        "icon-box",
+        "icon-box"
+      ]
+    },
+    {
+      "index": 7,
+      "id": "63829f9",
+      "name": "fue-transplant",
+      "widgets": [
+        "jkit_portfolio_gallery"
+      ]
+    },
+    {
+      "index": 8,
+      "id": "8af554c",
+      "name": "start-your-hair-restoration-journey-today",
+      "widgets": [
+        "heading",
+        "text-editor",
+        "button"
+      ]
+    },
+    {
+      "index": 9,
+      "id": "8acb047",
+      "name": "section-9",
+      "widgets": [
+        "image",
+        "text-editor",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "text-editor",
+        "text-editor",
+        "metform",
+        "mf-email",
+        "mf-button",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading"
+      ]
+    },
+    {
+      "index": 10,
+      "id": "714913f",
+      "name": "section-10",
+      "widgets": [
+        "mf-email",
+        "mf-button"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "slug": "about",
+  "wpId": 21,
+  "cssFile": "post-21.css",
+  "tree": [
+    {
+      "index": 1,
+      "id": "37ab2c6",
+      "name": "section-1",
+      "widgets": [
+        "image",
+        "ekit-nav-menu",
+        "button"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "fafcbdd",
+      "name": "about",
+      "widgets": [
+        "text-editor",
+        "heading"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "e4912c8",
+      "name": "trusted-hair-restoration-with-medical-precision",
+      "widgets": [
+        "heading",
+        "text-editor",
+        "button",
+        "image",
+        "icon-list",
+        "icon-list",
+        "icon-list",
+        "icon-list"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "20f7802",
+      "name": "section-4",
+      "widgets": [
+        "jkit_video_button",
+        "image"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "0f28367",
+      "name": "internationally-accredited",
+      "widgets": [
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box"
+      ]
+    },
+    {
+      "index": 6,
+      "id": "00e3c2e",
+      "name": "a-clinic-built-on-results-trust",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "heading",
+        "text-editor",
+        "image",
+        "image",
+        "heading",
+        "text-editor",
+        "heading",
+        "text-editor",
+        "image",
+        "icon-box",
+        "icon-box",
+        "video"
+      ]
+    },
+    {
+      "index": 7,
+      "id": "3e10463",
+      "name": "section-7",
+      "widgets": [
+        "counter",
+        "counter",
+        "counter",
+        "counter"
+      ]
+    },
+    {
+      "index": 8,
+      "id": "17ea706",
+      "name": "meet-our-specialists",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "image",
+        "social-icons",
+        "heading",
+        "heading",
+        "image",
+        "social-icons",
+        "heading",
+        "heading",
+        "image",
+        "social-icons",
+        "heading",
+        "heading"
+      ]
+    },
+    {
+      "index": 9,
+      "id": "13b042c",
+      "name": "start-your-hair-restoration-journey-today",
+      "widgets": [
+        "heading",
+        "text-editor",
+        "button"
+      ]
+    },
+    {
+      "index": 10,
+      "id": "8acb047",
+      "name": "section-10",
+      "widgets": [
+        "image",
+        "text-editor",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "text-editor",
+        "text-editor",
+        "metform",
+        "mf-email",
+        "mf-button",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading"
+      ]
+    },
+    {
+      "index": 11,
+      "id": "714913f",
+      "name": "section-11",
+      "widgets": [
+        "mf-email",
+        "mf-button"
+      ]
+    }
+  ]
+}

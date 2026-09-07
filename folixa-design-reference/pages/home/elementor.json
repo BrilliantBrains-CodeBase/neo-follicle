@@ -1,0 +1,222 @@
+{
+  "slug": "home",
+  "wpId": 7,
+  "cssFile": "post-7.css",
+  "tree": [
+    {
+      "index": 1,
+      "id": "37ab2c6",
+      "name": "section-1",
+      "widgets": [
+        "image",
+        "ekit-nav-menu",
+        "button"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "1dd62f8",
+      "name": "natural-hair-restoration-that-looks-real",
+      "widgets": [
+        "icon-list",
+        "jkit_heading",
+        "text-editor",
+        "button",
+        "button",
+        "divider",
+        "image",
+        "image",
+        "image",
+        "counter",
+        "video",
+        "heading",
+        "text-editor"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "4f487a0",
+      "name": "from-advanced-hair-restoration-procedures-to",
+      "widgets": [
+        "icon-list",
+        "jkit_heading",
+        "icon-box",
+        "counter",
+        "text-editor",
+        "counter",
+        "text-editor",
+        "text-editor",
+        "button"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "b1e2ddb",
+      "name": "hair-restoration-treatments",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "text-editor",
+        "button",
+        "icon-box",
+        "icon-box",
+        "icon-box"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "8db5313",
+      "name": "a-clinic-built-on-results-trust",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "heading",
+        "text-editor",
+        "image",
+        "image",
+        "heading",
+        "text-editor",
+        "heading",
+        "text-editor",
+        "image"
+      ]
+    },
+    {
+      "index": 6,
+      "id": "09ebf3b",
+      "name": "treatment-process",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "text-editor",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box"
+      ]
+    },
+    {
+      "index": 7,
+      "id": "d162ca4",
+      "name": "tailored-hair-regrowth-solutions",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "jkit_testimonials"
+      ]
+    },
+    {
+      "index": 8,
+      "id": "c5e604c",
+      "name": "real-results-from-hair-restoration-treatments",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "jkit_portfolio_gallery"
+      ]
+    },
+    {
+      "index": 9,
+      "id": "7b43881",
+      "name": "section-9",
+      "widgets": [
+        "divider"
+      ]
+    },
+    {
+      "index": 10,
+      "id": "ba93984",
+      "name": "answers-about-hair",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "text-editor",
+        "nested-accordion",
+        "heading",
+        "text-editor",
+        "divider",
+        "icon-list",
+        "heading",
+        "text-editor",
+        "divider",
+        "icon-list",
+        "heading",
+        "text-editor",
+        "divider",
+        "icon-list",
+        "heading",
+        "text-editor",
+        "divider",
+        "icon-list"
+      ]
+    },
+    {
+      "index": 11,
+      "id": "38d9092",
+      "name": "start-your-hair-restoration-journey-today",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "text-editor",
+        "button"
+      ]
+    },
+    {
+      "index": 12,
+      "id": "11d2a7a",
+      "name": "helpful-guides-for-hair-transplant-patients",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "jkit_post_block"
+      ]
+    },
+    {
+      "index": 13,
+      "id": "8acb047",
+      "name": "section-13",
+      "widgets": [
+        "image",
+        "text-editor",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "text-editor",
+        "text-editor",
+        "metform",
+        "mf-email",
+        "mf-button",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading"
+      ]
+    },
+    {
+      "index": 14,
+      "id": "714913f",
+      "name": "section-14",
+      "widgets": [
+        "mf-email",
+        "mf-button"
+      ]
+    }
+  ]
+}

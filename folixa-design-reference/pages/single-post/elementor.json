@@ -1,0 +1,123 @@
+{
+  "slug": "single-post",
+  "wpId": 33,
+  "cssFile": "post-33.css",
+  "tree": [
+    {
+      "index": 1,
+      "id": "37ab2c6",
+      "name": "section-1",
+      "widgets": [
+        "image",
+        "ekit-nav-menu",
+        "button"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "d8762f5",
+      "name": "common-mistakes-to-avoid-after-hair",
+      "widgets": [
+        "text-editor",
+        "heading"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "8d6a027",
+      "name": "sam-altman",
+      "widgets": [
+        "image",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "text-editor",
+        "heading",
+        "text-editor",
+        "text-editor",
+        "text-editor",
+        "heading",
+        "text-editor",
+        "text-editor",
+        "heading",
+        "icon-list",
+        "image",
+        "heading",
+        "text-editor",
+        "text-editor",
+        "heading",
+        "text-editor",
+        "button",
+        "heading",
+        "text-editor",
+        "text-editor",
+        "jkit_social_share",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "jkit_post_list",
+        "heading",
+        "text-editor",
+        "button"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "8acb047",
+      "name": "section-4",
+      "widgets": [
+        "image",
+        "text-editor",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "text-editor",
+        "text-editor",
+        "metform",
+        "mf-email",
+        "mf-button",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "714913f",
+      "name": "section-5",
+      "widgets": [
+        "mf-email",
+        "mf-button"
+      ]
+    }
+  ]
+}

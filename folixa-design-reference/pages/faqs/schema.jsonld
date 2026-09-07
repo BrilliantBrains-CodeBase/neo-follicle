@@ -1,0 +1,40 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is hair transplant permanent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the procedure painful?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does recovery take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When will I see new hair growth?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+        }
+      }
+    ]
+  }
+]

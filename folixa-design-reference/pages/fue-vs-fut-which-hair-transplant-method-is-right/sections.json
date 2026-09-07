@@ -1,0 +1,571 @@
+[
+  {
+    "index": 1,
+    "id": "37ab2c6",
+    "name": "section-1",
+    "heading": null,
+    "classes": "elementor-element elementor-element-37ab2c6 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "button",
+      "ekit-nav-menu",
+      "image"
+    ],
+    "widgetCount": 3,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1741 .elementor-element.elementor-element-37ab2c6",
+        "declarations": "--display:flex;--min-height:91px;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--justify-content:space-between;--align-items:center;border-style:solid;--border-style:solid;border-width:0px 0px 1px 0px;--border-top-width:0px;--border-right-width:0px;--border-bottom-width:1px;--border-left-width:0px;border-color:#FFFFFF33;--border-color:#FFFFFF33;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:1.25rem;--padding-bottom:1.25rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1741 .elementor-element.elementor-element-37ab2c6:not(.elementor-motion-effects-element-type-background), .elementor-1741 .elementor-element.elementor-element-37ab2c6 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "89e297a"
+      },
+      {
+        "type": "ekit-nav-menu",
+        "id": "a200ca3",
+        "text": "Home About Treatments Treatments Treatments details Blog Blog Single Post Pages Appointment Faqs Testimonials Contact 404 Error X"
+      },
+      {
+        "type": "button",
+        "id": "a4bb91e",
+        "text": "Contact Us"
+      }
+    ],
+    "screenshot": "sections/01-section-1.png"
+  },
+  {
+    "index": 2,
+    "id": "186e35f3",
+    "name": "fue-vs-fut-which-hair-transplant",
+    "heading": "FUE vs FUT: Which Hair Transplant Method Is Right?",
+    "classes": "elementor-element elementor-element-186e35f3 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "text-editor"
+    ],
+    "widgetCount": 2,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-337 .elementor-element.elementor-element-186e35f3",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--padding-top:0px;--padding-bottom:0px;--padding-left:40px;--padding-right:40px;"
+      },
+      {
+        "selector": ".elementor-337 .elementor-element.elementor-element-186e35f3",
+        "declarations": "--padding-top:0px;--padding-bottom:0px;--padding-left:20px;--padding-right:20px;"
+      },
+      {
+        "selector": ".elementor-337 .elementor-element.elementor-element-186e35f3",
+        "declarations": "--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;"
+      },
+      {
+        "selector": ".elementor-337 .elementor-element.elementor-element-186e35f3",
+        "declarations": "--content-width:1920px;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "text-editor",
+        "id": "7fe1d747",
+        "text": "Home // FUE vs FUT: Which Hair Transplant Method Is Right?"
+      },
+      {
+        "type": "heading",
+        "id": "2d4d2efe",
+        "text": "FUE vs FUT: Which Hair Transplant Method Is Right?"
+      }
+    ],
+    "screenshot": "sections/02-fue-vs-fut-which-hair-transplant.png"
+  },
+  {
+    "index": 3,
+    "id": "13c89e87",
+    "name": "sam-altman",
+    "heading": "Sam Altman",
+    "classes": "elementor-element elementor-element-13c89e87 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "button",
+      "heading",
+      "icon-list",
+      "image",
+      "jkit_post_list",
+      "jkit_social_share",
+      "text-editor"
+    ],
+    "widgetCount": 43,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-337 .elementor-element.elementor-element-13c89e87",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-337 .elementor-element.elementor-element-13c89e87:not(.elementor-motion-effects-element-type-background), .elementor-337 .elementor-element.elementor-element-13c89e87 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-337 .elementor-element.elementor-element-13c89e87",
+        "declarations": "--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:4rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-337 .elementor-element.elementor-element-13c89e87",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:3rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "2d85520",
+        "settings": {
+          "_animation": "fadeInUp"
+        }
+      },
+      {
+        "type": "heading",
+        "id": "b6172cd",
+        "text": "Written by"
+      },
+      {
+        "type": "heading",
+        "id": "3c90af4e",
+        "text": "Sam Altman"
+      },
+      {
+        "type": "heading",
+        "id": "580b6970",
+        "text": "Category"
+      },
+      {
+        "type": "heading",
+        "id": "55da8103",
+        "text": "Marketing"
+      },
+      {
+        "type": "heading",
+        "id": "79ddf238",
+        "text": "Published"
+      },
+      {
+        "type": "heading",
+        "id": "449bcfaa",
+        "text": "28 February 2026"
+      },
+      {
+        "type": "heading",
+        "id": "74898e0c",
+        "text": "Time to Read"
+      },
+      {
+        "type": "heading",
+        "id": "1f7af18f",
+        "text": "5 minutes"
+      },
+      {
+        "type": "text-editor",
+        "id": "297b9589",
+        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\u2019s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.",
+        "settings": {
+          "_animation": "fadeInUp",
+          "_animation_delay": 200
+        }
+      },
+      {
+        "type": "heading",
+        "id": "3e1c491f",
+        "text": "The standard Lorem Ipsum passage, used since the 1500s"
+      },
+      {
+        "type": "text-editor",
+        "id": "21f68d0d",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+      },
+      {
+        "type": "text-editor",
+        "id": "5c522467",
+        "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum anim id est laborum.."
+      },
+      {
+        "type": "text-editor",
+        "id": "3537f4a4",
+        "text": "\u201cThe greatest discovery of my generation is that human beings can alter their lives by altering their attitudes of mind. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClint"
+      },
+      {
+        "type": "heading",
+        "id": "652e86a8",
+        "text": "1914 translation by H. Rackham"
+      },
+      {
+        "type": "text-editor",
+        "id": "7358a2d2",
+        "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born."
+      },
+      {
+        "type": "text-editor",
+        "id": "4aac8977",
+        "text": "I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself."
+      },
+      {
+        "type": "heading",
+        "id": "7b12a10e",
+        "text": "Why We Need it?"
+      },
+      {
+        "type": "icon-list",
+        "id": "63c33fb9",
+        "text": "Those who do not know how to pleasure rationally encounter consequences that. Encounter consequences that are extremely painful. Nor again is there anyone One who avoids a pain that produces no resultant pleasure?"
+      },
+      {
+        "type": "image",
+        "id": "8ad0671"
+      },
+      {
+        "type": "heading",
+        "id": "7d090a5d",
+        "text": "Where does it come from?"
+      },
+      {
+        "type": "text-editor",
+        "id": "bf68318",
+        "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney."
+      },
+      {
+        "type": "text-editor",
+        "id": "6b363d44",
+        "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature."
+      },
+      {
+        "type": "heading",
+        "id": "1a5fec89",
+        "text": "Start Your Hair Restoration Journey"
+      },
+      {
+        "type": "text-editor",
+        "id": "2e59b4ce",
+        "text": "Learn how to use AI in 2026 to plan content, improve SEO, and sharpen brand messaging\u2014using prompt workflows built for small teams."
+      },
+      {
+        "type": "button",
+        "id": "7b6270ed",
+        "text": "Explore Treatments"
+      },
+      {
+        "type": "heading",
+        "id": "233a6d5b",
+        "text": "Why do we use it?"
+      },
+      {
+        "type": "text-editor",
+        "id": "287e8518",
+        "text": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \u2018Content here, content here\u2019, making it look like readable Eng"
+      },
+      {
+        "type": "text-editor",
+        "id": "7f5931b8",
+        "text": "Share this article :"
+      },
+      {
+        "type": "jkit_social_share",
+        "id": "326ee157"
+      },
+      {
+        "type": "heading",
+        "id": "10b523cf",
+        "text": "Written by"
+      },
+      {
+        "type": "heading",
+        "id": "3c5e3efd",
+        "text": "Sam Altman"
+      },
+      {
+        "type": "heading",
+        "id": "23c7fc8b",
+        "text": "Category"
+      },
+      {
+        "type": "heading",
+        "id": "321f1813",
+        "text": "Tips & Tricks"
+      },
+      {
+        "type": "heading",
+        "id": "4509a360",
+        "text": "Published"
+      },
+      {
+        "type": "heading",
+        "id": "6c10d71f",
+        "text": "28 May 2026"
+      },
+      {
+        "type": "heading",
+        "id": "660f2610",
+        "text": "Time to Read"
+      },
+      {
+        "type": "heading",
+        "id": "1f974f64",
+        "text": "5 minutes"
+      },
+      {
+        "type": "heading",
+        "id": "31d0e9e2",
+        "text": "Recent Posts"
+      },
+      {
+        "type": "jkit_post_list",
+        "id": "10a2acf6",
+        "text": "Common Mistakes to Avoid After Hair Transplant Surgery PRP Therapy for Hair Loss: Benefits and Results Is Hair Transplant Permanent? Facts You Should Know Hair Transplant Recovery Timeline: Week by Week"
+      },
+      {
+        "type": "heading",
+        "id": "55d5b2c4",
+        "text": "Ready to Restore Your Hair Growth?"
+      },
+      {
+        "type": "text-editor",
+        "id": "56caf6a2",
+        "text": "Book a consultation with our team today to know about us."
+      },
+      {
+        "type": "button",
+        "id": "5ec3466a",
+        "text": "Book Consultation"
+      }
+    ],
+    "screenshot": "sections/03-sam-altman.png"
+  },
+  {
+    "index": 4,
+    "id": "8acb047",
+    "name": "section-4",
+    "heading": null,
+    "classes": "elementor-element elementor-element-8acb047 e-con-full e-flex e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "divider",
+      "heading",
+      "icon-box",
+      "image",
+      "metform",
+      "mf-button",
+      "mf-email",
+      "text-editor"
+    ],
+    "widgetCount": 31,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:center;--align-items:center;--overflow:hidden;--overlay-opacity:0.5;--border-radius:0px 0px 0px 0px;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0rem;--padding-bottom:0rem;--padding-left:0rem;--padding-right:0rem;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-background-video-container::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .e-con-inner > .elementor-background-video-container::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-background-slideshow::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .e-con-inner > .elementor-background-slideshow::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-motion-effects-container > .elementor-motion-effects-layer::before",
+        "declarations": "--background-overlay:'';"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047.e-con",
+        "declarations": "--flex-grow:0;--flex-shrink:0;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--width:100%;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--width:100%;--padding-top:0rem;--padding-bottom:0rem;--padding-left:0rem;--padding-right:0rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "1c4e4b3"
+      },
+      {
+        "type": "text-editor",
+        "id": "31680c5",
+        "text": "Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care."
+      },
+      {
+        "type": "icon-box",
+        "id": "dff0d5a",
+        "text": "(+1) 234 567 8900"
+      },
+      {
+        "type": "icon-box",
+        "id": "f170f72",
+        "text": "hello@folixa.com"
+      },
+      {
+        "type": "divider",
+        "id": "1e21762"
+      },
+      {
+        "type": "text-editor",
+        "id": "264593b",
+        "text": "Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care."
+      },
+      {
+        "type": "text-editor",
+        "id": "2e453d0",
+        "text": "Stay Updated With Hair Care Insights"
+      },
+      {
+        "type": "metform",
+        "id": "e79efcf",
+        "text": "Subscribe"
+      },
+      {
+        "type": "mf-email",
+        "id": "d5ded39"
+      },
+      {
+        "type": "mf-button",
+        "id": "f783163",
+        "text": "Subscribe"
+      },
+      {
+        "type": "heading",
+        "id": "be17d76",
+        "text": "Services"
+      },
+      {
+        "type": "heading",
+        "id": "5bc63c0",
+        "text": "FUE Hair Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "fab1927",
+        "text": "FUT Hair Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "d024a7a",
+        "text": "Beard Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "af9f5c4",
+        "text": "PRP Hair Therapy"
+      },
+      {
+        "type": "heading",
+        "id": "b409ac3",
+        "text": "Pages"
+      },
+      {
+        "type": "heading",
+        "id": "a06e305",
+        "text": "Home"
+      },
+      {
+        "type": "heading",
+        "id": "effc53c",
+        "text": "About"
+      },
+      {
+        "type": "heading",
+        "id": "25b50bd",
+        "text": "Treatments"
+      },
+      {
+        "type": "heading",
+        "id": "0a32df9",
+        "text": "Contact"
+      },
+      {
+        "type": "heading",
+        "id": "bd49757",
+        "text": "Visit Time"
+      },
+      {
+        "type": "icon-box",
+        "id": "d5f6a4c",
+        "text": "Facebook"
+      },
+      {
+        "type": "icon-box",
+        "id": "6cb46f6",
+        "text": "Instagram"
+      },
+      {
+        "type": "icon-box",
+        "id": "475ee2d",
+        "text": "LinkedIn"
+      },
+      {
+        "type": "icon-box",
+        "id": "3743bb4",
+        "text": "X (Twitter)"
+      },
+      {
+        "type": "divider",
+        "id": "81a39b3"
+      },
+      {
+        "type": "heading",
+        "id": "4f615e8",
+        "text": "Copyright \u00a92026 Eldewell | Powered by Raddito."
+      },
+      {
+        "type": "heading",
+        "id": "5ddc32b",
+        "text": "Privacy Policy"
+      },
+      {
+        "type": "heading",
+        "id": "2e8706f",
+        "text": "Terms & Conditions"
+      },
+      {
+        "type": "heading",
+        "id": "f29e44f",
+        "text": "Sitemap"
+      },
+      {
+        "type": "heading",
+        "id": "635a80c",
+        "text": "Cookies"
+      }
+    ],
+    "screenshot": "sections/04-section-4.png"
+  },
+  {
+    "index": 5,
+    "id": "714913f",
+    "name": "section-5",
+    "heading": null,
+    "classes": "elementor-element elementor-element-714913f e-con-full e-flex e-con e-parent",
+    "widgetTypes": [
+      "mf-button",
+      "mf-email"
+    ],
+    "widgetCount": 2,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-551 .elementor-element.elementor-element-714913f",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:14px 14px;--row-gap:14px;--column-gap:14px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "mf-email",
+        "id": "d5ded39"
+      },
+      {
+        "type": "mf-button",
+        "id": "f783163",
+        "text": "Subscribe"
+      }
+    ],
+    "screenshot": "sections/05-section-5.png"
+  }
+]

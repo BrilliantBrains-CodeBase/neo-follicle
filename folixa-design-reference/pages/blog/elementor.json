@@ -1,0 +1,93 @@
+{
+  "slug": "blog",
+  "wpId": 31,
+  "cssFile": "post-31.css",
+  "tree": [
+    {
+      "index": 1,
+      "id": "37ab2c6",
+      "name": "section-1",
+      "widgets": [
+        "image",
+        "ekit-nav-menu",
+        "button"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "2a4a685",
+      "name": "blog-archive",
+      "widgets": [
+        "text-editor",
+        "heading"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "194b361",
+      "name": "helpful-guides-for-hair-transplant-patients",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "jkit_post_block"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "b0fa067",
+      "name": "start-your-hair-restoration-journey-today",
+      "widgets": [
+        "heading",
+        "text-editor",
+        "button"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "8acb047",
+      "name": "section-5",
+      "widgets": [
+        "image",
+        "text-editor",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "text-editor",
+        "text-editor",
+        "metform",
+        "mf-email",
+        "mf-button",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading"
+      ]
+    },
+    {
+      "index": 6,
+      "id": "714913f",
+      "name": "section-6",
+      "widgets": [
+        "mf-email",
+        "mf-button"
+      ]
+    }
+  ]
+}

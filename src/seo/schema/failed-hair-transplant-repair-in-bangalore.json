@@ -1,0 +1,751 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebSite",
+    "@id": "https://neofollicletransplant.com/#website",
+    "url": "https://neofollicletransplant.com/",
+    "name": "Neo Follicle Hair Transplant Clinic",
+    "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
+    "inLanguage": "en-IN",
+    "potentialAction": {
+     "@id": "https://neofollicletransplant.com/#searchaction"
+    },
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "@context": "https://schema.org",
+    "alternateName": [
+     "Neo Follicle Transplant Clinic",
+     "Neo Follicle Hair Transplant",
+     "Neo Follicle Transplant"
+    ],
+    "about": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "creator": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    }
+   },
+   {
+    "@type": "SearchAction",
+    "@id": "https://neofollicletransplant.com/#searchaction",
+    "target": "https://neofollicletransplant.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "name": "Breadcrumbs",
+    "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#breadcrumblist",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://neofollicletransplant.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Failed Hair Transplant Repair in Bangalore"
+     }
+    ]
+   },
+   {
+    "@type": "WebPage",
+    "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#webpage",
+    "url": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/",
+    "inLanguage": "en-IN",
+    "name": "Failed Hair Transplant Repair in Bangalore",
+    "description": "Failed hair transplant repair in Bangalore at Neo Follicle Transplant Clinic helps correct unnatural hairlines, poor density, patchy graft placement, visible scarring, wrong hair direction, and poor growth after a previous hair transplant.",
+    "datePublished": "2025-04-09T11:18:15+05:30",
+    "dateModified": "2026-05-26T16:30:16+05:30",
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "breadcrumb": {
+     "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#breadcrumblist"
+    },
+    "potentialAction": {
+     "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#readaction"
+    },
+    "headline": "Failed Hair Transplant Repair in Bangalore",
+    "about": {
+     "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#service"
+    },
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#service"
+    },
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#medicalclinic"
+    }
+   },
+   {
+    "@type": "ReadAction",
+    "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#readaction",
+    "target": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://neofollicletransplant.com/#organization",
+    "url": "https://neofollicletransplant.com/",
+    "name": "Neo Follicle Hair Transplant"
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": [
+     "MedicalClinic",
+     "LocalBusiness"
+    ],
+    "@id": "https://neofollicletransplant.com/#clinic",
+    "name": "Neo Follicle Hair Transplant Clinic",
+    "alternateName": [
+     "Neo Follicle Transplant Clinic",
+     "Neo Follicle Hair Transplant",
+     "Neo Follicle Transplant",
+     "Neo Follicle"
+    ],
+    "url": "https://neofollicletransplant.com/",
+    "logo": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-LOGO-WITH-BG-02.png",
+    "image": "https://neofollicletransplant.com/wp-content/uploads/2025/04/NFT-Clinic-Reception.jpeg",
+    "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
+    "telephone": "+91-9731207940",
+    "email": "info@neofollicletransplant.com",
+    "priceRange": "₹₹₹",
+    "medicalSpecialty": "Dermatology",
+    "knowsAbout": [
+     "Hair transplant surgery",
+     "Hair restoration",
+     "Hair loss treatment",
+     "FUE hair transplant",
+     "FUT hair transplant",
+     "Bio FUE hair transplant",
+     "Beard transplant",
+     "Eyebrow transplant",
+     "Female hair transplant",
+     "PRP therapy for hair loss",
+     "GFC therapy for hair loss",
+     "Hairline restoration",
+     "Baldness treatment",
+     "Alopecia treatment",
+     "Cosmetic dermatology"
+    ],
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "1st floor, Scorpio House, Near Marathahalli Bridge, Munnekolala, Landmark Opposite Purvankara Apt, Marathahalli Bridge Service Road",
+     "addressLocality": "Bengaluru",
+     "addressRegion": "Karnataka",
+     "postalCode": "560037",
+     "addressCountry": "IN"
+    },
+    "geo": {
+     "@type": "GeoCoordinates",
+     "latitude": 12.956429486014592,
+     "longitude": 77.70733394232819
+    },
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+    "openingHoursSpecification": [
+     {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+     }
+    ],
+    "contactPoint": [
+     {
+      "@type": "ContactPoint",
+      "telephone": "+91-9731207940",
+      "contactType": "appointment booking",
+      "availableLanguage": [
+       "English",
+       "Hindi",
+       "Kannada"
+      ],
+      "areaServed": "IN"
+     },
+     {
+      "@type": "ContactPoint",
+      "url": "https://wa.me/919731207940",
+      "contactType": "WhatsApp appointment booking",
+      "availableLanguage": [
+       "English",
+       "Hindi",
+       "Kannada"
+      ],
+      "areaServed": "IN"
+     }
+    ],
+    "founder": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "employee": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "sameAs": [
+     "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+     "https://www.facebook.com/NeoFollicleHairTransplantClinic",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
+     "https://www.youtube.com/@neofollicletransplant",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
+     "https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu",
+     "https://www.justdial.com/Bangalore/Neo-Follicle"
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": [
+     "Person",
+     "Physician"
+    ],
+    "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician",
+    "name": "Dr. Sandeep Mahapatra",
+    "honorificPrefix": "Dr.",
+    "givenName": "Sandeep",
+    "familyName": "Mahapatra",
+    "url": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/",
+    "image": "https://neofollicletransplant.com/wp-content/uploads/2025/05/Dr-Sandeep-Mahapatra-Best-Dermatologist-in-Bangalore.jpg",
+    "priceRange": "₹₹₹",
+    "description": "Dr. Sandeep Mahapatra is a Senior Consultant Dermatologist, Cosmetic Expert and Hair Transplant Surgeon in Bangalore. He is the Founder of Neo Follicle Transplant Clinic in Marathahalli, Whitefield, and has over 20 years of experience in dermatology, cosmetic dermatology and advanced hair restoration procedures.",
+    "jobTitle": [
+     "Senior Consultant Dermatologist",
+     "Cosmetic Expert",
+     "Hair Transplant Surgeon",
+     "Founder, Neo Follicle Transplant Clinic"
+    ],
+    "medicalSpecialty": "Dermatology",
+    "knowsAbout": [
+     "Dermatology",
+     "Cosmetic dermatology",
+     "Hair transplant surgery",
+     "Hair restoration",
+     "Hair loss treatment",
+     "FUE hair transplant",
+     "FUT hair transplant",
+     "DHI hair transplant",
+     "Direct hair implantation",
+     "Beard restoration",
+     "Eyebrow restoration",
+     "Female hair transplant",
+     "Hairline restoration",
+     "PRP therapy for hair loss",
+     "Growth factor concentrate therapy",
+     "Stem cell therapy for hair loss",
+     "Low level laser hair therapy",
+     "Scalp micropigmentation",
+     "Alopecia treatment",
+     "Dermatosurgery",
+     "Aesthetic dermatology",
+     "Botox",
+     "Dermal fillers",
+     "Vitiligo surgery"
+    ],
+    "worksFor": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "workLocation": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "affiliation": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "telephone": "+91-9731207940",
+    "email": "info@neofollicletransplant.com",
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "1st floor, Scorpio House, Near Marathahalli Bridge, Munnekolala, Landmark Opposite Purvankara Apt, Marathahalli Bridge Service Road",
+     "addressLocality": "Bengaluru",
+     "addressRegion": "Karnataka",
+     "postalCode": "560037",
+     "addressCountry": "IN"
+    },
+    "hasCredential": [
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Medical Degree",
+      "name": "MBBS",
+      "recognizedBy": {
+       "@type": "CollegeOrUniversity",
+       "name": "MGM Medical College & Hospital, Jamshedpur"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Postgraduate Medical Degree",
+      "name": "MD Dermatology, Venereology & Leprosy",
+      "recognizedBy": {
+       "@type": "CollegeOrUniversity",
+       "name": "Rajendra Institute of Medical Sciences, Ranchi"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Certified DHI Specialist",
+      "recognizedBy": {
+       "@type": "Organization",
+       "name": "DHI Global, Greece"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Basic and Advanced Botox and Dermal Fillers Certification",
+      "recognizedBy": {
+       "@type": "Organization",
+       "name": "Allergan"
+      }
+     }
+    ],
+    "memberOf": [
+     {
+      "@type": "Organization",
+      "name": "Association of Cutaneous Surgeons of India",
+      "alternateName": "ACSI"
+     },
+     {
+      "@type": "Organization",
+      "name": "Indian Association of Hair Restoration Surgeons",
+      "alternateName": "IAHRS"
+     },
+     {
+      "@type": "Organization",
+      "name": "International Society of Dermatology",
+      "alternateName": "ISD"
+     },
+     {
+      "@type": "Organization",
+      "name": "Indian Association of Dermatologists, Venereologists and Leprologists",
+      "alternateName": "IADVL"
+     },
+     {
+      "@type": "Organization",
+      "name": "International Society of Hair Restoration Surgery",
+      "alternateName": "ISHRS"
+     }
+    ],
+    "award": [
+     "Gold Medalist in MD Dermatology, Venereology & Leprosy",
+     "Honors and Gold Medalist in two subjects during MBBS"
+    ],
+    "hasOccupation": {
+     "@type": "Occupation",
+     "name": "Dermatologist and Hair Transplant Surgeon",
+     "description": "Specializes in dermatology, cosmetic dermatology, hair transplantation, hair restoration, PRP therapy, beard restoration, eyebrow restoration and advanced aesthetic procedures.",
+     "occupationalCategory": "Dermatology"
+    },
+    "sameAs": [
+     "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/",
+     "https://www.practo.com/bangalore/doctor/dr-sandeep-mahapatra-dermatologist-cosmetologist",
+     "https://www.linkedin.com/in/dr-sandeep-mahapatra-315411112/",
+     "https://www.apollo247.com/doctors/dr-sandeep-mahapatra-4115d6e4-68c2-4cca-8548-66cf7e0bbce1",
+     "https://kivihealth.com/iam/sandeep.mahapatra.19945",
+     "https://www.justdial.com/Bangalore/Dr-Sandeep-Mahapatra-Neo-Follicle-Transplant-Clinic-Marathahalli-Below-Bridge-Munekollal/080PXX80-XX80-160108114909-B9U9_BZDET",
+     "https://www.docindia.org/doctors/bangalore/dr-sandeep-mahapatra-dermatology"
+    ]
+   },
+   {
+    "@type": "ContactPage",
+    "@id": "https://neofollicletransplant.com/contact-us/#contactpage",
+    "url": "https://neofollicletransplant.com/contact-us/",
+    "name": "Contact Neo Follicle Hair Transplant Clinic",
+    "description": "Contact Neo Follicle Hair Transplant Clinic in Bangalore to book an appointment for hair transplant, hair loss treatment, PRP therapy, beard transplant, eyebrow transplant, female hair transplant and other hair restoration treatments.",
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "about": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/#appointment-contact"
+    }
+   },
+   {
+    "@type": "ContactPoint",
+    "@id": "https://neofollicletransplant.com/#appointment-contact",
+    "name": "Neo Follicle Hair Transplant Clinic Appointment Booking",
+    "description": "Appointment booking contact point for Neo Follicle Hair Transplant Clinic in Bangalore. Patients can call or send a WhatsApp message to book appointments for hair transplant and hair restoration consultations.",
+    "telephone": "+91-9731207940",
+    "contactType": "appointment booking",
+    "url": "https://neofollicletransplant.com/contact-us/",
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "availableLanguage": [
+     "English",
+     "Hindi",
+     "Kannada"
+    ],
+    "hoursAvailable": [
+     {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+     }
+    ]
+   },
+   {
+    "@type": "ContactPoint",
+    "@id": "https://neofollicletransplant.com/#whatsapp-appointment-contact",
+    "name": "Neo Follicle Hair Transplant Clinic WhatsApp Appointment Booking",
+    "description": "WhatsApp appointment booking contact point for Neo Follicle Hair Transplant Clinic in Bangalore.",
+    "contactType": "WhatsApp appointment booking",
+    "url": "https://wa.me/919731207940",
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "availableLanguage": [
+     "English",
+     "Hindi",
+     "Kannada"
+    ],
+    "hoursAvailable": [
+     {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+     }
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://neofollicletransplant.com/#hair-transplant-service",
+    "name": "Hair Transplant Services in Bangalore",
+    "alternateName": [
+     "Hair Restoration Services in Bangalore",
+     "Hair Transplant Treatment in Bangalore",
+     "Hair Loss Treatment in Bangalore",
+     "Advanced Hair Transplant Services"
+    ],
+    "url": "https://neofollicletransplant.com/",
+    "description": "Neo Follicle Hair Transplant Clinic provides advanced hair transplant and hair restoration services in Bangalore under the guidance of Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers treatment options for male pattern baldness, female hair loss, hairline restoration, beard restoration, eyebrow restoration and non-surgical hair loss therapies.",
+    "serviceType": [
+     "Hair Transplant",
+     "Hair Restoration",
+     "Hair Loss Treatment",
+     "FUE Hair Transplant",
+     "FUT Hair Transplant",
+     "DHI Hair Transplant",
+     "Beard Transplant",
+     "Eyebrow Transplant",
+     "Female Hair Transplant",
+     "Hairline Restoration",
+     "PRP Therapy for Hair Loss",
+     "GFC Therapy for Hair Loss",
+     "Alopecia Treatment"
+    ],
+    "category": "Hair Transplant and Hair Restoration Services",
+    "additionalType": [
+     "https://schema.org/MedicalProcedure",
+     "https://schema.org/TherapeuticProcedure"
+    ],
+    "provider": {
+     "@type": [
+      "Organization",
+      "MedicalClinic",
+      "LocalBusiness"
+     ],
+     "@id": "https://neofollicletransplant.com/#clinic",
+     "name": "Neo Follicle Hair Transplant Clinic",
+     "url": "https://neofollicletransplant.com/",
+     "telephone": "+91-9731207940"
+    },
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "audience": [
+     {
+      "@type": "PeopleAudience",
+      "name": "Men experiencing hair loss or baldness"
+     },
+     {
+      "@type": "PeopleAudience",
+      "name": "Women experiencing hair thinning or hair loss"
+     },
+     {
+      "@type": "PeopleAudience",
+      "name": "Patients seeking beard, eyebrow or hairline restoration"
+     },
+     {
+      "@type": "PeopleAudience",
+      "name": "International patients seeking hair transplant in Bangalore"
+     }
+    ],
+    "availableChannel": [
+     {
+      "@type": "ServiceChannel",
+      "name": "Phone Appointment Booking",
+      "servicePhone": {
+       "@type": "ContactPoint",
+       "@id": "https://neofollicletransplant.com/#appointment-contact",
+       "telephone": "+91-9731207940",
+       "contactType": "appointment booking"
+      },
+      "serviceUrl": "https://neofollicletransplant.com/contact-us/"
+     },
+     {
+      "@type": "ServiceChannel",
+      "name": "WhatsApp Appointment Booking",
+      "serviceUrl": "https://wa.me/919731207940"
+     }
+    ],
+    "mainEntityOfPage": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "sameAs": [
+     "https://www.facebook.com/NeoFollicleHairTransplantClinic",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
+     "https://www.youtube.com/@neofollicletransplant",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
+     "https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu",
+     "https://www.justdial.com/Bangalore/Neo-Follicle"
+    ]
+   },
+   {
+    "@type": "Service",
+    "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#service",
+    "name": "Failed Hair Transplant Repair in Bangalore",
+    "alternateName": [
+     "Failed Hair Transplant Restoration in Bangalore",
+     "Bad Hair Transplant Repair in Bangalore",
+     "Hair Transplant Correction in Bangalore",
+     "Hairline Repair After Failed Hair Transplant",
+     "Hair Transplant Revision in Bangalore"
+    ],
+    "description": "Failed hair transplant repair is a corrective hair restoration service for patients who are unhappy with the results of a previous hair transplant. It may help correct unnatural hairline design, poor graft survival, patchy density, visible FUT scars, pluggy appearance, wrong graft direction, and poor or no regrowth after 6 to 12 months.",
+    "serviceType": "Failed Hair Transplant Repair",
+    "category": "Hair Transplant Services",
+    "provider": {
+     "@id": "https://neofollicletransplant.com/#medicalclinic"
+    },
+    "availableAtOrFrom": {
+     "@id": "https://neofollicletransplant.com/#medicalclinic"
+    },
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bangalore"
+     },
+     {
+      "@type": "Place",
+      "name": "Marathahalli"
+     },
+     {
+      "@type": "Place",
+      "name": "Whitefield"
+     },
+     {
+      "@type": "Place",
+      "name": "Bellandur"
+     },
+     {
+      "@type": "Place",
+      "name": "Brookefield"
+     },
+     {
+      "@type": "Place",
+      "name": "Mahadevapura"
+     },
+     {
+      "@type": "Place",
+      "name": "HSR Layout"
+     },
+     {
+      "@type": "Place",
+      "name": "Koramangala"
+     }
+    ],
+    "audience": {
+     "@type": "PeopleAudience",
+     "audienceType": "People unhappy with a previous hair transplant result, including patients with unnatural hairline, patchy density, visible scarring, pluggy grafts, wrong hair direction, or poor hair growth after hair transplant"
+    },
+    "providerMobility": "static",
+    "offers": {
+     "@type": "Offer",
+     "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#offer",
+     "name": "Failed Hair Transplant Repair Consultation and Treatment",
+     "description": "Personalized failed hair transplant repair plan based on scalp evaluation, donor area availability, extent of previous damage, number of new grafts needed, and correction work required.",
+     "priceCurrency": "INR",
+     "price": 70000,
+     "availability": "https://schema.org/InStock",
+     "url": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/",
+     "seller": {
+      "@id": "https://neofollicletransplant.com/#medicalclinic"
+     }
+    },
+    "mainEntityOfPage": {
+     "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#webpage"
+    },
+    "potentialAction": {
+     "@type": "ReserveAction",
+     "name": "Book an appointment for failed hair transplant repair consultation",
+     "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://neofollicletransplant.com/contact/"
+     },
+     "result": {
+      "@type": "Reservation",
+      "name": "Failed Hair Transplant Repair Consultation Appointment"
+     }
+    }
+   },
+   {
+    "@type": "ItemList",
+    "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#problems-corrected",
+    "name": "Common Failed Hair Transplant Problems Corrected",
+    "description": "Common problems that may be corrected through failed hair transplant repair at Neo Follicle Transplant Clinic.",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Unnatural Hairline Design",
+      "description": "Correction of hairlines that look too low, too straight, uneven, or unsuitable for the patient's facial structure."
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sparse or Patchy Graft Placement",
+      "description": "Improvement of uneven graft placement that creates a thin, patchy, or see-through appearance."
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wrong Hair Growth Direction",
+      "description": "Correction of hair growing at odd angles that makes styling and blending difficult."
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Visible FUT Scarring",
+      "description": "Management of visible linear scars from previous strip surgery using suitable corrective techniques."
+     },
+     {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Poor or No Hair Regrowth",
+      "description": "Evaluation and correction planning for cases where transplanted grafts failed to grow properly."
+     },
+     {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Pluggy or Outdated Hair Transplant Results",
+      "description": "Correction of old-style graft placement that creates an artificial or plug-like appearance."
+     }
+    ]
+   },
+   {
+    "@type": "ItemList",
+    "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#repair-process",
+    "name": "Failed Hair Transplant Repair Process",
+    "description": "Step-by-step repair process for correcting a failed hair transplant.",
+    "itemListElement": [
+     {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Detailed Evaluation",
+      "text": "The scalp, donor area, previous graft placement, hairline design, density, scarring, and growth pattern are assessed to understand what went wrong."
+     },
+     {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Hairline Redesign",
+      "text": "If needed, the hairline is redesigned to look more natural, age-appropriate, and suitable for the patient's facial structure."
+     },
+     {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Graft Removal or Redistribution",
+      "text": "Poorly placed, pluggy, or wrongly angled grafts may be removed, corrected, or redistributed to improve the final appearance."
+     },
+     {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "New Graft Implantation",
+      "text": "Healthy grafts from the donor area may be implanted using advanced FUE or implanter techniques to improve density and natural flow."
+     },
+     {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Recovery and Follow-Up Support",
+      "text": "The patient receives post-care instructions and follow-up support to monitor healing and support the final repair outcome."
+     }
+    ]
+   }
+  ]
+ }
+]

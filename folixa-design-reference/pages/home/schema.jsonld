@@ -1,0 +1,40 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "01. Consultation",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Understanding Your Hair Condition\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\tWe begin with a detailed consultation to assess hair loss, donor area strength, and the best treatment approach for natural results.\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tTypically 30 to 45 minutes"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "02. Procedure Details",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "What Happens During Treatment\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\tThe transplant process includes graft extraction, hairline planning, and precise implantation for balanced and natural-looking growth.\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tUsually completed in 1 day"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "03. Recovery Process",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Healing After the Procedure\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\tMost patients return to normal activities quickly, with proper aftercare guidance provided for smooth healing and better growth.\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tBasic recovery in 3 to 7 days"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "04. Final Results",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When You See New Growth\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\tHair growth starts gradually after a few months, with stronger and fuller results becoming visible over time.\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tVisible progress from 3 to 4 months"
+        }
+      }
+    ]
+  }
+]

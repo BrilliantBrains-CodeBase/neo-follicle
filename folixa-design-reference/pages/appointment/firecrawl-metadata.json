@@ -1,0 +1,29 @@
+{
+  "generator": [
+    "WordPress 7.1",
+    "Elementor 4.2.4; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto"
+  ],
+  "title": "Appointment \u2013 Folixa",
+  "robots": [
+    "noindex, nofollow",
+    "noindex"
+  ],
+  "viewport": [
+    "width=device-width, initial-scale=1.0",
+    "width=device-width, initial-scale=1"
+  ],
+  "language": "en-US",
+  "msapplication-TileImage": "https://preview.raddito.net/folixa/wp-content/uploads/sites/226/2026/04/Favicon_folixa-1.png",
+  "favicon": "https://preview.raddito.net/folixa/wp-content/uploads/sites/226/2026/04/Favicon_folixa-1-150x150.png",
+  "scrapeId": "01a07a81-2b25-707b-8bb9-f1d962b301a9",
+  "sourceURL": "https://preview.raddito.net/folixa/appointment/",
+  "url": "https://preview.raddito.net/folixa/appointment/",
+  "statusCode": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "timezone": "America/New_York",
+  "proxyUsed": "basic",
+  "cacheState": "miss",
+  "indexId": "508260f0-406d-4d99-a94f-f7af83c20ade",
+  "creditsUsed": 1,
+  "concurrencyLimited": false
+}

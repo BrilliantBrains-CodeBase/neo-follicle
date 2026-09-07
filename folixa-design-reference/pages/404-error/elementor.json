@@ -1,0 +1,18 @@
+{
+  "slug": "404-error",
+  "wpId": 51,
+  "cssFile": "post-51.css",
+  "tree": [
+    {
+      "index": 1,
+      "id": "1b6c90a",
+      "name": "404",
+      "widgets": [
+        "heading",
+        "heading",
+        "text-editor",
+        "button"
+      ]
+    }
+  ]
+}

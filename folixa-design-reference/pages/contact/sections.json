@@ -1,0 +1,501 @@
+[
+  {
+    "index": 1,
+    "id": "37ab2c6",
+    "name": "section-1",
+    "heading": null,
+    "classes": "elementor-element elementor-element-37ab2c6 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "button",
+      "ekit-nav-menu",
+      "image"
+    ],
+    "widgetCount": 3,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1741 .elementor-element.elementor-element-37ab2c6",
+        "declarations": "--display:flex;--min-height:91px;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--justify-content:space-between;--align-items:center;border-style:solid;--border-style:solid;border-width:0px 0px 1px 0px;--border-top-width:0px;--border-right-width:0px;--border-bottom-width:1px;--border-left-width:0px;border-color:#FFFFFF33;--border-color:#FFFFFF33;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:1.25rem;--padding-bottom:1.25rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1741 .elementor-element.elementor-element-37ab2c6:not(.elementor-motion-effects-element-type-background), .elementor-1741 .elementor-element.elementor-element-37ab2c6 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "89e297a"
+      },
+      {
+        "type": "ekit-nav-menu",
+        "id": "a200ca3",
+        "text": "Home About Treatments Treatments Treatments details Blog Blog Single Post Pages Appointment Faqs Testimonials Contact 404 Error X"
+      },
+      {
+        "type": "button",
+        "id": "a4bb91e",
+        "text": "Contact Us"
+      }
+    ],
+    "screenshot": "sections/01-section-1.png"
+  },
+  {
+    "index": 2,
+    "id": "6dc6353",
+    "name": "contact",
+    "heading": "Contact",
+    "classes": "elementor-element elementor-element-6dc6353 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "text-editor"
+    ],
+    "widgetCount": 2,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-6dc6353",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--padding-top:0px;--padding-bottom:0px;--padding-left:40px;--padding-right:40px;"
+      },
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-6dc6353",
+        "declarations": "--content-width:1920px;"
+      },
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-6dc6353",
+        "declarations": "--padding-top:0px;--padding-bottom:0px;--padding-left:20px;--padding-right:20px;"
+      },
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-6dc6353",
+        "declarations": "--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "text-editor",
+        "id": "465983d",
+        "text": "Home // Contact"
+      },
+      {
+        "type": "heading",
+        "id": "8d3b911",
+        "text": "Contact"
+      }
+    ],
+    "screenshot": "sections/02-contact.png"
+  },
+  {
+    "index": 3,
+    "id": "0a99974",
+    "name": "contact-us",
+    "heading": "Contact Us",
+    "classes": "elementor-element elementor-element-0a99974 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "icon",
+      "metform",
+      "mf-button",
+      "mf-email",
+      "mf-select",
+      "mf-text",
+      "mf-textarea",
+      "text-editor"
+    ],
+    "widgetCount": 14,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-0a99974",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-0a99974:not(.elementor-motion-effects-element-type-background), .elementor-35 .elementor-element.elementor-element-0a99974 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-0a99974",
+        "declarations": "--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:4rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-0a99974",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:3rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "heading",
+        "id": "4f0da64",
+        "text": "Contact Us"
+      },
+      {
+        "type": "text-editor",
+        "id": "2c79206",
+        "text": "Whether you are considering FUE, FUT, Beard Transplant, PRP Therapy, or Hairline Design, our team will help you understand the right approach for your needs."
+      },
+      {
+        "type": "icon",
+        "id": "3e978d6"
+      },
+      {
+        "type": "heading",
+        "id": "29e7fa2",
+        "text": "22nd AVE NW, New- Brighton, MN, US"
+      },
+      {
+        "type": "icon",
+        "id": "ac2c074"
+      },
+      {
+        "type": "heading",
+        "id": "db6ae35",
+        "text": "(+1) 234 567 8900"
+      },
+      {
+        "type": "icon",
+        "id": "1b4d83f"
+      },
+      {
+        "type": "heading",
+        "id": "5a68e8f",
+        "text": "hello@folixa.com"
+      },
+      {
+        "type": "metform",
+        "id": "cb99b5a",
+        "text": "select service Send Message"
+      },
+      {
+        "type": "mf-text",
+        "id": "eb23fcc"
+      },
+      {
+        "type": "mf-email",
+        "id": "ce7aac4"
+      },
+      {
+        "type": "mf-select",
+        "id": "67d3dfd",
+        "text": "select service"
+      },
+      {
+        "type": "mf-textarea",
+        "id": "e534de8"
+      },
+      {
+        "type": "mf-button",
+        "id": "1fb474e",
+        "text": "Send Message"
+      }
+    ],
+    "screenshot": "sections/03-contact-us.png"
+  },
+  {
+    "index": 4,
+    "id": "36840be",
+    "name": "section-4",
+    "heading": null,
+    "classes": "elementor-element elementor-element-36840be e-grid e-con-full e-con e-parent",
+    "widgetTypes": [
+      "mf-button",
+      "mf-email",
+      "mf-select",
+      "mf-text",
+      "mf-textarea"
+    ],
+    "widgetCount": 5,
+    "animation": null,
+    "css": [],
+    "widgets": [
+      {
+        "type": "mf-text",
+        "id": "eb23fcc"
+      },
+      {
+        "type": "mf-email",
+        "id": "ce7aac4"
+      },
+      {
+        "type": "mf-select",
+        "id": "67d3dfd",
+        "text": "select service"
+      },
+      {
+        "type": "mf-textarea",
+        "id": "e534de8"
+      },
+      {
+        "type": "mf-button",
+        "id": "1fb474e",
+        "text": "Send Message"
+      }
+    ],
+    "screenshot": "sections/04-section-4.png"
+  },
+  {
+    "index": 5,
+    "id": "964faa6",
+    "name": "section-5",
+    "heading": null,
+    "classes": "elementor-element elementor-element-964faa6 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "google_maps"
+    ],
+    "widgetCount": 1,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-964faa6",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-964faa6:not(.elementor-motion-effects-element-type-background), .elementor-35 .elementor-element.elementor-element-964faa6 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-964faa6",
+        "declarations": "--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:0rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-35 .elementor-element.elementor-element-964faa6",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:0rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "google_maps",
+        "id": "0633e16",
+        "text": "Maps \u2190 Move left \u2192 Move right \u2191 Move up \u2193 Move down + Zoom in - Zoom out Home Jump left by 75% End Jump right by 75% Page Up Jump up by 75% Page Down Jump down by 75% Map Data Map data \u00a92026 Google Map data \u00a92026 Google 1 km Click to toggle between metric and imperial units Terms Report a map error",
+        "settings": {
+          "_animation": "fadeInUp"
+        }
+      }
+    ],
+    "screenshot": "sections/05-section-5.png"
+  },
+  {
+    "index": 6,
+    "id": "8acb047",
+    "name": "section-6",
+    "heading": null,
+    "classes": "elementor-element elementor-element-8acb047 e-con-full e-flex e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "divider",
+      "heading",
+      "icon-box",
+      "image",
+      "metform",
+      "mf-button",
+      "mf-email",
+      "text-editor"
+    ],
+    "widgetCount": 31,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:center;--align-items:center;--overflow:hidden;--overlay-opacity:0.5;--border-radius:0px 0px 0px 0px;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0rem;--padding-bottom:0rem;--padding-left:0rem;--padding-right:0rem;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-background-video-container::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .e-con-inner > .elementor-background-video-container::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-background-slideshow::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .e-con-inner > .elementor-background-slideshow::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-motion-effects-container > .elementor-motion-effects-layer::before",
+        "declarations": "--background-overlay:'';"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047.e-con",
+        "declarations": "--flex-grow:0;--flex-shrink:0;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--width:100%;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--width:100%;--padding-top:0rem;--padding-bottom:0rem;--padding-left:0rem;--padding-right:0rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "1c4e4b3"
+      },
+      {
+        "type": "text-editor",
+        "id": "31680c5",
+        "text": "Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care."
+      },
+      {
+        "type": "icon-box",
+        "id": "dff0d5a",
+        "text": "(+1) 234 567 8900"
+      },
+      {
+        "type": "icon-box",
+        "id": "f170f72",
+        "text": "hello@folixa.com"
+      },
+      {
+        "type": "divider",
+        "id": "1e21762"
+      },
+      {
+        "type": "text-editor",
+        "id": "264593b",
+        "text": "Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care."
+      },
+      {
+        "type": "text-editor",
+        "id": "2e453d0",
+        "text": "Stay Updated With Hair Care Insights"
+      },
+      {
+        "type": "metform",
+        "id": "e79efcf",
+        "text": "Subscribe"
+      },
+      {
+        "type": "mf-email",
+        "id": "d5ded39"
+      },
+      {
+        "type": "mf-button",
+        "id": "f783163",
+        "text": "Subscribe"
+      },
+      {
+        "type": "heading",
+        "id": "be17d76",
+        "text": "Services"
+      },
+      {
+        "type": "heading",
+        "id": "5bc63c0",
+        "text": "FUE Hair Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "fab1927",
+        "text": "FUT Hair Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "d024a7a",
+        "text": "Beard Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "af9f5c4",
+        "text": "PRP Hair Therapy"
+      },
+      {
+        "type": "heading",
+        "id": "b409ac3",
+        "text": "Pages"
+      },
+      {
+        "type": "heading",
+        "id": "a06e305",
+        "text": "Home"
+      },
+      {
+        "type": "heading",
+        "id": "effc53c",
+        "text": "About"
+      },
+      {
+        "type": "heading",
+        "id": "25b50bd",
+        "text": "Treatments"
+      },
+      {
+        "type": "heading",
+        "id": "0a32df9",
+        "text": "Contact"
+      },
+      {
+        "type": "heading",
+        "id": "bd49757",
+        "text": "Visit Time"
+      },
+      {
+        "type": "icon-box",
+        "id": "d5f6a4c",
+        "text": "Facebook"
+      },
+      {
+        "type": "icon-box",
+        "id": "6cb46f6",
+        "text": "Instagram"
+      },
+      {
+        "type": "icon-box",
+        "id": "475ee2d",
+        "text": "LinkedIn"
+      },
+      {
+        "type": "icon-box",
+        "id": "3743bb4",
+        "text": "X (Twitter)"
+      },
+      {
+        "type": "divider",
+        "id": "81a39b3"
+      },
+      {
+        "type": "heading",
+        "id": "4f615e8",
+        "text": "Copyright \u00a92026 Eldewell | Powered by Raddito."
+      },
+      {
+        "type": "heading",
+        "id": "5ddc32b",
+        "text": "Privacy Policy"
+      },
+      {
+        "type": "heading",
+        "id": "2e8706f",
+        "text": "Terms & Conditions"
+      },
+      {
+        "type": "heading",
+        "id": "f29e44f",
+        "text": "Sitemap"
+      },
+      {
+        "type": "heading",
+        "id": "635a80c",
+        "text": "Cookies"
+      }
+    ],
+    "screenshot": "sections/06-section-6.png"
+  },
+  {
+    "index": 7,
+    "id": "714913f",
+    "name": "section-7",
+    "heading": null,
+    "classes": "elementor-element elementor-element-714913f e-con-full e-flex e-con e-parent",
+    "widgetTypes": [
+      "mf-button",
+      "mf-email"
+    ],
+    "widgetCount": 2,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-551 .elementor-element.elementor-element-714913f",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:14px 14px;--row-gap:14px;--column-gap:14px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "mf-email",
+        "id": "d5ded39"
+      },
+      {
+        "type": "mf-button",
+        "id": "f783163",
+        "text": "Subscribe"
+      }
+    ],
+    "screenshot": "sections/07-section-7.png"
+  }
+]

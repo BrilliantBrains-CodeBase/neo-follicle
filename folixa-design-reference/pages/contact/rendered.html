@@ -1,0 +1,814 @@
+<!DOCTYPE html><html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px; }</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+img.wp-smiley, img.emoji { display: inline !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0px 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0px !important; }</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+:root { --wp--preset--aspect-ratio--square: 1; --wp--preset--aspect-ratio--4-3: 4/3; --wp--preset--aspect-ratio--3-4: 3/4; --wp--preset--aspect-ratio--3-2: 3/2; --wp--preset--aspect-ratio--2-3: 2/3; --wp--preset--aspect-ratio--16-9: 16/9; --wp--preset--aspect-ratio--9-16: 9/16; --wp--preset--color--black: #000000; --wp--preset--color--cyan-bluish-gray: #abb8c3; --wp--preset--color--white: #ffffff; --wp--preset--color--pale-pink: #f78da7; --wp--preset--color--vivid-red: #cf2e2e; --wp--preset--color--luminous-vivid-orange: #ff6900; --wp--preset--color--luminous-vivid-amber: #fcb900; --wp--preset--color--light-green-cyan: #7bdcb5; --wp--preset--color--vivid-green-cyan: #00d084; --wp--preset--color--pale-cyan-blue: #8ed1fc; --wp--preset--color--vivid-cyan-blue: #0693e3; --wp--preset--color--vivid-purple: #9b51e0; --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%); --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%); --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%); --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%); --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%); --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%); --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%); --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%); --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%); --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%); --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%); --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%); --wp--preset--font-size--small: 13px; --wp--preset--font-size--medium: 20px; --wp--preset--font-size--large: 36px; --wp--preset--font-size--x-large: 42px; --wp--preset--spacing--20: 0.44rem; --wp--preset--spacing--30: 0.67rem; --wp--preset--spacing--40: 1rem; --wp--preset--spacing--50: 1.5rem; --wp--preset--spacing--60: 2.25rem; --wp--preset--spacing--70: 3.38rem; --wp--preset--spacing--80: 5.06rem; --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2); --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4); --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2); --wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0); --wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0); }
+
+.wp-block-button { --wp--preset--dimension--25: 25%; --wp--preset--dimension--50: 50%; --wp--preset--dimension--75: 75%; --wp--preset--dimension--100: 100%; }
+
+:root { --wp--style--global--content-size: 800px; --wp--style--global--wide-size: 1200px; }
+
+:where(body) { margin: 0px; }
+
+.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }
+
+.wp-site-blocks > .alignright { float: right; margin-left: 2em; }
+
+.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }
+
+:where(.wp-site-blocks) > * { margin-block: 24px 0px; }
+
+:where(.wp-site-blocks) > :first-child { margin-block-start: 0px; }
+
+:where(.wp-site-blocks) > :last-child { margin-block-end: 0px; }
+
+:root { --wp--style--block-gap: 24px; }
+
+:root :where(.is-layout-flow) > :first-child { margin-block-start: 0px; }
+
+:root :where(.is-layout-flow) > :last-child { margin-block-end: 0px; }
+
+:root :where(.is-layout-flow) > * { margin-block: 24px 0px; }
+
+:root :where(.is-layout-constrained) > :first-child { margin-block-start: 0px; }
+
+:root :where(.is-layout-constrained) > :last-child { margin-block-end: 0px; }
+
+:root :where(.is-layout-constrained) > * { margin-block: 24px 0px; }
+
+:root :where(.is-layout-flex) { gap: 24px; }
+
+:root :where(.is-layout-grid) { gap: 24px; }
+
+.is-layout-flow > .alignleft { float: left; margin-inline: 0px 2em; }
+
+.is-layout-flow > .alignright { float: right; margin-inline: 2em 0px; }
+
+.is-layout-flow > .aligncenter { margin-left: auto !important; margin-right: auto !important; }
+
+.is-layout-constrained > .alignleft { float: left; margin-inline: 0px 2em; }
+
+.is-layout-constrained > .alignright { float: right; margin-inline: 2em 0px; }
+
+.is-layout-constrained > .aligncenter { margin-left: auto !important; margin-right: auto !important; }
+
+.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) { max-width: var(--wp--style--global--content-size); margin-left: auto !important; margin-right: auto !important; }
+
+.is-layout-constrained > .alignwide { max-width: var(--wp--style--global--wide-size); }
+
+body .is-layout-flex { display: flex; }
+
+.is-layout-flex { flex-wrap: wrap; align-items: center; }
+
+.is-layout-flex > :is(*, div) { margin: 0px; }
+
+body .is-layout-grid { display: grid; }
+
+.is-layout-grid > :is(*, div) { margin: 0px; }
+
+body { padding: 0px; }
+
+:root :where(.wp-element-button, .wp-block-button__link) { background-color: rgb(50, 55, 60); border-width: 0px; color: rgb(255, 255, 255); font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; padding: calc(0.667em + 2px) calc(1.333em + 2px); text-decoration: none; text-transform: inherit; }
+
+.has-black-color { color: var(--wp--preset--color--black) !important; }
+
+.has-cyan-bluish-gray-color { color: var(--wp--preset--color--cyan-bluish-gray) !important; }
+
+.has-white-color { color: var(--wp--preset--color--white) !important; }
+
+.has-pale-pink-color { color: var(--wp--preset--color--pale-pink) !important; }
+
+.has-vivid-red-color { color: var(--wp--preset--color--vivid-red) !important; }
+
+.has-luminous-vivid-orange-color { color: var(--wp--preset--color--luminous-vivid-orange) !important; }
+
+.has-luminous-vivid-amber-color { color: var(--wp--preset--color--luminous-vivid-amber) !important; }
+
+.has-light-green-cyan-color { color: var(--wp--preset--color--light-green-cyan) !important; }
+
+.has-vivid-green-cyan-color { color: var(--wp--preset--color--vivid-green-cyan) !important; }
+
+.has-pale-cyan-blue-color { color: var(--wp--preset--color--pale-cyan-blue) !important; }
+
+.has-vivid-cyan-blue-color { color: var(--wp--preset--color--vivid-cyan-blue) !important; }
+
+.has-vivid-purple-color { color: var(--wp--preset--color--vivid-purple) !important; }
+
+.has-black-background-color { background-color: var(--wp--preset--color--black) !important; }
+
+.has-cyan-bluish-gray-background-color { background-color: var(--wp--preset--color--cyan-bluish-gray) !important; }
+
+.has-white-background-color { background-color: var(--wp--preset--color--white) !important; }
+
+.has-pale-pink-background-color { background-color: var(--wp--preset--color--pale-pink) !important; }
+
+.has-vivid-red-background-color { background-color: var(--wp--preset--color--vivid-red) !important; }
+
+.has-luminous-vivid-orange-background-color { background-color: var(--wp--preset--color--luminous-vivid-orange) !important; }
+
+.has-luminous-vivid-amber-background-color { background-color: var(--wp--preset--color--luminous-vivid-amber) !important; }
+
+.has-light-green-cyan-background-color { background-color: var(--wp--preset--color--light-green-cyan) !important; }
+
+.has-vivid-green-cyan-background-color { background-color: var(--wp--preset--color--vivid-green-cyan) !important; }
+
+.has-pale-cyan-blue-background-color { background-color: var(--wp--preset--color--pale-cyan-blue) !important; }
+
+.has-vivid-cyan-blue-background-color { background-color: var(--wp--preset--color--vivid-cyan-blue) !important; }
+
+.has-vivid-purple-background-color { background-color: var(--wp--preset--color--vivid-purple) !important; }
+
+.has-black-border-color { border-color: var(--wp--preset--color--black) !important; }
+
+.has-cyan-bluish-gray-border-color { border-color: var(--wp--preset--color--cyan-bluish-gray) !important; }
+
+.has-white-border-color { border-color: var(--wp--preset--color--white) !important; }
+
+.has-pale-pink-border-color { border-color: var(--wp--preset--color--pale-pink) !important; }
+
+.has-vivid-red-border-color { border-color: var(--wp--preset--color--vivid-red) !important; }
+
+.has-luminous-vivid-orange-border-color { border-color: var(--wp--preset--color--luminous-vivid-orange) !important; }
+
+.has-luminous-vivid-amber-border-color { border-color: var(--wp--preset--color--luminous-vivid-amber) !important; }
+
+.has-light-green-cyan-border-color { border-color: var(--wp--preset--color--light-green-cyan) !important; }
+
+.has-vivid-green-cyan-border-color { border-color: var(--wp--preset--color--vivid-green-cyan) !important; }
+
+.has-pale-cyan-blue-border-color { border-color: var(--wp--preset--color--pale-cyan-blue) !important; }
+
+.has-vivid-cyan-blue-border-color { border-color: var(--wp--preset--color--vivid-cyan-blue) !important; }
+
+.has-vivid-purple-border-color { border-color: var(--wp--preset--color--vivid-purple) !important; }
+
+.has-vivid-cyan-blue-to-vivid-purple-gradient-background { background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important; }
+
+.has-light-green-cyan-to-vivid-green-cyan-gradient-background { background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important; }
+
+.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background { background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important; }
+
+.has-luminous-vivid-orange-to-vivid-red-gradient-background { background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important; }
+
+.has-very-light-gray-to-cyan-bluish-gray-gradient-background { background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important; }
+
+.has-cool-to-warm-spectrum-gradient-background { background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important; }
+
+.has-blush-light-purple-gradient-background { background: var(--wp--preset--gradient--blush-light-purple) !important; }
+
+.has-blush-bordeaux-gradient-background { background: var(--wp--preset--gradient--blush-bordeaux) !important; }
+
+.has-luminous-dusk-gradient-background { background: var(--wp--preset--gradient--luminous-dusk) !important; }
+
+.has-pale-ocean-gradient-background { background: var(--wp--preset--gradient--pale-ocean) !important; }
+
+.has-electric-grass-gradient-background { background: var(--wp--preset--gradient--electric-grass) !important; }
+
+.has-midnight-gradient-background { background: var(--wp--preset--gradient--midnight) !important; }
+
+.has-small-font-size { font-size: var(--wp--preset--font-size--small) !important; }
+
+.has-medium-font-size { font-size: var(--wp--preset--font-size--medium) !important; }
+
+.has-large-font-size { font-size: var(--wp--preset--font-size--large) !important; }
+
+.has-x-large-font-size { font-size: var(--wp--preset--font-size--x-large) !important; }
+
+:root :where(.wp-block-icon svg) { width: 24px; }
+
+:root :where(.wp-block-pullquote) { font-size: 1.5em; line-height: 1.6; }</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload), .e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * { background-image: none !important; }
+
+@media screen and (max-height: 1024px) {
+  .e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload), .e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * { background-image: none !important; }
+}
+
+@media screen and (max-height: 640px) {
+  .e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload), .e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * { background-image: none !important; }
+}</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+.css-b62m3t-container { position: relative; box-sizing: border-box; }
+
+.css-7pg0cj-a11yText { z-index: 9999; border: 0px; clip: rect(1px, 1px, 1px, 1px); height: 1px; width: 1px; position: absolute; overflow: hidden; padding: 0px; white-space: nowrap; }
+
+.css-13cymwt-control { -webkit-box-align: center; align-items: center; cursor: default; display: flex; flex-wrap: wrap; -webkit-box-pack: justify; justify-content: space-between; min-height: 38px; position: relative; transition: 100ms; background-color: rgb(255, 255, 255); border-color: rgb(204, 204, 204); border-radius: 4px; border-style: solid; border-width: 1px; box-sizing: border-box; outline: 0px !important; }
+
+.css-13cymwt-control:hover { border-color: rgb(179, 179, 179); }
+
+.css-hlgwow { -webkit-box-align: center; align-items: center; display: grid; flex: 1 1 0%; flex-wrap: wrap; position: relative; overflow: hidden; padding: 2px 8px; box-sizing: border-box; }
+
+.css-1jqq78o-placeholder { grid-area: 1 / 1 / 2 / 3; color: rgb(128, 128, 128); margin-left: 2px; margin-right: 2px; box-sizing: border-box; }
+
+.css-1hac4vs-dummyInput { background: 0px center; border: 0px; caret-color: transparent; font-size: inherit; grid-area: 1 / 1 / 2 / 3; outline: 0px; padding: 0px; width: 1px; color: transparent; left: -100px; opacity: 0; position: relative; transform: scale(0.01); }
+
+.css-1wy0on6 { -webkit-box-align: center; align-items: center; align-self: stretch; display: flex; flex-shrink: 0; box-sizing: border-box; }
+
+.css-1u9des2-indicatorSeparator { align-self: stretch; width: 1px; background-color: rgb(204, 204, 204); margin-bottom: 8px; margin-top: 8px; box-sizing: border-box; }
+
+.css-1xc3v61-indicatorContainer { display: flex; transition: color 150ms; color: rgb(204, 204, 204); padding: 8px; box-sizing: border-box; }
+
+.css-1xc3v61-indicatorContainer:hover { color: rgb(153, 153, 153); }
+
+.css-8mmkcg { display: inline-block; fill: currentcolor; line-height: 1; stroke: currentcolor; stroke-width: 0; }</style>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Contact – Folixa</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="alternate" type="application/rss+xml" title="Folixa » Feed" href="https://preview.raddito.net/folixa/feed/">
+<link rel="alternate" type="application/rss+xml" title="Folixa » Comments Feed" href="https://preview.raddito.net/folixa/comments/feed/">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://preview.raddito.net/folixa/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpreview.raddito.net%2Ffolixa%2Fcontact%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://preview.raddito.net/folixa/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpreview.raddito.net%2Ffolixa%2Fcontact%2F&amp;format=xml">
+
+<link rel="stylesheet" id="elementor-frontend-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=4.2.4" media="all">
+<link rel="stylesheet" id="elementor-post-1741-css" href="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/elementor/css/post-1741.css?ver=1788431948" media="all">
+<link rel="stylesheet" id="elementor-post-1736-css" href="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/elementor/css/post-1736.css?ver=1788431948" media="all">
+<link rel="stylesheet" id="font-awesome-5-all-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=4.2.4" media="all">
+<link rel="stylesheet" id="font-awesome-4-shim-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=4.2.4" media="all">
+<link rel="stylesheet" id="jkit-elements-main-css" href="https://preview.raddito.net/folixa/wp-content/plugins/jeg-elementor-kit/assets/css/elements/main.css?ver=3.2.15" media="all">
+
+
+<link rel="stylesheet" id="template-kit-export-css" href="https://preview.raddito.net/folixa/wp-content/plugins/template-kit-export/assets/public/template-kit-export-public.css?ver=1.0.23" media="all">
+<link rel="stylesheet" id="elementor-post-6-css" href="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/elementor/css/post-6.css?ver=1788431949" media="all">
+<link rel="stylesheet" id="widget-heading-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=4.2.4" media="all">
+<link rel="stylesheet" id="e-animation-fadeInUp-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInUp.min.css?ver=4.2.4" media="all">
+<link rel="stylesheet" id="widget-google_maps-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementor/assets/css/widget-google_maps.min.css?ver=4.2.4" media="all">
+<link rel="stylesheet" id="elementor-post-35-css" href="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/elementor/css/post-35.css?ver=1788761462" media="all">
+<link rel="stylesheet" id="metform-ui-css" href="https://preview.raddito.net/folixa/wp-content/plugins/metform/build/styles/metform-ui.css?ver=9a68bf436d75ba90323b" media="all">
+<link rel="stylesheet" id="metform-style-css" href="https://preview.raddito.net/folixa/wp-content/plugins/metform/build/frontend/app/index.css?ver=6ea98acae644b20be40c" media="all">
+<link rel="stylesheet" id="cute-alert-css" href="https://preview.raddito.net/folixa/wp-content/plugins/metform/assets/libs/cute-alert/style.css?ver=4.3.0" media="all">
+<link rel="stylesheet" id="text-editor-style-css" href="https://preview.raddito.net/folixa/wp-content/plugins/metform/assets/libs/text-editor/text-editor.css?ver=4.3.0" media="all">
+<link rel="stylesheet" id="hello-elementor-css" href="https://preview.raddito.net/folixa/wp-content/themes/hello-elementor/assets/css/reset.css?ver=3.5.1" media="all">
+<link rel="stylesheet" id="hello-elementor-theme-style-css" href="https://preview.raddito.net/folixa/wp-content/themes/hello-elementor/assets/css/theme.css?ver=3.5.1" media="all">
+<link rel="stylesheet" id="hello-elementor-header-footer-css" href="https://preview.raddito.net/folixa/wp-content/themes/hello-elementor/assets/css/header-footer.css?ver=3.5.1" media="all">
+<link rel="stylesheet" id="ekit-widget-common-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/widgets/init/assets/css/common.css?ver=4.0.2" media="all">
+<link rel="stylesheet" id="ekit-nav-menu-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/widgets/init/assets/css/nav-menu.css?ver=4.0.2" media="all">
+<link rel="stylesheet" id="ekit-header-search-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/widgets/init/assets/css/header-search.css?ver=4.0.2" media="all">
+<link rel="stylesheet" id="ekit-header-offcanvas-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/widgets/init/assets/css/header-offcanvas.css?ver=4.0.2" media="all">
+<link rel="stylesheet" id="ekit-header-info-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/widgets/init/assets/css/header-info.css?ver=4.0.2" media="all">
+<link rel="stylesheet" id="elementor-gf-inter-css" href="https://fonts.googleapis.com/css?family=Inter:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&amp;display=auto" media="all">
+<link rel="stylesheet" id="elementor-gf-manrope-css" href="https://fonts.googleapis.com/css?family=Manrope:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&amp;display=auto" media="all">
+<link rel="stylesheet" id="elementor-icons-jkiticon-css" href="https://preview.raddito.net/folixa/wp-content/plugins/jeg-elementor-kit/assets/fonts/jkiticon/jkiticon.css?ver=3.2.15" media="all">
+<script type="text/javascript">
+		var elementskit = {
+			resturl: 'https://preview.raddito.net/folixa/wp-json/elementskit/v1/',
+		}
+
+		</script><script id="font-awesome-4-shim-js" src="https://preview.raddito.net/folixa/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=4.2.4"></script>
+<script id="jquery-core-js" src="https://preview.raddito.net/folixa/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://preview.raddito.net/folixa/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="template-kit-export-js" src="https://preview.raddito.net/folixa/wp-content/plugins/template-kit-export/assets/public/template-kit-export-public.js?ver=1.0.23"></script>
+<link rel="https://api.w.org/" href="https://preview.raddito.net/folixa/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://preview.raddito.net/folixa/wp-json/wp/v2/pages/35"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://preview.raddito.net/folixa/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 7.1">
+<link rel="canonical" href="https://preview.raddito.net/folixa/contact/">
+<link rel="shortlink" href="https://preview.raddito.net/folixa/?p=35">
+<meta name="generator" content="Elementor 4.2.4; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+			
+			<link rel="icon" href="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/2026/04/Favicon_folixa-1-150x150.png" sizes="32x32">
+<link rel="icon" href="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/2026/04/Favicon_folixa-1.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/2026/04/Favicon_folixa-1.png">
+<meta name="msapplication-TileImage" content="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/2026/04/Favicon_folixa-1.png">
+</head>
+
+<body class="wp-singular page-template page-template-elementor_header_footer page page-id-35 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor jkit-color-scheme hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-35 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="none">
+
+	
+			<a class="skip-link screen-reader-text" href="https://preview.raddito.net/folixa/contact/#content">
+			Skip to content		</a>
+	
+	
+	<div class="ekit-template-content-markup ekit-template-content-header ekit-template-content-theme-support">
+				<div data-elementor-type="wp-post" data-elementor-id="1741" class="elementor elementor-1741">
+				<div class="elementor-element elementor-element-37ab2c6 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="37ab2c6" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-89e297a elementor-widget elementor-widget-image" data-id="89e297a" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+																<a href="https://preview.raddito.net/folixa/">
+							<img fetchpriority="high" width="1049" height="335" src="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/2026/04/Folixa_Logo-1.png" class="attachment-full size-full wp-image-883" alt="" decoding="async">								</a>
+															</div>
+				<div class="elementor-element elementor-element-a200ca3 elementor-widget elementor-widget-ekit-nav-menu" data-id="a200ca3" data-element_type="widget" data-e-type="widget" data-widget_type="ekit-nav-menu.default">
+				<div class="elementor-widget-container">
+							<nav class="ekit-wid-con ekit_menu_responsive_tablet" data-hamburger-icon="fas fa-bars" data-hamburger-icon-type="icon" data-responsive-breakpoint="1024" data-close-on-anchor="no">
+			            <button class="elementskit-menu-hamburger elementskit-menu-toggler" type="button" aria-label="hamburger-icon">
+                <svg aria-hidden="true" class="ekit-menu-icon e-font-icon-svg e-fas-bars" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>            </button>
+            <div id="ekit-megamenu-primary-menu" class="elementskit-menu-container elementskit-menu-offcanvas-elements elementskit-navbar-nav-default ekit-nav-menu-one-page-no ekit-nav-dropdown-hover" ekit-dom-added="yes"><ul id="menu-primary-menu" class="elementskit-navbar-nav elementskit-menu-po-left submenu-click-on-"><li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-46 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/" class="ekit-menu-nav-link">Home</a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/about/" class="ekit-menu-nav-link">About</a></li>
+<li id="menu-item-1219" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1219 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/contact/#" class="ekit-menu-nav-link ekit-menu-dropdown-toggle">Treatments<i aria-hidden="true" class="icon icon-down-arrow1 elementskit-submenu-indicator"></i></a>
+<ul class="elementskit-dropdown elementskit-submenu-panel">
+	<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/treatments/" class=" dropdown-item">Treatments</a>	</li><li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/treatments-details/" class=" dropdown-item">Treatments details</a></li></ul>
+</li>
+<li id="menu-item-1218" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1218 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/contact/#" class="ekit-menu-nav-link ekit-menu-dropdown-toggle">Blog<i aria-hidden="true" class="icon icon-down-arrow1 elementskit-submenu-indicator"></i></a>
+<ul class="elementskit-dropdown elementskit-submenu-panel">
+	<li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/blog/" class=" dropdown-item">Blog</a>	</li><li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/single-post/" class=" dropdown-item">Single Post</a></li></ul>
+</li>
+<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-50 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/contact/#" class="ekit-menu-nav-link ekit-menu-dropdown-toggle">Pages<i aria-hidden="true" class="icon icon-down-arrow1 elementskit-submenu-indicator"></i></a>
+<ul class="elementskit-dropdown elementskit-submenu-panel">
+	<li id="menu-item-41" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/appointment/" class=" dropdown-item">Appointment</a>	</li><li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/faqs/" class=" dropdown-item">Faqs</a>	</li><li id="menu-item-1217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1217 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/testimonials/" class=" dropdown-item">Testimonials</a>	</li><li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-35 current_page_item menu-item-43 nav-item elementskit-mobile-builder-content active" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/contact/" class=" dropdown-item active">Contact</a>	</li><li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><a href="https://preview.raddito.net/folixa/404-error/" class=" dropdown-item">404 Error</a></li></ul>
+</li>
+</ul><div class="elementskit-nav-identity-panel"><a class="elementskit-nav-logo" href="https://preview.raddito.net/folixa" target="" rel=""><img src="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/2026/04/Folixa_Logo-1.png" title="Folixa_Logo (1)" alt="Folixa_Logo (1)" decoding="async"></a><button class="elementskit-menu-close elementskit-menu-toggler" type="button">X</button></div></div>
+			<div class="elementskit-menu-overlay elementskit-menu-offcanvas-elements elementskit-menu-toggler ekit-nav-menu--overlay"></div>        </nav>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-a4bb91e elementor-hidden-mobile elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="a4bb91e" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+										<a class="elementor-button elementor-button-link elementor-size-sm" href="https://preview.raddito.net/folixa/contact/#">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Contact Us</span>
+					</span>
+					</a>
+								</div>
+					</div>
+				</div>
+				</div>
+			</div>
+
+			<div data-elementor-type="wp-page" data-elementor-id="35" class="elementor elementor-35">
+				<div class="elementor-element elementor-element-6dc6353 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="6dc6353" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-9f8a909 animated-slow e-flex e-con-boxed e-con e-child animated fadeInUp" data-id="9f8a909" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;}">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-465983d elementor-widget elementor-widget-text-editor" data-id="465983d" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<p><a href="https://preview.raddito.net/folixa/contact/#">Home</a> // Contact</p>								</div>
+				<div class="elementor-element elementor-element-8d3b911 elementor-widget elementor-widget-heading" data-id="8d3b911" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h1 class="elementor-heading-title elementor-size-default">Contact</h1>				</div>
+					</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-0a99974 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="0a99974" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-3a211aa e-con-full e-flex e-con e-child" data-id="3a211aa" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-52e7fbc e-con-full animated-slow e-flex e-con e-child animated fadeInUp" data-id="52e7fbc" data-element_type="container" data-e-type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+				<div class="elementor-element elementor-element-4f0da64 elementor-widget elementor-widget-heading" data-id="4f0da64" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h2 class="elementor-heading-title elementor-size-default">Contact Us </h2>				</div>
+				<div class="elementor-element elementor-element-2c79206 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor" data-id="2c79206" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									Whether you are considering FUE, FUT, Beard Transplant, PRP Therapy, or Hairline Design, our team will help you understand the right approach for your needs.								</div>
+				</div>
+		<div class="elementor-element elementor-element-703738a e-grid e-con-full animated-slow e-con e-child animated fadeInUp" data-id="703738a" data-element_type="container" data-e-type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+		<a class="elementor-element elementor-element-7a2c3d5 e-con-full e-transform e-flex e-con e-child" data-id="7a2c3d5" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_transform_translateY_effect_hover&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:-3,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_hover&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_hover_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_hover_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_hover_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_hover_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" href="https://preview.raddito.net/folixa/contact/#">
+				<div class="elementor-element elementor-element-3e978d6 elementor-view-stacked elementor-shape-rounded elementor-widget elementor-widget-icon" data-id="3e978d6" data-element_type="widget" data-e-type="widget" data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<i aria-hidden="true" class="jki jki-search-location-solid"></i>			</div>
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-29e7fa2 elementor-widget-mobile__width-initial elementor-widget elementor-widget-heading" data-id="29e7fa2" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<div class="elementor-heading-title elementor-size-default">22nd AVE NW, New- Brighton, MN, US</div>				</div>
+				</a>
+		<a class="elementor-element elementor-element-8397332 e-con-full e-transform e-flex e-con e-child" data-id="8397332" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_transform_translateY_effect_hover&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:-3,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_hover&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_hover_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_hover_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_hover_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_hover_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" href="https://preview.raddito.net/folixa/contact/#">
+				<div class="elementor-element elementor-element-ac2c074 elementor-view-stacked elementor-shape-rounded elementor-widget elementor-widget-icon" data-id="ac2c074" data-element_type="widget" data-e-type="widget" data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<i aria-hidden="true" class="jki jki-phone-call-line"></i>			</div>
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-db6ae35 elementor-widget elementor-widget-heading" data-id="db6ae35" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<div class="elementor-heading-title elementor-size-default">(+1) 234 567 8900</div>				</div>
+				</a>
+		<a class="elementor-element elementor-element-3f9d62a e-con-full e-transform e-flex e-con e-child" data-id="3f9d62a" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_transform_translateY_effect_hover&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:-3,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_hover&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_hover_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_hover_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_hover_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_hover_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" href="https://preview.raddito.net/folixa/contact/#">
+				<div class="elementor-element elementor-element-1b4d83f elementor-view-stacked elementor-shape-rounded elementor-widget elementor-widget-icon" data-id="1b4d83f" data-element_type="widget" data-e-type="widget" data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<i aria-hidden="true" class="jki jki-envelope2-light"></i>			</div>
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-5a68e8f elementor-widget elementor-widget-heading" data-id="5a68e8f" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<div class="elementor-heading-title elementor-size-default">hello@folixa.com</div>				</div>
+				</a>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-4b9a3f4 e-con-full animated-slow e-flex e-con e-child animated fadeInUp" data-id="4b9a3f4" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;}">
+				<div class="elementor-element elementor-element-cb99b5a elementor-widget elementor-widget-metform" data-id="cb99b5a" data-element_type="widget" data-e-type="widget" data-widget_type="metform.default">
+					<div id="mf-response-props-id-1132" data-previous-steps-style="" data-editswitchopen="" data-response_type="alert" data-erroricon="fas fa-exclamation-triangle" data-successicon="fas fa-check" data-messageposition="top" class="   mf-scroll-top-no">
+		<div class="formpicker_warper formpicker_warper_editable" data-metform-formpicker-key="1132">
+				
+			<div class="mf-widget-container">
+				
+		<div id="metform-wrap-cb99b5a-1132" class="mf-form-wrapper" data-form-id="1132" data-action="https://preview.raddito.net/folixa/wp-json/metform/v1/entries/insert/1132" data-wp-nonce="916bd80d2f" data-form-nonce="1e406687ae" data-quiz-summery="false" data-save-progress="false" data-form-type="general-form" data-stop-vertical-effect="" data-payment-submit-before="0"><form class="metform-form-content"><div class="mf-main-response-wrap   mf-response-msg-wrap" data-show="0"><div class="mf-response-msg"><i class="mf-success-icon fas fa-check"></i><p></p></div></div><div class="metform-form-main-wrapper"><div data-elementor-type="wp-post" data-elementor-id="1132" class="elementor elementor-1132"><div class="elementor-element elementor-element-36840be e-grid e-con-full e-con e-parent" data-id="36840be" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-eb23fcc elementor-widget elementor-widget-mf-text" data-id="eb23fcc" data-element_type="widget" data-e-type="widget" data-settings="{&quot;mf_input_name&quot;:&quot;First_Name&quot;}" data-widget_type="mf-text.default"><div class="mf-input-wrapper"><input type="text" class="mf-input " id="mf-input-text-eb23fcc" name="First_Name" placeholder="first name " aria-invalid="false"></div></div><div class="elementor-element elementor-element-ce7aac4 elementor-widget elementor-widget-mf-email" data-id="ce7aac4" data-element_type="widget" data-e-type="widget" data-settings="{&quot;mf_input_name&quot;:&quot;Email_Address&quot;}" data-widget_type="mf-email.default"><div class="mf-input-wrapper"><input type="email" class="mf-input " id="mf-input-email-ce7aac4" name="Email_Address" placeholder="example@mail.com " aria-invalid="false" value=""></div></div><div class="elementor-element elementor-element-67d3dfd elementor-widget elementor-widget-mf-select" data-id="67d3dfd" data-element_type="widget" data-e-type="widget" data-settings="{&quot;mf_input_name&quot;:&quot;Service&quot;,&quot;mf_input_list&quot;:[{&quot;mf_input_option_text&quot;:&quot;FUE Transplant&quot;,&quot;mf_input_option_value&quot;:&quot;FUE Transplant&quot;,&quot;_id&quot;:&quot;78ba69f&quot;,&quot;mf_input_option_status&quot;:&quot;&quot;,&quot;mf_input_option_selected&quot;:&quot;&quot;},{&quot;mf_input_option_text&quot;:&quot;FUT Transplant&quot;,&quot;mf_input_option_value&quot;:&quot;FUT Transplant&quot;,&quot;_id&quot;:&quot;d256593&quot;,&quot;mf_input_option_status&quot;:&quot;&quot;,&quot;mf_input_option_selected&quot;:&quot;&quot;},{&quot;mf_input_option_text&quot;:&quot;Beard Transplant&quot;,&quot;mf_input_option_value&quot;:&quot;Beard Transplant&quot;,&quot;_id&quot;:&quot;786183d&quot;,&quot;mf_input_option_status&quot;:&quot;&quot;,&quot;mf_input_option_selected&quot;:&quot;&quot;},{&quot;mf_input_option_text&quot;:&quot;Hairline Design&quot;,&quot;mf_input_option_value&quot;:&quot;Hairline Design&quot;,&quot;_id&quot;:&quot;f6d3fce&quot;,&quot;mf_input_option_status&quot;:&quot;&quot;,&quot;mf_input_option_selected&quot;:&quot;&quot;}]}" data-widget_type="mf-select.default"><div class="mf-input-wrapper"><div class="mf-input mf-input-select css-b62m3t-container"><span id="react-select-2-live-region" class="css-7pg0cj-a11yText"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" role="log" class="css-7pg0cj-a11yText"></span><div class="mf_select__control css-13cymwt-control"><div class="mf_select__value-container css-hlgwow"><div class="mf_select__placeholder css-1jqq78o-placeholder" id="react-select-2-placeholder">select service </div><input id="react-select-2-input" tabindex="0" inputmode="none" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" role="combobox" aria-activedescendant="" aria-readonly="true" aria-describedby="react-select-2-placeholder" class="css-1hac4vs-dummyInput" value=""></div><div class="mf_select__indicators css-1wy0on6"><span class="mf_select__indicator-separator css-1u9des2-indicatorSeparator"></span><div class="mf_select__indicator mf_select__dropdown-indicator css-1xc3v61-indicatorContainer" aria-hidden="true"><svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg></div></div></div></div></div></div><div class="elementor-element elementor-element-e534de8 elementor-widget elementor-widget-mf-textarea" data-id="e534de8" data-element_type="widget" data-e-type="widget" data-settings="{&quot;mf_input_name&quot;:&quot;Message&quot;}" data-widget_type="mf-textarea.default"><div class="mf-input-wrapper"><textarea class="mf-input mf-textarea " id="mf-input-text-area-e534de8" name="Message" placeholder="tell us in details you want to say " cols="30" rows="10" aria-invalid="false"></textarea></div></div><div class="elementor-element elementor-element-1fb474e mf-btn--left mf-btn--mobile-justify elementor-widget-mobile__width-inherit elementor-widget elementor-widget-mf-button" data-id="1fb474e" data-element_type="widget" data-e-type="widget" data-widget_type="mf-button.default"><div class="mf-btn-wraper " data-mf-form-conditional-logic-requirement=""><button type="submit" class="metform-btn metform-submit-btn " id=""><span>Send Message </span></button></div></div></div></div></div></form></div>
+
+
+		<!----------------------------- 
+			* controls_data : find the the props passed indie of data attribute
+			* props.SubmitResponseMarkup : contains the markup of error or success message
+			* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+		--------------------------- -->
+
+				
+
+					</div>
+		</div>
+		</div>				</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-964faa6 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="964faa6" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-0633e16 animated-slow elementor-widget elementor-widget-google_maps animated fadeInUp" data-id="0633e16" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="google_maps.default">
+							<div class="elementor-custom-embed">
+			<div loading="lazy" src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m4!2m1!1sLondon+Eye,+London,+United+Kingdom!5e0!6i12" title="London Eye, London, United Kingdom" aria-label="London Eye, London, United Kingdom" data-original-tag="iframe"><!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+.LGLeeN-keyboard-shortcuts-view { display: flex; }
+
+.LGLeeN-keyboard-shortcuts-view table, .LGLeeN-keyboard-shortcuts-view tbody, .LGLeeN-keyboard-shortcuts-view td, .LGLeeN-keyboard-shortcuts-view tr { background: inherit; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; margin: 0px; padding: 0px; }
+
+.LGLeeN-keyboard-shortcuts-view table { display: table; }
+
+.LGLeeN-keyboard-shortcuts-view tr { display: table-row; }
+
+.LGLeeN-keyboard-shortcuts-view td { box-sizing: border-box; display: table-cell; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); padding: 6px; vertical-align: middle; white-space: nowrap; }
+
+.LGLeeN-keyboard-shortcuts-view td:first-child { text-align: end; }
+
+.LGLeeN-keyboard-shortcuts-view td kbd { background-color: light-dark(rgb(232, 234, 237), rgb(60, 64, 67)); border-radius: 2px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; box-sizing: border-box; color: inherit; display: inline-block; font-family: "Google Sans Text", Roboto, Arial, sans-serif; line-height: 16px; margin: 0px 2px; min-height: 20px; min-width: 20px; padding: 2px 4px; position: relative; text-align: center; }</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+.gm-style .gm-style-cc a, .gm-style .gm-style-cc button, .gm-style .gm-style-cc span, .gm-style .gm-style-mtc div { font-size: 10px; box-sizing: border-box; }
+
+.gm-style .gm-style-cc a, .gm-style .gm-style-cc button, .gm-style .gm-style-cc span { outline-offset: 3px; }
+
+sentinel { }</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+@media print {
+  .gm-style .gmnoprint, .gmnoprint { display: none; }
+}
+
+@media screen {
+  .gm-style .gmnoscreen, .gmnoscreen { display: none; }
+}</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+.gm-style-moc { background-color: rgba(0, 0, 0, 0.59); pointer-events: none; text-align: center; transition: opacity ease-in-out; }
+
+.gm-style-mot { color: white; font-family: Roboto, Arial, sans-serif; font-size: 22px; margin: 0px; position: relative; top: 50%; transform: translateY(-50%); }
+
+sentinel { }</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+.gm-style img { max-width: none; }
+
+.gm-style { font: 400 11px Roboto, Arial, sans-serif; text-decoration: none; }</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+.gm-inset-map { border-radius: 3px; border-style: solid; border-width: 2px; box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px; cursor: pointer; box-sizing: border-box; margin: 0px; overflow: hidden; padding: 0px; position: relative; }
+
+.gm-inset-map:hover { border-width: 4px; margin: -2px; width: 46px; }
+
+.gm-inset-dark { background-color: rgb(34, 34, 34); border-color: rgb(34, 34, 34); }
+
+.gm-inset-light { background-color: white; border-color: white; }
+
+sentinel { }</style><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+html, body, #mapDiv { height: 100%; margin: 0px; padding: 0px; }</style><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400,500,700&amp;lang=en"><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Text:400&amp;text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93&amp;lang=en">
+    
+  <script src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/search.js"></script><script src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/geometry.js"></script><script src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/main.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/common.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/util.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/map.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/controls.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/places_impl.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/places.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/onion.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/search_impl.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/66/3d/log.js" nonce=""></script></head>
+  <body style="overflow: hidden; background-color: grey;">
+    <embed-place-card-element><!---->
+        <div class="default-place-card-container">
+          <a target="_blank" href="https://maps.google.com/maps?ll=51.503186,-0.119519&amp;z=12&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=embed&amp;cid=4796882358840715922" title="Maps (opens in new tab)" aria-label="Maps (opens in new tab)">
+            <!--?lit$519672340$-->Maps
+            <span class="open-in-new-icon"> <!--?lit$519672340$--><svg viewBox="0 -960 960 960"><path fill="currentColor" d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120zm188-212-56-56 372-372H560v-80h280v280h-80v-144z"></path></svg> </span>
+          </a>
+        </div>
+      </embed-place-card-element><div id="mapDiv" dir="" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div><button draggable="false" aria-label="Keyboard shortcuts" title="Keyboard shortcuts" type="button" style="background: none transparent; display: block; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: absolute; cursor: pointer; user-select: none; z-index: 1000002; outline-offset: 3px; right: 0px; bottom: 0px; transform: translateX(100%);"></button></div><div tabindex="0" aria-label="Map" aria-roledescription="map" role="region" aria-describedby="498F662B-C886-4D49-B456-B3341E370FFC" style="position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"><div id="498F662B-C886-4D49-B456-B3341E370FFC" style="display: none;"><div class="LGLeeN-keyboard-shortcuts-view"><table><tbody><tr><td><kbd aria-label="Left arrow">←</kbd></td><td aria-label="Move left.">Move left</td></tr><tr><td><kbd aria-label="Right arrow">→</kbd></td><td aria-label="Move right.">Move right</td></tr><tr><td><kbd aria-label="Up arrow">↑</kbd></td><td aria-label="Move up.">Move up</td></tr><tr><td><kbd aria-label="Down arrow">↓</kbd></td><td aria-label="Move down.">Move down</td></tr><tr><td><kbd>+</kbd></td><td aria-label="Zoom in.">Zoom in</td></tr><tr><td><kbd>-</kbd></td><td aria-label="Zoom out.">Zoom out</td></tr><tr><td><kbd>Home</kbd></td><td aria-label="Jump left by 75%.">Jump left by 75%</td></tr><tr><td><kbd>End</kbd></td><td aria-label="Jump right by 75%.">Jump right by 75%</td></tr><tr><td><kbd>Page Up</kbd></td><td aria-label="Jump up by 75%.">Jump up by 75%</td></tr><tr><td><kbd>Page Down</kbd></td><td aria-label="Jump down by 75%.">Jump down by 75%</td></tr></tbody></table></div></div></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: pointer; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; will-change: transform; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 988; transform: matrix(1, 0, 0, 1, -164, -26);"><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 988; transform: matrix(1, 0, 0, 1, -164, -26);"><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear;"><img draggable="false" alt="" role="presentation" src="https://www.google.com/maps/vt?pb=!1m5!1m4!1i12!2i2047!3i1362!4i256!2m3!1e0!2sm!3i793559874!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5221366010611919219!2y4796882358840715922!2zL20vMDdneWM!4m2!1x515031864!2x4293772104!15sgcid%3Atourist_attraction!2b0!6b0!8b0&amp;key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&amp;token=97412" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear;"><img draggable="false" alt="" role="presentation" src="https://www.google.com/maps/vt?pb=!1m5!1m4!1i12!2i2047!3i1361!4i256!2m3!1e0!2sm!3i793559874!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5221366010611919219!2y4796882358840715922!2zL20vMDdneWM!4m2!1x515031864!2x4293772104!15sgcid%3Atourist_attraction!2b0!6b0!8b0&amp;key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&amp;token=125337" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear;"><img draggable="false" alt="" role="presentation" src="https://www.google.com/maps/vt?pb=!1m5!1m4!1i12!2i2046!3i1361!4i256!2m3!1e0!2sm!3i793559874!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5221366010611919219!2y4796882358840715922!2zL20vMDdneWM!4m2!1x515031864!2x4293772104!15sgcid%3Atourist_attraction!2b0!6b0!8b0&amp;key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&amp;token=119728" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear;"><img draggable="false" alt="" role="presentation" src="https://www.google.com/maps/vt?pb=!1m5!1m4!1i12!2i2046!3i1362!4i256!2m3!1e0!2sm!3i793559874!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5221366010611919219!2y4796882358840715922!2zL20vMDdneWM!4m2!1x515031864!2x4293772104!15sgcid%3Atourist_attraction!2b0!6b0!8b0&amp;key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&amp;token=91803" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; will-change: transform; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><slot></slot><span id="79891FDA-897F-4B9E-A2F7-115919E51A55" aria-live="polite" style="position: fixed; left: -10000px; top: 0px; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap; border: 0px;"></span></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div><div class="gm-style-moc" style="z-index: 4; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; transition-property: opacity, display; transition-behavior: allow-discrete; opacity: 0; display: none;"><p class="gm-style-mot"></p></div></div><div aria-hidden="true" frameborder="0" tabindex="-1" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; opacity: 0;" data-original-tag="iframe"></div><div style="pointer-events: none; width: 100%; height: 100%; box-sizing: border-box; position: absolute; z-index: 1000002; opacity: 0; border: 2px solid rgb(26, 115, 232);"></div><div><div style="position: absolute; left: 0px; top: 0px;"></div></div><div></div><div></div><div></div><div><button draggable="false" aria-label="Toggle fullscreen view" title="Toggle fullscreen view" type="button" aria-pressed="false" style="background: none rgb(255, 255, 255); display: none; border: 0px; margin: 10px; padding: 0px; text-transform: none; appearance: none; position: absolute; cursor: pointer; user-select: none; top: 0px; right: 0px;"></button></div><div></div><div></div><div></div><div></div><div></div><div><div style="margin: 10px; z-index: 1; display: none; position: absolute; left: 0px; bottom: 0px;"><div><button class="gm-inset-map gm-inset-light" aria-label="Show satellite imagery" title="Show satellite imagery"><div style="z-index: 1; position: absolute; height: 38px; width: 38px;"></div><div class="gm-inset-map-impl" aria-hidden="true" style="height: 38px; width: 38px; z-index: 0;"><div style="height: 100%; width: 100%;"><div style="overflow: hidden;"></div></div></div></button></div></div></div><div><div style="padding-bottom: 12px; position: absolute; bottom: 0px; left: 124px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2069%2029%22%3E%3Cg%20fill%3D%22%23fff%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%20opacity%3D%22.6%22%3E%3Cpath%20d%3D%22m17.4706%207.33616.5412-.54112-.5519-.53011c-1.3636-1.30974-3.2017-2.31971-5.7591-2.31971-4.6137%200-8.50262%203.75517-8.50262%208.39578%200%204.6407%203.88892%208.3958%208.50262%208.3958%202.4704%200%204.3765-.8188%205.8732-2.3679%201.5695-1.5729%202.0216-3.7363%202.0216-5.4119%200-.5232-.044-1.0254-.1295-1.4529l-.1206-.6029h-8.3947v3.5942h4.8301c-.1724.5966-.4321%201.0286-.7491%201.3461-.6288.6214-1.5823%201.3094-3.331%201.3094-2.65245%200-4.73598-2.1312-4.73598-4.8099%200-2.67861%202.08353-4.80981%204.73598-4.80981%201.4362%200%202.4752.5607%203.257%201.29229l.5298.49574.513-.51303z%22/%3E%3Cpath%20d%3D%22M24.8656%2020.7286c3.089%200%205.6036-2.4192%205.6036-5.6692%200-3.2681-2.5162-5.66929-5.6036-5.66929-3.0873%200-5.6035%202.40119-5.6035%205.66929%200%203.25%202.5145%205.6692%205.6035%205.6692Zm0-7.9004c1.014%200%201.9766.837%201.9766%202.2312%200%201.3805-.9653%202.2311-1.9766%202.2311-1.0099%200-1.9765-.8574-1.9765-2.2311%200-1.3874.9639-2.2312%201.9765-2.2312Z%22/%3E%3Cpath%20d%3D%22M35.7511%2017.2905h-.0042c-1.0099%200-1.9766-.8574-1.9766-2.2311%200-1.3874.964-2.2312%201.9766-2.2312%201.0139%200%201.9765.837%201.9765%202.2312%200%201.3845-.968%202.2368-1.9723%202.2311Zm-.0124%203.4381c3.089%200%205.6035-2.4192%205.6035-5.6692%200-3.2681-2.5162-5.66929-5.6035-5.66929-3.0874%200-5.6036%202.40119-5.6036%205.66929%200%203.2508%202.5236%205.6692%205.6036%205.6692Z%22/%3E%3Cpath%20d%3D%22M51.953%2010.4357v-.74997h-3.5531v.12253c-.55-.26178-1.2022-.42639-1.9191-.42639-2.8837%200-5.464%202.51793-5.464%205.69393%200%202.1269%201.164%203.9479%202.8033%204.9137l-.0658.0273-1.8806.7802-.6929.2874.2876.6928c.6228%201.5004%202.2776%203.3697%205.0535%203.3697%201.4105%200%202.787-.4145%203.814-1.4093%201.0332-1.0009%201.6171-2.4965%201.6171-4.4653zm-7.2194%209.9844-.0002-.0005c.5552.2005%201.1446.309%201.7474.309.6808%200%201.3058-.1467%201.841-.3891-.0876.3891-.2417.671-.4252.8682-.2812.3022-.7202.5011-1.3747.5011-.91190000000001%200-1.5201-.6476-1.7883-1.2887Zm1.9361-7.5919c.9722%200%201.878.8483%201.878%202.2558%200%201.3796-.8956%202.2147-1.878%202.2147-1.0428%200-1.993-.8738-1.993-2.2147%200-1.3754.9595-2.2558%201.993-2.2558Zm9.069-7.60737v-.75h-3.6599V20.4412h3.6599z%22/%3E%3Cpath%20d%3D%22m63.9128%2016.0614-.6183-.4122-.4179.6145c-.4562.6709-1.0102%201.0432-1.8025%201.0432-.4306%200-.7595-.0981-1.0197-.2622-.07-.0441-.1383-.0951-.2046-.1536l5.6999-2.3625.6825-.283L65.9596%2013.5589l-.219-.5514c-.4528-1.2075-1.8899-3.60918-4.9128-3.60918-2.9833%200-5.3244%202.36358-5.3244%205.66928%200%203.1475%202.3222%205.6693%205.5625%205.6693%202.6043%200%204.1111-1.5991%204.7283-2.5156l.421-.625L65.5882%2017.1783zm-2.5667-3.2103-1.9353.8015c.3795-.5743%201.0107-.8572%201.4909-.8572.1653%200%20.3136.0207.4444.0557Z%22/%3E%3C/g%3E%3Cpath%20fill%3D%22%234285f4%22%20d%3D%22M11.7008%2019.9868c-4.21304%200-7.75262-3.4328-7.75262-7.6458%200-4.21297%203.53958-7.64578%207.75262-7.64578%202.3323%200%203.9912.91159%205.2395%202.11061l-1.47%201.47003c-.8952-.83767-2.1106-1.49467-3.7695-1.49467-3.07972%200-5.48598%202.48016-5.48598%205.55981%200%203.0797%202.40626%205.5599%205.48598%205.5599%201.9956%200%203.1289-.8048%203.8598-1.5275.5995-.5996.9855-1.4537%201.1333-2.628h-4.9931v-2.0942h7.0298c.0739.3695.115.8212.115%201.3058%200%201.5685-.427%203.5067-1.8067%204.8864-1.3469%201.3961-3.0551%202.1434-5.3381%202.1434%22/%3E%3Cpath%20fill%3D%22%23e94235%22%20d%3D%22M29.7192%2015.0594c0%202.8333-2.1763%204.9192-4.8536%204.9192-2.6772%200-4.8535-2.0859-4.8535-4.9192%200-2.8498%202.1763-4.9193%204.8535-4.9193%202.6773%200%204.8536%202.0695%204.8536%204.9193m-2.127%200c0-1.7739-1.2648-2.9812-2.7266-2.9812s-2.7265%201.2155-2.7265%202.9812c0%201.7492%201.2647%202.9811%202.7265%202.9811s2.7266-1.2237%202.7266-2.9811%22/%3E%3Cpath%20fill%3D%22%23fabb05%22%20d%3D%22M40.5922%2015.0594c0%202.8333-2.1763%204.9192-4.8535%204.9192-2.6691%200-4.8536-2.0859-4.8536-4.9192%200-2.8498%202.1763-4.9193%204.8536-4.9193%202.6772%200%204.8535%202.0695%204.8535%204.9193m-2.1188%200c0-1.7739-1.2647-2.9812-2.7265-2.9812s-2.7266%201.2155-2.7266%202.9812c0%201.7492%201.2648%202.9811%202.7266%202.9811%201.4618.0082%202.7265-1.2237%202.7265-2.9811%22/%3E%3Cpath%20fill%3D%22%234285f4%22%20d%3D%22M51.203%2010.4357v8.8366c0%203.6382-2.1435%205.1246-4.6811%205.1246-2.3899%200-3.8188-1.6014-4.3609-2.9072l1.8807-.7802c.3367.8048%201.158%201.7493%202.4802%201.7493%201.626%200%202.628-1.0101%202.628-2.8908v-.7063h-.074c-.4845.5995-1.4207%201.1169-2.5951%201.1169-2.4637%200-4.714-2.1434-4.714-4.9028%200-2.7758%202.2585-4.9439%204.714-4.9439%201.1744%200%202.1106.5256%202.5951%201.1004h.074v-.7966zm-1.9053%204.6483c0-1.7328-1.158-3.0058-2.628-3.0058-1.4947%200-2.743%201.2647-2.743%203.0058%200%201.7164%201.2483%202.9647%202.743%202.9647%201.47%200%202.628-1.2483%202.628-2.9647%22/%3E%3Cpath%20fill%3D%22%2334a853%22%20d%3D%22M54.9887%205.22083V19.6912h-2.1599V5.22083z%22/%3E%3Cpath%20fill%3D%22%23e94235%22%20d%3D%22m63.4968%2016.6854%201.6754%201.1169c-.5421.8049-1.8478%202.1846-4.1063%202.1846-2.8004%200-4.8125-2.1599-4.8125-4.9193%200-2.9237%202.0367-4.9193%204.5744-4.9193%202.554%200%203.8023%202.0285%204.213%203.129l.2217.5584-6.5782%202.7266c.501.9855%201.2894%201.4946%202.3898%201.4946%201.1005%200%201.8643-.5502%202.4227-1.3715m-5.1656-1.7739%204.4019-1.8231c-.2464-.616-.9691-1.043-1.8314-1.043-1.1005%200-2.628.9691-2.5705%202.8661%22/%3E%3C/svg%3E" alt="Google" style="width: 52px;" width="52" height="22"></div></div><div><div style="display: inline-flex; position: absolute; right: 0px; bottom: 0px;"><div class="gmnoprint" style="z-index: 1000001;"><div draggable="false" class="gm-style-cc" style="user-select: none; position: relative; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><button draggable="false" aria-label="Keyboard shortcuts" title="Keyboard shortcuts" type="button" style="background: none; display: inline-block; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; color: rgb(0, 0, 0); font-family: inherit; line-height: inherit;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2016%2010%22%3E%3Cpath%20fill%3D%22%233c4043%22%20fill-rule%3D%22evenodd%22%20d%3D%22M1.5%200C.671573%200%200%20.671573%200%201.5v7C0%209.32843.671573%2010%201.5%2010h13c.8284%200%201.5-.67157%201.5-1.5v-7c0-.828427-.6716-1.5-1.5-1.5zM5%207c-.55228%200-1%20.44772-1%201%200%20.55229.44772%201%201%201h6c.5523%200%201-.44771%201-1%200-.55228-.4477-1-1-1zM1%204.25c0-.13807.11193-.25.25-.25h1.5c.13807%200%20.25.11193.25.25v1.5c0%20.13807-.11193.25-.25.25H1.5c-.27614%200-.5-.22386-.5-.5zM1.5%201c-.27614%200-.5.22386-.5.5v1.25c0%20.13807.11193.25.25.25h1.5c.13807%200%20.25-.11193.25-.25v-1.5C3%201.11193%202.88807%201%202.75%201zM4%204.25c0-.13807.11193-.25.25-.25h1.5c.13807%200%20.25.11193.25.25v1.5c0%20.13807-.11193.25-.25.25h-1.5C4.11193%206%204%205.88807%204%205.75zM4.25%201c-.13807%200-.25.11193-.25.25v1.5c0%20.13807.11193.25.25.25h1.5c.13807%200%20.25-.11193.25-.25v-1.5C6%201.11193%205.88807%201%205.75%201zM7%204.25c0-.13807.11193-.25.25-.25h1.5c.13807%200%20.25.11193.25.25v1.5c0%20.13807-.11193.25-.25.25h-1.5C7.11193%206%207%205.88807%207%205.75zM7.25%201c-.13807%200-.25.11193-.25.25v1.5c0%20.13807.11193.25.25.25h1.5c.13807%200%20.25-.11193.25-.25v-1.5C9%201.11193%208.88807%201%208.75%201zM10%204.25c0-.13807.1119-.25.25-.25h1.5c.1381%200%20.25.11193.25.25v1.5c0%20.13807-.1119.25-.25.25h-1.5c-.1381%200-.25-.11193-.25-.25zM10.25%201c-.1381%200-.25.11193-.25.25v1.5c0%20.13807.1119.25.25.25h1.5c.1381%200%20.25-.11193.25-.25v-1.5c0-.13807-.1119-.25-.25-.25zM13%204.25c0-.13807.1119-.25.25-.25h1.5c.1381%200%20.25.11193.25.25V5.5c0%20.27614-.2239.5-.5.5h-1.25c-.1381%200-.25-.11193-.25-.25zM13.25%201c-.1381%200-.25.11193-.25.25v1.5c0%20.13807.1119.25.25.25h1.5c.1381%200%20.25-.11193.25-.25V1.5c0-.27614-.2239-.5-.5-.5z%22%20clip-rule%3D%22evenodd%22/%3E%3C/svg%3E" alt="" style="height: 9px; vertical-align: -1px;" width="14" height="9"></button></div></div></div><div class="gmnoprint" style="z-index: 1000001;"><div draggable="false" class="gm-style-cc" style="user-select: none; position: relative; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><button draggable="false" aria-label="Map Data" title="Map Data" type="button" style="background: none; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; color: rgb(0, 0, 0); font-family: inherit; line-height: inherit; display: none;">Map Data</button><span style="">Map data ©2026 Google</span></div></div></div><div class="gmnoscreen"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(0, 0, 0); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2026 Google</div></div><button draggable="false" aria-label="Map Scale: 1 km per 42 pixels" title="Map Scale: 1 km per 42 pixels" type="button" class="gm-style-cc" aria-describedby="E0859319-7783-4FF4-B25A-08996B6A6B4B" style="background: none; display: none; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><span style="color: rgb(0, 0, 0);">1 km&nbsp;</span><div style="position: relative; display: inline-block; height: 8px; bottom: -1px; width: 46px;"><div style="width: 100%; height: 4px; position: absolute; left: 0px; top: 0px;"></div><div style="width: 4px; height: 8px; left: 0px; top: 0px;"></div><div style="width: 4px; height: 8px; position: absolute; right: 0px; bottom: 0px;"></div><div style="position: absolute; background-color: rgb(0, 0, 0); height: 2px; left: 1px; bottom: 1px; right: 1px;"></div><div style="position: absolute; width: 2px; height: 6px; left: 1px; top: 1px; background-color: rgb(0, 0, 0);"></div><div style="width: 2px; height: 6px; position: absolute; background-color: rgb(0, 0, 0); bottom: 1px; right: 1px;"></div></div></div><span id="E0859319-7783-4FF4-B25A-08996B6A6B4B" style="display: none;">Click to toggle between metric and imperial units</span></button><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; user-select: none; position: relative; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a aria-label="Terms (opens in new tab)" href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" rel="noopener" style="text-decoration: none; cursor: pointer; color: rgb(0, 0, 0);">Terms</a></div></div><div draggable="false" class="gm-style-cc" style="user-select: none; position: relative; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_blank" rel="noopener" title="Report errors in the road map or imagery to Google" dir="ltr" aria-label="Report a map error (opens in new tab)" href="https://www.google.com/maps/@51.5031864,-0.1195192,12z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; text-decoration: none; position: relative; color: rgb(0, 0, 0);">Report a map error</a></div></div></div></div></div></div></div>
+      
+    <script nonce="">
+      function onEmbedLoad() {
+        initEmbed([null,null,null,null,null,[[[2,"spotlit",null,null,null,null,null,[null,null,null,null,null,null,null,null,null,null,11,null,[null,null,null,null,null,null,null,null,null,null,null,null,null,1]]]],null,null,[[null,null,null,null,null,null,null,null,null,null,null,null,null,[[["5221366010611919219","4796882358840715922"],"/m/07gyc",null,[515031864,4293772104],null,null,null,null,null,null,null,null,null,null,"gcid:tourist_attraction"],0,null,null,null,0,null,0]]]],null,["en_US"],[null,null,null,"/maps/api/js/ApplicationService.GetEntityDetails","/maps/embed/upgrade204",null,"/maps/embed/record204"],null,null,null,null,null,null,null,null,"VFaeare0M4rV5NoPnsGDyAs",null,null,null,[[[2483.546574997971,-0.1195192,51.5031864],[0,0,0],null,13.10000038146973],12,0,[["0x487604b900d26973:0x4291f3172409ea92","Riverside Building, London Eye, County Hall, Westminster Bridge Rd, London SE1 7PB, United Kingdom",[51.5031864,-0.1195192],"4796882358840715922"],"London Eye",["Riverside Building, County Hall, Westminster Bridge Rd","London SE1 7PB","United Kingdom"],4.5,"204,162 reviews","https://search.google.com/local/reviews?placeid=ChIJc2nSALkEdkgRkuoJJBfzkUI\u0026q=London+Eye,+London,+United+Kingdom\u0026hl=en\u0026gl=US",null,"+44 20 7967 8021",null,null,null,["https://www.londoneye.com/","londoneye.com",null,null,",AOvVaw3er5P7qHaFk7ACfuu8-ykt,,0ahUKEwi3rsDG6NuWAxWKKlkFHZ7gALkQ61gIFigQ,"],"Tourist attraction","Riverside Building, County Hall, Westminster Bridge Rd, London SE1 7PB, United Kingdom",null,null,null,null,null,null,null,null,null,null,null,null,null,"ChIJc2nSALkEdkgRkuoJJBfzkUI",null,null,"0ahUKEwi3rsDG6NuWAxWKKlkFHZ7gALkQ8BcIAygA",null,null,["tel:+442079678021"],null,null,null,1,["0ahUKEwi3rsDG6NuWAxWKKlkFHZ7gALkQqtMBCA4oCg",["9C3XGV3J+75"],["GV3J+75 London, United Kingdom"],3],[[["Monday",1,[2026,9,7],[["11 AM–6 PM",[[11],[18]]]],0,1],["Tuesday",2,[2026,9,8],[["11 AM–6 PM",[[11],[18]]]],0,1],["Wednesday",3,[2026,9,9],[["11 AM–6 PM",[[11],[18]]]],0,1],["Thursday",4,[2026,9,10],[["11 AM–6 PM",[[11],[18]]]],0,1],["Friday",5,[2026,9,11],[["11 AM–6 PM",[[11],[18]]]],0,1],["Saturday",6,[2026,9,12],[["11 AM–6 PM",[[11],[18]]]],0,1],["Sunday",7,[2026,9,13],[["11 AM–6 PM",[[11],[18]]]],0,1]],[["Monday",1,[2026,9,7],[["11 AM–6 PM",[[11],[18]]]],0,1],0,4,null,["Closed · Opens 11 AM",[[0,6,[null,[4292030248,4294097077]]]]],["Closed · Opens 11 AM",[[0,6,[null,[4292030248,4294097077]]]]],null,[10,30],["Closed",[[0,6,[null,[4292030248,4294097077]]]]]],1,null,null,null,1]]],null,null,null,0,null,null,null,null,null,null,[1]]);
+      }
+      function onApiLoad() {
+        var embed = document.createElement('script');
+        embed.src = "https://maps.gstatic.com/maps-api-v3/embed/js/66/3d/init_embed.js";
+        document.body.appendChild(embed);
+      }
+    </script>
+    <link rel="preload" href="https://maps.gstatic.com/maps-api-v3/embed/js/66/3d/init_embed.js" nonce="" as="script">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&amp;paint_origin=&amp;libraries=geometry,search&amp;v=weekly&amp;loading=async&amp;language=en_US&amp;experimentation=allowed&amp;callback=onApiLoad" nonce="" async="" defer=""></script>
+  
+
+<script src="https://maps.gstatic.com/maps-api-v3/embed/js/66/3d/init_embed.js"></script></body></html></div>
+		</div>
+						</div>
+					</div>
+				</div>
+				</div>
+		<div class="ekit-template-content-markup ekit-template-content-footer ekit-template-content-theme-support">
+		<div data-elementor-type="wp-post" data-elementor-id="1736" class="elementor elementor-1736">
+				<div class="elementor-element elementor-element-8acb047 e-con-full e-flex e-con e-parent e-lazyloaded" data-id="8acb047" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-35b250b e-flex e-con-boxed e-con e-child" data-id="35b250b" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-f998846 e-con-full e-flex e-con e-child" data-id="f998846" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-1c4e4b3 elementor-widget elementor-widget-image" data-id="1c4e4b3" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+																<a href="https://preview.raddito.net/folixa/">
+							<img width="1049" height="335" src="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/2026/04/Folixa_Logo_White-1.png" class="attachment-full size-full wp-image-882" alt="" decoding="async">								</a>
+															</div>
+				<div class="elementor-element elementor-element-31680c5 elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-text-editor" data-id="31680c5" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care.								</div>
+		<div class="elementor-element elementor-element-5c42d0a e-con-full e-flex e-con e-child" data-id="5c42d0a" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-dff0d5a elementor-position-inline-start elementor-mobile-position-inline-start elementor-view-default elementor-widget elementor-widget-icon-box" data-id="dff0d5a" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="https://preview.raddito.net/folixa/contact/#" class="elementor-icon" tabindex="-1" aria-label="(+1) 234 567 8900">
+				<i aria-hidden="true" class="jki jki-phone1-light"></i>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<p class="elementor-icon-box-title">
+						<a href="https://preview.raddito.net/folixa/contact/#">
+							(+1) 234 567 8900						</a>
+					</p>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-f170f72 elementor-position-inline-start elementor-mobile-position-inline-start elementor-view-default elementor-widget elementor-widget-icon-box" data-id="f170f72" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="https://preview.raddito.net/folixa/contact/#" class="elementor-icon" tabindex="-1" aria-label="hello@folixa.com">
+				<i aria-hidden="true" class="jki jki-envelope-open-text-solid"></i>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<p class="elementor-icon-box-title">
+						<a href="https://preview.raddito.net/folixa/contact/#">
+							hello@folixa.com						</a>
+					</p>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1e21762 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="1e21762" data-element_type="widget" data-e-type="widget" data-widget_type="divider.default">
+							<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+						</div>
+		<div class="elementor-element elementor-element-bd12c55 e-con-full e-flex e-con e-child" data-id="bd12c55" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-403c9bb e-con-full e-flex e-con e-child" data-id="403c9bb" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-264593b elementor-hidden-mobile elementor-widget elementor-widget-text-editor" data-id="264593b" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care.								</div>
+		<div class="elementor-element elementor-element-cbf6c62 e-con-full e-flex e-con e-child" data-id="cbf6c62" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-2e453d0 elementor-widget elementor-widget-text-editor" data-id="2e453d0" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									Stay Updated With Hair Care Insights								</div>
+				<div class="elementor-element elementor-element-e79efcf elementor-widget elementor-widget-metform" data-id="e79efcf" data-element_type="widget" data-e-type="widget" data-widget_type="metform.default">
+					<div id="mf-response-props-id-551" data-previous-steps-style="" data-editswitchopen="" data-response_type="alert" data-erroricon="fas fa-exclamation-triangle" data-successicon="fas fa-check" data-messageposition="top" class="   mf-scroll-top-no">
+		<div class="formpicker_warper formpicker_warper_editable" data-metform-formpicker-key="551">
+				
+			<div class="mf-widget-container">
+				
+		<div id="metform-wrap-e79efcf-551" class="mf-form-wrapper" data-form-id="551" data-action="https://preview.raddito.net/folixa/wp-json/metform/v1/entries/insert/551" data-wp-nonce="916bd80d2f" data-form-nonce="1e406687ae" data-quiz-summery="false" data-save-progress="false" data-form-type="general-form" data-stop-vertical-effect="" data-payment-submit-before="0"><form class="metform-form-content"><div class="mf-main-response-wrap   mf-response-msg-wrap" data-show="0"><div class="mf-response-msg"><i class="mf-success-icon fas fa-check"></i><p></p></div></div><div class="metform-form-main-wrapper"><div data-elementor-type="wp-post" data-elementor-id="551" class="elementor elementor-551"><div class="elementor-element elementor-element-714913f e-con-full e-flex e-con e-parent" data-id="714913f" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-faef798 e-con-full e-flex e-con e-child" data-id="faef798" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-d5ded39 elementor-widget elementor-widget-mf-email" data-id="d5ded39" data-element_type="widget" data-e-type="widget" data-settings="{&quot;mf_input_name&quot;:&quot;email&quot;}" data-widget_type="mf-email.default"><div class="mf-input-wrapper"><input type="email" class="mf-input " id="mf-input-email-d5ded39" name="email" placeholder="Your Email... " aria-invalid="false" value=""></div></div></div><div class="elementor-element elementor-element-aa3a16a e-con-full e-flex e-con e-child" data-id="aa3a16a" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-f783163 mf-btn--justify mf-btn--tablet-justify mf-btn--mobile-justify elementor-widget elementor-widget-mf-button" data-id="f783163" data-element_type="widget" data-e-type="widget" data-widget_type="mf-button.default"><div class="mf-btn-wraper " data-mf-form-conditional-logic-requirement=""><button type="submit" class="metform-btn metform-submit-btn " id=""><span>Subscribe </span></button></div></div></div></div></div></div></form></div>
+
+
+		<!----------------------------- 
+			* controls_data : find the the props passed indie of data attribute
+			* props.SubmitResponseMarkup : contains the markup of error or success message
+			* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+		--------------------------- -->
+
+				
+
+					</div>
+		</div>
+		</div>				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-f9d1a07 e-con-full e-flex e-con e-child" data-id="f9d1a07" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-be17d76 elementor-widget elementor-widget-heading" data-id="be17d76" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<span class="elementor-heading-title elementor-size-default">Services</span>				</div>
+		<div class="elementor-element elementor-element-1975a86 e-con-full e-flex e-con e-child" data-id="1975a86" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-5bc63c0 elementor-widget elementor-widget-heading" data-id="5bc63c0" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">FUE Hair Transplant</a></p>				</div>
+				<div class="elementor-element elementor-element-fab1927 elementor-widget elementor-widget-heading" data-id="fab1927" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">FUT Hair Transplant</a></p>				</div>
+				<div class="elementor-element elementor-element-d024a7a elementor-widget elementor-widget-heading" data-id="d024a7a" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">Beard Transplant</a></p>				</div>
+				<div class="elementor-element elementor-element-af9f5c4 elementor-widget elementor-widget-heading" data-id="af9f5c4" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">PRP Hair Therapy</a></p>				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-80f5493 e-con-full e-flex e-con e-child" data-id="80f5493" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-b409ac3 elementor-widget elementor-widget-heading" data-id="b409ac3" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<span class="elementor-heading-title elementor-size-default">Pages</span>				</div>
+		<div class="elementor-element elementor-element-01f0dda e-con-full e-flex e-con e-child" data-id="01f0dda" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-a06e305 elementor-widget elementor-widget-heading" data-id="a06e305" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">Home</a></p>				</div>
+				<div class="elementor-element elementor-element-effc53c elementor-widget elementor-widget-heading" data-id="effc53c" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">About</a></p>				</div>
+				<div class="elementor-element elementor-element-25b50bd elementor-widget elementor-widget-heading" data-id="25b50bd" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">Treatments</a></p>				</div>
+				<div class="elementor-element elementor-element-0a32df9 elementor-widget elementor-widget-heading" data-id="0a32df9" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">Contact</a></p>				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-865872c e-con-full e-flex e-con e-child" data-id="865872c" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-bd49757 elementor-widget elementor-widget-heading" data-id="bd49757" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<span class="elementor-heading-title elementor-size-default">Visit Time</span>				</div>
+		<div class="elementor-element elementor-element-febce57 e-con-full e-flex e-con e-child" data-id="febce57" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-d5f6a4c elementor-view-framed elementor-position-inline-start elementor-mobile-position-inline-start elementor-shape-circle elementor-widget elementor-widget-icon-box" data-id="d5f6a4c" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="https://preview.raddito.net/folixa/contact/#" class="elementor-icon" tabindex="-1" aria-label="Facebook">
+				<i aria-hidden="true" class="jki jki-facebook-light"></i>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<p class="elementor-icon-box-title">
+						<a href="https://preview.raddito.net/folixa/contact/#">
+							Facebook						</a>
+					</p>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-6cb46f6 elementor-view-framed elementor-position-inline-start elementor-mobile-position-inline-start elementor-shape-circle elementor-widget elementor-widget-icon-box" data-id="6cb46f6" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="https://preview.raddito.net/folixa/contact/#" class="elementor-icon" tabindex="-1" aria-label="Instagram">
+				<i aria-hidden="true" class="jki jki-instagram-1-light"></i>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<p class="elementor-icon-box-title">
+						<a href="https://preview.raddito.net/folixa/contact/#">
+							Instagram						</a>
+					</p>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-475ee2d elementor-view-framed elementor-position-inline-start elementor-mobile-position-inline-start elementor-shape-circle elementor-widget elementor-widget-icon-box" data-id="475ee2d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="https://preview.raddito.net/folixa/contact/#" class="elementor-icon" tabindex="-1" aria-label="LinkedIn">
+				<i aria-hidden="true" class="jki jki-linkedin-light"></i>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<p class="elementor-icon-box-title">
+						<a href="https://preview.raddito.net/folixa/contact/#">
+							LinkedIn						</a>
+					</p>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-3743bb4 elementor-view-framed elementor-position-inline-start elementor-mobile-position-inline-start elementor-shape-circle elementor-widget elementor-widget-icon-box" data-id="3743bb4" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="https://preview.raddito.net/folixa/contact/#" class="elementor-icon" tabindex="-1" aria-label="X (Twitter)">
+				<svg aria-hidden="true" class="e-font-icon-svg e-fab-x-twitter" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<p class="elementor-icon-box-title">
+						<a href="https://preview.raddito.net/folixa/contact/#">
+							X (Twitter)						</a>
+					</p>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-81a39b3 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="81a39b3" data-element_type="widget" data-e-type="widget" data-widget_type="divider.default">
+							<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+						</div>
+		<div class="elementor-element elementor-element-16d4589 e-con-full e-flex e-con e-child" data-id="16d4589" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-4f615e8 elementor-widget elementor-widget-heading" data-id="4f615e8" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default">Copyright ©2026 Eldewell | Powered by Raddito.</p>				</div>
+		<div class="elementor-element elementor-element-f2e6038 e-con-full e-flex e-con e-child" data-id="f2e6038" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-5ddc32b elementor-widget elementor-widget-heading" data-id="5ddc32b" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">Privacy Policy</a></p>				</div>
+				<div class="elementor-element elementor-element-2e8706f elementor-widget elementor-widget-heading" data-id="2e8706f" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">Terms &amp; Conditions</a></p>				</div>
+				<div class="elementor-element elementor-element-f29e44f elementor-widget elementor-widget-heading" data-id="f29e44f" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">Sitemap</a></p>				</div>
+				<div class="elementor-element elementor-element-635a80c elementor-widget elementor-widget-heading" data-id="635a80c" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default"><a href="https://preview.raddito.net/folixa/contact/#">Cookies</a></p>				</div>
+				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+				</div>
+		</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/folixa/*"},{"not":{"href_matches":["/folixa/wp-*.php","/folixa/wp-admin/*","/folixa/wp-content/uploads/sites/226/*","/folixa/wp-content/*","/folixa/wp-content/plugins/*","/folixa/wp-content/themes/hello-elementor/*","/folixa/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				( () => {
+					const lazyloadRunObserver = () => {
+						const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+						const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+							entries.forEach( ( entry ) => {
+								if ( entry.isIntersecting ) {
+									let lazyloadBackground = entry.target;
+									if( lazyloadBackground ) {
+										lazyloadBackground.classList.add( 'e-lazyloaded' );
+									}
+									lazyloadBackgroundObserver.unobserve( entry.target );
+								}
+							});
+						}, { rootMargin: '200px 0px 200px 0px' } );
+						lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+							lazyloadBackgroundObserver.observe( lazyloadBackground );
+						} );
+					};
+					const events = [
+						'DOMContentLoaded',
+						'elementor/lazyload/observe',
+					];
+					events.forEach( ( event ) => {
+						document.addEventListener( event, lazyloadRunObserver );
+					} );
+				} )();
+			</script>
+			<link rel="stylesheet" id="elementor-post-1132-css" href="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/elementor/css/post-1132.css?ver=1788761462" media="all">
+<link rel="stylesheet" id="elementor-post-551-css" href="https://preview.raddito.net/folixa/wp-content/uploads/sites/226/elementor/css/post-551.css?ver=1788431950" media="all">
+<link rel="stylesheet" id="elementor-icons-ekiticons-css" href="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/modules/elementskit-icon-pack/assets/css/ekiticons.css?ver=4.0.2" media="all">
+<script id="elementor-webpack-runtime-js" src="https://preview.raddito.net/folixa/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=4.2.4"></script>
+<script id="elementor-frontend-modules-js" src="https://preview.raddito.net/folixa/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=4.2.4"></script>
+<script id="jquery-ui-core-js-before">
+jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before
+</script>
+<script id="jquery-ui-core-js" src="https://preview.raddito.net/folixa/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnX":"Share on X","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"4.2.4","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_optimized_markup":true,"e_panel_promotions":true,"hello-theme-header-footer":true,"e_pro_free_trial_popup":true,"nested-elements":true,"global_classes_should_enforce_capabilities":true,"e_opt_in_v4_page":true,"e_interactions":true,"e_widget_creation":true,"import-export-customization":true},"urls":{"assets":"https:\/\/preview.raddito.net\/folixa\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/preview.raddito.net\/folixa\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/preview.raddito.net\/folixa\/wp-content\/uploads\/sites\/226"},"nonces":{"floatingButtonsClickTracking":"57e40b643a","atomicFormsSendForm":"5a6436f830"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"logo","hello_header_menu_layout":"horizontal","hello_footer_logo_type":"logo"},"post":{"id":35,"title":"Contact%20%E2%80%93%20Folixa","excerpt":"","featuredImage":false}};
+//# sourceURL=elementor-frontend-js-before
+</script>
+<script id="elementor-frontend-js" src="https://preview.raddito.net/folixa/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=4.2.4"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+<script id="elementor-frontend-js-after">
+var jkit_ajax_url = "https://preview.raddito.net/folixa/?jkit-ajax-request=jkit_elements", jkit_nonce = "458beb1d0d";
+//# sourceURL=elementor-frontend-js-after
+</script>
+<script id="htm-js" src="https://preview.raddito.net/folixa/wp-content/plugins/metform/assets/libs/htm/htm.js?ver=4.3.0"></script>
+<script id="react-js" src="https://preview.raddito.net/folixa/wp-includes/js/dist/vendor/react.min.js?ver=18.3.1.1"></script>
+<script id="react-dom-js" src="https://preview.raddito.net/folixa/wp-includes/js/dist/vendor/react-dom.min.js?ver=18.3.1.1"></script>
+<script id="react-jsx-runtime-js" src="https://preview.raddito.net/folixa/wp-includes/js/dist/vendor/react-jsx-runtime.min.js?ver=18.3.1"></script>
+<script id="wp-escape-html-js" src="https://preview.raddito.net/folixa/wp-includes/js/dist/escape-html.min.js?ver=87ebe53e97bba59805a5"></script>
+<script id="wp-element-js" src="https://preview.raddito.net/folixa/wp-includes/js/dist/element.min.js?ver=4a4370b2b349066fd440"></script>
+<script id="wp-hooks-js" src="https://preview.raddito.net/folixa/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://preview.raddito.net/folixa/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="metform-app-js-extra">
+var mf = {"postType":"page","restURI":"https://preview.raddito.net/folixa/wp-json/metform/v1/forms/views/","minMsg1":"Minimum length should be ","Msg2":" character long.","maxMsg1":"Maximum length should be ","maxNum":"Maximum number should be ","minNum":"Minimum number should be "};
+//# sourceURL=metform-app-js-extra
+</script>
+<script id="metform-app-js" src="https://preview.raddito.net/folixa/wp-content/plugins/metform/build/frontend/app/index.js?ver=6ea98acae644b20be40c"></script>
+<script id="mf-widget-frontend-js" src="https://preview.raddito.net/folixa/wp-content/plugins/metform/build/frontend/widget-bootstrap/index.js?ver=b445a4677483b289f57b"></script>
+<script id="cute-alert-js" src="https://preview.raddito.net/folixa/wp-content/plugins/metform/assets/libs/cute-alert/cute-alert.js?ver=4.3.0"></script>
+<script id="hello-theme-frontend-js" src="https://preview.raddito.net/folixa/wp-content/themes/hello-elementor/assets/js/hello-frontend.js?ver=3.5.1"></script>
+<script id="ekit-core-js-extra">
+var ekit_config = {"ajaxurl":"https://preview.raddito.net/folixa/wp-admin/admin-ajax.php","nonce":"a0099028d5"};
+//# sourceURL=ekit-core-js-extra
+</script>
+<script id="ekit-core-js" src="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widgets/core.js?ver=4.0.2"></script>
+<script id="ekit-nav-menu-js" src="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widgets/nav-menu.js?ver=4.0.2"></script>
+<script id="magnific-popup-js" src="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/assets/libs/magnific-popup/jquery.magnific-popup.min.js?ver=4.0.2"></script>
+<script id="ekit-menu-js" src="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/widgets/init/assets/js/nav-menu.js?ver=4.0.2"></script>
+<script id="ekit-header-search-js" src="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widgets/header-search.js?ver=4.0.2"></script>
+<script id="ekit-header-offcanvas-js" src="https://preview.raddito.net/folixa/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widgets/header-offcanvas.js?ver=4.0.2"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://preview.raddito.net/folixa/wp-includes/js/wp-emoji-release.min.js?ver=7.1"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://preview.raddito.net/folixa/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+
+
+</body></html>

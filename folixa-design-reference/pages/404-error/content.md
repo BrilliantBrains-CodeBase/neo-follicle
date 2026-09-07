@@ -1,0 +1,7 @@
+# 404
+
+Oops! Page Not Found
+
+We can’t seem to locate the page you’re searching for. It might have been removed, renamed, or is temporarily unavailable.
+
+[Back To Home](https://preview.raddito.net/folixa/)

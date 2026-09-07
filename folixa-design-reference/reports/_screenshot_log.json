@@ -1,0 +1,222 @@
+[
+  {
+    "slug": "testimonials",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "testimonials",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "404-error",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "404-error",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "appointment",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "appointment",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "contact",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "contact",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "single-post",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "single-post",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "blog",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "blog",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "faqs",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "faqs",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "treatments-details",
+    "viewport": "desktop",
+    "ok": true,
+    "kb": 3006,
+    "unstuck": 0
+  },
+  {
+    "slug": "treatments-details",
+    "viewport": "mobile",
+    "ok": true,
+    "kb": 1528,
+    "unstuck": 2
+  },
+  {
+    "slug": "treatments",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "treatments",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "about",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "about",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "home",
+    "viewport": "desktop",
+    "ok": true,
+    "kb": 11868,
+    "unstuck": 0
+  },
+  {
+    "slug": "home",
+    "viewport": "mobile",
+    "ok": true,
+    "kb": 6579,
+    "unstuck": 2
+  },
+  {
+    "slug": "common-mistakes-to-avoid-after-hair-transplant-surgery",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "common-mistakes-to-avoid-after-hair-transplant-surgery",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "prp-therapy-for-hair-loss-benefits-and-results",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "prp-therapy-for-hair-loss-benefits-and-results",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "is-hair-transplant-permanent-facts-you-should-know",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "is-hair-transplant-permanent-facts-you-should-know",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "hair-transplant-recovery-timeline-week-by-week",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "hair-transplant-recovery-timeline-week-by-week",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "how-to-prepare-before-your-hair-transplant-procedure",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "how-to-prepare-before-your-hair-transplant-procedure",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "fue-vs-fut-which-hair-transplant-method-is-right",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "fue-vs-fut-which-hair-transplant-method-is-right",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "understanding-fue-hair-transplant-what-to-expect",
+    "viewport": "desktop",
+    "ok": true,
+    "skipped": true
+  },
+  {
+    "slug": "understanding-fue-hair-transplant-what-to-expect",
+    "viewport": "mobile",
+    "ok": true,
+    "skipped": true
+  }
+]

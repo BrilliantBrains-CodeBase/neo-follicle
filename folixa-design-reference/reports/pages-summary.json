@@ -1,0 +1,182 @@
+[
+  {
+    "slug": "testimonials",
+    "kind": "page",
+    "title": "Testimonials",
+    "url": "https://preview.raddito.net/folixa/testimonials/",
+    "sections": 7,
+    "widgets": 73,
+    "images": 10,
+    "headings": 10
+  },
+  {
+    "slug": "404-error",
+    "kind": "page",
+    "title": "404 Error",
+    "url": "https://preview.raddito.net/folixa/404-error/",
+    "sections": 1,
+    "widgets": 4,
+    "images": 0,
+    "headings": 1
+  },
+  {
+    "slug": "appointment",
+    "kind": "page",
+    "title": "Appointment",
+    "url": "https://preview.raddito.net/folixa/appointment/",
+    "sections": 9,
+    "widgets": 82,
+    "images": 6,
+    "headings": 13
+  },
+  {
+    "slug": "contact",
+    "kind": "page",
+    "title": "Contact",
+    "url": "https://preview.raddito.net/folixa/contact/",
+    "sections": 7,
+    "widgets": 58,
+    "images": 3,
+    "headings": 2
+  },
+  {
+    "slug": "single-post",
+    "kind": "page",
+    "title": "Single Post",
+    "url": "https://preview.raddito.net/folixa/single-post/",
+    "sections": 5,
+    "widgets": 81,
+    "images": 5,
+    "headings": 15
+  },
+  {
+    "slug": "blog",
+    "kind": "page",
+    "title": "Blog",
+    "url": "https://preview.raddito.net/folixa/blog/",
+    "sections": 6,
+    "widgets": 44,
+    "images": 9,
+    "headings": 9
+  },
+  {
+    "slug": "faqs",
+    "kind": "page",
+    "title": "Faqs",
+    "url": "https://preview.raddito.net/folixa/faqs/",
+    "sections": 9,
+    "widgets": 74,
+    "images": 3,
+    "headings": 6
+  },
+  {
+    "slug": "treatments-details",
+    "kind": "page",
+    "title": "Treatments details",
+    "url": "https://preview.raddito.net/folixa/treatments-details/",
+    "sections": 10,
+    "widgets": 69,
+    "images": 4,
+    "headings": 21
+  },
+  {
+    "slug": "treatments",
+    "kind": "page",
+    "title": "Treatments",
+    "url": "https://preview.raddito.net/folixa/treatments/",
+    "sections": 8,
+    "widgets": 67,
+    "images": 6,
+    "headings": 19
+  },
+  {
+    "slug": "about",
+    "kind": "page",
+    "title": "About",
+    "url": "https://preview.raddito.net/folixa/about/",
+    "sections": 11,
+    "widgets": 87,
+    "images": 11,
+    "headings": 14
+  },
+  {
+    "slug": "home",
+    "kind": "page",
+    "title": "Home",
+    "url": "https://preview.raddito.net/folixa/",
+    "sections": 14,
+    "widgets": 117,
+    "images": 15,
+    "headings": 33
+  },
+  {
+    "slug": "common-mistakes-to-avoid-after-hair-transplant-surgery",
+    "kind": "post",
+    "title": "Common Mistakes to Avoid After Hair Transplant Surgery",
+    "url": "https://preview.raddito.net/folixa/common-mistakes-to-avoid-after-hair-transplant-surgery/",
+    "sections": 5,
+    "widgets": 81,
+    "images": 5,
+    "headings": 15
+  },
+  {
+    "slug": "prp-therapy-for-hair-loss-benefits-and-results",
+    "kind": "post",
+    "title": "PRP Therapy for Hair Loss: Benefits and Results",
+    "url": "https://preview.raddito.net/folixa/prp-therapy-for-hair-loss-benefits-and-results/",
+    "sections": 5,
+    "widgets": 81,
+    "images": 5,
+    "headings": 15
+  },
+  {
+    "slug": "is-hair-transplant-permanent-facts-you-should-know",
+    "kind": "post",
+    "title": "Is Hair Transplant Permanent? Facts You Should Know",
+    "url": "https://preview.raddito.net/folixa/is-hair-transplant-permanent-facts-you-should-know/",
+    "sections": 5,
+    "widgets": 81,
+    "images": 5,
+    "headings": 15
+  },
+  {
+    "slug": "hair-transplant-recovery-timeline-week-by-week",
+    "kind": "post",
+    "title": "Hair Transplant Recovery Timeline: Week by Week",
+    "url": "https://preview.raddito.net/folixa/hair-transplant-recovery-timeline-week-by-week/",
+    "sections": 5,
+    "widgets": 81,
+    "images": 5,
+    "headings": 15
+  },
+  {
+    "slug": "how-to-prepare-before-your-hair-transplant-procedure",
+    "kind": "post",
+    "title": "How to Prepare Before Your Hair Transplant Procedure",
+    "url": "https://preview.raddito.net/folixa/how-to-prepare-before-your-hair-transplant-procedure/",
+    "sections": 5,
+    "widgets": 81,
+    "images": 5,
+    "headings": 15
+  },
+  {
+    "slug": "fue-vs-fut-which-hair-transplant-method-is-right",
+    "kind": "post",
+    "title": "FUE vs FUT: Which Hair Transplant Method Is Right?",
+    "url": "https://preview.raddito.net/folixa/fue-vs-fut-which-hair-transplant-method-is-right/",
+    "sections": 5,
+    "widgets": 81,
+    "images": 5,
+    "headings": 15
+  },
+  {
+    "slug": "understanding-fue-hair-transplant-what-to-expect",
+    "kind": "post",
+    "title": "Understanding FUE Hair Transplant: What to Expect",
+    "url": "https://preview.raddito.net/folixa/understanding-fue-hair-transplant-what-to-expect/",
+    "sections": 5,
+    "widgets": 81,
+    "images": 5,
+    "headings": 15
+  }
+]

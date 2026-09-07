@@ -1,0 +1,130 @@
+{
+  "slug": "treatments",
+  "wpId": 23,
+  "cssFile": "post-23.css",
+  "tree": [
+    {
+      "index": 1,
+      "id": "37ab2c6",
+      "name": "section-1",
+      "widgets": [
+        "image",
+        "ekit-nav-menu",
+        "button"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "2fffd6b",
+      "name": "treatments",
+      "widgets": [
+        "text-editor",
+        "heading"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "3be4476",
+      "name": "hair-restoration-treatments",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "3b9c828",
+      "name": "a-clinic-built-on-results-trust",
+      "widgets": [
+        "icon-list",
+        "heading",
+        "heading",
+        "text-editor",
+        "image",
+        "image",
+        "heading",
+        "text-editor",
+        "heading",
+        "text-editor",
+        "image",
+        "icon-box",
+        "icon-box",
+        "video"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "c81ab70",
+      "name": "internationally-accredited",
+      "widgets": [
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box"
+      ]
+    },
+    {
+      "index": 6,
+      "id": "3b61b8d",
+      "name": "start-your-hair-restoration-journey-today",
+      "widgets": [
+        "heading",
+        "text-editor",
+        "button"
+      ]
+    },
+    {
+      "index": 7,
+      "id": "8acb047",
+      "name": "section-7",
+      "widgets": [
+        "image",
+        "text-editor",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "text-editor",
+        "text-editor",
+        "metform",
+        "mf-email",
+        "mf-button",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "icon-box",
+        "divider",
+        "heading",
+        "heading",
+        "heading",
+        "heading",
+        "heading"
+      ]
+    },
+    {
+      "index": 8,
+      "id": "714913f",
+      "name": "section-8",
+      "widgets": [
+        "mf-email",
+        "mf-button"
+      ]
+    }
+  ]
+}

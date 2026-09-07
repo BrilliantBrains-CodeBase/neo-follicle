@@ -1,0 +1,610 @@
+[
+  {
+    "index": 1,
+    "id": "37ab2c6",
+    "name": "section-1",
+    "heading": null,
+    "classes": "elementor-element elementor-element-37ab2c6 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "button",
+      "ekit-nav-menu",
+      "image"
+    ],
+    "widgetCount": 3,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1741 .elementor-element.elementor-element-37ab2c6",
+        "declarations": "--display:flex;--min-height:91px;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--justify-content:space-between;--align-items:center;border-style:solid;--border-style:solid;border-width:0px 0px 1px 0px;--border-top-width:0px;--border-right-width:0px;--border-bottom-width:1px;--border-left-width:0px;border-color:#FFFFFF33;--border-color:#FFFFFF33;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:1.25rem;--padding-bottom:1.25rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1741 .elementor-element.elementor-element-37ab2c6:not(.elementor-motion-effects-element-type-background), .elementor-1741 .elementor-element.elementor-element-37ab2c6 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "89e297a"
+      },
+      {
+        "type": "ekit-nav-menu",
+        "id": "a200ca3",
+        "text": "Home About Treatments Treatments Treatments details Blog Blog Single Post Pages Appointment Faqs Testimonials Contact 404 Error X"
+      },
+      {
+        "type": "button",
+        "id": "a4bb91e",
+        "text": "Contact Us"
+      }
+    ],
+    "screenshot": "sections/01-section-1.png"
+  },
+  {
+    "index": 2,
+    "id": "2fffd6b",
+    "name": "treatments",
+    "heading": "Treatments",
+    "classes": "elementor-element elementor-element-2fffd6b e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "text-editor"
+    ],
+    "widgetCount": 2,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-2fffd6b",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--padding-top:0px;--padding-bottom:0px;--padding-left:40px;--padding-right:40px;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-2fffd6b",
+        "declarations": "--padding-top:0px;--padding-bottom:0px;--padding-left:20px;--padding-right:20px;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-2fffd6b",
+        "declarations": "--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-2fffd6b",
+        "declarations": "--content-width:1920px;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "text-editor",
+        "id": "2451ee6",
+        "text": "Home // Treatments"
+      },
+      {
+        "type": "heading",
+        "id": "2d9e027",
+        "text": "Treatments"
+      }
+    ],
+    "screenshot": "sections/02-treatments.png"
+  },
+  {
+    "index": 3,
+    "id": "3be4476",
+    "name": "hair-restoration-treatments",
+    "heading": "Hair Restoration Treatments",
+    "classes": "elementor-element elementor-element-3be4476 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "icon-box",
+      "icon-list"
+    ],
+    "widgetCount": 8,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3be4476",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3be4476:not(.elementor-motion-effects-element-type-background), .elementor-23 .elementor-element.elementor-element-3be4476 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3be4476",
+        "declarations": "--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:4rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3be4476",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:3rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "icon-list",
+        "id": "52a910f",
+        "text": "Services"
+      },
+      {
+        "type": "heading",
+        "id": "1f9a01e",
+        "text": "Hair Restoration Treatments"
+      },
+      {
+        "type": "icon-box",
+        "id": "0588348",
+        "text": "FUT treatment for fuller density."
+      },
+      {
+        "type": "icon-box",
+        "id": "466e126",
+        "text": "FUE restoring natural hair growth."
+      },
+      {
+        "type": "icon-box",
+        "id": "39b405e",
+        "text": "Beard shaping with natural results."
+      },
+      {
+        "type": "icon-box",
+        "id": "4232fed",
+        "text": "Natural hairline shape restoration"
+      },
+      {
+        "type": "icon-box",
+        "id": "3d700b1",
+        "text": "PRP therapy for stronger growth"
+      },
+      {
+        "type": "icon-box",
+        "id": "dbbb1aa",
+        "text": "Crown density restoration care"
+      }
+    ],
+    "screenshot": "sections/03-hair-restoration-treatments.png"
+  },
+  {
+    "index": 4,
+    "id": "3b9c828",
+    "name": "a-clinic-built-on-results-trust",
+    "heading": "A clinic built on results, trust, and precision.",
+    "classes": "elementor-element elementor-element-3b9c828 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "icon-box",
+      "icon-list",
+      "image",
+      "text-editor",
+      "video"
+    ],
+    "widgetCount": 14,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3b9c828",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--align-items:center;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3b9c828:not(.elementor-motion-effects-element-type-background), .elementor-23 .elementor-element.elementor-element-3b9c828 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-c7e169d );"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3b9c828",
+        "declarations": "--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:4rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3b9c828",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:3rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "icon-list",
+        "id": "4f7b69e",
+        "text": "Why Folixa"
+      },
+      {
+        "type": "heading",
+        "id": "c1ff91e",
+        "text": "A clinic built on results, trust, and precision."
+      },
+      {
+        "type": "heading",
+        "id": "d58423a",
+        "text": "Medical expertise"
+      },
+      {
+        "type": "text-editor",
+        "id": "6844632",
+        "text": "Surgeons with 15+ years specializing exclusively in hair restoration."
+      },
+      {
+        "type": "image",
+        "id": "8625703"
+      },
+      {
+        "type": "image",
+        "id": "430d3bf"
+      },
+      {
+        "type": "heading",
+        "id": "922a906",
+        "text": "Advanced techniques"
+      },
+      {
+        "type": "text-editor",
+        "id": "f73c7b3",
+        "text": "Sapphire FUE, DHI, and robotic-assisted graft extraction technology."
+      },
+      {
+        "type": "heading",
+        "id": "0cf77f5",
+        "text": "Patient-first care"
+      },
+      {
+        "type": "text-editor",
+        "id": "fd4ce66",
+        "text": "Personal coordinator, lifetime follow-ups, and complete transparency."
+      },
+      {
+        "type": "image",
+        "id": "f02ebc0"
+      },
+      {
+        "type": "icon-box",
+        "id": "0df1197",
+        "text": "Our Mission To provide safe, professional, and personalized hair restoration treatments that help patients."
+      },
+      {
+        "type": "icon-box",
+        "id": "736881a",
+        "text": "Our Vision To become a trusted destination for modern hair transplant care built on precision, transparency, and patient."
+      },
+      {
+        "type": "video",
+        "id": "fea7b3f",
+        "text": "A clinic built on results, trust, and precision. - YouTube Tap to unmute An error occurred. Try watching this video on www.youtube.com , or enable JavaScript if it is disabled in your browser. A clinic built on results, trust, and precision. Raddito Agency Raddito Agency 219 subscribers 0:02 Time el",
+        "settings": {
+          "autoplay": "yes"
+        }
+      }
+    ],
+    "screenshot": "sections/04-a-clinic-built-on-results-trust.png"
+  },
+  {
+    "index": 5,
+    "id": "c81ab70",
+    "name": "internationally-accredited",
+    "heading": "Internationally Accredited",
+    "classes": "elementor-element elementor-element-c81ab70 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "icon-box"
+    ],
+    "widgetCount": 4,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-c81ab70",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-c81ab70",
+        "declarations": "--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:4rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-c81ab70",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:3rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "icon-box",
+        "id": "7bda8bc",
+        "text": "Internationally Accredited ISHRS certified facility meeting global surgical standards",
+        "settings": {
+          "_animation": "fadeInUp"
+        }
+      },
+      {
+        "type": "icon-box",
+        "id": "d2db99f",
+        "text": "ARTAS Robotic Technology AI-assisted graft harvesting for unmatched precision",
+        "settings": {
+          "_animation": "fadeInUp",
+          "_animation_delay": 100
+        }
+      },
+      {
+        "type": "icon-box",
+        "id": "3ae54bc",
+        "text": "Dedicated Patient Team One-to-one clinical coordinator from start to finish",
+        "settings": {
+          "_animation": "fadeInUp",
+          "_animation_delay": 200
+        }
+      },
+      {
+        "type": "icon-box",
+        "id": "49090e3",
+        "text": "Lifetime Aftercare Program Ongoing monitoring and support beyond surgery",
+        "settings": {
+          "_animation": "fadeInUp",
+          "_animation_delay": 300
+        }
+      }
+    ],
+    "screenshot": "sections/05-internationally-accredited.png"
+  },
+  {
+    "index": 6,
+    "id": "3b61b8d",
+    "name": "start-your-hair-restoration-journey-today",
+    "heading": "Start Your Hair Restoration Journey Today",
+    "classes": "elementor-element elementor-element-3b61b8d e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "button",
+      "heading",
+      "text-editor"
+    ],
+    "widgetCount": 3,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3b61b8d",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--align-items:center;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3b61b8d:not(.elementor-motion-effects-element-type-background), .elementor-23 .elementor-element.elementor-element-3b61b8d > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3b61b8d",
+        "declarations": "--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:4rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-23 .elementor-element.elementor-element-3b61b8d",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:3rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "heading",
+        "id": "4f6eb4a",
+        "text": "Start Your Hair Restoration Journey Today"
+      },
+      {
+        "type": "text-editor",
+        "id": "03e1ec5",
+        "text": "Take the first step toward natural hair growth and renewed confidence. Book your consultation and discover the right treatment plan for your needs."
+      },
+      {
+        "type": "button",
+        "id": "94b68e3",
+        "text": "Book Your Consultation"
+      }
+    ],
+    "screenshot": "sections/06-start-your-hair-restoration-journey-today.png"
+  },
+  {
+    "index": 7,
+    "id": "8acb047",
+    "name": "section-7",
+    "heading": null,
+    "classes": "elementor-element elementor-element-8acb047 e-con-full e-flex e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "divider",
+      "heading",
+      "icon-box",
+      "image",
+      "metform",
+      "mf-button",
+      "mf-email",
+      "text-editor"
+    ],
+    "widgetCount": 31,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:center;--align-items:center;--overflow:hidden;--overlay-opacity:0.5;--border-radius:0px 0px 0px 0px;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0rem;--padding-bottom:0rem;--padding-left:0rem;--padding-right:0rem;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-background-video-container::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .e-con-inner > .elementor-background-video-container::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-background-slideshow::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .e-con-inner > .elementor-background-slideshow::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-motion-effects-container > .elementor-motion-effects-layer::before",
+        "declarations": "--background-overlay:'';"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047.e-con",
+        "declarations": "--flex-grow:0;--flex-shrink:0;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--width:100%;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--width:100%;--padding-top:0rem;--padding-bottom:0rem;--padding-left:0rem;--padding-right:0rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "1c4e4b3"
+      },
+      {
+        "type": "text-editor",
+        "id": "31680c5",
+        "text": "Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care."
+      },
+      {
+        "type": "icon-box",
+        "id": "dff0d5a",
+        "text": "(+1) 234 567 8900"
+      },
+      {
+        "type": "icon-box",
+        "id": "f170f72",
+        "text": "hello@folixa.com"
+      },
+      {
+        "type": "divider",
+        "id": "1e21762"
+      },
+      {
+        "type": "text-editor",
+        "id": "264593b",
+        "text": "Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care."
+      },
+      {
+        "type": "text-editor",
+        "id": "2e453d0",
+        "text": "Stay Updated With Hair Care Insights"
+      },
+      {
+        "type": "metform",
+        "id": "e79efcf",
+        "text": "Subscribe"
+      },
+      {
+        "type": "mf-email",
+        "id": "d5ded39"
+      },
+      {
+        "type": "mf-button",
+        "id": "f783163",
+        "text": "Subscribe"
+      },
+      {
+        "type": "heading",
+        "id": "be17d76",
+        "text": "Services"
+      },
+      {
+        "type": "heading",
+        "id": "5bc63c0",
+        "text": "FUE Hair Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "fab1927",
+        "text": "FUT Hair Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "d024a7a",
+        "text": "Beard Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "af9f5c4",
+        "text": "PRP Hair Therapy"
+      },
+      {
+        "type": "heading",
+        "id": "b409ac3",
+        "text": "Pages"
+      },
+      {
+        "type": "heading",
+        "id": "a06e305",
+        "text": "Home"
+      },
+      {
+        "type": "heading",
+        "id": "effc53c",
+        "text": "About"
+      },
+      {
+        "type": "heading",
+        "id": "25b50bd",
+        "text": "Treatments"
+      },
+      {
+        "type": "heading",
+        "id": "0a32df9",
+        "text": "Contact"
+      },
+      {
+        "type": "heading",
+        "id": "bd49757",
+        "text": "Visit Time"
+      },
+      {
+        "type": "icon-box",
+        "id": "d5f6a4c",
+        "text": "Facebook"
+      },
+      {
+        "type": "icon-box",
+        "id": "6cb46f6",
+        "text": "Instagram"
+      },
+      {
+        "type": "icon-box",
+        "id": "475ee2d",
+        "text": "LinkedIn"
+      },
+      {
+        "type": "icon-box",
+        "id": "3743bb4",
+        "text": "X (Twitter)"
+      },
+      {
+        "type": "divider",
+        "id": "81a39b3"
+      },
+      {
+        "type": "heading",
+        "id": "4f615e8",
+        "text": "Copyright \u00a92026 Eldewell | Powered by Raddito."
+      },
+      {
+        "type": "heading",
+        "id": "5ddc32b",
+        "text": "Privacy Policy"
+      },
+      {
+        "type": "heading",
+        "id": "2e8706f",
+        "text": "Terms & Conditions"
+      },
+      {
+        "type": "heading",
+        "id": "f29e44f",
+        "text": "Sitemap"
+      },
+      {
+        "type": "heading",
+        "id": "635a80c",
+        "text": "Cookies"
+      }
+    ],
+    "screenshot": "sections/07-section-7.png"
+  },
+  {
+    "index": 8,
+    "id": "714913f",
+    "name": "section-8",
+    "heading": null,
+    "classes": "elementor-element elementor-element-714913f e-con-full e-flex e-con e-parent",
+    "widgetTypes": [
+      "mf-button",
+      "mf-email"
+    ],
+    "widgetCount": 2,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-551 .elementor-element.elementor-element-714913f",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:14px 14px;--row-gap:14px;--column-gap:14px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "mf-email",
+        "id": "d5ded39"
+      },
+      {
+        "type": "mf-button",
+        "id": "f783163",
+        "text": "Subscribe"
+      }
+    ],
+    "screenshot": "sections/08-section-8.png"
+  }
+]

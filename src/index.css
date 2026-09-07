@@ -1,0 +1,103 @@
+/* Design tokens - copied verbatim from folixa-design-reference/tokens/tokens.css,
+   which is a translation of the Elementor Global Kit (post-6.css). */
+@import url('/fonts/fonts.css');
+
+/* Folixa design tokens - generated from Elementor Global Kit post-6.css */
+:root {
+  /* color */
+  --color-primary: #3E74D9;
+  --color-primary-dark: #1A4FB2;
+  --color-secondary: #1A1A1A;
+  --color-body: #444444;
+  --color-accent: #E2ECFF;
+  --color-surface: #F8FAFC;
+  --color-line: #E5E7EB;
+  --color-base: #FFFFFF;
+  --color-overlay: #00000033;
+
+  /* type */
+  --font-head: "Manrope", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --text-h1: clamp(2.5rem, 1.8rem + 2.25vw, 4rem);
+  --text-h1-lh: 1.1em;
+  --text-h1-ls: -0.03em;
+  --text-h1-fw: 700;
+  --text-h2: clamp(2rem, 1.5rem + 2vw, 3.3rem);
+  --text-h2-lh: 1.2em;
+  --text-h2-ls: -0.03em;
+  --text-h2-fw: 700;
+  --text-h3: clamp(1.6rem, 1.2rem + 1.5vw, 2.5rem);
+  --text-h3-lh: 1.2em;
+  --text-h3-ls: -0.03em;
+  --text-h3-fw: 600;
+  --text-h4: clamp(1.4rem, 1.1rem + 1vw, 1.8rem);
+  --text-h4-lh: 1.2em;
+  --text-h4-ls: -0.03em;
+  --text-h4-fw: 600;
+  --text-h5: clamp(1.2rem, 1rem + 0.6vw, 1.35rem);
+  --text-h5-lh: 1.2em;
+  --text-h5-ls: -0.02em;
+  --text-h5-fw: 600;
+  --text-h6: clamp(1.05rem, 0.95rem + 0.4vw, 1.125rem);
+  --text-h6-lh: 1.2em;
+  --text-h6-ls: -0.02em;
+  --text-h6-fw: 500;
+  --text-button: 1.125rem;
+  --text-button-lh: 1em;
+  --text-button-ls: -0.01em;
+  --text-button-fw: 500;
+  --text-body: 1rem;
+  --text-body-lh: 1.5em;
+  --text-body-ls: 0em;
+  --text-body-fw: 400;
+  --text-body-lg: 1.125rem;
+  --text-body-lg-lh: 1.5em;
+  --text-body-lg-ls: 0em;
+  --text-body-lg-fw: 400;
+
+  /* layout */
+  --container: 1240px;
+  --radius-sm: 4px;
+  --radius-default: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-pill: 100px;
+  --radius-none: 0;
+  --space-section-y: 5rem;
+  --space-section-y-tablet: 4rem;
+  --space-section-y-mobile: 3rem;
+  --space-gap: 4rem;
+  --space-gap-tablet: 3rem;
+  --space-gap-mobile: 2rem;
+  --space-gutter: 1.25rem;
+  --space-gap-sm: 1.25rem;
+  --space-gap-xs: 8px;
+  --transition: 0.3s;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--text-body-lh);
+    color: var(--color-body);
+    background-color: var(--color-base);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-head);
+    color: var(--color-secondary);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-primary-dark);
+  }
+}

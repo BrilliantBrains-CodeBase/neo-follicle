@@ -1,0 +1,680 @@
+[
+  {
+    "index": 1,
+    "id": "37ab2c6",
+    "name": "section-1",
+    "heading": null,
+    "classes": "elementor-element elementor-element-37ab2c6 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "button",
+      "ekit-nav-menu",
+      "image"
+    ],
+    "widgetCount": 3,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1741 .elementor-element.elementor-element-37ab2c6",
+        "declarations": "--display:flex;--min-height:91px;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--justify-content:space-between;--align-items:center;border-style:solid;--border-style:solid;border-width:0px 0px 1px 0px;--border-top-width:0px;--border-right-width:0px;--border-bottom-width:1px;--border-left-width:0px;border-color:#FFFFFF33;--border-color:#FFFFFF33;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:1.25rem;--padding-bottom:1.25rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1741 .elementor-element.elementor-element-37ab2c6:not(.elementor-motion-effects-element-type-background), .elementor-1741 .elementor-element.elementor-element-37ab2c6 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "89e297a"
+      },
+      {
+        "type": "ekit-nav-menu",
+        "id": "a200ca3",
+        "text": "Home About Treatments Treatments Treatments details Blog Blog Single Post Pages Appointment Faqs Testimonials Contact 404 Error X"
+      },
+      {
+        "type": "button",
+        "id": "a4bb91e",
+        "text": "Contact Us"
+      }
+    ],
+    "screenshot": "sections/01-section-1.png"
+  },
+  {
+    "index": 2,
+    "id": "6cd84bf",
+    "name": "faqs",
+    "heading": "Faqs",
+    "classes": "elementor-element elementor-element-6cd84bf e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "text-editor"
+    ],
+    "widgetCount": 2,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-6cd84bf",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--padding-top:0px;--padding-bottom:0px;--padding-left:40px;--padding-right:40px;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-6cd84bf",
+        "declarations": "--padding-top:0px;--padding-bottom:0px;--padding-left:20px;--padding-right:20px;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-6cd84bf",
+        "declarations": "--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-6cd84bf",
+        "declarations": "--content-width:1920px;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "text-editor",
+        "id": "e2fd691",
+        "text": "Home // Faqs"
+      },
+      {
+        "type": "heading",
+        "id": "59aed23",
+        "text": "Faqs"
+      }
+    ],
+    "screenshot": "sections/02-faqs.png"
+  },
+  {
+    "index": 3,
+    "id": "1195cd4",
+    "name": "frequently-asked-questions",
+    "heading": "Frequently Asked Questions",
+    "classes": "elementor-element elementor-element-1195cd4 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "icon",
+      "icon-list",
+      "nested-accordion",
+      "text-editor"
+    ],
+    "widgetCount": 12,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-1195cd4",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-1195cd4:not(.elementor-motion-effects-element-type-background), .elementor-29 .elementor-element.elementor-element-1195cd4 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-1195cd4",
+        "declarations": "--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:4rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-1195cd4",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:3rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "icon-list",
+        "id": "80ea1f1",
+        "text": "Common Questions"
+      },
+      {
+        "type": "heading",
+        "id": "35f7c3f",
+        "text": "Frequently Asked Questions"
+      },
+      {
+        "type": "text-editor",
+        "id": "ff19629",
+        "text": "Find quick answers to the most common questions about hair restoration procedures, recovery time, results, and aftercare."
+      },
+      {
+        "type": "icon",
+        "id": "6cf6f32"
+      },
+      {
+        "type": "heading",
+        "id": "990c009",
+        "text": "(+1) 234 567 8900"
+      },
+      {
+        "type": "icon",
+        "id": "9d450ec"
+      },
+      {
+        "type": "heading",
+        "id": "058cdc7",
+        "text": "hello@folixa.com"
+      },
+      {
+        "type": "nested-accordion",
+        "id": "6513b53",
+        "text": "Is hair transplant permanent? Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss. Is the procedure painful? Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with",
+        "settings": {
+          "_animation": "fadeInUp"
+        }
+      },
+      {
+        "type": "text-editor",
+        "id": "91c6aa8",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "a802582",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "db88a2a",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "572912f",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      }
+    ],
+    "screenshot": "sections/03-frequently-asked-questions.png"
+  },
+  {
+    "index": 4,
+    "id": "9549e27",
+    "name": "treatment-process",
+    "heading": "Treatment Process",
+    "classes": "elementor-element elementor-element-9549e27 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "nested-accordion",
+      "text-editor"
+    ],
+    "widgetCount": 7,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-9549e27",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:0rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-9549e27:not(.elementor-motion-effects-element-type-background), .elementor-29 .elementor-element.elementor-element-9549e27 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-9549e27",
+        "declarations": "--flex-direction:column-reverse;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:0rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-9549e27",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:0rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "nested-accordion",
+        "id": "e58c4e6",
+        "text": "Which treatment is right for me? Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss. How long does the procedure take? Yes, transplanted follicles continue to grow naturally and provide long-term results. We",
+        "settings": {
+          "_animation": "fadeInUp"
+        }
+      },
+      {
+        "type": "text-editor",
+        "id": "d618bd4",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "873ce45",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "6a17f09",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "b01ceb5",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "heading",
+        "id": "c575e5e",
+        "text": "Treatment Process"
+      },
+      {
+        "type": "text-editor",
+        "id": "a3eb6bb",
+        "text": "Find quick answers to the most common questions about hair restoration procedures, recovery time, results, and aftercare."
+      }
+    ],
+    "screenshot": "sections/04-treatment-process.png"
+  },
+  {
+    "index": 5,
+    "id": "985a7a9",
+    "name": "recovery-aftercare",
+    "heading": "Recovery & Aftercare",
+    "classes": "elementor-element elementor-element-985a7a9 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "nested-accordion",
+      "text-editor"
+    ],
+    "widgetCount": 7,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-985a7a9",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:0rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-985a7a9:not(.elementor-motion-effects-element-type-background), .elementor-29 .elementor-element.elementor-element-985a7a9 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-985a7a9",
+        "declarations": "--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:0rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-985a7a9",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:0rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "heading",
+        "id": "1df936f",
+        "text": "Recovery & Aftercare"
+      },
+      {
+        "type": "text-editor",
+        "id": "69736eb",
+        "text": "Find quick answers to the most common questions about hair restoration procedures, recovery time, results, and aftercare."
+      },
+      {
+        "type": "nested-accordion",
+        "id": "64737af",
+        "text": "Can I return to work quickly? Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss. How should I wash my hair after treatment? Yes, transplanted follicles continue to grow naturally and provide long-term resul",
+        "settings": {
+          "_animation": "fadeInUp"
+        }
+      },
+      {
+        "type": "text-editor",
+        "id": "c1d4424",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "7982f8d",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "b3bb71b",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "c53683a",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      }
+    ],
+    "screenshot": "sections/05-recovery-aftercare.png"
+  },
+  {
+    "index": 6,
+    "id": "c834ffc",
+    "name": "results-long-term-care",
+    "heading": "Results & Long-Term Care",
+    "classes": "elementor-element elementor-element-c834ffc e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "nested-accordion",
+      "text-editor"
+    ],
+    "widgetCount": 7,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-c834ffc",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:0rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-c834ffc:not(.elementor-motion-effects-element-type-background), .elementor-29 .elementor-element.elementor-element-c834ffc > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-c834ffc",
+        "declarations": "--flex-direction:column-reverse;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:0rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-c834ffc",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:0rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "nested-accordion",
+        "id": "2f63f03",
+        "text": "Will the results look natural? Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss. Can beard transplant look natural? Yes, transplanted follicles continue to grow naturally and provide long-term results. We ",
+        "settings": {
+          "_animation": "fadeInUp"
+        }
+      },
+      {
+        "type": "text-editor",
+        "id": "5877f0a",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "dce3c72",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "1c7fa24",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "text-editor",
+        "id": "7f05897",
+        "text": "Yes, transplanted follicles continue to grow naturally and provide long-term results. We begin with a detailed consultation to assess hair loss."
+      },
+      {
+        "type": "heading",
+        "id": "2e87a06",
+        "text": "Results & Long-Term Care"
+      },
+      {
+        "type": "text-editor",
+        "id": "9992451",
+        "text": "Find quick answers to the most common questions about hair restoration procedures, recovery time, results, and aftercare."
+      }
+    ],
+    "screenshot": "sections/06-results-long-term-care.png"
+  },
+  {
+    "index": 7,
+    "id": "2ac0dd7",
+    "name": "need-to-know-more-about-to",
+    "heading": "Need To Know More About To take your First Step",
+    "classes": "elementor-element elementor-element-2ac0dd7 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "button",
+      "heading",
+      "text-editor"
+    ],
+    "widgetCount": 3,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-2ac0dd7",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--align-items:center;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-2ac0dd7:not(.elementor-motion-effects-element-type-background), .elementor-29 .elementor-element.elementor-element-2ac0dd7 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-2ac0dd7",
+        "declarations": "--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:1rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-29 .elementor-element.elementor-element-2ac0dd7",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:1rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "heading",
+        "id": "3e5dbdc",
+        "text": "Need To Know More About To take your First Step"
+      },
+      {
+        "type": "text-editor",
+        "id": "086427c",
+        "text": "Take the first step toward natural hair growth and renewed confidence. Book your consultation and discover the right treatment plan for your needs."
+      },
+      {
+        "type": "button",
+        "id": "d38677c",
+        "text": "Contact Us"
+      }
+    ],
+    "screenshot": "sections/07-need-to-know-more-about-to.png"
+  },
+  {
+    "index": 8,
+    "id": "8acb047",
+    "name": "section-8",
+    "heading": null,
+    "classes": "elementor-element elementor-element-8acb047 e-con-full e-flex e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "divider",
+      "heading",
+      "icon-box",
+      "image",
+      "metform",
+      "mf-button",
+      "mf-email",
+      "text-editor"
+    ],
+    "widgetCount": 31,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:center;--align-items:center;--overflow:hidden;--overlay-opacity:0.5;--border-radius:0px 0px 0px 0px;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0rem;--padding-bottom:0rem;--padding-left:0rem;--padding-right:0rem;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-background-video-container::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .e-con-inner > .elementor-background-video-container::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-background-slideshow::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .e-con-inner > .elementor-background-slideshow::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-motion-effects-container > .elementor-motion-effects-layer::before",
+        "declarations": "--background-overlay:'';"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047.e-con",
+        "declarations": "--flex-grow:0;--flex-shrink:0;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--width:100%;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--width:100%;--padding-top:0rem;--padding-bottom:0rem;--padding-left:0rem;--padding-right:0rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "1c4e4b3"
+      },
+      {
+        "type": "text-editor",
+        "id": "31680c5",
+        "text": "Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care."
+      },
+      {
+        "type": "icon-box",
+        "id": "dff0d5a",
+        "text": "(+1) 234 567 8900"
+      },
+      {
+        "type": "icon-box",
+        "id": "f170f72",
+        "text": "hello@folixa.com"
+      },
+      {
+        "type": "divider",
+        "id": "1e21762"
+      },
+      {
+        "type": "text-editor",
+        "id": "264593b",
+        "text": "Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care."
+      },
+      {
+        "type": "text-editor",
+        "id": "2e453d0",
+        "text": "Stay Updated With Hair Care Insights"
+      },
+      {
+        "type": "metform",
+        "id": "e79efcf",
+        "text": "Subscribe"
+      },
+      {
+        "type": "mf-email",
+        "id": "d5ded39"
+      },
+      {
+        "type": "mf-button",
+        "id": "f783163",
+        "text": "Subscribe"
+      },
+      {
+        "type": "heading",
+        "id": "be17d76",
+        "text": "Services"
+      },
+      {
+        "type": "heading",
+        "id": "5bc63c0",
+        "text": "FUE Hair Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "fab1927",
+        "text": "FUT Hair Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "d024a7a",
+        "text": "Beard Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "af9f5c4",
+        "text": "PRP Hair Therapy"
+      },
+      {
+        "type": "heading",
+        "id": "b409ac3",
+        "text": "Pages"
+      },
+      {
+        "type": "heading",
+        "id": "a06e305",
+        "text": "Home"
+      },
+      {
+        "type": "heading",
+        "id": "effc53c",
+        "text": "About"
+      },
+      {
+        "type": "heading",
+        "id": "25b50bd",
+        "text": "Treatments"
+      },
+      {
+        "type": "heading",
+        "id": "0a32df9",
+        "text": "Contact"
+      },
+      {
+        "type": "heading",
+        "id": "bd49757",
+        "text": "Visit Time"
+      },
+      {
+        "type": "icon-box",
+        "id": "d5f6a4c",
+        "text": "Facebook"
+      },
+      {
+        "type": "icon-box",
+        "id": "6cb46f6",
+        "text": "Instagram"
+      },
+      {
+        "type": "icon-box",
+        "id": "475ee2d",
+        "text": "LinkedIn"
+      },
+      {
+        "type": "icon-box",
+        "id": "3743bb4",
+        "text": "X (Twitter)"
+      },
+      {
+        "type": "divider",
+        "id": "81a39b3"
+      },
+      {
+        "type": "heading",
+        "id": "4f615e8",
+        "text": "Copyright \u00a92026 Eldewell | Powered by Raddito."
+      },
+      {
+        "type": "heading",
+        "id": "5ddc32b",
+        "text": "Privacy Policy"
+      },
+      {
+        "type": "heading",
+        "id": "2e8706f",
+        "text": "Terms & Conditions"
+      },
+      {
+        "type": "heading",
+        "id": "f29e44f",
+        "text": "Sitemap"
+      },
+      {
+        "type": "heading",
+        "id": "635a80c",
+        "text": "Cookies"
+      }
+    ],
+    "screenshot": "sections/08-section-8.png"
+  },
+  {
+    "index": 9,
+    "id": "714913f",
+    "name": "section-9",
+    "heading": null,
+    "classes": "elementor-element elementor-element-714913f e-con-full e-flex e-con e-parent",
+    "widgetTypes": [
+      "mf-button",
+      "mf-email"
+    ],
+    "widgetCount": 2,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-551 .elementor-element.elementor-element-714913f",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:14px 14px;--row-gap:14px;--column-gap:14px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "mf-email",
+        "id": "d5ded39"
+      },
+      {
+        "type": "mf-button",
+        "id": "f783163",
+        "text": "Subscribe"
+      }
+    ],
+    "screenshot": "sections/09-section-9.png"
+  }
+]

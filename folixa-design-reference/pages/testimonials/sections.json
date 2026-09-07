@@ -1,0 +1,587 @@
+[
+  {
+    "index": 1,
+    "id": "37ab2c6",
+    "name": "section-1",
+    "heading": null,
+    "classes": "elementor-element elementor-element-37ab2c6 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "button",
+      "ekit-nav-menu",
+      "image"
+    ],
+    "widgetCount": 3,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1741 .elementor-element.elementor-element-37ab2c6",
+        "declarations": "--display:flex;--min-height:91px;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--justify-content:space-between;--align-items:center;border-style:solid;--border-style:solid;border-width:0px 0px 1px 0px;--border-top-width:0px;--border-right-width:0px;--border-bottom-width:1px;--border-left-width:0px;border-color:#FFFFFF33;--border-color:#FFFFFF33;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:1.25rem;--padding-bottom:1.25rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1741 .elementor-element.elementor-element-37ab2c6:not(.elementor-motion-effects-element-type-background), .elementor-1741 .elementor-element.elementor-element-37ab2c6 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "89e297a"
+      },
+      {
+        "type": "ekit-nav-menu",
+        "id": "a200ca3",
+        "text": "Home About Treatments Treatments Treatments details Blog Blog Single Post Pages Appointment Faqs Testimonials Contact 404 Error X"
+      },
+      {
+        "type": "button",
+        "id": "a4bb91e",
+        "text": "Contact Us"
+      }
+    ],
+    "screenshot": "sections/01-section-1.png"
+  },
+  {
+    "index": 2,
+    "id": "aa97d10",
+    "name": "testimonials",
+    "heading": "Testimonials",
+    "classes": "elementor-element elementor-element-aa97d10 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "text-editor"
+    ],
+    "widgetCount": 2,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-aa97d10",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--padding-top:0px;--padding-bottom:0px;--padding-left:40px;--padding-right:40px;"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-aa97d10",
+        "declarations": "--padding-top:0px;--padding-bottom:0px;--padding-left:20px;--padding-right:20px;"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-aa97d10",
+        "declarations": "--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-aa97d10",
+        "declarations": "--content-width:1920px;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "text-editor",
+        "id": "367ab26",
+        "text": "Home // Testimonials"
+      },
+      {
+        "type": "heading",
+        "id": "5f89d54",
+        "text": "Testimonials"
+      }
+    ],
+    "screenshot": "sections/02-testimonials.png"
+  },
+  {
+    "index": 3,
+    "id": "2e9c0da",
+    "name": "real-stories-remarkable-results",
+    "heading": "Real Stories, Remarkable Results",
+    "classes": "elementor-element elementor-element-2e9c0da e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "icon-list",
+      "image",
+      "text-editor"
+    ],
+    "widgetCount": 8,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-2e9c0da",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-2e9c0da:not(.elementor-motion-effects-element-type-background), .elementor-1174 .elementor-element.elementor-element-2e9c0da > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-2e9c0da",
+        "declarations": "--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:4rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-2e9c0da",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:3rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "heading",
+        "id": "d511265",
+        "text": "Real Stories, Remarkable Results"
+      },
+      {
+        "type": "text-editor",
+        "id": "21420d2",
+        "text": "Discover the transformative journeys of our patients. We combine medical excellence with personalized care to deliver outcomes that restore confidence and well-being."
+      },
+      {
+        "type": "image",
+        "id": "f514aed"
+      },
+      {
+        "type": "icon-list",
+        "id": "3460884",
+        "text": "Featured Story"
+      },
+      {
+        "type": "heading",
+        "id": "1eefa9a",
+        "text": "\"I finally feel like myself again.\""
+      },
+      {
+        "type": "text-editor",
+        "id": "15ee181",
+        "text": "After years of thinning hair, David chose Silk Health for an FUE Transplant. His journey wasn\u2019t just about aesthetics; it was about regaining the confidence to step back into his professional and social life with renewed energy."
+      },
+      {
+        "type": "text-editor",
+        "id": "750ae17",
+        "text": "David M., 42"
+      },
+      {
+        "type": "text-editor",
+        "id": "175e1dd",
+        "text": "FUE Hair Restoration Procedure"
+      }
+    ],
+    "screenshot": "sections/03-real-stories-remarkable-results.png"
+  },
+  {
+    "index": 4,
+    "id": "428f43f",
+    "name": "robert-k",
+    "heading": "Robert K.",
+    "classes": "elementor-element elementor-element-428f43f e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "heading",
+      "image",
+      "text-editor"
+    ],
+    "widgetCount": 24,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-428f43f",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-428f43f:not(.elementor-motion-effects-element-type-background), .elementor-1174 .elementor-element.elementor-element-428f43f > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-019d18d );"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-428f43f",
+        "declarations": "--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:0rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-428f43f",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:0rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "text-editor",
+        "id": "5a9051f",
+        "text": "\u201cClean environment and the latest technology. My recovery was much faster than expected.\u201d"
+      },
+      {
+        "type": "image",
+        "id": "1e58736"
+      },
+      {
+        "type": "heading",
+        "id": "a6c1c1e",
+        "text": "Robert K."
+      },
+      {
+        "type": "heading",
+        "id": "14a91af",
+        "text": "Verified Patient"
+      },
+      {
+        "type": "text-editor",
+        "id": "2ea31fa",
+        "text": "\u201cSimply the best clinical experience I\u2019ve ever had. Five stars for the whole team.\u201d"
+      },
+      {
+        "type": "image",
+        "id": "acba576"
+      },
+      {
+        "type": "heading",
+        "id": "499dd9f",
+        "text": "James M."
+      },
+      {
+        "type": "heading",
+        "id": "22590b4",
+        "text": "Verified Patient"
+      },
+      {
+        "type": "text-editor",
+        "id": "3f8f2ab",
+        "text": "\u201cAmazing results from my treatment. The consultation was thorough and honest.\u201d"
+      },
+      {
+        "type": "image",
+        "id": "9962d4a"
+      },
+      {
+        "type": "heading",
+        "id": "062c1a2",
+        "text": "Javier  W."
+      },
+      {
+        "type": "heading",
+        "id": "59a35c3",
+        "text": "Verified Patient"
+      },
+      {
+        "type": "text-editor",
+        "id": "5d7222e",
+        "text": "\u201cThe care and attention to detail at Silk Health is unmatched. Highly professional staff.\u201d"
+      },
+      {
+        "type": "image",
+        "id": "bdcde94"
+      },
+      {
+        "type": "heading",
+        "id": "2b32cdf",
+        "text": "Jose M."
+      },
+      {
+        "type": "heading",
+        "id": "300cf2d",
+        "text": "Verified Patient"
+      },
+      {
+        "type": "text-editor",
+        "id": "649607b",
+        "text": "\u201cThe results look natural and the aftercare support was excellent. I felt confident at every step.\u201d"
+      },
+      {
+        "type": "image",
+        "id": "e3dfd67"
+      },
+      {
+        "type": "heading",
+        "id": "07e6384",
+        "text": "Javier  W."
+      },
+      {
+        "type": "heading",
+        "id": "c118549",
+        "text": "Verified Patient"
+      },
+      {
+        "type": "text-editor",
+        "id": "9a54a65",
+        "text": "\u201cVery professional staff and excellent care from start to finish. The final results exceeded.\u201d"
+      },
+      {
+        "type": "image",
+        "id": "52ebbf9"
+      },
+      {
+        "type": "heading",
+        "id": "5a7060e",
+        "text": "Javier  W."
+      },
+      {
+        "type": "heading",
+        "id": "9410c64",
+        "text": "Verified Patient"
+      }
+    ],
+    "screenshot": "sections/04-robert-k.png"
+  },
+  {
+    "index": 5,
+    "id": "bce1779",
+    "name": "start-your-hair-restoration-journey-today",
+    "heading": "Start Your Hair Restoration Journey Today",
+    "classes": "elementor-element elementor-element-bce1779 e-flex e-con-boxed e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "button",
+      "heading",
+      "text-editor"
+    ],
+    "widgetCount": 3,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-bce1779",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--align-items:center;--gap:4rem 4rem;--row-gap:4rem;--column-gap:4rem;--padding-top:5rem;--padding-bottom:5rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-bce1779:not(.elementor-motion-effects-element-type-background), .elementor-1174 .elementor-element.elementor-element-bce1779 > .elementor-motion-effects-container > .elementor-motion-effects-layer",
+        "declarations": "background-color:var( --e-global-color-c7e169d );"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-bce1779",
+        "declarations": "--gap:3rem 3rem;--row-gap:3rem;--column-gap:3rem;--padding-top:4rem;--padding-bottom:4rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      },
+      {
+        "selector": ".elementor-1174 .elementor-element.elementor-element-bce1779",
+        "declarations": "--gap:2rem 2rem;--row-gap:2rem;--column-gap:2rem;--padding-top:3rem;--padding-bottom:3rem;--padding-left:1.25rem;--padding-right:1.25rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "heading",
+        "id": "c71be47",
+        "text": "Start Your Hair Restoration Journey Today"
+      },
+      {
+        "type": "text-editor",
+        "id": "3de7a07",
+        "text": "Take the first step toward natural hair growth and renewed confidence. Book your consultation and discover the right treatment plan for your needs."
+      },
+      {
+        "type": "button",
+        "id": "ecc3631",
+        "text": "Book Your Consultation"
+      }
+    ],
+    "screenshot": "sections/05-start-your-hair-restoration-journey-today.png"
+  },
+  {
+    "index": 6,
+    "id": "8acb047",
+    "name": "section-6",
+    "heading": null,
+    "classes": "elementor-element elementor-element-8acb047 e-con-full e-flex e-con e-parent e-lazyloaded",
+    "widgetTypes": [
+      "divider",
+      "heading",
+      "icon-box",
+      "image",
+      "metform",
+      "mf-button",
+      "mf-email",
+      "text-editor"
+    ],
+    "widgetCount": 31,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--display:flex;--flex-direction:column;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:center;--align-items:center;--overflow:hidden;--overlay-opacity:0.5;--border-radius:0px 0px 0px 0px;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0rem;--padding-bottom:0rem;--padding-left:0rem;--padding-right:0rem;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-background-video-container::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .e-con-inner > .elementor-background-video-container::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-background-slideshow::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .e-con-inner > .elementor-background-slideshow::before, .elementor-1736 .elementor-element.elementor-element-8acb047 > .elementor-motion-effects-container > .elementor-motion-effects-layer::before",
+        "declarations": "--background-overlay:'';"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047.e-con",
+        "declarations": "--flex-grow:0;--flex-shrink:0;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--width:100%;"
+      },
+      {
+        "selector": ".elementor-1736 .elementor-element.elementor-element-8acb047",
+        "declarations": "--width:100%;--padding-top:0rem;--padding-bottom:0rem;--padding-left:0rem;--padding-right:0rem;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "image",
+        "id": "1c4e4b3"
+      },
+      {
+        "type": "text-editor",
+        "id": "31680c5",
+        "text": "Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care."
+      },
+      {
+        "type": "icon-box",
+        "id": "dff0d5a",
+        "text": "(+1) 234 567 8900"
+      },
+      {
+        "type": "icon-box",
+        "id": "f170f72",
+        "text": "hello@folixa.com"
+      },
+      {
+        "type": "divider",
+        "id": "1e21762"
+      },
+      {
+        "type": "text-editor",
+        "id": "264593b",
+        "text": "Hair transplant solutions designed for stronger hair growth, natural hairlines, and lasting results. Our team supports every step with clear guidance and trusted medical care."
+      },
+      {
+        "type": "text-editor",
+        "id": "2e453d0",
+        "text": "Stay Updated With Hair Care Insights"
+      },
+      {
+        "type": "metform",
+        "id": "e79efcf",
+        "text": "Subscribe"
+      },
+      {
+        "type": "mf-email",
+        "id": "d5ded39"
+      },
+      {
+        "type": "mf-button",
+        "id": "f783163",
+        "text": "Subscribe"
+      },
+      {
+        "type": "heading",
+        "id": "be17d76",
+        "text": "Services"
+      },
+      {
+        "type": "heading",
+        "id": "5bc63c0",
+        "text": "FUE Hair Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "fab1927",
+        "text": "FUT Hair Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "d024a7a",
+        "text": "Beard Transplant"
+      },
+      {
+        "type": "heading",
+        "id": "af9f5c4",
+        "text": "PRP Hair Therapy"
+      },
+      {
+        "type": "heading",
+        "id": "b409ac3",
+        "text": "Pages"
+      },
+      {
+        "type": "heading",
+        "id": "a06e305",
+        "text": "Home"
+      },
+      {
+        "type": "heading",
+        "id": "effc53c",
+        "text": "About"
+      },
+      {
+        "type": "heading",
+        "id": "25b50bd",
+        "text": "Treatments"
+      },
+      {
+        "type": "heading",
+        "id": "0a32df9",
+        "text": "Contact"
+      },
+      {
+        "type": "heading",
+        "id": "bd49757",
+        "text": "Visit Time"
+      },
+      {
+        "type": "icon-box",
+        "id": "d5f6a4c",
+        "text": "Facebook"
+      },
+      {
+        "type": "icon-box",
+        "id": "6cb46f6",
+        "text": "Instagram"
+      },
+      {
+        "type": "icon-box",
+        "id": "475ee2d",
+        "text": "LinkedIn"
+      },
+      {
+        "type": "icon-box",
+        "id": "3743bb4",
+        "text": "X (Twitter)"
+      },
+      {
+        "type": "divider",
+        "id": "81a39b3"
+      },
+      {
+        "type": "heading",
+        "id": "4f615e8",
+        "text": "Copyright \u00a92026 Eldewell | Powered by Raddito."
+      },
+      {
+        "type": "heading",
+        "id": "5ddc32b",
+        "text": "Privacy Policy"
+      },
+      {
+        "type": "heading",
+        "id": "2e8706f",
+        "text": "Terms & Conditions"
+      },
+      {
+        "type": "heading",
+        "id": "f29e44f",
+        "text": "Sitemap"
+      },
+      {
+        "type": "heading",
+        "id": "635a80c",
+        "text": "Cookies"
+      }
+    ],
+    "screenshot": "sections/06-section-6.png"
+  },
+  {
+    "index": 7,
+    "id": "714913f",
+    "name": "section-7",
+    "heading": null,
+    "classes": "elementor-element elementor-element-714913f e-con-full e-flex e-con e-parent",
+    "widgetTypes": [
+      "mf-button",
+      "mf-email"
+    ],
+    "widgetCount": 2,
+    "animation": null,
+    "css": [
+      {
+        "selector": ".elementor-551 .elementor-element.elementor-element-714913f",
+        "declarations": "--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:14px 14px;--row-gap:14px;--column-gap:14px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;"
+      }
+    ],
+    "widgets": [
+      {
+        "type": "mf-email",
+        "id": "d5ded39"
+      },
+      {
+        "type": "mf-button",
+        "id": "f783163",
+        "text": "Subscribe"
+      }
+    ],
+    "screenshot": "sections/07-section-7.png"
+  }
+]
