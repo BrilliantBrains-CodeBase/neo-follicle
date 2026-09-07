@@ -16,6 +16,10 @@
  *            to the same weight. These four are the header's set.
  *   Square, Play  folixa-design-reference/pages/home/rendered.html -- Elementor
  *            inlines both as SVG (e-fas-square, e-eicon-play). The hero's set.
+ *   Sun       folixa-design-reference/pages/home/rendered.html, element 34f35c4
+ *            (e-fas-sun); also folixa-design-reference/assets/icons/svg/fas_sun.svg.
+ *   CheckCircle  folixa-design-reference/assets/icons/svg/far_check-circle.svg.
+ *            Sun and CheckCircle are the about section's set.
  *
  * Font Awesome Free 6 icons are CC BY 4.0.
  */
@@ -103,6 +107,30 @@ export function Play({ className }: IconProps) {
   return (
     <svg viewBox="0 0 1000 1000" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
       <path d="M838 162C746 71 633 25 500 25 371 25 258 71 163 162 71 254 25 367 25 500 25 633 71 746 163 837 254 929 367 979 500 979 633 979 746 933 838 837 929 746 975 633 975 500 975 367 929 254 838 162M808 192C892 279 933 379 933 500 933 621 892 725 808 808 725 892 621 938 500 938 379 938 279 896 196 808 113 725 67 621 67 500 67 379 108 279 196 192 279 108 383 62 500 62 621 62 721 108 808 192M438 392V642L642 517 438 392Z" />
+    </svg>
+  )
+}
+
+/**
+ * The about section's two glyphs.
+ *
+ * Sun is what the reference puts on the doctor photo card (element 34f35c4). It
+ * is decorative theme dressing with no medical meaning -- kept for fidelity, but
+ * jki-shield-light and far_check-circle are both better fits if the client wants
+ * it swapped. FLAGGED FOR CLIENT REVIEW.
+ */
+export function Sun({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <path d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z" />
+    </svg>
+  )
+}
+
+export function CheckCircle({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z" />
     </svg>
   )
 }

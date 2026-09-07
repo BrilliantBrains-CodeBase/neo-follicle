@@ -1,3 +1,4 @@
+import About from '../components/About'
 import Hero from '../components/Hero'
 
 /**
@@ -15,13 +16,14 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <About />
 
-      <div className="container py-section-y">
-        <p className="text-body">
-          Remaining sections pending. Copy:{' '}
-          <code>content/home-page/Neo-Follicle-Website-Content.md</code>
-        </p>
-      </div>
+      {/*
+        Sections 4-15 of content/home-page/Neo-Follicle-Website-Content.md are
+        still to build: Services, Why Choose, Patient Journey, Results, Social
+        Proof, International, FAQ, Final CTA, Guides. The doc's Credibility Bar
+        (between Hero and About) is also outstanding.
+      */}
     </>
   )
 }
