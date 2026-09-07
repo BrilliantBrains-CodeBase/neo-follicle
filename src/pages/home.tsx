@@ -1,6 +1,13 @@
 import About from '../components/About'
+import CommonQuestions from '../components/CommonQuestions'
+import ContactUs from '../components/ContactUs'
 import Hero from '../components/Hero'
+import Insights from '../components/Insights'
+import Process from '../components/Process'
 import Services from '../components/Services'
+import Testimonials from '../components/Testimonials'
+import TreatmentGallery from '../components/TreatmentGallery'
+import WhyNeoFollicle from '../components/WhyNeoFollicle'
 
 /**
  * PagePlaceholder is deliberately NOT used here any more. It renders
@@ -19,12 +26,22 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <WhyNeoFollicle />
+      <Process />
+      <TreatmentGallery />
+      <Testimonials />
+      <CommonQuestions />
+      <Insights />
+      <ContactUs />
 
       {/*
-        Sections 5-15 of content/home-page/Neo-Follicle-Website-Content.md are
-        still to build: Why Choose, Patient Journey, Results, Social Proof,
-        International, FAQ, Final CTA, Guides. The doc's Credibility Bar
-        (between Hero and About) is also outstanding.
+        Still to build from content/home-page/Neo-Follicle-Website-Content.md:
+        International. The doc's Credibility Bar (between Hero and About) is
+        also outstanding. International (SECTION 11) belongs between
+        Testimonials and CommonQuestions when it lands.
+
+        SECTION 13 Final CTA is covered by ContactUs -- it carries that
+        section's heading and body. Do not add a second CTA band.
       */}
     </>
   )

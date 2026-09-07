@@ -22,6 +22,13 @@
  *            Sun and CheckCircle are the about section's set.
  *   Plus      folixa-design-reference/assets/icons/svg/fas_plus.svg (e-fas-plus).
  *            The services cards' badge glyph.
+ *   QuoteLeft  folixa-design-reference/assets/icons/svg/fas_quote-left.svg;
+ *            also inlined in pages/home/rendered.html as `e-fas-quote-left`.
+ *   ArrowRight  folixa-design-reference/assets/icons/svg/jki-right-arrow-light.svg.
+ *            The testimonials carousel's set. Only the RIGHT glyph was
+ *            captured -- the kit's left arrow is the same shape mirrored, so
+ *            the previous button reuses this one under `rotate-180` rather
+ *            than carrying a hand-drawn second path that could drift from it.
  *
  * Font Awesome Free 6 icons are CC BY 4.0.
  */
@@ -145,6 +152,31 @@ export function Plus({ className }: IconProps) {
   )
 }
 
+/**
+ * The testimonials carousel's set.
+ *
+ * ArrowRight keeps its `translate(0,960) scale(1,-1)` group: the jki webfont is
+ * y-flipped and that transform is part of the glyph, exactly as on ChevronDown
+ * and the contact icons. Do not remove it.
+ */
+export function QuoteLeft({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z" />
+    </svg>
+  )
+}
+
+export function ArrowRight({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <g transform="translate(0,960) scale(1,-1)">
+        <path d="M690 797q-11 11 -26 11t-26 -11q-11 -10 -11 -25t11 -26l262 -262h-864q-15 0 -25.5 -10.5t-10.5 -25.5t10.5 -25.5t25.5 -10.5h864l-262 -262q-11 -10 -11 -25.5t11 -25.5q11 -11 26 -11t26 11l323 323q11 11 11 26t-11 26l-323 323v0z" />
+      </g>
+    </svg>
+  )
+}
+
 export function PhoneIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
@@ -213,6 +245,69 @@ export function InstagramIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
       <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+    </svg>
+  )
+}
+
+/**
+ * The process section's five step glyphs, from
+ * folixa-design-reference/assets/icons/svg/ (jki-headset-solid,
+ * jki-clipboard-list-solid, jki-eye, jki-dna-solid,
+ * jki-hand-holding-heart-solid). Same y-flip caveat as the group above.
+ *
+ * The reference's process band only has four cards, so only Headset,
+ * ClipboardList and HandHoldingHeart carry over from it directly. Eye and Dna
+ * are picked from the same captured icon set for the two steps our content doc
+ * adds. Eye stands in for Hairline Design rather than jki-search-location-solid,
+ * which is already in use above as MapPinIcon; Dna replaces the reference's
+ * jki-line-chart1-light on the graft step, where a line chart meant nothing.
+ */
+export function Headset({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <g transform="translate(0,960) scale(1,-1)">
+        <path d="M512 864c-193.5 0-352-158.5-352-352v-192c0-41.375 27-76.625 64-90v-6c0-87.875 72.125-160 160-160h41c11.125-19.125 31.375-32 55-32h64c35.25 0 64 28.75 64 64s-28.75 64-64 64h-64c-23.625 0-43.875-12.875-55-32h-41c-53 0-96 43-96 96h64v288h-128c0 158.5 129.5 288 288 288s288-129.5 288-288h-128v-288h96c52.625 0 96 43.375 96 96v192c0 193.5-158.5 352-352 352zM224 448h64v-160h-32c-17.75 0-32 14.25-32 32zM736 448h64v-128c0-17.75-14.25-32-32-32h-32z" />
+      </g>
+    </svg>
+  )
+}
+
+export function ClipboardList({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <g transform="translate(0,960) scale(1,-1)">
+        <path d="M512 896c-40.32 0-68.795-28.48-82.875-64h-269.125v-800h704v800h-269.125c-14.080 35.52-42.555 64-82.875 64zM512 832c17.6 0 32-14.4 32-32v-32h96v-64h-256v64h96v32c0 17.6 14.4 32 32 32zM224 768h96v-128h384v128h96v-672h-576v672zM288 544v-64h64v64h-64zM416 544v-64h320v64h-320zM288 416v-64h64v64h-64zM416 416v-64h320v64h-320zM288 288v-64h64v64h-64zM416 288v-64h320v64h-320z" />
+      </g>
+    </svg>
+  )
+}
+
+export function Eye({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <g transform="translate(0,960) scale(1,-1)">
+        <path d="M512 704c-266.75 0-472-235-472-235l-19-21 19-21c0 0 187.125-213.375 436-233 11.875-1.5 23.75-2 36-2s24.125 0.5 36 2c248.875 19.625 436 233 436 233l19 21-19 21c0 0-205.25 235-472 235zM512 640c70.5 0 135.5-19.25 192-45 20.375-33.75 32-72.625 32-115 0-115.625-86.75-210.625-199-223-0.625-0.125-1.375 0.125-2 0-7.625-0.375-15.25-1-23-1-8.5 0-16.75 0.5-25 1-112.25 12.375-199 107.375-199 223 0 41.75 11.25 80.625 31 114h-1c57 26.25 122.75 46 194 46zM512 576c-53 0-96-43-96-96s43-96 96-96c53 0 96 43 96 96s-43 96-96 96zM232 546c-5-21.5-8-43.125-8-66 0-56.125 16-108.625 44-153-80.625 46.625-136.625 102.25-155 121 15.375 15.75 58.25 57.5 119 98zM792 546c60.75-40.5 103.625-82.25 119-98-18.375-18.75-74.375-74.375-155-121 28 44.375 44 96.875 44 153 0 22.875-3 44.75-8 66z" />
+      </g>
+    </svg>
+  )
+}
+
+export function Dna({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <g transform="translate(0,960) scale(1,-1)">
+        <path d="M192 800c0-96.75 41-172 99-231 46-46.875 101.875-85.375 159-121-133.375-84.25-258-176.375-258-352h64c0 150.25 121 232.25 255 315 31.875-19.625 63-38.75 92-59h-117c-32-19.25-60.25-41.625-89-64h285c1.625-1.625 3.375-3.375 5-5 18.25-18.5 34.375-38.125 47-59h-395c-16-19.25-25.375-41.625-35-64h456c5-19.75 8-40.75 8-64h64c0 96.75-41 172-99 231s-132 104-204 148c-72 44-142 87-192 138s-81 107.75-81 187zM768 800c0-23-3.75-44.125-9-64h-455c9.625-22.375 19-44.75 35-64h393c-14-23.125-31.75-44.125-52-64h-283c28.75-22.375 57-44.75 89-64h118c-19.25-14-39.5-28.125-60-42 19.25-12.75 38.75-22.25 58-35 121.625 80 230 173 230 333z" />
+      </g>
+    </svg>
+  )
+}
+
+export function HandHoldingHeart({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <g transform="translate(0,960) scale(1,-1)">
+        <path d="M464 864c-61.856 0-112-50.144-112-112 0-112 192-208 192-208s192 96 192 208c0 61.856-50.144 112-112 112-31.392 0-59.68-13.012-80-33.812-20.32 20.8-48.608 33.812-80 33.812zM464 800c12.928 0 25.098-5.124 34.25-14.5l17.063-17.5h57.375l17.063 17.5c9.152 9.376 21.322 14.5 34.25 14.5 26.464 0 48-21.536 48-48 0-40.352-67.392-98.427-128-134.875-60.64 36.48-128 94.523-128 134.875 0 26.464 21.536 48 48 48zM615 512.687l-52.375-36.75 83.5-119.125-115.25-79.813-81.375 42.125c37.602 18.931 86.2 43.403 86.375 43.5l0.375 0.25 0.313 0.187c30.798 18.126 46.578 55.504 36.313 91.062v0.062c-12.149 42.046-56.933 66.742-99 54.625h-0.062l-227.563-63.438-150.625-103.5 60.625-247.062 161.438 58.312 228.688-118.375 379.812 262.937-36.375 52.625-348.188-241.063-219.312 113.625-120.875-43.688-33.062 134.938 105.375 72.5 217.812 60.688c8.859 2.56 17.248-2.061 19.813-10.938 2.135-7.396-1.204-14.467-7.188-18.062-1.044-0.54-85.862-43.24-139.437-70.188l-56-28.125 226.937-117.562 199.813 138.375-120.5 171.875z" />
+      </g>
     </svg>
   )
 }

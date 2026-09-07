@@ -131,6 +131,25 @@ export const CONTACT = {
   areaServed: { city: 'Bengaluru', region: 'Karnataka', country: 'India' },
 } as const
 
+// --- lead capture ---------------------------------------------------------
+
+export const FORMS = {
+  /**
+   * Google Apps Script web app URL -- Deploy > New deployment > Web app, with
+   * "Who has access" set to Anyone. NOT YET DEPLOYED.
+   *
+   * While this is the empty string, ContactUs routes every submission to
+   * WhatsApp instead, so the form is never a dead end. Paste the /exec URL
+   * here to switch it over; nothing else needs to change.
+   *
+   * The POST must be a CORS *simple* request: `text/plain;charset=utf-8` with
+   * a JSON.stringify'd body. Apps Script cannot answer an OPTIONS preflight,
+   * so an `application/json` content type fails outright. Read it script-side
+   * with JSON.parse(e.postData.contents).
+   */
+  leadEndpoint: '',
+} as const
+
 // --- social profiles ------------------------------------------------------
 
 export type SocialProfile = { label: string; href: string }
