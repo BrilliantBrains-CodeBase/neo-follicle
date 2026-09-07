@@ -14,6 +14,8 @@
  *   ChevronDown, MenuBars  folixa-design-reference/assets/icons/svg/
  *            (jki-angle-down-solid, fas_bars). Phone and Close are hand-drawn
  *            to the same weight. These four are the header's set.
+ *   Square, Play  folixa-design-reference/pages/home/rendered.html -- Elementor
+ *            inlines both as SVG (e-fas-square, e-eicon-play). The hero's set.
  *
  * Font Awesome Free 6 icons are CC BY 4.0.
  */
@@ -79,6 +81,28 @@ export function Close({ className }: IconProps) {
       className={className}
     >
       <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
+  )
+}
+
+/**
+ * The hero's two glyphs, both lifted from
+ * folixa-design-reference/pages/home/rendered.html where Elementor had already
+ * inlined them as SVG: `e-fas-square` (the eyebrow bullet, Font Awesome Free 6)
+ * and `e-eicon-play` (the video card, Elementor's own icon font).
+ */
+export function Square({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z" />
+    </svg>
+  )
+}
+
+export function Play({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 1000 1000" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <path d="M838 162C746 71 633 25 500 25 371 25 258 71 163 162 71 254 25 367 25 500 25 633 71 746 163 837 254 929 367 979 500 979 633 979 746 933 838 837 929 746 975 633 975 500 975 367 929 254 838 162M808 192C892 279 933 379 933 500 933 621 892 725 808 808 725 892 621 938 500 938 379 938 279 896 196 808 113 725 67 621 67 500 67 379 108 279 196 192 279 108 383 62 500 62 621 62 721 108 808 192M438 392V642L642 517 438 392Z" />
     </svg>
   )
 }
