@@ -65,7 +65,15 @@ export default {
       },
       animation: {
         // Elementor runs .animated at 1.25s; delays used on the site are 100-500ms.
-        fadeInUp: 'fadeInUp 1.25s both',
+        //
+        // `backwards`, NOT `both`. Animation declarations outrank normal and
+        // :hover rules in the cascade, so a `both` fill made the final keyframe's
+        // `transform: none` permanent -- silently killing the hover lift on every
+        // element that also carries this class (Hero's video card, the services
+        // cards). `backwards` still holds the `from` state through the delay,
+        // which is what prevents the flash, and the `to` state is identical to
+        // the element's natural styling, so reverting after it ends is a no-op.
+        fadeInUp: 'fadeInUp 1.25s backwards',
       },
       transitionTimingFunction: { float: 'ease-out' },
     },

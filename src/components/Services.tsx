@@ -46,7 +46,7 @@ import { Plus, Square } from './icons'
  */
 
 /** The kit's `float` hover: translateY(-8px) over .3s ease-out (DESIGN.md 5). */
-const FLOAT = 'transition ease-out hover:-translate-y-2 motion-reduce:transform-none'
+const FLOAT = 'transition ease-out hover:-translate-y-2 motion-reduce:hover:transform-none'
 
 /** The kit's single button geometry: radius 0.5rem, padding 1rem. */
 const BUTTON = `inline-flex w-full items-center justify-center rounded p-4 font-head text-button duration-500 md:w-auto ${FLOAT}`
@@ -54,9 +54,13 @@ const BUTTON = `inline-flex w-full items-center justify-center rounded p-4 font-
 /**
  * The cards' own hover, which is NOT the buttons' float: the reference lifts a
  * card by 3px over 500ms (`--e-con-transform-translateY:-3px`).
+ *
+ * The reduced-motion override is `motion-reduce:hover:` and not the bare
+ * `motion-reduce:`: a plain `.transform-none` loses to `.hover\:-translate-y:hover`
+ * on specificity, so the lift still fired for users who asked for less motion.
  */
 const CARD_LIFT =
-  'transition duration-500 ease-out hover:-translate-y-[3px] motion-reduce:transform-none'
+  'transition duration-500 ease-out hover:-translate-y-[3px] motion-reduce:hover:transform-none'
 
 /** The reference's scrim: transparent to `secondary` (#1A1A1A), top to bottom. */
 const SCRIM = 'bg-[linear-gradient(180deg,#02010100_0%,#1A1A1A_100%)]'
@@ -117,7 +121,7 @@ const SERVICES = [
     copy: 'Correct unnatural hairlines, poor density, wrong growth direction and FUT scars from an earlier transplant.',
     to: '/failed-hair-transplant-repair-in-bangalore/',
     img: '/services/repair.webp',
-    alt: 'Portrait of a man with thin hair at the front of the scalp.',
+    alt: 'A man looking down and pointing at thinning hair across his crown.',
   },
   {
     title: 'Unshaven & Body Hair Transplant',
