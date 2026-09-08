@@ -39,8 +39,13 @@ import { ArrowRight, QuoteLeft, Square } from './icons'
  * At <=767 the row wraps (`--flex-wrap-mobile:wrap`) and the children stack in
  * normal DOM order -- image first, then card. Not reversed.
  *
- * Copy is verbatim from content/home-page/Neo-Follicle-Website-Content.md
- * SECTION 10.
+ * Copy is from content/home-page/Neo-Follicle-Website-Content.md SECTION 10. The
+ * three testimonials and the heading are verbatim. The ONE exception is the body
+ * paragraph, which drops the doc's opening sentence -- "When appearance is part
+ * of the job, discretion and natural results matter." -- so that it holds two
+ * lines. Nothing is reworded and all five names are kept; that sentence is the
+ * only thing cut, so restoring it is a paste away if the two-line rule is ever
+ * relaxed.
  *
  * Departures from the reference:
  *
@@ -48,6 +53,17 @@ import { ArrowRight, QuoteLeft, Square } from './icons'
  *     eyebrow + heading, but the doc's SECTION 10 BODY (the Sandalwood
  *     celebrity paragraph) is the section's central trust claim and has nowhere
  *     else to go on the page.
+ *   - The header's widths are ours, not the reference's, and the reason is
+ *     string length. `0531ae2` caps its h2 at 500px, which suits "Tailored Hair
+ *     Regrowth Solutions" (32 chars) and breaks "Sandalwood Stars and 10,000+
+ *     Patients Trust Neo Follicle" (56) over four lines. At 820px the natural
+ *     first line clears its ~739px at the clamp's 52.8px ceiling, and the whole
+ *     string would need ~1478px to collapse onto one line -- wider than the
+ *     1200px container can ever be -- so it is two lines across the desktop
+ *     range. The paragraph sits at 860px for the same reason; at 720px the
+ *     shortened text still split 74/91 and spilled to three lines. A paragraph
+ *     slightly wider than the heading is the reference's own proportion (500 vs
+ *     661).
  *   - The heading is an <h2>. Hero owns the page's only h1 (the doc's final
  *     recommendation 1).
  *   - Autoplay pauses on hover, on focus-within and while the tab is hidden.
@@ -295,13 +311,14 @@ export default function Testimonials() {
             <Square className="mt-[3px] h-[14px] w-[14px] shrink-0 text-primary" />
             Testimonials
           </p>
-          <h2 className="max-w-full font-head text-h2 text-secondary lg:max-w-[500px]">
+          {/* 820px, not the reference's 500px -- see the heading departure above. */}
+          <h2 className="max-w-full font-head text-h2 text-secondary lg:max-w-[820px]">
             Sandalwood Stars and 10,000+ Patients Trust Neo Follicle
           </h2>
-          <p className="max-w-[720px] text-body-lg text-body">
-            When appearance is part of the job, discretion and natural results matter. Several
-            Kannada film industry names have chosen Neo Follicle for their hair restoration,
-            including Sri Murali, Prem, Rakshith Gowda, Sharan and RJ Mayuraa Raghavendra.
+          <p className="max-w-[860px] text-body-lg text-body">
+            Several Kannada film industry names have chosen Neo Follicle for their hair
+            restoration, including Sri Murali, Prem, Rakshith Gowda, Sharan and RJ Mayuraa
+            Raghavendra.
           </p>
         </Reveal>
 
