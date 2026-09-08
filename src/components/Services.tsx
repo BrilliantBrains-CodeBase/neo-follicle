@@ -83,10 +83,12 @@ const DELAYS = [
 /**
  * SECTION 4's card table, verbatim.
  *
- * TODO: every photo is licensed stock carried over from the live site, NOT a
- * Neo Follicle patient. Alt text describes the image only and claims no result.
- * Replace with clinic photography before launch -- same TODO as Hero's
- * /hero.webp.
+ * TODO: five of the six photos are licensed stock carried over from the live
+ * site, NOT Neo Follicle patients. Alt text describes the image only and claims
+ * no result. Replace with clinic photography before launch.
+ *
+ * The exception is /services/female.webp, which is client-supplied
+ * (Homepage/Female Hair Transplant.png).
  */
 const SERVICES = [
   {
@@ -101,7 +103,7 @@ const SERVICES = [
     copy: 'For thinning, widening partings and female pattern hair loss, planned only after the cause is diagnosed.',
     to: '/female-hair-transplant-in-bangalore/',
     img: '/services/female.webp',
-    alt: 'A woman parting her hair to show thinning along the centre parting.',
+    alt: 'A woman resting in a treatment chair, the recipient area along her hairline dense with freshly placed grafts.',
   },
   {
     title: 'Beard Transplant',

@@ -13,11 +13,11 @@ import { DOCTOR } from '../config/site'
  * folixa-design-reference/pages/home/sections/03-from-advanced-hair-restoration-procedures-to.png.
  *
  * Copy is verbatim from content/home-page/Neo-Follicle-Website-Content.md
- * SECTION 2. Nothing here is authored. The one editorial act is splitting the
- * doc's single BODY paragraph across the reference's three text slots at
- * existing sentence boundaries: sentences 1-2 and 3 become the two paragraphs,
- * and the final sentence ("The goal is an honest plan...") becomes the photo
- * card's overlaid line. No words are added, dropped or reordered.
+ * SECTION 2, as revised by Neo-Follicle-Website-Changes.md. Nothing here is
+ * authored. The doc's BODY fills the reference's three text slots in order:
+ * its two paragraphs become the two <p>s, and its closing sentence ("The goal
+ * is an honest plan...") -- carried over unchanged from the pre-revision copy
+ * -- becomes the photo card's overlaid line. No words are added or reordered.
  *
  * Elementor's breakpoints are max-width, Tailwind's are min-width. Per
  * tailwind.config.js the mapping is: Elementor desktop -> `lg:`, its tablet
@@ -88,7 +88,7 @@ export default function About() {
             the heading reads small for its role, but that is the reference.
           */}
           <h2 className="my-[-16px] max-w-full font-head text-h4 text-[#444444DB] animate-fadeInUp motion-reduce:animate-none md:max-w-[495px] lg:max-w-[680px]">
-            A Hair Transplant Clinic <span className="text-secondary">Built Around a Dermatologist</span>
+            A Hair Transplant Clinic <span className="text-secondary">Led by a Dermatologist</span>
           </h2>
         </div>
 
@@ -99,19 +99,18 @@ export default function About() {
             className={`${PHOTO_CARD} min-h-[320px] justify-end rounded p-gutter animate-fadeInUp motion-reduce:animate-none md:min-h-[450px] md:p-8 lg:w-1/2`}
           >
             {/*
-              TODO: /about-doctor.webp is folixa-design-reference's licensed
-              theme stock (About-banner-Video-2.webp). Replace with a Neo
-              Follicle photo of Dr. Sandeep before launch. Note it is a wide
-              1240x550 crop filling a roughly portrait slot, so object-cover
-              crops it hard -- shoot or crop the replacement taller. Higher-res
-              real candidates already exist at
-              neofollicle-seo-backup/media/files/wp-content/uploads/2025/05/Dr-Sandeep-Mahapatra-11.jpeg.
+              /about-doctor.webp is a real photograph of Dr. Sandeep, client-
+              supplied (Homepage/Doctor Images/Dr-Sandeep-Mahapatra-12.jpeg),
+              replacing folixa-design-reference's licensed theme stock. Picked
+              over the other five supplied doctor shots because this slot is
+              roughly portrait and object-cover crops it hard -- at 1095x1280
+              it is the only tall, high-resolution one in the set.
             */}
             <img
               src="/about-doctor.webp"
               alt=""
-              width={1240}
-              height={550}
+              width={1095}
+              height={1280}
               loading="lazy"
               className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
             />
@@ -151,7 +150,7 @@ export default function About() {
                   suffix="+ Years"
                   numberClassName="text-center font-head text-h2 text-secondary"
                 />
-                <p className="text-center text-body">Dermatology and hair transplant surgery.</p>
+                <p className="text-center text-body">Dermatology &amp; Hair Transplant Surgery</p>
               </div>
 
               {/*
@@ -178,7 +177,7 @@ export default function About() {
                 <Counter
                   to={10000}
                   suffix="+ Transplants"
-                  label="Over 6,000,000 follicles placed."
+                  label="6,000,000+ Follicles Placed"
                   reverse
                   className="flex flex-col gap-gap-xs"
                   numberClassName="font-head text-h4 text-white"
@@ -191,15 +190,13 @@ export default function About() {
             <div className="flex flex-col items-start gap-6 animate-fadeInUp motion-reduce:animate-none">
               <div className="flex flex-col gap-4 pr-5">
                 <p className="text-body">
-                  Most hair loss is a medical problem before it is a cosmetic one. That is why Neo
-                  Follicle is led by Dr. Sandeep Mahapatra, MBBS, MD (Dermatology) and a gold
-                  medalist, who brings dermatology, hair restoration surgery and hairline design
-                  together in one clinic.
+                  Hair loss is often a medical problem before a cosmetic one. Neo Follicle is led
+                  by Dr. Sandeep Mahapatra, MBBS, MD (Dermatology), Gold Medalist, combining
+                  dermatology, hair restoration surgery and hairline design in one clinic.
                 </p>
                 <p className="text-body">
-                  He personally evaluates your scalp, identifies why you are losing hair, and
-                  decides whether you need a transplant, a non-surgical treatment or a combination,
-                  before anything is booked.
+                  He evaluates your scalp, identifies the cause of hair loss, and recommends a
+                  transplant, non-surgical treatment or combination before booking.
                 </p>
               </div>
 

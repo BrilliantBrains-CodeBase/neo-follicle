@@ -22,8 +22,12 @@ import Reveal from './Reveal'
  * tailwind.config.js the mapping is: Elementor desktop -> `lg:`, its tablet
  * band (768-1024) -> `md:`, its mobile (<=767) -> unprefixed.
  *
- * Five deliberate departures from the reference:
+ * Six deliberate departures from the reference:
  *
+ *   - A photo band at the top of every card. The reference's step cards carry
+ *     no imagery at all -- they are icon, title, copy. The client delivered a
+ *     banner per journey stage (see STEPS below), so each card leads with one,
+ *     bled to the card edges above the icon row.
  *   - Five cards, not four. The reference grid is repeat(4, 1fr); the doc's
  *     journey has five stages and none of them may be dropped, so desktop is
  *     `lg:grid-cols-5`. The cards are correspondingly narrower, so their
@@ -56,38 +60,72 @@ const FLOAT = 'transition ease-out hover:-translate-y-2 motion-reduce:transform-
  * tried spanning both columns; at that width the step numeral ends up roughly
  * a screen away from its icon and the card stops matching the other four.
  * A half-width card beside an empty cell reads better.
+ *
+ * `overflow-hidden` is what clips the image band to the card's radius.
  */
-const CARD = `flex flex-col rounded border border-overlay p-5 md:p-6 lg:p-5 ${FLOAT}`
+const CARD = `flex flex-col overflow-hidden rounded border border-overlay p-5 md:p-6 lg:p-5 ${FLOAT}`
+
+/**
+ * The image band bleeds to the card's edges, so it has to cancel whichever
+ * padding step is active. The negative margins live on a wrapping block rather
+ * than the <img> itself: a block stretches under negative inline margins on its
+ * own, where `w-full` on the image would resolve against the padded content box
+ * and leave the bleed short by exactly the padding.
+ */
+const BAND = '-mx-5 -mt-5 mb-5 md:-mx-6 md:-mt-6 md:mb-6 lg:-mx-5 lg:-mt-5 lg:mb-5'
 
 /** 40px glyph in 16px of padding, radius 8px -- a 72px square. */
 const CHIP = 'flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded'
 
-/** SECTION 6 Patient Journey, verbatim. Icon choices are documented in icons.tsx. */
+/**
+ * SECTION 6 Patient Journey, verbatim. Icon choices are documented in icons.tsx.
+ *
+ * IMAGE PROVENANCE. Every `img` is client-supplied (Homepage/Patient Journey/)
+ * and AI-GENERATED, not photography -- each is a render of a Dr. Sandeep
+ * likeness in a clinic that is not his. Sources are ~2120x742; each is
+ * subject-anchored-cropped and re-encoded to webp at 900x400.
+ *
+ * `diagnosis` uses the delivery's "Diagnosis & Treatment Plan 2.png". The
+ * unnumbered variant of the same scene was rejected: it has a headline and body
+ * paragraph BURNED INTO the image, which would crop unpredictably across the
+ * three card widths, duplicate the card's own title and copy, and be invisible
+ * to screen readers and translation.
+ */
 const STEPS = [
   {
     icon: Headset,
     title: 'Consultation & Scalp Evaluation',
     copy: 'Dr. Sandeep examines your hair loss pattern, donor area, scalp condition and medical history.',
+    img: '/process/consultation.webp',
+    alt: "A clinician examining a seated patient's scalp beside a monitor showing a magnified trichoscopy view.",
   },
   {
     icon: ClipboardList,
     title: 'Diagnosis & Treatment Plan',
     copy: 'You learn the cause, whether you need a transplant or a treatment, the graft count and the expected result.',
+    img: '/process/diagnosis.webp',
+    alt: 'A clinician and a patient at a desk reviewing a tablet showing a hair analysis and estimated graft count.',
   },
   {
     icon: Eye,
     title: 'Hairline Design',
     copy: 'A natural hairline mapped to your face shape, age and long-term appearance.',
+    img: '/process/hairline.webp',
+    alt: "A clinician drawing a planned hairline on a seated patient's scalp with a marker.",
   },
   {
     icon: Dna,
     title: 'Graft Extraction & Implantation',
     copy: 'Follicles extracted from the donor area and placed with attention to angle, direction and density.',
+    img: '/process/extraction.webp',
+    alt: "A surgeon in loupes placing grafts along a reclined patient's hairline while an assistant works at a microscope.",
   },
   {
     icon: HandHoldingHeart,
     title: 'Recovery & Follow-Up',
     copy: 'Aftercare instructions, review sessions and long-term maintenance guidance.',
+    img: '/process/recovery.webp',
+    alt: 'A clinician talking a patient through a month-by-month recovery timeline shown on a monitor.',
   },
 ]
 
@@ -129,13 +167,24 @@ export default function Process() {
           left-to-right there, which suits a numbered sequence.
         */}
         <ol className={`${SCROLLER} gap-gap-sm md:grid-cols-2 md:gap-8 lg:grid-cols-5`}>
-          {STEPS.map(({ icon: Icon, title, copy }, i) => (
+          {STEPS.map(({ icon: Icon, title, copy, img, alt }, i) => (
             <Reveal
               key={title}
               as="li"
               delay={i * 100}
               className={`${CARD} ${SLIDE} ${i === 0 ? 'bg-accent' : 'bg-base'}`}
             >
+              <div className={BAND}>
+                <img
+                  src={img}
+                  alt={alt}
+                  width={900}
+                  height={400}
+                  loading="lazy"
+                  className="h-36 w-full object-cover md:h-44 lg:h-32"
+                />
+              </div>
+
               <div className="flex items-center justify-between">
                 {/* Step 1's chip is white on the tinted card; the rest are grey
                     on white. The glyph is `secondary` in both -- this section

@@ -31,8 +31,8 @@ import { Play, Square } from './icons'
  *     recommendation 6 asks for hero image performance. alt is empty because
  *     it is decorative -- the h1 carries the meaning.
  *   - No `capitalize` on the h1. Folixa's copy is already title case; ours is
- *     not, and the transform would render "In Bangalore", "By A Doctor". The
- *     doc requires the h1 exactly as written.
+ *     not, and the transform would render "In Bangalore". The doc requires the
+ *     h1 exactly as written.
  *   - The reference pairs its counter with three overlapping stock headshots.
  *     They are theme stock, not Neo Follicle patients, and implying patient
  *     identity on a medical page is not acceptable. Dropped; the divider and
@@ -100,14 +100,16 @@ export default function Hero() {
     <section className="px-0 md:px-5 lg:px-10">
       <div className="relative isolate flex min-h-[90vh] flex-wrap justify-between gap-gap-tablet overflow-hidden rounded-none px-gutter py-16 md:flex-nowrap md:rounded-lg lg:min-h-[95vh] lg:gap-gap lg:p-20">
         {/*
-          TODO: /hero.webp is folixa-design-reference's licensed theme stock
-          (hero-main-image-1.webp). Replace with a Neo Follicle photo before launch.
+          /hero.webp is client-supplied (Homepage/Home Page Banner/Home Page
+          Banner.png), replacing folixa-design-reference's licensed theme stock.
+          A graft-placement shot, so it is on-topic where the stock was not.
+          alt stays empty -- it is decorative and the h1 carries the meaning.
         */}
         <img
           src="/hero.webp"
           alt=""
-          width={1920}
-          height={1080}
+          width={1672}
+          height={941}
           fetchPriority="high"
           className="absolute inset-0 -z-10 h-full w-full object-cover object-left-top"
         />
@@ -128,15 +130,14 @@ export default function Hero() {
 
             {/* The reference splits the heading into #FFFFFFE6 and pure white. */}
             <h1 className="font-head text-h1 text-white/90">
-              Natural-Looking Hair Transplant in Bangalore,{' '}
-              <span className="text-white">Planned and Performed by a Doctor</span>
+              Natural-Looking Hair Transplant{' '}
+              <span className="text-white">in Bangalore</span>
             </h1>
 
             <p className="mt-1 max-w-[543px] text-body text-white">
               Neo Follicle is a doctor-led hair transplant and hair loss clinic in Marathahalli,
-              Bangalore. Every case is diagnosed, designed and performed under Dr. Sandeep
-              Mahapatra, a senior dermatologist and hair transplant surgeon, so you get a plan
-              built around the cause of your hair loss, not a package sold to everyone.
+              Bangalore. Dr. Sandeep Mahapatra, senior dermatologist and hair transplant surgeon,
+              diagnoses and designs each treatment around the cause of your hair loss.
             </p>
 
             <div className="mt-3 flex flex-wrap gap-gap-sm md:mt-4 lg:mt-6">

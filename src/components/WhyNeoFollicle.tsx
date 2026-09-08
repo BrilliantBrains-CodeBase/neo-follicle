@@ -57,10 +57,14 @@ import { Square } from './icons'
  *     frame reads "NEO FOLLICLE ... BHUBANESWAR" while this site is the
  *     Marathahalli, Bangalore clinic. FLAGGED FOR CLIENT REVIEW.
  *
- * Unlike Hero's /hero.webp and the Services photos, every image here is a real
- * Neo Follicle photograph out of neofollicle-seo-backup/media -- the doctor,
- * the consulting room, the procedure room, a graft close-up and a patient
- * result. No theme stock, so no replace-before-launch TODO.
+ * IMAGE PROVENANCE, CHANGED. This section used to be the one place on the page
+ * where every image was a real Neo Follicle photograph out of
+ * neofollicle-seo-backup/media. Five of the six have since been replaced with
+ * client-supplied AI-GENERATED renders (Homepage/Why Choose Neo Follicle/).
+ * They are not photographs: they depict a likeness of Dr. Sandeep in a clinic
+ * that is not his, and the signage rendered into them reads "ADVANCED HAIR
+ * RESTORATION", not Neo Follicle. Only point 5 (`results`) is still a real
+ * photograph. See the per-image note on POINTS below.
  */
 
 /** Matches the track's transition below; drives the loop's snap-back timing. */
@@ -72,41 +76,57 @@ const INTERVAL_MS = 4000
 /**
  * SECTION 5's point table, verbatim.
  *
- * Every `img` is a real Neo Follicle photograph, centre-cropped to the kit's
- * 3:2 and re-encoded to webp at 650x434. Sources, all under
- * neofollicle-seo-backup/media/files/wp-content/uploads:
+ * Every `img` is subject-anchored-cropped to the kit's 3:2 and re-encoded to
+ * webp at 650x434. Five come from the client's Homepage/Why Choose Neo
+ * Follicle/ delivery and are AI-GENERATED, not photographs:
  *
- *   diagnosis   2025/05/Dr-Sandeep-Mahapatra-Best-Dermatologist-in-Bangalore.jpg
- *   planning    2025/05/Dr-Sandeep-Mahapatra-at-Neo-Follicle-Hair-Transplant-Clinic.jpg
- *   implanters  2025/03/Close-up-of-Temple-and-crown-region-after-Hair-Transplant.jpg
- *   treatments  2025/05/NFT-Procedure-Room-2.jpeg
- *   results     2026/08/2-1.png
- *   pricing     2025/05/Consulting-Room-1.jpeg
+ *   diagnosis   Dermatologist-Led Diagnosis.png
+ *   planning    Doctor-Performed Planning (2).png
+ *   implanters  FUE and NFT Implanters 1.png
+ *   treatments  Surgical & Non-Surgical Options.png
+ *   pricing     Transparent, Honest Pricing.png
+ *
+ * `results` is unchanged and is still a real Neo Follicle photograph, from
+ * neofollicle-seo-backup/media/files/wp-content/uploads/2026/08/2-1.png.
+ *
+ * FLAGGED FOR CLIENT REVIEW, two defects carried in with the AI set:
+ *
+ *   - `pricing` renders a coat badge reading "Dr. Nitiin P.R. Hache, Hair
+ *     Restoration Surgeon" -- a surgeon who does not exist -- and it is legible
+ *     at this crop. A fabricated clinician's name on a medical page is the one
+ *     thing here that cannot survive launch. Recrop cannot remove it without
+ *     losing the subject; the image needs regenerating or replacing.
+ *   - Two source filenames do not describe their contents. "Transparent,
+ *     Honest Pricing" depicts a hairline-planning consultation and "Surgical &
+ *     Non-Surgical Options" depicts surgical hairline marking, so both sit
+ *     under card titles they do not illustrate. The titles are the client's own
+ *     copy and stay; `alt` below describes what is actually in frame, which is
+ *     what alt is for.
  */
 const POINTS = [
   {
     title: 'Dermatologist-Led Diagnosis',
     copy: 'Your cause of hair loss is identified first, so you avoid unnecessary procedures.',
     img: '/why/diagnosis.webp',
-    alt: 'Dr. Sandeep Mahapatra at his consulting desk at Neo Follicle, Bangalore.',
+    alt: 'A dermatologist at a consulting desk showing a patient a tablet with a scalp trichoscopy comparison.',
   },
   {
     title: 'Doctor-Performed Planning',
     copy: 'Dr. Sandeep designs the hairline, density and donor plan for every case personally.',
     img: '/why/planning.webp',
-    alt: 'Dr. Sandeep Mahapatra reviewing hair transplant cases on screen at the clinic.',
+    alt: "A gloved hand marking a new hairline on a patient's forehead with a surgical pen.",
   },
   {
     title: 'FUE and NFT Implanters',
     copy: 'Direct implantation with NFT implanters for controlled angle, direction and density.',
     img: '/why/implanters.webp',
-    alt: 'Close-up of a marked-out hairline and crown immediately after graft implantation.',
+    alt: 'Close-up of densely placed follicular grafts along a recipient area, a fine forceps positioning one more.',
   },
   {
     title: 'Surgical & Non-Surgical Options',
     copy: 'Transplant, PRP, GFC, QR678, exosome, stem cell and laser therapy, all under one roof.',
     img: '/why/treatments.webp',
-    alt: 'Treatment room at Neo Follicle with laser and non-surgical hair therapy equipment.',
+    alt: "A masked surgeon in scrubs drawing the planned hairline on a patient's scalp before a procedure.",
   },
   {
     title: 'Natural, Permanent Results',
@@ -118,7 +138,7 @@ const POINTS = [
     title: 'Transparent, Honest Pricing',
     copy: 'Cost shared after evaluation, with no hidden charges and EMI options.',
     img: '/why/pricing.webp',
-    alt: "Consulting room at Neo Follicle with the doctor's certifications on the wall.",
+    alt: 'A clinician talking a patient through before-and-after images on a consulting-room monitor.',
   },
 ]
 

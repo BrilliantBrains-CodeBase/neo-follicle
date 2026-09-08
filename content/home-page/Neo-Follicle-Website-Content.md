@@ -8,11 +8,11 @@ Neo Follicle Hair Transplant Clinic, Marathahalli, Bangalore
 
 **H1**
 
- Natural-Looking Hair Transplant in Bangalore, Planned and Performed by a Doctor
+ Natural-Looking Hair Transplant in Bangalore
 
 **BODY**
 
- Neo Follicle is a doctor-led hair transplant and hair loss clinic in Marathahalli, Bangalore. Every case is diagnosed, designed and performed under Dr. Sandeep Mahapatra, a senior dermatologist and hair transplant surgeon, so you get a plan built around the cause of your hair loss, not a package sold to everyone.
+ Neo Follicle is a doctor-led hair transplant and hair loss clinic in Marathahalli, Bangalore. Dr. Sandeep Mahapatra, senior dermatologist and hair transplant surgeon, diagnoses and designs each treatment around the cause of your hair loss.
 
 **CTAs**
 
@@ -41,16 +41,20 @@ Neo Follicle Hair Transplant Clinic, Marathahalli, Bangalore
 
 ***HEADING:*** 
 
- *A Hair Transplant Clinic Built Around a Dermatologist*
+ *A Hair Transplant Clinic Led by a Dermatologist*
 
 ***BODY:*** 
 
- *Most hair loss is a medical problem before it is a cosmetic one. That is why Neo Follicle is led by Dr. Sandeep Mahapatra, MBBS, MD (Dermatology) and a gold medalist, who brings dermatology, hair restoration surgery and hairline design together in one clinic. He personally evaluates your scalp, identifies why you are losing hair, and decides whether you need a transplant, a non-surgical treatment or a combination, before anything is booked. The goal is an honest plan and a result that still looks natural in ten years.*
+ *Hair loss is often a medical problem before a cosmetic one. Neo Follicle is led by Dr. Sandeep Mahapatra, MBBS, MD (Dermatology), Gold Medalist, combining dermatology, hair restoration surgery and hairline design in one clinic.*
+
+ *He evaluates your scalp, identifies the cause of hair loss, and recommends a transplant, non-surgical treatment or combination before booking.*
+
+ *The goal is an honest plan and a result that still looks natural in ten years.*
 
 | *Stat card* | *Copy* |
 | ----- | ----- |
-| ***20+ Years*** | *Dermatology and hair transplant surgery.* |
-| ***10,000+ Transplants*** | *Over 6,000,000 follicles placed.* |
+| ***20+ Years*** | *Dermatology & Hair Transplant Surgery* |
+| ***10,000+ Transplants*** | *6,000,000+ Follicles Placed* |
 
 ***DOCTOR CREDENTIALS BLOCK***
 
