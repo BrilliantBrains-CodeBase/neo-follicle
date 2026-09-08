@@ -1,3 +1,4 @@
+import { SCROLLER, SLIDE } from './carousel'
 import { ClipboardList, Dna, Eye, HandHoldingHeart, Headset, Square } from './icons'
 import Reveal from './Reveal'
 
@@ -122,13 +123,18 @@ export default function Process() {
           </p>
         </Reveal>
 
-        <ol className="grid grid-cols-1 gap-gap-sm md:grid-cols-2 md:gap-8 lg:grid-cols-5">
+        {/*
+          5-up desktop, 2-up tablet. Below `md` the five steps become a
+          swipeable track (carousel.ts) rather than a stack -- the journey reads
+          left-to-right there, which suits a numbered sequence.
+        */}
+        <ol className={`${SCROLLER} gap-gap-sm md:grid-cols-2 md:gap-8 lg:grid-cols-5`}>
           {STEPS.map(({ icon: Icon, title, copy }, i) => (
             <Reveal
               key={title}
               as="li"
               delay={i * 100}
-              className={`${CARD} ${i === 0 ? 'bg-accent' : 'bg-base'}`}
+              className={`${CARD} ${SLIDE} ${i === 0 ? 'bg-accent' : 'bg-base'}`}
             >
               <div className="flex items-center justify-between">
                 {/* Step 1's chip is white on the tinted card; the rest are grey

@@ -1,4 +1,5 @@
 import { useEffect, useState, type CSSProperties } from 'react'
+import { TRACK } from './carousel'
 import Reveal from './Reveal'
 import { Square } from './icons'
 
@@ -28,6 +29,13 @@ import { Square } from './icons'
  * accent treatment follows whichever card is currently centred -- so at any
  * frame the viewport shows exactly the reference's three-card composition.
  * Card geometry, borders, radii, tints, gaps and type are unchanged.
+ *
+ * That carousel is transform-driven from `md` up ONLY. Below it the same track
+ * becomes a native scroll-snap row (carousel.ts), because a translateX and a
+ * scroll container cannot share an element -- the transform would fight the
+ * finger. So on mobile: no autoplay, no duplicate slide set, no centred card,
+ * no dots; just six cards you swipe. Everything `isMobile` guards below is
+ * that switch.
  *
  * Five smaller departures:
  *
@@ -197,7 +205,13 @@ export default function WhyNeoFollicle() {
     return () => document.removeEventListener('visibilitychange', sync)
   }, [])
 
-  const running = mounted && !reduced && !hovered && !tabHidden
+  /**
+   * At 1-up the track is a native scroll-snap row, not a transform (see the
+   * header note). Everything the transform mechanic owns is off below `md`.
+   */
+  const isMobile = visible === 1
+
+  const running = mounted && !reduced && !isMobile && !hovered && !tabHidden
 
   useEffect(() => {
     if (!running) return
@@ -241,10 +255,12 @@ export default function WhyNeoFollicle() {
     setIndex((k - Math.floor(visible / 2) + POINTS.length) % POINTS.length)
 
   /**
-   * Duplicates exist only to make the wrap seamless, and only on the client --
-   * the prerendered HTML carries each point, and each <h3>, exactly once.
+   * Duplicates exist only to make the transform's wrap seamless, and only on
+   * the client -- the prerendered HTML carries each point, and each <h3>,
+   * exactly once. On mobile there is no wrap to hide, and they would land as
+   * six extra cards a thumb can actually swipe to, so they are dropped.
    */
-  const slides = mounted && !reduced ? [...POINTS, ...POINTS] : POINTS
+  const slides = mounted && !reduced && !isMobile ? [...POINTS, ...POINTS] : POINTS
 
   const header = (
     <Reveal className="flex flex-col items-center gap-4 text-center md:max-w-[619px]">
@@ -287,21 +303,28 @@ export default function WhyNeoFollicle() {
               onFocusCapture={() => setHovered(true)}
               onBlurCapture={() => setHovered(false)}
             >
-              <div className="overflow-hidden">
+              {/* The transform needs a clip; the scroll track below `md` is
+                  its own, and clipping it here would kill the scroll. */}
+              <div className="md:overflow-hidden">
                 {/*
                   Layout and travel are pure CSS so the server-rendered markup
                   is correct at every width with no JS. The step is one slide
                   plus one gap, expressed against the track's own width:
-                    1-up  100%      + 2rem
                     2-up   50%      + 1rem
                     3-up   33.3333% + 0.6667rem
                   `--i` is the only inline style, and it is a plain number.
+
+                  There is no 1-up step: below `md` this is a scroll-snap row,
+                  so it takes carousel.ts's TRACK and no translate at all. TRACK
+                  rather than SCROLLER because the travel above is measured
+                  against a flex track's own width -- this one never becomes a
+                  grid.
                 */}
                 <div
                   style={{ '--i': index } as CSSProperties}
-                  className={`flex gap-8 ease-out ${
+                  className={`${TRACK} gap-8 ease-out ${
                     animate ? 'transition-transform duration-500' : ''
-                  } translate-x-[calc(var(--i)_*_(-100%_-_2rem))] md:translate-x-[calc(var(--i)_*_(-50%_-_1rem))] lg:translate-x-[calc(var(--i)_*_(-33.3333%_-_0.6667rem))]`}
+                  } md:translate-x-[calc(var(--i)_*_(-50%_-_1rem))] lg:translate-x-[calc(var(--i)_*_(-33.3333%_-_0.6667rem))]`}
                 >
                   {slides.map((point, slot) => (
                     <div
@@ -309,15 +332,19 @@ export default function WhyNeoFollicle() {
                       // The second pass exists for the wrap only; it must not
                       // be announced, and it carries no focusable content.
                       aria-hidden={slot >= POINTS.length ? true : undefined}
-                      className="shrink-0 basis-full md:basis-[calc((100%_-_2rem)/2)] lg:basis-[calc((100%_-_4rem)/3)]"
+                      className="w-[85%] shrink-0 snap-start md:w-auto md:basis-[calc((100%_-_2rem)/2)] lg:basis-[calc((100%_-_4rem)/3)]"
                     >
-                      <Card point={point} centred={slot === centred} />
+                      {/* Nothing is centred in a free-scrolling track -- the
+                          same call the reduced-motion grid above makes. */}
+                      <Card point={point} centred={!isMobile && slot === centred} />
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="flex items-center justify-center gap-3">
+              {/* Steering for the transform only -- below `md` the track is
+                  swiped directly and there is nothing for these to drive. */}
+              <div className="hidden items-center justify-center gap-3 md:flex">
                 {POINTS.map((point, k) => (
                   <button
                     key={point.title}

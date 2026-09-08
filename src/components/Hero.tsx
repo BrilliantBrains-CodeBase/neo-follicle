@@ -131,27 +131,35 @@ export default function Hero() {
             {/*
               The separator trails its item rather than leading the next one, so
               a wrap leaves the dot at the end of a line instead of orphaning it
-              at the start of the following one. Below `md` the four items each
-              take a full line, where a separator would read as a stray bullet --
-              so they only appear once items actually sit side by side.
+              at the start of the following one.
+
+              Below `md` these four items used to wrap to four full lines, which
+              cost the hero ~90px and pushed the CTAs toward the fold. They run
+              on one scrolling line there instead -- so the separators now earn
+              their place at every width, where before they were suppressed on
+              mobile to avoid reading as stray bullets at the head of each line.
+              The bleed matches the card tracks in carousel.ts.
             */}
-            <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-head text-h6 text-white">
+            <p className="-mx-gutter mt-3 flex flex-nowrap items-center gap-x-3 gap-y-1 overflow-x-auto px-gutter font-head text-h6 text-white [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
               {TRUST_STRIP.map((item, i) => (
-                <span key={item} className="flex items-center gap-x-3">
+                <span key={item} className="flex items-center gap-x-3 whitespace-nowrap">
                   {item}
-                  {i < TRUST_STRIP.length - 1 && (
-                    <span aria-hidden="true" className="hidden md:inline">
-                      ·
-                    </span>
-                  )}
+                  {i < TRUST_STRIP.length - 1 && <span aria-hidden="true">·</span>}
                 </span>
               ))}
             </p>
           </div>
         </div>
 
-        {/* Right column -- 40% desktop, 35% tablet, full width on mobile. */}
-        <div className="flex w-full flex-col items-end justify-end md:w-[35%] lg:w-[40%]">
+        {/*
+          Right column -- 40% desktop, 35% tablet, hidden on mobile.
+
+          The card is a secondary link to /video-gallery/ that cost ~350px of a
+          hero the visitor has to scroll past to reach the CTAs. It is hidden
+          with CSS rather than dropped from the tree, so the prerendered HTML
+          still carries the link and its poster for crawlers.
+        */}
+        <div className="hidden w-full flex-col items-end justify-end md:flex md:w-[35%] lg:w-[40%]">
           <Link
             to="/video-gallery/"
             className={`flex w-full flex-col gap-4 rounded border border-white/10 bg-[#D6D6D61A] p-3 backdrop-blur-[4px] duration-300 animate-fadeInUp motion-reduce:animate-none lg:w-[250px] ${FLOAT}`}

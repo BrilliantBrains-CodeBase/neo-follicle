@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { SCROLLER, SLIDE } from './carousel'
 import { Plus, Square } from './icons'
 
 /**
@@ -180,13 +181,17 @@ export default function Services() {
         </div>
 
         <div className="flex flex-col gap-gap-sm md:gap-8">
-          {/* 3-up desktop, 2-up tablet, 1-up mobile -- the reference's `e4c01a3`. */}
-          <div className="grid grid-cols-1 gap-gap-sm md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+          {/*
+            3-up desktop, 2-up tablet -- the reference's `e4c01a3`. Its 1-up
+            mobile column stacked six 320px cards into ~2000px of scrolling, so
+            below `md` the same six become a swipeable track (carousel.ts).
+          */}
+          <div className={`${SCROLLER} gap-gap-sm md:grid-cols-2 md:gap-8 lg:grid-cols-3`}>
             {SERVICES.map((service, i) => (
               <Link
                 key={service.to}
                 to={service.to}
-                className={`group relative isolate flex min-h-[320px] flex-col justify-end overflow-hidden rounded p-5 animate-fadeInUp motion-reduce:animate-none md:min-h-[400px] md:p-6 lg:min-h-[500px] ${DELAYS[i]} ${CARD_LIFT}`}
+                className={`group relative isolate flex min-h-[320px] flex-col justify-end overflow-hidden rounded p-5 animate-fadeInUp motion-reduce:animate-none md:min-h-[400px] md:p-6 lg:min-h-[500px] ${SLIDE} ${DELAYS[i]} ${CARD_LIFT}`}
               >
                 <img
                   src={service.img}

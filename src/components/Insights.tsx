@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { SCROLLER, SLIDE } from './carousel'
 import { ArrowRight, Square } from './icons'
 import Reveal from './Reveal'
 
@@ -136,9 +137,14 @@ export default function Insights() {
           </h2>
         </Reveal>
 
-        <ul className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
+        {/*
+          3-up desktop. The reference skips a 2-up tablet step, so `md:` stays
+          1-up -- spelled out as `md:grid-cols-1` now that the unprefixed
+          columns belong to the mobile track (carousel.ts) instead of a grid.
+        */}
+        <ul className={`${SCROLLER} gap-6 md:grid-cols-1 lg:grid-cols-3 lg:gap-8`}>
           {GUIDES.map(({ title, excerpt, to, img }, i) => (
-            <Reveal key={to} as="li" delay={i * 100}>
+            <Reveal key={to} as="li" delay={i * 100} className={SLIDE}>
               <Link to={to} className="group flex h-full flex-col">
                 {/*
                   alt="" is deliberate. The banner's only content is the guide's
