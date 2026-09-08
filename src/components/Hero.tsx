@@ -64,6 +64,37 @@ const TRUST_STRIP = [
   'Dermatologist-Led',
 ]
 
+/**
+ * One pass of the strip. `md:contents` dissolves the wrapper above `md` so the
+ * items become direct children of the <p> and wrap with it; below that it is a
+ * real flex row, which is the thing the marquee translates.
+ *
+ * Pausing is bound to the <p>'s `group`, so hovering or tabbing into either
+ * pass stops both -- half a marquee moving would tear the seam apart.
+ */
+const PASS =
+  'flex shrink-0 items-center gap-x-3 animate-marquee ' +
+  'group-hover:[animation-play-state:paused] group-focus-within:[animation-play-state:paused] ' +
+  'motion-reduce:animate-none md:contents md:animate-none'
+
+function TrustStrip() {
+  return (
+    <>
+      {TRUST_STRIP.map((item, i) => (
+        <span key={item} className="flex items-center gap-x-3 whitespace-nowrap">
+          {item}
+          <span
+            aria-hidden="true"
+            className={i === TRUST_STRIP.length - 1 ? 'md:hidden' : undefined}
+          >
+            ·
+          </span>
+        </span>
+      ))}
+    </>
+  )
+}
+
 export default function Hero() {
   return (
     <section className="px-0 md:px-5 lg:px-10">
@@ -129,24 +160,46 @@ export default function Hero() {
               <div className="h-px w-full bg-white/20" />
             </div>
             {/*
-              The separator trails its item rather than leading the next one, so
-              a wrap leaves the dot at the end of a line instead of orphaning it
-              at the start of the following one.
-
               Below `md` these four items used to wrap to four full lines, which
               cost the hero ~90px and pushed the CTAs toward the fold. They run
-              on one scrolling line there instead -- so the separators now earn
-              their place at every width, where before they were suppressed on
-              mobile to avoid reading as stray bullets at the head of each line.
-              The bleed matches the card tracks in carousel.ts.
+              as a one-line marquee there instead.
+
+              Two passes of the same four stats, both translating -100% of their
+              own width together: when pass one has fully exited left, pass two
+              is exactly where pass one began, so the loop has no seam. Pass two
+              exists only to fill that gap and is aria-hidden, so the strip is
+              announced once.
+
+              It does mean the prerendered HTML carries each stat string twice,
+              which WhyNeoFollicle deliberately avoids by building its duplicate
+              set on the client. The call is different here: Hero holds the LCP
+              image and is the one section with no hooks at all, and adding
+              mount state to it to save ~90 bytes of aria-hidden text would risk
+              a hydration flicker on the most performance-critical element on
+              the site. The duplicate is decorative, hidden from assistive tech,
+              and gone entirely above `md`.
+
+              From `md` up there is nothing to scroll: the animation stops, pass
+              two is dropped, and pass one goes `display: contents` so its four
+              items wrap directly in the <p> as they always did. The separator
+              trails its item rather than leading the next, so a wrap leaves the
+              dot at the end of a line instead of orphaning it at the start of
+              the following one -- which is also why the last item's dot is
+              dropped there but kept on the marquee, where it spaces the seam.
             */}
-            <p className="-mx-gutter mt-3 flex flex-nowrap items-center gap-x-3 gap-y-1 overflow-x-auto px-gutter font-head text-h6 text-white [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
-              {TRUST_STRIP.map((item, i) => (
-                <span key={item} className="flex items-center gap-x-3 whitespace-nowrap">
-                  {item}
-                  {i < TRUST_STRIP.length - 1 && <span aria-hidden="true">·</span>}
-                </span>
-              ))}
+            <p className="group -mx-gutter mt-3 flex items-center gap-x-3 overflow-hidden px-gutter font-head text-h6 text-white [scrollbar-width:none] motion-reduce:overflow-x-auto [&::-webkit-scrollbar]:hidden md:mx-0 md:flex-wrap md:gap-y-1 md:overflow-visible md:px-0">
+              <span className={PASS}>
+                <TrustStrip />
+              </span>
+              {/*
+                The duplicate is decorative. It is also pointless once the
+                animation is off, so `md` and reduced motion both drop it --
+                and reduced motion hands the <p> its scrollbar back above, so
+                the four stats stay reachable rather than clipped.
+              */}
+              <span aria-hidden="true" className={`${PASS} md:hidden motion-reduce:hidden`}>
+                <TrustStrip />
+              </span>
             </p>
           </div>
         </div>

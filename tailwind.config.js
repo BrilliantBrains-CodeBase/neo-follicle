@@ -62,6 +62,12 @@ export default {
       keyframes: {
         fadeInUp: { from: { opacity: '0', transform: 'translate3d(0, 100%, 0)' },
                     to:   { opacity: '1', transform: 'none' } },
+        // Not Folixa's -- added for the hero trust strip. The travel is 100% of
+        // the moving element's OWN width, which is what makes the two-pass
+        // marquee in Hero.tsx seamless: when pass one has fully exited left,
+        // pass two sits exactly where pass one started, so the reset is invisible.
+        marquee: { from: { transform: 'translateX(0)' },
+                   to:   { transform: 'translateX(-100%)' } },
       },
       animation: {
         // Elementor runs .animated at 1.25s; delays used on the site are 100-500ms.
@@ -74,6 +80,10 @@ export default {
         // which is what prevents the flash, and the `to` state is identical to
         // the element's natural styling, so reverting after it ends is a no-op.
         fadeInUp: 'fadeInUp 1.25s backwards',
+        // ~20s for one pass of the strip (~865px) is roughly 45px/s -- slow
+        // enough to read a stat without tracking it. `linear`, because any
+        // easing would visibly stall at the loop seam.
+        marquee: 'marquee 20s linear infinite',
       },
       transitionTimingFunction: { float: 'ease-out' },
     },
