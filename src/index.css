@@ -101,3 +101,261 @@
     color: var(--color-primary-dark);
   }
 }
+
+/**
+ * Long-form post body typography.
+ *
+ * Resolved from the Folixa reference single post -- Elementor template post-33
+ * (folixa-design-reference/assets/css/uploads__sites__226__elementor__css__post-33.css)
+ * plus the kit's icon-list rules in
+ * .../plugins__jeg-elementor-kit__assets__css__elements__main.css. Visual target
+ * is folixa-design-reference/pages/single-post/sections/03-sam-altman.png.
+ *
+ * Elementor renders every paragraph and heading as its own widget, so the
+ * reference has no `.prose`-style cascade to copy -- these are the values each
+ * of those widgets resolves to. Two of them are easy to get wrong:
+ *
+ *   - A body h2 takes the *h3* size token. The reference deliberately sets
+ *     in-article h2s smaller than a section h2, so the page has one dominant
+ *     heading scale (the banner h1) and the article reads a level below it.
+ *     h3 therefore takes h4's token, and h4 takes h5's.
+ *
+ *   - List items are separated by a hairline rule, not just spacing:
+ *     1px #DDDDDDB3 with 10px of breathing room either side, and a 10px dot
+ *     bullet at body colour. That rule is the reference's signature list look.
+ *
+ * There is no @tailwindcss/typography here and adding it would be a net loss --
+ * the plugin's opinions differ on nearly every value above, so it would be
+ * almost entirely overridden. src/components/PostProse.tsx renders the
+ * structure; all of the type lives here.
+ */
+@layer components {
+  .post-prose > * + * {
+    margin-top: 1rem;
+  }
+
+  .post-prose h2,
+  .post-prose h3,
+  .post-prose h4 {
+    font-family: var(--font-head);
+    color: var(--color-secondary);
+    text-wrap: balance;
+  }
+
+  /* Headings get extra room above, so a section reads as a break rather than
+     as the previous paragraph continuing. */
+  .post-prose > h2 + *,
+  .post-prose > h3 + *,
+  .post-prose > h4 + * {
+    margin-top: 0.75rem;
+  }
+
+  .post-prose > * + h2 {
+    margin-top: 2.5rem;
+  }
+
+  .post-prose > * + h3,
+  .post-prose > * + h4 {
+    margin-top: 2rem;
+  }
+
+  .post-prose h2 {
+    font-size: var(--text-h3);
+    line-height: var(--text-h3-lh);
+    letter-spacing: var(--text-h3-ls);
+    font-weight: var(--text-h3-fw);
+  }
+
+  .post-prose h3 {
+    font-size: var(--text-h4);
+    line-height: var(--text-h4-lh);
+    letter-spacing: var(--text-h4-ls);
+    font-weight: var(--text-h4-fw);
+  }
+
+  .post-prose h4 {
+    font-size: var(--text-h5);
+    line-height: var(--text-h5-lh);
+    letter-spacing: var(--text-h5-ls);
+    font-weight: var(--text-h5-fw);
+  }
+
+  .post-prose p,
+  .post-prose li {
+    color: var(--color-body);
+  }
+
+  .post-prose p {
+    font-size: var(--text-body);
+    line-height: var(--text-body-lh);
+    text-wrap: pretty;
+  }
+
+  /* `has-small-font-size` in the source. The reference list at the foot of
+     every post uses it. */
+  .post-prose .post-prose-small,
+  .post-prose .post-prose-small li {
+    font-size: 0.875rem;
+  }
+
+  .post-prose a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color var(--transition);
+  }
+
+  .post-prose a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  /* External citation URLs run long and would otherwise force a horizontal
+     scrollbar on a phone. */
+  .post-prose .post-prose-small a {
+    overflow-wrap: anywhere;
+  }
+
+  .post-prose ul,
+  .post-prose ol {
+    list-style: none;
+    padding: 0;
+  }
+
+  .post-prose li {
+    font-size: var(--text-h6);
+    line-height: var(--text-h6-lh);
+    letter-spacing: var(--text-h6-ls);
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .post-prose li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    /* Centre the 10px dot on the first line of text, whatever the clamp
+       resolves the line-height to. */
+    top: calc(var(--text-h6-lh) * 0.5);
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background-color: var(--color-body);
+  }
+
+  .post-prose ol {
+    counter-reset: post-prose-item;
+  }
+
+  .post-prose ol > li {
+    counter-increment: post-prose-item;
+    padding-left: 1.75rem;
+  }
+
+  /* An ordered list shows its number instead of the dot. */
+  .post-prose ol > li::before {
+    content: counter(post-prose-item) ".";
+    top: 0;
+    transform: none;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-prose li:not(:last-child) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddddddb3;
+  }
+
+  .post-prose li:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  .post-prose img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-default);
+  }
+
+  .post-prose hr {
+    border: 0;
+    border-top: 1px solid var(--color-line);
+    margin: 1.5rem 0;
+  }
+
+  /* A FAQ answer is one to nine blocks. `.post-prose > * + *` only reaches
+     direct children, so the accordion panel needs its own rhythm. */
+  .post-prose .post-prose-faq > * + * {
+    margin-top: 1rem;
+  }
+
+  /* The question heading inside <summary> takes the accordion's own title
+     size, not the article h3 size. The utilities on it would win on layer
+     order alone; this makes that independent of layer order. */
+  .post-prose summary h3 {
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+  }
+
+  /* The reference's `wp-block-gallery` is `is-layout-flex` with
+     `columns-default`, which lands at three across on desktop. The sources are
+     650x450 before/after pairs, so two across on a phone keeps them legible. */
+  .post-prose-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .post-prose-gallery {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+  }
+
+  /* No table exists anywhere in the reference, so this is authored -- built
+     from the kit's own card shell (surface fill, 1px overlay hairline, 0.5rem
+     radius) so it belongs. Six posts have tables and several are five columns
+     wide, hence the scroll container. */
+  .post-prose-table {
+    overflow-x: auto;
+    border: 1px solid var(--color-overlay);
+    border-radius: var(--radius-default);
+  }
+
+  .post-prose-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-body);
+    text-align: left;
+  }
+
+  .post-prose-table th,
+  .post-prose-table td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--color-overlay);
+  }
+
+  .post-prose-table th {
+    background-color: var(--color-surface);
+    font-family: var(--font-head);
+    font-weight: var(--text-h6-fw);
+    color: var(--color-secondary);
+    white-space: nowrap;
+  }
+
+  .post-prose-table td {
+    color: var(--color-body);
+    min-width: 12rem;
+  }
+
+  .post-prose-table tr:last-child th,
+  .post-prose-table tr:last-child td {
+    border-bottom: 0;
+  }
+}

@@ -1,5 +1,7 @@
-import { ChevronDown, Square } from './icons'
+import Faq from './Faq'
+import { Square } from './icons'
 import Reveal from './Reveal'
+import { STICKY_BELOW_HEADER } from './sticky'
 
 /**
  * Common Questions -- the home page FAQ band.
@@ -30,31 +32,21 @@ import Reveal from './Reveal'
  * and its repeated "a consultation confirms", and makes no outcome claim.
  * FLAGGED FOR CLIENT REVIEW. Same precedent Process set.
  *
- * NATIVE <details>, NOT REACT STATE. This is what the reference emits, and it
- * is the only thing compatible with the constraint Reveal.tsx documents: the
- * site is prerendered (`vite build --ssr` -> scripts/prerender.mjs) and
- * scripts/verify-seo.mjs reads the static HTML, so nothing may depend on JS to
- * become visible. All nine answers ship in the prerendered markup. The doc's
- * SEO recommendation 5 makes that load-bearing -- "is it safe" and "side
- * effects" are the queries this section is meant to win.
+ * THE ACCORDION ITSELF IS Faq.tsx, which the blog posts share. Its docblock
+ * owns the mechanism -- why it is native <details> rather than React state, how
+ * the shared `name` gives exclusive-open with no script, and what it drops from
+ * the reference. This file owns only the framing and the copy.
  *
- * The shared `name` gives the exclusive-open behaviour of the reference's
- * `max_items_expended: "one"` with no script. Browsers without it (Safari 16
- * and earlier) simply allow several open at once, which is a graceful
- * fallback, not a break. Do NOT hand-roll aria-expanded/aria-controls --
- * details/summary supply both.
+ * All nine answers ship in the prerendered markup, which the doc's SEO
+ * recommendation 5 makes load-bearing -- "is it safe" and "side effects" are
+ * the queries this section is meant to win.
  *
- * Two deliberate departures from the reference:
- *
- *   - No open/close slide. The reference animates the panel over 400ms;
- *     native <details> cannot animate its height without JS, and the no-JS
- *     rule above outranks the transition.
- *   - The panel holds the answer and nothing else. The reference's panel also
- *     carries an inner sub-heading, a divider and a blue check-circle meta
- *     line ("Typically 30 to 45 minutes"). The doc supplies none of those for
- *     any of the nine questions, and authoring nine of each would break its
- *     rule 8 ("Use the clinic's actual stats... No invented reviews, results
- *     or guarantees").
+ * One departure that belongs to the copy rather than the component: the
+ * reference's panel also carries an inner sub-heading, a divider and a blue
+ * check-circle meta line ("Typically 30 to 45 minutes"). The doc supplies none
+ * of those for any of the nine questions, and authoring nine of each would
+ * break its rule 8 ("Use the clinic's actual stats... No invented reviews,
+ * results or guarantees").
  *
  * STRUCTURED DATA -- DO NOT ADD ANY HERE. src/seo/schema/home.json already
  * carries an FAQPage node, and scripts/verify-seo.mjs asserts the emitted
@@ -72,33 +64,6 @@ import Reveal from './Reveal'
  * the two is an outstanding SEO-owner decision, not a code fix.
  * FLAGGED FOR CLIENT REVIEW.
  */
-
-/**
- * Item geometry. Radius 8px is the `rounded` token
- * (--n-accordion-border-radius:8px) and the 1rem padding is
- * --n-accordion-padding. The title fills with `surface` on hover and while
- * open, which is the reference's two rules on `.e-n-accordion-item-title`.
- */
-const SUMMARY =
-  'flex cursor-pointer list-none items-center justify-between gap-4 rounded border border-line p-4 ' +
-  'transition hover:bg-surface group-open:bg-surface [&::-webkit-details-marker]:hidden'
-
-/**
- * The panel. `-mt-2` is the reference's
- * --n-accordion-item-title-distance-from-content:-8px, which tucks the panel
- * under the title's bottom radius; `pt-2` is the panel's own 0.5rem top
- * padding, so the two cancel and the copy sits 8px below the title's baseline
- * box. Borders are 0/1/1/1 and the radius 0 0 8px 8px, per the reference.
- */
-const PANEL = '-mt-2 rounded-b border-x border-b border-line bg-surface px-4 pb-4 pt-2'
-
-/**
- * The title's clamp, verbatim from --n-accordion-title-font-size. It sits
- * between the config's `h5` and `h4` tokens and matches neither, so it is
- * written out rather than snapped to the nearest one. Weight 600 and
- * line-height 1.3em come from the widget's own title rule.
- */
-const TITLE = 'font-head text-[clamp(1.25rem,1.1rem+0.6vw,1.5rem)] font-semibold leading-[1.3] text-secondary'
 
 /** SECTION 12 FAQ, verbatim. Nine questions, in the doc's order. */
 const QUESTIONS = [
@@ -165,14 +130,10 @@ export default function CommonQuestions() {
               containing block for any sticky descendant -- so sticky and the
               entrance animation cannot share a node.
 
-          The offset clears the sticky header, which is 56px of logo plus
-          `py-gutter` plus its 1px bottom border and never shrinks on scroll
-          (Header.tsx), then adds 2rem of breathing room.
-
-          `lg:` only. Below it the columns stack, where pinning the heading
-          would just cover the accordion.
+          The offset itself, and the three rules above, live in
+          STICKY_BELOW_HEADER -- the post sidebar pins the same way.
         */}
-        <div className="lg:sticky lg:top-[calc(97px_+_2rem)] lg:flex-1">
+        <div className={`${STICKY_BELOW_HEADER} lg:flex-1`}>
           <Reveal className="flex flex-col gap-4">
             {/* Eyebrow resolves to the plain h6 token, as in Process. The 5px
                 gap is Elementor's icon-list default. */}
@@ -197,37 +158,19 @@ export default function CommonQuestions() {
           </Reveal>
         </div>
 
-        {/* Right column, --width:55% on desktop and 100% below it. */}
-        <Reveal className="flex w-full flex-col gap-4 lg:w-[55%]">
-          {QUESTIONS.map(({ q, a }, i) => (
-            <details
-              key={q}
-              /* Shared name = the reference's exclusive `max_items_expended:
-                 "one"`, with no script. */
-              name="home-faq"
-              open={i === 0}
-              className="group"
-            >
-              <summary className={SUMMARY}>
-                <h3 className={TITLE}>
-                  {/* The numeral is the reference's ("01. Consultation"), but
-                      aria-hidden so assistive tech and any text extraction
-                      read the question alone. Same treatment as Process's
-                      step numerals. */}
-                  <span aria-hidden="true">{String(i + 1).padStart(2, '0')}. </span>
-                  {q}
-                </h3>
-                {/* jki-angle-down-solid at the reference's 18px and `primary`,
-                    flipped for the open state -- the same reuse ArrowRight
-                    makes for the carousel's left arrow. */}
-                <ChevronDown className="h-[18px] w-[18px] shrink-0 text-primary transition-transform group-open:rotate-180 motion-reduce:transition-none" />
-              </summary>
-
-              <div className={PANEL}>
-                <p className="text-body">{a}</p>
-              </div>
-            </details>
-          ))}
+        {/* Right column, --width:55% on desktop and 100% below it. The item
+            design lives in Faq, which the blog posts share -- see its docblock.
+            `numbered` is on here and off there, because six posts already carry
+            "1. " in their published question text. */}
+        <Reveal className="w-full lg:w-[55%]">
+          <Faq
+            name="home-faq"
+            numbered
+            items={QUESTIONS.map(({ q, a }) => ({
+              question: q,
+              answer: <p className="text-body">{a}</p>,
+            }))}
+          />
         </Reveal>
       </div>
     </section>

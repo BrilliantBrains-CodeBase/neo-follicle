@@ -3,7 +3,7 @@
 //
 // One route per URL in src/seo/pages.ts, so a route can never drift from its
 // SEO record. Paths keep their trailing slash -- that is P0-PRESERVE.
-import type { ReactElement } from 'react'
+import type { ComponentType, ReactElement } from 'react'
 import Layout from './components/Layout'
 import NotFound from './pages/not-found'
 import AiHairTransplantCostCalculator from './pages/ai-hair-transplant-cost-calculator'
@@ -18,42 +18,25 @@ import CelebrityHairTransplant from './pages/celebrity-hair-transplant'
 import ContactUs from './pages/contact-us'
 import CostOfHairTransplantInBangaloreLp from './pages/cost-of-hair-transplant-in-bangalore-lp'
 import DandruffTreatmentInBangalore from './pages/dandruff-treatment-in-bangalore'
-import DonorAreaPlanningHairTransplant from './pages/donor-area-planning-hair-transplant'
 import DrSandeepMahapatraHairTransplantSurgeon from './pages/dr-sandeep-mahapatra-hair-transplant-surgeon'
 import ExosomeHairTreatmentInBangalore from './pages/exosome-hair-treatment-in-bangalore'
 import EyebrowRestorationInBangalore from './pages/eyebrow-restoration-in-bangalore'
 import FailedHairTransplantRepairInBangalore from './pages/failed-hair-transplant-repair-in-bangalore'
-import FemaleHairLoss from './pages/female-hair-loss'
 import FemaleHairTransplantInBangalore from './pages/female-hair-transplant-in-bangalore'
-import FueHairTransplantBangalore from './pages/fue-hair-transplant-bangalore'
-import FueVsDirectHairImplantation from './pages/fue-vs-direct-hair-implantation'
 import GfcHairTreatmentInBangalore from './pages/gfc-hair-treatment-in-bangalore'
-import GfcVsExosomeVsQr678HairTreatment from './pages/gfc-vs-exosome-vs-qr678-hair-treatment'
 import HairAssessment from './pages/hair-assessment'
 import HairConditionsWeTreat from './pages/hair-conditions-we-treat'
 import HairLossTreatmentInBangalore from './pages/hair-loss-treatment-in-bangalore'
 import HairTransplantCostInBangalore from './pages/hair-transplant-cost-in-bangalore'
-import HairTransplantForRecedingHairline from './pages/hair-transplant-for-receding-hairline'
-import HairTransplantIndiaInternationalPatients from './pages/hair-transplant-india-international-patients'
 import HairTransplantMedicalTourismInBangalore from './pages/hair-transplant-medical-tourism-in-bangalore'
-import HairTransplantMythsVsFacts from './pages/hair-transplant-myths-vs-facts'
-import HairTransplantRecoveryTimeline from './pages/hair-transplant-recovery-timeline'
 import Home from './pages/home'
-import HowManyGraftsDoINeedForHairTransplant from './pages/how-many-grafts-do-i-need-for-hair-transplant'
-import HowToChooseTheBestHairTransplantClinicBangalore from './pages/how-to-choose-the-best-hair-transplant-clinic-bangalore'
 import ImageGallery from './pages/image-gallery'
-import IsHairTransplantPainful from './pages/is-hair-transplant-painful'
-import IsHairTransplantPermanent from './pages/is-hair-transplant-permanent'
 import LowLevelLaserTherapy from './pages/low-level-laser-therapy'
 import MaintenancePage from './pages/maintenance-page'
-import MalePatternHairLoss from './pages/male-pattern-hair-loss'
-import MedicalTreatmentsForHairLoss from './pages/medical-treatments-for-hair-loss'
-import NaturalHairlineDesignHairTransplants from './pages/natural-hairline-design-hair-transplants'
 import NftBrochure from './pages/nft-brochure'
 import NftBrochureThankYou from './pages/nft-brochure-thank-you'
 import OurBlogs from './pages/our-blogs'
 import PrivacyPolicy from './pages/privacy-policy'
-import PrpVsGfcForHairLoss from './pages/prp-vs-gfc-for-hair-loss'
 import Qr678HairTreatmentInBangalore from './pages/qr678-hair-treatment-in-bangalore'
 import SamplePage from './pages/sample-page'
 import ScalpMicropigmentationInBangalore from './pages/scalp-micropigmentation-in-bangalore'
@@ -61,12 +44,20 @@ import StemCellTherapyForHairLossInBangalore from './pages/stem-cell-therapy-for
 import TermsOfUse from './pages/terms-of-use'
 import ThankYouLp from './pages/thank-you-lp'
 import Uncategorized from './pages/uncategorized'
-import UnethicalPracticesInHairTransplantation from './pages/unethical-practices-in-hair-transplantation'
 import UnshavenHairTransplant from './pages/unshaven-hair-transplant'
 import VideoGallery from './pages/video-gallery'
-import WhyHairTransplantsFail from './pages/why-hair-transplants-fail'
 
-export type AppRoute = { path: string; element: ReactElement; slug: string }
+/**
+ * A route is either eager, carrying an element, or split, carrying a loader.
+ * The blog posts are split -- see src/routeView.tsx for why, and for how the
+ * module is awaited before render.
+ */
+export type AppRoute = {
+  path: string
+  slug: string
+  element?: ReactElement
+  load?: () => Promise<{ default: ComponentType }>
+}
 
 export const appRoutes: AppRoute[] = [
   { path: '/ai-hair-transplant-cost-calculator/', element: <AiHairTransplantCostCalculator />, slug: 'ai-hair-transplant-cost-calculator' },
@@ -81,42 +72,42 @@ export const appRoutes: AppRoute[] = [
   { path: '/contact-us/', element: <ContactUs />, slug: 'contact-us' },
   { path: '/cost-of-hair-transplant-in-bangalore-lp/', element: <CostOfHairTransplantInBangaloreLp />, slug: 'cost-of-hair-transplant-in-bangalore-lp' },
   { path: '/dandruff-treatment-in-bangalore/', element: <DandruffTreatmentInBangalore />, slug: 'dandruff-treatment-in-bangalore' },
-  { path: '/donor-area-planning-hair-transplant/', element: <DonorAreaPlanningHairTransplant />, slug: 'donor-area-planning-hair-transplant' },
+  { path: '/donor-area-planning-hair-transplant/', load: () => import('./pages/donor-area-planning-hair-transplant'), slug: 'donor-area-planning-hair-transplant' },
   { path: '/dr-sandeep-mahapatra-hair-transplant-surgeon/', element: <DrSandeepMahapatraHairTransplantSurgeon />, slug: 'dr-sandeep-mahapatra-hair-transplant-surgeon' },
   { path: '/exosome-hair-treatment-in-bangalore/', element: <ExosomeHairTreatmentInBangalore />, slug: 'exosome-hair-treatment-in-bangalore' },
   { path: '/eyebrow-restoration-in-bangalore/', element: <EyebrowRestorationInBangalore />, slug: 'eyebrow-restoration-in-bangalore' },
   { path: '/failed-hair-transplant-repair-in-bangalore/', element: <FailedHairTransplantRepairInBangalore />, slug: 'failed-hair-transplant-repair-in-bangalore' },
-  { path: '/female-hair-loss/', element: <FemaleHairLoss />, slug: 'female-hair-loss' },
+  { path: '/female-hair-loss/', load: () => import('./pages/female-hair-loss'), slug: 'female-hair-loss' },
   { path: '/female-hair-transplant-in-bangalore/', element: <FemaleHairTransplantInBangalore />, slug: 'female-hair-transplant-in-bangalore' },
-  { path: '/fue-hair-transplant-bangalore/', element: <FueHairTransplantBangalore />, slug: 'fue-hair-transplant-bangalore' },
-  { path: '/fue-vs-direct-hair-implantation/', element: <FueVsDirectHairImplantation />, slug: 'fue-vs-direct-hair-implantation' },
+  { path: '/fue-hair-transplant-bangalore/', load: () => import('./pages/fue-hair-transplant-bangalore'), slug: 'fue-hair-transplant-bangalore' },
+  { path: '/fue-vs-direct-hair-implantation/', load: () => import('./pages/fue-vs-direct-hair-implantation'), slug: 'fue-vs-direct-hair-implantation' },
   { path: '/gfc-hair-treatment-in-bangalore/', element: <GfcHairTreatmentInBangalore />, slug: 'gfc-hair-treatment-in-bangalore' },
-  { path: '/gfc-vs-exosome-vs-qr678-hair-treatment/', element: <GfcVsExosomeVsQr678HairTreatment />, slug: 'gfc-vs-exosome-vs-qr678-hair-treatment' },
+  { path: '/gfc-vs-exosome-vs-qr678-hair-treatment/', load: () => import('./pages/gfc-vs-exosome-vs-qr678-hair-treatment'), slug: 'gfc-vs-exosome-vs-qr678-hair-treatment' },
   { path: '/hair-assessment/', element: <HairAssessment />, slug: 'hair-assessment' },
   { path: '/hair-conditions-we-treat/', element: <HairConditionsWeTreat />, slug: 'hair-conditions-we-treat' },
   { path: '/hair-loss-treatment-in-bangalore/', element: <HairLossTreatmentInBangalore />, slug: 'hair-loss-treatment-in-bangalore' },
   { path: '/hair-transplant-cost-in-bangalore/', element: <HairTransplantCostInBangalore />, slug: 'hair-transplant-cost-in-bangalore' },
-  { path: '/hair-transplant-for-receding-hairline/', element: <HairTransplantForRecedingHairline />, slug: 'hair-transplant-for-receding-hairline' },
-  { path: '/hair-transplant-india-international-patients/', element: <HairTransplantIndiaInternationalPatients />, slug: 'hair-transplant-india-international-patients' },
+  { path: '/hair-transplant-for-receding-hairline/', load: () => import('./pages/hair-transplant-for-receding-hairline'), slug: 'hair-transplant-for-receding-hairline' },
+  { path: '/hair-transplant-india-international-patients/', load: () => import('./pages/hair-transplant-india-international-patients'), slug: 'hair-transplant-india-international-patients' },
   { path: '/hair-transplant-medical-tourism-in-bangalore/', element: <HairTransplantMedicalTourismInBangalore />, slug: 'hair-transplant-medical-tourism-in-bangalore' },
-  { path: '/hair-transplant-myths-vs-facts/', element: <HairTransplantMythsVsFacts />, slug: 'hair-transplant-myths-vs-facts' },
-  { path: '/hair-transplant-recovery-timeline/', element: <HairTransplantRecoveryTimeline />, slug: 'hair-transplant-recovery-timeline' },
+  { path: '/hair-transplant-myths-vs-facts/', load: () => import('./pages/hair-transplant-myths-vs-facts'), slug: 'hair-transplant-myths-vs-facts' },
+  { path: '/hair-transplant-recovery-timeline/', load: () => import('./pages/hair-transplant-recovery-timeline'), slug: 'hair-transplant-recovery-timeline' },
   { path: '/', element: <Home />, slug: 'home' },
-  { path: '/how-many-grafts-do-i-need-for-hair-transplant/', element: <HowManyGraftsDoINeedForHairTransplant />, slug: 'how-many-grafts-do-i-need-for-hair-transplant' },
-  { path: '/how-to-choose-the-best-hair-transplant-clinic-bangalore/', element: <HowToChooseTheBestHairTransplantClinicBangalore />, slug: 'how-to-choose-the-best-hair-transplant-clinic-bangalore' },
+  { path: '/how-many-grafts-do-i-need-for-hair-transplant/', load: () => import('./pages/how-many-grafts-do-i-need-for-hair-transplant'), slug: 'how-many-grafts-do-i-need-for-hair-transplant' },
+  { path: '/how-to-choose-the-best-hair-transplant-clinic-bangalore/', load: () => import('./pages/how-to-choose-the-best-hair-transplant-clinic-bangalore'), slug: 'how-to-choose-the-best-hair-transplant-clinic-bangalore' },
   { path: '/image-gallery/', element: <ImageGallery />, slug: 'image-gallery' },
-  { path: '/is-hair-transplant-painful/', element: <IsHairTransplantPainful />, slug: 'is-hair-transplant-painful' },
-  { path: '/is-hair-transplant-permanent/', element: <IsHairTransplantPermanent />, slug: 'is-hair-transplant-permanent' },
+  { path: '/is-hair-transplant-painful/', load: () => import('./pages/is-hair-transplant-painful'), slug: 'is-hair-transplant-painful' },
+  { path: '/is-hair-transplant-permanent/', load: () => import('./pages/is-hair-transplant-permanent'), slug: 'is-hair-transplant-permanent' },
   { path: '/low-level-laser-therapy/', element: <LowLevelLaserTherapy />, slug: 'low-level-laser-therapy' },
   { path: '/maintenance-page/', element: <MaintenancePage />, slug: 'maintenance-page' },
-  { path: '/male-pattern-hair-loss/', element: <MalePatternHairLoss />, slug: 'male-pattern-hair-loss' },
-  { path: '/medical-treatments-for-hair-loss/', element: <MedicalTreatmentsForHairLoss />, slug: 'medical-treatments-for-hair-loss' },
-  { path: '/natural-hairline-design-hair-transplants/', element: <NaturalHairlineDesignHairTransplants />, slug: 'natural-hairline-design-hair-transplants' },
+  { path: '/male-pattern-hair-loss/', load: () => import('./pages/male-pattern-hair-loss'), slug: 'male-pattern-hair-loss' },
+  { path: '/medical-treatments-for-hair-loss/', load: () => import('./pages/medical-treatments-for-hair-loss'), slug: 'medical-treatments-for-hair-loss' },
+  { path: '/natural-hairline-design-hair-transplants/', load: () => import('./pages/natural-hairline-design-hair-transplants'), slug: 'natural-hairline-design-hair-transplants' },
   { path: '/nft-brochure/', element: <NftBrochure />, slug: 'nft-brochure' },
   { path: '/nft-brochure-thank-you/', element: <NftBrochureThankYou />, slug: 'nft-brochure-thank-you' },
   { path: '/our-blogs/', element: <OurBlogs />, slug: 'our-blogs' },
   { path: '/privacy-policy/', element: <PrivacyPolicy />, slug: 'privacy-policy' },
-  { path: '/prp-vs-gfc-for-hair-loss/', element: <PrpVsGfcForHairLoss />, slug: 'prp-vs-gfc-for-hair-loss' },
+  { path: '/prp-vs-gfc-for-hair-loss/', load: () => import('./pages/prp-vs-gfc-for-hair-loss'), slug: 'prp-vs-gfc-for-hair-loss' },
   { path: '/qr678-hair-treatment-in-bangalore/', element: <Qr678HairTreatmentInBangalore />, slug: 'qr678-hair-treatment-in-bangalore' },
   { path: '/sample-page/', element: <SamplePage />, slug: 'sample-page' },
   { path: '/scalp-micropigmentation-in-bangalore/', element: <ScalpMicropigmentationInBangalore />, slug: 'scalp-micropigmentation-in-bangalore' },
@@ -124,10 +115,10 @@ export const appRoutes: AppRoute[] = [
   { path: '/terms-of-use/', element: <TermsOfUse />, slug: 'terms-of-use' },
   { path: '/thank-you-lp/', element: <ThankYouLp />, slug: 'thank-you-lp' },
   { path: '/category/uncategorized/', element: <Uncategorized />, slug: 'uncategorized' },
-  { path: '/unethical-practices-in-hair-transplantation/', element: <UnethicalPracticesInHairTransplantation />, slug: 'unethical-practices-in-hair-transplantation' },
+  { path: '/unethical-practices-in-hair-transplantation/', load: () => import('./pages/unethical-practices-in-hair-transplantation'), slug: 'unethical-practices-in-hair-transplantation' },
   { path: '/unshaven-hair-transplant/', element: <UnshavenHairTransplant />, slug: 'unshaven-hair-transplant' },
   { path: '/video-gallery/', element: <VideoGallery />, slug: 'video-gallery' },
-  { path: '/why-hair-transplants-fail/', element: <WhyHairTransplantsFail />, slug: 'why-hair-transplants-fail' },
+  { path: '/why-hair-transplants-fail/', load: () => import('./pages/why-hair-transplants-fail'), slug: 'why-hair-transplants-fail' },
 ]
 
 export { Layout, NotFound }

@@ -26,6 +26,28 @@ const { render, pages } = ssr
 // import the .ts config without a loader, so this copy stays for now.
 const ORIGIN = 'https://neofollicletransplant.com'
 
+/**
+ * The client chunks a split route needs, from the Vite manifest.
+ *
+ * The blog posts are code-split (src/routeView.tsx), so their page chunk is
+ * fetched rather than bundled into the entry. Without a preload the browser
+ * cannot discover it until the entry chunk has parsed and run, which serialises
+ * two round trips on the exact pages that carry the most content.
+ *
+ * Returns [] for the 40 eager routes, which have no chunk of their own.
+ */
+const manifest = JSON.parse(fs.readFileSync(path.join(dist, '.vite/manifest.json'), 'utf8'))
+
+function splitChunksFor(slug) {
+  const entry = manifest[`src/pages/${slug}.tsx`]
+  if (!entry) return []
+  // The page chunk plus whatever it pulls in that is not already in the entry.
+  return [entry.file, ...(entry.imports ?? []).map((key) => manifest[key]?.file)]
+    .filter(Boolean)
+    .filter((file) => file !== manifest['index.html']?.file)
+    .map((file) => `/${file}`)
+}
+
 const esc = (s) =>
   String(s)
     .replaceAll('&', '&amp;')
@@ -69,6 +91,13 @@ function buildHead(page) {
   h += `    <link rel="icon" href="/favicon.svg" sizes="192x192" />\n`
   h += `    <link rel="apple-touch-icon" href="/favicon.svg" />\n`
 
+  // Split routes (the blog posts) fetch their page chunk before hydrating --
+  // see src/routeView.tsx. Preloading it here puts that request in flight with
+  // the entry chunk instead of after it.
+  for (const href of splitChunksFor(page.slug)) {
+    h += `    <link rel="modulepreload" href="${esc(href)}" crossorigin />\n`
+  }
+
   // JSON-LD, verbatim from the backup. This is the site's most valuable and
   // most fragile SEO asset -- 14 FAQPages / 82 questions among the 59 graphs.
   const graph = JSON.parse(fs.readFileSync(path.join(schemaDir, `${page.slug}.json`), 'utf8'))
@@ -100,7 +129,7 @@ const compose = (head, body) =>
 
 let count = 0
 for (const page of pages) {
-  writeHtml(page.path, compose(buildHead(page), render(page.path)))
+  writeHtml(page.path, compose(buildHead(page), await render(page.path)))
   count++
 }
 
@@ -109,7 +138,7 @@ fs.writeFileSync(
   path.join(dist, '404.html'),
   compose(
     `    <title>Page Not Found</title>\n    <meta name="robots" content="noindex, follow" />`,
-    render('/__not-found__'),
+    await render('/__not-found__'),
   ),
 )
 
@@ -158,6 +187,9 @@ fs.writeFileSync(
 </sitemapindex>
 `,
 )
+
+// The manifest is a build input for this script, not something to deploy.
+fs.rmSync(path.join(dist, '.vite'), { recursive: true, force: true })
 
 console.log(`prerender: ${count} pages -> dist/**/index.html`)
 console.log(`           404.html, robots.txt, 4 sitemaps`)

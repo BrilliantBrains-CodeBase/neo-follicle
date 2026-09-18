@@ -10,7 +10,10 @@
     "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "verify": "node scripts/verify-seo.mjs",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "gen:blogimg": "node scripts/gen-blog-images.mjs",
+    "gen:posts": "node scripts/gen-posts.mjs",
+    "verify:posts": "node scripts/verify-posts.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -22,7 +25,9 @@
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.1.0",
     "autoprefixer": "^10.4.21",
+    "node-html-parser": "^9.0.4",
     "postcss": "^8.5.6",
+    "sharp": "^0.35.4",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3",
     "vite": "^7.1.0"

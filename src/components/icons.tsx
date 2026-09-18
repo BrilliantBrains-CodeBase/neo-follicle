@@ -345,3 +345,25 @@ export const socialIcons: Record<string, (props: IconProps) => ReactElement> = {
   YouTube: YouTubeIcon,
   Instagram: InstagramIcon,
 }
+
+/**
+ * X (formerly Twitter). Added for the blog post share row, which the Folixa
+ * reference builds from `jkit_social_share` with Facebook, X, LinkedIn and
+ * Pinterest. The kit ships `fab_x-twitter`; this is that glyph.
+ */
+export function XIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l108.9 144.3zm-24.8 373.8h39.1L151.1 88h-42z" />
+    </svg>
+  )
+}
+
+/** Pinterest. Added alongside XIcon for the blog post share row. */
+export function PinterestIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.8 0 23.2-31.5 23.2-45.5 0-16.7-42.6-52.4-42.6-122C44.2 83.5 116.9 42 195.7 42c67.7 0 117.8 38.5 117.8 109.2 0 52.8-21.2 151.9-89.9 151.9-24.8 0-46-17.9-46-43.6 0-37.7 26.3-74.1 26.3-113 0-66-93.6-54-93.6 26 0 16.8 2.1 35.3 9.6 50.5-13.8 59.5-42 148.1-42 209.4 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z" />
+    </svg>
+  )
+}
