@@ -26,9 +26,10 @@ export const headerNav: NavItem[] = [
         links: [
           { label: 'Direct Hair Transplant in Bangalore', to: '/best-hair-transplant-in-bangalore/' },
           { label: 'Cost of Hair Transplant - Bangalore', to: '/hair-transplant-cost-in-bangalore/' },
-          // Deliberate duplicate target: the original menu lists
-          // best-hair-transplant-in-bangalore twice under two different labels.
-          { label: 'Direct Hair Transplant For Male', to: '/best-hair-transplant-in-bangalore/' },
+          // The original menu pointed this label at best-hair-transplant-in-bangalore
+          // as well, a deliberate duplicate. It now has its own page -- the men's
+          // brief in content/treatments/ is distinct copy, not a relabelling.
+          { label: 'Direct Hair Transplant For Male', to: '/hair-transplant-for-men-in-bangalore/' },
           { label: 'Hair Transplant For Female', to: '/female-hair-transplant-in-bangalore/' },
           { label: 'Failed Hair Transplant Repair', to: '/failed-hair-transplant-repair-in-bangalore/' },
           { label: 'Beard Transplant', to: '/beard-transplant-in-bangalore/' },
@@ -112,7 +113,7 @@ export const footerColumns: NavColumn[] = [
   {
     title: 'Services',
     links: [
-      { label: 'Hair Transplant for Men', to: '/best-hair-transplant-in-bangalore/' },
+      { label: 'Hair Transplant for Men', to: '/hair-transplant-for-men-in-bangalore/' },
       { label: 'Female Hair Transplant', to: '/female-hair-transplant-in-bangalore/' },
       { label: 'Beard Transplant', to: '/beard-transplant-in-bangalore/' },
       { label: 'Eyebrow Restoration', to: '/eyebrow-restoration-in-bangalore/' },

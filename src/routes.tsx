@@ -28,9 +28,9 @@ import HairAssessment from './pages/hair-assessment'
 import HairConditionsWeTreat from './pages/hair-conditions-we-treat'
 import HairLossTreatmentInBangalore from './pages/hair-loss-treatment-in-bangalore'
 import HairTransplantCostInBangalore from './pages/hair-transplant-cost-in-bangalore'
+import HairTransplantForMenInBangalore from './pages/hair-transplant-for-men-in-bangalore'
 import HairTransplantMedicalTourismInBangalore from './pages/hair-transplant-medical-tourism-in-bangalore'
 import Home from './pages/home'
-import ImageGallery from './pages/image-gallery'
 import LowLevelLaserTherapy from './pages/low-level-laser-therapy'
 import MaintenancePage from './pages/maintenance-page'
 import NftBrochure from './pages/nft-brochure'
@@ -45,7 +45,6 @@ import TermsOfUse from './pages/terms-of-use'
 import ThankYouLp from './pages/thank-you-lp'
 import Uncategorized from './pages/uncategorized'
 import UnshavenHairTransplant from './pages/unshaven-hair-transplant'
-import VideoGallery from './pages/video-gallery'
 
 /**
  * A route is either eager, carrying an element, or split, carrying a loader.
@@ -87,6 +86,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/hair-conditions-we-treat/', element: <HairConditionsWeTreat />, slug: 'hair-conditions-we-treat' },
   { path: '/hair-loss-treatment-in-bangalore/', element: <HairLossTreatmentInBangalore />, slug: 'hair-loss-treatment-in-bangalore' },
   { path: '/hair-transplant-cost-in-bangalore/', element: <HairTransplantCostInBangalore />, slug: 'hair-transplant-cost-in-bangalore' },
+  { path: '/hair-transplant-for-men-in-bangalore/', element: <HairTransplantForMenInBangalore />, slug: 'hair-transplant-for-men-in-bangalore' },
   { path: '/hair-transplant-for-receding-hairline/', load: () => import('./pages/hair-transplant-for-receding-hairline'), slug: 'hair-transplant-for-receding-hairline' },
   { path: '/hair-transplant-india-international-patients/', load: () => import('./pages/hair-transplant-india-international-patients'), slug: 'hair-transplant-india-international-patients' },
   { path: '/hair-transplant-medical-tourism-in-bangalore/', element: <HairTransplantMedicalTourismInBangalore />, slug: 'hair-transplant-medical-tourism-in-bangalore' },
@@ -95,7 +95,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/', element: <Home />, slug: 'home' },
   { path: '/how-many-grafts-do-i-need-for-hair-transplant/', load: () => import('./pages/how-many-grafts-do-i-need-for-hair-transplant'), slug: 'how-many-grafts-do-i-need-for-hair-transplant' },
   { path: '/how-to-choose-the-best-hair-transplant-clinic-bangalore/', load: () => import('./pages/how-to-choose-the-best-hair-transplant-clinic-bangalore'), slug: 'how-to-choose-the-best-hair-transplant-clinic-bangalore' },
-  { path: '/image-gallery/', element: <ImageGallery />, slug: 'image-gallery' },
+  { path: '/image-gallery/', load: () => import('./pages/image-gallery'), slug: 'image-gallery' },
   { path: '/is-hair-transplant-painful/', load: () => import('./pages/is-hair-transplant-painful'), slug: 'is-hair-transplant-painful' },
   { path: '/is-hair-transplant-permanent/', load: () => import('./pages/is-hair-transplant-permanent'), slug: 'is-hair-transplant-permanent' },
   { path: '/low-level-laser-therapy/', element: <LowLevelLaserTherapy />, slug: 'low-level-laser-therapy' },
@@ -117,7 +117,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/category/uncategorized/', element: <Uncategorized />, slug: 'uncategorized' },
   { path: '/unethical-practices-in-hair-transplantation/', load: () => import('./pages/unethical-practices-in-hair-transplantation'), slug: 'unethical-practices-in-hair-transplantation' },
   { path: '/unshaven-hair-transplant/', element: <UnshavenHairTransplant />, slug: 'unshaven-hair-transplant' },
-  { path: '/video-gallery/', element: <VideoGallery />, slug: 'video-gallery' },
+  { path: '/video-gallery/', load: () => import('./pages/video-gallery'), slug: 'video-gallery' },
   { path: '/why-hair-transplants-fail/', load: () => import('./pages/why-hair-transplants-fail'), slug: 'why-hair-transplants-fail' },
 ]
 

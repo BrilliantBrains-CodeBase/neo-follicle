@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Faq from './Faq'
 import { groupFaq } from '../content/faq'
 import type { Block, Inline, PostImage } from '../content/types'
+import YouTubeFacade from './YouTubeFacade'
 
 /**
  * Renders a post's block tree.
@@ -82,37 +83,20 @@ function Figure({ image, className = '' }: { image: PostImage; className?: strin
 /**
  * A YouTube embed as a click-to-play poster.
  *
- * The reference drops a live <iframe> in. This does not: twelve of these across
- * the corpus would mean twelve third-party frames loading before the visitor
- * asks for one. The poster is the same still YouTube serves, and the frame is
- * only created on click -- so the prerendered HTML stays static and nothing
- * here depends on JS to be *readable*, only to play.
+ * The body of this now lives in YouTubeFacade, which /video-gallery/ shares.
+ * Blog posts keep the original behaviour -- mode="link", so a click opens
+ * youtube.com in a new tab -- and keep pointing at YouTube's remote hqdefault
+ * still rather than a local derivative: posts are code-split, and pulling the
+ * gallery's poster manifest into every post chunk to save one request would be
+ * a poor trade.
  */
 function YouTube({ videoId, title }: { videoId: string; title: string }) {
   return (
-    <a
-      className="not-prose group relative block aspect-video overflow-hidden rounded"
-      href={`https://www.youtube.com/watch?v=${videoId}`}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
-        alt={title}
-        width={480}
-        height={360}
-        loading="lazy"
-        className="h-full w-full object-cover"
-      />
-      <span className="absolute inset-0 grid place-items-center bg-secondary/30 transition-colors group-hover:bg-secondary/20">
-        <span className="grid h-16 w-16 place-items-center rounded-full bg-primary text-base transition-colors group-hover:bg-primary-dark">
-          {/* A plain triangle -- icons.tsx `Play` is sized for the hero. */}
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="ml-1 h-6 w-6">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </span>
-      </span>
-    </a>
+    <YouTubeFacade
+      videoId={videoId}
+      title={title}
+      poster={{ src: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`, width: 480, height: 360 }}
+    />
   )
 }
 

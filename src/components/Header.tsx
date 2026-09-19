@@ -40,6 +40,20 @@ const panelMotion = (open: boolean) =>
     ? 'visible translate-y-0 opacity-100'
     : 'invisible -translate-y-[10px] opacity-0 pointer-events-none'
 
+/**
+ * Grace period before a hovered dropdown closes.
+ *
+ * Without it the menu is unusable on a diagonal: the trigger <li> is only as
+ * wide as its own label, so a pointer travelling from "Our Services" down and
+ * left towards the first column's links leaves the <li> through its SIDE,
+ * several pixels above the panel, and mouseleave fires mid-journey. The bridge
+ * below fixes the straight-down path; this fixes every other one.
+ *
+ * 180ms is long enough to cross the bar and short enough that a deliberate
+ * move away still feels immediate.
+ */
+const CLOSE_DELAY_MS = 180
+
 export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null)
   const [drawerOpen, setDrawerOpen] = useState(false)
@@ -47,7 +61,37 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [canHover, setCanHover] = useState(true)
   const headerRef = useRef<HTMLElement>(null)
+  const closeTimer = useRef<number | null>(null)
   const { pathname } = useLocation()
+
+  const cancelClose = () => {
+    if (closeTimer.current === null) return
+    window.clearTimeout(closeTimer.current)
+    closeTimer.current = null
+  }
+
+  /** Hovering a trigger opens it at once and abandons any pending close. */
+  const openNow = (label: string) => {
+    cancelClose()
+    setOpenMenu(label)
+  }
+
+  /**
+   * Leaving a trigger schedules the close rather than doing it, so re-entering
+   * the same menu -- or crossing into its panel the long way round -- cancels
+   * it. The label guard means a pointer that moves straight onto a DIFFERENT
+   * trigger does not have its newly opened menu shut by the old one's timer.
+   */
+  const closeSoon = (label: string) => {
+    cancelClose()
+    closeTimer.current = window.setTimeout(() => {
+      closeTimer.current = null
+      setOpenMenu((cur) => (cur === label ? null : cur))
+    }, CLOSE_DELAY_MS)
+  }
+
+  // A pending close must not outlive the component.
+  useEffect(() => cancelClose, [])
 
   /**
    * Hover-to-open is the reference behaviour, but on a touch screen the
@@ -73,6 +117,7 @@ export default function Header() {
 
   // Navigating must dismiss everything.
   useEffect(() => {
+    cancelClose()
     setDrawerOpen(false)
     setDrawerSubmenu(null)
     setOpenMenu(null)
@@ -87,11 +132,15 @@ export default function Header() {
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key !== 'Escape') return
+      cancelClose()
       setOpenMenu(null)
       setDrawerOpen(false)
     }
     const onPointerDown = (e: MouseEvent) => {
-      if (!headerRef.current?.contains(e.target as Node)) setOpenMenu(null)
+      if (!headerRef.current?.contains(e.target as Node)) {
+        cancelClose()
+        setOpenMenu(null)
+      }
     }
     document.addEventListener('keydown', onKeyDown)
     document.addEventListener('mousedown', onPointerDown)
@@ -149,15 +198,12 @@ export default function Header() {
                 <li
                   key={item.label}
                   className={`mx-4 flex items-center ${wide ? '' : 'relative'}`}
-                  onMouseEnter={canHover ? () => setOpenMenu(item.label) : undefined}
-                  onMouseLeave={
-                    canHover
-                      ? () => setOpenMenu((cur) => (cur === item.label ? null : cur))
-                      : undefined
-                  }
+                  onMouseEnter={canHover ? () => openNow(item.label) : undefined}
+                  onMouseLeave={canHover ? () => closeSoon(item.label) : undefined}
                   // Tabbing past an open menu should close it.
                   onBlur={(e) => {
                     if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                      cancelClose()
                       setOpenMenu((cur) => (cur === item.label ? null : cur))
                     }
                   }}
@@ -166,9 +212,10 @@ export default function Header() {
                     type="button"
                     aria-expanded={open}
                     aria-haspopup="true"
-                    onClick={() =>
+                    onClick={() => {
+                      cancelClose()
                       setOpenMenu((cur) => (cur === item.label ? null : item.label))
-                    }
+                    }}
                     className={`inline-flex items-center font-body text-body-lg transition-colors duration-300 hover:text-primary ${
                       open ? 'text-primary' : 'text-secondary'
                     }`}
@@ -182,10 +229,27 @@ export default function Header() {
                   </button>
 
                   {wide ? (
-                    // Spans the container. `top-full` lands on the header's
-                    // bottom edge because the container is the offset parent.
+                    /*
+                      Spans the container. `top-full` lands on the header's
+                      bottom edge because the container is the offset parent.
+
+                      `-mt-gutter pt-gutter` is the HOVER BRIDGE, and it is
+                      load-bearing. The bar carries `py-gutter`, so the trigger
+                      <li> ends 20px above the container's bottom edge -- which
+                      is where `top-full` puts this panel. That 20px belongs to
+                      neither the <li> nor the panel, so a pointer crossing it
+                      fired mouseleave and shut the menu before it could reach a
+                      link. The negative margin pulls this wrapper's box up to
+                      meet the <li>, and the matching padding pushes the visible
+                      panel back down, so the gap is now covered by a hoverable
+                      descendant of the <li> and nothing moves on screen.
+
+                      The narrow panel below solves the same problem with
+                      `pt-gutter` alone -- it can, because its offset parent is
+                      the <li> rather than the container.
+                    */
                     <div
-                      className={`absolute inset-x-0 top-full transition-all duration-[400ms] ease-out ${panelMotion(
+                      className={`absolute inset-x-0 top-full -mt-gutter pt-gutter transition-all duration-[400ms] ease-out ${panelMotion(
                         open,
                       )}`}
                     >

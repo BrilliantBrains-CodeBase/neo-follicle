@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { FormEvent } from 'react'
+import type { FormEvent, ReactElement } from 'react'
 import { CONTACT, FORMS } from '../config/site'
 import { ChevronDown, MailIcon, MapPinIcon, PhoneIcon, Square } from './icons'
 import Reveal from './Reveal'
@@ -44,6 +44,22 @@ import Reveal from './Reveal'
  *     Its values are short ("hello@folixa.com", "(+1) 234 567 8900"); ours are
  *     a 30-character email and a spaced +91 number, and at h5 in a half-width
  *     card the email overflowed and the phone broke mid-number.
+ *
+ * TWO CALLERS, ONE FORM. home.tsx renders it bare and gets the SECTION 13 copy
+ * below as the prop defaults. contact/ContactBooking.tsx passes PAGE 5's own
+ * eyebrow, heading, lede, submit label and info cards, plus `showCountry`. That
+ * is deliberate: /contact-us/ is the site's conversion page and every CTA in
+ * the header, footer, sticky bar and each closing band points at it, so its
+ * form and the home form must not be two components that drift apart -- one
+ * submit path, one set of field names, one place to paste FORMS.leadEndpoint.
+ * Every prop defaults to what home already shipped, so adding them changed
+ * nothing on `/`.
+ *
+ * The layout stays SINGLE COLUMN for both callers. The Folixa APPOINTMENT page
+ * pairs its fields into two-up rows, but it can: Age, Blood Group, Date and
+ * Time are all short. Ours are Name, Phone, Email, Country, Service and
+ * Message, and this panel is only `lg:flex-1` wide, so pairing would break the
+ * email mid-address. post-35's single column is the right geometry here.
  */
 
 /**
@@ -94,7 +110,26 @@ const SERVICES = [
   'Not sure yet',
 ]
 
-const INFO = [
+/**
+ * One info card. Exported because ContactBooking builds its own four-card set.
+ *
+ * `href` omitted renders a plain <div> rather than an <a> -- the clinic-hours
+ * card is the one value on this page with nothing to link to.
+ */
+export type InfoCard = {
+  icon: (props: { className?: string }) => ReactElement
+  href?: string
+  external?: boolean
+  /** aria-label. The visible text is the bare value, which reads poorly alone. */
+  label?: string
+  text: string
+  /** A second, quieter line. The hours card uses it for the closed day. */
+  note?: string
+  /** Spans both columns from `md` up, as the reference's address card does. */
+  wide?: boolean
+}
+
+const INFO: InfoCard[] = [
   {
     icon: MapPinIcon,
     href: CONTACT.mapUrl,
@@ -102,6 +137,7 @@ const INFO = [
     label: 'Clinic address, opens in Google Maps',
     /** Joined on one line -- the reference's address heading is 16px/1.3em. */
     text: CONTACT.addressLines.join(' ').replace(/,$/, ''),
+    wide: true,
   },
   {
     icon: PhoneIcon,
@@ -121,7 +157,30 @@ const INFO = [
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
-export default function ContactUs() {
+type ContactUsProps = {
+  eyebrow?: string
+  heading?: string
+  lede?: string
+  submitLabel?: string
+  /**
+   * Adds a Country field between email and service. /contact-us/ needs it --
+   * hair-transplant-medical-tourism-in-bangalore feeds it international leads
+   * and the coordinator's first question is where they are flying from. The
+   * home form does not, and every field costs conversion.
+   */
+  showCountry?: boolean
+  info?: InfoCard[]
+}
+
+export default function ContactUs({
+  eyebrow = 'Contact Us',
+  heading = 'Start Your Hair Restoration Journey Today',
+  /** SECTION 13 body, verbatim. */
+  lede = 'Whether it is hair fall, a receding hairline, baldness, a patchy beard, thin eyebrows or a previous transplant that did not work, the first step is a proper diagnosis. Book a consultation and get a clear, honest plan for your hair.',
+  submitLabel = 'Send Message',
+  showCountry = false,
+  info = INFO,
+}: ContactUsProps = {}) {
   const [status, setStatus] = useState<Status>('idle')
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -136,6 +195,7 @@ export default function ContactUs() {
         `Name: ${data.name}`,
         `Phone: ${data.phone}`,
         data.email && `Email: ${data.email}`,
+        data.country && `Country: ${data.country}`,
         data.service && `Interested in: ${data.service}`,
         data.message && `Message: ${data.message}`,
       ].filter(Boolean)
@@ -175,19 +235,13 @@ export default function ContactUs() {
               the same pairing Services uses. */}
           <p className="flex items-center gap-[5px] font-head text-h6 text-body">
             <Square className="h-[14px] w-[14px] shrink-0 text-primary" />
-            Contact Us
+            {eyebrow}
           </p>
 
-          <h2 className="text-balance font-head text-h2 text-secondary">
-            Start Your Hair Restoration Journey Today
-          </h2>
+          <h2 className="text-balance font-head text-h2 text-secondary">{heading}</h2>
 
-          {/* SECTION 13 body, verbatim. 533px is the reference's `2c79206`. */}
-          <p className="text-body lg:max-w-[533px]">
-            Whether it is hair fall, a receding hairline, baldness, a patchy beard, thin eyebrows or
-            a previous transplant that did not work, the first step is a proper diagnosis. Book a
-            consultation and get a clear, honest plan for your hair.
-          </p>
+          {/* 533px is the reference's `2c79206`. */}
+          <p className="text-body lg:max-w-[533px]">{lede}</p>
 
           {/*
             `703738a`: two columns with the address spanning both, collapsing to
@@ -195,25 +249,48 @@ export default function ContactUs() {
             the foot of the column, level with the form's button on desktop.
           */}
           <ul className="mt-2 grid grid-cols-1 gap-gap-sm md:grid-cols-2 lg:mt-auto lg:gap-6">
-            {INFO.map(({ icon: Icon, href, external, label, text }, i) => (
-              <li key={href} className={i === 0 ? 'md:col-span-2' : undefined}>
-                <a
-                  href={href}
-                  aria-label={label}
-                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  className={`${INFO_CARD} group ${i === 0 ? 'bg-accent' : 'bg-surface'}`}
-                >
+            {info.map(({ icon: Icon, href, external, label, text, note, wide }, i) => {
+              /* The reference tints only the first card. */
+              const tinted = i === 0
+              const inner = (
+                <>
                   {/* White tile on the tinted card, `surface` on the plain ones --
                       the reference inverts the two grounds, card against tile. */}
-                  <span className={`${ICON_TILE} ${i === 0 ? 'bg-base' : 'bg-surface'}`}>
+                  <span className={`${ICON_TILE} ${tinted ? 'bg-base' : 'bg-surface'}`}>
                     <Icon className="h-7 w-7 text-secondary" />
                   </span>
-                  <span className="min-w-0 break-words font-head text-[16px] font-semibold leading-[1.3em] text-body transition-colors group-hover:text-primary">
-                    {text}
+                  <span className="flex min-w-0 flex-col gap-1">
+                    <span className="min-w-0 break-words font-head text-[16px] font-semibold leading-[1.3em] text-body transition-colors group-hover:text-primary">
+                      {text}
+                    </span>
+                    {note && (
+                      <span className="text-[14px] leading-[1.3em] text-body/70">{note}</span>
+                    )}
                   </span>
-                </a>
-              </li>
-            ))}
+                </>
+              )
+
+              return (
+                <li key={text} className={wide ? 'md:col-span-2' : undefined}>
+                  {href ? (
+                    <a
+                      href={href}
+                      aria-label={label}
+                      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                      className={`${INFO_CARD} group ${tinted ? 'bg-accent' : 'bg-surface'}`}
+                    >
+                      {inner}
+                    </a>
+                  ) : (
+                    /* Nothing to link to, so not a link -- an <a href="#"> here
+                       would be the same dead control the captured page shipped. */
+                    <div className={`${INFO_CARD} ${tinted ? 'bg-accent' : 'bg-surface'}`}>
+                      {inner}
+                    </div>
+                  )}
+                </li>
+              )
+            })}
           </ul>
         </Reveal>
 
@@ -269,6 +346,22 @@ export default function ContactUs() {
               />
             </div>
 
+            {showCountry && (
+              <div>
+                <label htmlFor="contact-country" className="sr-only">
+                  Country
+                </label>
+                <input
+                  id="contact-country"
+                  name="country"
+                  type="text"
+                  autoComplete="country-name"
+                  placeholder="Country"
+                  className={FIELD}
+                />
+              </div>
+            )}
+
             <div className="relative">
               <label htmlFor="contact-service" className="sr-only">
                 Select service
@@ -313,7 +406,7 @@ export default function ContactUs() {
                 disabled={status === 'sending'}
                 className="inline-flex w-full items-center justify-center rounded-[5px] bg-primary px-6 py-4 font-head text-button text-white transition duration-500 hover:bg-primary-dark disabled:opacity-60 md:w-auto md:self-start"
               >
-                {status === 'sending' ? 'Sending…' : 'Send Message'}
+                {status === 'sending' ? 'Sending…' : submitLabel}
               </button>
 
               <p aria-live="polite" className="text-body">

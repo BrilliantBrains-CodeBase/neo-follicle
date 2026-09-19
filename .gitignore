@@ -3,3 +3,6 @@ node_modules/
 dist/
 dist-ssr/
 .venv/
+
+# Screenshot audit output (scripts/shoot.mjs)
+.shots/

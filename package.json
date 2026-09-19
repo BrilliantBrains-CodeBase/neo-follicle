@@ -13,7 +13,13 @@
     "typecheck": "tsc --noEmit",
     "gen:blogimg": "node scripts/gen-blog-images.mjs",
     "gen:posts": "node scripts/gen-posts.mjs",
-    "verify:posts": "node scripts/verify-posts.mjs"
+    "verify:posts": "node scripts/verify-posts.mjs",
+    "gen:treatmentimg": "node scripts/gen-treatment-images.mjs",
+    "verify:treatments": "node scripts/verify-treatments.mjs",
+    "shoot": "node scripts/shoot.mjs",
+    "gen:galleryimg": "node scripts/gen-gallery-images.mjs",
+    "gen:videogallery": "node scripts/gen-video-gallery.mjs",
+    "verify:gallery": "node scripts/verify-gallery.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -26,6 +32,7 @@
     "@vitejs/plugin-react": "^5.1.0",
     "autoprefixer": "^10.4.21",
     "node-html-parser": "^9.0.4",
+    "playwright": "^1.63.0",
     "postcss": "^8.5.6",
     "sharp": "^0.35.4",
     "tailwindcss": "^3.4.19",

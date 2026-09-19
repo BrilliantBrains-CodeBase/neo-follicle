@@ -87,7 +87,13 @@ const sorted = [...pages].sort((a, b) => a.slug.localeCompare(b.slug))
 // Blog posts are split out: each one carries its own article body, and a static
 // import would put all 19 in the entry chunk that every page downloads. See
 // src/routeView.tsx.
-const isSplit = (p) => p.type === 'post'
+//
+// The two gallery pages are split for the same reason, though they are type
+// 'page'. Between them they carry 82 image records and 45 video records --
+// about 41KB of source -- and a static import puts every byte of that in the
+// chunk the home page downloads, to serve two pages nobody has asked for yet.
+const SPLIT_SLUGS = new Set(['image-gallery', 'video-gallery'])
+const isSplit = (p) => p.type === 'post' || SPLIT_SLUGS.has(p.slug)
 
 const imports = sorted
   .filter((p) => !isSplit(p))
