@@ -92,7 +92,13 @@ const sorted = [...pages].sort((a, b) => a.slug.localeCompare(b.slug))
 // 'page'. Between them they carry 82 image records and 45 video records --
 // about 41KB of source -- and a static import puts every byte of that in the
 // chunk the home page downloads, to serve two pages nobody has asked for yet.
-const SPLIT_SLUGS = new Set(['image-gallery', 'video-gallery'])
+//
+// hair-conditions-we-treat joins them on the same test: it is the conditions
+// index and carries the whole 3,000-word capture -- eleven condition blocks,
+// two link grids and a nine-point checklist, the largest single data module in
+// src/content/treatments/. It is reached from the footer, not from the home
+// page, so there is no reason for the home page's chunk to carry it.
+const SPLIT_SLUGS = new Set(['image-gallery', 'video-gallery', 'hair-conditions-we-treat'])
 const isSplit = (p) => p.type === 'post' || SPLIT_SLUGS.has(p.slug)
 
 const imports = sorted

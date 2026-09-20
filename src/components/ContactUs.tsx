@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent, ReactElement } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CONTACT, FORMS } from '../config/site'
 import { ChevronDown, MailIcon, MapPinIcon, PhoneIcon, Square } from './icons'
 import Reveal from './Reveal'
@@ -170,6 +171,18 @@ type ContactUsProps = {
    */
   showCountry?: boolean
   info?: InfoCard[]
+  /**
+   * Route to send the visitor to once the lead is away, e.g.
+   * '/nft-brochure-thank-you/'. Trailing slash required -- that is P0.
+   *
+   * Opt-in, and unset everywhere except the brochure gate. The home and
+   * contact-us forms stay on the page and show the inline "sent" message,
+   * which is the captured behaviour there; the brochure funnel's captured
+   * behaviour is a redirect to its own thank-you page, and without this that
+   * page has NOTHING linking to it -- the same orphan problem the SEO audit
+   * raised about contact-us (reports/seo-audit.md section 7).
+   */
+  successTo?: string
 }
 
 export default function ContactUs({
@@ -180,8 +193,20 @@ export default function ContactUs({
   submitLabel = 'Send Message',
   showCountry = false,
   info = INFO,
+  successTo,
 }: ContactUsProps = {}) {
   const [status, setStatus] = useState<Status>('idle')
+  const navigate = useNavigate()
+
+  /**
+   * Called on both success paths. The form is reset first so a back-navigation
+   * to this page does not find the visitor's details still sitting in it.
+   */
+  function succeeded(form: HTMLFormElement) {
+    setStatus('sent')
+    form.reset()
+    if (successTo) navigate(successTo)
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -205,8 +230,7 @@ export default function ContactUs({
         '_blank',
         'noopener',
       )
-      setStatus('sent')
-      form.reset()
+      succeeded(form)
       return
     }
 
@@ -219,8 +243,7 @@ export default function ContactUs({
         body: JSON.stringify(data),
       })
       if (!response.ok) throw new Error(String(response.status))
-      setStatus('sent')
-      form.reset()
+      succeeded(form)
     } catch {
       setStatus('error')
     }

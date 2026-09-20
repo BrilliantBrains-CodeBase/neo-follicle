@@ -46,6 +46,24 @@ export type FeatureItem = {
   body?: string
 }
 
+/**
+ * A card in a `linkGrid`. Unlike FeatureItem it always goes somewhere: the
+ * target is a real route in src/routes.tsx, trailing slash included, because
+ * scripts/verify-seo.mjs check 8 fails the build on a link that does not
+ * resolve.
+ */
+export type LinkCard = {
+  title: string
+  /** The supporting line. The capture's "Possible Treatment Options" column. */
+  body?: string
+  /** A short qualifier above the body -- the capture's "Common Signs" column. */
+  meta?: string
+  /** Router path, trailing slash required. */
+  to: string
+  /** Anchor text. Defaults to "Learn more" when the card has none of its own. */
+  linkLabel?: string
+}
+
 export type ProcessStep = {
   title: string
   body?: string
@@ -76,8 +94,52 @@ export type Person = { name: string; role: string; image: TreatmentImage }
  * dropped: no copy the brief wrote is deleted.
  */
 export type TreatmentSection =
-  /** Heading, paragraphs, an optional bullet list, optional closing paragraphs. */
-  | { kind: 'prose'; heading: string; lede?: string[]; points?: string[]; closing?: string[] }
+  /**
+   * Heading, paragraphs, an optional bullet list, optional closing paragraphs.
+   *
+   * `image` and `link` were added for hair-conditions-we-treat, whose eleven
+   * condition blocks are each a sub-head, three paragraphs, a photograph and a
+   * link to that condition's own page. `checklist` was the near miss -- it
+   * carries an image already -- but it REQUIRES `points`, and the capture gives
+   * prose, not bullets. Bulleting it to fit the type would have rewritten copy
+   * that is ported verbatim, so the image moved here instead.
+   *
+   * With an image the section renders as SectionHead + a two-column row, the
+   * same shape Checklist takes in its own image branch; without one it stays
+   * the sticky-head Split it has always been.
+   */
+  | {
+      kind: 'prose'
+      heading: string
+      /** The capture's h3 under the h2 -- "For men experiencing ...". */
+      lede?: string[]
+      points?: string[]
+      closing?: string[]
+      image?: TreatmentImage
+      /** The block's "Explore ..." link to the condition's own page. */
+      link?: Cta
+    }
+  /**
+   * A grid of cards that each link somewhere -- the hub pattern.
+   *
+   * hair-conditions-we-treat is an index: it summarises eleven conditions and
+   * six treatment routes, and every one of them already has its own built page.
+   * Rendering those as `featureGrid` would have been the existing fit, but
+   * featureGrid cards carry no href, and the whole point of this page is that
+   * it was ORPHANED -- reports/seo-audit.md section 7 lists it as the P1
+   * internal-linking fix. A card that names a condition and does not link to
+   * its page is the bug, not the layout.
+   *
+   * `meta` is the capture's "Common Signs" column; `body` its "Possible
+   * Treatment Options".
+   */
+  | {
+      kind: 'linkGrid'
+      heading: string
+      lede?: string
+      intro?: string
+      items: LinkCard[]
+    }
   /** The reference's icon-box grid, minus the icons. Card 0 is tinted `accent`. */
   | { kind: 'featureGrid'; heading: string; lede?: string; intro?: string; items: FeatureItem[] }
   /** A bullet list beside a photograph, with an optional second list under it. */
@@ -104,6 +166,32 @@ export type TreatmentSection =
   | { kind: 'results'; heading: string; lede?: string; images: TreatmentImage[]; points?: string[]; closing?: string }
   /** The recovery table. */
   | { kind: 'timeline'; heading: string; lede?: string; columns: [string, string]; rows: TimelineRow[] }
+  /**
+   * A table of any width.
+   *
+   * `timeline` was the near miss and is deliberately not widened: its column
+   * tuple is `[string, string]` because a recovery table is always "when" and
+   * "what", and that constraint is worth keeping. The cost landing page's
+   * tables are three columns (session / grafts / price, and pattern / grafts /
+   * session), which is a different object.
+   *
+   * Rendered with the `.post-prose-table` rules already in src/index.css --
+   * the scroll container, the `surface` header fill and the `overlay` hairlines
+   * that the blog posts' six tables use. A five-column table on a phone has to
+   * scroll, and that is the one place on the site where that is already solved.
+   *
+   * `note` is the asterisked line under the captured tables, e.g. what the
+   * per-graft price excludes.
+   */
+  | {
+      kind: 'table'
+      heading: string
+      lede?: string
+      intro?: string
+      columns: string[]
+      rows: string[][]
+      note?: string
+    }
   /** Celebrity page only. */
   | { kind: 'personalities'; heading: string; lede?: string; people: Person[]; closing?: string }
 

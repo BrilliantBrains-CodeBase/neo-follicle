@@ -251,4 +251,34 @@ export const TREATMENT_IMAGES = {
       { from: u('2025/05/NFT-Procedure-Room-2.jpeg'), alt: 'A procedure room at Neo Follicle Hair Transplant Clinic, Bangalore.' },
     ],
   },
+
+  /* ---- Conditions hub ----------------------------------------------------
+     Not a treatment page and not from a brief -- hair-conditions-we-treat is
+     the conditions INDEX, and it rides this pipeline because it renders the
+     same TreatmentPageData. Sources are the eleven photographs the old page
+     actually rendered, read out of
+     neofollicle-seo-backup/pages/hair-conditions-we-treat/images.json. The
+     page's other ~28 images are the header logo, the six SVG treatment icons
+     and the why-choose icon set, none of which is a content photograph.
+
+     `sections` is ordered to match the data module's section order, so the
+     index into this array is the index down the page.                        */
+
+  'hair-conditions-we-treat': {
+    hero: { from: u('2025/05/Dr-Sandeep-Mahapatra-at-Neo-Follicle-Hair-Transplant-Clinic.jpg'),
+            alt: 'Dr. Sandeep Mahapatra at Neo Follicle Hair Transplant Clinic, Bangalore.' },
+    sections: [
+      { from: u('2026/05/650-X-450-PX-IMAGE-WEBSITE-011-scaled.jpg'), alt: 'A scalp and hair density examination during a diagnostic consultation.' },
+      { from: u('2026/05/NFT-Website-Images-2.png'), alt: 'Excessive hair shedding collected after washing.' },
+      { from: u('2025/04/Alopecia-in-Men.jpg'), alt: 'A round patch of hair loss on the scalp, characteristic of alopecia areata.' },
+      { from: u('2025/04/Woman-with-dandruff.jpg'), alt: 'A woman examining flaking and irritation on her scalp.' },
+      { from: u('2026/05/NFT-Website-Images-3.png'), alt: 'A receding hairline with temple recession.' },
+      { from: u('2026/05/NFT-Website-Images-4.png'), alt: 'Thinning at the crown with visible scalp.' },
+      { from: u('2026/05/NFT-Website-Images-5.png'), alt: 'Uneven beard growth with gaps in density.' },
+      { from: u('2025/04/Indian-woman-eyebrow-transplant.jpg'), alt: 'Eyebrow restoration planning for thin, over-plucked brows.' },
+      { from: u('2026/05/NFT-Website-Images-6.png'), alt: 'An unnatural hairline from a previous hair transplant, before repair.' },
+      { from: u('2026/05/NFT-Website-Images-7.png'), alt: 'Scalp micropigmentation creating the appearance of density on a close-shaved scalp.' },
+      { from: u('2025/03/Indian-Man-with-Good-Hair-volume.jpg'), alt: 'A man with restored hair density after a personalised treatment plan.' },
+    ],
+  },
 }

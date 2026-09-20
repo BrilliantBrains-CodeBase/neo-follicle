@@ -1,12 +1,14 @@
 import About from '../components/About'
 import CommonQuestions from '../components/CommonQuestions'
 import ContactUs from '../components/ContactUs'
+import CredibilityBar from '../components/CredibilityBar'
 import Hero from '../components/Hero'
 import Insights from '../components/Insights'
 import Process from '../components/Process'
 import Services from '../components/Services'
 import Testimonials from '../components/Testimonials'
 import TreatmentGallery from '../components/TreatmentGallery'
+import Videos from '../components/Videos'
 import WhyNeoFollicle from '../components/WhyNeoFollicle'
 
 /**
@@ -24,21 +26,25 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <CredibilityBar />
       <About />
       <Services />
       <WhyNeoFollicle />
       <Process />
       <Testimonials />
       <TreatmentGallery />
+      <Videos />
       <CommonQuestions />
       <ContactUs />
       <Insights />
 
       {/*
         Still to build from content/home-page/Neo-Follicle-Website-Content.md:
-        International. The doc's Credibility Bar (between Hero and About) is
-        also outstanding. International (SECTION 11) belongs between
-        Testimonials and CommonQuestions when it lands.
+        International (SECTION 11), which belongs between Testimonials and
+        CommonQuestions when it lands.
+
+        The doc's Credibility Bar is no longer outstanding -- it is the
+        CredibilityBar above, between Hero and About as the doc places it.
 
         SECTION 13 Final CTA is covered by ContactUs -- it carries that
         section's heading and body. Do not add a second CTA band.

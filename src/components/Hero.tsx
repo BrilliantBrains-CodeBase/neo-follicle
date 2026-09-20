@@ -52,16 +52,36 @@ const FLOAT = 'transition ease-out hover:-translate-y-2 motion-reduce:transform-
 const BUTTON = `inline-flex w-full items-center justify-center rounded p-4 font-head text-button duration-500 md:w-auto ${FLOAT}`
 
 /**
- * HERO TRUST STRIP, verbatim from the content doc SECTION 1. Deliberately NOT
- * sourced from STATS in config/site.ts -- that wording differs slightly
- * ("Years of Experience", "Hair Transplants Performed") and the doc states
- * these figures are the clinic's stated record and must not be altered.
+ * HERO TRUST STRIP.
+ *
+ * The doc's SECTION 1 strip read "20+ Years Experience / 10,000+ Hair
+ * Transplants / 500+ International Patients / Dermatologist-Led". Those three
+ * figures now open CredibilityBar directly below this section, where they count
+ * up on a `primary` ground instead of sitting here as a caption to the h1 --
+ * and About's stat cards state 20+ and 10,000+ again one section after that.
+ * Three passes at the same numbers inside two viewports devalues them, so the
+ * strip keeps only what the bar does not carry: the credentials.
+ *
+ * Every string below is sourced, not authored. "Dermatologist-Led" is the doc's
+ * own, kept verbatim; the other three are its DOCTOR CREDENTIALS BLOCK, and
+ * each also appears in config/site.ts -- DOCTOR.awards ("Gold Medalist in MD
+ * Dermatology, Venereology & Leprosy"), DOCTOR.memberships (ISHRS, which the
+ * doc qualifies as Gold Member) and DOCTOR.credentials ("Certified DHI
+ * Specialist", DHI Global, Greece). No figure is altered -- they moved.
+ *
+ * Dropping items from the doc's verbatim hero copy is still a copy change.
+ * FLAGGED FOR CLIENT REVIEW.
+ *
+ * Total length is load-bearing. The marquee below translates -100% of this
+ * strip's OWN width over a fixed 20s, so character count sets the scroll speed.
+ * These four run 87 characters against the previous 88 -- one pass stays ~865px
+ * and the ~45px/s read speed holds, so tailwind.config.js needs no retune.
  */
 const TRUST_STRIP = [
-  '20+ Years Experience',
-  '10,000+ Hair Transplants',
-  '500+ International Patients',
   'Dermatologist-Led',
+  'MD Dermatology, Gold Medalist',
+  'ISHRS Gold Member',
+  'DHI Certified Specialist',
 ]
 
 /**
@@ -95,9 +115,16 @@ function TrustStrip() {
   )
 }
 
+/*
+ * The section's bottom inset matches its horizontal one, exactly as DoctorHero
+ * does. Without it the card's rounded bottom corners sit directly on whatever
+ * section follows -- which since CredibilityBar landed is a full-bleed
+ * `primary` band, so the two grounds met with no gutter at all. Pairing pb
+ * with px keeps the hero reading as a card on the page ground.
+ */
 export default function Hero() {
   return (
-    <section className="px-0 md:px-5 lg:px-10">
+    <section className="px-0 pb-0 md:px-5 md:pb-5 lg:px-10 lg:pb-10">
       <div className="relative isolate flex min-h-[90vh] flex-wrap justify-between gap-gap-tablet overflow-hidden rounded-none px-gutter py-16 md:flex-nowrap md:rounded-lg lg:min-h-[95vh] lg:gap-gap lg:p-20">
         {/*
           /hero.webp is client-supplied (Homepage/Home Page Banner/Home Page

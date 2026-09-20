@@ -32,12 +32,10 @@ import Reveal from '../Reveal'
  *     announces the order.
  *   - Six stages, not the reference's four. The doc's journey has six and none
  *     may be dropped.
- *   - NO PHOTOGRAPHS, although Process.tsx gives each of its five home-page
- *     stages one. public/process/ holds exactly five images and this journey
- *     has six stages -- there is no asset for "Long-Term Guidance" -- so five
- *     illustrated rows above one bare row would read as a missing file rather
- *     than a design. The band runs without imagery until a sixth exists.
- *     FLAGGED FOR CLIENT REVIEW.
+ *   - NO PHOTOGRAPHS, matching the home page's Process.tsx, which dropped its
+ *     own stage imagery. The client-supplied banners are still in
+ *     public/process/, but they are unused and there are only five of them
+ *     against this journey's six stages.
  */
 
 /** SECTION 8's six stages, verbatim, in the doc's order. */

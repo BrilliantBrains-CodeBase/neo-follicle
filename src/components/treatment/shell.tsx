@@ -124,7 +124,20 @@ export function Split({
     >
       <div className="container grid gap-gap-mobile md:gap-gap-tablet lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] lg:gap-gap">
         <div className="lg:sticky lg:top-28 lg:self-start">{head}</div>
-        <div className="flex flex-col gap-6">{children}</div>
+        {/*
+          `min-w-0` is load-bearing BELOW `lg`.
+
+          From `lg` the grid declares `minmax(0,1fr)`, which already floors this
+          track. Below it there is no `grid-template-columns` at all, so the
+          implicit track is `auto` -- and an `auto` track is sized by its
+          content's max-content width. A child wider than the viewport (the
+          cost LP's `min-w-[36rem]` pricing tables, inside their own
+          `overflow-x-auto`) therefore stretched the track instead of scrolling
+          inside it, and pushed the whole PAGE into a 208px horizontal scroll
+          at 390px. `min-w-0` lets the track shrink, so the scroll container
+          does its job.
+        */}
+        <div className="flex min-w-0 flex-col gap-6">{children}</div>
       </div>
     </section>
   )

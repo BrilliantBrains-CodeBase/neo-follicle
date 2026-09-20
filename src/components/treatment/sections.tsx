@@ -21,10 +21,11 @@ import type {
   TreatmentImage,
   TreatmentSection,
 } from '../../content/treatments/types'
-import { CheckCircle } from '../icons'
+import { Link } from 'react-router-dom'
+import { ArrowRight, CheckCircle } from '../icons'
 import Reveal from '../Reveal'
 import { SCROLLER, SLIDE } from '../carousel'
-import { FLOAT, Section, SectionHead, Split, type Ground } from './shell'
+import { BUTTON, CtaButton, FLOAT, Section, SectionHead, Split, type Ground } from './shell'
 
 /**
  * A card's fill against the band it sits on, so a card never disappears into
@@ -105,11 +106,8 @@ function Points({ points }: { points: string[] }) {
 }
 
 function Prose({ section, ground }: { section: Extract<TreatmentSection, { kind: 'prose' }>; ground: Ground }) {
-  return (
-    // Left head, prose right. The body keeps a measure so the lines stay
-    // readable (65-75ch), but it is now the RIGHT COLUMN's measure rather than
-    // a 760px box floating in the middle of an otherwise empty band.
-    <Split ground={ground} head={<SectionHead heading={section.heading} align="left" />}>
+  const body = (
+    <>
       {section.lede?.map((line) => (
         <Reveal key={line}>
           <p className="max-w-[68ch] text-body">{line}</p>
@@ -121,7 +119,101 @@ function Prose({ section, ground }: { section: Extract<TreatmentSection, { kind:
           <p className="max-w-[68ch] text-body">{line}</p>
         </Reveal>
       ))}
+      {/*
+        The SECONDARY button style, not the primary. Eleven condition blocks run
+        down this page and each one carries its own "Explore ..." link; eleven
+        solid `primary` buttons would compete with the page's actual conversion
+        CTA and read as a wall of blue. CtaRow makes the same distinction
+        between its first button and the rest.
+      */}
+      {section.link && (
+        <Reveal>
+          <CtaButton
+            cta={section.link}
+            className={`${BUTTON} border border-line text-secondary hover:border-secondary`}
+          />
+        </Reveal>
+      )}
+    </>
+  )
+
+  /*
+    WITH a photograph this takes Checklist's image shape rather than the Split
+    below -- heading above, then a two-column image/prose row. Identical
+    reasoning: the image row already fills the band, so a sticky head column
+    beside it would leave the text in a third of the width.
+  */
+  if (section.image) {
+    return (
+      <Section ground={ground}>
+        <SectionHead heading={section.heading} align="left" />
+        <div className="flex flex-col gap-gap-sm md:flex-row md:gap-8">
+          <Reveal className="md:w-2/5">
+            <img
+              src={section.image.src}
+              alt={section.image.alt}
+              width={section.image.width}
+              height={section.image.height}
+              loading="lazy"
+              className="h-full min-h-[240px] w-full rounded object-cover"
+            />
+          </Reveal>
+          <div className="flex flex-col gap-6 md:w-3/5">{body}</div>
+        </div>
+      </Section>
+    )
+  }
+
+  return (
+    // Left head, prose right. The body keeps a measure so the lines stay
+    // readable (65-75ch), but it is now the RIGHT COLUMN's measure rather than
+    // a 760px box floating in the middle of an otherwise empty band.
+    <Split ground={ground} head={<SectionHead heading={section.heading} align="left" />}>
+      {body}
     </Split>
+  )
+}
+
+/**
+ * The hub grid. Every card is a link, so the whole card is the hit target --
+ * a 44px-plus tap area on a phone, rather than a "Learn more" the thumb has to
+ * find. The arrow is decorative; the accessible name is the card's own title,
+ * which is why there is no aria-label repeating it.
+ */
+function LinkGrid({
+  section,
+  ground,
+}: {
+  section: Extract<TreatmentSection, { kind: 'linkGrid' }>
+  ground: Ground
+}) {
+  return (
+    <Section ground={ground}>
+      <SectionHead heading={section.heading} lede={section.lede} />
+      {section.intro && <Intro>{section.intro}</Intro>}
+
+      <ul className="grid gap-gap-sm md:grid-cols-2 lg:grid-cols-3">
+        {section.items.map((item, i) => (
+          <Reveal as="li" key={item.to + item.title} delay={(i % 3) * 100}>
+            <Link
+              to={item.to}
+              className={`group flex h-full flex-col gap-3 rounded border border-line p-6 ${cardFill(
+                i,
+                ground,
+              )} ${FLOAT}`}
+            >
+              <h3 className="font-head text-h5 text-secondary">{item.title}</h3>
+              {item.meta && <p className="text-body text-body/80">{item.meta}</p>}
+              {item.body && <p className="text-body">{item.body}</p>}
+              <span className="mt-auto inline-flex items-center gap-2 pt-2 font-head text-h6 text-primary">
+                {item.linkLabel ?? 'Learn more'}
+                <ArrowRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-1 motion-reduce:transform-none" />
+              </span>
+            </Link>
+          </Reveal>
+        ))}
+      </ul>
+    </Section>
   )
 }
 
@@ -320,7 +412,12 @@ function Process({ section, ground }: { section: Extract<TreatmentSection, { kin
 function Results({ section, ground }: { section: Extract<TreatmentSection, { kind: 'results' }>; ground: Ground }) {
   return (
     <Section ground={ground}>
-      <SectionHead heading={section.heading} lede={section.lede} />
+      {/*
+        The heading only. The lede belongs with the caveat block BELOW the
+        gallery, not above it -- see the note on that block.
+      */}
+      <SectionHead heading={section.heading} />
+
       <ul className={`${SCROLLER} gap-gap-sm md:grid-cols-2 md:gap-8 lg:grid-cols-3`}>
         {section.images.map((image: TreatmentImage, i) => (
           <Reveal as="li" key={image.src} delay={i * 100} className={SLIDE}>
@@ -335,16 +432,48 @@ function Results({ section, ground }: { section: Extract<TreatmentSection, { kin
           </Reveal>
         ))}
       </ul>
+
       {/*
-        The one `mx-auto` left in this file, and it is deliberate: the head is
-        centred here because the 3-up image grid anchors it, so a trailing note
-        hard against the left edge would hang off that axis. It is centred
-        UNDER a full-width object, which is the case centring is for.
+        The caveat: what results depend on, and what is not being promised.
+        Every results section's qualifying copy lives here, under the evidence
+        it qualifies.
+
+        This used to be `mx-auto max-w-[68ch]`, centred, with the lede left up
+        in the section head. Two things were wrong with that:
+
+          - The lede ends in a colon ("Real results depend on:") and the list it
+            introduces sat BELOW the gallery, so the colon pointed at three
+            photographs. Only one page carries `points`, which is why it went
+            unnoticed -- best-hair-transplant-in-bangalore.
+          - A narrow centred box holding a left-aligned tick list reads as
+            unanchored: its own text is ragged-left while the box floats
+            mid-page, sharing an edge with nothing. Centring works for a single
+            short line under a full-width object, which is what the old comment
+            here assumed; it does not work for a five-item list.
+
+        Now full width and left-aligned, so it shares the gallery's left edge,
+        and short factor labels become the wrapping chip row that `Pills`
+        already gives the checklists -- chips fill the row, so nothing is
+        stranded. No tinted panel around it: `Pills` fills opposite to the
+        ground, so a panel would land on the chips' own fill and flatten them,
+        the trap recorded on the checklist's secondary panel.
       */}
-      {(section.points || section.closing) && (
-        <div className="mx-auto flex max-w-[68ch] flex-col gap-6">
-          {section.points && <Points points={section.points} />}
-          {section.closing && <p className="text-body">{section.closing}</p>}
+      {(section.lede || section.points || section.closing) && (
+        <div className="flex flex-col gap-5">
+          {section.lede && <p className="max-w-[68ch] text-body">{section.lede}</p>}
+
+          {section.points &&
+            (usePills(section.points) ? (
+              <Pills points={section.points} ground={ground} />
+            ) : (
+              <Points points={section.points} />
+            ))}
+
+          {/* The ethical punchline on a medical page, so it carries a little
+              weight rather than trailing off as another body line. */}
+          {section.closing && (
+            <p className="font-head text-h6 text-secondary">{section.closing}</p>
+          )}
         </div>
       )}
     </Section>
@@ -401,6 +530,75 @@ function Timeline({ section, ground }: { section: Extract<TreatmentSection, { ki
  * names in the alt text and nothing here implies a clinical claim beyond the
  * brief's own wording ("Featured names include").
  */
+/**
+ * A table of arbitrary width.
+ *
+ * Takes Timeline's visual idiom -- `accent` header row, `line` hairlines, 1rem
+ * cells -- rather than the `.post-prose-table` rules in src/index.css. Both
+ * exist; this one is what a SECTION's table already looks like on this site,
+ * and post-prose's is tuned to sit inside an article's text column.
+ *
+ * The one thing added over Timeline is the scroll container. Timeline is
+ * always two columns and always fits; these are three or more, and the widest
+ * captured cell ("Cost range - Rs.60 to Rs.100 per Graft") will not fit
+ * alongside two others on a 390px phone. `min-w-[36rem]` forces the scroll
+ * rather than letting the cells crush to unreadable widths -- the same call
+ * `.post-prose-table` makes with its own `min-width` on td.
+ *
+ * `Split`, not `Section`: a table is list-shaped content, which is the case
+ * SectionHead's docblock names for a left-aligned head in a two-column band.
+ */
+function Table({ section, ground }: { section: Extract<TreatmentSection, { kind: 'table' }>; ground: Ground }) {
+  return (
+    <Split
+      ground={ground}
+      head={<SectionHead heading={section.heading} lede={section.lede} align="left" />}
+    >
+      {section.intro && <Intro>{section.intro}</Intro>}
+
+      <Reveal className="w-full overflow-x-auto rounded border border-line">
+        <table className="w-full min-w-[36rem] border-collapse text-left">
+          <thead>
+            <tr className="bg-accent">
+              {section.columns.map((column, i) => (
+                <th key={`${column}-${i}`} scope="col" className="p-4 font-head text-h6 text-secondary">
+                  {/* The capture's first pricing table has an empty top-left
+                      cell. An empty <th> is still the column's header slot, so
+                      it stays -- but it carries no accessible name to read. */}
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {section.rows.map((row, i) => (
+              <tr key={row.join('|')} className={i > 0 ? 'border-t border-line' : ''}>
+                {row.map((cell, j) =>
+                  j === 0 ? (
+                    <th
+                      key={j}
+                      scope="row"
+                      className="p-4 text-left font-head text-body-lg font-semibold text-secondary"
+                    >
+                      {cell}
+                    </th>
+                  ) : (
+                    <td key={j} className="p-4 text-body">
+                      {cell}
+                    </td>
+                  ),
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Reveal>
+
+      {section.note && <p className="text-body text-body/80">{section.note}</p>}
+    </Split>
+  )
+}
+
 function Personalities({
   section,
   ground,
@@ -449,6 +647,8 @@ export default function TreatmentSectionView({
       return <Prose section={section} ground={ground} />
     case 'featureGrid':
       return <FeatureGrid section={section} ground={ground} />
+    case 'linkGrid':
+      return <LinkGrid section={section} ground={ground} />
     case 'checklist':
       return <Checklist section={section} ground={ground} />
     case 'process':
@@ -457,6 +657,8 @@ export default function TreatmentSectionView({
       return <Results section={section} ground={ground} />
     case 'timeline':
       return <Timeline section={section} ground={ground} />
+    case 'table':
+      return <Table section={section} ground={ground} />
     case 'personalities':
       return <Personalities section={section} ground={ground} />
   }

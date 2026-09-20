@@ -25,7 +25,6 @@ import FailedHairTransplantRepairInBangalore from './pages/failed-hair-transplan
 import FemaleHairTransplantInBangalore from './pages/female-hair-transplant-in-bangalore'
 import GfcHairTreatmentInBangalore from './pages/gfc-hair-treatment-in-bangalore'
 import HairAssessment from './pages/hair-assessment'
-import HairConditionsWeTreat from './pages/hair-conditions-we-treat'
 import HairLossTreatmentInBangalore from './pages/hair-loss-treatment-in-bangalore'
 import HairTransplantCostInBangalore from './pages/hair-transplant-cost-in-bangalore'
 import HairTransplantForMenInBangalore from './pages/hair-transplant-for-men-in-bangalore'
@@ -83,7 +82,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/gfc-hair-treatment-in-bangalore/', element: <GfcHairTreatmentInBangalore />, slug: 'gfc-hair-treatment-in-bangalore' },
   { path: '/gfc-vs-exosome-vs-qr678-hair-treatment/', load: () => import('./pages/gfc-vs-exosome-vs-qr678-hair-treatment'), slug: 'gfc-vs-exosome-vs-qr678-hair-treatment' },
   { path: '/hair-assessment/', element: <HairAssessment />, slug: 'hair-assessment' },
-  { path: '/hair-conditions-we-treat/', element: <HairConditionsWeTreat />, slug: 'hair-conditions-we-treat' },
+  { path: '/hair-conditions-we-treat/', load: () => import('./pages/hair-conditions-we-treat'), slug: 'hair-conditions-we-treat' },
   { path: '/hair-loss-treatment-in-bangalore/', element: <HairLossTreatmentInBangalore />, slug: 'hair-loss-treatment-in-bangalore' },
   { path: '/hair-transplant-cost-in-bangalore/', element: <HairTransplantCostInBangalore />, slug: 'hair-transplant-cost-in-bangalore' },
   { path: '/hair-transplant-for-men-in-bangalore/', element: <HairTransplantForMenInBangalore />, slug: 'hair-transplant-for-men-in-bangalore' },

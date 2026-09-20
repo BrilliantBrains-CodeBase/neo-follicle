@@ -8,6 +8,7 @@
 //   node scripts/shoot.mjs --slug home         # one page
 //   node scripts/shoot.mjs --full              # full-page, not just the fold
 //   node scripts/shoot.mjs --out /tmp/shots
+//   node scripts/shoot.mjs --slug X --section "Before & After"   # one section
 //
 // Serves dist/ itself, so it audits exactly what prerender.mjs emitted.
 import fs from 'node:fs'
@@ -30,6 +31,8 @@ const has = (name) => argv.includes(`--${name}`)
 const outDir = path.resolve(flag('out', path.join(root, '.shots')))
 const only = flag('slug', null)
 const fullPage = has('full')
+// Substring of a section's <h2>. Captures that section alone.
+const section = flag('section', null)
 
 // `maxH1Lines` is a wrap budget, not a style rule. `text-h1` is a fluid clamp
 // whose FLOOR is 2.5rem, so a 40px headline in a ~350px mobile column is about
@@ -79,6 +82,28 @@ for (const slug of slugs) {
     await page.goto(`${origin}/${slug === 'home' ? '' : `${slug}/`}`, { waitUntil: 'networkidle' })
     // Settle the entrance animations before measuring or shooting.
     await page.waitForTimeout(1400)
+
+    if (section) {
+      // Scroll the target INTO VIEW rather than jumping to the page bottom.
+      // Reveal only un-hides on intersection and disconnects after firing, so
+      // a jump straight past a mid-page section leaves its observers unfired
+      // and the whole thing screenshots blank. Learned the hard way.
+      const el = (
+        await page.evaluateHandle(
+          (h) => [...document.querySelectorAll('section')].find((s) => s.querySelector('h2')?.textContent.includes(h)),
+          section,
+        )
+      ).asElement()
+      if (!el) { console.log(`  ${slug}@${vp.name}: no section matching ${section}`); await page.close(); continue }
+      await el.scrollIntoViewIfNeeded()
+      await page.waitForTimeout(1600)
+      const file = path.join(outDir, `${slug}-${vp.name}-section.png`)
+      await el.screenshot({ path: file })
+      shots++
+      console.log(`  ${slug}@${vp.name}`.padEnd(54) + `section -> ${path.basename(file)}`)
+      await page.close()
+      continue
+    }
 
     const m = await page.evaluate(() => {
       const doc = document.documentElement
