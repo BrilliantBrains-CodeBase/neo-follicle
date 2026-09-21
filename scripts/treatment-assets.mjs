@@ -3,12 +3,28 @@
 // src/content/treatments/ and the generator cannot drift: the generator writes
 // exactly these paths, and `npm run verify:treatmentimg` asserts they exist.
 //
-// Sources are the images the OLD page actually rendered, read out of
-// neofollicle-seo-backup/pages/<slug>/images.json. Nothing here is stock and
-// nothing comes from the brief -- four of the five images embedded in
+// TWO KINDS OF SOURCE, and the split is deliberate:
+//
+//   `local`  a file committed under content/. Every treatment HERO is one of
+//            these: the client-supplied illustration set in
+//            content/Zoho WorkDrive-3/, one per mega-menu entry. It replaced the
+//            heroes first picked from the old site, which were stock portraits
+//            reused across pages (one man appeared as the hero of three
+//            different treatments) and did not depict the treatment. They look
+//            AI-generated -- garbled printed text, invented product labels --
+//            so alt text describes what is drawn and claims no result.
+//
+//   `from`   an image the OLD page actually rendered, read out of
+//            neofollicle-seo-backup/pages/<slug>/images.json. Every BEFORE/AFTER
+//            `results` set stays on this path: those are the clinic's real
+//            patient photographs, which a generated illustration must never
+//            stand in for. The conditions index also stays here -- it needs a
+//            photograph per condition, and the illustration set is per treatment.
+//
+// Nothing comes from the briefs -- four of the five images embedded in
 // content/treatments/Neo Follicle Website Content-3.md are third-party
 // screenshots (two are captioned "Hairfree & Hairgrow Clinic", a competitor),
-// so the brief is treated as copy only.
+// so the briefs are treated as copy only.
 //
 // `review: true` marks a set whose provenance is not clean. See the note on
 // female below. Those render behind a FLAGGED FOR CLIENT REVIEW comment at the
@@ -21,10 +37,13 @@ export function treatmentImagePath(slug, name) {
 
 const u = (p) => `wp-content/uploads/${p}`
 
+/** A file in the client's illustration set. Committed, so the generator is reproducible. */
+const z = (f) => `content/Zoho WorkDrive-3/${f}`
+
 export const TREATMENT_IMAGES = {
   'best-hair-transplant-in-bangalore': {
-    hero: { from: u('2025/03/Bald-Man-Aspiring-for-Hair-Transplant.jpg'),
-            alt: 'A man reviewing his receding hairline before a hair transplant consultation.' },
+    hero: { local: z('Direct Hair Transplant in Bangalore.png'),
+            alt: 'A surgeon in magnifying loupes implanting grafts along a reclining patient’s hairline in a clinic procedure room.' },
     results: [
       { from: u('2025/03/NFT-Hair-Trnsplant-Before-After-Image-1.jpg'), alt: 'Before and after a direct hair transplant at Neo Follicle.' },
       { from: u('2025/03/NFT-Hair-Transplant-Before-After-Images-2.jpg'), alt: 'Before and after hairline restoration at Neo Follicle.' },
@@ -33,8 +52,8 @@ export const TREATMENT_IMAGES = {
   },
 
   'hair-transplant-for-men-in-bangalore': {
-    hero: { from: u('2025/03/Bald-Indian-Man.jpg'),
-            alt: 'A man with male pattern hair loss at the crown and temples.' },
+    hero: { local: z('Direct Hair Transplant For Male.png'),
+            alt: 'A surgeon in loupes placing grafts along a reclining man’s hairline, with a scalp image on the monitor behind.' },
     results: [
       { from: u('2025/03/NFT-Hair-Trnsplant-Before-After-Image-1.jpg'), alt: 'Before and after a hair transplant for a receding hairline.' },
       { from: u('2025/03/NFT-Hair-Transplant-Before-After-Images-2.jpg'), alt: 'Before and after frontal density restoration in a male patient.' },
@@ -43,8 +62,15 @@ export const TREATMENT_IMAGES = {
   },
 
   'hair-transplant-cost-in-bangalore': {
-    hero: { from: u('2025/04/NFT-Clinic-Reception.jpeg'),
-            alt: 'The reception at Neo Follicle Hair Transplant Clinic, Bangalore.' },
+    hero: { local: z('Cost of Hair Transplant - Bangalore.png'),
+            // CROPPED, the one crop in this file. The frame's bottom third holds a
+            // cheque with real bank logos and the start of ANOTHER clinic's name, a
+            // calculator reading a specific price, and invoice line items. That is a
+            // price on the page whose message is that cost is not one number, plus
+            // third-party marks. Keeping the top 66% keeps the hand, the rupee notes
+            // and the procedure room, and drops all of it. Source is untouched.
+            crop: { left: 0, top: 0, width: 3375, height: 2227 },
+            alt: 'A hand holding Indian rupee notes in front of a blurred procedure room, with an invoice on the desk.' },
     // One only. The cost brief has no before/after section -- it is a text and
     // table page, as the old one was -- so this single image sits beside the
     // "How We Estimate Cost" list. A second would be an orphan; see
@@ -55,8 +81,8 @@ export const TREATMENT_IMAGES = {
   },
 
   'female-hair-transplant-in-bangalore': {
-    hero: { from: u('2026/05/Indian-Woman-with-Baldness.png'),
-            alt: 'A woman with a widening part line and thinning along the frontal hairline.' },
+    hero: { local: z('Hair Transplant For Female.png'),
+            alt: 'A surgeon in loupes placing grafts along a reclining woman’s hairline.' },
     // FLAGGED FOR CLIENT REVIEW. The old female page rendered female-*-1.png,
     // but the beard page rendered the same family without the -1 suffix as
     // filler tiles, so these are not verified as female patients.
@@ -69,8 +95,8 @@ export const TREATMENT_IMAGES = {
   },
 
   'failed-hair-transplant-repair-in-bangalore': {
-    hero: { from: u('2025/03/Bald-Indian-Man.jpg'),
-            alt: 'A man considering corrective treatment after an earlier hair transplant.' },
+    hero: { local: z('Failed Hair Transplant Repair.png'),
+            alt: 'A surgeon in loupes working along a reclining patient’s freshly marked hairline.' },
     results: [
       { from: u('2025/04/Failed-Hair-Transplant-2.jpg'), alt: 'A previous hair transplant showing poor density before corrective planning.' },
       { from: u('2025/04/Failed-Hair-Tansplant-3.jpg'), alt: 'An unnatural hairline from an earlier transplant, assessed before repair.' },
@@ -78,8 +104,8 @@ export const TREATMENT_IMAGES = {
   },
 
   'beard-transplant-in-bangalore': {
-    hero: { from: u('2025/03/Indian-Man-with-patchy-beard.jpg'),
-            alt: 'A man with patchy beard growth along the cheeks and jawline.' },
+    hero: { local: z('Beard Transplant.png'),
+            alt: 'A man reclining in a treatment chair while a clinician marks a beard line along his jaw.' },
     results: [
       { from: u('2025/03/NFT-Beard-Transplant-Before-After-1.jpg'), alt: 'Before and after a beard transplant at Neo Follicle.' },
       { from: u('2025/03/NFT-Beard-Transplant-Before-After-2.jpg'), alt: 'Before and after patchy beard correction at Neo Follicle.' },
@@ -90,8 +116,8 @@ export const TREATMENT_IMAGES = {
   },
 
   'eyebrow-restoration-in-bangalore': {
-    hero: { from: u('2025/04/Indian-woman-eyebrow-transplant.jpg'),
-            alt: 'A woman having her eyebrow shape assessed before restoration.' },
+    hero: { local: z('Eyebrow Restoration.png'),
+            alt: 'A woman with defined eyebrows beside close-up insets of an eyebrow being treated.' },
     results: [
       { from: u('2025/04/NFT-Eyebrow-Before-After-1.jpg'), alt: 'Before and after eyebrow restoration at Neo Follicle.' },
       { from: u('2025/04/NFT-Eyebrow-Before-After-2.jpg'), alt: 'Before and after restoring over-plucked eyebrows at Neo Follicle.' },
@@ -101,8 +127,8 @@ export const TREATMENT_IMAGES = {
   },
 
   'celebrity-hair-transplant': {
-    hero: { from: u('2025/04/NFT-Celebrity-Page-Image.jpg'),
-            alt: 'Neo Follicle Hair Transplant Clinic, trusted by public figures in Bangalore.' },
+    hero: { local: z('Celebrity Hair Transplants.png'),
+            alt: 'A montage of well-groomed men with full, styled hair, with an inset showing the back of a head before and after treatment.' },
     // Real, named, identifiable people -- the photograph must match the name.
     //
     // The brief lists six: Sri Murali, Prem, Rakshith Gowda, Sharan,
@@ -128,8 +154,8 @@ export const TREATMENT_IMAGES = {
   },
 
   'unshaven-hair-transplant': {
-    hero: { from: u('2025/05/Indian-Man-with-Good-Hairs-2.jpg'),
-            alt: 'A man with a full hairstyle after an unshaven hair transplant.' },
+    hero: { local: z('Unshaven Hair Transplant.png'),
+            alt: 'A man with a full, styled hairstyle looking down, beside inset close-ups of a hairline and a scalp being examined.' },
     results: [
       { from: u('2025/05/Unshaven-Before-After-1.jpg'), alt: 'Before and after an unshaven hair transplant at Neo Follicle.' },
       { from: u('2025/05/Unshaven-Before-After-2.jpg'), alt: 'Before and after unshaven hairline restoration at Neo Follicle.' },
@@ -139,8 +165,8 @@ export const TREATMENT_IMAGES = {
   },
 
   'body-hair-transplant': {
-    hero: { from: u('2025/03/Bald-Indian-Man.jpg'),
-            alt: 'A man with limited scalp donor hair being assessed for body hair transplantation.' },
+    hero: { local: z('Body Hair Transplant.png'),
+            alt: 'A man with body hair, beside inset close-ups of a body donor area being assessed.' },
     results: [
       { from: u('2025/10/Body-HT-1.png'), alt: 'Body hair assessed as a donor source at Neo Follicle.' },
       { from: u('2025/10/Body-HT-1a.png'), alt: 'Body hair donor planning at Neo Follicle.' },
@@ -158,24 +184,18 @@ export const TREATMENT_IMAGES = {
      improve them.                                                             */
 
   'stem-cell-therapy-for-hair-loss-in-bangalore': {
-    hero: { from: u('2025/03/Indian-Man-with-Good-Hair-volume.jpg'),
-            alt: 'A man with dense hair volume after regenerative hair treatment.' },
-    sections: [
-      { from: u('2025/04/Hair-Loss-Treatment-Before-After.jpg'), alt: 'Before and after a course of non-surgical hair loss treatment.' },
-    ],
+    hero: { local: z('Neo-Follicle Stem Cell Therapy.png'),
+            alt: 'A clinician injecting a reclining man’s scalp, with inset illustrations of stem cells and a hair follicle.' },
   },
 
   'best-prp-hair-treatment-in-bangalore': {
-    hero: { from: u('2025/04/Indian-Woman-with-Thining-Hairs.jpg'),
-            alt: 'A woman parting her hair to show thinning across the crown.' },
-    sections: [
-      { from: u('2025/03/Indian-Man-with-Beard.jpg'), alt: 'A man with a full head of hair and a trimmed beard.' },
-    ],
+    hero: { local: z('PRP Hair Loss Treatment.png'),
+            alt: 'A clinician injecting a reclining man’s scalp, with an inset showing a blood sample separated into platelet-rich plasma.' },
   },
 
   'gfc-hair-treatment-in-bangalore': {
-    hero: { from: u('2025/04/Smiling-Indian-Man-after-GFC-hair-therapy.jpg'),
-            alt: 'A man smiling after a course of GFC hair therapy.' },
+    hero: { local: z('Growth Factor Concentrate (GFC).png'),
+            alt: 'A clinician injecting a reclining man’s scalp, with insets of a blood sample tube and a hair follicle.' },
     results: [
       { from: u('2025/04/NFT-GFC-Therapy-Before-After-1.jpg'), alt: 'Before and after GFC hair therapy at Neo Follicle.' },
       { from: u('2025/04/NFT-GFC-Therapy-Before-After-2.jpg'), alt: 'Before and after GFC therapy showing improved density at Neo Follicle.' },
@@ -185,16 +205,13 @@ export const TREATMENT_IMAGES = {
   },
 
   'qr678-hair-treatment-in-bangalore': {
-    hero: { from: u('2025/04/Indian-Man-with-Thin-Hair.jpg'),
-            alt: 'A man with thinning hair across the frontal scalp.' },
-    sections: [
-      { from: u('2025/04/Hair-Loss-Before-After.jpg'), alt: 'Before and after a course of medical hair loss treatment.' },
-    ],
+    hero: { local: z('Neo QR678 Treatment.png'),
+            alt: 'A clinician injecting a reclining man’s scalp, with an inset of a vial of QR678.' },
   },
 
   'exosome-hair-treatment-in-bangalore': {
-    hero: { from: u('2025/04/Indian-Man-with-good-hairs.jpg'),
-            alt: 'A man with restored hair density after regenerative treatment.' },
+    hero: { local: z('Exosome Therapy.png'),
+            alt: 'A clinician treating a reclining man’s scalp, with an Exosome Therapy vial and box on the tray beside him.' },
     results: [
       { from: u('2025/04/exosome-before-after-1.jpg'), alt: 'Before and after exosome therapy at Neo Follicle.' },
       { from: u('2025/04/exosome-before-after-2.jpg'), alt: 'Before and after exosome therapy showing improved density at Neo Follicle.' },
@@ -203,20 +220,13 @@ export const TREATMENT_IMAGES = {
   },
 
   'low-level-laser-therapy': {
-    // FLAGGED FOR CLIENT REVIEW. The capture has no laser-therapy photograph at
-    // all; this is the portrait the old page itself used in that slot. A photo
-    // of the LLLT device in the clinic is the right fix.
-    review: true,
-    hero: { from: u('2025/03/Indian-Man-with-Beard.jpg'),
-            alt: 'A man with a full head of hair and a trimmed beard.' },
-    sections: [
-      { from: u('2025/04/Indian-Woman-with-Thining-Hairs.jpg'), alt: 'A woman parting her hair to show early thinning.' },
-    ],
+    hero: { local: z('Low Level Laser Hair Therapy.png'),
+            alt: 'A reclining man having his scalp treated under a red-light therapy device.' },
   },
 
   'scalp-micropigmentation-in-bangalore': {
-    hero: { from: u('2025/04/Indian-Male-with-good-Hairs.png'),
-            alt: 'A man with a closely cropped hairstyle and even scalp coverage.' },
+    hero: { local: z('Scalp Hair Micro-pigmentation (MPG).png'),
+            alt: 'A man with a closely shaved head while a technician applies scalp micropigmentation with a fine pen.' },
     results: [
       { from: u('2025/04/Scalp-Micropigmentation-Before-After-1.jpg'), alt: 'Before and after scalp micropigmentation at Neo Follicle.' },
       { from: u('2025/04/Scalp-Micropigmentation-Before-After-2.jpg'), alt: 'Before and after scalp micropigmentation across the crown at Neo Follicle.' },
@@ -226,26 +236,23 @@ export const TREATMENT_IMAGES = {
   },
 
   'alopecia-areata-treatment-in-bangalore': {
-    hero: { from: u('2025/04/Alopecia-in-Men.jpg'),
-            alt: 'A patch of hair loss on the scalp, characteristic of alopecia areata.' },
-    sections: [
-      { from: u('2025/04/Hair-Loss-Treatment-Before-After.jpg'), alt: 'Before and after dermatologist-led hair loss treatment.' },
-    ],
+    hero: { local: z('Alopecia Treatment.png'),
+            alt: 'A clinician injecting the thinning crown of a seated man.' },
   },
 
   'dandruff-treatment-in-bangalore': {
+    // FLAGGED FOR CLIENT REVIEW. The illustration set has no Dandruff Solutions
+    // image (19 files for 20 mega-menu entries), so this page keeps the old-site
+    // hero it had. It is the only treatment page still on one.
     hero: { from: u('2025/04/Woman-with-dandruff.jpg'),
             alt: 'A woman examining flaking on her scalp.' },
-    sections: [
-      { from: u('2025/04/Smiling-Indian-Man-after-GFC-hair-therapy.jpg'), alt: 'A man smiling after a course of scalp treatment.' },
-    ],
   },
 
   /* ---- International patients (Content-5, page 1) ------------------------- */
 
   'hair-transplant-medical-tourism-in-bangalore': {
-    hero: { from: u('2025/05/NFT-Reception.jpeg'),
-            alt: 'The reception area at Neo Follicle Hair Transplant Clinic, Bangalore.' },
+    hero: { local: z('Hair Transplant Medical Tourism.png'),
+            alt: 'A traveller holding a passport and boarding pass in an airport departures hall, with Bangalore and a clinical procedure shown alongside.' },
     sections: [
       { from: u('2025/05/Consulting-Room-1.jpeg'), alt: 'A consulting room at Neo Follicle Hair Transplant Clinic, Bangalore.' },
       { from: u('2025/05/NFT-Procedure-Room-2.jpeg'), alt: 'A procedure room at Neo Follicle Hair Transplant Clinic, Bangalore.' },

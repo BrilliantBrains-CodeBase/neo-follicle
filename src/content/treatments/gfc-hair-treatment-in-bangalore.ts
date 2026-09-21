@@ -55,7 +55,12 @@ const data: TreatmentPageData = {
       'Some hair follicles need support—not replacement.',
       'GFC is offered as part of Neo Follicle\'s personalized regenerative hair restoration approach for selected patients.',
     ],
-    image: img('hero', 'A man smiling after a course of GFC hair therapy.'),
+    image: {
+      src: '/treatments/gfc-hair-treatment-in-bangalore/hero.webp',
+      alt: 'A clinician injecting a reclining man’s scalp, with insets of a blood sample tube and a hair follicle.',
+      width: 1200,
+      height: 1200,
+    },
     badges: [
       'Concentrated Growth Factors',
       'Non-Surgical',

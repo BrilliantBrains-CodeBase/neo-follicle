@@ -32,18 +32,6 @@
 import { BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
 
-/**
- * Intrinsic sizes are the real ones from public/treatments/sizes.json, written
- * by scripts/gen-treatment-images.mjs. 650x450 is this set's common size --
- * anything else is passed explicitly at the call site.
- */
-const img = (n: string, alt: string, width = 650, height = 450) => ({
-  src: `/treatments/alopecia-areata-treatment-in-bangalore/${n}.webp`,
-  alt,
-  width,
-  height,
-})
-
 const data: TreatmentPageData = {
   slug: 'alopecia-areata-treatment-in-bangalore',
   hero: {
@@ -53,7 +41,12 @@ const data: TreatmentPageData = {
       'Hair loss caused by alopecia requires understanding the underlying condition before recommending treatment.',
       'Different forms of alopecia behave differently, so the diagnosis comes first and the treatment plan follows from it.',
     ],
-    image: img('hero', 'A patch of hair loss on the scalp, characteristic of alopecia areata.'),
+    image: {
+      src: '/treatments/alopecia-areata-treatment-in-bangalore/hero.webp',
+      alt: 'A clinician injecting the thinning crown of a seated man.',
+      width: 1200,
+      height: 1200,
+    },
     badges: [
       'Diagnosis First',
       'Dermatologist-Led',
@@ -74,7 +67,6 @@ const data: TreatmentPageData = {
         'Medical history',
         'Individual suitability',
       ],
-      image: img('section-1', 'Before and after dermatologist-led hair loss treatment.'),
     },
     {
       kind: 'prose',

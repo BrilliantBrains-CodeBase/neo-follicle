@@ -30,9 +30,9 @@ const data: TreatmentPageData = {
     ],
     image: {
       src: '/treatments/female-hair-transplant-in-bangalore/hero.webp',
-      alt: 'A woman with a widening part line and thinning along the frontal hairline.',
-      width: 1184,
-      height: 864,
+      alt: 'A surgeon in loupes placing grafts along a reclining woman’s hairline.',
+      width: 1200,
+      height: 1200,
     },
     badges: ['Female-Focused Planning', 'Minimal Shaving Where Suitable'],
     ctas: [BOOK, CALL],

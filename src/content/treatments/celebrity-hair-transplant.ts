@@ -42,9 +42,9 @@ const data: TreatmentPageData = {
     ],
     image: {
       src: '/treatments/celebrity-hair-transplant/hero.webp',
-      alt: 'Neo Follicle Hair Transplant Clinic, trusted by public figures in Bangalore.',
-      width: 650,
-      height: 450,
+      alt: 'A montage of well-groomed men with full, styled hair, with an inset showing the back of a head before and after treatment.',
+      width: 1200,
+      height: 1200,
     },
     badges: ['Medical Confidentiality', 'Camera-Friendly Density'],
     ctas: [BOOK_PRIVATE, CALL],

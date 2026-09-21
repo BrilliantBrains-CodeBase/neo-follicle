@@ -29,10 +29,10 @@ export default function Home() {
       <CredibilityBar />
       <About />
       <Services />
-      <WhyNeoFollicle />
+      <TreatmentGallery />
       <Process />
       <Celebrities />
-      <TreatmentGallery />
+      <WhyNeoFollicle />
       <Videos />
       <CommonQuestions />
       <ContactUs />

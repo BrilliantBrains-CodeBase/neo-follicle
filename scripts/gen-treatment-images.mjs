@@ -1,5 +1,7 @@
-// Treatment image pipeline -- turns the backup's WordPress originals into the
-// assets the ten treatment pages serve.
+// Treatment image pipeline -- turns source images into the assets the treatment
+// pages serve. A source is EITHER a WordPress original from the SEO backup
+// (`from`) OR a file committed under content/ (`local`) -- see the header of
+// treatment-assets.mjs for which is used where and why.
 //
 // Re-runnable, and it wipes public/treatments/ first: nothing in there is
 // hand-edited. Edit scripts/treatment-assets.mjs or this file, then
@@ -28,10 +30,17 @@ const MAX_WIDTH = 1200
 const QUALITY = 78
 
 const written = []
-async function write(servedPath, src) {
+async function write(servedPath, src, crop) {
   const file = path.join(root, 'public', servedPath.replace(/^\//, ''))
   fs.mkdirSync(path.dirname(file), { recursive: true })
-  const { size, width, height } = await sharp(src)
+  let img = sharp(src)
+  // `crop` is { left, top, width, height } in SOURCE pixels, applied before the
+  // resize. It exists for one reason: an illustration with something in the
+  // frame that must not ship (a third-party mark, a specific price). The rule
+  // above -- never crop -- stands for everything else; a crop here is a named,
+  // commented exception in treatment-assets.mjs, never a default.
+  if (crop) img = img.extract(crop)
+  const { size, width, height } = await img
     .resize(MAX_WIDTH, null, { withoutEnlargement: true })
     .webp({ quality: QUALITY })
     .toFile(file)
@@ -51,7 +60,12 @@ for (const [slug, set] of Object.entries(TREATMENT_IMAGES)) {
 
   const one = async (name, entry) => {
     const served = treatmentImagePath(slug, name)
-    sizes[served] = await write(served, resolveUpload(`/${entry.from}`))
+    if (!entry.from === !entry.local) {
+      throw new Error(`${slug}/${name}: set exactly one of \`from\` (backup) or \`local\` (content/)`)
+    }
+    const src = entry.local ? path.join(root, entry.local) : resolveUpload(`/${entry.from}`)
+    if (!fs.existsSync(src)) throw new Error(`${slug}/${name}: source not found: ${src}`)
+    sizes[served] = await write(served, src, entry.crop)
   }
 
   await one('hero', set.hero)

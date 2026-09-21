@@ -33,18 +33,6 @@
 import { BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
 
-/**
- * Intrinsic sizes are the real ones from public/treatments/sizes.json, written
- * by scripts/gen-treatment-images.mjs. 650x450 is this set's common size --
- * anything else is passed explicitly at the call site.
- */
-const img = (n: string, alt: string, width = 650, height = 450) => ({
-  src: `/treatments/low-level-laser-therapy/${n}.webp`,
-  alt,
-  width,
-  height,
-})
-
 const data: TreatmentPageData = {
   slug: 'low-level-laser-therapy',
   hero: {
@@ -54,7 +42,12 @@ const data: TreatmentPageData = {
       'LLLT is a non-invasive treatment option considered for selected patients experiencing hair thinning.',
       'It uses low-powered red light to support scalp circulation and follicle function, with no needles, no incisions and no recovery time.',
     ],
-    image: img('hero', 'A man with a full head of hair and a trimmed beard.'),
+    image: {
+      src: '/treatments/low-level-laser-therapy/hero.webp',
+      alt: 'A reclining man having his scalp treated under a red-light therapy device.',
+      width: 1200,
+      height: 1200,
+    },
     badges: [
       'Non-Invasive',
       'No Downtime',
@@ -128,7 +121,6 @@ const data: TreatmentPageData = {
         'Laser caps, worn while going about other activities',
         'Clinic devices, which are more powerful and more focused',
       ],
-      image: img('section-1', 'A woman parting her hair to show early thinning.'),
     },
   ],
   faq: {

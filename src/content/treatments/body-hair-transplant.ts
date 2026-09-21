@@ -27,9 +27,9 @@ const data: TreatmentPageData = {
     ],
     image: {
       src: '/treatments/body-hair-transplant/hero.webp',
-      alt: 'A man with limited scalp donor hair being assessed for body hair transplantation.',
-      width: 650,
-      height: 450,
+      alt: 'A man with body hair, beside inset close-ups of a body donor area being assessed.',
+      width: 1200,
+      height: 1200,
     },
     badges: ['Evaluated Case by Case', 'Doctor-Led Donor Planning'],
     ctas: [BOOK, CALL],

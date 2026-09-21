@@ -30,18 +30,6 @@
 import { BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
 
-/**
- * Intrinsic sizes are the real ones from public/treatments/sizes.json, written
- * by scripts/gen-treatment-images.mjs. 650x450 is this set's common size --
- * anything else is passed explicitly at the call site.
- */
-const img = (n: string, alt: string, width = 650, height = 450) => ({
-  src: `/treatments/stem-cell-therapy-for-hair-loss-in-bangalore/${n}.webp`,
-  alt,
-  width,
-  height,
-})
-
 const data: TreatmentPageData = {
   slug: 'stem-cell-therapy-for-hair-loss-in-bangalore',
   hero: {
@@ -51,7 +39,12 @@ const data: TreatmentPageData = {
       'Hair restoration isn\'t always about replacing lost hair—sometimes it\'s about helping weakened follicles perform better.',
       'At Neo Follicle Hair Transplant Clinic, Stem Cell Hair Therapy is offered as part of a personalized treatment approach for suitable candidates experiencing hair thinning. Every recommendation is based on scalp evaluation, follicle health, and long-term treatment planning under the guidance of Dr. Sandeep Mahapatra.',
     ],
-    image: img('hero', 'A man with dense hair volume after regenerative hair treatment.'),
+    image: {
+      src: '/treatments/stem-cell-therapy-for-hair-loss-in-bangalore/hero.webp',
+      alt: 'A clinician injecting a reclining man’s scalp, with inset illustrations of stem cells and a hair follicle.',
+      width: 1200,
+      height: 1200,
+    },
     badges: [
       'Non-Surgical',
       'Dermatologist-Led',
@@ -73,7 +66,6 @@ const data: TreatmentPageData = {
         'Hair loss pattern',
         'Medical history',
       ],
-      image: img('section-1', 'Before and after a course of non-surgical hair loss treatment.'),
       closing: 'Every consultation evaluates these before any treatment is recommended.',
     },
     {

@@ -26,7 +26,12 @@ const data: TreatmentPageData = {
       'If you’ve previously undergone a hair transplant that didn’t meet your expectations, the next step isn’t simply adding more grafts—it’s understanding what went wrong.',
       'Neo Follicle evaluates previous transplant work before recommending a personalized repair plan.',
     ],
-    image: img('hero', 'A man considering corrective treatment after an earlier hair transplant.'),
+    image: {
+      src: '/treatments/failed-hair-transplant-repair-in-bangalore/hero.webp',
+      alt: 'A surgeon in loupes working along a reclining patient’s freshly marked hairline.',
+      width: 1200,
+      height: 1200,
+    },
     badges: ['Previous Work Assessed First', 'Donor Strength Protected'],
     ctas: [BOOK, CALL],
   },

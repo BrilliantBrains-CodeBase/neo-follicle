@@ -33,18 +33,6 @@
 import { BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
 
-/**
- * Intrinsic sizes are the real ones from public/treatments/sizes.json, written
- * by scripts/gen-treatment-images.mjs. 650x450 is this set's common size --
- * anything else is passed explicitly at the call site.
- */
-const img = (n: string, alt: string, width = 650, height = 450) => ({
-  src: `/treatments/qr678-hair-treatment-in-bangalore/${n}.webp`,
-  alt,
-  width,
-  height,
-})
-
 const data: TreatmentPageData = {
   slug: 'qr678-hair-treatment-in-bangalore',
   hero: {
@@ -54,7 +42,12 @@ const data: TreatmentPageData = {
       'QR678 is one of the advanced treatment options considered for suitable patients experiencing hair thinning.',
       'Every recommendation follows personalized evaluation.',
     ],
-    image: img('hero', 'A man with thinning hair across the frontal scalp.'),
+    image: {
+      src: '/treatments/qr678-hair-treatment-in-bangalore/hero.webp',
+      alt: 'A clinician injecting a reclining man’s scalp, with an inset of a vial of QR678.',
+      width: 1200,
+      height: 1200,
+    },
     badges: [
       'Peptide-Based',
       'Dermatologist-Led',
@@ -82,7 +75,6 @@ const data: TreatmentPageData = {
         'Progressive hair fall',
         'Living follicles requiring support',
       ],
-      image: img('section-1', 'Before and after a course of medical hair loss treatment.'),
     },
     {
       kind: 'featureGrid',

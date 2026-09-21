@@ -11,12 +11,14 @@
  * contact, privacy, terms, maintenance) are NOT built here -- they need new
  * components rather than a data module, and two of them would need new routes.
  *
- * IMAGE NOTE: the hero and both section photographs are the clinic's own
- * premises from the capture -- reception, a consulting room and a procedure
- * room. For a page whose whole job is to make travelling here feel organised,
- * the rooms a patient will actually sit in are the right imagery. The capture
- * also holds QMCH-branded lab and pharmacy photographs; those are a different
- * organisation and are deliberately not used.
+ * IMAGE NOTE: the hero is the client's travel illustration (an airport
+ * departures hall with Bangalore signage), from the set in content/Zoho
+ * WorkDrive-3/. The two section photographs are still the clinic's own premises
+ * from the old page's capture -- a consulting room and a procedure room -- so
+ * the page keeps what a patient will actually sit in alongside the picture of
+ * the journey. The old reception hero was replaced. The capture also holds
+ * QMCH-branded lab and pharmacy photographs; those are a different organisation
+ * and are deliberately not used.
  *
  * COST: the live page publishes a region-by-region price comparison table in US
  * dollars. It is not reproduced -- the figures carry no date, and an undated
@@ -69,7 +71,12 @@ const data: TreatmentPageData = {
       // The brief's third hero paragraph is the next section's `intro`. The
       // hero lede is capped at two -- see the note on `lede` in ./types.
     ],
-    image: img('hero', 'The reception area at Neo Follicle Hair Transplant Clinic, Bangalore.', 1200, 900),
+    image: {
+      src: '/treatments/hair-transplant-medical-tourism-in-bangalore/hero.webp',
+      alt: 'A traveller holding a passport and boarding pass in an airport departures hall, with Bangalore and a clinical procedure shown alongside.',
+      width: 1200,
+      height: 1200,
+    },
     badges: [
       '500+ International Patients',
       'Doctor-Led Planning',

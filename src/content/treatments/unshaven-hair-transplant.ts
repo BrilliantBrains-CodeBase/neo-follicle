@@ -24,7 +24,12 @@ const data: TreatmentPageData = {
       // The brief's third hero paragraph is the next section's `intro`. The
       // hero lede is capped at two -- see the note on `lede` in ./types.
     ],
-    image: img('hero', 'A man with a full hairstyle after an unshaven hair transplant.'),
+    image: {
+      src: '/treatments/unshaven-hair-transplant/hero.webp',
+      alt: 'A man with a full, styled hairstyle looking down, beside inset close-ups of a hairline and a scalp being examined.',
+      width: 1200,
+      height: 1200,
+    },
     badges: ['Keep Your Existing Hairstyle', 'Suitability Decided Clinically'],
     ctas: [BOOK, CALL],
   },

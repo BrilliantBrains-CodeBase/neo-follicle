@@ -25,9 +25,9 @@ const data: TreatmentPageData = {
     ],
     image: {
       src: '/treatments/hair-transplant-cost-in-bangalore/hero.webp',
-      alt: 'The reception at Neo Follicle Hair Transplant Clinic, Bangalore.',
+      alt: 'A hand holding Indian rupee notes in front of a blurred procedure room, with an invoice on the desk.',
       width: 1200,
-      height: 900,
+      height: 792,
     },
     ctas: [COST, CALL],
   },

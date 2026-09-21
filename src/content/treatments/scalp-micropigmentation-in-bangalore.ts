@@ -53,7 +53,12 @@ const data: TreatmentPageData = {
       'SMP creates the visual appearance of greater hair density through carefully placed pigments.',
       'It does not regrow hair. It is a cosmetic treatment, planned alongside medical or surgical options rather than in place of them.',
     ],
-    image: img('hero', 'A man with a closely cropped hairstyle and even scalp coverage.'),
+    image: {
+      src: '/treatments/scalp-micropigmentation-in-bangalore/hero.webp',
+      alt: 'A man with a closely shaved head while a technician applies scalp micropigmentation with a fine pen.',
+      width: 1200,
+      height: 1200,
+    },
     badges: [
       'Non-Surgical',
       'Immediate Effect',

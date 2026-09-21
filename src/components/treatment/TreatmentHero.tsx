@@ -54,8 +54,31 @@ import { CtaRow } from './shell'
 
 const RISE = 'animate-fadeInUp motion-reduce:animate-none'
 
+/**
+ * How near to square a source must be to be shown WHOLE rather than cropped.
+ *
+ * The image column stretches to the height of the text beside it and covers
+ * that box. Right for a landscape photograph, which loses nothing that matters
+ * to a centre crop. Wrong for the client's illustration set: 19 of the pages'
+ * heroes are 1:1 pictures whose key content -- a vial label, a "BANGALORE" sign,
+ * a before/after inset -- sits at the RIGHT EDGE. The box is 450px wide and
+ * 460-660px tall, so a square covering it shows only 68-97% of its width, and
+ * the crop took exactly those pieces ("STEM CELLS" became "STEM", "BANGALORE"
+ * became "BANGALOR", the QR678 label was cut mid-word).
+ *
+ * So a near-square source is not cropped: it gets a square box and is centred
+ * against the text. That is the `items-center` stranding the docblock above
+ * retired -- but that was a 311px image against a ~900px column, and this is a
+ * 450px one against 500-660, which reads as a framed picture on the dark card
+ * rather than dead space. Anything less square keeps the stretch-and-cover.
+ */
+const WHOLE_MIN = 0.87
+const WHOLE_MAX = 1.15
+
 export default function TreatmentHero({ hero }: { hero: TreatmentPageData['hero'] }) {
   const badges = hero.badges ?? []
+  const ratio = hero.image.width / hero.image.height
+  const whole = ratio >= WHOLE_MIN && ratio <= WHOLE_MAX
 
   return (
     <section className="px-0 md:px-5 lg:px-10">
@@ -116,17 +139,27 @@ export default function TreatmentHero({ hero }: { hero: TreatmentPageData['hero'
         </div>
 
         {/*
-          Right column -- 35% tablet, 38% desktop. The row is `align-items:
-          stretch` by default, so this column matches the left column's height
-          and the `h-full` below resolves against it. That is what stops the
-          photograph floating in dead space.
+          Right column -- 35% tablet, 38% desktop. For a landscape photograph the
+          row is `align-items: stretch`, so this column matches the left column's
+          height and the `h-full` below resolves against it; that is what stops
+          the photograph floating in dead space. A 650x450 source covering a
+          ~450x440 box upscales about 1.2x -- imperceptible on a photograph, and
+          the same trade DoctorHero makes with the portrait. Only dandruff and the
+          conditions index are still on one.
 
-          A 650x450 source (18 of the 20 pages) covering a ~450x440 box
-          upscales about 1.2x. Imperceptible on a photograph, and the same
-          trade DoctorHero already makes with the portrait.
+          A near-square source (see WHOLE_MIN) is not stretched: it takes a
+          square box, is centred on the row, and is NOT put under the gradient.
+          The gradient is the reference's ::before overlay, which darkens the
+          lower 65% of the photograph so text can sit over it. Nothing sits over
+          this image, so on an illustration it only dimmed the labels and signs
+          the picture is there to show.
         */}
-        <div className="relative w-full md:w-[35%] lg:w-[38%]">
-          <div className={`relative isolate h-full min-h-[280px] overflow-hidden rounded ${RISE} lg:min-h-[440px]`}>
+        <div className={`relative w-full md:w-[35%] lg:w-[38%] ${whole ? 'md:self-center' : ''}`}>
+          <div
+            className={`relative isolate overflow-hidden rounded ${RISE} ${
+              whole ? 'aspect-square' : 'h-full min-h-[280px] lg:min-h-[440px]'
+            }`}
+          >
             <img
               src={hero.image.src}
               alt={hero.image.alt}
@@ -136,13 +169,12 @@ export default function TreatmentHero({ hero }: { hero: TreatmentPageData['hero'
               fetchPriority="high"
               className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
             />
-            {/* The reference's ::before overlay, at its --overlay-opacity:0.75.
-                Its own layer rather than a gradient on the image node, so the
-                photograph can be swapped without retuning anything. */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#02010100_35%,#1A1A1A_100%)] opacity-75"
-            />
+            {!whole && (
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#02010100_35%,#1A1A1A_100%)] opacity-75"
+              />
+            )}
           </div>
         </div>
       </div>

@@ -53,7 +53,12 @@ const data: TreatmentPageData = {
     lede: [
       'Exosome Therapy is considered for selected patients seeking regenerative hair restoration planning under dermatologist supervision.',
     ],
-    image: img('hero', 'A man with restored hair density after regenerative treatment.'),
+    image: {
+      src: '/treatments/exosome-hair-treatment-in-bangalore/hero.webp',
+      alt: 'A clinician treating a reclining man’s scalp, with an Exosome Therapy vial and box on the tray beside him.',
+      width: 1200,
+      height: 1200,
+    },
     badges: [
       'Regenerative Signalling',
       'Dermatologist Supervised',

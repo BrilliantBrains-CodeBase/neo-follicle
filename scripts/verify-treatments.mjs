@@ -112,6 +112,29 @@ orphans.length
   ? fail('no orphaned generated images', orphans.join(', '))
   : pass('no orphaned generated images -- every file gen-treatment-images wrote is used')
 
+/* ---- 4b. declared width/height match the file ------------------------------ */
+// Every <img> carries width/height so the browser reserves its box before the
+// file lands. Those numbers are typed by hand into the data modules, and a wrong
+// pair does not error -- it silently costs layout shift, on the hero, which is
+// the LCP element. gen-treatment-images.mjs writes the true sizes to
+// public/treatments/sizes.json; this holds the rendered markup to them.
+const sizes = JSON.parse(fs.readFileSync(path.join(pub, 'treatments/sizes.json'), 'utf8'))
+const dimBad = []
+for (const [slug, html] of docs) {
+  for (const tag of html.matchAll(/<img\b[^>]*>/g)) {
+    const src = tag[0].match(/\bsrc="(\/treatments\/[^"]+)"/)?.[1]
+    if (!src || !sizes[src]) continue
+    const w = Number(tag[0].match(/\bwidth="(\d+)"/)?.[1])
+    const h = Number(tag[0].match(/\bheight="(\d+)"/)?.[1])
+    if (w !== sizes[src].width || h !== sizes[src].height) {
+      dimBad.push(`${slug}: ${src} declares ${w}x${h}, file is ${sizes[src].width}x${sizes[src].height}`)
+    }
+  }
+}
+dimBad.length
+  ? fail('every <img> declares its true width and height', [...new Set(dimBad)].join('\n      '))
+  : pass('every treatment <img> declares the width and height of its file')
+
 /* ---- 5. internal links ----------------------------------------------------- */
 const dangling = new Set()
 for (const [slug, html] of docs) {

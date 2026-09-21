@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { Square } from './icons'
 
 /**
- * Home treatment gallery -- SECTION 9, Results (Before & After).
+ * Home treatment gallery -- a visual overview of the clinic's treatment
+ * categories.
  *
  * Design ported from the Folixa reference, home section 8 -- Elementor
  * container `c5e604c`, its heading block `af7a15b` and its
@@ -67,17 +68,15 @@ import { Square } from './icons'
  *     one, so it sits in the heading block at `text-body-lg`.
  *   - The disclaimer block and the CTA are added. The doc requires both and
  *     the reference has a slot for neither.
- *   - No `capitalize` on the h2, unlike Hero and the kit's h1/h2 global. Our
- *     heading is "Before and After: Real Hair Restoration Journeys" and CSS
- *     `capitalize` would render "Before And After", altering the client's copy
- *     on screen.
+ *   - No `capitalize` on the h2, unlike Hero and the kit's h1/h2 global. The
+ *     authored title already carries the intended casing.
  *   - Scrims are added behind the labels. See LABEL_SCRIM and CELL_SCRIM
  *     below: the reference does not need them, our photographs do.
  *   - Images are <img> layers, not CSS background-image, so they get
  *     loading="lazy", decoding="async" and intrinsic dimensions. Same call as
  *     About and Services. All six keep real alt text rather than being
- *     aria-hidden when inactive, so the prerendered HTML carries six
- *     keyword-aware alts (the doc's final recommendation 6).
+ *     aria-hidden when inactive, so the prerendered HTML carries six useful
+ *     descriptions.
  *
  * `text-base` is ambiguous here (Tailwind font size vs the `base` colour
  * token), so white text uses `text-white` -- same call as Hero, About,
@@ -118,67 +117,41 @@ const LABEL_SCRIM = `pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h
 const CELL_SCRIM = `absolute inset-x-0 top-0 -z-10 h-full md:hidden ${SCRIM_GRADIENT}`
 
 /**
- * SECTION 9's RESULT TABS, verbatim, mapped to the live site's own gallery
- * categories (neofollicle-seo-backup/pages/image-gallery/raw.html).
- *
- * Every photo is a REAL Neo Follicle before/after, not stock -- so unlike
- * /hero.webp and the /services/ set these carry no replace-before-launch TODO.
- * Each source is a self-contained 650x450 composite whose patient photos sit
- * inside a #24363F frame with "Before"/"After" burned in, so each one is padded
- * onto a 1600x1200 canvas in that same #24363F before conversion: the padding
- * is invisible, and it is what stops the reference's object-cover crop from
- * slicing the captions off at any viewport height. Do not re-export these from
- * the 650x450 originals without repeating that step.
- *
- * Note the live site files named `female*.png` (no `-1` suffix) sit under its
- * BEARD heading and only `female-*-1.png` under Female Hair Restoration -- the
- * mapping below follows the rendered gallery, not the filenames.
- *
- * THREE THINGS FLAGGED FOR CLIENT REVIEW:
- *
- *   1. The Failed Repair tab has no genuine repair result to show. All three
- *      assets on the live gallery (Failed-Hair-Transplant-1/2/3) are photos of
- *      pre-repair damage from OTHER clinics, with captions burned in
- *      ("Unnatural hairlines, very low density, doll's hair appearance",
- *      "Visible Scars. Pluggy Appearance"). Under a heading reading "Real Hair
- *      Restoration Journeys" that risks being read as our outcome, so the alt
- *      text below says plainly that it is the state before corrective work.
- *      Ask the client for a real repair before/after.
- *   2. Several hair-transplant composites carry "NEO FOLLICLE ... BHUBANESWAR"
- *      clinic signage while this site is the Marathahalli, Bangalore clinic.
- *   3. Most composites carry burned-in eye bars; the eyebrow and GFC/PRP ones
- *      do not. Confirm patient consent for the unmasked images.
+ * SECTION 9's RESULT TABS, verbatim, mapped to the six treatment photographs
+ * supplied in content/gallery. The source PNGs are normalized to 1600x900
+ * WebP files under public/gallery so the full-bleed cross-fade stays crisp
+ * without shipping the 2-6MB originals to every home-page visitor.
  */
 const CATEGORIES = [
   {
     label: 'Hair Transplant',
     img: '/gallery/hair-transplant.webp',
-    alt: 'Hair transplant before and after: a receding frontal hairline and thinning crown, then restored density and a rebuilt hairline.',
+    alt: 'A Neo Follicle surgeon performing a hair transplant procedure on a patient.',
   },
   {
     label: 'Beard Transplant',
     img: '/gallery/beard.webp',
-    alt: 'Beard transplant before and after: a patchy jawline marked out for grafting, then an even, full beard.',
+    alt: 'A clinician marking the beard transplant outline along a patient’s cheek and jaw.',
   },
   {
     label: 'Female Restoration',
     img: '/gallery/female.webp',
-    alt: 'Female hair restoration before and after: diffuse thinning across the crown, then denser coverage over the same area.',
+    alt: 'A clinician performing a female hair restoration treatment along the frontal hairline.',
   },
   {
     label: 'Eyebrow',
     img: '/gallery/eyebrow.webp',
-    alt: 'Eyebrow restoration before and after: sparse, over-plucked brows, then a rebuilt brow line with natural hair angle.',
+    alt: 'A precision device being used for an eyebrow treatment while the patient wears eye protection.',
   },
   {
     label: 'Failed Repair',
     img: '/gallery/repair.webp',
-    alt: 'A hair transplant performed elsewhere, shown before corrective work: an unnatural hairline with very low density.',
+    alt: 'A surgeon performing a corrective hair transplant procedure on a patient’s frontal scalp.',
   },
   {
     label: 'GFC & PRP',
     img: '/gallery/gfc-prp.webp',
-    alt: 'GFC and PRP therapy before and after: a widening centre parting, then thicker hair along the same parting.',
+    alt: 'A clinician administering a regenerative GFC or PRP treatment into a patient’s scalp.',
   },
 ]
 
@@ -196,11 +169,11 @@ export default function TreatmentGallery() {
             Treatment Gallery
           </p>
           <h2 className="font-head text-h2 text-secondary">
-            Before and After: Real Hair Restoration Journeys
+            Explore Our Hair Restoration Treatments
           </h2>
           <p className="text-body-lg text-body">
-            Browse outcomes by procedure. Individual results vary with age, baldness grade, donor
-            availability, scalp condition and aftercare.
+            Discover the surgical and regenerative options available at Neo Follicle, each planned
+            around your diagnosis, donor area and restoration goals.
           </p>
         </div>
 
@@ -217,7 +190,7 @@ export default function TreatmentGallery() {
               src={category.img}
               alt={category.alt}
               width={1600}
-              height={1200}
+              height={900}
               loading="lazy"
               decoding="async"
               className={`absolute inset-0 -z-10 h-full w-full object-cover transition-all duration-700 ease-out motion-reduce:transition-none ${

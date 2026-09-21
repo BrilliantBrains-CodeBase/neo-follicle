@@ -35,18 +35,6 @@
 import { BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
 
-/**
- * Intrinsic sizes are the real ones from public/treatments/sizes.json, written
- * by scripts/gen-treatment-images.mjs. 650x450 is this set's common size --
- * anything else is passed explicitly at the call site.
- */
-const img = (n: string, alt: string, width = 650, height = 450) => ({
-  src: `/treatments/best-prp-hair-treatment-in-bangalore/${n}.webp`,
-  alt,
-  width,
-  height,
-})
-
 const data: TreatmentPageData = {
   slug: 'best-prp-hair-treatment-in-bangalore',
   hero: {
@@ -56,7 +44,12 @@ const data: TreatmentPageData = {
       'When hair thinning begins early, strengthening existing follicles may become an important part of long-term hair restoration planning.',
       'At Neo Follicle, PRP treatment is recommended only after understanding your scalp condition and hair loss pattern.',
     ],
-    image: img('hero', 'A woman parting her hair to show thinning across the crown.'),
+    image: {
+      src: '/treatments/best-prp-hair-treatment-in-bangalore/hero.webp',
+      alt: 'A clinician injecting a reclining man’s scalp, with an inset showing a blood sample separated into platelet-rich plasma.',
+      width: 1200,
+      height: 1200,
+    },
     badges: [
       'Uses Your Own Plasma',
       'Dermatologist-Led',
@@ -87,7 +80,6 @@ const data: TreatmentPageData = {
         'Minimal downtime',
         'Long-term maintenance planning',
       ],
-      image: img('section-1', 'A man with a full head of hair and a trimmed beard.'),
     },
     {
       kind: 'process',

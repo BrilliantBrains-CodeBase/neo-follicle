@@ -23,7 +23,12 @@ const data: TreatmentPageData = {
       'Your eyebrows play an important role in facial balance and expression. Whether you’ve experienced thinning due to over-plucking, genetics, scars, or hair loss, eyebrow restoration at Neo Follicle is designed to recreate natural-looking brows with careful attention to direction, angle, and density.',
       'Every treatment is planned by Dr. Sandeep Mahapatra, ensuring that the restored eyebrows complement your facial features rather than appearing artificially dense.',
     ],
-    image: img('hero', 'A woman having her eyebrow shape assessed before restoration.'),
+    image: {
+      src: '/treatments/eyebrow-restoration-in-bangalore/hero.webp',
+      alt: 'A woman with defined eyebrows beside close-up insets of an eyebrow being treated.',
+      width: 1200,
+      height: 1200,
+    },
     badges: ['Individually Placed Follicles', 'Designed for Facial Symmetry'],
     ctas: [BOOK, CALL],
   },

@@ -70,7 +70,6 @@ const data: TreatmentPageData = {
         'Scalp discomfort',
         'Recurring dandruff',
       ],
-      image: img('section-1', 'A man smiling after a course of scalp treatment.'),
     },
     {
       kind: 'prose',

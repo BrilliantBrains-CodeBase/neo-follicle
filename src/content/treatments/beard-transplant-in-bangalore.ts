@@ -35,7 +35,12 @@ const data: TreatmentPageData = {
     lede: [
       'Whether you’re dealing with patchy growth, uneven density, or beard gaps, Neo Follicle offers personalized beard restoration designed around natural facial hair direction and density.',
     ],
-    image: img('hero', 'A man with patchy beard growth along the cheeks and jawline.'),
+    image: {
+      src: '/treatments/beard-transplant-in-bangalore/hero.webp',
+      alt: 'A man reclining in a treatment chair while a clinician marks a beard line along his jaw.',
+      width: 1200,
+      height: 1200,
+    },
     badges: ['Doctor-Led Planning', 'Natural Beard Design'],
     ctas: [BOOK, CALL],
   },

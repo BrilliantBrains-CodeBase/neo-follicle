@@ -2,9 +2,12 @@ import { useEffect, useState, type CSSProperties } from 'react'
 import { TRACK } from './carousel'
 import Reveal from './Reveal'
 import { Square } from './icons'
+import gallery from '../content/gallery/image-gallery'
+import { GALLERY_IMAGES } from '../content/gallery/image-gallery.generated'
 
 /**
- * Home "Why Neo Follicle" section -- SECTION 5, Why Choose Neo Follicle.
+ * Home before-and-after gallery, using the original "Why Neo Follicle" card
+ * carousel design.
  *
  * Design ported from the Folixa reference, home section 5 -- Elementor
  * container `8db5313`, its grid `1896ad8`, its cards `da00fb9`/`a30f629`/
@@ -19,13 +22,9 @@ import { Square } from './icons'
  * band (768-1024) -> `md:`, its mobile (<=767) -> unprefixed. Same call as
  * Hero, About and Services.
  *
- * Copy is verbatim from content/home-page/Neo-Follicle-Website-Content.md
- * SECTION 5. Nothing here is authored.
- *
- * THE ONE STRUCTURAL CHANGE. The reference is a static 3-up grid: outer cards
- * are text-then-image on `line` grey, the middle one is image-then-text on
- * `accent` blue. The doc has SIX points, not three. Rather than drop half the
- * copy, the row becomes an auto-sliding carousel carrying all six, and the
+ * The reference is a static 3-up grid: outer cards are text-then-image on
+ * `line` grey, the middle one is image-then-text on `accent` blue. The row is
+ * an auto-sliding carousel carrying one result for all eight treatments. The
  * accent treatment follows whichever card is currently centred -- so at any
  * frame the viewport shows exactly the reference's three-card composition.
  * Card geometry, borders, radii, tints, gaps and type are unchanged.
@@ -34,37 +33,11 @@ import { Square } from './icons'
  * becomes a native scroll-snap row (carousel.ts), because a translateX and a
  * scroll container cannot share an element -- the transform would fight the
  * finger. So on mobile: no autoplay, no duplicate slide set, no centred card,
- * no dots; just six cards you swipe. Everything `isMobile` guards below is
+ * no dots; just eight cards you swipe. Everything `isMobile` guards below is
  * that switch.
  *
- * Five smaller departures:
- *
- *   - Dot controls are added. The reference has none, but an auto-rotating
- *     carousel needs a way to stop and steer it (WCAG 2.2.2 Pause, Stop, Hide)
- *     and keyboard users need a way in. Rotation also pauses on hover, on
- *     focus-within and while the tab is hidden.
- *   - A subhead is rendered. The reference section has none; the doc supplies
- *     one, so it sits in the heading block at `text-body-lg`.
- *   - Card titles are <h3> carrying the `text-h5` token: the reference's
- *     SIZE (its `dfbf025` typography resolves to exactly the h5 token), but
- *     the right outline level under this section's h2 and Hero's single h1
- *     (the doc's final recommendation 1). Same call Services made.
- *   - No `capitalize` on the h2. DESIGN.md 3 has the kit capitalising h1/h2,
- *     but neither Hero nor Services applies it -- our copy is already title
- *     case and the transform would render "Built On", "Not Pressure". Matching
- *     the sibling sections matters more here than matching the kit.
- *   - Point 5's photo is a real Neo Follicle before/after, but the signage in
- *     frame reads "NEO FOLLICLE ... BHUBANESWAR" while this site is the
- *     Marathahalli, Bangalore clinic. FLAGGED FOR CLIENT REVIEW.
- *
- * IMAGE PROVENANCE, CHANGED. This section used to be the one place on the page
- * where every image was a real Neo Follicle photograph out of
- * neofollicle-seo-backup/media. Five of the six have since been replaced with
- * client-supplied AI-GENERATED renders (Homepage/Why Choose Neo Follicle/).
- * They are not photographs: they depict a likeness of Dr. Sandeep in a clinic
- * that is not his, and the signage rendered into them reads "ADVANCED HAIR
- * RESTORATION", not Neo Follicle. Only point 5 (`results`) is still a real
- * photograph. See the per-image note on POINTS below.
+ * The cards reuse the generated full-gallery content so image paths,
+ * dimensions, alt text and the failed-repair caveat have one source of truth.
  */
 
 /** Matches the track's transition below; drives the loop's snap-back timing. */
@@ -73,74 +46,26 @@ const DURATION_MS = 500
 /** How long each card holds the centre before the track advances. */
 const INTERVAL_MS = 4000
 
-/**
- * SECTION 5's point table, verbatim.
- *
- * Every `img` is subject-anchored-cropped to the kit's 3:2 and re-encoded to
- * webp at 650x434. Five come from the client's Homepage/Why Choose Neo
- * Follicle/ delivery and are AI-GENERATED, not photographs:
- *
- *   diagnosis   Dermatologist-Led Diagnosis.png
- *   planning    Doctor-Performed Planning (2).png
- *   implanters  FUE and NFT Implanters 1.png
- *   treatments  Surgical & Non-Surgical Options.png
- *   pricing     Transparent, Honest Pricing.png
- *
- * `results` is unchanged and is still a real Neo Follicle photograph, from
- * neofollicle-seo-backup/media/files/wp-content/uploads/2026/08/2-1.png.
- *
- * FLAGGED FOR CLIENT REVIEW, two defects carried in with the AI set:
- *
- *   - `pricing` renders a coat badge reading "Dr. Nitiin P.R. Hache, Hair
- *     Restoration Surgeon" -- a surgeon who does not exist -- and it is legible
- *     at this crop. A fabricated clinician's name on a medical page is the one
- *     thing here that cannot survive launch. Recrop cannot remove it without
- *     losing the subject; the image needs regenerating or replacing.
- *   - Two source filenames do not describe their contents. "Transparent,
- *     Honest Pricing" depicts a hairline-planning consultation and "Surgical &
- *     Non-Surgical Options" depicts surgical hairline marking, so both sit
- *     under card titles they do not illustrate. The titles are the client's own
- *     copy and stay; `alt` below describes what is actually in frame, which is
- *     what alt is for.
- */
-const POINTS = [
-  {
-    title: 'Dermatologist-Led Diagnosis',
-    copy: 'Your cause of hair loss is identified first, so you avoid unnecessary procedures.',
-    img: '/why/diagnosis.webp',
-    alt: 'A dermatologist at a consulting desk showing a patient a tablet with a scalp trichoscopy comparison.',
-  },
-  {
-    title: 'Doctor-Performed Planning',
-    copy: 'Dr. Sandeep designs the hairline, density and donor plan for every case personally.',
-    img: '/why/planning.webp',
-    alt: "A gloved hand marking a new hairline on a patient's forehead with a surgical pen.",
-  },
-  {
-    title: 'DHI-Certified Implantation',
-    copy: 'Dr. Sandeep is a Certified DHI Specialist (DHI Global, Greece); grafts are placed with DHI and NFT implanters for controlled angle, direction and density.',
-    img: '/why/implanters.webp',
-    alt: 'Close-up of densely placed follicular grafts along a recipient area, a fine forceps positioning one more.',
-  },
-  {
-    title: 'Surgical & Non-Surgical Options',
-    copy: 'Transplant, PRP, GFC, QR678, exosome, stem cell and laser therapy, all under one roof.',
-    img: '/why/treatments.webp',
-    alt: "A masked surgeon in scrubs drawing the planned hairline on a patient's scalp before a procedure.",
-  },
-  {
-    title: 'Natural, Permanent Results',
-    copy: 'Grafts placed to blend with your natural growth pattern and last long term.',
-    img: '/why/results.webp',
-    alt: 'Before and after photographs of a Neo Follicle hair transplant patient.',
-  },
-  {
-    title: 'Transparent, Honest Pricing',
-    copy: 'Cost shared after evaluation, with no hidden charges and EMI options.',
-    img: '/why/pricing.webp',
-    alt: 'A clinician talking a patient through before-and-after images on a consulting-room monitor.',
-  },
-]
+/** One representative image from each section of the full gallery. */
+const POINTS = gallery.sections.flatMap((section) => {
+  const image = GALLERY_IMAGES[section.id]?.[0]
+  if (!image) return []
+  return [
+    {
+      id: section.id,
+      title: section.label,
+      copy:
+        image.caption ??
+        section.subheading ??
+        section.lede ??
+        'See a representative before-and-after result from this treatment.',
+      img: image.thumb.src,
+      alt: image.alt,
+      width: image.thumb.width,
+      height: image.thumb.height,
+    },
+  ]
+})
 
 /**
  * The reference card `da00fb9`: 1px `line` border, 0.5rem radius, 1rem pad.
@@ -153,15 +78,27 @@ const CARD = 'flex h-full gap-gap-sm rounded border border-line bg-base p-4'
 const PANEL =
   'flex flex-1 flex-col justify-center gap-4 rounded p-gap-sm text-center transition-colors duration-500'
 
-/** Its image widget `00f6d40`: full width, 0.5rem radius. Sources are 3:2. */
-const IMAGE = 'aspect-[3/2] w-full rounded object-cover'
+/** Keep the original 3:2 card box without cropping a before/after composite. */
+const IMAGE = 'aspect-[3/2] w-full rounded bg-[#24363F] object-contain'
 
-function Card({ point, centred }: { point: (typeof POINTS)[number]; centred: boolean }) {
+function Card({
+  point,
+  centred,
+  duplicate = false,
+}: {
+  point: (typeof POINTS)[number]
+  centred: boolean
+  duplicate?: boolean
+}) {
   return (
     // DOM order is always panel-then-image so the title is read first; the
     // reference's centre card shows the image on top, which is a visual flip
     // only -- hence flex-col-reverse rather than reordering the children.
-    <div className={`${CARD} ${centred ? 'flex-col-reverse' : 'flex-col'}`}>
+    <a
+      href={`/image-gallery/#${point.id}`}
+      tabIndex={duplicate ? -1 : undefined}
+      className={`${CARD} ${centred ? 'flex-col-reverse' : 'flex-col'}`}
+    >
       <div className={`${PANEL} ${centred ? 'bg-accent' : 'bg-line'}`}>
         <h3 className="font-head text-h5 text-secondary">{point.title}</h3>
         <p className="text-body">{point.copy}</p>
@@ -169,13 +106,13 @@ function Card({ point, centred }: { point: (typeof POINTS)[number]; centred: boo
       <img
         src={point.img}
         alt={point.alt}
-        width={650}
-        height={434}
+        width={point.width}
+        height={point.height}
         loading="lazy"
         decoding="async"
         className={IMAGE}
       />
-    </div>
+    </a>
   )
 }
 
@@ -278,7 +215,7 @@ export default function WhyNeoFollicle() {
    * Duplicates exist only to make the transform's wrap seamless, and only on
    * the client -- the prerendered HTML carries each point, and each <h3>,
    * exactly once. On mobile there is no wrap to hide, and they would land as
-   * six extra cards a thumb can actually swipe to, so they are dropped.
+   * eight extra cards a thumb can actually swipe to, so they are dropped.
    */
   const slides = mounted && !reduced && !isMobile ? [...POINTS, ...POINTS] : POINTS
 
@@ -287,14 +224,14 @@ export default function WhyNeoFollicle() {
       {/* On this light ground the mark is `primary` and the label body colour -- same as Services. */}
       <p className="flex items-start gap-2 font-head text-h6 text-body">
         <Square className="mt-[3px] h-[14px] w-[14px] shrink-0 text-primary" />
-        Why Neo Follicle
+        Before &amp; After Gallery
       </p>
       <h2 className="font-head text-h2 text-secondary">
-        A Clinic Built on Diagnosis, Not Pressure
+        Real Results Across Every Treatment
       </h2>
       <p className="text-body-lg">
-        The result of a hair transplant depends on planning, graft handling and honest advice.
-        Here is where we focus.
+        View one representative case from each treatment and explore the range of patient
+        journeys in our full gallery.
       </p>
     </Reveal>
   )
@@ -356,7 +293,11 @@ export default function WhyNeoFollicle() {
                     >
                       {/* Nothing is centred in a free-scrolling track -- the
                           same call the reduced-motion grid above makes. */}
-                      <Card point={point} centred={!isMobile && slot === centred} />
+                      <Card
+                        point={point}
+                        centred={!isMobile && slot === centred}
+                        duplicate={slot >= POINTS.length}
+                      />
                     </div>
                   ))}
                 </div>

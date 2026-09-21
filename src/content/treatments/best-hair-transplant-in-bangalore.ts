@@ -36,7 +36,12 @@ const data: TreatmentPageData = {
       // The brief's third hero paragraph is the next section's `intro`. The
       // hero lede is capped at two -- see the note on `lede` in ./types.
     ],
-    image: img('hero', 'A man reviewing his receding hairline before a hair transplant consultation.'),
+    image: {
+      src: '/treatments/best-hair-transplant-in-bangalore/hero.webp',
+      alt: 'A surgeon in magnifying loupes implanting grafts along a reclining patient’s hairline in a clinic procedure room.',
+      width: 1200,
+      height: 1200,
+    },
     badges: ['Same-Day Procedure', 'Doctor-Led Planning', 'Natural Hairline Design', 'DHI-Certified Surgeon'],
     ctas: [BOOK, ANALYSIS, CALL],
   },
