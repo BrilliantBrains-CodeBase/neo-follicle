@@ -27,7 +27,7 @@ const data: VideoGalleryData = {
   h1: 'Explore Our Expert Videos on Hair Transplant & Hair Loss Treatments',
   subheading: 'Watch. Learn. Decide with Confidence.',
   lede:
-    'Get detailed answers, patient journeys, and expert tips from Dr. Sandeep Mahapatra—right here ' +
+    'Get detailed answers, patient journeys, and expert tips from Dr. Sandeep Mahapatra - right here ' +
     'on our Neo Follicle Transplant Video Gallery.',
 
   sections: [

@@ -54,25 +54,25 @@ const CARD = `flex flex-col gap-4 rounded border border-line bg-base p-8 ${FLOAT
 
 /** Condensed from content.md "FACULTY FOR CONFERENCES / WORKSHOPS". */
 const FACULTY = [
-  'HAIRCON 2025, Kashmir and HAIRCON 2019, Indore — Association of Hair Restoration Surgeons (AHRS) of India',
-  'DERMACON Jaipur 2025, Mangalore 2021, Mangalore 2017 and Coimbatore 2016 — IADVL',
+  'HAIRCON 2025, Kashmir and HAIRCON 2019, Indore - Association of Hair Restoration Surgeons (AHRS) of India',
+  'DERMACON Jaipur 2025, Mangalore 2021, Mangalore 2017 and Coimbatore 2016 - IADVL',
   'ISHRS 32nd World Congress, Denver, Colorado, October 2024',
   'World Congress on Aesthetic Dermatology, Bangkok 2018 and Shanghai 2019',
   'EADV Congress, Milan 2019 and Geneva 2017',
-  'DASIL World Congress — Dermatologic & Aesthetic Surgery International League',
-  'CUTICON Karnataka 2021 — panel discussion on hair transplant techniques',
+  'DASIL World Congress - Dermatologic & Aesthetic Surgery International League',
+  'CUTICON Karnataka 2021 - panel discussion on hair transplant techniques',
   'IADVL Torrent Dermatosurgery Workshop, Mysuru, February 2018',
-  'World Congress of Cosmetic Dermatology (WCOCD) 2017 — faculty and presenter',
+  'World Congress of Cosmetic Dermatology (WCOCD) 2017 - faculty and presenter',
   'First South Zone ACS(I) Live Dermatosurgery Workshop, Bengaluru, December 2016',
 ]
 
 /** Condensed from content.md "Research & Paper Presentations" and
     "Published Papers and Book Chapters". Titles are verbatim. */
 const RESEARCH = [
-  '“Study on the Efficacy of Platelet-Rich Fibrin Matrix in Hair Follicular Unit Transplantation in Androgenetic Alopecia Patients” — JCAD Online, 2024',
-  '“Hair Transplantation Update: Complications and Best Practices” — WCD Congress, Singapore, 2023',
-  '“Follicular Unit Extraction: Advances and Challenges” — EADV, Berlin, 2023',
-  '“Transection Rates in FUE Method: A Comparative Study” — ACSICON, Kerala, 2014',
+  '“Study on the Efficacy of Platelet-Rich Fibrin Matrix in Hair Follicular Unit Transplantation in Androgenetic Alopecia Patients” - JCAD Online, 2024',
+  '“Hair Transplantation Update: Complications and Best Practices” - WCD Congress, Singapore, 2023',
+  '“Follicular Unit Extraction: Advances and Challenges” - EADV, Berlin, 2023',
+  '“Transection Rates in FUE Method: A Comparative Study” - ACSICON, Kerala, 2014',
   '“Utilization of Health Care Services in Public and Private Healthcare in India: Causes and Determinants”, 2019',
   '“Quality of Care in Cancer: An Exploration of Patient Perspectives”',
   'Book chapter: “Theories of Tobacco Addiction”, in Tobacco Cessation: A Practice Manual for Primary Care Physicians',
@@ -131,7 +131,7 @@ export default function DoctorCredentials() {
                   <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <span className="text-body">
                     <span className="text-secondary">{credential.name}</span>
-                    {' — '}
+                    {' - '}
                     {credential.issuer}
                   </span>
                 </li>

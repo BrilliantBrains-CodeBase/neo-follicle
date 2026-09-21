@@ -31,7 +31,7 @@ const data: TreatmentPageData = {
     eyebrow: 'Advanced Restoration',
     h1: 'Direct Hair Transplant in Bangalore for Natural-Looking Hair Restoration',
     lede: [
-      'Permanent hair restoration isn’t about creating more hair—it’s about restoring your own hair in the right place, at the right angle, and with a plan that looks natural today and years from now.',
+      'Permanent hair restoration isn’t about creating more hair - it’s about restoring your own hair in the right place, at the right angle, and with a plan that looks natural today and years from now.',
       'At Neo Follicle Hair Transplant Clinic, every direct hair transplant is personally planned by Dr. Sandeep Mahapatra, combining dermatology-led diagnosis, advanced NFT implanters, and long-term donor preservation to create natural-looking results for men and women experiencing hair loss.',
       // The brief's third hero paragraph is the next section's `intro`. The
       // hero lede is capped at two -- see the note on `lede` in ./types.
@@ -52,7 +52,7 @@ const data: TreatmentPageData = {
       heading: 'Why Patients Choose Neo Follicle',
       lede: 'Instead of comparing clinics by price alone, patients choose Neo Follicle because every treatment follows a diagnosis-first approach.',
       intro:
-        'Whether you’re noticing a receding hairline, thinning crown, or advanced male pattern baldness, your treatment begins with understanding your scalp—not selling you a procedure.',
+        'Whether you’re noticing a receding hairline, thinning crown, or advanced male pattern baldness, your treatment begins with understanding your scalp - not selling you a procedure.',
       items: [
         { title: '20+ Years Experience', body: 'Dermatology-backed expertise in hair restoration.' },
         { title: '10,000+ Hair Transplants', body: 'Extensive experience across different hair loss patterns.' },
@@ -70,7 +70,7 @@ const data: TreatmentPageData = {
       kind: 'prose',
       heading: 'What Is a Direct Hair Transplant?',
       lede: [
-        'A direct hair transplant is a procedure that moves healthy hair follicles from the donor area—usually the back of the scalp—to areas affected by thinning or baldness.',
+        'A direct hair transplant is a procedure that moves healthy hair follicles from the donor area - usually the back of the scalp - to areas affected by thinning or baldness.',
         'At Neo Follicle, treatment planning considers:',
       ],
       points: [
@@ -90,7 +90,7 @@ const data: TreatmentPageData = {
       heading: 'Techniques We Offer: FUE, DHI and NFT',
       lede: [
         'Direct Hair Implantation (DHI) is an implanter-assisted technique where extracted grafts are placed directly into the recipient area, giving control over angle, depth, direction and density.',
-        'At Neo Follicle it’s offered alongside FUE and the clinic’s NFT implanter method—Dr. Sandeep, a DHI Global (Greece)-certified specialist, recommends the technique based on your case, not a fixed package.',
+        'At Neo Follicle it’s offered alongside FUE and the clinic’s NFT implanter method - Dr. Sandeep, a DHI Global (Greece)-certified specialist, recommends the technique based on your case, not a fixed package.',
       ],
     },
     {
@@ -196,7 +196,7 @@ const data: TreatmentPageData = {
 
   cta: {
     heading: 'Restore Your Hair with Expert Planning',
-    body: 'Every hair transplant at Neo Follicle begins with a detailed consultation—not a standard package.',
+    body: 'Every hair transplant at Neo Follicle begins with a detailed consultation - not a standard package.',
     ctas: [BOOK, ANALYSIS, CALL],
   },
 }

@@ -169,7 +169,7 @@ export default function CostOfHairTransplantInBangaloreLp() {
 
       <LpFaq
         name="cost-lp-faq"
-        heading="FAQs — Hair Transplant Cost in Bangalore"
+        heading="FAQs - Hair Transplant Cost in Bangalore"
         items={[
           {
             question: 'How is the cost of a hair transplant calculated?',
@@ -199,7 +199,7 @@ export default function CostOfHairTransplantInBangaloreLp() {
           {
             question: 'Why do prices vary so much between clinics in Bangalore?',
             answer:
-              'Prices depend on surgeon experience, technique, graft quality, safety protocols, and long-term results. Cheaper doesn’t always mean better—invest in results that last.',
+              'Prices depend on surgeon experience, technique, graft quality, safety protocols, and long-term results. Cheaper doesn’t always mean better - invest in results that last.',
           },
           {
             question: 'How does Neo Follicle’s pricing compare to other clinics?',
@@ -209,7 +209,7 @@ export default function CostOfHairTransplantInBangaloreLp() {
           {
             question: 'What’s the ROI of getting a hair transplant?',
             answer:
-              'A successful hair transplant is a one-time investment with lifelong results. It boosts your confidence, appearance, and sometimes even your career—making it well worth the cost for many of our patients.',
+              'A successful hair transplant is a one-time investment with lifelong results. It boosts your confidence, appearance, and sometimes even your career - making it well worth the cost for many of our patients.',
           },
         ]}
         ground="surface"

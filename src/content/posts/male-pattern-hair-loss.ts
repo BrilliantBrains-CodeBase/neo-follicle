@@ -229,7 +229,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "This blog will help you understand the science, stages, and proven treatment options for male pattern hair loss — without fear, shame, or internet confusion."
+          "v": "This blog will help you understand the science, stages, and proven treatment options for male pattern hair loss - without fear, shame, or internet confusion."
         }
       ]
     },
@@ -1652,7 +1652,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "A good surgeon should tell you what is possible — and what is not."
+          "v": "A good surgeon should tell you what is possible - and what is not."
         }
       ]
     },

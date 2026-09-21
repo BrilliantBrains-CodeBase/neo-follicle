@@ -2546,7 +2546,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "International Society of Hair Restoration Surgery — Androgenetic Alopecia Guide"
+                "v": "International Society of Hair Restoration Surgery - Androgenetic Alopecia Guide"
               }
             ]
           },
@@ -2577,7 +2577,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "International Society of Hair Restoration Surgery — Hair Restoration Glossary"
+                "v": "International Society of Hair Restoration Surgery - Hair Restoration Glossary"
               }
             ]
           },
@@ -2608,7 +2608,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "NCBI / StatPearls — Hair Transplantation"
+                "v": "NCBI / StatPearls - Hair Transplantation"
               }
             ]
           },
@@ -2639,7 +2639,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "PubMed Central — Is Every Patient of Hair Loss a Candidate for Hair Transplant?"
+                "v": "PubMed Central - Is Every Patient of Hair Loss a Candidate for Hair Transplant?"
               }
             ]
           },
@@ -2670,7 +2670,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "PubMed Central — Assessment of Safe Donor Zone of Scalp and Beard for FUE in Indian Men"
+                "v": "PubMed Central - Assessment of Safe Donor Zone of Scalp and Beard for FUE in Indian Men"
               }
             ]
           },

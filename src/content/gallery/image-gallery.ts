@@ -18,7 +18,7 @@ import type { ImageGalleryData } from './types'
 const data: ImageGalleryData = {
   h1: 'See What’s Possible with Expert Hair Restoration',
   lede:
-    'Explore our visual proof of transformation—from hair transplant success stories to advanced ' +
+    'Explore our visual proof of transformation - from hair transplant success stories to advanced ' +
     'treatments. Every image here tells a story of regained confidence.',
 
   sections: [
@@ -28,7 +28,7 @@ const data: ImageGalleryData = {
       heading: 'Hair Transplant Results',
       subheading: 'Natural Hairlines. Fuller Scalps. Real-Life Results.',
       lede:
-        'Our most popular procedure—watch how we restore receding hairlines and thinning crowns ' +
+        'Our most popular procedure - watch how we restore receding hairlines and thinning crowns ' +
         'for men of all ages.',
     },
     {
@@ -63,7 +63,7 @@ const data: ImageGalleryData = {
        * genuine repair before/after, at which point this can revert.
        */
       lede:
-        'These are cases that came to us after unsatisfactory work elsewhere—unnatural hairlines, ' +
+        'These are cases that came to us after unsatisfactory work elsewhere - unnatural hairlines, ' +
         'very low density and visible donor-area scarring. Each is shown as it presented, before ' +
         'corrective treatment. Repair planning begins with assessing what can be salvaged and what ' +
         'must be rebuilt.',
@@ -90,7 +90,7 @@ const data: ImageGalleryData = {
       id: 'gfc-prp-therapy-results',
       label: 'GFC & PRP',
       heading: 'GFC / PRP Therapy Results',
-      subheading: 'Stronger Roots, Thicker Hair—Thanks to Growth Factor Concentrate',
+      subheading: 'Stronger Roots, Thicker Hair - Thanks to Growth Factor Concentrate',
       lede:
         'Browse visual proof of hair strengthening and density enhancement using our next-gen GFC ' +
         'therapy.',

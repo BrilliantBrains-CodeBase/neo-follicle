@@ -272,7 +272,7 @@ const post: Post = {
         },
         {
           "t": "text",
-          "v": "It should make you look fresher, more confident, and naturally younger — not artificial."
+          "v": "It should make you look fresher, more confident, and naturally younger - not artificial."
         }
       ]
     },
@@ -3773,7 +3773,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "Hair Transplantation — StatPearls, NCBI Bookshelf"
+                "v": "Hair Transplantation - StatPearls, NCBI Bookshelf"
               }
             ]
           },
@@ -3800,7 +3800,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "Revision of the Unfavorable Result in Hair Transplantation — PMC"
+                "v": "Revision of the Unfavorable Result in Hair Transplantation - PMC"
               }
             ]
           },
@@ -3827,7 +3827,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "Reconstructive Hair Transplantation of the Face and Scalp — PMC"
+                "v": "Reconstructive Hair Transplantation of the Face and Scalp - PMC"
               }
             ]
           },
@@ -3854,7 +3854,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "FUE Hair Transplant: Benefits, Process & Recovery — International Society of Hair Restoration Surgery"
+                "v": "FUE Hair Transplant: Benefits, Process & Recovery - International Society of Hair Restoration Surgery"
               }
             ]
           },

@@ -30,7 +30,7 @@ import type { GalleryImage } from '../content/gallery/types'
 type Props = {
   images: GalleryImage[]
   index: number
-  /** Shown in the counter, e.g. "Beard Transplant Results — 3 of 15". */
+  /** Shown in the counter, e.g. "Beard Transplant Results - 3 of 15". */
   sectionHeading: string
   onClose: () => void
   onIndex: (next: number) => void
@@ -231,7 +231,7 @@ export default function Lightbox({ images, index, sectionHeading, onClose, onInd
         <div className="flex w-full flex-col items-center gap-2 text-center">
           <p id={captionId} className="text-body-lg text-base">
             <span className="font-head">{sectionHeading}</span>
-            <span className="text-line"> — {index + 1} of {images.length}</span>
+            <span className="text-line"> - {index + 1} of {images.length}</span>
           </p>
           {/* The caveat has to be visible here: at full size a burned-in
               caption dominates the frame and alt text reaches nobody who can

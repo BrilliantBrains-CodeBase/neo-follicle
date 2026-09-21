@@ -92,7 +92,7 @@ const data: TreatmentPageData = {
     */
     {
       kind: 'linkGrid',
-      heading: 'Hair Conditions We Treat — At a Glance',
+      heading: 'Hair Conditions We Treat - At a Glance',
       lede: 'A quick overview of common hair and scalp problems evaluated at Neo Follicle Transplant Clinic.',
       items: [
         {
@@ -430,7 +430,7 @@ const data: TreatmentPageData = {
         },
         {
           title: 'Convenient Location',
-          body: 'Marathahalli, Whitefield — Bangalore, with appointments by call, WhatsApp or online enquiry.',
+          body: 'Marathahalli, Whitefield - Bangalore, with appointments by call, WhatsApp or online enquiry.',
         },
       ],
     },

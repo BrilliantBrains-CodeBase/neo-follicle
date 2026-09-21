@@ -157,7 +157,7 @@ const data: TreatmentPageData = {
       },
       {
         question: 'What exactly are exosomes?',
-        answer: 'Exosomes are tiny cell messengers derived from stem cells. They carry proteins and growth signals that help repair and regenerate hair follicles—making them ideal for stimulating new hair growth.',
+        answer: 'Exosomes are tiny cell messengers derived from stem cells. They carry proteins and growth signals that help repair and regenerate hair follicles - making them ideal for stimulating new hair growth.',
       },
       {
         question: 'How is Exosome different from PRP or GFC?',

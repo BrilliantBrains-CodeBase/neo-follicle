@@ -24,7 +24,7 @@ import { GALLERY_IMAGES } from '../../content/gallery/image-gallery.generated'
  *
  * The lightbox index is scoped to ONE SECTION. Arrowing off the end of the
  * beard set into a female restoration photograph would be disorienting, and
- * scoping it is what lets the counter read "Beard Transplant Results — 3 of 15".
+ * scoping it is what lets the counter read "Beard Transplant Results - 3 of 15".
  *
  * NO JSON-LD HERE. The graph for this page is emitted by scripts/prerender.mjs
  * from src/seo/schema/image-gallery.json and verify-seo.mjs check 6 deep-equals

@@ -10,7 +10,7 @@ const post: Post = {
   "path": "/how-to-choose-the-best-hair-transplant-clinic-bangalore/",
   "title": "How to Choose the Best Hair Transplant Clinic in Bangalore",
   "excerpt": "Choosing the best hair transplant clinic in Bangalore means looking beyond price. Learn what to check before surgery, including surgeon involvement, graft transparency, hygiene standards, safety protocols, realistic results, and red flags to avoid.",
-  "summary": "Choosing the best hair transplant clinic in Bangalore means checking surgeon involvement, safety protocols, graft transparency, and realistic results—not just price. Dr Sandeep Mahapatra, Hair Transplant Surgeon at Neo Follicle Hair Transplant Clinic in Bangalore, recommends choosing a clinic that examines your donor area carefully and offers honest, long-term follow-up.",
+  "summary": "Choosing the best hair transplant clinic in Bangalore means checking surgeon involvement, safety protocols, graft transparency, and realistic results - not just price. Dr Sandeep Mahapatra, Hair Transplant Surgeon at Neo Follicle Hair Transplant Clinic in Bangalore, recommends choosing a clinic that examines your donor area carefully and offers honest, long-term follow-up.",
   "category": "Hair Transplant Clinic Selection",
   "datePublished": "2026-06-12T09:00:00+05:30",
   "dateModified": "2026-06-12T09:00:00+05:30",
@@ -3872,7 +3872,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "Who actually performs the procedure—the surgeon or the clinic technicians?"
+          "v": "Who actually performs the procedure - the surgeon or the clinic technicians?"
         }
       ]
     },

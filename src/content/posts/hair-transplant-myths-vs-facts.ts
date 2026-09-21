@@ -4370,7 +4370,7 @@ const post: Post = {
           "c": [
             {
               "t": "text",
-              "v": "Complications of Hair Transplant Procedures—Causes and Management"
+              "v": "Complications of Hair Transplant Procedures - Causes and Management"
             }
           ]
         },

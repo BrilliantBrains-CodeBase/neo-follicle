@@ -134,7 +134,7 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Does the treatment hurt?',
-        answer: 'The injections may cause slight discomfort or a tingling sensation, but most patients find it very tolerable. There’s no downtime—you can go back to work right after.',
+        answer: 'The injections may cause slight discomfort or a tingling sensation, but most patients find it very tolerable. There’s no downtime - you can go back to work right after.',
       },
       {
         question: 'When can I expect to see results?',

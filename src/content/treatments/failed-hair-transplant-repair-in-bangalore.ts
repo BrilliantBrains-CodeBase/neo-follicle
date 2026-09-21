@@ -23,7 +23,7 @@ const data: TreatmentPageData = {
     eyebrow: 'Corrective Hair Restoration',
     h1: 'Failed Hair Transplant Repair in Bangalore',
     lede: [
-      'If you’ve previously undergone a hair transplant that didn’t meet your expectations, the next step isn’t simply adding more grafts—it’s understanding what went wrong.',
+      'If you’ve previously undergone a hair transplant that didn’t meet your expectations, the next step isn’t simply adding more grafts - it’s understanding what went wrong.',
       'Neo Follicle evaluates previous transplant work before recommending a personalized repair plan.',
     ],
     image: {

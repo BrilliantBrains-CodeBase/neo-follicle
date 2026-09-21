@@ -30,7 +30,7 @@ import type { GalleryImage } from '../../content/gallery/types'
 
 type Props = {
   images: GalleryImage[]
-  /** Included in each tile's accessible name, e.g. "... — 3 of 15". */
+  /** Included in each tile's accessible name, e.g. "... - 3 of 15". */
   sectionHeading: string
   /** Omitted when the grid is not interactive (no JS has mounted yet). */
   onOpen?: (index: number) => void
@@ -48,7 +48,7 @@ export default function GalleryGrid({ images, sectionHeading, onOpen, eager = fa
               href={image.full.src}
               // The anchor's own text would otherwise be empty; the <img> alt
               // names it, and this adds where it sits in the set.
-              aria-label={`${image.alt} — ${sectionHeading}, image ${i + 1} of ${images.length}`}
+              aria-label={`${image.alt} - ${sectionHeading}, image ${i + 1} of ${images.length}`}
               onClick={(e) => {
                 if (!onOpen) return
                 // Leave modified and non-primary clicks to the browser, so

@@ -66,7 +66,7 @@ const data: TreatmentPageData = {
     eyebrow: 'International Patients',
     h1: 'Hair Transplant in Bangalore for International Patients',
     lede: [
-      'Planning a hair transplant abroad should feel organized—not overwhelming.',
+      'Planning a hair transplant abroad should feel organized - not overwhelming.',
       'At Neo Follicle Hair Transplant Clinic, international patients receive personalized treatment planning, virtual consultations, travel guidance, and doctor-led care before, during, and after their visit to Bangalore.',
       // The brief's third hero paragraph is the next section's `intro`. The
       // hero lede is capped at two -- see the note on `lede` in ./types.
@@ -94,7 +94,7 @@ const data: TreatmentPageData = {
       heading: 'Why Patients Travel to Bangalore',
       lede: 'Patients travel internationally because successful hair restoration depends on much more than the procedure itself. At Neo Follicle, every treatment combines:',
       intro:
-        'Whether you\'re travelling from the USA, UK, Europe, Australia, or the Gulf, your journey begins long before your flight—with a personalized consultation from Dr. Sandeep Mahapatra.',
+        'Whether you\'re travelling from the USA, UK, Europe, Australia, or the Gulf, your journey begins long before your flight - with a personalized consultation from Dr. Sandeep Mahapatra.',
       points: [
         'Dermatology-led diagnosis',
         'Personalized hairline planning',
@@ -232,7 +232,7 @@ const data: TreatmentPageData = {
       kind: 'prose',
       heading: 'The Cost Advantage of Travelling to Bangalore',
       lede: [
-        'A hair transplant in Bangalore typically costs a fraction of the equivalent procedure in the USA, Canada, the UK, Germany, Australia or the Gulf — without a corresponding difference in technique or planning.',
+        'A hair transplant in Bangalore typically costs a fraction of the equivalent procedure in the USA, Canada, the UK, Germany, Australia or the Gulf - without a corresponding difference in technique or planning.',
       ],
       points: [
         'The procedure itself',

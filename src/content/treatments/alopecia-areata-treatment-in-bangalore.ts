@@ -126,7 +126,7 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Can alopecia areata spread to the whole scalp?',
-        answer: 'In rare cases, yes—this is called Alopecia Totalis. Early treatment reduces the risk of progression and improves regrowth chances significantly.',
+        answer: 'In rare cases, yes - this is called Alopecia Totalis. Early treatment reduces the risk of progression and improves regrowth chances significantly.',
       },
     ],
   },

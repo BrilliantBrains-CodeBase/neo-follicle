@@ -1049,7 +1049,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "Many young professionals from Indiranagar, Koramangala, Jayanagar, Whitefield, and Bellandur come to us with sudden heavy hair fall. They often say, “Doctor, hair is falling everywhere — on my pillow, in the bathroom, and while combing.”"
+          "v": "Many young professionals from Indiranagar, Koramangala, Jayanagar, Whitefield, and Bellandur come to us with sudden heavy hair fall. They often say, “Doctor, hair is falling everywhere - on my pillow, in the bathroom, and while combing.”"
         }
       ]
     },
@@ -2004,7 +2004,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "American Academy of Dermatology Association — Hair Loss: Diagnosis and Treatment"
+                "v": "American Academy of Dermatology Association - Hair Loss: Diagnosis and Treatment"
               }
             ]
           },
@@ -2035,7 +2035,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "NCBI / PMC — Androgenetic Alopecia: Therapy Update"
+                "v": "NCBI / PMC - Androgenetic Alopecia: Therapy Update"
               }
             ]
           },
@@ -2066,7 +2066,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "NCBI / PMC — Treatment Options for Androgenetic Alopecia: Efficacy, Side Effects, Compliance, Financial Considerations, and Ethics"
+                "v": "NCBI / PMC - Treatment Options for Androgenetic Alopecia: Efficacy, Side Effects, Compliance, Financial Considerations, and Ethics"
               }
             ]
           },
@@ -2097,7 +2097,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "PubMed — Finasteride in the Treatment of Men with Androgenetic Alopecia"
+                "v": "PubMed - Finasteride in the Treatment of Men with Androgenetic Alopecia"
               }
             ]
           },
@@ -2128,7 +2128,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "NCBI / PMC — QR678 & QR678 Neo Hair Growth Formulations"
+                "v": "NCBI / PMC - QR678 & QR678 Neo Hair Growth Formulations"
               }
             ]
           },

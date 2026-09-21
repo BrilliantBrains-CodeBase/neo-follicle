@@ -41,7 +41,7 @@ const data: TreatmentPageData = {
       heading: 'When Body Hair May Be Considered',
       lede: 'Body hair transplantation may be explored when:',
       intro:
-        'Every recommendation is based on medical evaluation—not a standard treatment package.',
+        'Every recommendation is based on medical evaluation - not a standard treatment package.',
       points: [
         'scalp donor availability is limited,',
         'previous procedures have reduced donor strength,',

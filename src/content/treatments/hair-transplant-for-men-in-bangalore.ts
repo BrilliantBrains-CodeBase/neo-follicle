@@ -26,7 +26,7 @@ const data: TreatmentPageData = {
     eyebrow: 'Male Hair Restoration',
     h1: 'Direct Hair Transplant for Men in Bangalore',
     lede: [
-      'A receding hairline or thinning crown can gradually change the way you look—and how you feel. At Neo Follicle Hair Transplant Clinic, every male hair transplant is planned around your current hair loss pattern and future hair loss progression, ensuring natural-looking results rather than an artificially dense appearance.',
+      'A receding hairline or thinning crown can gradually change the way you look - and how you feel. At Neo Follicle Hair Transplant Clinic, every male hair transplant is planned around your current hair loss pattern and future hair loss progression, ensuring natural-looking results rather than an artificially dense appearance.',
       'Led by Dr. Sandeep Mahapatra, each procedure focuses on preserving the donor area while restoring density where it matters most.',
     ],
     image: {
@@ -160,7 +160,7 @@ const data: TreatmentPageData = {
 
   cta: {
     heading: 'Restore Your Hair with a Personalized Treatment Plan',
-    body: 'Every consultation focuses on understanding your scalp—not selling you a procedure.',
+    body: 'Every consultation focuses on understanding your scalp - not selling you a procedure.',
     ctas: [BOOK, ANALYSIS, CALL],
   },
 }

@@ -30,7 +30,7 @@ const post: Post = {
   "toc": [
     {
       "id": "female-hair-loss-is-emotionally-heavy-and-that-deserves-respect-1",
-      "text": "Female Hair Loss Is Emotionally Heavy — And That Deserves Respect"
+      "text": "Female Hair Loss Is Emotionally Heavy - And That Deserves Respect"
     },
     {
       "id": "how-female-hair-loss-is-different-from-male-pattern-baldness-2",
@@ -343,7 +343,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "Female Hair Loss Is Emotionally Heavy — And That Deserves Respect"
+          "v": "Female Hair Loss Is Emotionally Heavy - And That Deserves Respect"
         }
       ]
     },
@@ -712,7 +712,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "A woman may have mild female pattern hair loss, low ferritin, vitamin D deficiency, PCOS, thyroid imbalance, and high stress — all at the same time."
+          "v": "A woman may have mild female pattern hair loss, low ferritin, vitamin D deficiency, PCOS, thyroid imbalance, and high stress - all at the same time."
         }
       ]
     },
@@ -4466,7 +4466,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "American Academy of Dermatology Association — Female Pattern Hair Loss"
+                "v": "American Academy of Dermatology Association - Female Pattern Hair Loss"
               }
             ]
           },
@@ -4501,7 +4501,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "DermNet NZ — Female Pattern Hair Loss"
+                "v": "DermNet NZ - Female Pattern Hair Loss"
               }
             ]
           },
@@ -4606,7 +4606,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "The Endocrine Society — Polycystic Ovary Syndrome Patient Resource"
+                "v": "The Endocrine Society - Polycystic Ovary Syndrome Patient Resource"
               }
             ]
           },

@@ -131,7 +131,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "Hair thinning can be emotionally exhausting. For many men and women, it does not begin as “baldness.” It begins quietly — a wider parting, more hair on the pillow, a visible scalp under bright office lights, or a receding hairline that slowly changes the way you see yourself in the mirror."
+          "v": "Hair thinning can be emotionally exhausting. For many men and women, it does not begin as “baldness.” It begins quietly - a wider parting, more hair on the pillow, a visible scalp under bright office lights, or a receding hairline that slowly changes the way you see yourself in the mirror."
         }
       ]
     },
@@ -259,7 +259,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "In this blog, I will explain the difference between PRP and GFC in a simple, honest, and medically practical way — so that you can understand which treatment may suit your stage of hair thinning."
+          "v": "In this blog, I will explain the difference between PRP and GFC in a simple, honest, and medically practical way - so that you can understand which treatment may suit your stage of hair thinning."
         }
       ]
     },
@@ -2282,7 +2282,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "This is why at Neo Follicle, we approach hair loss medically — not cosmetically alone."
+          "v": "This is why at Neo Follicle, we approach hair loss medically - not cosmetically alone."
         }
       ]
     },
@@ -2724,7 +2724,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "At Neo Follicle, I prefer to explain both options clearly and then recommend what is medically appropriate — not what is simply more expensive."
+          "v": "At Neo Follicle, I prefer to explain both options clearly and then recommend what is medically appropriate - not what is simply more expensive."
         }
       ]
     },
@@ -3323,7 +3323,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "At Neo Follicle, we recommend the treatment based on diagnosis — not simply based on cost."
+          "v": "At Neo Follicle, we recommend the treatment based on diagnosis - not simply based on cost."
         }
       ]
     },

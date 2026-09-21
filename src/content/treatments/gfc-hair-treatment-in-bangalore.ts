@@ -52,7 +52,7 @@ const data: TreatmentPageData = {
     eyebrow: 'Regenerative Hair Restoration',
     h1: 'Growth Factor Concentrate (GFC) Hair Treatment in Bangalore',
     lede: [
-      'Some hair follicles need support—not replacement.',
+      'Some hair follicles need support - not replacement.',
       'GFC is offered as part of Neo Follicle\'s personalized regenerative hair restoration approach for selected patients.',
     ],
     image: {
@@ -144,7 +144,7 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Is GFC safe and does it have side effects?',
-        answer: 'Yes, it’s completely safe since it uses your own blood. There are no allergic reactions, and side effects are minimal—maybe slight redness or tenderness at the injection site, which usually fades in a few hours.',
+        answer: 'Yes, it’s completely safe since it uses your own blood. There are no allergic reactions, and side effects are minimal - maybe slight redness or tenderness at the injection site, which usually fades in a few hours.',
       },
       {
         question: 'How many GFC sessions will I need?',
@@ -172,7 +172,7 @@ const data: TreatmentPageData = {
       },
       {
         question: 'What are the growth factors associated with GFC therapy?',
-        answer: 'GFC therapy works by using a high concentration of natural proteins called growth factors that are extracted from your own blood. These include PDGF (Platelet-Derived Growth Factor), VEGF (Vascular Endothelial Growth Factor), EGF (Epidermal Growth Factor), and IGF (Insulin-like Growth Factor). Together, they help improve blood circulation, stimulate hair follicle activity, reduce inflammation, and create a healthier scalp environment for stronger, thicker hair regrowth—all without using any chemicals or medications.',
+        answer: 'GFC therapy works by using a high concentration of natural proteins called growth factors that are extracted from your own blood. These include PDGF (Platelet-Derived Growth Factor), VEGF (Vascular Endothelial Growth Factor), EGF (Epidermal Growth Factor), and IGF (Insulin-like Growth Factor). Together, they help improve blood circulation, stimulate hair follicle activity, reduce inflammation, and create a healthier scalp environment for stronger, thicker hair regrowth - all without using any chemicals or medications.',
       },
     ],
   },

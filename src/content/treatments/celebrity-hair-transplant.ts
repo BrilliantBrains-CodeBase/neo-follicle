@@ -35,7 +35,7 @@ const data: TreatmentPageData = {
     eyebrow: 'Private Hair Restoration',
     h1: 'Trusted Hair Restoration for Public Figures and Performers',
     lede: [
-      'Hair restoration isn’t only about appearance—it’s about confidence in front of the camera, on stage, and in everyday life.',
+      'Hair restoration isn’t only about appearance - it’s about confidence in front of the camera, on stage, and in everyday life.',
       'Neo Follicle has earned the trust of public figures who value natural-looking results, personalized planning, and privacy throughout their treatment journey.',
       // The brief's third hero paragraph is the next section's `intro`. The
       // hero lede is capped at two -- see the note on `lede` in ./types.

@@ -2231,7 +2231,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "3. Which technique gives a more natural looking hairline—FUE or DHI?"
+          "v": "3. Which technique gives a more natural looking hairline - FUE or DHI?"
         }
       ]
     },

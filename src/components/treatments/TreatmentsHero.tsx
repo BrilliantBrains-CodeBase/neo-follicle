@@ -84,7 +84,7 @@ export default function TreatmentsHero() {
         <p className="mt-1 max-w-[68ch] text-body text-white/90 animate-fadeInUp motion-reduce:animate-none">
           Whether you&rsquo;re experiencing early hair thinning, a receding hairline, bald patches,
           beard gaps, or female pattern hair loss, Neo Follicle offers both surgical and
-          non-surgical treatments designed around your individual diagnosis&mdash;not a
+          non-surgical treatments designed around your individual diagnosis - not a
           one-size-fits-all solution.
         </p>
 

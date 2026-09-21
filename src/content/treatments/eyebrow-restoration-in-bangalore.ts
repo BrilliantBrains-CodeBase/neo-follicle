@@ -129,7 +129,7 @@ const data: TreatmentPageData = {
 
   cta: {
     heading: 'Restore Naturally Fuller Eyebrows with Personalized Planning',
-    body: 'Every eyebrow restoration begins with understanding your facial proportions—not following a standard template.',
+    body: 'Every eyebrow restoration begins with understanding your facial proportions - not following a standard template.',
     ctas: [BOOK, CALL],
   },
 }

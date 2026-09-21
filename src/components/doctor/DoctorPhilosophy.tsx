@@ -132,7 +132,7 @@ export default function DoctorPhilosophy() {
               &ldquo;Will every patient need a hair transplant?&rdquo;
             </p>
             <p className="text-body">Sometimes that means recommending a hair transplant.</p>
-            <p className="text-body">Sometimes it means helping you avoid one&mdash;for now.</p>
+            <p className="text-body">Sometimes it means helping you avoid one - for now.</p>
             <p className="text-body">
               Every recommendation is based on your scalp evaluation rather than a standardized
               package.

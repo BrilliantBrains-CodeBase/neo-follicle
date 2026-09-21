@@ -54,7 +54,7 @@ export const LP_FAQ: { question: string; answer: string }[] = [
     question:
       'Can I undergo a hair transplant if I have other medical conditions like diabetes or hypertension?',
     answer:
-      "In many cases, yes—but only after proper evaluation. Controlled diabetes and blood pressure are not usually barriers, but it's important to share your medical history with the hair transplant doctor. At Neo Follicle Hair Transplant in Bangalore we conduct a thorough pre-op health screening to ensure you're fit for the procedure.",
+      "In many cases, yes - but only after proper evaluation. Controlled diabetes and blood pressure are not usually barriers, but it's important to share your medical history with the hair transplant doctor. At Neo Follicle Hair Transplant in Bangalore we conduct a thorough pre-op health screening to ensure you're fit for the procedure.",
   },
   {
     question: 'Will there be any visible scars after a hair transplant?',
@@ -150,7 +150,7 @@ export const LP_CELEBRITIES: Person[] = [
 /** The clinic LP's facilities grid, verbatim from its capture. */
 export const LP_FACILITIES: TreatmentSection = {
   kind: 'featureGrid',
-  heading: 'Our Facilities — Designed for Patient Care and Comfort',
+  heading: 'Our Facilities - Designed for Patient Care and Comfort',
   items: [
     { title: 'Reception / Patient Help Center' },
     { title: 'Waiting / Reception Lounge' },

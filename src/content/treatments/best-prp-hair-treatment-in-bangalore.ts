@@ -179,7 +179,7 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Can PRP help with bald spots?',
-        answer: 'PRP works best on thinning areas with active follicles. It may not be very effective in completely bald areas—those may need a hair transplant instead.',
+        answer: 'PRP works best on thinning areas with active follicles. It may not be very effective in completely bald areas - those may need a hair transplant instead.',
       },
       {
         question: 'Are there any side effects of PRP therapy?',

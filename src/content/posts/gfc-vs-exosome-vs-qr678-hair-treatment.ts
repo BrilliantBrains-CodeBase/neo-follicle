@@ -90,7 +90,7 @@ const post: Post = {
     },
     {
       "id": "final-verdict-gfc-vs-exosome-vs-qr678-which-is-best-16",
-      "text": "Final Verdict: GFC vs. Exosome vs. QR678 — Which Is Best?"
+      "text": "Final Verdict: GFC vs. Exosome vs. QR678 - Which Is Best?"
     },
     {
       "id": "faqs-on-gfc-exosome-and-qr678-hair-treatment-17",
@@ -2578,7 +2578,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "Final Verdict: GFC vs. Exosome vs. QR678 — Which Is Best?"
+          "v": "Final Verdict: GFC vs. Exosome vs. QR678 - Which Is Best?"
         }
       ]
     },

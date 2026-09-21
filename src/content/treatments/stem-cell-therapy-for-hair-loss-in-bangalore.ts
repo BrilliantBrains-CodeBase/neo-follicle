@@ -36,7 +36,7 @@ const data: TreatmentPageData = {
     eyebrow: 'Regenerative Hair Restoration',
     h1: 'Stem Cell Hair Therapy in Bangalore for Advanced Hair Regeneration',
     lede: [
-      'Hair restoration isn\'t always about replacing lost hair—sometimes it\'s about helping weakened follicles perform better.',
+      'Hair restoration isn\'t always about replacing lost hair - sometimes it\'s about helping weakened follicles perform better.',
       'At Neo Follicle Hair Transplant Clinic, Stem Cell Hair Therapy is offered as part of a personalized treatment approach for suitable candidates experiencing hair thinning. Every recommendation is based on scalp evaluation, follicle health, and long-term treatment planning under the guidance of Dr. Sandeep Mahapatra.',
     ],
     image: {

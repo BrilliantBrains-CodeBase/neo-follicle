@@ -4605,7 +4605,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "International Society of Hair Restoration Surgery — ISHRS"
+                "v": "International Society of Hair Restoration Surgery - ISHRS"
               }
             ]
           },
@@ -4636,7 +4636,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "American Academy of Dermatology — Hair Transplant Overview"
+                "v": "American Academy of Dermatology - Hair Transplant Overview"
               }
             ]
           },
@@ -4667,7 +4667,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "Hair Transplant Practice Guidelines — Journal of Cutaneous and Aesthetic Surgery / PMC"
+                "v": "Hair Transplant Practice Guidelines - Journal of Cutaneous and Aesthetic Surgery / PMC"
               }
             ]
           },
@@ -4698,7 +4698,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "CDC — Medical Tourism: Travel to Another Country for Medical Care"
+                "v": "CDC - Medical Tourism: Travel to Another Country for Medical Care"
               }
             ]
           },
@@ -4729,7 +4729,7 @@ const post: Post = {
             "c": [
               {
                 "t": "text",
-                "v": "Bengaluru International Airport — Official Website"
+                "v": "Bengaluru International Airport - Official Website"
               }
             ]
           },
