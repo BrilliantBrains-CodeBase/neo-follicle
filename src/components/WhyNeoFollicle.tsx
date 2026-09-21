@@ -125,7 +125,7 @@ export default function WhyNeoFollicle() {
   const [mounted, setMounted] = useState(false)
   /** False for exactly one frame, to make the loop's snap-back instant. */
   const [animate, setAnimate] = useState(true)
-  const [hovered, setHovered] = useState(false)
+  const [focused, setFocused] = useState(false)
   const [tabHidden, setTabHidden] = useState(false)
 
   // Layout is CSS-driven (see the basis/translate classes), so this only feeds
@@ -168,7 +168,9 @@ export default function WhyNeoFollicle() {
    */
   const isMobile = visible === 1
 
-  const running = mounted && !reduced && !isMobile && !hovered && !tabHidden
+  // Desktop and tablet keep advancing even while the pointer is over the
+  // cards. Pause only for keyboard interaction, reduced motion or a hidden tab.
+  const running = mounted && !reduced && !isMobile && !focused && !tabHidden
 
   useEffect(() => {
     if (!running) return
@@ -255,10 +257,8 @@ export default function WhyNeoFollicle() {
             {/* Reveal takes no event props, so the pause handlers sit inside. */}
             <div
               className="flex flex-col gap-gap-mobile"
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-              onFocusCapture={() => setHovered(true)}
-              onBlurCapture={() => setHovered(false)}
+              onFocusCapture={() => setFocused(true)}
+              onBlurCapture={() => setFocused(false)}
             >
               {/* The transform needs a clip; the scroll track below `md` is
                   its own, and clipping it here would kill the scroll. */}
