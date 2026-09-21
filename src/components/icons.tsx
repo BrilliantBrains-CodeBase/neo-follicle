@@ -22,10 +22,8 @@
  *            Sun and CheckCircle are the about section's set.
  *   Plus      folixa-design-reference/assets/icons/svg/fas_plus.svg (e-fas-plus).
  *            The services cards' badge glyph.
- *   QuoteLeft  folixa-design-reference/assets/icons/svg/fas_quote-left.svg;
- *            also inlined in pages/home/rendered.html as `e-fas-quote-left`.
  *   ArrowRight  folixa-design-reference/assets/icons/svg/jki-right-arrow-light.svg.
- *            The testimonials carousel's set. Only the RIGHT glyph was
+ *            The celebrity carousel's arrow. Only the RIGHT glyph was
  *            captured -- the kit's left arrow is the same shape mirrored, so
  *            the previous button reuses this one under `rotate-180` rather
  *            than carrying a hand-drawn second path that could drift from it.
@@ -34,6 +32,8 @@
  *            Folixa kit has no messaging or calendar glyph -- so both come
  *            straight from the same Font Awesome release as the social set
  *            above. StickyActionBar's set; Call reuses `Phone`.
+ *   Calculator  Font Awesome Free 6 (fas_calculator). No jki equivalent --
+ *            StickyActionBar's AI Analysis cell.
  *
  * Font Awesome Free 6 icons are CC BY 4.0.
  */
@@ -158,20 +158,12 @@ export function Plus({ className }: IconProps) {
 }
 
 /**
- * The testimonials carousel's set.
+ * The celebrity carousel's arrow.
  *
- * ArrowRight keeps its `translate(0,960) scale(1,-1)` group: the jki webfont is
+ * It keeps its `translate(0,960) scale(1,-1)` group: the jki webfont is
  * y-flipped and that transform is part of the glyph, exactly as on ChevronDown
  * and the contact icons. Do not remove it.
  */
-export function QuoteLeft({ className }: IconProps) {
-  return (
-    <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
-      <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z" />
-    </svg>
-  )
-}
-
 export function ArrowRight({ className }: IconProps) {
   return (
     <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
@@ -344,6 +336,56 @@ export const socialIcons: Record<string, (props: IconProps) => ReactElement> = {
   LinkedIn: LinkedInIcon,
   YouTube: YouTubeIcon,
   Instagram: InstagramIcon,
+}
+
+/**
+ * Brand background colors for SOCIAL.footerProfiles labels. Shared by
+ * DesktopWhatsAppButton's hover fan-out and StickyActionBar's tap fan-out so
+ * the two "follow us" affordances stay visually identical.
+ */
+export const SOCIAL_COLORS: Record<string, string> = {
+  Facebook: 'bg-[#1877F2] hover:bg-[#166FE5]',
+  LinkedIn: 'bg-[#0A66C2] hover:bg-[#084F9E]',
+  YouTube: 'bg-[#FF0000] hover:bg-[#CC0000]',
+  Instagram:
+    'bg-[linear-gradient(135deg,#833AB4_0%,#FD1D1D_55%,#FCAF45_100%)] hover:brightness-90',
+}
+
+/**
+ * The "follow us" trigger glyph -- three connected nodes. Hand-drawn (no
+ * captured reference), shared by DesktopWhatsAppButton and StickyActionBar.
+ */
+export function FollowIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+      className={className}
+    >
+      <circle cx="18" cy="5" r="3" />
+      <circle cx="6" cy="12" r="3" />
+      <circle cx="18" cy="19" r="3" />
+      <path d="m8.7 10.7 6.6-4.4M8.7 13.3l6.6 4.4" />
+    </svg>
+  )
+}
+
+/**
+ * StickyActionBar's AI Analysis glyph. Font Awesome Free 6 fas_calculator --
+ * no jki equivalent was captured for this one.
+ */
+export function Calculator({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
+      <path d="M347.6 25.9c-3-6.1-9.2-9.9-16-9.9H50c-6.8 0-13 3.8-16 9.9L1.2 121.6C.4 123.3 0 125.1 0 127v340.6C0 481.2 12 496 26.7 496h330.6c14.7 0 26.7-14.8 26.7-31.4V127c0-1.9-.4-3.7-1.2-5.4L347.6 25.9zM192 464c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80zM32 96l30-64h260l30 64H32zm272 288c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32zm0-96c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32zM128 288c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32z" />
+    </svg>
+  )
 }
 
 /**

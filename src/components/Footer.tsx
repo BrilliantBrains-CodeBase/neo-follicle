@@ -19,8 +19,7 @@ import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon, socialIcons } from './icons
  *     content doc's "10 am to 8 pm, all days". The two disagree; the indexed
  *     openingHoursSpecification wins. See the note in config/site.ts.
  *
- * Renders SOCIAL.footerProfiles (the set the live footer linked), NOT
- * SOCIAL.schemaSameAs -- the two disagree, see the note in config/site.ts.
+ * Renders the clinic-confirmed SOCIAL.footerProfiles links.
  *
  * `text-base` is ambiguous here (Tailwind font size vs the `base` color token),
  * so white text uses `text-white` throughout.

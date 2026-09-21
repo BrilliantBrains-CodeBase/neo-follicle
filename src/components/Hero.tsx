@@ -81,7 +81,7 @@ const TRUST_STRIP = [
   'Dermatologist-Led',
   'MD Dermatology, Gold Medalist',
   'ISHRS Gold Member',
-  'DHI Certified Specialist',
+  'Certified DHI Specialist',
 ]
 
 /**
@@ -131,6 +131,14 @@ export default function Hero() {
           Banner.png), replacing folixa-design-reference's licensed theme stock.
           A graft-placement shot, so it is on-topic where the stock was not.
           alt stays empty -- it is decorative and the h1 carries the meaning.
+
+          object-position is deliberately responsive. The frame is landscape
+          (1672x941) but this section's box is portrait on mobile, so
+          object-cover only ever shows a ~29%-wide vertical slice of it there
+          -- object-left-top put that slice over the assistant on the left
+          edge of the shot instead of Dr. Mahapatra, who stands right of
+          center. md:+ containers are wide enough that object-left-top shows
+          nearly the whole frame, so only the mobile anchor needs to move.
         */}
         <img
           src="/hero.webp"
@@ -138,7 +146,7 @@ export default function Hero() {
           width={1672}
           height={941}
           fetchPriority="high"
-          className="absolute inset-0 -z-10 h-full w-full object-cover object-left-top"
+          className="absolute inset-0 -z-10 h-full w-full object-cover object-[60%_top] md:object-left-top"
         />
         {/* The reference's ::before overlay, at its --overlay-opacity:0.75. */}
         <div

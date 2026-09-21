@@ -1,8 +1,8 @@
+import Celebrities from '../components/Celebrities'
 import ContactCta from '../components/contact/ContactCta'
 import DoctorStats from '../components/doctor/DoctorStats'
 import LandbotFacade from '../components/LandbotFacade'
 import PageBanner from '../components/PageBanner'
-import Testimonials from '../components/Testimonials'
 import { seoFor } from '../seo/pages'
 
 /**
@@ -69,7 +69,7 @@ export default function AiHairTransplantCostCalculator() {
       />
 
       <DoctorStats />
-      <Testimonials />
+      <Celebrities />
       <ContactCta />
     </>
   )

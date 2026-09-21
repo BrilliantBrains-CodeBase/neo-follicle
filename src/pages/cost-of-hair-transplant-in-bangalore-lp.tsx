@@ -1,9 +1,9 @@
+import Celebrities from '../components/Celebrities'
 import ContactCta from '../components/contact/ContactCta'
 import ContactMap from '../components/contact/ContactMap'
 import DoctorStats from '../components/doctor/DoctorStats'
 import LpFaq from '../components/lp/LpFaq'
 import PageBanner from '../components/PageBanner'
-import Testimonials from '../components/Testimonials'
 import TreatmentGallery from '../components/TreatmentGallery'
 import TreatmentSectionView from '../components/treatment/sections'
 import WhyNeoFollicle from '../components/WhyNeoFollicle'
@@ -165,7 +165,7 @@ export default function CostOfHairTransplantInBangaloreLp() {
       />
 
       <DoctorStats />
-      <Testimonials />
+      <Celebrities />
 
       <LpFaq
         name="cost-lp-faq"

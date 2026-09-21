@@ -1,10 +1,10 @@
+import Celebrities from '../components/Celebrities'
 import ContactCta from '../components/contact/ContactCta'
 import ContactMap from '../components/contact/ContactMap'
 import DoctorProfile from '../components/doctor/DoctorProfile'
 import DoctorStats from '../components/doctor/DoctorStats'
 import LpFaq from '../components/lp/LpFaq'
 import PageBanner from '../components/PageBanner'
-import Testimonials from '../components/Testimonials'
 import TreatmentGallery from '../components/TreatmentGallery'
 import TreatmentSectionView from '../components/treatment/sections'
 import { LP_CELEBRITIES, LP_FAQ, LP_SERVICES } from '../content/lp/shared'
@@ -70,7 +70,7 @@ export default function BestHairTransplantSurgeonInBangaloreLp() {
         }}
       />
 
-      <Testimonials />
+      <Celebrities />
 
       <LpFaq
         name="surgeon-lp-faq"

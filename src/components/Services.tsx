@@ -30,10 +30,15 @@ import { Plus, Square } from './icons'
  *     it. Its copy is markedly longer and a 3-up grid would orphan it.
  *   - That seventh card's link cell is EMPTY in the doc. It points at
  *     /hair-transplant-medical-tourism-in-bangalore/, the matching real route.
- *   - The CTA's target is likewise not in the doc. It points at the flagship
- *     hair transplant page -- there is no services-index route among the 59 in
- *     src/seo/pages.ts. That duplicates card 1's target, which src/config/nav.ts
- *     already does deliberately for this same page.
+ *   - The CTA's target is not in the doc. It now points at
+ *     /hair-loss-treatment-in-bangalore/, the treatments index.
+ *
+ *     It used to point at the flagship hair transplant page, because when this
+ *     section was written there was no services-index route to send it to and
+ *     duplicating card 1's target was the least-bad option. That index now
+ *     exists -- src/components/treatments/ renders it, and its SECTION 2 is the
+ *     nine-card grid this button is promising -- so the CTA resolves to the
+ *     page it was always describing, and card 1 stops being linked twice.
  *
  * The eyebrow word "Services" is the reference's, not the doc's -- the doc
  * gives this section no eyebrow label. It makes no claim.
@@ -93,7 +98,7 @@ const DELAYS = [
 const SERVICES = [
   {
     title: 'Hair Transplant for Men',
-    copy: 'Receding hairline, frontal baldness and crown thinning with FUE and NFT, planned around baldness grade and donor strength.',
+    copy: 'Receding hairline, frontal baldness and crown thinning with FUE, DHI and NFT, planned around baldness grade and donor strength.',
     to: '/best-hair-transplant-in-bangalore/',
     img: '/services/men.webp',
     alt: 'Close-up of a scalp with the hairline and crown marked out before a follicular unit extraction procedure.',
@@ -174,7 +179,7 @@ export default function Services() {
               corrective cases. Every procedure is planned after a scalp and donor-area evaluation.
             </p>
             <Link
-              to="/best-hair-transplant-in-bangalore/"
+              to="/hair-loss-treatment-in-bangalore/"
               className={`${BUTTON} bg-primary text-white hover:bg-primary-dark`}
             >
               View All Hair Transplant Services →

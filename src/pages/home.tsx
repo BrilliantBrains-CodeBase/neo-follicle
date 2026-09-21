@@ -1,4 +1,5 @@
 import About from '../components/About'
+import Celebrities from '../components/Celebrities'
 import CommonQuestions from '../components/CommonQuestions'
 import ContactUs from '../components/ContactUs'
 import CredibilityBar from '../components/CredibilityBar'
@@ -6,7 +7,6 @@ import Hero from '../components/Hero'
 import Insights from '../components/Insights'
 import Process from '../components/Process'
 import Services from '../components/Services'
-import Testimonials from '../components/Testimonials'
 import TreatmentGallery from '../components/TreatmentGallery'
 import Videos from '../components/Videos'
 import WhyNeoFollicle from '../components/WhyNeoFollicle'
@@ -31,7 +31,7 @@ export default function Home() {
       <Services />
       <WhyNeoFollicle />
       <Process />
-      <Testimonials />
+      <Celebrities />
       <TreatmentGallery />
       <Videos />
       <CommonQuestions />
@@ -40,8 +40,12 @@ export default function Home() {
 
       {/*
         Still to build from content/home-page/Neo-Follicle-Website-Content.md:
-        International (SECTION 11), which belongs between Testimonials and
+        International (SECTION 11), which belongs between Celebrities and
         CommonQuestions when it lands.
+
+        SECTION 10's testimonial half is NOT on the page. Celebrities renders
+        only that section's celebrity claim; the three patient quotes are kept
+        verbatim in a TODO at the top of that component and still need a home.
 
         The doc's Credibility Bar is no longer outstanding -- it is the
         CredibilityBar above, between Hero and About as the doc places it.

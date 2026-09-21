@@ -51,6 +51,8 @@ export const BRAND = {
     'FUE hair transplant',
     'FUT hair transplant',
     'Bio FUE hair transplant',
+    'DHI hair transplant',
+    'Direct Hair Implantation',
     'Beard transplant',
     'Eyebrow transplant',
     'Female hair transplant',
@@ -155,31 +157,33 @@ export const FORMS = {
 export type SocialProfile = { label: string; href: string }
 
 /**
- * CONFLICT -- UNRESOLVED. The live footer markup and the JSON-LD `sameAs` point
- * at DIFFERENT Facebook, Instagram and YouTube accounts. Only LinkedIn agrees.
- * Both sets are preserved verbatim until the client confirms which handles are
- * live; dropping either would discard a real signal.
+ * Confirmed social profiles. Tracking parameters are retained because these
+ * are the exact destination URLs supplied by the clinic.
  *
- * Do not merge, dedupe, or reconcile these two arrays without that confirmation.
- *
- *   footerProfiles -> what visitors clicked on the live site (render these)
- *   schemaSameAs   -> what Google reads (feed these to JSON-LD)
+ *   footerProfiles -> visitor-facing links
+ *   schemaSameAs   -> clinic identity links for structured data
  */
 export const SOCIAL = {
   footerProfiles: [
-    { label: 'Facebook', href: 'https://www.facebook.com/Neofolliclehairtransplant/' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/neo-follicle-hairtransplant' },
+    { label: 'Facebook', href: 'https://www.facebook.com/NeoFollicleHairTransplantClinic/' },
+    {
+      label: 'LinkedIn',
+      href: 'https://in.linkedin.com/company/neo-follicle-hairtransplant?trk=public_post_follow-view-profile',
+    },
     { label: 'YouTube', href: 'https://www.youtube.com/channel/UCpUTXf985LPC2UdBXCfgrXQ' },
-    { label: 'Instagram', href: 'https://www.instagram.com/neofolliclehairtransplant/' },
+    {
+      label: 'Instagram',
+      href: 'https://www.instagram.com/neo_follicle_hair_transplant?stkn=dXJxaThrM3Z4NHFq&utm_source=qr',
+    },
   ] satisfies readonly SocialProfile[],
 
-  /** #clinic sameAs, in captured order. mapUrl leads the list in the graph. */
+  /** #clinic sameAs. mapUrl leads the list in the graph. */
   schemaSameAs: [
     'https://maps.app.goo.gl/jKaWhcfQuKZXRvE48',
-    'https://www.facebook.com/NeoFollicleHairTransplantClinic',
-    'https://www.instagram.com/neo_follicle_hair_transplant/',
-    'https://www.youtube.com/@neofollicletransplant',
-    'https://www.linkedin.com/company/neo-follicle-hairtransplant/',
+    'https://www.facebook.com/NeoFollicleHairTransplantClinic/',
+    'https://www.instagram.com/neo_follicle_hair_transplant?stkn=dXJxaThrM3Z4NHFq&utm_source=qr',
+    'https://www.youtube.com/channel/UCpUTXf985LPC2UdBXCfgrXQ',
+    'https://in.linkedin.com/company/neo-follicle-hairtransplant?trk=public_post_follow-view-profile',
     'https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu',
     'https://www.justdial.com/Bangalore/Neo-Follicle',
   ],

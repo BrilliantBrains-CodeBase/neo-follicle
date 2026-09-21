@@ -84,7 +84,7 @@ const data: TreatmentPageData = {
         { title: 'Follicle Extraction', body: 'Healthy follicles are carefully extracted from the donor area.' },
         {
           title: 'Implantation',
-          body: 'NFT implanters help place each graft at the correct angle, direction, and depth.',
+          body: 'DHI or NFT implanters help place each graft at the correct angle, direction, and depth.',
         },
         {
           title: 'Recovery',

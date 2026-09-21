@@ -48,7 +48,7 @@ export const LP_FAQ: { question: string; answer: string }[] = [
   {
     question: 'Will the transplanted hair look natural?',
     answer:
-      'Yes, when performed by a skilled and experienced surgeon, hair transplants can deliver a very natural look. Modern techniques like Follicular Unit Extraction (FUE) and Direct Hair Transplantation (DHT) allow precise placement of hair follicles, matching your natural hair growth pattern and hairline design.',
+      'Yes, when performed by a skilled and experienced surgeon, hair transplants can deliver a very natural look. Modern techniques like Follicular Unit Extraction (FUE) and Direct Hair Implantation (DHI) allow precise placement of hair follicles, matching your natural hair growth pattern and hairline design.',
   },
   {
     question:

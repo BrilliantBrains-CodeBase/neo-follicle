@@ -37,7 +37,7 @@ const data: TreatmentPageData = {
       // hero lede is capped at two -- see the note on `lede` in ./types.
     ],
     image: img('hero', 'A man reviewing his receding hairline before a hair transplant consultation.'),
-    badges: ['Same-Day Procedure', 'Doctor-Led Planning', 'Natural Hairline Design'],
+    badges: ['Same-Day Procedure', 'Doctor-Led Planning', 'Natural Hairline Design', 'DHI-Certified Surgeon'],
     ctas: [BOOK, ANALYSIS, CALL],
   },
 
@@ -55,6 +55,10 @@ const data: TreatmentPageData = {
         { title: 'Personalized Treatment Plans', body: 'Based on scalp condition and donor strength.' },
         { title: 'Medical + Surgical Expertise', body: 'PRP, GFC, QR678 and transplant planning under one roof.' },
         { title: 'Long-Term Hair Planning', body: 'Focus on preserving future donor availability.' },
+        {
+          title: 'DHI-Certified Technique',
+          body: 'Direct Hair Implantation available alongside FUE and NFT, performed by a DHI Global (Greece)-certified surgeon.',
+        },
       ],
     },
     {
@@ -74,6 +78,14 @@ const data: TreatmentPageData = {
       ],
       closing: [
         'Rather than chasing the highest graft count, the focus is on creating a balanced hairline that continues to look natural over time.',
+      ],
+    },
+    {
+      kind: 'prose',
+      heading: 'Techniques We Offer: FUE, DHI and NFT',
+      lede: [
+        'Direct Hair Implantation (DHI) is an implanter-assisted technique where extracted grafts are placed directly into the recipient area, giving control over angle, depth, direction and density.',
+        'At Neo Follicle it’s offered alongside FUE and the clinic’s NFT implanter method—Dr. Sandeep, a DHI Global (Greece)-certified specialist, recommends the technique based on your case, not a fixed package.',
       ],
     },
     {
@@ -111,7 +123,7 @@ const data: TreatmentPageData = {
         },
         {
           title: 'Implantation',
-          body: 'Using advanced NFT implanters, each follicle is placed according to its natural angle, direction, and depth.',
+          body: 'Using DHI or NFT implanters, depending on the plan, each follicle is placed according to its natural angle, direction, and depth.',
         },
         {
           title: 'Recovery',

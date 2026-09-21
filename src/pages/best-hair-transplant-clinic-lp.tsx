@@ -1,9 +1,9 @@
+import Celebrities from '../components/Celebrities'
 import ContactCta from '../components/contact/ContactCta'
 import ContactMap from '../components/contact/ContactMap'
 import DoctorStats from '../components/doctor/DoctorStats'
 import LpFaq from '../components/lp/LpFaq'
 import PageBanner from '../components/PageBanner'
-import Testimonials from '../components/Testimonials'
 import TreatmentGallery from '../components/TreatmentGallery'
 import TreatmentSectionView from '../components/treatment/sections'
 import WhyNeoFollicle from '../components/WhyNeoFollicle'
@@ -34,7 +34,7 @@ import { seoFor } from '../seo/pages'
  *
  * GROUNDS ALTERNATE by hand here rather than by TreatmentPage's groundFor(),
  * because the imported components carry their own: Services is a `primary`
- * band, DoctorStats likewise, and Testimonials/TreatmentGallery/WhyNeoFollicle
+ * band, DoctorStats likewise, and Celebrities/TreatmentGallery/WhyNeoFollicle
  * are all `base`. The grounds passed below are chosen so no two adjacent bands
  * share a fill.
  */
@@ -71,7 +71,7 @@ export default function BestHairTransplantClinicLp() {
       />
 
       <DoctorStats />
-      <Testimonials />
+      <Celebrities />
 
       <TreatmentSectionView ground="surface" section={LP_FACILITIES} />
 

@@ -66,11 +66,9 @@ const data: VideoGalleryData = {
   ],
 
   /*
-   * The channel link the live page actually pointed at, three times over: the
-   * /channel/<id> form, not the @handle. SOCIAL.footerProfiles is the array
-   * site.ts marks as "what visitors clicked on the live site", so it is the one
-   * to read here; SOCIAL.schemaSameAs carries the @handle and is for JSON-LD.
-   * site.ts is explicit that the two must not be reconciled.
+   * The confirmed channel uses the stable /channel/<id> form. Read it from the
+   * shared visitor-facing profile list so this CTA cannot drift from the footer
+   * or floating social launcher.
    */
   channelUrl: YOUTUBE_CHANNEL,
 

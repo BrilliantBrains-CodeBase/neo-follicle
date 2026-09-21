@@ -117,8 +117,8 @@ const POINTS = [
     alt: "A gloved hand marking a new hairline on a patient's forehead with a surgical pen.",
   },
   {
-    title: 'FUE and NFT Implanters',
-    copy: 'Direct implantation with NFT implanters for controlled angle, direction and density.',
+    title: 'DHI-Certified Implantation',
+    copy: 'Dr. Sandeep is a Certified DHI Specialist (DHI Global, Greece); grafts are placed with DHI and NFT implanters for controlled angle, direction and density.',
     img: '/why/implanters.webp',
     alt: 'Close-up of densely placed follicular grafts along a recipient area, a fine forceps positioning one more.',
   },

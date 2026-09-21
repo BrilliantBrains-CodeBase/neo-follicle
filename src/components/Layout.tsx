@@ -1,11 +1,15 @@
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
+import DesktopBookNowTab from './DesktopBookNowTab'
+import DesktopWhatsAppButton from './DesktopWhatsAppButton'
+import ScrollToTop from './ScrollToTop'
 import StickyActionBar from './StickyActionBar'
 
 export default function Layout() {
   return (
     <>
+      <ScrollToTop />
       {/*
         The wrapper only exists to reserve room for StickyActionBar, which is
         `fixed` and would otherwise cover the footer's legal bar. Padding has to
@@ -19,6 +23,8 @@ export default function Layout() {
         </main>
         <Footer />
       </div>
+      <DesktopBookNowTab />
+      <DesktopWhatsAppButton />
       <StickyActionBar />
     </>
   )
