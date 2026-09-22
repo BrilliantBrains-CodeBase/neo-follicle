@@ -7,10 +7,11 @@ import Reveal from '../Reveal'
  *
  * The doc's own layout note: this band "combines the existing messaging from
  * PRP, GFC, QR678, Exosome, Stem Cell ... without removing individual treatment
- * pages. Each treatment becomes a premium mini-section." So every card here
- * carries the outbound link to that treatment's own page -- this section, not
- * TreatmentCategories, is where those five URLs are emitted. See the header
- * note in TreatmentCategories.tsx for why.
+ * pages. Each treatment becomes a premium mini-section." Dutexome was added
+ * after that brief and follows the same card pattern. Every card here carries
+ * the outbound link to its own page -- this section, not TreatmentCategories,
+ * is where those six URLs are emitted. See the header note in
+ * TreatmentCategories.tsx for why.
  *
  * Design ported from the Folixa reference, about page section 5 -- Elementor
  * container `0f28367` and its grid `9325843`: bordered cards at 1px `line`,
@@ -29,12 +30,11 @@ import Reveal from '../Reveal'
  *
  * Three deliberate departures from the reference:
  *
- *   - Three columns, not the reference's two, so five cards fill two rows
- *     rather than running three deep.
+ *   - Three columns, not the reference's two, so the six cards fill two rows.
  *   - EVERY CARD GETS A "LEARN MORE". FLAGGED FOR CLIENT REVIEW. The doc writes
- *     "CTA: Learn More" under PRP only, and gives the other four no CTA line.
- *     Four cards that dead-end beside one that does not would read as an
- *     oversight, and all five destination pages exist. The doc's own wording is
+ *     "CTA: Learn More" under PRP only, and gives the other original cards no
+ *     CTA line. Cards that dead-end beside one that does not would read as an
+ *     oversight, and all six destination pages exist. The doc's own wording is
  *     kept rather than an authored alternative.
  *   - NO IMAGERY. public/ holds a photograph for PRP only (/gallery/gfc-prp.webp,
  *     already spent on this page in SECTION 2) and none at all for GFC, QR678,
@@ -75,6 +75,11 @@ const TREATMENTS = [
     name: 'Exosome Therapy',
     to: '/exosome-hair-treatment-in-bangalore/',
     points: ['Regenerative treatment.', 'Growth-factor signaling.'],
+  },
+  {
+    name: 'Dutexome',
+    to: '/dutexome-hair-treatment-in-bangalore/',
+    points: ['Local DHT-blocking approach.', 'Microneedling-based delivery.'],
   },
   {
     name: 'Stem Cell Therapy',

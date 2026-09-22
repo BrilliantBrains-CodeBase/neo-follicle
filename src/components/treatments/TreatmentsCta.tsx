@@ -63,8 +63,8 @@ export default function TreatmentsCta() {
           </h2>
 
           <p className="max-w-[620px] text-body text-body">
-            Whether you need a hair transplant or a non-surgical solution like PRP, GFC, QR678, or
-            Exosome Therapy, every treatment begins with an expert consultation.
+            Whether you need a hair transplant or a non-surgical solution like PRP, GFC, QR678,
+            Exosome Therapy, or Dutexome, every treatment begins with an expert consultation.
           </p>
 
           <div className="mt-2 flex w-full flex-wrap justify-center gap-gap-sm md:w-auto">

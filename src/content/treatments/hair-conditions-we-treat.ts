@@ -76,7 +76,7 @@ const data: TreatmentPageData = {
       heading: 'What Hair Conditions Does Neo Follicle Treat?',
       lede: [
         'Neo Follicle Transplant Clinic treats a wide range of hair and scalp conditions, including male pattern baldness, female pattern hair loss, alopecia areata, sudden hair fall, dandruff, scalp irritation, receding hairline, thinning crown, patchy beard growth, low hair density, and hair transplant repair cases.',
-        'Treatment may include medical therapy, PRP, GFC, QR678, exosome therapy, low-level laser therapy, scalp micropigmentation, dandruff treatment, alopecia treatment, or hair transplant surgery depending on the diagnosis.',
+        'Treatment may include medical therapy, PRP, GFC, QR678, exosome therapy, Dutexome, low-level laser therapy, scalp micropigmentation, dandruff treatment, alopecia treatment, or hair transplant surgery depending on the diagnosis.',
       ],
     },
 
@@ -320,8 +320,9 @@ const data: TreatmentPageData = {
     /* ---- Treatment routes, then how a plan is chosen ---------------------- */
 
     /*
-      The capture renders these six as icon cards, each with its own "Explore
-      ..." link, and every target is a built page -- so this is a linkGrid, not
+      The capture renders six icon cards, each with its own "Explore ..." link.
+      Dutexome was added after that capture and follows the same pattern. Every
+      target is a built page -- so this is a linkGrid, not
       the featureGrid the icons would suggest. The six SVG icons are dropped:
       they are `noun-*-FFF2F2.svg` stock glyphs whose fills are tuned to the old
       page's pink tint, and FeatureGrid carries no icons on any other page
@@ -363,6 +364,12 @@ const data: TreatmentPageData = {
           body: 'Exosome-based treatment may be considered in suitable cases as part of an advanced hair restoration plan.',
           to: '/exosome-hair-treatment-in-bangalore/',
           linkLabel: 'Explore Exosome Hair Treatment',
+        },
+        {
+          title: 'Dutexome Hair Treatment',
+          body: 'Dutexome combines local DHT-blocking and regenerative ingredients for selected patients with active follicles.',
+          to: '/dutexome-hair-treatment-in-bangalore/',
+          linkLabel: 'Explore Dutexome Hair Treatment',
         },
         {
           title: 'Hair Transplant Surgery',

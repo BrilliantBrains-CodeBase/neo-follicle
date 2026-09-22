@@ -219,6 +219,14 @@ export const TREATMENT_IMAGES = {
     ],
   },
 
+  'dutexome-hair-treatment-in-bangalore': {
+    // No old-site page or client-supplied treatment photograph exists for this
+    // new service. This source was generated specifically for the page, with
+    // no product label, logo, outcome claim or invented clinic signage.
+    hero: { local: 'content/treatments/images/dutexome-hero.png',
+            alt: 'A clinician using a microneedling pen on the thinning scalp of a reclining patient in a dermatology clinic.' },
+  },
+
   'low-level-laser-therapy': {
     hero: { local: z('Low Level Laser Hair Therapy.png'),
             alt: 'A reclining man having his scalp treated under a red-light therapy device.' },

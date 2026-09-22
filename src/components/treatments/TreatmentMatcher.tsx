@@ -40,7 +40,7 @@ import Reveal from '../Reveal'
 
 /** SECTION 6's table, verbatim, in the doc's order. */
 const ROWS = [
-  { concern: 'Early Thinning', direction: 'PRP, GFC, QR678' },
+  { concern: 'Early Thinning', direction: 'PRP, GFC, QR678, Dutexome' },
   { concern: 'Active Hair Fall', direction: 'Medical Diagnosis' },
   { concern: 'Receding Hairline', direction: 'Hair Transplant' },
   { concern: 'Crown Baldness', direction: 'Hair Transplant + Support' },

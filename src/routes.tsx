@@ -19,6 +19,7 @@ import ContactUs from './pages/contact-us'
 import CostOfHairTransplantInBangaloreLp from './pages/cost-of-hair-transplant-in-bangalore-lp'
 import DandruffTreatmentInBangalore from './pages/dandruff-treatment-in-bangalore'
 import DrSandeepMahapatraHairTransplantSurgeon from './pages/dr-sandeep-mahapatra-hair-transplant-surgeon'
+import DutexomeHairTreatmentInBangalore from './pages/dutexome-hair-treatment-in-bangalore'
 import ExosomeHairTreatmentInBangalore from './pages/exosome-hair-treatment-in-bangalore'
 import EyebrowRestorationInBangalore from './pages/eyebrow-restoration-in-bangalore'
 import FailedHairTransplantRepairInBangalore from './pages/failed-hair-transplant-repair-in-bangalore'
@@ -72,6 +73,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/dandruff-treatment-in-bangalore/', element: <DandruffTreatmentInBangalore />, slug: 'dandruff-treatment-in-bangalore' },
   { path: '/donor-area-planning-hair-transplant/', load: () => import('./pages/donor-area-planning-hair-transplant'), slug: 'donor-area-planning-hair-transplant' },
   { path: '/dr-sandeep-mahapatra-hair-transplant-surgeon/', element: <DrSandeepMahapatraHairTransplantSurgeon />, slug: 'dr-sandeep-mahapatra-hair-transplant-surgeon' },
+  { path: '/dutexome-hair-treatment-in-bangalore/', element: <DutexomeHairTreatmentInBangalore />, slug: 'dutexome-hair-treatment-in-bangalore' },
   { path: '/exosome-hair-treatment-in-bangalore/', element: <ExosomeHairTreatmentInBangalore />, slug: 'exosome-hair-treatment-in-bangalore' },
   { path: '/eyebrow-restoration-in-bangalore/', element: <EyebrowRestorationInBangalore />, slug: 'eyebrow-restoration-in-bangalore' },
   { path: '/failed-hair-transplant-repair-in-bangalore/', element: <FailedHairTransplantRepairInBangalore />, slug: 'failed-hair-transplant-repair-in-bangalore' },

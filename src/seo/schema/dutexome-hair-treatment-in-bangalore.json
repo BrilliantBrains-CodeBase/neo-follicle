@@ -1,0 +1,148 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebSite",
+    "@id": "https://neofollicletransplant.com/#website",
+    "url": "https://neofollicletransplant.com/",
+    "name": "Neo Follicle Hair Transplant Clinic",
+    "inLanguage": "en-IN",
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    }
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://neofollicletransplant.com/dutexome-hair-treatment-in-bangalore/#breadcrumblist",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://neofollicletransplant.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Dutexome Hair Treatment in Bangalore"
+     }
+    ]
+   },
+   {
+    "@type": [
+     "WebPage",
+     "MedicalWebPage"
+    ],
+    "@id": "https://neofollicletransplant.com/dutexome-hair-treatment-in-bangalore/#webpage",
+    "url": "https://neofollicletransplant.com/dutexome-hair-treatment-in-bangalore/",
+    "inLanguage": "en-IN",
+    "name": "Dutexome Hair Treatment in Bangalore | Neo Follicle",
+    "description": "Explore Dutexome hair treatment in Bangalore at Neo Follicle, a doctor-led microneedling protocol for selected patients with early to moderate hair thinning.",
+    "datePublished": "2026-09-22T00:00:00+05:30",
+    "dateModified": "2026-09-22T00:00:00+05:30",
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "breadcrumb": {
+     "@id": "https://neofollicletransplant.com/dutexome-hair-treatment-in-bangalore/#breadcrumblist"
+    },
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/dutexome-hair-treatment-in-bangalore/#therapy"
+    },
+    "reviewedBy": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "potentialAction": {
+     "@id": "https://neofollicletransplant.com/dutexome-hair-treatment-in-bangalore/#readaction"
+    }
+   },
+   {
+    "@type": "ReadAction",
+    "@id": "https://neofollicletransplant.com/dutexome-hair-treatment-in-bangalore/#readaction",
+    "target": "https://neofollicletransplant.com/dutexome-hair-treatment-in-bangalore/"
+   },
+   {
+    "@type": "MedicalTherapy",
+    "@id": "https://neofollicletransplant.com/dutexome-hair-treatment-in-bangalore/#therapy",
+    "name": "Dutexome Hair Treatment",
+    "description": "A doctor-led scalp microneedling protocol using Mesoestetic c.prof 231 Dutexome Solution for selected patients with androgenetic alopecia or diffuse hair thinning.",
+    "medicineSystem": "Evidence-based medicine",
+    "relevantSpecialty": "Dermatology",
+    "recognizingAuthority": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    }
+   },
+   {
+    "@type": "FAQPage",
+    "@id": "https://neofollicletransplant.com/dutexome-hair-treatment-in-bangalore/#faq",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What is Dutexome made of?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Dutexome (Mesoestetic c.prof 231) combines 0.05% dutasteride with plant-based exosomes, copper tripeptide, biotin and B-complex vitamins, delivered into the scalp through microneedling."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How is Dutexome different from QR678 or GFC?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "QR678 and GFC deliver growth factors intended to support follicles. Dutexome combines a regenerative approach with locally applied dutasteride, addressing DHT-driven pattern hair loss while supporting the follicular environment."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Is Dutexome the same as taking dutasteride tablets?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "No. Dutexome applies dutasteride directly to the scalp at a low concentration rather than as a daily oral tablet. It is intended to reduce systemic exposure compared with oral treatment, but some absorption may still occur, so your full medical history must be reviewed."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Is Dutexome safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "It uses a CE-marked professional formulation from Mesoestetic. As with any dutasteride-containing product, it is not suitable during pregnancy or breastfeeding. Dr. Sandeep reviews your medical history and contraindications before recommending treatment."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How many sessions will I need?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "The number of sessions depends on your hair loss stage and scalp condition. Dr. Sandeep will recommend a personalized session plan after your scalp evaluation."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Does the treatment hurt?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Because this is a microneedling-based procedure, you may feel mild discomfort or tingling during the session, similar to other mesotherapy treatments offered at the clinic."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I combine Dutexome with other treatments?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "This is decided case by case based on your hair loss pattern and any other treatments, such as PRP, GFC or post-transplant care, that you may be undergoing."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Is Dutexome effective for women?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Dutasteride-based treatments require careful individual evaluation for women, particularly in relation to pregnancy status. Dr. Sandeep will assess suitability during consultation."
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

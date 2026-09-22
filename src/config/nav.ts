@@ -47,6 +47,7 @@ export const headerNav: NavItem[] = [
           { label: 'Growth Factor Concentrate (GFC)', to: '/gfc-hair-treatment-in-bangalore/' },
           { label: 'Neo QR678 Treatment', to: '/qr678-hair-treatment-in-bangalore/' },
           { label: 'Exosome Therapy', to: '/exosome-hair-treatment-in-bangalore/' },
+          { label: 'Dutexome Hair Treatment', to: '/dutexome-hair-treatment-in-bangalore/' },
           { label: 'Low Level Laser Hair Therapy', to: '/low-level-laser-therapy/' },
           { label: 'Scalp Hair Micro-pigmentation (MPG)', to: '/scalp-micropigmentation-in-bangalore/' },
           { label: 'Alopecia Treatment', to: '/alopecia-areata-treatment-in-bangalore/' },

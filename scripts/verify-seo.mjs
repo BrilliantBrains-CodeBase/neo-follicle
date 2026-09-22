@@ -15,6 +15,7 @@ import { fileURLToPath } from 'node:url'
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const dist = path.join(root, 'dist')
 const backup = path.join(root, 'neofollicle-seo-backup')
+const authoredDir = path.join(root, 'content', 'seo')
 const ORIGIN = 'https://neofollicletransplant.com'
 
 if (!fs.existsSync(dist)) {
@@ -44,6 +45,12 @@ function parseCsv(text) {
 }
 
 const rows = parseCsv(fs.readFileSync(path.join(backup, '01-SEO-MASTER.csv'), 'utf8'))
+const authored = fs.existsSync(authoredDir)
+  ? fs.readdirSync(authoredDir)
+      .filter((file) => file.endsWith('.json'))
+      .sort()
+      .map((file) => JSON.parse(fs.readFileSync(path.join(authoredDir, file), 'utf8')))
+  : []
 
 const unesc = (s) =>
   s.replaceAll('&quot;', '"').replaceAll('&gt;', '>').replaceAll('&lt;', '<').replaceAll('&amp;', '&')
@@ -68,6 +75,38 @@ missing.length
 if (missing.length) { report(); process.exit(1) }
 
 const docs = new Map(rows.map(r => [r.slug, fs.readFileSync(distFileFor(r.url), 'utf8')]))
+
+/* ---- 1b. every post-snapshot authored page keeps its declared SEO -------- */
+const authoredBad = []
+for (const entry of authored) {
+  const page = entry.seo
+  const url = `${ORIGIN}${page.path}`
+  const file = distFileFor(url)
+  if (!fs.existsSync(file)) {
+    authoredBad.push(`${page.slug}: missing prerendered HTML`)
+    continue
+  }
+
+  const html = fs.readFileSync(file, 'utf8')
+  const fields = [
+    ['title', /<title>([\s\S]*?)<\/title>/, page.title],
+    ['description', /<meta name="description" content="([^"]*)"/, page.description],
+    ['canonical', /<link rel="canonical" href="([^"]*)"/, page.canonical],
+    ['robots', /<meta name="robots" content="([^"]*)"/, page.robots],
+  ]
+  for (const [name, pattern, expected] of fields) {
+    if (pick(html, pattern) !== expected) authoredBad.push(`${page.slug}: ${name} differs`)
+  }
+
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map((match) => JSON.parse(match[1]))
+  if (JSON.stringify(blocks) !== JSON.stringify(entry.schema)) {
+    authoredBad.push(`${page.slug}: JSON-LD differs from content/seo source`)
+  }
+}
+authoredBad.length
+  ? fail(`${authored.length} authored page SEO records match`, authoredBad.join('\n      '))
+  : pass(`${authored.length} authored page SEO records and graphs match their source`)
 
 /* ---- 2/3. title + description byte-for-byte -------------------------------- */
 for (const [field, re, csvKey] of [
@@ -143,7 +182,10 @@ faqPages === 14 && faqQuestions === 82
   : fail('14 FAQPage graphs / 82 questions', `got ${faqPages} FAQPages, ${faqQuestions} questions`)
 
 /* ---- 8. every nav link resolves to a real route ---------------------------- */
-const routePaths = new Set(rows.map(r => (r.url.startsWith(ORIGIN) ? r.url.slice(ORIGIN.length) : r.url) || '/'))
+const routePaths = new Set([
+  ...rows.map(r => (r.url.startsWith(ORIGIN) ? r.url.slice(ORIGIN.length) : r.url) || '/'),
+  ...authored.map((entry) => entry.seo.path),
+])
 const home = docs.get('home')
 const chrome = [
   ...(home.match(/<header[\s\S]*?<\/header>/) ?? []),
@@ -158,14 +200,17 @@ dangling.length
 /* ---- 9. sitemaps + robots.txt ---------------------------------------------- */
 const sitemapUrls = ['sitemap-post-type-page.xml', 'sitemap-post-type-post.xml', 'sitemap-taxonomy-category.xml']
   .flatMap(f => [...fs.readFileSync(path.join(dist, f), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]))
-const expectedSitemap = rows.filter(r => r.sitemap_included === 'True').map(r => r.url)
+const expectedSitemap = [
+  ...rows.filter(r => r.sitemap_included === 'True').map(r => r.url),
+  ...authored.filter((entry) => entry.seo.inSitemap).map((entry) => `${ORIGIN}${entry.seo.path}`),
+]
 const sitemapDiff = [
   ...expectedSitemap.filter(u => !sitemapUrls.includes(u)).map(u => `missing ${u}`),
   ...sitemapUrls.filter(u => !expectedSitemap.includes(u)).map(u => `extra ${u}`),
 ]
 sitemapDiff.length
-  ? fail('sitemaps list exactly the 53 indexable URLs', sitemapDiff.slice(0, 5).join('\n      '))
-  : pass(`sitemaps list exactly the ${expectedSitemap.length} indexable URLs, and none of the 6 noindex pages`)
+  ? fail(`sitemaps list exactly the ${expectedSitemap.length} indexable URLs`, sitemapDiff.slice(0, 5).join('\n      '))
+  : pass(`sitemaps list exactly the ${expectedSitemap.length} indexable URLs, including ${authored.filter((entry) => entry.seo.inSitemap).length} authored after the capture`)
 
 fs.readFileSync(path.join(dist, 'robots.txt'), 'utf8').includes(`Sitemap: ${ORIGIN}/sitemap.xml`)
   ? pass('robots.txt carries the Sitemap directive')
