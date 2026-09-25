@@ -137,19 +137,18 @@ export const CONTACT = {
 
 export const FORMS = {
   /**
-   * Google Apps Script web app URL -- Deploy > New deployment > Web app, with
-   * "Who has access" set to Anyone. NOT YET DEPLOYED.
-   *
-   * While this is the empty string, ContactUs routes every submission to
-   * WhatsApp instead, so the form is never a dead end. Paste the /exec URL
-   * here to switch it over; nothing else needs to change.
+   * Google Apps Script web app URL. The script is scripts/apps-script/Code.gs
+   * (Sheet row + clinic email per lead); scripts/apps-script/README.md has the
+   * deploy steps. Redeploy as a new VERSION of this deployment, not a new
+   * deployment, or this URL changes.
    *
    * The POST must be a CORS *simple* request: `text/plain;charset=utf-8` with
    * a JSON.stringify'd body. Apps Script cannot answer an OPTIONS preflight,
    * so an `application/json` content type fails outright. Read it script-side
    * with JSON.parse(e.postData.contents).
    */
-  leadEndpoint: '',
+  leadEndpoint:
+    'https://script.google.com/macros/s/AKfycbwk8voM1hjMtsR7NeQ5--0s07u27lIlXOwm0_OMjGo1eazh1TW8czT9Fh9i6-r93RzG/exec',
 } as const
 
 // --- social profiles ------------------------------------------------------

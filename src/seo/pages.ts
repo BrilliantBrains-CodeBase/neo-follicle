@@ -1705,6 +1705,33 @@ export const pages: PageSeo[] = [
     "h1": "Dr. Sandeep Mahapatra in the Media",
     "inSitemap": true,
     "lastmod": "2026-09-25T00:00:00+05:30"
+  },
+  {
+    "slug": "thank-you",
+    "path": "/thank-you/",
+    "type": "page",
+    "title": "Thank You – Neo Follicle Hair Transplant",
+    "description": "Thank you for contacting Neo Follicle Hair Transplant Clinic, Bangalore. Our team will call you back shortly to plan your consultation.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": null,
+    "robots": "noindex, follow",
+    "og": {
+      "title": "Thank You – Neo Follicle Hair Transplant",
+      "description": "Thank you for contacting Neo Follicle Hair Transplant Clinic, Bangalore. Our team will call you back shortly to plan your consultation.",
+      "url": "https://neofollicletransplant.com/thank-you/",
+      "type": "website",
+      "image": null,
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": null
+    },
+    "h1": "Thank You",
+    "inSitemap": false,
+    "lastmod": null
   }
 ]
 

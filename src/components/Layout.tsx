@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
+import { captureAttribution } from './attribution'
 import Header from './Header'
 import Footer from './Footer'
 import DesktopBookNowTab from './DesktopBookNowTab'
@@ -7,6 +9,9 @@ import ScrollToTop from './ScrollToTop'
 import StickyActionBar from './StickyActionBar'
 
 export default function Layout() {
+  // Landing-page URL only; in-app navigation never carries ad params.
+  useEffect(captureAttribution, [])
+
   return (
     <>
       <ScrollToTop />

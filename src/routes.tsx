@@ -43,6 +43,7 @@ import SamplePage from './pages/sample-page'
 import ScalpMicropigmentationInBangalore from './pages/scalp-micropigmentation-in-bangalore'
 import StemCellTherapyForHairLossInBangalore from './pages/stem-cell-therapy-for-hair-loss-in-bangalore'
 import TermsOfUse from './pages/terms-of-use'
+import ThankYou from './pages/thank-you'
 import ThankYouLp from './pages/thank-you-lp'
 import Uncategorized from './pages/uncategorized'
 import UnshavenHairTransplant from './pages/unshaven-hair-transplant'
@@ -116,6 +117,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/scalp-micropigmentation-in-bangalore/', element: <ScalpMicropigmentationInBangalore />, slug: 'scalp-micropigmentation-in-bangalore' },
   { path: '/stem-cell-therapy-for-hair-loss-in-bangalore/', element: <StemCellTherapyForHairLossInBangalore />, slug: 'stem-cell-therapy-for-hair-loss-in-bangalore' },
   { path: '/terms-of-use/', element: <TermsOfUse />, slug: 'terms-of-use' },
+  { path: '/thank-you/', element: <ThankYou />, slug: 'thank-you' },
   { path: '/thank-you-lp/', element: <ThankYouLp />, slug: 'thank-you-lp' },
   { path: '/category/uncategorized/', element: <Uncategorized />, slug: 'uncategorized' },
   { path: '/unethical-practices-in-hair-transplantation/', load: () => import('./pages/unethical-practices-in-hair-transplantation'), slug: 'unethical-practices-in-hair-transplantation' },

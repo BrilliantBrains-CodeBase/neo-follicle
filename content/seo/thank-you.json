@@ -1,0 +1,44 @@
+{
+  "seo": {
+    "slug": "thank-you",
+    "path": "/thank-you/",
+    "type": "page",
+    "title": "Thank You – Neo Follicle Hair Transplant",
+    "description": "Thank you for contacting Neo Follicle Hair Transplant Clinic, Bangalore. Our team will call you back shortly to plan your consultation.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": null,
+    "robots": "noindex, follow",
+    "og": {
+      "title": "Thank You – Neo Follicle Hair Transplant",
+      "description": "Thank you for contacting Neo Follicle Hair Transplant Clinic, Bangalore. Our team will call you back shortly to plan your consultation.",
+      "url": "https://neofollicletransplant.com/thank-you/",
+      "type": "website",
+      "image": null,
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": null
+    },
+    "h1": "Thank You",
+    "inSitemap": false,
+    "lastmod": null
+  },
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://neofollicletransplant.com/thank-you/#webpage",
+          "url": "https://neofollicletransplant.com/thank-you/",
+          "name": "Thank You – Neo Follicle Hair Transplant",
+          "inLanguage": "en-IN",
+          "isPartOf": { "@id": "https://neofollicletransplant.com/#website" }
+        }
+      ]
+    }
+  ]
+}

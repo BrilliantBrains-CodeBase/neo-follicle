@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent, ReactElement } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CONTACT, FORMS } from '../config/site'
+import { readAttribution } from './attribution'
 import { ChevronDown, MailIcon, MapPinIcon, PhoneIcon, Square } from './icons'
 import Reveal from './Reveal'
 
@@ -175,14 +176,20 @@ type ContactUsProps = {
    * Route to send the visitor to once the lead is away, e.g.
    * '/nft-brochure-thank-you/'. Trailing slash required -- that is P0.
    *
-   * Opt-in, and unset everywhere except the brochure gate. The home and
-   * contact-us forms stay on the page and show the inline "sent" message,
-   * which is the captured behaviour there; the brochure funnel's captured
-   * behaviour is a redirect to its own thank-you page, and without this that
-   * page has NOTHING linking to it -- the same orphan problem the SEO audit
-   * raised about contact-us (reports/seo-audit.md section 7).
+   * Defaults to '/thank-you/', the one conversion URL for the home and
+   * contact-us forms. The brochure gate overrides it with its own thank-you
+   * page, which is that funnel's captured behaviour. Either way the target
+   * page has something linking to it -- without a redirect it would be the
+   * orphan the SEO audit raised about contact-us (reports/seo-audit.md
+   * section 7). The inline "sent" message below only shows if navigation
+   * does not happen.
    */
   successTo?: string
+  /**
+   * Which caller this is, written to the lead sheet's Form column so the clinic
+   * can tell a brochure download from a booking. See scripts/apps-script/.
+   */
+  formId?: 'home' | 'contact' | 'brochure'
 }
 
 export default function ContactUs({
@@ -193,7 +200,8 @@ export default function ContactUs({
   submitLabel = 'Send Message',
   showCountry = false,
   info = INFO,
-  successTo,
+  successTo = '/thank-you/',
+  formId = 'home',
 }: ContactUsProps = {}) {
   const [status, setStatus] = useState<Status>('idle')
   const navigate = useNavigate()
@@ -213,36 +221,24 @@ export default function ContactUs({
     const form = event.currentTarget
     const data = Object.fromEntries(new FormData(form)) as Record<string, string>
 
-    // No Apps Script deployed yet -- hand the lead to WhatsApp rather than drop
-    // it. Delete this branch once FORMS.leadEndpoint is set.
-    if (!FORMS.leadEndpoint) {
-      const lines = [
-        `Name: ${data.name}`,
-        `Phone: ${data.phone}`,
-        data.email && `Email: ${data.email}`,
-        data.country && `Country: ${data.country}`,
-        data.service && `Interested in: ${data.service}`,
-        data.message && `Message: ${data.message}`,
-      ].filter(Boolean)
-
-      window.open(
-        `${CONTACT.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`,
-        '_blank',
-        'noopener',
-      )
-      succeeded(form)
-      return
-    }
-
     setStatus('sending')
     try {
       // `text/plain` keeps this a CORS simple request. See FORMS.leadEndpoint.
       const response = await fetch(FORMS.leadEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          ...readAttribution(),
+          form: formId,
+          page: window.location.href,
+          referrer: document.referrer,
+        }),
       })
       if (!response.ok) throw new Error(String(response.status))
+      // Apps Script answers 200 even when it rejects the lead; the verdict is in the body.
+      const result = (await response.json()) as { ok?: boolean }
+      if (!result.ok) throw new Error('rejected')
       succeeded(form)
     } catch {
       setStatus('error')
@@ -324,6 +320,17 @@ export default function ContactUs({
         >
           {/* `36840be`: one column, 1.5rem row gap. */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            {/* Honeypot. Off-screen rather than display:none, which some bots
+                skip; the script drops any lead that fills it. */}
+            <input
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="absolute -left-[9999px] h-px w-px opacity-0"
+            />
+
             <div>
               <label htmlFor="contact-name" className="sr-only">
                 Your name

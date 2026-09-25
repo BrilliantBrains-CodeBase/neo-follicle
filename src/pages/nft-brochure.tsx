@@ -16,8 +16,8 @@ import { seoFor } from '../seo/pages'
  * footer chrome. Both are carried verbatim below.
  *
  * THE FORM IS THE SHARED ContactUs COMPONENT, relabelled. It already carries
- * the field set, the validation, the WhatsApp fallback when FORMS.leadEndpoint
- * is unset, and the design resolved from the reference -- so a second, nearly
+ * the field set, the validation, the lead endpoint (FORMS.leadEndpoint) and
+ * the design resolved from the reference -- so a second, nearly
  * identical form component for this one page would be a copy to maintain, not
  * a feature. Only `submitLabel` and the surrounding copy differ.
  *
@@ -27,11 +27,12 @@ import { seoFor } from '../seo/pages'
  * home and contact-us forms, but it would have left the brochure thank-you
  * page with nothing at all linking to it.
  *
- * NOTE FOR WHOEVER WIRES THE LEAD ENDPOINT. FORMS.leadEndpoint is still unset,
- * so ContactUs currently hands the lead to WhatsApp and then redirects here.
- * The brochure email that this page promises is NOT sent by anything yet --
- * that needs the endpoint, and until then the thank-you page's "we have sent
- * the download link to your email" is a promise nothing keeps.
+ * NOTE ON THE BROCHURE EMAIL. These leads land
+ * in the lead sheet tagged Form = "brochure" (scripts/apps-script/Code.gs). But
+ * that script only notifies the clinic -- it does NOT email the visitor the
+ * brochure, so the thank-you page's "we have sent the download link to your
+ * email" is still a promise nothing keeps. Add it to Code.gs when the brochure
+ * PDF has a hosted URL.
  */
 export default function NftBrochure() {
   return (
@@ -53,6 +54,7 @@ export default function NftBrochure() {
         lede="Fill up the below form to download the NFT Brochure. Once you fill up the form, we will send you an email with link to download the NFT brochure."
         submitLabel="Download Brochure"
         successTo="/nft-brochure-thank-you/"
+        formId="brochure"
       />
     </>
   )
