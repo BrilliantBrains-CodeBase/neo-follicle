@@ -1,5 +1,6 @@
 import BlogListing from '../components/BlogListing'
 
+
 /**
  * /category/uncategorized/ -- WordPress's default category archive.
  *
@@ -19,8 +20,11 @@ import BlogListing from '../components/BlogListing'
  * and regenerating, which moves the gate's expected counts -- a separate change,
  * so that an SEO regression stays distinguishable from a design one.
  *
- * Until then it renders the listing it always did, with no pager, and its own
- * captured <h1> -- which is "Our Blogs", exactly as the old page had it.
+ * Until then it renders the listing it always did, with no pager, under the
+ * section's current name. The old page's own h1 was "Our Blogs" -- the same
+ * string /our-blogs/ used, since this was a duplicate of it -- so the two
+ * tracking each other through the rename is the original behaviour, not a new
+ * coupling.
  */
 export default function Uncategorized() {
   return <BlogListing heading="Our Blogs" crumb="Uncategorized" paged={false} />

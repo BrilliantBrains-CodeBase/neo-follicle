@@ -8,6 +8,30 @@
  */
 import { SITE } from '../seo/site'
 
+/**
+ * The section holding the blog and the press coverage.
+ *
+ * This is the DROPDOWN's label, not any one page's name -- the section spans
+ * two URLs. The ampersand is load-bearing: spelled "and", the extra width plus
+ * the dropdown's chevron wraps the header nav onto a second line at every
+ * desktop width from 1240px up, taking the bar from 97px to 109px. Measured.
+ * That 97px is also the offset STICKY_BELOW_HEADER pins against.
+ *
+ * NEITHER URL CHANGES. /our-blogs/ is in 01-SEO-MASTER.csv and in the sitemap,
+ * so renaming the path would force a redirect and is P0-PRESERVE.
+ * /media-coverage/ postdates the capture and is authored in
+ * content/seo/media-coverage.json.
+ */
+export const BLOG_SECTION = 'Media & Blogs'
+
+/** The blog listing. Its own name, since the section no longer means just it. */
+export const BLOG_LABEL = 'Blogs'
+export const BLOG_SECTION_PATH = '/our-blogs/'
+
+/** The section's other page: third-party coverage. */
+export const PRESS_LABEL = 'In the Press'
+export const PRESS_PATH = '/media-coverage/'
+
 export type NavLink = { label: string; to: string }
 export type NavColumn = { title: string | null; links: NavLink[] }
 export type NavItem =
@@ -75,7 +99,21 @@ export const headerNav: NavItem[] = [
       },
     ],
   },
-  { kind: 'link', label: 'Blogs', to: '/our-blogs/' },
+  // A dropdown, not a link: the section now has two pages under it -- the blog
+  // listing and the press coverage, which moved off /our-blogs/ to its own URL.
+  {
+    kind: 'dropdown',
+    label: BLOG_SECTION,
+    columns: [
+      {
+        title: null,
+        links: [
+          { label: BLOG_LABEL, to: BLOG_SECTION_PATH },
+          { label: PRESS_LABEL, to: PRESS_PATH },
+        ],
+      },
+    ],
+  },
 ]
 
 /** The header's right-hand phone link, shown beside the CTA button. */
@@ -130,7 +168,8 @@ export const footerColumns: NavColumn[] = [
       { label: 'Before & After Gallery', to: '/image-gallery/' },
       { label: 'International Patients', to: '/hair-transplant-medical-tourism-in-bangalore/' },
       { label: 'Hair Loss Treatments', to: '/hair-loss-treatment-in-bangalore/' },
-      { label: 'Blog', to: '/our-blogs/' },
+      { label: BLOG_LABEL, to: BLOG_SECTION_PATH },
+      { label: PRESS_LABEL, to: PRESS_PATH },
     ],
   },
 ]

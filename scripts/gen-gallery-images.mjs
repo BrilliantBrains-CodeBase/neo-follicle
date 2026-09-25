@@ -66,7 +66,11 @@ for (const section of GALLERY_SECTIONS) {
   if (section.review) flagged++
   const items = []
   for (const [i, entry] of section.images.entries()) {
-    const src = resolveUpload(`/${entry.from}`)
+    // Two source kinds, documented on `u()` and `f()` in gallery-assets.mjs:
+    // `from` is a capture of the old site, `file` is a client delivery sitting
+    // in the repo. Everything after this line is identical for both.
+    const src = entry.file ? path.join(root, entry.file) : resolveUpload(`/${entry.from}`)
+    if (entry.file && !fs.existsSync(src)) throw new Error(`missing client file: ${entry.file}`)
     const n = i + 1
     const thumb = await write(galleryImagePath(section.id, n, 'thumb'), src, THUMB)
     const full = await write(galleryImagePath(section.id, n, 'full'), src, FULL)

@@ -33,27 +33,53 @@ export function galleryImagePath(sectionId, n, variant) {
   return `/image-gallery/${sectionId}/${String(n).padStart(2, '0')}-${variant}.webp`
 }
 
-/** Served path for a locally-cached video poster. */
+/**
+ * Served path for a locally-cached video poster.
+ *
+ * SHARED WITH src/components/PostProse.tsx, which inlines this same shape --
+ * it is a .tsx and cannot import a Node script module. verify-gallery.mjs
+ * check 14 asserts the two agree, so a change here that is not mirrored there
+ * fails the build rather than shipping broken posters on ten blog posts.
+ */
 export function videoPosterPath(id) {
   return `/video-gallery/${id}.webp`
 }
 
+/**
+ * A source captured from the old WordPress site, resolved out of
+ * neofollicle-seo-backup/media/files/ by resolveUpload().
+ */
 const u = (p) => `wp-content/uploads/${p}`
+
+/**
+ * A source the client supplied directly, resolved from the repo root.
+ *
+ * The backup tree is a capture of the old site and nothing may be written into
+ * it, so a fresh delivery cannot become a `from:`. Entries carry `file:`
+ * instead and gen-gallery-images.mjs resolves them against the repo root.
+ * Everything downstream -- served paths, derivatives, the generated module --
+ * is identical either way.
+ */
+const f = (p) => `content/gallery/${p}`
 
 /*
  * FLAGGED FOR CLIENT REVIEW -- applies to the whole gallery, raise before launch.
  *
- * 1. PATIENT CONSENT ON UNMASKED FACES. TreatmentGallery.tsx already notes that
- *    the eyebrow and GFC/PRP composites carry no eye bars. Having now looked at
- *    all 82, the real number is far higher: all 21 of the R*_BF_* hair
- *    transplant images show fully identifiable faces, front and profile, with
- *    no masking at all. That is 21 patients, not a handful.
+ * 1. PATIENT CONSENT ON UNMASKED FACES -- largely resolved, 25 Sep 2026.
+ *    TreatmentGallery.tsx notes that the eyebrow and GFC/PRP composites carry
+ *    no eye bars. The real number was far higher: 21 of the hair transplant
+ *    images (the R*_BF_* set) showed fully identifiable faces, front and
+ *    profile. Those 21 have been REMOVED from this manifest and replaced with
+ *    the client's masked delivery -- see the note on hair-transplant-results.
  *
- *    This matters more here than on the home page. There these photos appear in
- *    a ~380px cover-cropped tile; here a visitor can open any one of them
- *    full-screen in the lightbox, deliberately, at up to 1200px. Get written
- *    consent confirmation for the unmasked set specifically, or ask for masked
- *    re-exports.
+ *    Why it mattered more here than on the home page: there those photos appear
+ *    in a ~380px cover-cropped tile, whereas here a visitor can open any tile
+ *    full-screen in the lightbox, deliberately, at up to 1200px.
+ *
+ *    Two things are still open. The eyebrow section's close crops of the eye
+ *    region remain unmasked, and R7_BF_2 is still published at
+ *    /blog/body/R7_BF_2.webp inside the hair-transplant-recovery-timeline post
+ *    through a different pipeline entirely.
  *
  * 2. CLINIC SIGNAGE. TreatmentGallery.tsx reads the backdrop as "NEO FOLLICLE
  *    ... BHUBANESWAR" and flags it as the wrong city for this Bangalore site.
@@ -73,11 +99,44 @@ export const GALLERY_SECTIONS = [
   {
     id: 'hair-transplant-results',
     /*
-     * FLAGGED FOR CLIENT REVIEW: entries 13-33 are the unmasked set described
-     * in note 1 above. They are seven patients photographed from three angles
-     * each (R1, R2, R3, R4, R5, R7, R8 -- the live page has no R6), so the alts
-     * name the angle to make the triptych legible rather than repeating one
-     * sentence 21 times.
+     * Twelve masked composites from the original capture, then seven the client
+     * delivered in content/gallery/Zoho WorkDrive-8 on 25 Sep 2026. Every image
+     * in this section now carries eye bars.
+     *
+     * THE 21 UNMASKED IMAGES THAT USED TO SIT HERE HAVE BEEN REMOVED. They were
+     * seven patients photographed from three angles each -- R1, R2, R3, R4, R5,
+     * R7 and R8 (the live page had no R6) -- shown front and profile with no
+     * masking at all, and they are the set flagged in note 1 at the top of this
+     * file. On a page where any tile opens full-screen in the lightbox at up to
+     * 1200px, publishing identifiable patients without confirmed written
+     * consent is not a risk worth carrying, and the client's new delivery is
+     * masked throughout.
+     *
+     * To restore them if consent is confirmed, re-add these entries after
+     * NFT-HT-BA-7 below, in this order, and write alts for them:
+     *
+     *   2025/05/R1_BF_1.jpg  2025/05/R1_BF_2.jpg  2025/05/R1_BF_3.jpg
+     *   2025/06/R2_BF_1.png  2025/05/R2_BF_2.jpg  2025/05/R2_BF_3.jpg
+     *   2025/05/R3_BF_3.jpg  2025/05/R3_BF_2.jpg  2025/05/R3_BF_1.jpg
+     *   2025/05/R4_BF_3.jpg  2025/05/R4_BF_2.jpg  2025/05/R4_BF_1.jpg
+     *   2025/05/R5_BF_3.jpg  2025/05/R5_BF_2.jpg  2025/05/R5_BF_1.jpg
+     *   2025/05/R7_BF_3.jpg  2025/05/R7_BF_2.jpg  2025/05/R7_BF_1.jpg
+     *   2025/05/R8_BF_3.jpg  2025/05/R8_BF_2.jpg  2025/05/R8_BF_1.jpg
+     *
+     * FLAGGED FOR CLIENT REVIEW: removing them here does NOT unpublish them.
+     * R7_BF_2 is also served at /blog/body/R7_BF_2.webp inside the
+     * hair-transplant-recovery-timeline post, through its own pipeline
+     * (gen-blog-images.mjs) and its own manifest. If the consent question is
+     * live, that one needs answering too.
+     *
+     * FLAGGED FOR CLIENT REVIEW: the delivery's 7.jpg is NOT included. Its
+     * "Before" panel shows a fuller, styled hairline than its "After", which
+     * shows short, sparse, newly-grown hair with the scalp visible -- so under
+     * a "Results" heading it reads as hair loss. Either the two panels are
+     * swapped or the "after" is an early post-operative stage. The poses differ
+     * too much to tell from the file alone. Ask the client which, then either
+     * swap the panels or request a later-stage photograph; adding
+     * `{ file: f('Zoho WorkDrive-8/7.jpg'), alt: '...' }` below is all it takes.
      */
     images: [
       { from: u('2025/03/NFT-Hair-Trnsplant-Before-After-Image-1.jpg'), alt: 'Hair transplant before and after: a deeply receding hairline and thinning mid-scalp, then a rebuilt hairline with even density across the front.' },
@@ -93,33 +152,14 @@ export const GALLERY_SECTIONS = [
       { from: u('2025/03/NFT-Hair-Transplant-Before-After-Images-2.jpg'), alt: 'Hair transplant before and after: heavy recession at the temples and front, then a full hairline with natural temple points.' },
       { from: u('2025/10/NFT-HT-BA-7.png'), alt: 'Hair transplant before and after viewed from above: a thin, see-through frontal scalp, then dense coverage over the same area.' },
 
-      { from: u('2025/05/R1_BF_1.jpg'), alt: 'Hair transplant before and after, three-quarter view: advanced baldness across the front and crown, then thick dark hair with a rebuilt hairline.' },
-      { from: u('2025/05/R1_BF_2.jpg'), alt: 'Hair transplant before and after, front view of the same patient: a bare frontal scalp, then full restored coverage.' },
-      { from: u('2025/05/R1_BF_3.jpg'), alt: 'Hair transplant before and after, opposite three-quarter view of the same patient, showing the restored temple and hairline.' },
-
-      { from: u('2025/06/R2_BF_1.png'), alt: 'Hair transplant before and after seen from above: a receded hairline with sparse frontal hair, then a dense, lowered hairline.' },
-      { from: u('2025/05/R2_BF_2.jpg'), alt: 'Hair transplant before and after, front view of the same patient: thinning at both frontal corners, then even density across the hairline.' },
-      { from: u('2025/05/R2_BF_3.jpg'), alt: 'Hair transplant before and after, three-quarter view of the same patient, showing the rebuilt temple point.' },
-
-      { from: u('2025/05/R3_BF_3.jpg'), alt: 'Hair transplant before and after seen from above: a thin, high hairline, then dense hair brought forward across the forehead.' },
-      { from: u('2025/05/R3_BF_2.jpg'), alt: 'Hair transplant before and after, front view of the same patient: recession at the temples, then a restored frontal hairline.' },
-      { from: u('2025/05/R3_BF_1.jpg'), alt: 'Hair transplant before and after, three-quarter view of the same patient, showing density restored along the side of the hairline.' },
-
-      { from: u('2025/05/R4_BF_3.jpg'), alt: 'Hair transplant before and after, three-quarter view: a receded frontal hairline, then restored hair framing the temple.' },
-      { from: u('2025/05/R4_BF_2.jpg'), alt: 'Hair transplant before and after seen from above in the same patient: a thin frontal scalp, then dense coverage.' },
-      { from: u('2025/05/R4_BF_1.jpg'), alt: 'Hair transplant before and after, profile view of the same patient, showing the restored hairline in silhouette.' },
-
-      { from: u('2025/05/R5_BF_3.jpg'), alt: 'Hair transplant before and after, three-quarter view: baldness across the frontal scalp, then thick hair with a defined hairline.' },
-      { from: u('2025/05/R5_BF_2.jpg'), alt: 'Hair transplant before and after, front view of the same patient: a high, bare forehead, then a lowered, dense hairline.' },
-      { from: u('2025/05/R5_BF_1.jpg'), alt: 'Hair transplant before and after, opposite three-quarter view of the same patient, showing the restored temple.' },
-
-      { from: u('2025/05/R7_BF_3.jpg'), alt: 'Hair transplant before and after, three-quarter view: extensive hair loss over the front and crown, then restored coverage across both.' },
-      { from: u('2025/05/R7_BF_2.jpg'), alt: 'Hair transplant before and after seen from above in the same patient: a large bald area over the crown, then hair covering it.' },
-      { from: u('2025/05/R7_BF_1.jpg'), alt: 'Hair transplant before and after, opposite three-quarter view of the same patient, showing the rebuilt frontal hairline.' },
-
-      { from: u('2025/05/R8_BF_3.jpg'), alt: 'Hair transplant before and after seen from above: advanced thinning across the front and mid-scalp, then dense restored hair.' },
-      { from: u('2025/05/R8_BF_2.jpg'), alt: 'Hair transplant before and after, top-down view of the same patient, showing coverage restored over the crown.' },
-      { from: u('2025/05/R8_BF_1.jpg'), alt: 'Hair transplant before and after, three-quarter view of the same patient, showing the restored hairline and temple.' },
+      // Client delivery, 25 Sep 2026. Numbered as supplied; 7.jpg held back (see above).
+      { file: f('Zoho WorkDrive-8/1.jpg'), alt: 'Hair transplant before and after, three-quarter view: a receded hairline with thinning above the temple, then restored density along the whole hairline.' },
+      { file: f('Zoho WorkDrive-8/2.jpg'), alt: 'Hair transplant before and after, front view: recession at both temples leaving a narrow central tuft, then an even, fully restored hairline.' },
+      { file: f('Zoho WorkDrive-8/3.png'), alt: 'Hair transplant before and after: extensive baldness across the front and mid-scalp with only a small forelock remaining, then thick hair with a rebuilt hairline.' },
+      { file: f('Zoho WorkDrive-8/4.jpg'), alt: 'Hair transplant before and after, profile view: a bare frontal scalp above the temple, then restored hair framing the side of the hairline.' },
+      { file: f('Zoho WorkDrive-8/5.jpg'), alt: 'Hair transplant before and after, front view: a receded hairline with sparse frontal hair, then a lowered hairline with visible density.' },
+      { file: f('Zoho WorkDrive-8/6.jpg'), alt: 'Hair transplant before and after: diffuse thinning across the front and mid-scalp with the scalp showing through, then noticeably denser coverage.' },
+      { file: f('Zoho WorkDrive-8/8.jpg'), alt: 'Hair transplant before and after seen from above: a thin, see-through frontal scalp, then thick dark hair covering the same area.' },
     ],
   },
 

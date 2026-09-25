@@ -268,7 +268,7 @@ export function CalendarCheck({ className }: IconProps) {
 }
 
 /**
- * The process section's five step glyphs, from
+ * The process section's step glyphs, from
  * folixa-design-reference/assets/icons/svg/ (jki-headset-solid,
  * jki-clipboard-list-solid, jki-eye, jki-dna-solid,
  * jki-hand-holding-heart-solid). Same y-flip caveat as the group above.
@@ -279,6 +279,7 @@ export function CalendarCheck({ className }: IconProps) {
  * adds. Eye stands in for Hairline Design rather than jki-search-location-solid,
  * which is already in use above as MapPinIcon; Dna replaces the reference's
  * jki-line-chart1-light on the graft step, where a line chart meant nothing.
+ * Scan is a hand-drawn 24px outline used for the AI-driven TricoScan step.
  */
 export function Headset({ className }: IconProps) {
   return (
@@ -286,6 +287,26 @@ export function Headset({ className }: IconProps) {
       <g transform="translate(0,960) scale(1,-1)">
         <path d="M512 864c-193.5 0-352-158.5-352-352v-192c0-41.375 27-76.625 64-90v-6c0-87.875 72.125-160 160-160h41c11.125-19.125 31.375-32 55-32h64c35.25 0 64 28.75 64 64s-28.75 64-64 64h-64c-23.625 0-43.875-12.875-55-32h-41c-53 0-96 43-96 96h64v288h-128c0 158.5 129.5 288 288 288s288-129.5 288-288h-128v-288h96c52.625 0 96 43.375 96 96v192c0 193.5-158.5 352-352 352zM224 448h64v-160h-32c-17.75 0-32 14.25-32 32zM736 448h64v-128c0-17.75-14.25-32-32-32h-32z" />
       </g>
+    </svg>
+  )
+}
+
+export function Scan({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+      className={className}
+    >
+      <path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3" />
+      <circle cx="12" cy="10" r="3" />
+      <path d="M7.5 17c1.2-2 2.7-3 4.5-3s3.3 1 4.5 3" />
     </svg>
   )
 }
@@ -406,6 +427,22 @@ export function PinterestIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true" focusable="false" className={className}>
       <path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.8 0 23.2-31.5 23.2-45.5 0-16.7-42.6-52.4-42.6-122C44.2 83.5 116.9 42 195.7 42c67.7 0 117.8 38.5 117.8 109.2 0 52.8-21.2 151.9-89.9 151.9-24.8 0-46-17.9-46-43.6 0-37.7 26.3-74.1 26.3-113 0-66-93.6-54-93.6 26 0 16.8 2.1 35.3 9.6 50.5-13.8 59.5-42 148.1-42 209.4 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z" />
+    </svg>
+  )
+}
+
+/**
+ * An arrow leaving the page, for links that go to another site.
+ *
+ * ArrowRight above points along the reading direction and reads as "continue";
+ * this one reads as "leave". The press band uses it so an outbound link to
+ * News18 is distinguishable at a glance from an internal one to a post.
+ */
+export function ArrowUpRight({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false" className={className}>
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
     </svg>
   )
 }

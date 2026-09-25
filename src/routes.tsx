@@ -33,6 +33,7 @@ import HairTransplantMedicalTourismInBangalore from './pages/hair-transplant-med
 import Home from './pages/home'
 import LowLevelLaserTherapy from './pages/low-level-laser-therapy'
 import MaintenancePage from './pages/maintenance-page'
+import MediaCoverage from './pages/media-coverage'
 import NftBrochure from './pages/nft-brochure'
 import NftBrochureThankYou from './pages/nft-brochure-thank-you'
 import OurBlogs from './pages/our-blogs'
@@ -102,6 +103,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/low-level-laser-therapy/', element: <LowLevelLaserTherapy />, slug: 'low-level-laser-therapy' },
   { path: '/maintenance-page/', element: <MaintenancePage />, slug: 'maintenance-page' },
   { path: '/male-pattern-hair-loss/', load: () => import('./pages/male-pattern-hair-loss'), slug: 'male-pattern-hair-loss' },
+  { path: '/media-coverage/', element: <MediaCoverage />, slug: 'media-coverage' },
   { path: '/medical-treatments-for-hair-loss/', load: () => import('./pages/medical-treatments-for-hair-loss'), slug: 'medical-treatments-for-hair-loss' },
   { path: '/natural-hairline-design-hair-transplants/', load: () => import('./pages/natural-hairline-design-hair-transplants'), slug: 'natural-hairline-design-hair-transplants' },
   { path: '/nft-brochure/', element: <NftBrochure />, slug: 'nft-brochure' },

@@ -1,0 +1,61 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebSite",
+    "@id": "https://neofollicletransplant.com/#website",
+    "url": "https://neofollicletransplant.com/",
+    "name": "Neo Follicle Hair Transplant Clinic",
+    "inLanguage": "en-IN",
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    }
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://neofollicletransplant.com/media-coverage/#breadcrumblist",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://neofollicletransplant.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Media Coverage"
+     }
+    ]
+   },
+   {
+    "@type": "CollectionPage",
+    "@id": "https://neofollicletransplant.com/media-coverage/#webpage",
+    "url": "https://neofollicletransplant.com/media-coverage/",
+    "inLanguage": "en-IN",
+    "name": "Media Coverage | Dr. Sandeep Mahapatra, Neo Follicle",
+    "description": "Press coverage of Dr. Sandeep Mahapatra and Neo Follicle Bangalore - authored articles, expert commentary and features in News18, Femina and Business Standard.",
+    "datePublished": "2026-09-25T00:00:00+05:30",
+    "dateModified": "2026-09-25T00:00:00+05:30",
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "breadcrumb": {
+     "@id": "https://neofollicletransplant.com/media-coverage/#breadcrumblist"
+    },
+    "about": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "potentialAction": {
+     "@id": "https://neofollicletransplant.com/media-coverage/#readaction"
+    }
+   },
+   {
+    "@type": "ReadAction",
+    "@id": "https://neofollicletransplant.com/media-coverage/#readaction",
+    "target": "https://neofollicletransplant.com/media-coverage/"
+   }
+  ]
+ }
+]

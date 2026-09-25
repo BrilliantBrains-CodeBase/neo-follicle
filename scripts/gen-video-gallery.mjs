@@ -31,6 +31,38 @@ import sharp from 'sharp'
 import { root } from './blog-assets.mjs'
 import { VIDEO_SECTIONS, videoPosterPath } from './gallery-assets.mjs'
 
+/**
+ * Video ids embedded in blog posts, which are NOT part of VIDEO_SECTIONS.
+ *
+ * PostProse used to point straight at YouTube's remote hqdefault.jpg. That is
+ * the 480x360 4:3 tier, so after `aspect-video` + object-cover crops it back to
+ * 16:9 the real picture is 480x270 -- upscaled about 1.7x in an ~830px prose
+ * column. Beside /video-gallery/, whose posters come from the 1280x720 maxres
+ * tier, it read as the wrong thumbnail.
+ *
+ * Worse for one of them: that crop assumes hqdefault is letterboxed and takes
+ * 45px off each edge to remove the bars. G9tFWishCwU's hqdefault has NO bars,
+ * so it lost 12.5% of the actual picture.
+ *
+ * SCANNED, not listed, so adding a video to a post cannot leave its poster
+ * ungenerated. Six of the ten are already in VIDEO_SECTIONS and cost nothing
+ * extra; this only adds the remainder.
+ *
+ * This lives here rather than in gallery-assets.mjs because that module is
+ * pure data with no imports -- a filesystem scan is generator behaviour.
+ */
+function postVideoIds() {
+  const dir = path.join(root, 'src/content/posts')
+  const ids = new Set()
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.ts'))) {
+    const src = fs.readFileSync(path.join(dir, file), 'utf8')
+    for (const m of src.matchAll(/"provider":\s*"youtube",[\s\S]{0,300}?"videoId":\s*"([^"]+)"/g)) {
+      ids.add(m[1])
+    }
+  }
+  return [...ids].sort()
+}
+
 const outDir = path.join(root, 'public/video-gallery')
 const contentFile = path.join(root, 'src/content/gallery/video-gallery.generated.ts')
 
@@ -83,6 +115,24 @@ for (const section of VIDEO_SECTIONS) {
   }
   bySection[section.id] = items
 }
+
+/*
+  The post-only ids. Titles are not fetched: PostProse carries its own
+  captured title and verify-posts.mjs compares it word for word against the
+  capture, so an oEmbed title here would be the wrong source.
+*/
+const galleryIds = new Set(VIDEO_SECTIONS.flatMap((s) => s.ids))
+const extra = postVideoIds().filter((id) => !galleryIds.has(id))
+for (const id of extra) {
+  const shot = await poster(id)
+  const out = await sharp(shot.buf)
+    .resize(POSTER.width, null, { withoutEnlargement: true })
+    .webp({ quality: POSTER.quality })
+    .toFile(path.join(root, 'public', videoPosterPath(id).replace(/^\//, '')))
+  bytes += out.size
+  tiers[shot.tier] = (tiers[shot.tier] ?? 0) + 1
+  process.stdout.write('.')
+}
 process.stdout.write('\n')
 
 const body = Object.entries(bySection)
@@ -111,6 +161,7 @@ fs.writeFileSync(
 )
 
 const n = Object.values(bySection).flat().length
-console.log(`\ngen-video-gallery: ${n} videos, ${n} posters, ${(bytes / 1024 / 1024).toFixed(1)}MB`)
+console.log(`\ngen-video-gallery: ${n} gallery videos + ${extra.length} blog-only, ${n + extra.length} posters, ${(bytes / 1024 / 1024).toFixed(1)}MB`)
+if (extra.length) console.log(`  blog-only posters: ${extra.join(', ')}`)
 console.log(`  thumbnail tiers used: ${Object.entries(tiers).map(([t, c]) => `${t} x${c}`).join(', ')}`)
 console.log(`  -> ${path.relative(root, contentFile)}`)

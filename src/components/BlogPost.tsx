@@ -7,6 +7,7 @@ import ShareRow from './ShareRow'
 import SidebarCta from './SidebarCta'
 import Reveal from './Reveal'
 import { STICKY_BELOW_HEADER, STICKY_SCROLLABLE } from './sticky'
+import { BLOG_LABEL, BLOG_SECTION_PATH } from '../config/nav'
 import type { Post } from '../content/types'
 
 /**
@@ -84,7 +85,7 @@ export default function BlogPost({ post }: { post: Post }) {
       <PageBanner
         crumbs={[
           { label: 'Home', to: '/' },
-          { label: 'Blog', to: '/our-blogs/' },
+          { label: BLOG_LABEL, to: BLOG_SECTION_PATH },
           { label: post.title },
         ]}
         title={post.title}

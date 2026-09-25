@@ -51,7 +51,7 @@ import { Square } from './icons'
  *     Six columns are narrower than the reference's four, so the label steps
  *     down from the reference's `text-h4` (kept at `xl:`, the design width,
  *     which is where its screenshot was taken) through `text-h5` and `text-h6`
- *     as the columns narrow. At the reference's own size "Female Restoration"
+ *     as the columns narrow. At the reference's own size "Eyebrow Transplant"
  *     overflows a sixth of the container below 1240px. `min-w-0` on the column
  *     is what stops a too-wide label wrapping the whole row instead.
  *   - Mobile column height is 20vh, not the reference's 25vh. Three rows at
@@ -134,7 +134,7 @@ const CATEGORIES = [
     alt: 'A clinician marking the beard transplant outline along a patient’s cheek and jaw.',
   },
   {
-    label: 'Female Restoration',
+    label: 'Hair Restoration',
     img: '/gallery/female.webp',
     alt: 'A clinician performing a female hair restoration treatment along the frontal hairline.',
   },
@@ -149,7 +149,7 @@ const CATEGORIES = [
     alt: 'A surgeon performing a corrective hair transplant procedure on a patient’s frontal scalp.',
   },
   {
-    label: 'GFC & PRP',
+    label: 'GFC & Exosomes',
     img: '/gallery/gfc-prp.webp',
     alt: 'A clinician administering a regenerative GFC or PRP treatment into a patient’s scalp.',
   },

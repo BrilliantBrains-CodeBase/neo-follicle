@@ -113,10 +113,11 @@ Neo Follicle Hair Transplant Clinic, Marathahalli, Bangalore
 | *STEP* | *STAGE* | *WHAT HAPPENS* |
 | ----- | ----- | ----- |
 | *1* | *Consultation & Scalp Evaluation* | *Dr. Sandeep examines your hair loss pattern, donor area, scalp condition and medical history.* |
-| *2* | *Diagnosis & Treatment Plan* | *You learn the cause, whether you need a transplant or a treatment, the graft count and the expected result.* |
-| *3* | *Hairline Design* | *A natural hairline mapped to your face shape, age and long-term appearance.* |
-| *4* | *Graft Extraction & Implantation* | *Follicles extracted from the donor area and placed with attention to angle, direction and density.* |
-| *5* | *Recovery & Follow-Up* | *Aftercare instructions, review sessions and long-term maintenance guidance.*  |
+| *2* | *AI-Driven TricoScan* | *AI-assisted imaging maps hair density and thinning patterns to support a more precise diagnosis and treatment plan.* |
+| *3* | *Diagnosis & Treatment Plan* | *You learn the cause, whether you need a transplant or a treatment, the graft count and the expected result.* |
+| *4* | *Hairline Design* | *A natural hairline mapped to your face shape, age and long-term appearance.* |
+| *5* | *Graft Extraction & Implantation* | *Follicles extracted from the donor area and placed with attention to angle, direction and density.* |
+| *6* | *Recovery & Follow-Up* | *Aftercare instructions, review sessions and long-term maintenance guidance.*  |
 
 # ***05 · PROOF & TRUST***
 
@@ -126,7 +127,7 @@ Neo Follicle Hair Transplant Clinic, Marathahalli, Bangalore
 
 ***SUBHEAD** Browse outcomes by procedure. Individual results vary with age, baldness grade, donor availability, scalp condition and aftercare.*
 
-***RESULT TABS (MAP TO GALLERY CATEGORIES)** Hair Transplant · Beard Transplant · Female Restoration · Eyebrow · Failed Repair · GFC & PRP*
+***RESULT TABS (MAP TO GALLERY CATEGORIES)** Hair Transplant · Beard Transplant · Eyebrow Transplant · Eyebrow · Failed Repair · GFC & Exosomes*
 
 > ***Disclaimer (keep visible).** Before and after images are shared for patient education and to show treatment possibilities. A consultation is required to understand what result is realistic for your case.*
 
@@ -283,4 +284,3 @@ Neo Follicle Hair Transplant Clinic, Marathahalli, Bangalore
 ---
 
 ***Bottom line.** This homepage answers the five questions a hair-loss visitor arrives with (what you do, can you help me, why trust you, why choose you, what happens next), targets the local terms Neo Follicle can realistically own, and captures the two dominant national intents, cost and GFC, through dedicated sections and internal links, without fabricating a single claim.*
-

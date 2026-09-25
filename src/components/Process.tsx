@@ -1,5 +1,5 @@
 import { SCROLLER, SLIDE } from './carousel'
-import { ClipboardList, Dna, Eye, HandHoldingHeart, Headset, Square } from './icons'
+import { ClipboardList, Dna, Eye, HandHoldingHeart, Headset, Scan, Square } from './icons'
 import Reveal from './Reveal'
 
 /**
@@ -24,11 +24,9 @@ import Reveal from './Reveal'
  *
  * Five deliberate departures from the reference:
  *
- *   - Five cards, not four. The reference grid is repeat(4, 1fr); the doc's
- *     journey has five stages and none of them may be dropped, so desktop is
- *     `lg:grid-cols-5`. The cards are correspondingly narrower, so their
- *     padding stays at the reference's mobile 1.25rem on desktop rather than
- *     widening back to 1.5rem.
+ *   - Six cards, not four. The reference grid is repeat(4, 1fr); this journey
+ *     has six stages and none of them may be dropped, so desktop is a balanced
+ *     three-column, two-row grid.
  *   - A ghosted step numeral beside the icon chip, and card text aligned left
  *     rather than centred. The reference centres one-word titles
  *     ("Consultation", "Recovery"); ours run to two or three lines in a
@@ -49,13 +47,11 @@ import Reveal from './Reveal'
 const FLOAT = 'transition ease-out hover:-translate-y-2 motion-reduce:transform-none'
 
 /**
- * Card geometry, shared by all five. Only the two background colours differ
+ * Card geometry, shared by all six. Only the two background colours differ
  * between step 1 and the rest, so those are applied at the call site.
  *
- * The tablet grid is two-up, so the fifth card sits alone on its row. It was
- * tried spanning both columns; at that width the step numeral ends up roughly
- * a screen away from its icon and the card stops matching the other four.
- * A half-width card beside an empty cell reads better.
+ * The tablet grid is two-up and the desktop grid is three-up, so all six cards
+ * fill their rows without changing card proportions.
  */
 const CARD = `flex flex-col rounded border border-overlay p-5 md:p-6 lg:p-5 ${FLOAT}`
 
@@ -70,6 +66,11 @@ const STEPS = [
     icon: Headset,
     title: 'Consultation & Scalp Evaluation',
     copy: 'Dr. Sandeep examines your hair loss pattern, donor area, scalp condition and medical history.',
+  },
+  {
+    icon: Scan,
+    title: 'AI-Driven TricoScan',
+    copy: 'AI-assisted imaging maps hair density and thinning patterns to support a more precise diagnosis and treatment plan.',
   },
   {
     icon: ClipboardList,
@@ -126,11 +127,11 @@ export default function Process() {
         </Reveal>
 
         {/*
-          5-up desktop, 2-up tablet. Below `md` the five steps become a
+          3-up desktop, 2-up tablet. Below `md` the six steps become a
           swipeable track (carousel.ts) rather than a stack -- the journey reads
           left-to-right there, which suits a numbered sequence.
         */}
-        <ol className={`${SCROLLER} gap-gap-sm md:grid-cols-2 md:gap-8 lg:grid-cols-5`}>
+        <ol className={`${SCROLLER} gap-gap-sm md:grid-cols-2 md:gap-8 lg:grid-cols-3`}>
           {STEPS.map(({ icon: Icon, title, copy }, i) => (
             <Reveal
               key={title}

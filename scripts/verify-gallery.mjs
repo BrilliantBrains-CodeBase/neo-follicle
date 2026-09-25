@@ -17,7 +17,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { GALLERY_SECTIONS, VIDEO_SECTIONS } from './gallery-assets.mjs'
+import { GALLERY_SECTIONS, VIDEO_SECTIONS, videoPosterPath } from './gallery-assets.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const dist = path.join(root, 'dist')
@@ -110,10 +110,32 @@ for (const dir of ['image-gallery', 'video-gallery']) {
   }
   walk(base)
 }
-const orphans = onDisk.filter((f) => !referenced.has(f))
+/*
+  `referenced` is built from the two GALLERY pages. Four video posters are used
+  by BLOG POSTS instead -- gen-video-gallery.mjs scans src/content/posts for
+  embedded ids and cuts a poster for each, whether or not it also appears in
+  /video-gallery/. Six of the ten overlap; these four do not, and they are used,
+  not orphaned. Check 14 below is what proves each one actually renders.
+*/
+const blogPosters = new Set(
+  fs
+    .readdirSync(path.join(root, 'src/content/posts'))
+    .filter((f) => f.endsWith('.ts'))
+    .flatMap((f) =>
+      [
+        ...fs
+          .readFileSync(path.join(root, 'src/content/posts', f), 'utf8')
+          .matchAll(/"provider":\s*"youtube",[\s\S]{0,300}?"videoId":\s*"([^"]+)"/g),
+      ].map((m) => `/video-gallery/${m[1]}.webp`),
+    ),
+)
+const orphans = onDisk.filter((f) => !referenced.has(f) && !blogPosters.has(f))
 orphans.length
   ? fail('no orphaned generated images', `${orphans.length}: ${orphans.slice(0, 8).join(', ')}`)
-  : pass(`no orphaned generated images -- all ${onDisk.length} generated files are used`)
+  : pass(
+      `no orphaned generated images -- all ${onDisk.length} generated files are used ` +
+        `(${blogPosters.size} of them by blog posts)`,
+    )
 
 /* ---- 6. chip anchors resolve to a real id ------------------------------------ */
 const danglingHash = []
@@ -242,5 +264,56 @@ const renderedTiles = new Set(
 renderedTiles === expectedTiles
   ? pass(`all ${expectedTiles} manifest images rendered`)
   : fail('every manifest image is rendered', `manifest has ${expectedTiles}, page renders ${renderedTiles}`)
+
+/* ---- 14. blog video posters are local, present and correctly shaped ---------- */
+// The blog used to point at YouTube's remote hqdefault.jpg -- the 480x360 4:3
+// tier. `aspect-video` + object-cover then crops it back to 16:9, which leaves
+// 480x270 of real picture upscaled ~1.7x in the prose column, and for a video
+// whose hqdefault is NOT letterboxed it crops 12.5% of the picture away. This
+// keeps the fix fixed.
+const postDir = path.join(root, 'src/content/posts')
+const postFiles = fs.readdirSync(postDir).filter((f) => f.endsWith('.ts'))
+const EMBED = /"provider":\s*"youtube",[\s\S]{0,300}?"videoId":\s*"([^"]+)"/g
+
+const videoBad = []
+const postIds = new Set()
+
+for (const file of postFiles) {
+  const slug = file.replace(/\.ts$/, '')
+  const src = fs.readFileSync(path.join(postDir, file), 'utf8')
+  const ids = [...src.matchAll(EMBED)].map((m) => m[1])
+  if (!ids.length) continue
+  ids.forEach((id) => postIds.add(id))
+
+  const distFile = path.join(dist, slug, 'index.html')
+  if (!fs.existsSync(distFile)) { videoBad.push(`${slug}: not prerendered`); continue }
+  const html = fs.readFileSync(distFile, 'utf8')
+
+  if (/i\.ytimg\.com/.test(html)) videoBad.push(`${slug}: hotlinks i.ytimg.com`)
+  for (const id of ids) {
+    if (!html.includes(`/video-gallery/${id}.webp`)) {
+      videoBad.push(`${slug}: does not render the local poster for ${id}`)
+    }
+  }
+}
+
+for (const id of postIds) {
+  // Imported, so a change to the path rule cannot drift from PostProse.tsx,
+  // which inlines this same shape.
+  if (videoPosterPath(id) !== `/video-gallery/${id}.webp`) {
+    videoBad.push(`${id}: videoPosterPath no longer matches PostProse's inlined shape`)
+  }
+  if (!fs.existsSync(path.join(root, 'public', videoPosterPath(id).replace(/^\//, '')))) {
+    videoBad.push(`${id}: no poster on disk -- run npm run gen:videogallery`)
+  }
+}
+
+for (const [slug, doc] of docs) {
+  if (/i\.ytimg\.com/.test(doc)) videoBad.push(`${slug}: hotlinks i.ytimg.com`)
+}
+
+videoBad.length
+  ? fail('blog video posters are local and present', [...new Set(videoBad)].slice(0, 8).join('\n      '))
+  : pass(`all ${postIds.size} blog video posters are local maxres WebP, none hotlinked`)
 
 process.exit(report() ? 1 : 0)

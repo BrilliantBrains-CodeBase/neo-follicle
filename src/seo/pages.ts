@@ -1678,6 +1678,33 @@ export const pages: PageSeo[] = [
     "h1": "Best Dutexome Hair Treatment in Bangalore",
     "inSitemap": true,
     "lastmod": "2026-09-22T00:00:00+05:30"
+  },
+  {
+    "slug": "media-coverage",
+    "path": "/media-coverage/",
+    "type": "page",
+    "title": "Media Coverage | Dr. Sandeep Mahapatra, Neo Follicle",
+    "description": "Press coverage of Dr. Sandeep Mahapatra and Neo Follicle Bangalore - authored articles, expert commentary and features in News18, Femina and Business Standard.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": "https://neofollicletransplant.com/media-coverage/",
+    "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og": {
+      "title": "Media Coverage | Dr. Sandeep Mahapatra, Neo Follicle",
+      "description": "Press coverage of Dr. Sandeep Mahapatra and Neo Follicle Bangalore - authored articles, expert commentary and features in News18, Femina and Business Standard.",
+      "url": "https://neofollicletransplant.com/media-coverage/",
+      "type": "website",
+      "image": "https://neofollicletransplant.com/media/happiest-health-2026-08-full.webp",
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Media Coverage | Dr. Sandeep Mahapatra, Neo Follicle"
+    },
+    "h1": "Dr. Sandeep Mahapatra in the Media",
+    "inSitemap": true,
+    "lastmod": "2026-09-25T00:00:00+05:30"
   }
 ]
 

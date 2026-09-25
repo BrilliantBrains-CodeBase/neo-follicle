@@ -70,7 +70,7 @@ const data: ImageGalleryData = {
     },
     {
       id: 'female-hair-restoration',
-      label: 'Female Restoration',
+      label: 'Eyebrow Transplant',
       heading: 'Female Hair Restoration',
       subheading: 'Gentle, Subtle, and Confidence-Restoring Hair Treatments for Women',
       lede:
@@ -88,7 +88,7 @@ const data: ImageGalleryData = {
     },
     {
       id: 'gfc-prp-therapy-results',
-      label: 'GFC & PRP',
+      label: 'GFC & Exosomes',
       heading: 'GFC / PRP Therapy Results',
       subheading: 'Stronger Roots, Thicker Hair - Thanks to Growth Factor Concentrate',
       lede:

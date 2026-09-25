@@ -84,18 +84,33 @@ function Figure({ image, className = '' }: { image: PostImage; className?: strin
  * A YouTube embed as a click-to-play poster.
  *
  * The body of this now lives in YouTubeFacade, which /video-gallery/ shares.
- * Blog posts keep the original behaviour -- mode="link", so a click opens
- * youtube.com in a new tab -- and keep pointing at YouTube's remote hqdefault
- * still rather than a local derivative: posts are code-split, and pulling the
- * gallery's poster manifest into every post chunk to save one request would be
- * a poor trade.
+ * Blog posts keep mode="link", so a click opens youtube.com in a new tab.
+ *
+ * THE POSTER IS LOCAL, and used to not be. It pointed at YouTube's remote
+ * `hqdefault.jpg`, which is the 480x360 4:3 tier: `aspect-video` with
+ * object-cover then crops it back to 16:9, leaving 480x270 of real picture
+ * upscaled about 1.7x in an ~830px prose column. Against /video-gallery/,
+ * whose posters are cut from the 1280x720 maxres tier, it looked like the
+ * wrong thumbnail -- and for one video it WAS wrong: that crop assumes
+ * hqdefault is letterboxed and takes 45px off each edge to drop the bars, but
+ * G9tFWishCwU's hqdefault has none, so it lost 12.5% of the picture.
+ *
+ * The old note here said a local poster would mean pulling the gallery's
+ * manifest into every code-split post chunk. It does not: the path is a pure
+ * function of the id, so this costs nothing but the string. The shape is
+ * gallery-assets.mjs's `videoPosterPath`, inlined because a .tsx cannot import
+ * a Node script module -- verify-gallery.mjs check 14 asserts the two agree.
+ *
+ * scripts/gen-video-gallery.mjs scans these posts, so every embedded id has a
+ * poster on disk whether or not it also appears in /video-gallery/. Six of the
+ * ten already did.
  */
 function YouTube({ videoId, title }: { videoId: string; title: string }) {
   return (
     <YouTubeFacade
       videoId={videoId}
       title={title}
-      poster={{ src: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`, width: 480, height: 360 }}
+      poster={{ src: `/video-gallery/${videoId}.webp`, width: 640, height: 360 }}
     />
   )
 }

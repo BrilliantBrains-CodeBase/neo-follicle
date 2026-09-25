@@ -19,7 +19,9 @@
     "shoot": "node scripts/shoot.mjs",
     "gen:galleryimg": "node scripts/gen-gallery-images.mjs",
     "gen:videogallery": "node scripts/gen-video-gallery.mjs",
-    "verify:gallery": "node scripts/verify-gallery.mjs"
+    "verify:gallery": "node scripts/verify-gallery.mjs",
+    "gen:mediaimg": "node scripts/gen-media-images.mjs",
+    "verify:media": "node scripts/verify-media.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",
