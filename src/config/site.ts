@@ -15,9 +15,12 @@
  *   ANALYTICS  pages/home/raw.html
  *   SEO        pages/home/meta.json
  *
- * The JSON-LD is the version Google has already indexed. Where this file and a
- * graph in src/seo/schema/*.json disagree, the graph wins and this file is the
- * bug. Do not "tidy" values -- the oddities below are deliberate and annotated.
+ * This file is also the source of the site-wide JSON-LD entities (#website,
+ * #organization, #clinic, #physician): scripts/seo/entity-graph.mjs builds them
+ * from here and scripts/gen-seo.mjs puts that one copy into every page graph,
+ * replacing the per-page copies WordPress emitted. Change a fact here and every
+ * page's structured data follows. Node imports this file directly (type
+ * stripping), so keep it free of non-erasable TypeScript syntax.
  */
 
 // --- brand identity -------------------------------------------------------
@@ -111,6 +114,13 @@ export const CONTACT = {
 
   geo: { latitude: 12.956429486014592, longitude: 77.70733394232819 },
   mapUrl: 'https://maps.app.goo.gl/jKaWhcfQuKZXRvE48',
+  /**
+   * The Google Business Profile's own URL (https://www.google.com/maps?cid=...).
+   * NOT YET SUPPLIED by the clinic. When set, it becomes the JSON-LD `hasMap`,
+   * joins `sameAs`, and replaces mapUrl on every "Get directions" link -- a
+   * cid URL ties the site to the GBP entity more firmly than a short link.
+   */
+  gbpUrl: null as string | null,
 
   /**
    * Tuesday is deliberately absent -- the clinic is closed. This matches the
@@ -131,7 +141,32 @@ export const CONTACT = {
 
   /** #clinic areaServed: City / AdministrativeArea / Country. */
   areaServed: { city: 'Bengaluru', region: 'Karnataka', country: 'India' },
+
+  /**
+   * Neighbourhoods the clinic draws from, emitted as `Place` nodes in the
+   * #clinic areaServed. Marathahalli and Whitefield are the ones the clinic
+   * already names in its own copy; the rest are the adjoining East Bengaluru
+   * localities within a short drive.
+   */
+  localities: [
+    'Marathahalli',
+    'Whitefield',
+    'HAL Old Airport Road',
+    'Bellandur',
+    'Sarjapur Road',
+    'Koramangala',
+    'Indiranagar',
+    'KR Puram',
+    'Brookefield',
+    'Mahadevapura',
+  ],
+
+  /** ISO 3166-2 region, for the geo.region meta tag. */
+  isoRegion: 'IN-KA',
 } as const
+
+/** The best "open this clinic on Google Maps" URL we have. */
+export const mapLink = (): string => CONTACT.gbpUrl ?? CONTACT.mapUrl
 
 // --- lead capture ---------------------------------------------------------
 
@@ -156,45 +191,38 @@ export const FORMS = {
 export type SocialProfile = { label: string; href: string }
 
 /**
- * Confirmed social profiles. Tracking parameters are retained because these
- * are the exact destination URLs supplied by the clinic.
+ * Confirmed social profiles, in their canonical form. The clinic supplied
+ * share links carrying tracking parameters (`?trk=...`, `?stkn=...&utm_source=qr`);
+ * those are stripped so every link and every `sameAs` names the profile by one
+ * stable URL -- search engines consolidate entities on exact URL matches.
  *
  *   footerProfiles -> visitor-facing links
  *   schemaSameAs   -> clinic identity links for structured data
  */
+const FACEBOOK = 'https://www.facebook.com/NeoFollicleHairTransplantClinic/'
+const INSTAGRAM = 'https://www.instagram.com/neo_follicle_hair_transplant/'
+const YOUTUBE = 'https://www.youtube.com/channel/UCpUTXf985LPC2UdBXCfgrXQ'
+const LINKEDIN = 'https://www.linkedin.com/company/neo-follicle-hairtransplant/'
+const JUSTDIAL = 'https://www.justdial.com/Bangalore/Neo-Follicle'
+
 export const SOCIAL = {
   footerProfiles: [
-    { label: 'Facebook', href: 'https://www.facebook.com/NeoFollicleHairTransplantClinic/' },
-    {
-      label: 'LinkedIn',
-      href: 'https://in.linkedin.com/company/neo-follicle-hairtransplant?trk=public_post_follow-view-profile',
-    },
-    { label: 'YouTube', href: 'https://www.youtube.com/channel/UCpUTXf985LPC2UdBXCfgrXQ' },
-    {
-      label: 'Instagram',
-      href: 'https://www.instagram.com/neo_follicle_hair_transplant?stkn=dXJxaThrM3Z4NHFq&utm_source=qr',
-    },
+    { label: 'Facebook', href: FACEBOOK },
+    { label: 'LinkedIn', href: LINKEDIN },
+    { label: 'YouTube', href: YOUTUBE },
+    { label: 'Instagram', href: INSTAGRAM },
   ] satisfies readonly SocialProfile[],
 
-  /** #clinic sameAs. mapUrl leads the list in the graph. */
-  schemaSameAs: [
-    'https://maps.app.goo.gl/jKaWhcfQuKZXRvE48',
-    'https://www.facebook.com/NeoFollicleHairTransplantClinic/',
-    'https://www.instagram.com/neo_follicle_hair_transplant?stkn=dXJxaThrM3Z4NHFq&utm_source=qr',
-    'https://www.youtube.com/channel/UCpUTXf985LPC2UdBXCfgrXQ',
-    'https://in.linkedin.com/company/neo-follicle-hairtransplant?trk=public_post_follow-view-profile',
-    'https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu',
-    'https://www.justdial.com/Bangalore/Neo-Follicle',
-  ],
+  /**
+   * #clinic sameAs. The captured list also carried a Practo listing for a
+   * *Cochin (Maradu)* clinic -- a different location. The site describes the
+   * Bangalore clinic only, so it is dropped: a sameAs pointing at another
+   * address splits the local entity. CONTACT.gbpUrl is prepended when set.
+   */
+  schemaSameAs: [CONTACT.mapUrl, FACEBOOK, INSTAGRAM, YOUTUBE, LINKEDIN, JUSTDIAL],
 
   /** Third-party listing pages, split out of sameAs for "find us on" blocks. */
-  directories: [
-    {
-      label: 'Practo',
-      href: 'https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu',
-    },
-    { label: 'JustDial', href: 'https://www.justdial.com/Bangalore/Neo-Follicle' },
-  ] satisfies readonly SocialProfile[],
+  directories: [{ label: 'JustDial', href: JUSTDIAL }] satisfies readonly SocialProfile[],
 } as const
 
 // --- the founding physician ----------------------------------------------
@@ -227,6 +255,40 @@ export const DOCTOR = {
 
   medicalSpecialty: 'Dermatology',
   yearsOfExperience: 20,
+
+  /** #physician knowsAbout, in the captured order. */
+  knowsAbout: [
+    'Dermatology',
+    'Cosmetic dermatology',
+    'Hair transplant surgery',
+    'Hair restoration',
+    'Hair loss treatment',
+    'FUE hair transplant',
+    'FUT hair transplant',
+    'DHI hair transplant',
+    'Direct hair implantation',
+    'Beard restoration',
+    'Eyebrow restoration',
+    'Female hair transplant',
+    'Hairline restoration',
+    'PRP therapy for hair loss',
+    'Growth factor concentrate therapy',
+    'Stem cell therapy for hair loss',
+    'Low level laser hair therapy',
+    'Scalp micropigmentation',
+    'Alopecia treatment',
+    'Dermatosurgery',
+    'Aesthetic dermatology',
+    'Botox',
+    'Dermal fillers',
+    'Vitiligo surgery',
+  ],
+
+  occupation: {
+    name: 'Dermatologist and Hair Transplant Surgeon',
+    description:
+      'Specializes in dermatology, cosmetic dermatology, hair transplantation, hair restoration, PRP therapy, beard restoration, eyebrow restoration and advanced aesthetic procedures.',
+  },
 
   credentials: [
     {
@@ -306,9 +368,9 @@ export const COMMERCE = {
   currencySymbol: '₹',
 
   /**
-   * The home #clinic node says '₹₹₹'; 119 other nodes across the graph say
-   * '₹₹'. The graph is internally inconsistent. Home wins here because it is
-   * the node Google attaches to the brand entity. Flagged for the client.
+   * The captured home #clinic node said '₹₹₹' while 119 other nodes said '₹₹'.
+   * The entity nodes are now generated once from this value, so the graph is
+   * consistent; Service/Offer nodes that restate a price range keep theirs.
    */
   priceRange: '₹₹₹',
 
@@ -350,7 +412,8 @@ export const ANALYTICS = {
   /**
    * The only analytics ID in the entire capture -- present on all 59 pages as
    * both the head script and the noscript iframe. No raw GA4 `G-`, no `AW-`,
-   * no Meta Pixel. NOT yet injected anywhere in this app; wiring is a TODO.
+   * no Meta Pixel. Injected into every prerendered page by scripts/prerender.mjs
+   * (head script + noscript iframe); `npm run dev` stays tag-free.
    */
   gtmId: 'GTM-NCJCP6NZ',
 } as const
@@ -367,17 +430,24 @@ export const ASSETS = {
   schemaFavicon:
     'https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-Favicon-512.svg',
 
+  clinicImageFull:
+    'https://neofollicletransplant.com/wp-content/uploads/2025/04/NFT-Clinic-Reception.jpeg',
   clinicImage:
     'https://neofollicletransplant.com/wp-content/uploads/2025/05/NFT-Clinic-Reception-650-450.jpeg',
   clinicImageAlt: 'Neo Follicle Transplant Clinic reception area in Bangalore',
   clinicImageSize: { width: 650, height: 450 },
 
   /**
-   * There was no site-wide default OG image: og:image appeared on only 19 of
-   * 59 pages, each page-specific. Left null rather than inventing one, so the
-   * prerenderer keeps emitting exactly what the capture had.
+   * Share images. Every page gets a generated 1200x630 card at
+   * /og/<slug>.jpg (scripts/gen-og-images.mjs); this is the fallback for a
+   * route with no card, e.g. the 404 page.
    */
-  defaultOgImage: null,
+  ogCardDir: '/og/',
+  ogImageSize: { width: 1200, height: 630 },
+  defaultOgImage: '/og/home.jpg',
+
+  /** Browser UI colour (manifest + theme-color meta). tailwind `primary`. */
+  themeColor: '#3E74D9',
 } as const
 
 // --- SEO defaults ---------------------------------------------------------
@@ -385,8 +455,11 @@ export const ASSETS = {
 export const SEO = {
   origin: 'https://neofollicletransplant.com',
 
-  /** og:locale is bare 'en'; the WebSite node uses 'en-IN'. Both are captured. */
-  locale: 'en',
+  /**
+   * og:locale takes the Open Graph underscore form. The capture's bare 'en'
+   * is not a valid OG locale; the WebSite node's 'en-IN' is the BCP 47 form.
+   */
+  locale: 'en_IN',
   inLanguage: 'en-IN',
   htmlLang: 'en',
 

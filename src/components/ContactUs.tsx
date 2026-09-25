@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { FormEvent, ReactElement } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { CONTACT, FORMS } from '../config/site'
+import { CONTACT, FORMS, mapLink } from '../config/site'
 import { readAttribution } from './attribution'
 import { ChevronDown, MailIcon, MapPinIcon, PhoneIcon, Square } from './icons'
 import Reveal from './Reveal'
@@ -134,7 +134,7 @@ export type InfoCard = {
 const INFO: InfoCard[] = [
   {
     icon: MapPinIcon,
-    href: CONTACT.mapUrl,
+    href: mapLink(),
     external: true,
     label: 'Clinic address, opens in Google Maps',
     /** Joined on one line -- the reference's address heading is 16px/1.3em. */

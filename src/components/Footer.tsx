@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { footerColumns, footerNav } from '../config/nav'
-import { ASSETS, CONTACT, DOCTOR, SOCIAL, copyrightLine } from '../config/site'
+import { ASSETS, CONTACT, DOCTOR, SOCIAL, copyrightLine, mapLink } from '../config/site'
 import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon, socialIcons } from './icons'
 
 /**
@@ -132,7 +132,7 @@ export default function Footer() {
             <address className="flex items-start gap-3 not-italic">
               <MapPinIcon className="mt-1 h-5 w-5 shrink-0 text-line" />
               <a
-                href={CONTACT.mapUrl}
+                href={mapLink()}
                 rel="noopener noreferrer"
                 target="_blank"
                 className="text-body text-white/80 transition-colors hover:text-accent"

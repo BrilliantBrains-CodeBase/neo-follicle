@@ -1,0 +1,28 @@
+{
+  "name": "Neo Follicle Hair Transplant Clinic",
+  "short_name": "Neo Follicle",
+  "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#3E74D9",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

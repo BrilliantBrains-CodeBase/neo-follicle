@@ -3,6 +3,381 @@
   "@context": "https://schema.org",
   "@graph": [
    {
+    "@type": "WebSite",
+    "@id": "https://neofollicletransplant.com/#website",
+    "url": "https://neofollicletransplant.com/",
+    "name": "Neo Follicle Hair Transplant Clinic",
+    "alternateName": [
+     "Neo Follicle Transplant Clinic",
+     "Neo Follicle Hair Transplant",
+     "Neo Follicle Transplant"
+    ],
+    "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
+    "inLanguage": "en-IN",
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "about": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "creator": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    }
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://neofollicletransplant.com/#organization",
+    "url": "https://neofollicletransplant.com/",
+    "name": "Neo Follicle Hair Transplant",
+    "legalName": "Neofollicle and Neofertility Clinic LLP",
+    "logo": {
+     "@type": "ImageObject",
+     "@id": "https://neofollicletransplant.com/#logo",
+     "url": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-LOGO-WITH-BG-02.png",
+     "contentUrl": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-LOGO-WITH-BG-02.png",
+     "caption": "Neo Follicle Hair Transplant"
+    },
+    "image": {
+     "@id": "https://neofollicletransplant.com/#logo"
+    },
+    "email": "info@neofollicletransplant.com",
+    "telephone": "+91-9731207940",
+    "sameAs": [
+     "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+     "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
+     "https://www.youtube.com/channel/UCpUTXf985LPC2UdBXCfgrXQ",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
+     "https://www.justdial.com/Bangalore/Neo-Follicle"
+    ],
+    "subOrganization": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    }
+   },
+   {
+    "@type": [
+     "MedicalClinic",
+     "LocalBusiness"
+    ],
+    "@id": "https://neofollicletransplant.com/#clinic",
+    "name": "Neo Follicle Hair Transplant Clinic",
+    "alternateName": [
+     "Neo Follicle Transplant Clinic",
+     "Neo Follicle Hair Transplant",
+     "Neo Follicle Transplant",
+     "Neo Follicle"
+    ],
+    "url": "https://neofollicletransplant.com/",
+    "logo": {
+     "@id": "https://neofollicletransplant.com/#logo"
+    },
+    "image": [
+     "https://neofollicletransplant.com/wp-content/uploads/2025/04/NFT-Clinic-Reception.jpeg",
+     "https://neofollicletransplant.com/wp-content/uploads/2025/05/NFT-Clinic-Reception-650-450.jpeg"
+    ],
+    "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
+    "telephone": "+91-9731207940",
+    "email": "info@neofollicletransplant.com",
+    "priceRange": "₹₹₹",
+    "currenciesAccepted": "INR",
+    "paymentAccepted": "Cash, Credit Card, Debit Card, UPI",
+    "isAcceptingNewPatients": true,
+    "medicalSpecialty": "Dermatology",
+    "knowsAbout": [
+     "Hair transplant surgery",
+     "Hair restoration",
+     "Hair loss treatment",
+     "FUE hair transplant",
+     "FUT hair transplant",
+     "Bio FUE hair transplant",
+     "DHI hair transplant",
+     "Direct Hair Implantation",
+     "Beard transplant",
+     "Eyebrow transplant",
+     "Female hair transplant",
+     "PRP therapy for hair loss",
+     "GFC therapy for hair loss",
+     "Hairline restoration",
+     "Baldness treatment",
+     "Alopecia treatment",
+     "Cosmetic dermatology"
+    ],
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "1st floor, Scorpio House, Near Marathahalli Bridge, Munnekolala, Landmark Opposite Purvankara Apt, Marathahalli Bridge Service Road",
+     "addressLocality": "Bengaluru",
+     "addressRegion": "Karnataka",
+     "postalCode": "560037",
+     "addressCountry": "IN"
+    },
+    "geo": {
+     "@type": "GeoCoordinates",
+     "latitude": 12.956429486014592,
+     "longitude": 77.70733394232819
+    },
+    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+    "areaServed": [
+     {
+      "@type": "City",
+      "name": "Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Marathahalli, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Whitefield, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "HAL Old Airport Road, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Bellandur, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Sarjapur Road, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Koramangala, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Indiranagar, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "KR Puram, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Brookefield, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Mahadevapura, Bengaluru"
+     },
+     {
+      "@type": "AdministrativeArea",
+      "name": "Karnataka"
+     },
+     {
+      "@type": "Country",
+      "name": "India"
+     }
+    ],
+    "openingHoursSpecification": [
+     {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+     }
+    ],
+    "contactPoint": [
+     {
+      "@type": "ContactPoint",
+      "telephone": "+91-9731207940",
+      "contactType": "appointment booking",
+      "availableLanguage": [
+       "English",
+       "Hindi",
+       "Kannada"
+      ],
+      "areaServed": "IN"
+     },
+     {
+      "@type": "ContactPoint",
+      "url": "https://wa.me/919731207940",
+      "contactType": "WhatsApp appointment booking",
+      "availableLanguage": [
+       "English",
+       "Hindi",
+       "Kannada"
+      ],
+      "areaServed": "IN"
+     }
+    ],
+    "founder": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "employee": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "parentOrganization": {
+     "@id": "https://neofollicletransplant.com/#organization"
+    },
+    "sameAs": [
+     "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+     "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
+     "https://www.youtube.com/channel/UCpUTXf985LPC2UdBXCfgrXQ",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
+     "https://www.justdial.com/Bangalore/Neo-Follicle"
+    ]
+   },
+   {
+    "@type": [
+     "Person",
+     "Physician"
+    ],
+    "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician",
+    "name": "Dr. Sandeep Mahapatra",
+    "honorificPrefix": "Dr.",
+    "givenName": "Sandeep",
+    "familyName": "Mahapatra",
+    "url": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/",
+    "image": "https://neofollicletransplant.com/wp-content/uploads/2025/05/Dr-Sandeep-Mahapatra-Best-Dermatologist-in-Bangalore.jpg",
+    "description": "Dr. Sandeep Mahapatra is a Senior Consultant Dermatologist, Cosmetic Expert and Hair Transplant Surgeon in Bangalore. He is the Founder of Neo Follicle Transplant Clinic in Marathahalli, Whitefield, and has over 20 years of experience in dermatology, cosmetic dermatology and advanced hair restoration procedures.",
+    "jobTitle": [
+     "Senior Consultant Dermatologist",
+     "Cosmetic Expert",
+     "Hair Transplant Surgeon",
+     "Founder, Neo Follicle Transplant Clinic"
+    ],
+    "medicalSpecialty": "Dermatology",
+    "knowsAbout": [
+     "Dermatology",
+     "Cosmetic dermatology",
+     "Hair transplant surgery",
+     "Hair restoration",
+     "Hair loss treatment",
+     "FUE hair transplant",
+     "FUT hair transplant",
+     "DHI hair transplant",
+     "Direct hair implantation",
+     "Beard restoration",
+     "Eyebrow restoration",
+     "Female hair transplant",
+     "Hairline restoration",
+     "PRP therapy for hair loss",
+     "Growth factor concentrate therapy",
+     "Stem cell therapy for hair loss",
+     "Low level laser hair therapy",
+     "Scalp micropigmentation",
+     "Alopecia treatment",
+     "Dermatosurgery",
+     "Aesthetic dermatology",
+     "Botox",
+     "Dermal fillers",
+     "Vitiligo surgery"
+    ],
+    "worksFor": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "workLocation": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "affiliation": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "telephone": "+91-9731207940",
+    "email": "info@neofollicletransplant.com",
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "1st floor, Scorpio House, Near Marathahalli Bridge, Munnekolala, Landmark Opposite Purvankara Apt, Marathahalli Bridge Service Road",
+     "addressLocality": "Bengaluru",
+     "addressRegion": "Karnataka",
+     "postalCode": "560037",
+     "addressCountry": "IN"
+    },
+    "priceRange": "₹₹₹",
+    "hasCredential": [
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Medical Degree",
+      "name": "MBBS",
+      "recognizedBy": {
+       "@type": "CollegeOrUniversity",
+       "name": "MGM Medical College & Hospital, Jamshedpur"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Postgraduate Medical Degree",
+      "name": "MD Dermatology, Venereology & Leprosy",
+      "recognizedBy": {
+       "@type": "CollegeOrUniversity",
+       "name": "Rajendra Institute of Medical Sciences, Ranchi"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Certified DHI Specialist",
+      "recognizedBy": {
+       "@type": "Organization",
+       "name": "DHI Global, Greece"
+      }
+     },
+     {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Basic and Advanced Botox and Dermal Fillers Certification",
+      "recognizedBy": {
+       "@type": "Organization",
+       "name": "Allergan"
+      }
+     }
+    ],
+    "memberOf": [
+     {
+      "@type": "Organization",
+      "name": "Association of Cutaneous Surgeons of India",
+      "alternateName": "ACSI"
+     },
+     {
+      "@type": "Organization",
+      "name": "Indian Association of Hair Restoration Surgeons",
+      "alternateName": "IAHRS"
+     },
+     {
+      "@type": "Organization",
+      "name": "International Society of Dermatology",
+      "alternateName": "ISD"
+     },
+     {
+      "@type": "Organization",
+      "name": "Indian Association of Dermatologists, Venereologists and Leprologists",
+      "alternateName": "IADVL"
+     },
+     {
+      "@type": "Organization",
+      "name": "International Society of Hair Restoration Surgery",
+      "alternateName": "ISHRS"
+     }
+    ],
+    "award": [
+     "Gold Medalist in MD Dermatology, Venereology & Leprosy",
+     "Honors and Gold Medalist in two subjects during MBBS"
+    ],
+    "hasOccupation": {
+     "@type": "Occupation",
+     "name": "Dermatologist and Hair Transplant Surgeon",
+     "description": "Specializes in dermatology, cosmetic dermatology, hair transplantation, hair restoration, PRP therapy, beard restoration, eyebrow restoration and advanced aesthetic procedures.",
+     "occupationalCategory": "Dermatology"
+    },
+    "sameAs": [
+     "https://www.practo.com/bangalore/doctor/dr-sandeep-mahapatra-dermatologist-cosmetologist",
+     "https://www.linkedin.com/in/dr-sandeep-mahapatra-315411112/",
+     "https://www.apollo247.com/doctors/dr-sandeep-mahapatra-4115d6e4-68c2-4cca-8548-66cf7e0bbce1",
+     "https://kivihealth.com/iam/sandeep.mahapatra.19945",
+     "https://www.justdial.com/Bangalore/Dr-Sandeep-Mahapatra-Neo-Follicle-Transplant-Clinic-Marathahalli-Below-Bridge-Munekollal/080PXX80-XX80-160108114909-B9U9_BZDET",
+     "https://www.docindia.org/doctors/bangalore/dr-sandeep-mahapatra-dermatology"
+    ]
+   },
+   {
     "@type": "WebPage",
     "@id": "https://neofollicletransplant.com/thank-you/#webpage",
     "url": "https://neofollicletransplant.com/thank-you/",
@@ -10,7 +385,8 @@
     "inLanguage": "en-IN",
     "isPartOf": {
      "@id": "https://neofollicletransplant.com/#website"
-    }
+    },
+    "description": "Thank you for contacting Neo Follicle Hair Transplant Clinic, Bangalore. Our team will call you back shortly to plan your consultation."
    }
   ]
  }

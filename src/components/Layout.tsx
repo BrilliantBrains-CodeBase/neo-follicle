@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { captureAttribution } from './attribution'
 import Header from './Header'
+import HeadSync from './HeadSync'
 import Footer from './Footer'
 import DesktopBookNowTab from './DesktopBookNowTab'
 import DesktopWhatsAppButton from './DesktopWhatsAppButton'
@@ -15,6 +16,7 @@ export default function Layout() {
   return (
     <>
       <ScrollToTop />
+      <HeadSync />
       {/*
         The wrapper only exists to reserve room for StickyActionBar, which is
         `fixed` and would otherwise cover the footer's legal bar. Padding has to

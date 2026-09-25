@@ -27,3 +27,4 @@ export async function render(url: string): Promise<string> {
 
 export { appRoutes } from './routes'
 export { pages } from './seo/pages'
+export { headerNav, footerColumns } from './config/nav'

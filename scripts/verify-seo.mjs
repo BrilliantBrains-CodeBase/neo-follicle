@@ -1,22 +1,34 @@
 #!/usr/bin/env node
 /**
- * Diffs the prerendered dist/ output against the original backup.
+ * Checks the prerendered dist/ against its sources and the SEO rules.
  *
- * This is the safety net for the whole migration: it asserts that what a
- * crawler receives is byte-for-byte what the live WordPress site served, for
- * every field marked PRESERVE in reports/seo-audit.md.
+ * This is the safety net for the whole migration. Every value is recomputed
+ * from the ORIGINAL inputs -- the WordPress capture, content/seo/overrides.json,
+ * the authored content/seo records -- rather than read back from the generated
+ * src/seo/pages.ts, so a bug in gen-seo cannot hide itself.
+ *
+ *   A. carried over:  every URL exists; title/description/robots/canonical are
+ *                     the capture's unless overridden; every captured JSON-LD
+ *                     node survives; FAQ coverage intact.
+ *   B. rules:         indexable titles <= 60 and descriptions 70-160; share
+ *                     cards exist at 1200x630; one graph per page with no
+ *                     duplicate @id; no dead image or search URLs.
+ *   C. site files:    sitemaps, robots.txt, llms.txt, manifest and icons.
  *
  * Run after `npm run build`. Exits non-zero on any failure.
  */
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import sharp from 'sharp'
+import { SEO } from '../src/config/site.ts'
+import { BROKEN_IMAGE_MAP } from './seo/entity-graph.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const dist = path.join(root, 'dist')
 const backup = path.join(root, 'neofollicle-seo-backup')
 const authoredDir = path.join(root, 'content', 'seo')
-const ORIGIN = 'https://neofollicletransplant.com'
+const ORIGIN = SEO.origin
 
 if (!fs.existsSync(dist)) {
   console.error('dist/ not found -- run `npm run build` first.')
@@ -45,176 +57,237 @@ function parseCsv(text) {
 }
 
 const rows = parseCsv(fs.readFileSync(path.join(backup, '01-SEO-MASTER.csv'), 'utf8'))
-const authored = fs.existsSync(authoredDir)
-  ? fs.readdirSync(authoredDir)
-      .filter((file) => file.endsWith('.json'))
-      .sort()
-      .map((file) => JSON.parse(fs.readFileSync(path.join(authoredDir, file), 'utf8')))
-  : []
+const authored = fs.readdirSync(authoredDir)
+  .filter((file) => file.endsWith('.json') && file !== 'overrides.json')
+  .sort()
+  .map((file) => JSON.parse(fs.readFileSync(path.join(authoredDir, file), 'utf8')))
+const overrides = JSON.parse(fs.readFileSync(path.join(authoredDir, 'overrides.json'), 'utf8'))
+
+/**
+ * The expected record for every page, built from the sources: capture row or
+ * authored record, then its override.
+ */
+const expected = [
+  ...rows.map((r) => ({
+    slug: r.slug,
+    path: (r.url.startsWith(ORIGIN) ? r.url.slice(ORIGIN.length) : r.url) || '/',
+    title: r.title,
+    description: r.meta_description,
+    robots: r.robots,
+    canonical: r.canonical || null,
+    inSitemap: r.sitemap_included === 'True',
+    captured: path.join(backup, 'pages', r.slug, 'schema.jsonld'),
+  })),
+  ...authored.map(({ seo }) => ({ ...seo, captured: null })),
+].map((p) => {
+  const o = overrides[p.slug] ?? {}
+  return {
+    ...p,
+    title: o.title ?? p.title,
+    description: o.description ?? p.description,
+    robots: o.robots ?? p.robots,
+    inSitemap: o.inSitemap ?? p.inSitemap,
+  }
+})
+const indexable = expected.filter((p) => p.inSitemap)
 
 const unesc = (s) =>
   s.replaceAll('&quot;', '"').replaceAll('&gt;', '>').replaceAll('&lt;', '<').replaceAll('&amp;', '&')
-
 const pick = (html, re) => { const m = html.match(re); return m ? unesc(m[1]) : null }
 
 const results = []
 const fail = (check, detail) => results.push({ check, ok: false, detail })
 const pass = (check) => results.push({ check, ok: true })
+const check = (label, problems, okLabel = label) =>
+  problems.length ? fail(label, problems.slice(0, 8).join('\n      ')) : pass(okLabel)
 
-function distFileFor(url) {
-  const p = url.startsWith(ORIGIN) ? url.slice(ORIGIN.length) : url
-  return p === '/' ? path.join(dist, 'index.html')
-    : path.join(dist, p.replace(/^\/|\/$/g, ''), 'index.html')
-}
+const distFileFor = (p) => (p === '/' ? path.join(dist, 'index.html') : path.join(dist, p.replace(/^\/|\/$/g, ''), 'index.html'))
+const distFileForUrl = (url) => path.join(dist, decodeURIComponent(new URL(url).pathname))
 
-/* ---- 1. every file exists -------------------------------------------------- */
-const missing = rows.filter(r => !fs.existsSync(distFileFor(r.url))).map(r => r.slug)
-missing.length
-  ? fail(`${rows.length} HTML files exist`, `missing: ${missing.join(', ')}`)
-  : pass(`${rows.length} HTML files exist at their exact paths`)
+/* ==== A. carried over ====================================================== */
+
+const missing = expected.filter((p) => !fs.existsSync(distFileFor(p.path))).map((p) => p.slug)
+check(`${expected.length} HTML files exist`, missing.map((s) => `missing: ${s}`),
+  `${expected.length} HTML files exist at their exact paths`)
 if (missing.length) { report(); process.exit(1) }
 
-const docs = new Map(rows.map(r => [r.slug, fs.readFileSync(distFileFor(r.url), 'utf8')]))
+const docs = new Map(expected.map((p) => [p.slug, fs.readFileSync(distFileFor(p.path), 'utf8')]))
 
-/* ---- 1b. every post-snapshot authored page keeps its declared SEO -------- */
-const authoredBad = []
-for (const entry of authored) {
-  const page = entry.seo
-  const url = `${ORIGIN}${page.path}`
-  const file = distFileFor(url)
-  if (!fs.existsSync(file)) {
-    authoredBad.push(`${page.slug}: missing prerendered HTML`)
-    continue
-  }
-
-  const html = fs.readFileSync(file, 'utf8')
-  const fields = [
-    ['title', /<title>([\s\S]*?)<\/title>/, page.title],
-    ['description', /<meta name="description" content="([^"]*)"/, page.description],
-    ['canonical', /<link rel="canonical" href="([^"]*)"/, page.canonical],
-    ['robots', /<meta name="robots" content="([^"]*)"/, page.robots],
-  ]
-  for (const [name, pattern, expected] of fields) {
-    if (pick(html, pattern) !== expected) authoredBad.push(`${page.slug}: ${name} differs`)
-  }
-
-  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
-    .map((match) => JSON.parse(match[1]))
-  if (JSON.stringify(blocks) !== JSON.stringify(entry.schema)) {
-    authoredBad.push(`${page.slug}: JSON-LD differs from content/seo source`)
-  }
-}
-authoredBad.length
-  ? fail(`${authored.length} authored page SEO records match`, authoredBad.join('\n      '))
-  : pass(`${authored.length} authored page SEO records and graphs match their source`)
-
-/* ---- 2/3. title + description byte-for-byte -------------------------------- */
-for (const [field, re, csvKey] of [
-  ['title', /<title>([\s\S]*?)<\/title>/, 'title'],
-  ['description', /<meta name="description" content="([^"]*)"/, 'meta_description'],
-]) {
-  const bad = rows.filter(r => (pick(docs.get(r.slug), re) ?? '') !== r[csvKey])
-    .map(r => `${r.slug}: got ${JSON.stringify(pick(docs.get(r.slug), re))}`)
-  bad.length
-    ? fail(`${field} matches the capture on all ${rows.length}`, bad.slice(0, 5).join('\n      '))
-    : pass(`${field} matches the capture byte-for-byte on all ${rows.length}`)
+const RE = {
+  title: /<title>([\s\S]*?)<\/title>/,
+  description: /<meta name="description" content="([^"]*)"/,
+  robots: /<meta name="robots" content="([^"]*)"/,
+  canonical: /<link rel="canonical" href="([^"]*)"/,
+  ogImage: /<meta property="og:image" content="([^"]*)"/,
+  twitterImage: /<meta name="twitter:image" content="([^"]*)"/,
+  ogLocale: /<meta property="og:locale" content="([^"]*)"/,
 }
 
-/* ---- 4. canonical: present on 53, absent on the 6 noindex LPs -------------- */
-const canonRe = /<link rel="canonical" href="([^"]*)"/
-const canonBad = rows.filter(r => (pick(docs.get(r.slug), canonRe) ?? '') !== r.canonical)
-  .map(r => `${r.slug}: expected ${JSON.stringify(r.canonical)}, got ${JSON.stringify(pick(docs.get(r.slug), canonRe))}`)
-canonBad.length
-  ? fail('canonical matches (and is absent on the 6 LPs)', canonBad.slice(0, 5).join('\n      '))
-  : pass(`canonical matches on all ${rows.length} -- present on ${rows.filter(r => r.canonical).length}, absent on ${rows.filter(r => !r.canonical).length}`)
-
-/* ---- 5. robots, esp. noindex on the 6 ad landing pages --------------------- */
-const robotsRe = /<meta name="robots" content="([^"]*)"/
-const robotsBad = rows.filter(r => pick(docs.get(r.slug), robotsRe) !== r.robots).map(r => r.slug)
-const noindexKept = rows.filter(r => r.sitemap_included === 'False')
-  .filter(r => (pick(docs.get(r.slug), robotsRe) ?? '').includes('noindex')).length
-robotsBad.length
-  ? fail('robots matches on all pages', `mismatched: ${robotsBad.join(', ')}`)
-  : pass(`robots matches on all ${rows.length}; noindex retained on ${noindexKept}/6 ad landing pages`)
-
-/* ---- 6. JSON-LD deep-equals the captured graph ----------------------------- */
-const canon = (v) => {
-  if (Array.isArray(v)) return v.map(canon)
-  if (v && typeof v === 'object') {
-    return Object.fromEntries(Object.keys(v).sort().map(k => [k, canon(v[k])]))
-  }
-  return v
+for (const field of ['title', 'description', 'robots', 'canonical']) {
+  const bad = expected
+    .filter((p) => pick(docs.get(p.slug), RE[field]) !== p[field])
+    .map((p) => `${p.slug}: expected ${JSON.stringify(p[field])}, got ${JSON.stringify(pick(docs.get(p.slug), RE[field]))}`)
+  check(`${field} matches capture + overrides`, bad,
+    `${field} matches capture + overrides on all ${expected.length}`)
 }
+
+const lpNoindex = expected.filter((p) => p.captured && !p.inSitemap && !p.canonical)
+check('noindex kept on the ad landing pages',
+  lpNoindex.filter((p) => !pick(docs.get(p.slug), RE.robots)?.includes('noindex')).map((p) => p.slug),
+  `noindex kept on all ${lpNoindex.length} ad/utility landing pages`)
+
+check('indexable pages carry a self-referencing canonical',
+  indexable.filter((p) => pick(docs.get(p.slug), RE.canonical) !== `${ORIGIN}${p.path}`).map((p) => p.slug),
+  `all ${indexable.length} indexable pages carry a self-referencing, trailing-slash canonical`)
+
+/* JSON-LD: parse, and every captured page-specific node still present by @id. */
 const ldRe = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g
+const graphs = new Map()
 const ldBad = []
-let faqPages = 0, faqQuestions = 0
-
-for (const r of rows) {
-  const html = docs.get(r.slug)
-  const blocks = [...html.matchAll(ldRe)].map(m => m[1])
-  let parsed
-  try { parsed = blocks.map(b => JSON.parse(b)) }
-  catch (e) { ldBad.push(`${r.slug}: unparseable JSON-LD (${e.message})`); continue }
-
-  const expected = JSON.parse(fs.readFileSync(path.join(backup, 'pages', r.slug, 'schema.jsonld'), 'utf8'))
-  if (JSON.stringify(canon(parsed)) !== JSON.stringify(canon(expected))) {
-    ldBad.push(`${r.slug}: graph differs from the capture`)
-    continue
+for (const p of expected) {
+  try {
+    graphs.set(p.slug, [...docs.get(p.slug).matchAll(ldRe)].map((m) => JSON.parse(m[1])))
+  } catch (e) {
+    ldBad.push(`${p.slug}: unparseable JSON-LD (${e.message})`)
   }
+}
+check('JSON-LD parses on every page', ldBad)
 
-  for (const block of parsed) {
-    for (const node of block['@graph'] ?? []) {
-      const types = [].concat(node['@type'] ?? [])
-      if (types.includes('FAQPage')) {
-        faqPages++
-        faqQuestions += (node.mainEntity ?? []).length
-      }
+const ENTITY = new RegExp(`^${ORIGIN}/(#(website|organization|clinic|medicalclinic|medical-clinic|searchaction|dr-sandeep-mahapatra)|dr-sandeep-mahapatra-hair-transplant-surgeon/#physician)$`)
+const lost = []
+for (const p of expected) {
+  const source = p.captured ? JSON.parse(fs.readFileSync(p.captured, 'utf8')) : authored.find((a) => a.seo.slug === p.slug).schema
+  const have = new Set((graphs.get(p.slug)?.[0]?.['@graph'] ?? []).map((n) => n['@id']))
+  for (const node of source.flatMap((b) => b['@graph'] ?? [b])) {
+    const id = node['@id']
+    if (id && !ENTITY.test(id) && !have.has(id)) lost.push(`${p.slug}: lost ${id}`)
+  }
+}
+check('every captured page-specific JSON-LD node survives', lost,
+  'every captured and authored page-specific JSON-LD node survives normalisation')
+
+let faqPages = 0, faqQuestions = 0
+for (const g of graphs.values()) {
+  for (const node of g[0]?.['@graph'] ?? []) {
+    if ([].concat(node['@type'] ?? []).includes('FAQPage')) {
+      faqPages++
+      faqQuestions += (node.mainEntity ?? []).length
     }
   }
 }
-ldBad.length
-  ? fail('JSON-LD deep-equals the capture on all pages', ldBad.slice(0, 5).join('\n      '))
-  : pass(`JSON-LD deep-equals the capture on all ${rows.length} pages`)
+faqPages === 15 && faqQuestions === 90
+  ? pass('15 FAQPage graphs present, 90 questions total')
+  : fail('15 FAQPage graphs / 90 questions', `got ${faqPages} FAQPages, ${faqQuestions} questions`)
 
-/* ---- 7. FAQ rich-result coverage ------------------------------------------- */
-faqPages === 14 && faqQuestions === 82
-  ? pass('14 FAQPage graphs present, 82 questions total')
-  : fail('14 FAQPage graphs / 82 questions', `got ${faqPages} FAQPages, ${faqQuestions} questions`)
+/* ==== B. rules ============================================================== */
 
-/* ---- 8. every nav link resolves to a real route ---------------------------- */
-const routePaths = new Set([
-  ...rows.map(r => (r.url.startsWith(ORIGIN) ? r.url.slice(ORIGIN.length) : r.url) || '/'),
-  ...authored.map((entry) => entry.seo.path),
-])
+check('indexable titles are <= 60 characters',
+  indexable.filter((p) => p.title.length > 60).map((p) => `${p.slug}: ${p.title.length} chars`),
+  `all ${indexable.length} indexable titles are <= 60 characters`)
+
+check('indexable descriptions are 70-160 characters',
+  indexable.filter((p) => p.description.length < 70 || p.description.length > 160)
+    .map((p) => `${p.slug}: ${p.description.length} chars`),
+  `all ${indexable.length} indexable descriptions are 70-160 characters`)
+
+const cardBad = []
+for (const p of expected) {
+  const html = docs.get(p.slug)
+  const og = pick(html, RE.ogImage)
+  if (!og) { cardBad.push(`${p.slug}: no og:image`); continue }
+  if (pick(html, RE.twitterImage) !== og) cardBad.push(`${p.slug}: twitter:image differs from og:image`)
+  if (pick(html, RE.ogLocale) !== SEO.locale) cardBad.push(`${p.slug}: og:locale is not ${SEO.locale}`)
+  const file = distFileForUrl(og)
+  if (!fs.existsSync(file)) { cardBad.push(`${p.slug}: ${og} not in dist`); continue }
+  const { width, height } = await sharp(file).metadata()
+  if (width !== 1200 || height !== 630) cardBad.push(`${p.slug}: card is ${width}x${height}`)
+  if (fs.statSync(file).size > 300 * 1024) cardBad.push(`${p.slug}: card over 300 KB`)
+}
+check('every page has a 1200x630 share card', cardBad,
+  `all ${expected.length} pages have a 1200x630 og/twitter card under 300 KB, og:locale ${SEO.locale}`)
+
+const graphBad = []
+for (const [slug, g] of graphs) {
+  if (g.length !== 1) graphBad.push(`${slug}: ${g.length} JSON-LD blocks`)
+  const counts = new Map()
+  for (const n of g[0]?.['@graph'] ?? []) if (n['@id']) counts.set(n['@id'], (counts.get(n['@id']) ?? 0) + 1)
+  for (const [id, c] of counts) if (c > 1) graphBad.push(`${slug}: ${id} defined ${c}x`)
+  for (const id of [`${ORIGIN}/#clinic`, `${ORIGIN}/#organization`, `${ORIGIN}/#website`]) {
+    if (!counts.has(id)) graphBad.push(`${slug}: missing ${id}`)
+  }
+}
+check('one graph per page, no duplicate @id, site entities present', graphBad,
+  `all ${graphs.size} pages: one @graph, no duplicate @id, #website/#organization/#clinic present`)
+
+// Every same-origin image URL in any page's head must be served by dist/ --
+// this is what catches a wp-content image that was never mirrored.
+const urlBad = new Set()
+const imageUrl = /(https:\/\/neofollicletransplant\.com\/[^"\s]+\.(?:png|jpe?g|webp|svg))"/g
+for (const [slug, html] of docs) {
+  const head = html.slice(0, html.indexOf('</head>'))
+  for (const m of head.matchAll(imageUrl)) {
+    const u = unesc(m[1])
+    if (!fs.existsSync(distFileForUrl(u))) urlBad.add(`${slug}: ${u}`)
+  }
+  for (const dead of Object.keys(BROKEN_IMAGE_MAP)) if (head.includes(dead)) urlBad.add(`${slug}: dead ${dead}`)
+  if (head.includes('search_term_string')) urlBad.add(`${slug}: WordPress SearchAction`)
+}
+check('every image URL in the head and JSON-LD is served by dist/', [...urlBad],
+  'every same-origin image URL in the head and JSON-LD is served by dist/ (incl. mirrored wp-content)')
+
+/* ==== C. site files ========================================================= */
+
+/* every nav link resolves to a real route */
+const routePaths = new Set(expected.map((p) => p.path))
 const home = docs.get('home')
 const chrome = [
   ...(home.match(/<header[\s\S]*?<\/header>/) ?? []),
   ...(home.match(/<footer[\s\S]*?<\/footer>/) ?? []),
 ].join('')
-const internal = [...chrome.matchAll(/href="(\/[^"]*)"/g)].map(m => m[1])
-const dangling = [...new Set(internal.filter(h => !routePaths.has(h) && !h.startsWith('/assets/') && h !== '/favicon.svg' && h !== '/logo.svg'))]
-dangling.length
-  ? fail('every header/footer link resolves to a route', `dangling: ${dangling.join(', ')}`)
-  : pass(`all ${new Set(internal).size} unique header/footer links resolve to real routes`)
+const internal = [...chrome.matchAll(/href="(\/[^"]*)"/g)].map((m) => m[1])
+const dangling = [...new Set(internal.filter((h) => !routePaths.has(h) && !h.startsWith('/assets/') && !/\.(svg|ico|png|webmanifest)$/.test(h)))]
+check('every header/footer link resolves to a route', dangling.map((d) => `dangling: ${d}`),
+  `all ${new Set(internal).size} unique header/footer links resolve to real routes`)
 
-/* ---- 9. sitemaps + robots.txt ---------------------------------------------- */
-const sitemapUrls = ['sitemap-post-type-page.xml', 'sitemap-post-type-post.xml', 'sitemap-taxonomy-category.xml']
-  .flatMap(f => [...fs.readFileSync(path.join(dist, f), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]))
-const expectedSitemap = [
-  ...rows.filter(r => r.sitemap_included === 'True').map(r => r.url),
-  ...authored.filter((entry) => entry.seo.inSitemap).map((entry) => `${ORIGIN}${entry.seo.path}`),
-]
-const sitemapDiff = [
-  ...expectedSitemap.filter(u => !sitemapUrls.includes(u)).map(u => `missing ${u}`),
-  ...sitemapUrls.filter(u => !expectedSitemap.includes(u)).map(u => `extra ${u}`),
-]
-sitemapDiff.length
-  ? fail(`sitemaps list exactly the ${expectedSitemap.length} indexable URLs`, sitemapDiff.slice(0, 5).join('\n      '))
-  : pass(`sitemaps list exactly the ${expectedSitemap.length} indexable URLs, including ${authored.filter((entry) => entry.seo.inSitemap).length} authored after the capture`)
+const childSitemaps = ['sitemap-post-type-page.xml', 'sitemap-post-type-post.xml']
+const sitemapXml = childSitemaps.map((f) => fs.readFileSync(path.join(dist, f), 'utf8')).join('\n')
+const sitemapUrls = [...sitemapXml.matchAll(/<url>\s*<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
+const expectedSitemap = indexable.map((p) => `${ORIGIN}${p.path}`)
+check(`sitemaps list exactly the ${expectedSitemap.length} indexable URLs`, [
+  ...expectedSitemap.filter((u) => !sitemapUrls.includes(u)).map((u) => `missing ${u}`),
+  ...sitemapUrls.filter((u) => !expectedSitemap.includes(u)).map((u) => `extra ${u}`),
+], `sitemaps list exactly the ${expectedSitemap.length} indexable URLs`)
+
+const noLastmod = [...sitemapXml.matchAll(/<url>\s*<loc>([^<]+)<\/loc>(?!\s*<lastmod>)/g)].map((m) => m[1])
+check('every sitemap URL has a lastmod', noLastmod)
+
+const imageLocs = [...sitemapXml.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map((m) => unesc(m[1]))
+check('every sitemap image is served by dist/',
+  imageLocs.filter((u) => !fs.existsSync(distFileForUrl(u))).map((u) => `missing ${u}`),
+  `all ${imageLocs.length} sitemap image entries are served by dist/`)
+
+const index = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8')
+const indexed = [...index.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
+check('sitemap.xml indexes every child sitemap', [
+  ...childSitemaps.filter((f) => !indexed.includes(`${ORIGIN}/${f}`)).map((f) => `not indexed ${f}`),
+  ...indexed.filter((u) => !fs.existsSync(path.join(dist, new URL(u).pathname))).map((u) => `missing ${u}`),
+])
 
 fs.readFileSync(path.join(dist, 'robots.txt'), 'utf8').includes(`Sitemap: ${ORIGIN}/sitemap.xml`)
   ? pass('robots.txt carries the Sitemap directive')
   : fail('robots.txt carries the Sitemap directive', 'directive missing')
+
+const llms = fs.readFileSync(path.join(dist, 'llms.txt'), 'utf8')
+const llmsLinks = new Set([...llms.matchAll(/\]\((https:[^)]+)\)/g)].map((m) => m[1]))
+check('llms.txt links every indexable page and nothing else', [
+  ...expectedSitemap.filter((u) => !llmsLinks.has(u)).map((u) => `missing ${u}`),
+  ...[...llmsLinks].filter((u) => !expectedSitemap.includes(u) && !u.endsWith('/llms-full.txt')).map((u) => `extra ${u}`),
+  ...(fs.existsSync(path.join(dist, 'llms-full.txt')) ? [] : ['llms-full.txt missing']),
+], `llms.txt links all ${expectedSitemap.length} indexable pages; llms-full.txt present`)
+
+const siteFiles = ['favicon.ico', 'favicon.svg', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'site.webmanifest']
+check('icons and manifest are in dist', siteFiles.filter((f) => !fs.existsSync(path.join(dist, f))).map((f) => `missing ${f}`),
+  `icons and web manifest present (${siteFiles.length} files)`)
 
 /* ---- report ---------------------------------------------------------------- */
 function report() {
@@ -223,7 +296,7 @@ function report() {
     console.log(`  ${r.ok ? 'PASS' : 'FAIL'}  ${r.check}`)
     if (!r.ok) console.log(`      ${r.detail}`)
   }
-  const failed = results.filter(r => !r.ok).length
+  const failed = results.filter((r) => !r.ok).length
   console.log(`\n  ${results.length - failed}/${results.length} checks passed\n`)
   return failed
 }

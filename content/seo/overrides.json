@@ -1,0 +1,143 @@
+{
+  "$comment": "Per-page SEO overrides merged over the WordPress capture by scripts/gen-seo.mjs. Keys are page slugs. Any of: title (<=60 chars), description (70-160), robots, inSitemap. scripts/verify-seo.mjs checks dist against capture+overrides.",
+
+  "home": {
+    "description": "FUE and DHI hair transplant in Bangalore at Neo Follicle, led by Dr. Sandeep Mahapatra, certified DHI Specialist. Natural hairlines, personalised planning."
+  },
+  "best-hair-transplant-in-bangalore": {
+    "description": "FUE, DHI and NFT hair transplant in Bangalore by a certified DHI Specialist. Doctor-led planning, natural hairline design and personalised aftercare."
+  },
+  "dr-sandeep-mahapatra-hair-transplant-surgeon": {
+    "title": "Dr. Sandeep Mahapatra – Hair Transplant Surgeon, Bangalore",
+    "description": "Dr. Sandeep Mahapatra: Senior Dermatologist, Hair Transplant Surgeon and certified DHI Specialist (DHI Global, Greece) with 20+ years' experience."
+  },
+  "hair-transplant-india-international-patients": {
+    "description": "Planning a hair transplant in India? Why international patients choose Neo Follicle Bangalore: safe, affordable, English-speaking, doctor-led care."
+  },
+  "hair-transplant-recovery-timeline": {
+    "description": "The hair transplant recovery timeline month by month: scabs, shedding, new growth, density and final results, explained by Neo Follicle Bangalore."
+  },
+  "how-many-grafts-do-i-need-for-hair-transplant": {
+    "description": "How hair transplant grafts are calculated from baldness stage, donor density, hair thickness and coverage goals. An expert guide by Neo Follicle Bangalore."
+  },
+
+  "alopecia-areata-treatment-in-bangalore": {
+    "title": "Alopecia Areata Treatment in Bangalore | Neo Follicle",
+    "description": "Sudden bald patches? Dermatologist-led alopecia areata treatment in Bangalore: diagnosis, steroid therapy, PRP and GFC to help regrow hair. Book a visit."
+  },
+  "best-prp-hair-treatment-in-bangalore": {
+    "title": "PRP Hair Treatment in Bangalore | Neo Follicle",
+    "description": "PRP hair treatment in Bangalore to slow hair fall and thicken thinning hair, delivered by dermatologists at Neo Follicle. See costs, sessions and results."
+  },
+  "contact-us": {
+    "title": "Contact Neo Follicle Hair Transplant Clinic, Bangalore",
+    "description": "Book a hair transplant or hair loss consultation at Neo Follicle, Marathahalli, Bengaluru. Call +91 97312 07940 or WhatsApp. Open daily except Tuesday."
+  },
+  "dandruff-treatment-in-bangalore": {
+    "title": "Dandruff Treatment in Bangalore | Neo Follicle",
+    "description": "Tried every shampoo and still have dandruff? Get dermatologist-led dandruff and scalp treatment in Bangalore for lasting, flake-free relief at Neo Follicle."
+  },
+  "exosome-hair-treatment-in-bangalore": {
+    "title": "Exosome Hair Treatment in Bangalore | Neo Follicle",
+    "description": "Exosome hair treatment in Bangalore: a non-surgical regenerative therapy for thinning hair and hair fall, planned by dermatologists at Neo Follicle."
+  },
+  "gfc-hair-treatment-in-bangalore": {
+    "title": "GFC Hair Treatment in Bangalore | Neo Follicle",
+    "description": "GFC (Growth Factor Concentrate) hair treatment in Bangalore to reduce hair fall and boost density. Doctor-led sessions at Neo Follicle. See cost and results."
+  },
+  "hair-conditions-we-treat": {
+    "title": "Hair Conditions We Treat in Bangalore | Neo Follicle",
+    "description": "Expert diagnosis and treatment in Bangalore for hair loss, thinning, pattern baldness, alopecia areata, dandruff and scalp conditions at Neo Follicle."
+  },
+  "hair-transplant-medical-tourism-in-bangalore": {
+    "title": "Hair Transplant Medical Tourism in Bangalore | Neo Follicle",
+    "description": "Travelling to India for a hair transplant? Neo Follicle Bangalore offers doctor-led FUE and DHI, transparent pricing and support for international patients."
+  },
+  "image-gallery": {
+    "title": "Hair Transplant Before & After Photos | Neo Follicle",
+    "description": "Real before and after results of hair transplant, beard, eyebrow, female hair restoration and PRP/GFC treatments at Neo Follicle Clinic, Bangalore."
+  },
+  "low-level-laser-therapy": {
+    "title": "Low Level Laser Hair Therapy in Bangalore | Neo Follicle",
+    "description": "Low level laser therapy (LLLT) in Bangalore: a painless, non-surgical way to stimulate follicles and slow hair fall, supervised by dermatologists."
+  },
+  "nft-brochure": {
+    "title": "Download the Neo Follicle Hair Transplant Brochure",
+    "description": "Download the Neo Follicle hair transplant brochure: procedures, the NFT technique, what to expect and how to plan your consultation in Bangalore."
+  },
+  "our-blogs": {
+    "title": "Hair Transplant & Hair Loss Blog | Neo Follicle",
+    "description": "Expert guides on hair transplants, hair loss, costs, recovery and treatments like PRP, GFC and exosomes, from Dr. Sandeep Mahapatra and Neo Follicle."
+  },
+  "privacy-policy": {
+    "title": "Privacy Policy | Neo Follicle Hair Transplant",
+    "description": "How Neofollicle and Neofertility Clinic LLP collects, uses and protects the personal information you share through the Neo Follicle website."
+  },
+  "qr678-hair-treatment-in-bangalore": {
+    "title": "QR678 Hair Treatment in Bangalore | Neo Follicle",
+    "description": "QR678 Neo hair treatment in Bangalore: a clinically tested peptide therapy to reduce hair fall and regrow thinning hair, delivered by Neo Follicle doctors."
+  },
+  "scalp-micropigmentation-in-bangalore": {
+    "title": "Scalp Micropigmentation in Bangalore | Neo Follicle",
+    "description": "Scalp micropigmentation in Bangalore for the look of a fuller head or a crisp shaved style without surgery. Natural, long-lasting SMP at Neo Follicle."
+  },
+  "stem-cell-therapy-for-hair-loss-in-bangalore": {
+    "title": "Stem Cell Therapy for Hair Loss in Bangalore | Neo Follicle",
+    "description": "Stem cell therapy for hair loss in Bangalore: a regenerative, non-surgical treatment to revive weak follicles and improve density, led by dermatologists."
+  },
+  "terms-of-use": {
+    "title": "Terms of Use | Neo Follicle Hair Transplant",
+    "description": "The terms governing your use of the Neo Follicle website and services, operated by Neofollicle and Neofertility Clinic LLP, Bangalore."
+  },
+  "video-gallery": {
+    "title": "Hair Transplant Videos & Patient Stories | Neo Follicle",
+    "description": "Watch hair transplant procedures, patient journeys and expert answers on hair loss treatments from Dr. Sandeep Mahapatra at Neo Follicle, Bangalore."
+  },
+
+  "ai-hair-transplant-cost-calculator": {
+    "title": "AI Hair Transplant Cost Calculator | Neo Follicle",
+    "description": "Get a free AI hair assessment and an approximate hair transplant cost based on your hair loss stage and graft needs. Neo Follicle Clinic, Bangalore."
+  },
+  "best-hair-transplant-clinic-lp": {
+    "title": "Best Hair Transplant Clinic in Bangalore | Neo Follicle",
+    "description": "Natural results and trusted care: 10,000+ hair transplants and 20+ years of expertise at Neo Follicle Bangalore. Call +91 97312 07940 to book."
+  },
+  "best-hair-transplant-surgeon-in-bangalore-lp": {
+    "title": "Top Hair Transplant Surgeon in Bangalore | Neo Follicle",
+    "description": "Dr. Sandeep Mahapatra: 10,000+ successful hair transplants and 20+ years of expertise. Book your consultation at Neo Follicle, Bangalore."
+  },
+  "cost-of-hair-transplant-in-bangalore-lp": {
+    "title": "Hair Transplant Cost in Bangalore | Neo Follicle",
+    "description": "Get a clear, personalised hair transplant estimate based on graft count, baldness grade, donor quality and technique. Neo Follicle Clinic, Bangalore."
+  },
+  "hair-assessment": {
+    "title": "Free Hair Assessment | Neo Follicle Hair Transplant",
+    "description": "Answer a few questions to get a free hair loss assessment and treatment guidance from the Neo Follicle team in Bangalore."
+  },
+  "thank-you-lp": {
+    "title": "Thank You | Neo Follicle Hair Transplant",
+    "description": "Thank you. Your hair analysis report will reach your email in 2–3 minutes and our team will contact you shortly."
+  },
+  "nft-brochure-thank-you": {
+    "title": "Thank You – NFT Brochure | Neo Follicle",
+    "description": "Thank you. We have emailed the NFT brochure download link. Call +91 97312 07940 to book an appointment with our hair transplant surgeon.",
+    "robots": "noindex, follow",
+    "inSitemap": false
+  },
+
+  "sample-page": {
+    "description": "Neo Follicle Hair Transplant Clinic, Bangalore.",
+    "robots": "noindex, follow",
+    "inSitemap": false
+  },
+  "maintenance-page": {
+    "description": "This page is being redesigned. Call +91 97312 07940 to book an appointment at Neo Follicle Hair Transplant Clinic, Bangalore.",
+    "robots": "noindex, follow",
+    "inSitemap": false
+  },
+  "uncategorized": {
+    "description": "Articles from the Neo Follicle Hair Transplant blog, Bangalore.",
+    "robots": "noindex, follow",
+    "inSitemap": false
+  }
+}

@@ -227,7 +227,9 @@ stubs.length
 /* ---- 11. the facade contract: no third-party frame in static HTML ------------ */
 const frames = []
 for (const [slug, html] of docs) {
-  const n = count(html, /<iframe[\s>]/g)
+  // <noscript> is excluded: GTM's fallback iframe lives there and only loads
+  // with JavaScript off, when the YouTube facade cannot run either.
+  const n = count(html.replace(/<noscript>[\s\S]*?<\/noscript>/g, ''), /<iframe[\s>]/g)
   if (n > 0) frames.push(`${slug}: ${n} <iframe> in the prerendered HTML`)
 }
 frames.length

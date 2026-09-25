@@ -17,9 +17,14 @@ npm run typecheck
 Regenerators (only needed if the backup changes):
 
 ```bash
-npm run gen:seo    # backup -> src/seo/pages.ts + src/seo/schema/*.json
+npm run gen:seo    # backup + content/seo + site.ts -> src/seo/pages.ts + src/seo/schema/*.json
+npm run gen:og     # src/seo/pages.ts -> public/og/<slug>.jpg share cards (--force to rebuild all)
+npm run gen:icons  # public/favicon.svg -> favicon.ico, apple-touch-icon, manifest icons
 npm run gen:pages  # src/seo/pages.ts -> src/pages/*.tsx + src/routes.tsx
+npm run mirror:wp  # copy referenced /wp-content/uploads/ images into public/ (while WP is live)
 ```
+
+After changing a title, H1 or hero image, run `gen:seo` then `gen:og -- --slug <slug>`.
 
 ## The two reference captures
 
@@ -43,44 +48,53 @@ resolves **with its trailing slash** on Netlify, Vercel, Cloudflare Pages and Ap
 The `<head>` — title, robots, description, og, canonical, icons, JSON-LD — is composed from
 `src/seo/pages.ts` and `src/seo/schema/<slug>.json` and written into the served bytes.
 
-It also emits `robots.txt` and the same four-file sitemap structure as the original
-(index + page + post + category), preserving every `lastmod`.
+It also emits `robots.txt`, `sitemap.xml` (index) + page/post child sitemaps with
+image entries, and `llms.txt` / `llms-full.txt`.
 
-## What is preserved exactly
+## Where SEO data lives
 
-`npm run verify` asserts all of this against the backup on every build:
+| What | Source |
+|---|---|
+| NAP, hours, geo, doctor, socials, GBP link | `src/config/site.ts` |
+| Site-wide JSON-LD (#website, #organization, #clinic, #physician) | built from site.ts by `scripts/seo/entity-graph.mjs` |
+| Rewritten titles / descriptions / robots | `content/seo/overrides.json` |
+| Pages authored after the capture | `content/seo/<slug>.json` |
+| Everything else per page | `neofollicle-seo-backup/` |
 
-- 59 HTML files at their exact paths
-- `<title>` and `<meta name="description">` byte-for-byte
-- canonical present on 53, **absent** on the 6 landing pages (that is their captured state)
-- `noindex` retained on all 6 ad landing pages
-- JSON-LD deep-equal to the capture, 14 FAQPages / 82 questions intact
-- sitemaps list exactly the 53 indexable URLs and none of the 6 noindex ones
+`gen-seo` normalises every graph: one `@graph` per page, the config-built entities
+in place of WordPress's 60 per-page copies, duplicate `@id`s merged, the dead
+`?s=` SearchAction dropped, and five image URLs that were already 404 on the live
+site swapped for working ones.
+
+## What `npm run verify` asserts
+
+- 63 HTML files at their exact paths
+- title, description, robots, canonical = capture + `overrides.json`, byte-for-byte
+- every indexable page: self-referencing trailing-slash canonical, title ≤ 60,
+  description 70–160, a 1200×630 share card under 300 KB
+- noindex kept on all 6 ad landing pages, which still carry **no** canonical
+- every captured page-specific JSON-LD node survives; 15 FAQPages / 90 questions
+- one graph per page, no duplicate `@id`, every same-origin image URL served by dist/
+- sitemaps = exactly the indexable URLs, all with `lastmod`; llms.txt links the same set
 - every header/footer link resolves to a real route
 
-## Known deviations from the original
+## Deliberate deviations from the original
 
-Three, all deliberate:
-
-1. **`contact-us` and `hair-conditions-we-treat` are linked from the footer.** Both were
-   orphaned on the live site — `contact-us` is the conversion page, is in the sitemap, is
-   declared `ContactPage` in JSON-LD, and had *zero* inbound internal links because every CTA
-   used an on-page `#contact` anchor. This is the top P1 item in `reports/seo-audit.md` §7.
-   Marked in `src/config/nav.ts`; delete two lines to restore the original footer.
-2. **`robots.txt` drops the `/wp-admin/` rules.** Meaningless off WordPress. The `Sitemap:`
-   directive and the search disallows carry over.
-3. **Sitemaps drop the `<?xml-stylesheet?>` line.** It pointed at a Slim SEO plugin path that
-   no longer exists.
+1. **`contact-us` and `hair-conditions-we-treat` are linked from the footer** (they
+   were orphaned). Marked in `src/config/nav.ts`.
+2. **`robots.txt` drops the `/wp-admin/` rules** and names the AI crawlers explicitly.
+3. **WordPress images are served from `public/wp-content/` at their original paths**,
+   so indexed image URLs survive the cutover.
+4. **`sample-page`, `maintenance-page`, `category/uncategorized` and
+   `nft-brochure-thank-you` are `noindex`** and out of the sitemap. Redirect the
+   first three at the host once it is chosen.
+5. **The Cochin (Maradu) Practo listing is out of `sameAs`**; the site describes
+   the Bangalore clinic only. Social URLs lose their tracking parameters.
+6. **GTM (`GTM-NCJCP6NZ`) is injected** into prerendered pages, as on the live site.
 
 ## Still outstanding
 
-Ported as-is, deliberately, so the port itself stays verifiable. Fix in a later pass:
-
-- **38 meta descriptions need rewriting** — 36 Slim SEO body dumps (most begin `Home » …` and
-  truncate mid-word) plus 2 empty. Find them with `pages.filter(p => p.needsRewrite)`.
-- **6 image URLs 404** on the live site; two of them break the `Physician` entity image in
-  structured data. `reports/seo-audit.md` §3.
-- **29 pages reuse one `@id` for two nodes**, making the graph ambiguous. §4.
-- **18 titles exceed 60 characters** and will truncate in SERPs. §2.
-- `sample-page`, `maintenance-page` and `category/uncategorized` are WordPress defaults that
-  are indexable but worthless. Kept for now; the audit recommends dropping them.
+- **Google Business Profile URL** -- set `CONTACT.gbpUrl` in `src/config/site.ts`
+  (the `https://www.google.com/maps?cid=...` link). It becomes `hasMap`, joins
+  `sameAs`, and replaces the short link on every "Get directions".
+- **Host redirects** for the retired WordPress URLs, once the deploy target is known.

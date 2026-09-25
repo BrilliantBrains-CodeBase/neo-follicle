@@ -1,4 +1,4 @@
-import { CONTACT } from '../../config/site'
+import { CONTACT, mapLink } from '../../config/site'
 import ContactUs from '../ContactUs'
 import type { InfoCard } from '../ContactUs'
 import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon } from '../icons'
@@ -40,7 +40,7 @@ import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon } from '../icons'
 const INFO: InfoCard[] = [
   {
     icon: MapPinIcon,
-    href: CONTACT.mapUrl,
+    href: mapLink(),
     external: true,
     label: 'Clinic address, opens in Google Maps',
     text: CONTACT.addressLines.join(' ').replace(/,$/, ''),

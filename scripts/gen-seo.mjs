@@ -6,8 +6,14 @@
  * Source of truth:
  *   01-SEO-MASTER.csv                     one row per URL, every meta field
  *   site-level/sitemap-post-type-*.xml    lastmod values
- *   pages/<slug>/schema.jsonld            captured JSON-LD, copied verbatim
+ *   pages/<slug>/schema.jsonld            captured JSON-LD
  *   content/seo/*.json                    authored page metadata + JSON-LD
+ *   content/seo/overrides.json            rewritten titles/descriptions/robots
+ *   src/config/site.ts                    the site-wide JSON-LD entities
+ *
+ * Every graph goes through normalizeGraph() (scripts/seo/entity-graph.mjs):
+ * one @graph per page, the config-built #website/#organization/#clinic/
+ * #physician in place of the page's own copies, no duplicate @ids.
  *
  * Writes:
  *   src/seo/pages.ts          all captured and authored PageSeo records
@@ -16,9 +22,12 @@
  * Re-runnable. Nothing here is hand-edited afterwards -- edit the backup or this
  * script, then `npm run gen:seo`.
  */
+import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { ASSETS, BRAND, SEO } from '../src/config/site.ts'
+import { normalizeGraph } from './seo/entity-graph.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const backup = path.join(root, 'neofollicle-seo-backup')
@@ -26,9 +35,7 @@ const authoredDir = path.join(root, 'content', 'seo')
 const outDir = path.join(root, 'src', 'seo')
 const schemaDir = path.join(outDir, 'schema')
 
-// Keep in sync with SEO.origin in src/config/site.ts. Node ESM scripts cannot
-// import the .ts config without a loader, so this copy stays for now.
-const ORIGIN = 'https://neofollicletransplant.com'
+const ORIGIN = SEO.origin
 
 /** Minimal RFC4180 parser -- descriptions contain commas and embedded quotes. */
 function parseCsv(text) {
@@ -79,13 +86,13 @@ const lastmods = readLastmods()
 fs.mkdirSync(schemaDir, { recursive: true })
 for (const f of fs.readdirSync(schemaDir)) fs.unlinkSync(path.join(schemaDir, f))
 
+/** slug -> raw JSON-LD blocks, normalised and written once all pages are known. */
+const graphs = new Map()
+
 const capturedPages = rows.map(r => {
-  // Copy the JSON-LD graph across untouched. Every file is a one-element array
-  // wrapping a @graph; the nodes cross-reference each other by absolute @id, so
-  // reformatting or rewriting URLs here would break the graph.
   const src = path.join(backup, 'pages', r.slug, 'schema.jsonld')
   if (!fs.existsSync(src)) throw new Error(`missing schema.jsonld for ${r.slug}`)
-  fs.copyFileSync(src, path.join(schemaDir, `${r.slug}.json`))
+  graphs.set(r.slug, JSON.parse(fs.readFileSync(src, 'utf8')))
 
   return {
     slug: r.slug,
@@ -123,7 +130,7 @@ const capturedPages = rows.map(r => {
 
 const authored = fs.existsSync(authoredDir)
   ? fs.readdirSync(authoredDir)
-      .filter((file) => file.endsWith('.json'))
+      .filter((file) => file.endsWith('.json') && file !== 'overrides.json')
       .sort()
       .map((file) => JSON.parse(fs.readFileSync(path.join(authoredDir, file), 'utf8')))
   : []
@@ -132,13 +139,104 @@ for (const entry of authored) {
   if (!entry.seo?.slug || !Array.isArray(entry.schema)) {
     throw new Error('content/seo entries require an seo record and schema array')
   }
-  fs.writeFileSync(
-    path.join(schemaDir, `${entry.seo.slug}.json`),
-    `${JSON.stringify(entry.schema, null, 1)}\n`,
-  )
+  graphs.set(entry.seo.slug, entry.schema)
 }
 
-const pages = [...capturedPages, ...authored.map((entry) => entry.seo)]
+const overridesFile = path.join(authoredDir, 'overrides.json')
+const overrides = fs.existsSync(overridesFile)
+  ? JSON.parse(fs.readFileSync(overridesFile, 'utf8'))
+  : {}
+
+/** ISO date of the last commit touching a page's source, for pages the capture had no lastmod for. */
+function gitLastmod(slug) {
+  const files = [`src/pages/${slug}.tsx`, `content/seo/${slug}.json`].filter((f) => fs.existsSync(path.join(root, f)))
+  if (!files.length) return null
+  try {
+    const out = execFileSync('git', ['log', '-1', '--format=%cI', '--', ...files], { cwd: root, encoding: 'utf8' }).trim()
+    return out || null
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Overrides, then the fields every page derives from its own title and
+ * description: og/twitter mirror them, and every page gets its generated
+ * 1200x630 share card (scripts/gen-og-images.mjs) as og:image.
+ */
+function finalise(page) {
+  const o = overrides[page.slug] ?? {}
+  for (const key of Object.keys(o)) {
+    if (!['title', 'description', 'robots', 'inSitemap'].includes(key)) {
+      throw new Error(`overrides.json: unknown field "${key}" on ${page.slug}`)
+    }
+  }
+  if (!graphs.has(page.slug)) throw new Error(`overrides.json: no page "${page.slug}"`)
+
+  const title = o.title ?? page.title
+  const description = o.description ?? page.description
+  const image = `${ORIGIN}${ASSETS.ogCardDir}${page.slug}.jpg`
+  return {
+    ...page,
+    title,
+    description,
+    needsRewrite: o.description ? false : page.needsRewrite,
+    descFlagReason: o.description ? null : page.descFlagReason,
+    robots: o.robots ?? page.robots,
+    og: {
+      ...page.og,
+      title,
+      description,
+      url: page.og.url ?? `${ORIGIN}${page.path}`,
+      image,
+      imageAlt: page.h1 ?? title,
+      imageWidth: ASSETS.ogImageSize.width,
+      imageHeight: ASSETS.ogImageSize.height,
+      siteName: BRAND.name,
+      locale: SEO.locale,
+    },
+    twitter: { card: SEO.twitterCard, title, description, image },
+    inSitemap: o.inSitemap ?? page.inSitemap,
+    lastmod: page.lastmod ?? gitLastmod(page.slug),
+  }
+}
+
+for (const slug of Object.keys(overrides)) {
+  if (!slug.startsWith('$') && !graphs.has(slug)) throw new Error(`overrides.json: no page "${slug}"`)
+}
+delete overrides.$comment
+
+const pages = [...capturedPages, ...authored.map((entry) => entry.seo)].map(finalise)
+
+/**
+ * Keeps the page's own WebPage node in step with an overridden title and
+ * description, and gives indexable pages without one a Home > Page breadcrumb.
+ */
+for (const page of pages) {
+  const url = `${ORIGIN}${page.path}`
+  const blocks = graphs.get(page.slug)
+  const hasCrumbs = JSON.stringify(blocks).includes('"BreadcrumbList"')
+  const extra = []
+  if (!hasCrumbs && page.path !== '/' && page.inSitemap) {
+    extra.push({
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumblist`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: page.h1 ?? page.title, item: url },
+      ],
+    })
+  }
+  const [block] = normalizeGraph(blocks, extra)
+  for (const node of block['@graph']) {
+    if (node['@id'] === `${url}#webpage` || node['@id'] === `${url}#contactpage`) {
+      node.name = page.title
+      node.description = page.description
+    }
+  }
+  fs.writeFileSync(path.join(schemaDir, `${page.slug}.json`), `${JSON.stringify([block], null, 1)}\n`)
+}
+
 const duplicateSlugs = pages.filter((page, index) => pages.findIndex((p) => p.slug === page.slug) !== index)
 const duplicatePaths = pages.filter((page, index) => pages.findIndex((p) => p.path === page.path) !== index)
 if (duplicateSlugs.length || duplicatePaths.length) {
@@ -169,10 +267,13 @@ export type PageSeo = {
     url: string | null
     type: string | null
     image: string | null
+    imageAlt: string | null
+    imageWidth: number
+    imageHeight: number
     siteName: string | null
     locale: string | null
   }
-  twitter: { card: string | null; title: string | null }
+  twitter: { card: string | null; title: string | null; description: string | null; image: string | null }
   h1: string | null
   inSitemap: boolean
   lastmod: string | null

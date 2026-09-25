@@ -7,24 +7,17 @@
     "@id": "https://neofollicletransplant.com/#website",
     "url": "https://neofollicletransplant.com/",
     "name": "Neo Follicle Hair Transplant Clinic",
-    "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
-    "inLanguage": "en-IN",
-    "potentialAction": {
-     "@id": "https://neofollicletransplant.com/#searchaction"
-    },
-    "publisher": {
-     "@id": "https://neofollicletransplant.com/#clinic"
-    },
-    "@context": "https://schema.org",
     "alternateName": [
      "Neo Follicle Transplant Clinic",
      "Neo Follicle Hair Transplant",
      "Neo Follicle Transplant"
     ],
-    "about": {
+    "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
+    "inLanguage": "en-IN",
+    "publisher": {
      "@id": "https://neofollicletransplant.com/#clinic"
     },
-    "mainEntity": {
+    "about": {
      "@id": "https://neofollicletransplant.com/#clinic"
     },
     "creator": {
@@ -32,124 +25,36 @@
     }
    },
    {
-    "@type": "SearchAction",
-    "@id": "https://neofollicletransplant.com/#searchaction",
-    "target": "https://neofollicletransplant.com/?s={search_term_string}",
-    "query-input": "required name=search_term_string"
-   },
-   {
-    "@type": "BreadcrumbList",
-    "name": "Breadcrumbs",
-    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#breadcrumblist",
-    "itemListElement": [
-     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://neofollicletransplant.com/"
-     },
-     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Our Blogs",
-      "item": "https://neofollicletransplant.com/our-blogs/"
-     },
-     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Uncategorized",
-      "item": "https://neofollicletransplant.com/category/uncategorized/"
-     },
-     {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "PRP vs GFC for Hair Loss: What Is the Difference and Which Is Best for You?"
-     }
-    ]
-   },
-   {
-    "@type": "WebPage",
-    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#webpage",
-    "url": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/",
-    "inLanguage": "en",
-    "name": "PRP vs GFC for Hair Loss in Bangalore | Neo Follicle",
-    "description": "Compare PRP and GFC hair treatments in Bangalore, including benefits, sessions, comfort, cost, and which option may suit your stage of hair loss.",
-    "datePublished": "2026-06-11T07:28:54+05:30",
-    "dateModified": "2026-07-03T12:26:24+05:30",
-    "isPartOf": {
-     "@id": "https://neofollicletransplant.com/#website"
-    },
-    "breadcrumb": {
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#breadcrumblist"
-    },
-    "potentialAction": {
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#readaction"
-    },
-    "primaryImageOfPage": {
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#thumbnail"
-    },
-    "image": {
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#thumbnail"
-    }
-   },
-   {
-    "@type": "ReadAction",
-    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#readaction",
-    "target": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/"
-   },
-   {
     "@type": "Organization",
     "@id": "https://neofollicletransplant.com/#organization",
     "url": "https://neofollicletransplant.com/",
-    "name": "Neo Follicle Hair Transplant"
-   },
-   {
-    "@type": "ImageObject",
-    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#thumbnail",
-    "url": "https://neofollicletransplant.com/wp-content/uploads/2026/06/PRP-Vs-GFC-Treatment-Which-is-the-one-for-you.png",
-    "contentUrl": "https://neofollicletransplant.com/wp-content/uploads/2026/06/PRP-Vs-GFC-Treatment-Which-is-the-one-for-you.png",
-    "width": 1536,
-    "height": 1024
-   },
-   {
-    "@type": "Article",
-    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#article",
-    "url": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/",
-    "headline": "PRP vs GFC for Hair Loss: What Is the Difference and Which Is Best for You?",
-    "datePublished": "2026-06-11T07:28:54+05:30",
-    "dateModified": "2026-07-03T12:26:24+05:30",
-    "wordCount": 4071,
-    "articleSection": [
-     "Uncategorized"
-    ],
-    "isPartOf": {
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#webpage"
-    },
-    "mainEntityOfPage": {
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#webpage"
+    "name": "Neo Follicle Hair Transplant",
+    "legalName": "Neofollicle and Neofertility Clinic LLP",
+    "logo": {
+     "@type": "ImageObject",
+     "@id": "https://neofollicletransplant.com/#logo",
+     "url": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-LOGO-WITH-BG-02.png",
+     "contentUrl": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-LOGO-WITH-BG-02.png",
+     "caption": "Neo Follicle Hair Transplant"
     },
     "image": {
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#thumbnail"
+     "@id": "https://neofollicletransplant.com/#logo"
     },
-    "publisher": {
-     "@id": "https://neofollicletransplant.com/#organization"
-    },
-    "author": {
-     "@id": "https://neofollicletransplant.com/#/schema/person/b609b3452782d2bcc7173a2c605b276f"
+    "email": "info@neofollicletransplant.com",
+    "telephone": "+91-9731207940",
+    "sameAs": [
+     "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+     "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
+     "https://www.youtube.com/channel/UCpUTXf985LPC2UdBXCfgrXQ",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
+     "https://www.justdial.com/Bangalore/Neo-Follicle"
+    ],
+    "subOrganization": {
+     "@id": "https://neofollicletransplant.com/#clinic"
     }
    },
    {
-    "@type": "Person",
-    "@id": "https://neofollicletransplant.com/#/schema/person/b609b3452782d2bcc7173a2c605b276f",
-    "url": "https://neofollicletransplant.com",
-    "name": "Dr Sandeep Mahapatra",
-    "description": "Dr. Sandeep Mahapatra is a Senior Dermatologist and Hair Transplant Surgeon in Bangalore. He is the founder and lead doctor at Neo Follicle Transplant Clinic, where he provides hair transplant, hair restoration and non-surgical hair loss treatments for men, women, celebrities and international patients.\r\n\r\nWith over 10,000+ successful hair transplants and international recognition, Dr. Sandeep Mahapatra is regarded as one of the Best Hair Transplant Surgeons in Bangalore.",
-    "givenName": "Dr Sandeep",
-    "familyName": "Mahapatra",
-    "image": "https://secure.gravatar.com/avatar/664b60b2988d51f577b2cb5630552962b243a07015378bea7e02fd3cc61cbc1c?s=96&d=mm&r=g"
-   },
-   {
-    "@context": "https://schema.org",
     "@type": [
      "MedicalClinic",
      "LocalBusiness"
@@ -163,12 +68,20 @@
      "Neo Follicle"
     ],
     "url": "https://neofollicletransplant.com/",
-    "logo": "https://neofollicletransplant.com/wp-content/uploads/2025/03/NFT-LOGO-WITH-BG-02.png",
-    "image": "https://neofollicletransplant.com/wp-content/uploads/2025/04/NFT-Clinic-Reception.jpeg",
+    "logo": {
+     "@id": "https://neofollicletransplant.com/#logo"
+    },
+    "image": [
+     "https://neofollicletransplant.com/wp-content/uploads/2025/04/NFT-Clinic-Reception.jpeg",
+     "https://neofollicletransplant.com/wp-content/uploads/2025/05/NFT-Clinic-Reception-650-450.jpeg"
+    ],
     "description": "Neo Follicle Hair Transplant Clinic is a hair transplant and hair loss treatment clinic in Bangalore, founded and led by Dr. Sandeep Mahapatra, Senior Dermatologist and Hair Transplant Surgeon. The clinic offers advanced hair transplant procedures and non-surgical hair restoration treatments for men, women, celebrities, and international patients.",
     "telephone": "+91-9731207940",
     "email": "info@neofollicletransplant.com",
     "priceRange": "₹₹₹",
+    "currenciesAccepted": "INR",
+    "paymentAccepted": "Cash, Credit Card, Debit Card, UPI",
+    "isAcceptingNewPatients": true,
     "medicalSpecialty": "Dermatology",
     "knowsAbout": [
      "Hair transplant surgery",
@@ -177,6 +90,8 @@
      "FUE hair transplant",
      "FUT hair transplant",
      "Bio FUE hair transplant",
+     "DHI hair transplant",
+     "Direct Hair Implantation",
      "Beard transplant",
      "Eyebrow transplant",
      "Female hair transplant",
@@ -200,10 +115,51 @@
      "latitude": 12.956429486014592,
      "longitude": 77.70733394232819
     },
+    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
     "areaServed": [
      {
       "@type": "City",
       "name": "Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Marathahalli, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Whitefield, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "HAL Old Airport Road, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Bellandur, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Sarjapur Road, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Koramangala, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Indiranagar, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "KR Puram, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Brookefield, Bengaluru"
+     },
+     {
+      "@type": "Place",
+      "name": "Mahadevapura, Bengaluru"
      },
      {
       "@type": "AdministrativeArea",
@@ -214,7 +170,6 @@
       "name": "India"
      }
     ],
-    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
     "openingHoursSpecification": [
      {
       "@type": "OpeningHoursSpecification",
@@ -260,18 +215,19 @@
     "employee": {
      "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
     },
+    "parentOrganization": {
+     "@id": "https://neofollicletransplant.com/#organization"
+    },
     "sameAs": [
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
-     "https://www.instagram.com/neo_follicle_hair_transplant?stkn=dXJxaThrM3Z4NHFq&utm_source=qr",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
      "https://www.youtube.com/channel/UCpUTXf985LPC2UdBXCfgrXQ",
-     "https://in.linkedin.com/company/neo-follicle-hairtransplant?trk=public_post_follow-view-profile",
-     "https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
      "https://www.justdial.com/Bangalore/Neo-Follicle"
     ]
    },
    {
-    "@context": "https://schema.org",
     "@type": [
      "Person",
      "Physician"
@@ -283,7 +239,6 @@
     "familyName": "Mahapatra",
     "url": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/",
     "image": "https://neofollicletransplant.com/wp-content/uploads/2025/05/Dr-Sandeep-Mahapatra-Best-Dermatologist-in-Bangalore.jpg",
-    "priceRange": "₹₹₹",
     "description": "Dr. Sandeep Mahapatra is a Senior Consultant Dermatologist, Cosmetic Expert and Hair Transplant Surgeon in Bangalore. He is the Founder of Neo Follicle Transplant Clinic in Marathahalli, Whitefield, and has over 20 years of experience in dermatology, cosmetic dermatology and advanced hair restoration procedures.",
     "jobTitle": [
      "Senior Consultant Dermatologist",
@@ -337,6 +292,7 @@
      "postalCode": "560037",
      "addressCountry": "IN"
     },
+    "priceRange": "₹₹₹",
     "hasCredential": [
      {
       "@type": "EducationalOccupationalCredential",
@@ -413,7 +369,6 @@
      "occupationalCategory": "Dermatology"
     },
     "sameAs": [
-     "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/",
      "https://www.practo.com/bangalore/doctor/dr-sandeep-mahapatra-dermatologist-cosmetologist",
      "https://www.linkedin.com/in/dr-sandeep-mahapatra-315411112/",
      "https://www.apollo247.com/doctors/dr-sandeep-mahapatra-4115d6e4-68c2-4cca-8548-66cf7e0bbce1",
@@ -421,6 +376,228 @@
      "https://www.justdial.com/Bangalore/Dr-Sandeep-Mahapatra-Neo-Follicle-Transplant-Clinic-Marathahalli-Below-Bridge-Munekollal/080PXX80-XX80-160108114909-B9U9_BZDET",
      "https://www.docindia.org/doctors/bangalore/dr-sandeep-mahapatra-dermatology"
     ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "name": "Breadcrumbs",
+    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#breadcrumblist",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://neofollicletransplant.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Blogs",
+      "item": "https://neofollicletransplant.com/our-blogs/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Uncategorized",
+      "item": "https://neofollicletransplant.com/category/uncategorized/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "PRP vs GFC for Hair Loss: What Is the Difference and Which Is Best for You?"
+     }
+    ]
+   },
+   {
+    "@type": "MedicalWebPage",
+    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#webpage",
+    "url": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/",
+    "inLanguage": "en-IN",
+    "name": "PRP vs GFC for Hair Loss in Bangalore | Neo Follicle",
+    "description": "Compare PRP and GFC hair treatments in Bangalore, including benefits, sessions, comfort, cost, and which option may suit your stage of hair loss.",
+    "datePublished": "2026-06-11T07:28:54+05:30",
+    "dateModified": "2026-07-03T12:26:24+05:30",
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/#website"
+    },
+    "breadcrumb": {
+     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#breadcrumblist"
+    },
+    "potentialAction": {
+     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#readaction"
+    },
+    "primaryImageOfPage": {
+     "@type": "ImageObject",
+     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#primaryimage",
+     "url": "https://neofollicletransplant.com/wp-content/uploads/2026/06/PRP-Vs-GFC-Treatment-Which-is-the-one-for-you.png",
+     "contentUrl": "https://neofollicletransplant.com/wp-content/uploads/2026/06/PRP-Vs-GFC-Treatment-Which-is-the-one-for-you.png",
+     "caption": "PRP vs GFC for hair loss treatment comparison in Bangalore"
+    },
+    "image": {
+     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#thumbnail"
+    },
+    "headline": "PRP vs GFC for Hair Loss: What Is the Difference and Which Is Best for You?",
+    "about": [
+     {
+      "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#prp-hair-treatment"
+     },
+     {
+      "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#gfc-hair-treatment"
+     },
+     {
+      "@type": "MedicalCondition",
+      "name": "Hair loss",
+      "alternateName": [
+       "Hair fall",
+       "Hair thinning",
+       "Androgenetic alopecia",
+       "Male pattern hair loss",
+       "Female pattern hair loss"
+      ]
+     }
+    ],
+    "mainEntity": {
+     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#article"
+    },
+    "reviewedBy": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    }
+   },
+   {
+    "@type": "ReadAction",
+    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#readaction",
+    "target": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/"
+   },
+   {
+    "@type": "ImageObject",
+    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#thumbnail",
+    "url": "https://neofollicletransplant.com/wp-content/uploads/2026/06/PRP-Vs-GFC-Treatment-Which-is-the-one-for-you.png",
+    "contentUrl": "https://neofollicletransplant.com/wp-content/uploads/2026/06/PRP-Vs-GFC-Treatment-Which-is-the-one-for-you.png",
+    "width": 1536,
+    "height": 1024
+   },
+   {
+    "@type": "BlogPosting",
+    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#article",
+    "url": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/",
+    "headline": "PRP vs GFC for Hair Loss: What Is the Difference and Which Is Best for You?",
+    "datePublished": "2026-06-12T09:00:00+05:30",
+    "dateModified": "2026-06-12T09:00:00+05:30",
+    "wordCount": 4071,
+    "articleSection": [
+     "Uncategorized",
+     "Hair Loss Treatment",
+     "PRP Hair Treatment",
+     "GFC Hair Treatment",
+     "Hair Restoration"
+    ],
+    "isPartOf": {
+     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#webpage"
+    },
+    "mainEntityOfPage": {
+     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#webpage"
+    },
+    "image": {
+     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#primaryimage"
+    },
+    "publisher": {
+     "@id": "https://neofollicletransplant.com/#clinic"
+    },
+    "author": {
+     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+    },
+    "alternativeHeadline": "PRP vs GFC Hair Treatment in Bangalore",
+    "description": "Compare PRP and GFC hair treatments in Bangalore, including benefits, sessions, comfort, cost, and which option may suit your stage of hair loss.",
+    "inLanguage": "en-IN",
+    "keywords": [
+     "PRP vs GFC for hair loss",
+     "PRP hair treatment in Bangalore",
+     "GFC hair treatment in Bangalore",
+     "growth factor concentrate for hair loss",
+     "platelet rich plasma for hair loss",
+     "hair loss treatment in Bangalore",
+     "hair thinning treatment in Bangalore",
+     "Neo Follicle Hair Transplant Clinic"
+    ],
+    "about": [
+     {
+      "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#prp-hair-treatment"
+     },
+     {
+      "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#gfc-hair-treatment"
+     },
+     {
+      "@type": "MedicalCondition",
+      "name": "Hair loss",
+      "alternateName": [
+       "Hair fall",
+       "Hair thinning",
+       "Androgenetic alopecia"
+      ]
+     }
+    ],
+    "mentions": [
+     {
+      "@id": "https://neofollicletransplant.com/#hair-transplant-service"
+     },
+     {
+      "@id": "https://neofollicletransplant.com/#clinic"
+     },
+     {
+      "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+     },
+     {
+      "@type": "Place",
+      "name": "Marathahalli"
+     },
+     {
+      "@type": "Place",
+      "name": "Whitefield"
+     },
+     {
+      "@type": "Place",
+      "name": "Mahadevapura"
+     },
+     {
+      "@type": "Place",
+      "name": "Bellandur"
+     },
+     {
+      "@type": "Place",
+      "name": "Outer Ring Road, Bangalore"
+     },
+     {
+      "@type": "Place",
+      "name": "Koramangala"
+     },
+     {
+      "@type": "Place",
+      "name": "Indiranagar"
+     },
+     {
+      "@type": "Place",
+      "name": "HSR Layout"
+     }
+    ],
+    "citation": [
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC8922312/",
+     "https://pubmed.ncbi.nlm.nih.gov/37533146/",
+     "https://pubmed.ncbi.nlm.nih.gov/32653577/",
+     "https://pubmed.ncbi.nlm.nih.gov/38284294/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC11283646/"
+    ]
+   },
+   {
+    "@type": "Person",
+    "@id": "https://neofollicletransplant.com/#/schema/person/b609b3452782d2bcc7173a2c605b276f",
+    "url": "https://neofollicletransplant.com",
+    "name": "Dr Sandeep Mahapatra",
+    "description": "Dr. Sandeep Mahapatra is a Senior Dermatologist and Hair Transplant Surgeon in Bangalore. He is the founder and lead doctor at Neo Follicle Transplant Clinic, where he provides hair transplant, hair restoration and non-surgical hair loss treatments for men, women, celebrities and international patients.\r\n\r\nWith over 10,000+ successful hair transplants and international recognition, Dr. Sandeep Mahapatra is regarded as one of the Best Hair Transplant Surgeons in Bangalore.",
+    "givenName": "Dr Sandeep",
+    "familyName": "Mahapatra",
+    "image": "https://secure.gravatar.com/avatar/664b60b2988d51f577b2cb5630552962b243a07015378bea7e02fd3cc61cbc1c?s=96&d=mm&r=g"
    },
    {
     "@type": "ContactPage",
@@ -524,7 +701,6 @@
     ]
    },
    {
-    "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://neofollicletransplant.com/#hair-transplant-service",
     "name": "Hair Transplant Services in Bangalore",
@@ -622,166 +798,10 @@
     },
     "sameAs": [
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
-     "https://www.instagram.com/neo_follicle_hair_transplant?stkn=dXJxaThrM3Z4NHFq&utm_source=qr",
+     "https://www.instagram.com/neo_follicle_hair_transplant/",
      "https://www.youtube.com/channel/UCpUTXf985LPC2UdBXCfgrXQ",
-     "https://in.linkedin.com/company/neo-follicle-hairtransplant?trk=public_post_follow-view-profile",
-     "https://www.practo.com/bangalore/clinic/neo-follicle-transplant-clinic-nft-cochin-maradu",
+     "https://www.linkedin.com/company/neo-follicle-hairtransplant/",
      "https://www.justdial.com/Bangalore/Neo-Follicle"
-    ]
-   },
-   {
-    "@type": [
-     "MedicalWebPage",
-     "WebPage"
-    ],
-    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#webpage",
-    "url": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/",
-    "name": "PRP vs GFC for Hair Loss: What Is the Difference and Which Is Best for You?",
-    "headline": "PRP vs GFC for Hair Loss: What Is the Difference and Which Is Best for You?",
-    "description": "Compare PRP and GFC hair treatments in Bangalore, including benefits, sessions, comfort, cost, and which option may suit your stage of hair loss.",
-    "inLanguage": "en-IN",
-    "isPartOf": {
-     "@id": "https://neofollicletransplant.com/#website"
-    },
-    "about": [
-     {
-      "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#prp-hair-treatment"
-     },
-     {
-      "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#gfc-hair-treatment"
-     },
-     {
-      "@type": "MedicalCondition",
-      "name": "Hair loss",
-      "alternateName": [
-       "Hair fall",
-       "Hair thinning",
-       "Androgenetic alopecia",
-       "Male pattern hair loss",
-       "Female pattern hair loss"
-      ]
-     }
-    ],
-    "mainEntity": {
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#article"
-    },
-    "primaryImageOfPage": {
-     "@type": "ImageObject",
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#primaryimage",
-     "url": "https://neofollicletransplant.com/wp-content/uploads/2026/06/PRP-Vs-GFC-Treatment-Which-is-the-one-for-you.png",
-     "contentUrl": "https://neofollicletransplant.com/wp-content/uploads/2026/06/PRP-Vs-GFC-Treatment-Which-is-the-one-for-you.png",
-     "caption": "PRP vs GFC for hair loss treatment comparison in Bangalore"
-    },
-    "reviewedBy": {
-     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
-    },
-    "publisher": {
-     "@id": "https://neofollicletransplant.com/#clinic"
-    }
-   },
-   {
-    "@type": "BlogPosting",
-    "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#article",
-    "mainEntityOfPage": {
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#webpage"
-    },
-    "headline": "PRP vs GFC for Hair Loss: What Is the Difference and Which Is Best for You?",
-    "alternativeHeadline": "PRP vs GFC Hair Treatment in Bangalore",
-    "description": "Compare PRP and GFC hair treatments in Bangalore, including benefits, sessions, comfort, cost, and which option may suit your stage of hair loss.",
-    "image": {
-     "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#primaryimage"
-    },
-    "author": {
-     "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
-    },
-    "publisher": {
-     "@id": "https://neofollicletransplant.com/#clinic"
-    },
-    "datePublished": "2026-06-12T09:00:00+05:30",
-    "dateModified": "2026-06-12T09:00:00+05:30",
-    "inLanguage": "en-IN",
-    "articleSection": [
-     "Hair Loss Treatment",
-     "PRP Hair Treatment",
-     "GFC Hair Treatment",
-     "Hair Restoration"
-    ],
-    "keywords": [
-     "PRP vs GFC for hair loss",
-     "PRP hair treatment in Bangalore",
-     "GFC hair treatment in Bangalore",
-     "growth factor concentrate for hair loss",
-     "platelet rich plasma for hair loss",
-     "hair loss treatment in Bangalore",
-     "hair thinning treatment in Bangalore",
-     "Neo Follicle Hair Transplant Clinic"
-    ],
-    "about": [
-     {
-      "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#prp-hair-treatment"
-     },
-     {
-      "@id": "https://neofollicletransplant.com/prp-vs-gfc-for-hair-loss/#gfc-hair-treatment"
-     },
-     {
-      "@type": "MedicalCondition",
-      "name": "Hair loss",
-      "alternateName": [
-       "Hair fall",
-       "Hair thinning",
-       "Androgenetic alopecia"
-      ]
-     }
-    ],
-    "mentions": [
-     {
-      "@id": "https://neofollicletransplant.com/#hair-transplant-service"
-     },
-     {
-      "@id": "https://neofollicletransplant.com/#clinic"
-     },
-     {
-      "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
-     },
-     {
-      "@type": "Place",
-      "name": "Marathahalli"
-     },
-     {
-      "@type": "Place",
-      "name": "Whitefield"
-     },
-     {
-      "@type": "Place",
-      "name": "Mahadevapura"
-     },
-     {
-      "@type": "Place",
-      "name": "Bellandur"
-     },
-     {
-      "@type": "Place",
-      "name": "Outer Ring Road, Bangalore"
-     },
-     {
-      "@type": "Place",
-      "name": "Koramangala"
-     },
-     {
-      "@type": "Place",
-      "name": "Indiranagar"
-     },
-     {
-      "@type": "Place",
-      "name": "HSR Layout"
-     }
-    ],
-    "citation": [
-     "https://pmc.ncbi.nlm.nih.gov/articles/PMC8922312/",
-     "https://pubmed.ncbi.nlm.nih.gov/37533146/",
-     "https://pubmed.ncbi.nlm.nih.gov/32653577/",
-     "https://pubmed.ncbi.nlm.nih.gov/38284294/",
-     "https://pmc.ncbi.nlm.nih.gov/articles/PMC11283646/"
     ]
    },
    {

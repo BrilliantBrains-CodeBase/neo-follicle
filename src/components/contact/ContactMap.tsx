@@ -1,4 +1,4 @@
-import { BRAND, CONTACT } from '../../config/site'
+import { BRAND, CONTACT, mapLink } from '../../config/site'
 import { ArrowRight } from '../icons'
 import Reveal from '../Reveal'
 
@@ -27,7 +27,8 @@ import Reveal from '../Reveal'
  * The "Get directions" link is not decoration. The iframe is third-party and
  * blocked outright by some corporate networks and tracker blockers; without
  * the link, a visitor who cannot load it has no way to the clinic. It points
- * at CONTACT.mapUrl, the same short link the JSON-LD `hasMap` declares.
+ * at mapLink() -- the Google Business Profile URL once supplied, else the
+ * short link -- the same URL the JSON-LD `hasMap` declares.
  */
 
 const QUERY = [
@@ -55,7 +56,7 @@ export default function ContactMap() {
         </Reveal>
 
         <a
-          href={CONTACT.mapUrl}
+          href={mapLink()}
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 self-start font-head text-button text-primary transition-colors hover:text-primary-dark"
