@@ -191,7 +191,20 @@ export default function Footer() {
 
         {/* Band 3 -- legal bar. Reverses to a centred stack below md, per post-1736. */}
         <div className="flex flex-col-reverse items-center gap-gap-mobile md:flex-row md:justify-between md:gap-8">
-          <p className="text-center text-body text-white md:text-left">{copyrightLine()}</p>
+          <div className="flex flex-col gap-1 text-center md:text-left">
+            <p className="text-body text-white">{copyrightLine()}</p>
+            <p className="text-body text-white/60">
+              Designed and developed by{' '}
+              <a
+                href="https://brilliantbrains.ai"
+                target="_blank"
+                rel="noopener"
+                className="underline transition-colors hover:text-accent"
+              >
+                Brilliant Brains AI
+              </a>
+            </p>
+          </div>
 
           <nav
             aria-label="Footer"
