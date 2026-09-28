@@ -105,7 +105,7 @@ for (const dir of ['image-gallery', 'video-gallery']) {
     for (const f of fs.readdirSync(d)) {
       const full = path.join(d, f)
       if (fs.statSync(full).isDirectory()) walk(full)
-      else if (f.endsWith('.webp')) onDisk.push(`/${path.relative(pub, full)}`)
+      else if (f.endsWith('.webp')) onDisk.push(`/${path.relative(pub, full).split(path.sep).join('/')}`)
     }
   }
   walk(base)

@@ -16,7 +16,8 @@ const coverageFile = path.join(root, 'src/content/media/coverage.ts')
 const generatedFile = path.join(root, 'src/content/media/clippings.generated.ts')
 const dist = path.join(root, 'dist')
 
-const src = fs.readFileSync(coverageFile, 'utf8')
+// Normalise CRLF (git autocrlf on Windows) so the \n-anchored patterns match.
+const src = fs.readFileSync(coverageFile, 'utf8').replace(/\r\n/g, '\n')
 
 let failures = 0
 const fail = (msg) => {
@@ -73,7 +74,7 @@ missing.length
   : pass(`all ${generated.length} clipping derivatives exist under public/media/`)
 
 const clippingKeys = [...src.matchAll(/CLIPPINGS\['([^']+)'\]/g)].map((m) => m[1])
-const generatedKeys = [...fs.readFileSync(generatedFile, 'utf8').matchAll(/\n  '([^']+)': \{/g)].map((m) => m[1])
+const generatedKeys = [...fs.readFileSync(generatedFile, 'utf8').replace(/\r\n/g, '\n').matchAll(/\n  '([^']+)': \{/g)].map((m) => m[1])
 const unused = generatedKeys.filter((k) => !clippingKeys.includes(k))
 unused.length
   ? fail(`${unused.length} clipping(s) generated but never referenced: ${unused.join(', ')}`)

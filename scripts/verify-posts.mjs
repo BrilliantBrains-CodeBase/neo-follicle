@@ -72,7 +72,7 @@ function treeText(blocks) {
 
 /** Read the record straight out of the generated module, without a TS loader. */
 function readPost(slug) {
-  const src = fs.readFileSync(path.join(postsDir, `${slug}.ts`), 'utf8')
+  const src = fs.readFileSync(path.join(postsDir, `${slug}.ts`), 'utf8').replace(/\r\n/g, '\n')
   const m = src.match(/const post: Post = ([\s\S]*?)\n\nexport default post/)
   if (!m) throw new Error(`${slug}: could not read the generated record`)
   return JSON.parse(m[1])
