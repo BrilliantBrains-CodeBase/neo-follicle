@@ -4374,8 +4374,8 @@ const post: Post = {
   ],
   "related": [
     "hair-transplant-myths-vs-facts",
-    "hair-transplant-for-receding-hairline",
-    "natural-hairline-design-hair-transplants"
+    "hair-transplant-cost-bangalore-what-decides-price",
+    "hair-transplant-for-receding-hairline"
   ]
 }
 

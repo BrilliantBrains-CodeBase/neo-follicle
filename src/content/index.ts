@@ -8,6 +8,29 @@ import type { PostSummary } from './types'
 
 export const postSummaries: PostSummary[] = [
   {
+    "slug": "hair-transplant-cost-bangalore-what-decides-price",
+    "path": "/hair-transplant-cost-bangalore-what-decides-price/",
+    "title": "Hair Transplant Cost in Bangalore: What Decides the Price",
+    "excerpt": "Learn what decides hair transplant cost in Bangalore, from graft numbers to donor hair, and how to compare quotes and get an estimate for your case.",
+    "summary": "",
+    "category": "Hair Transplant Cost",
+    "datePublished": "2026-10-23T09:00:00+05:30",
+    "dateModified": "2026-10-23T09:00:00+05:30",
+    "readingMinutes": 7,
+    "card": {
+      "src": "/blog/hair-transplant-cost-bangalore-what-decides-price.webp",
+      "alt": "Illustration of the factors that affect hair transplant cost",
+      "width": 1200,
+      "height": 628
+    },
+    "hero": {
+      "src": "/blog/hair-transplant-cost-bangalore-what-decides-price-hero.webp",
+      "alt": "Illustration of the factors that affect hair transplant cost",
+      "width": 1600,
+      "height": 837
+    }
+  },
+  {
     "slug": "why-hair-transplants-fail",
     "path": "/why-hair-transplants-fail/",
     "title": "Why Hair Transplants Fail: Causes, Signs, and Prevention",

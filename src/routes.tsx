@@ -88,6 +88,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/hair-assessment/', element: <HairAssessment />, slug: 'hair-assessment' },
   { path: '/hair-conditions-we-treat/', load: () => import('./pages/hair-conditions-we-treat'), slug: 'hair-conditions-we-treat' },
   { path: '/hair-loss-treatment-in-bangalore/', element: <HairLossTreatmentInBangalore />, slug: 'hair-loss-treatment-in-bangalore' },
+  { path: '/hair-transplant-cost-bangalore-what-decides-price/', load: () => import('./pages/hair-transplant-cost-bangalore-what-decides-price'), slug: 'hair-transplant-cost-bangalore-what-decides-price' },
   { path: '/hair-transplant-cost-in-bangalore/', element: <HairTransplantCostInBangalore />, slug: 'hair-transplant-cost-in-bangalore' },
   { path: '/hair-transplant-for-men-in-bangalore/', element: <HairTransplantForMenInBangalore />, slug: 'hair-transplant-for-men-in-bangalore' },
   { path: '/hair-transplant-for-receding-hairline/', load: () => import('./pages/hair-transplant-for-receding-hairline'), slug: 'hair-transplant-for-receding-hairline' },

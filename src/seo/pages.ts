@@ -1988,6 +1988,38 @@ export const pages: PageSeo[] = [
     "lastmod": "2026-09-22T00:00:00+05:30"
   },
   {
+    "slug": "hair-transplant-cost-bangalore-what-decides-price",
+    "path": "/hair-transplant-cost-bangalore-what-decides-price/",
+    "type": "post",
+    "title": "Hair Transplant Cost in Bangalore: What Affects It",
+    "description": "Learn what decides hair transplant cost in Bangalore, from graft numbers to donor hair, and how to compare quotes and get an estimate for your case.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/",
+    "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og": {
+      "title": "Hair Transplant Cost in Bangalore: What Affects It",
+      "description": "Learn what decides hair transplant cost in Bangalore, from graft numbers to donor hair, and how to compare quotes and get an estimate for your case.",
+      "url": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/",
+      "type": "article",
+      "image": "https://neofollicletransplant.com/og/hair-transplant-cost-bangalore-what-decides-price.jpg",
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en_IN",
+      "imageAlt": "Hair Transplant Cost in Bangalore: What Decides the Price",
+      "imageWidth": 1200,
+      "imageHeight": 630
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Hair Transplant Cost in Bangalore: What Affects It",
+      "description": "Learn what decides hair transplant cost in Bangalore, from graft numbers to donor hair, and how to compare quotes and get an estimate for your case.",
+      "image": "https://neofollicletransplant.com/og/hair-transplant-cost-bangalore-what-decides-price.jpg"
+    },
+    "h1": "Hair Transplant Cost in Bangalore: What Decides the Price",
+    "inSitemap": true,
+    "lastmod": "2026-10-23T09:00:00+05:30"
+  },
+  {
     "slug": "media-coverage",
     "path": "/media-coverage/",
     "type": "page",

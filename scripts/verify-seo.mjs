@@ -175,9 +175,15 @@ for (const g of graphs.values()) {
     }
   }
 }
-faqPages === 15 && faqQuestions === 90
-  ? pass('15 FAQPage graphs present, 90 questions total')
-  : fail('15 FAQPage graphs / 90 questions', `got ${faqPages} FAQPages, ${faqQuestions} questions`)
+// 14 / 82 carried over from the capture, plus whatever the authored pages declare.
+const authoredFaqs = authored
+  .flatMap((a) => a.schema.flatMap((b) => b['@graph'] ?? [b]))
+  .filter((n) => [].concat(n['@type'] ?? []).includes('FAQPage'))
+const wantPages = 14 + authoredFaqs.length
+const wantQuestions = 82 + authoredFaqs.reduce((n, f) => n + (f.mainEntity ?? []).length, 0)
+faqPages === wantPages && faqQuestions === wantQuestions
+  ? pass(`${wantPages} FAQPage graphs present, ${wantQuestions} questions total`)
+  : fail(`${wantPages} FAQPage graphs / ${wantQuestions} questions`, `got ${faqPages} FAQPages, ${faqQuestions} questions`)
 
 /* ==== B. rules ============================================================== */
 

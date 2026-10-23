@@ -1,0 +1,155 @@
+{
+  "seo": {
+    "slug": "hair-transplant-cost-bangalore-what-decides-price",
+    "path": "/hair-transplant-cost-bangalore-what-decides-price/",
+    "type": "post",
+    "title": "Hair Transplant Cost in Bangalore: What Affects It",
+    "description": "Learn what decides hair transplant cost in Bangalore, from graft numbers to donor hair, and how to compare quotes and get an estimate for your case.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/",
+    "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og": {
+      "title": "Hair Transplant Cost in Bangalore: What Affects It",
+      "description": "Learn what decides hair transplant cost in Bangalore, from graft numbers to donor hair, and how to compare quotes and get an estimate for your case.",
+      "url": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/",
+      "type": "article",
+      "image": "https://neofollicletransplant.com/blog/hair-transplant-cost-bangalore-what-decides-price-hero.webp",
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Hair Transplant Cost in Bangalore: What Affects It"
+    },
+    "h1": "Hair Transplant Cost in Bangalore: What Decides the Price",
+    "inSitemap": true,
+    "lastmod": "2026-10-23T09:00:00+05:30"
+  },
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://neofollicletransplant.com/#website",
+          "url": "https://neofollicletransplant.com/",
+          "name": "Neo Follicle Hair Transplant Clinic",
+          "inLanguage": "en-IN",
+          "publisher": { "@id": "https://neofollicletransplant.com/#clinic" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/#breadcrumblist",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://neofollicletransplant.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Our Blogs", "item": "https://neofollicletransplant.com/our-blogs/" },
+            { "@type": "ListItem", "position": 3, "name": "Hair Transplant Cost in Bangalore: What Decides the Price" }
+          ]
+        },
+        {
+          "@type": "MedicalWebPage",
+          "@id": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/#webpage",
+          "url": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/",
+          "inLanguage": "en-IN",
+          "name": "Hair Transplant Cost in Bangalore: What Affects It",
+          "description": "Learn what decides hair transplant cost in Bangalore, from graft numbers to donor hair, and how to compare quotes and get an estimate for your case.",
+          "datePublished": "2026-10-23T09:00:00+05:30",
+          "dateModified": "2026-10-23T09:00:00+05:30",
+          "isPartOf": { "@id": "https://neofollicletransplant.com/#website" },
+          "breadcrumb": { "@id": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/#breadcrumblist" },
+          "primaryImageOfPage": { "@id": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/#primaryimage" },
+          "mainEntity": { "@id": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/#blogposting" },
+          "about": [
+            { "@id": "https://neofollicletransplant.com/#hair-transplant-service" },
+            { "@type": "MedicalProcedure", "name": "Hair Transplant Surgery" }
+          ],
+          "lastReviewed": "2026-10-23",
+          "reviewedBy": { "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician" }
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/#primaryimage",
+          "url": "https://neofollicletransplant.com/blog/hair-transplant-cost-bangalore-what-decides-price-hero.webp",
+          "contentUrl": "https://neofollicletransplant.com/blog/hair-transplant-cost-bangalore-what-decides-price-hero.webp",
+          "width": 1600,
+          "height": 837,
+          "caption": "Illustration of the factors that affect hair transplant cost",
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/#blogposting",
+          "mainEntityOfPage": { "@id": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/#webpage" },
+          "headline": "Hair Transplant Cost in Bangalore: What Decides the Price",
+          "description": "Learn what decides hair transplant cost in Bangalore, from graft numbers to donor hair, and how to compare quotes and get an estimate for your case.",
+          "image": { "@id": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/#primaryimage" },
+          "author": { "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician" },
+          "publisher": { "@id": "https://neofollicletransplant.com/#clinic" },
+          "datePublished": "2026-10-23T09:00:00+05:30",
+          "dateModified": "2026-10-23T09:00:00+05:30",
+          "inLanguage": "en-IN",
+          "isAccessibleForFree": true,
+          "articleSection": ["Hair Transplant", "Hair Transplant Cost", "Patient Education"],
+          "keywords": [
+            "hair transplant cost",
+            "hair transplant cost in bangalore",
+            "hair transplant in bangalore",
+            "hair transplant surgery"
+          ],
+          "wordCount": 1385,
+          "about": [
+            { "@id": "https://neofollicletransplant.com/#hair-transplant-service" },
+            { "@type": "Thing", "name": "Hair Transplant Cost" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://neofollicletransplant.com/hair-transplant-cost-bangalore-what-decides-price/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is hair transplant cost charged per graft or per session?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It varies by clinic. Some quote per graft and others quote a package for a session. Ask for the method in writing, along with a list of what is included."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the technique change the cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It can. Different techniques need different equipment, time and team effort. Your doctor should explain why a method suits your case, not only what it costs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I know the exact cost without a consultation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Online tools and phone quotes give a rough idea, but the graft count depends on examining your scalp and your donor area in person."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there costs beyond the procedure itself?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Possibly. Ask whether the consultation, medicines, dressings and follow-up visits are included, and whether a later session would be charged separately."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the lowest quote the one to choose?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Price alone is a poor guide. Compare the doctor's qualifications, how clearly the plan is explained and what the quote covers before you decide."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

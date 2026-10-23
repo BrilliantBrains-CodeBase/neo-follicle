@@ -61,6 +61,24 @@ for (const post of posts) {
   )
 }
 
+/* ---- authored posts: featured image from content/posts/<slug>.json --------- */
+const authoredDir = path.join(root, 'content/posts')
+const authored = fs.existsSync(authoredDir) ? fs.readdirSync(authoredDir).filter((f) => f.endsWith('.json')).sort() : []
+for (const file of authored) {
+  const slug = file.replace(/\.json$/, '')
+  const { image } = JSON.parse(fs.readFileSync(path.join(authoredDir, file), 'utf8'))
+  const src = path.join(authoredDir, image.file)
+
+  await write(
+    `/blog/${slug}.webp`,
+    sharp(src).resize(CARD.width, CARD.height, { fit: 'cover', position: 'centre' }).webp({ quality: CARD.quality }),
+  )
+  await write(
+    `/blog/${slug}-hero.webp`,
+    sharp(src).resize(HERO.width, null, { withoutEnlargement: true }).webp({ quality: HERO.quality }),
+  )
+}
+
 /* ---- in-article images ----------------------------------------------------- */
 const bodySrcs = new Set()
 for (const post of posts) {
@@ -86,7 +104,8 @@ const total = written.reduce((n, w) => n + w.size, 0)
 const kb = (n) => `${(n / 1024).toFixed(0)} KB`
 
 console.log(`gen-blog-images: ${written.length} files -> public/blog/ (${kb(total)} total)`)
-console.log(`                 ${posts.length} cards, ${posts.length} heroes, ${bodySrcs.size} body images`)
+const postCount = posts.length + authored.length
+console.log(`                 ${postCount} cards, ${postCount} heroes, ${bodySrcs.size} body images`)
 console.log('                 largest:')
 for (const w of [...written].sort((a, b) => b.size - a.size).slice(0, 5)) {
   console.log(`                   ${kb(w.size).padStart(7)}  ${w.file}`)

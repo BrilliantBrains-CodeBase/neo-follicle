@@ -24,6 +24,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { parse } from 'node-html-parser'
+import sharp from 'sharp'
 import {
   backup,
   bodyImagePath,
@@ -38,6 +39,7 @@ import {
 
 const outDir = path.join(root, 'src/content')
 const postsDir = path.join(outDir, 'posts')
+const authoredDir = path.join(root, 'content/posts')
 
 /* ---- overrides -------------------------------------------------------------
  * Each of these is a defect in the captured content, documented in
@@ -137,6 +139,9 @@ function decode(text) {
     .replace(/&#8211;/g, '–')
     .replace(/&#8212;/g, ' - ')
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    // Literal em dashes too, spaced or not -- the house style since 856fde2,
+    // which made this change by hand in the generated files.
+    .replace(/\s*—\s*/g, ' - ')
 }
 
 /** Internal links lose the origin; everything else passes through unchanged. */
@@ -404,7 +409,7 @@ const records = posts.map((wp) => {
     path: seo.path,
     title: decode(wp.title.rendered),
     excerpt: decode(wp.excerpt.rendered.replace(/<[^>]+>/g, '')).trim(),
-    summary: SUMMARY_OVERRIDES[slug] ?? wp.meta_box?.blog_summary?.trim() ?? '',
+    summary: SUMMARY_OVERRIDES[slug] ?? (wp.meta_box?.blog_summary ?? '').trim().replace(/\s*—\s*/g, ' - '),
     category,
     datePublished: article.datePublished ?? wp.date,
     dateModified: article.dateModified ?? wp.modified,
@@ -417,6 +422,50 @@ const records = posts.map((wp) => {
     keywords: [].concat(article.keywords ?? []),
   }
 })
+
+/* ---- authored posts --------------------------------------------------------
+ * Posts written after the capture: content/posts/<slug>.html is the body, in
+ * the same Gutenberg-style markup as content.rendered so parseBody() and its
+ * allowlist apply unchanged; <slug>.json carries the listing fields and the
+ * featured image. Dates, articleSection and keywords come from the BlogPosting
+ * node in content/seo/<slug>.json, the same place the captured posts read
+ * them from. Write internal links with the full origin so rewriteHref() checks
+ * them against the route table. */
+for (const file of fs.existsSync(authoredDir) ? fs.readdirSync(authoredDir).filter((f) => f.endsWith('.json')).sort() : []) {
+  const slug = file.replace(/\.json$/, '')
+  const meta = JSON.parse(fs.readFileSync(path.join(authoredDir, file), 'utf8'))
+  const seo = seoBySlug.get(slug)
+  if (!seo) throw new Error(`${slug}: no PageSeo record -- add content/seo/${slug}.json and run gen:seo`)
+  if (seo.type !== 'post') throw new Error(`${slug}: PageSeo says type "${seo.type}", expected "post"`)
+
+  const schema = JSON.parse(fs.readFileSync(path.join(root, 'content/seo', `${slug}.json`), 'utf8')).schema
+  const article = schema.flatMap((b) => b['@graph'] ?? [b]).find((n) => [].concat(n['@type'] ?? []).includes('BlogPosting'))
+  if (!article) throw new Error(`${slug}: content/seo/${slug}.json has no BlogPosting node`)
+
+  const body = parseBody(fs.readFileSync(path.join(authoredDir, `${slug}.html`), 'utf8'), slug)
+  const words = plainText(body).split(/\s+/).filter(Boolean).length
+  const { width, height } = await sharp(path.join(authoredDir, meta.image.file)).metadata()
+  const heroWidth = Math.min(width, 1600)
+
+  records.push({
+    slug,
+    path: seo.path,
+    title: meta.title,
+    excerpt: meta.excerpt,
+    summary: meta.summary ?? '',
+    category: meta.category,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified ?? article.datePublished,
+    readingMinutes: Math.max(1, Math.round(words / 200)),
+    card: { src: cardImagePath(slug), alt: meta.image.alt, width: 1200, height: 628 },
+    hero: { src: heroImagePath(slug), alt: meta.image.alt, width: heroWidth, height: Math.round((heroWidth / width) * height) },
+    toc: body.filter((b) => b.t === 'h' && b.level === 2).map((b) => ({ id: b.id, text: plainText([b]) })),
+    body,
+    sections: [].concat(article.articleSection ?? []),
+    keywords: [].concat(article.keywords ?? []),
+    authored: true,
+  })
+}
 
 records.sort((a, b) => b.datePublished.localeCompare(a.datePublished))
 
@@ -457,12 +506,16 @@ fs.rmSync(postsDir, { recursive: true, force: true })
 fs.mkdirSync(postsDir, { recursive: true })
 
 for (const post of records) {
-  const { sections, keywords, ...rest } = post
+  const { sections, keywords, authored, ...rest } = post
+  const source = authored
+    ? `// Source: content/posts/${post.slug}.html + .json
+//         + content/seo/${post.slug}.json`
+    : `// Source: neofollicle-seo-backup/site-level/wp-rest/posts.json (content.rendered)
+//         + pages/${post.slug}/schema.jsonld + media/manifest.json`
   fs.writeFileSync(
     path.join(postsDir, `${post.slug}.ts`),
     `${HEADER}//
-// Source: neofollicle-seo-backup/site-level/wp-rest/posts.json (content.rendered)
-//         + pages/${post.slug}/schema.jsonld + media/manifest.json
+${source}
 import type { Post } from '../types'
 
 const post: Post = ${JSON.stringify(rest, null, 2)}

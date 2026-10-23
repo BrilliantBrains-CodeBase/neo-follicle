@@ -3842,7 +3842,7 @@ const post: Post = {
   "related": [
     "hair-transplant-for-receding-hairline",
     "fue-vs-direct-hair-implantation",
-    "donor-area-planning-hair-transplant"
+    "hair-transplant-cost-bangalore-what-decides-price"
   ]
 }
 

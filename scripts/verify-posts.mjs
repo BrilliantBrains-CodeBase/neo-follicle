@@ -15,7 +15,16 @@ import path from 'node:path'
 import { parse } from 'node-html-parser'
 import { backup, root } from './blog-assets.mjs'
 
-const posts = JSON.parse(fs.readFileSync(path.join(backup, 'site-level/wp-rest/posts.json'), 'utf8'))
+// Authored posts (content/posts/<slug>.html) are checked against their own
+// source the same way, so the copy supplied for them is proven verbatim too.
+const authoredDir = path.join(root, 'content/posts')
+const posts = [
+  ...JSON.parse(fs.readFileSync(path.join(backup, 'site-level/wp-rest/posts.json'), 'utf8')),
+  ...(fs.existsSync(authoredDir) ? fs.readdirSync(authoredDir).filter((f) => f.endsWith('.html')).sort() : []).map((f) => ({
+    slug: f.replace(/\.html$/, ''),
+    content: { rendered: fs.readFileSync(path.join(authoredDir, f), 'utf8') },
+  })),
+]
 const postsDir = path.join(root, 'src/content/posts')
 const schemaDir = path.join(root, 'src/seo/schema')
 
@@ -41,7 +50,7 @@ function declaredFaqQuestions(slug) {
   return faq ? faq.mainEntity.map((q) => stripNumber(q.name)) : null
 }
 
-const stripNumber = (s) => s.replace(/^\d+\.\s*/, '').replace(/\s+/g, ' ').trim()
+const stripNumber = (s) => s.replace(/^\d+\.\s*/, '').replace(/\s*—\s*/g, ' - ').replace(/\s+/g, ' ').trim()
 
 const norm = (s) => s.replace(/ /g, ' ').replace(/\s+/g, ' ').trim()
 
@@ -54,7 +63,9 @@ const norm = (s) => s.replace(/ /g, ' ').replace(/\s+/g, ' ').trim()
 const withSeparators = (html) =>
   html.replace(/<br\s*\/?>/g, ' ').replace(/<\/(td|th|li|p|h[1-6])>/g, ' </$1>')
 
-const sourceText = (html) => parse(withSeparators(html)).text
+// Em dashes become " - " in the generated copy (house style, see decode() in
+// gen-posts.mjs), so the source is held to the same rule.
+const sourceText = (html) => parse(withSeparators(html)).text.replace(/\s*—\s*/g, ' - ')
 
 const inlineText = (c) =>
   c.map((n) => (n.t === 'text' ? n.v : n.t === 'br' ? ' ' : n.c ? inlineText(n.c) : '')).join('')

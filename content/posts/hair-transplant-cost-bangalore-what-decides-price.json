@@ -1,0 +1,11 @@
+{
+  "$comment": "Authored post (written after the WordPress capture). Body copy is the sibling .html file, parsed by scripts/gen-posts.mjs exactly like a captured post. SEO metadata and JSON-LD (dates, articleSection, keywords) live in content/seo/<slug>.json.",
+  "title": "Hair Transplant Cost in Bangalore: What Decides the Price",
+  "excerpt": "Learn what decides hair transplant cost in Bangalore, from graft numbers to donor hair, and how to compare quotes and get an estimate for your case.",
+  "summary": "",
+  "category": "Hair Transplant Cost",
+  "image": {
+    "file": "images/hair-transplant-cost-bangalore-factors.png",
+    "alt": "Illustration of the factors that affect hair transplant cost"
+  }
+}

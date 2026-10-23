@@ -4758,9 +4758,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "hair-transplant-cost-bangalore-what-decides-price",
     "why-hair-transplants-fail",
-    "medical-treatments-for-hair-loss",
-    "unethical-practices-in-hair-transplantation"
+    "medical-treatments-for-hair-loss"
   ]
 }
 
