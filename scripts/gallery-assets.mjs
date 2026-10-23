@@ -99,9 +99,11 @@ export const GALLERY_SECTIONS = [
   {
     id: 'hair-transplant-results',
     /*
-     * Twelve masked composites from the original capture, then seven the client
-     * delivered in content/gallery/Zoho WorkDrive-8 on 25 Sep 2026. Every image
-     * in this section now carries eye bars.
+     * Five latest results the client delivered on 23 Oct 2026 (content/gallery/
+     * hair-transplant-2026-10), shown first; then twelve masked composites from
+     * the original capture, then seven the client delivered in content/gallery/
+     * Zoho WorkDrive-8 on 25 Sep 2026. Every image carries eye bars except the
+     * "After" panel of 37 -- see the note on the new entries below.
      *
      * THE 21 UNMASKED IMAGES THAT USED TO SIT HERE HAVE BEEN REMOVED. They were
      * seven patients photographed from three angles each -- R1, R2, R3, R4, R5,
@@ -139,6 +141,18 @@ export const GALLERY_SECTIONS = [
      * `{ file: f('Zoho WorkDrive-8/7.jpg'), alt: '...' }` below is all it takes.
      */
     images: [
+      // Client delivery, 23 Oct 2026 -- the clinic's latest results, listed
+      // first on purpose. Supplied as 35-39.png; renamed on arrival.
+      //
+      // FLAGGED FOR CLIENT REVIEW: 37's "After" panel has no eye bar. The
+      // patient is looking down and glasses cover most of the eye area, but it
+      // is the only unmasked face in this section. 38's artwork reads "Atter".
+      { file: f('hair-transplant-2026-10/hair-transplant-before-after-35.png'), alt: 'Hair transplant before and after, front view: a thin, receded frontal hairline, then thick wavy hair restoring full coverage across the front.' },
+      { file: f('hair-transplant-2026-10/hair-transplant-before-after-36.png'), alt: 'Hair transplant before and after viewed from above: sparse hair with the scalp clearly visible across the top, then dense dark hair covering the same area.' },
+      { file: f('hair-transplant-2026-10/hair-transplant-before-after-37.png'), alt: 'Hair transplant before and after, front view from above: frontal recession with thinning at the temples, then fuller hair across the hairline and front of the scalp.' },
+      { file: f('hair-transplant-2026-10/hair-transplant-before-after-38.png'), alt: 'Hair transplant before and after, three-quarter view: a receding temple and thin frontal hair, then a restored hairline with dense hair at the temple.' },
+      { file: f('hair-transplant-2026-10/hair-transplant-before-after-39.png'), alt: 'Hair transplant before and after, front view: a bald frontal scalp with long hair only at the sides, then a rebuilt hairline with short, even density.' },
+
       { from: u('2025/03/NFT-Hair-Trnsplant-Before-After-Image-1.jpg'), alt: 'Hair transplant before and after: a deeply receding hairline and thinning mid-scalp, then a rebuilt hairline with even density across the front.' },
       { from: u('2025/10/NFT-HT-BA-1.png'), alt: 'Hair transplant before and after: diffuse thinning through the frontal third, then thick dark hair covering the same area.' },
       { from: u('2025/10/NFT-HT-BA-13.png'), alt: 'Hair transplant before and after: a bare frontal scalp with hair remaining only at the sides, then a full restored hairline.' },

@@ -1,43 +1,43 @@
 {
   "/image-gallery/hair-transplant-results/01-thumb.webp": {
     "width": 600,
-    "height": 415
+    "height": 450
   },
   "/image-gallery/hair-transplant-results/01-full.webp": {
-    "width": 650,
-    "height": 450
+    "width": 1200,
+    "height": 900
   },
   "/image-gallery/hair-transplant-results/02-thumb.webp": {
     "width": 600,
-    "height": 415
+    "height": 450
   },
   "/image-gallery/hair-transplant-results/02-full.webp": {
-    "width": 650,
-    "height": 450
+    "width": 1200,
+    "height": 900
   },
   "/image-gallery/hair-transplant-results/03-thumb.webp": {
     "width": 600,
-    "height": 415
+    "height": 450
   },
   "/image-gallery/hair-transplant-results/03-full.webp": {
-    "width": 650,
-    "height": 450
+    "width": 1200,
+    "height": 900
   },
   "/image-gallery/hair-transplant-results/04-thumb.webp": {
     "width": 600,
-    "height": 415
+    "height": 450
   },
   "/image-gallery/hair-transplant-results/04-full.webp": {
-    "width": 650,
-    "height": 450
+    "width": 1200,
+    "height": 900
   },
   "/image-gallery/hair-transplant-results/05-thumb.webp": {
     "width": 600,
-    "height": 415
+    "height": 450
   },
   "/image-gallery/hair-transplant-results/05-full.webp": {
-    "width": 650,
-    "height": 450
+    "width": 1200,
+    "height": 900
   },
   "/image-gallery/hair-transplant-results/06-thumb.webp": {
     "width": 600,
@@ -113,11 +113,11 @@
   },
   "/image-gallery/hair-transplant-results/15-thumb.webp": {
     "width": 600,
-    "height": 450
+    "height": 415
   },
   "/image-gallery/hair-transplant-results/15-full.webp": {
-    "width": 1200,
-    "height": 900
+    "width": 650,
+    "height": 450
   },
   "/image-gallery/hair-transplant-results/16-thumb.webp": {
     "width": 600,
@@ -148,6 +148,46 @@
     "height": 415
   },
   "/image-gallery/hair-transplant-results/19-full.webp": {
+    "width": 650,
+    "height": 450
+  },
+  "/image-gallery/hair-transplant-results/20-thumb.webp": {
+    "width": 600,
+    "height": 450
+  },
+  "/image-gallery/hair-transplant-results/20-full.webp": {
+    "width": 1200,
+    "height": 900
+  },
+  "/image-gallery/hair-transplant-results/21-thumb.webp": {
+    "width": 600,
+    "height": 415
+  },
+  "/image-gallery/hair-transplant-results/21-full.webp": {
+    "width": 650,
+    "height": 450
+  },
+  "/image-gallery/hair-transplant-results/22-thumb.webp": {
+    "width": 600,
+    "height": 415
+  },
+  "/image-gallery/hair-transplant-results/22-full.webp": {
+    "width": 650,
+    "height": 450
+  },
+  "/image-gallery/hair-transplant-results/23-thumb.webp": {
+    "width": 600,
+    "height": 415
+  },
+  "/image-gallery/hair-transplant-results/23-full.webp": {
+    "width": 650,
+    "height": 450
+  },
+  "/image-gallery/hair-transplant-results/24-thumb.webp": {
+    "width": 600,
+    "height": 415
+  },
+  "/image-gallery/hair-transplant-results/24-full.webp": {
     "width": 650,
     "height": 450
   },
