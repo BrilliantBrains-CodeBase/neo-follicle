@@ -70,7 +70,7 @@ const data: ImageGalleryData = {
     },
     {
       id: 'female-hair-restoration',
-      label: 'Eyebrow Transplant',
+      label: 'Female Hair Restoration',
       heading: 'Female Hair Restoration',
       subheading: 'Gentle, Subtle, and Confidence-Restoring Hair Treatments for Women',
       lede:
