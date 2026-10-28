@@ -79,9 +79,10 @@ export default function Footer() {
         <div className="flex flex-col gap-gap-mobile md:grid md:grid-cols-2 lg:grid-cols-[2fr_1fr_1.05fr_1.2fr] lg:gap-8">
           <div className="flex flex-col gap-6">
             <p className="text-body text-line">
-              Neo Follicle is a doctor-led hair transplant and hair loss clinic in Marathahalli,
-              Bangalore. Every case is diagnosed, designed and performed under Dr. Sandeep
-              Mahapatra, a senior dermatologist and hair transplant surgeon.
+              Neo Follicle is a doctor-led hair transplant and hair loss clinic with locations in
+              Marathahalli and Whitefield, Bangalore. Every case is diagnosed, designed and
+              performed under the guidance of Dr. Sandeep Mahapatra, a senior dermatologist and
+              hair transplant surgeon.
             </p>
 
             <div className="flex flex-col gap-4">

@@ -160,7 +160,7 @@ export default function Hero() {
             {/* Eyebrow. The 15px is a hard override in the reference, not a token. */}
             <p className="flex items-start gap-2 font-head text-[15px] font-medium leading-[1.2em] tracking-[-0.02em] text-accent">
               <Square className="mt-[2px] h-[14px] w-[14px] shrink-0" />
-              Neo Follicle Hair Transplant Clinic, Marathahalli, Bangalore
+              Neo Follicle Hair Transplant Clinic, Marathahalli &amp; Whitefield, Bangalore
             </p>
 
             {/* The reference splits the heading into #FFFFFFE6 and pure white. */}
@@ -170,9 +170,10 @@ export default function Hero() {
             </h1>
 
             <p className="mt-1 max-w-[543px] text-body text-white">
-              Neo Follicle is a doctor-led hair transplant and hair loss clinic in Marathahalli,
-              Bangalore. Dr. Sandeep Mahapatra, senior dermatologist and hair transplant surgeon,
-              diagnoses and designs each treatment around the cause of your hair loss.
+              Neo Follicle is a doctor-led hair transplant and hair loss clinic with locations in
+              Marathahalli and Whitefield, Bangalore. Dr. Sandeep Mahapatra, senior dermatologist
+              and hair transplant surgeon, diagnoses the cause of your hair loss and designs
+              personalised treatments based on your individual hair restoration needs.
             </p>
 
             <div className="mt-3 flex flex-wrap gap-gap-sm md:mt-4 lg:mt-6">
