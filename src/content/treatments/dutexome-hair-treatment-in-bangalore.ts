@@ -124,6 +124,19 @@ const data: TreatmentPageData = {
       ],
     },
     {
+      kind: 'results',
+      heading: 'Before & After Results',
+      lede: 'Results vary with hair loss stage, scalp health and individual response.',
+      images: [
+        {
+          src: '/treatments/dutexome-hair-treatment-in-bangalore/result-1.webp',
+          alt: 'Before and after Dutexome hair treatment at Neo Follicle: visible scalp through thinning hair at the crown, then denser coverage over the same area.',
+          width: 1024,
+          height: 768,
+        },
+      ],
+    },
+    {
       kind: 'prose',
       heading: 'Dutexome Treatment Cost in Bangalore',
       lede: [

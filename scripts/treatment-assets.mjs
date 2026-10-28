@@ -225,6 +225,13 @@ export const TREATMENT_IMAGES = {
     // no product label, logo, outcome claim or invented clinic signage.
     hero: { local: 'content/treatments/images/dutexome-hero.png',
             alt: 'A clinician using a microneedling pen on the thinning scalp of a reclining patient in a dermatology clinic.' },
+    // The clinic's own before/after photograph, supplied 28 Oct 2026. It is a
+    // client delivery rather than a capture of the old site (which never had
+    // this service), so it is `local` -- the one results entry that is.
+    results: [
+      { local: 'content/treatments/images/dutexome-treatment-result-neo-follicle.jpg',
+        alt: 'Before and after Dutexome hair treatment at Neo Follicle: visible scalp through thinning hair at the crown, then denser coverage over the same area.' },
+    ],
   },
 
   'low-level-laser-therapy': {

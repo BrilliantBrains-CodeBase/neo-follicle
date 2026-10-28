@@ -418,7 +418,13 @@ function Results({ section, ground }: { section: Extract<TreatmentSection, { kin
       */}
       <SectionHead heading={section.heading} />
 
-      <ul className={`${SCROLLER} gap-gap-sm md:grid-cols-2 md:gap-8 lg:grid-cols-3`}>
+      {/* A lone photograph (dutexome) is centred at a readable width rather
+          than left in the first cell of an otherwise empty three-column row. */}
+      <ul
+        className={`${SCROLLER} gap-gap-sm md:gap-8 ${
+          section.images.length === 1 ? 'md:mx-auto md:w-full md:max-w-2xl' : 'md:grid-cols-2 lg:grid-cols-3'
+        }`}
+      >
         {section.images.map((image: TreatmentImage, i) => (
           <Reveal as="li" key={image.src} delay={i * 100} className={SLIDE}>
             <img
