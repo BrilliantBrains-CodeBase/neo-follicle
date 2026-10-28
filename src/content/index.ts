@@ -8,6 +8,29 @@ import type { PostSummary } from './types'
 
 export const postSummaries: PostSummary[] = [
   {
+    "slug": "how-to-stop-hair-fall-causes-treatments",
+    "path": "/how-to-stop-hair-fall-causes-treatments/",
+    "title": "How to Stop Hair Fall: Causes, Treatments and When to See a Doctor",
+    "excerpt": "Wondering how to stop hair fall? Learn the common causes, sensible first steps, medical options and when to see a doctor for hair loss.",
+    "summary": "",
+    "category": "Hair Loss Treatment",
+    "datePublished": "2026-10-28T09:00:00+05:30",
+    "dateModified": "2026-10-28T09:00:00+05:30",
+    "readingMinutes": 7,
+    "card": {
+      "src": "/blog/how-to-stop-hair-fall-causes-treatments.webp",
+      "alt": "Illustration of the hair growth cycle and common causes of hair fall",
+      "width": 1200,
+      "height": 628
+    },
+    "hero": {
+      "src": "/blog/how-to-stop-hair-fall-causes-treatments-hero.webp",
+      "alt": "Illustration of the hair growth cycle and common causes of hair fall",
+      "width": 1600,
+      "height": 837
+    }
+  },
+  {
     "slug": "hair-transplant-cost-bangalore-what-decides-price",
     "path": "/hair-transplant-cost-bangalore-what-decides-price/",
     "title": "Hair Transplant Cost in Bangalore: What Decides the Price",

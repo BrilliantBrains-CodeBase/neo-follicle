@@ -1,0 +1,11 @@
+{
+  "$comment": "Authored post (written after the WordPress capture). Body copy is the sibling .html file, parsed by scripts/gen-posts.mjs exactly like a captured post. SEO metadata and JSON-LD (dates, articleSection, keywords) live in content/seo/<slug>.json.",
+  "title": "How to Stop Hair Fall: Causes, Treatments and When to See a Doctor",
+  "excerpt": "Wondering how to stop hair fall? Learn the common causes, sensible first steps, medical options and when to see a doctor for hair loss.",
+  "summary": "",
+  "category": "Hair Loss Treatment",
+  "image": {
+    "file": "images/how-to-stop-hair-fall-causes-treatments.png",
+    "alt": "Illustration of the hair growth cycle and common causes of hair fall"
+  }
+}

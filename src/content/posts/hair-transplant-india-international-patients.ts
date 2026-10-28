@@ -4758,9 +4758,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "how-to-stop-hair-fall-causes-treatments",
     "hair-transplant-cost-bangalore-what-decides-price",
-    "why-hair-transplants-fail",
-    "medical-treatments-for-hair-loss"
+    "why-hair-transplants-fail"
   ]
 }
 

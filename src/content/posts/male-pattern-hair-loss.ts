@@ -3842,7 +3842,7 @@ const post: Post = {
   "related": [
     "hair-transplant-for-receding-hairline",
     "fue-vs-direct-hair-implantation",
-    "hair-transplant-cost-bangalore-what-decides-price"
+    "how-to-stop-hair-fall-causes-treatments"
   ]
 }
 

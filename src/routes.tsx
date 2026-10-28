@@ -99,6 +99,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/', element: <Home />, slug: 'home' },
   { path: '/how-many-grafts-do-i-need-for-hair-transplant/', load: () => import('./pages/how-many-grafts-do-i-need-for-hair-transplant'), slug: 'how-many-grafts-do-i-need-for-hair-transplant' },
   { path: '/how-to-choose-the-best-hair-transplant-clinic-bangalore/', load: () => import('./pages/how-to-choose-the-best-hair-transplant-clinic-bangalore'), slug: 'how-to-choose-the-best-hair-transplant-clinic-bangalore' },
+  { path: '/how-to-stop-hair-fall-causes-treatments/', load: () => import('./pages/how-to-stop-hair-fall-causes-treatments'), slug: 'how-to-stop-hair-fall-causes-treatments' },
   { path: '/image-gallery/', load: () => import('./pages/image-gallery'), slug: 'image-gallery' },
   { path: '/is-hair-transplant-painful/', load: () => import('./pages/is-hair-transplant-painful'), slug: 'is-hair-transplant-painful' },
   { path: '/is-hair-transplant-permanent/', load: () => import('./pages/is-hair-transplant-permanent'), slug: 'is-hair-transplant-permanent' },

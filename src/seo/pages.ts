@@ -2020,6 +2020,38 @@ export const pages: PageSeo[] = [
     "lastmod": "2026-10-23T09:00:00+05:30"
   },
   {
+    "slug": "how-to-stop-hair-fall-causes-treatments",
+    "path": "/how-to-stop-hair-fall-causes-treatments/",
+    "type": "post",
+    "title": "How to Stop Hair Fall: Causes and Treatments",
+    "description": "Wondering how to stop hair fall? Learn the common causes, sensible first steps, medical options and when to see a doctor for hair loss.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": "https://neofollicletransplant.com/how-to-stop-hair-fall-causes-treatments/",
+    "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og": {
+      "title": "How to Stop Hair Fall: Causes and Treatments",
+      "description": "Wondering how to stop hair fall? Learn the common causes, sensible first steps, medical options and when to see a doctor for hair loss.",
+      "url": "https://neofollicletransplant.com/how-to-stop-hair-fall-causes-treatments/",
+      "type": "article",
+      "image": "https://neofollicletransplant.com/og/how-to-stop-hair-fall-causes-treatments.jpg",
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en_IN",
+      "imageAlt": "How to Stop Hair Fall: Causes, Treatments and When to See a Doctor",
+      "imageWidth": 1200,
+      "imageHeight": 630
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "How to Stop Hair Fall: Causes and Treatments",
+      "description": "Wondering how to stop hair fall? Learn the common causes, sensible first steps, medical options and when to see a doctor for hair loss.",
+      "image": "https://neofollicletransplant.com/og/how-to-stop-hair-fall-causes-treatments.jpg"
+    },
+    "h1": "How to Stop Hair Fall: Causes, Treatments and When to See a Doctor",
+    "inSitemap": true,
+    "lastmod": "2026-10-28T09:00:00+05:30"
+  },
+  {
     "slug": "media-coverage",
     "path": "/media-coverage/",
     "type": "page",
