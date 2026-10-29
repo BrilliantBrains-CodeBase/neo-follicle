@@ -1,5 +1,9 @@
 # Apache config for static hosting (cPanel, Hostinger and similar).
 # Every route is a prerendered folder/index.html, so no SPA rewrite is needed.
+#
+# Tested on Apache 2.4.58 against a full `npm run build` of this repo
+# (docs/seo-audit/reports/htaccess-apache-test.txt). After deploying, run
+# `node scripts/verify-live.mjs --only host,legacy,compression,cache`.
 
 Options -Indexes
 DirectoryIndex index.html
@@ -8,22 +12,88 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # One canonical host: https://neofollicletransplant.com
+  # Before this rule, http:// and https://www. both answered 200 with the full
+  # site (duplicate hosts; the GBP website link points at www). One 301 hop,
+  # path and query string kept, so utm_* / gclid survive.
+  # If the site ever sits behind a proxy/CDN that terminates TLS, %{HTTPS}
+  # reads "off" and this loops: swap the first condition for
+  #   RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://neofollicletransplant.com%{REQUEST_URI} [R=301,L,NE]
+
   # Retired WordPress pages (README "Deliberate deviations", item 4).
   RewriteRule ^sample-page/?$ / [R=301,L]
   RewriteRule ^maintenance-page/?$ / [R=301,L]
   RewriteRule ^category/uncategorized/?$ /our-blogs/ [R=301,L]
+
+  # Old and mistyped URLs Google has crawled that answer 404 today
+  # (Search Console page report, Jul-Oct 2026).
+  RewriteRule ^dr-sandeep-mahapatle-hair-transplant-surgeon/?$ /dr-sandeep-mahapatra-hair-transplant-surgeon/ [R=301,L]
+  RewriteRule ^dr-sandeep-mahapatra-dermatologist-cosmetologist/?$ /dr-sandeep-mahapatra-hair-transplant-surgeon/ [R=301,L]
+  RewriteRule ^dr-sandeep-mahapatra-hair-restoration-surgeon/?$ /dr-sandeep-mahapatra-hair-transplant-surgeon/ [R=301,L]
+  RewriteRule ^gfc-exosome-vs-qr678-hair-treatment/?$ /gfc-vs-exosome-vs-qr678-hair-treatment/ [R=301,L]
+  RewriteRule ^gfc-v-exosome-vs-qr678-hair-treatment/?$ /gfc-vs-exosome-vs-qr678-hair-treatment/ [R=301,L]
+  RewriteRule ^hair-transplant-in-bangalore-cost-graft-clinic/?$ /hair-transplant-cost-in-bangalore/ [R=301,L]
+  RewriteRule ^pfc-vs-gfc-for-hair-loss-in-bangalore/?$ /prp-vs-gfc-for-hair-loss/ [R=301,L]
+  RewriteRule ^prp-v-gfc-for-hair-loss-in-bangalore-neo-follicle/?$ /prp-vs-gfc-for-hair-loss/ [R=301,L]
+  RewriteRule ^qr-678-hair-treatment-in-bangalore/?$ /qr678-hair-treatment-in-bangalore/ [R=301,L]
+  RewriteRule ^stem-cell-hair-therapy-for-hair-loss-in-bangalore/?$ /stem-cell-therapy-for-hair-loss-in-bangalore/ [R=301,L]
+  RewriteRule ^direct-hair-transplant-clinic-in-bangalore-neo-follicle/?$ / [R=301,L]
+  # Yoast-era sitemap files still registered in Search Console.
+  RewriteRule ^sitemap_index\.xml$ /sitemap.xml [R=301,L]
+  RewriteRule ^post_tag-sitemap\.xml$ /sitemap.xml [R=301,L]
+
+  # Consolidations: DISABLED. Each needs a decision first
+  # (docs/seo-audit/02-implementation-guide.md, steps 7 and 9).
+  # RewriteRule ^hair-transplant-cost-bangalore-what-decides-price/?$ /hair-transplant-cost-in-bangalore/ [R=301,L]
+  # RewriteRule ^best-hair-transplant-in-bangalore/?$ / [R=301,L]
 </IfModule>
 
-# Hashed build assets never change; everything else revalidates.
 <IfModule mod_headers.c>
+  # Hashed build assets never change.
   <If "%{REQUEST_URI} =~ m#^/assets/#">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </If>
+  # Self-hosted font files (named by content hash upstream).
+  <ElseIf "%{REQUEST_URI} =~ m#^/fonts/#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </ElseIf>
+  # Other images had NO Cache-Control. 30 days; give a changed image a new
+  # filename (the /img/*-<width>.webp sets already do).
+  <ElseIf "%{REQUEST_URI} =~ m#\.(webp|avif|jpe?g|png|gif|ico|svg)$#">
+    Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+  </ElseIf>
+  # Everything else revalidates, so content and SEO changes go live at once.
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
+
+  # HSTS only on HTTPS responses; no includeSubDomains/preload until every
+  # subdomain is confirmed HTTPS-only.
+  Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/plain application/xml
+# Compression. The old list had `application/javascript` but Apache serves .js
+# as `text/javascript`, so the 714 KB entry bundle went out uncompressed
+# (gzip: 188 KB). Brotli where the server has it, gzip for clients without
+# br. AddOutputFilterByType needs mod_filter; the guard keeps a host without
+# it from answering 500.
+<IfModule mod_filter.c>
+  <IfModule mod_brotli.c>
+    <IfModule mod_deflate.c>
+      AddOutputFilterByType BROTLI_COMPRESS;DEFLATE text/html text/plain text/css text/xml text/javascript application/javascript application/json application/ld+json application/manifest+json application/xml image/svg+xml
+    </IfModule>
+    <IfModule !mod_deflate.c>
+      AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml text/javascript application/javascript application/json application/ld+json application/manifest+json application/xml image/svg+xml
+    </IfModule>
+  </IfModule>
+  <IfModule !mod_brotli.c>
+    <IfModule mod_deflate.c>
+      AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml text/javascript application/javascript application/json application/ld+json application/manifest+json application/xml image/svg+xml
+    </IfModule>
+  </IfModule>
 </IfModule>
