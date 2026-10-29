@@ -52,7 +52,7 @@ Beyond Lighthouse:
 ```bash
 npm ci
 npm run build && npm run typecheck
-npm run verify                 # 29 checks on dist/ (was 24)
+npm run verify                 # 29 checks on dist/ (main: 23)
 npm run verify:posts && npm run verify:treatments && npm run verify:gallery && npm run verify:media
 npm run preview                # click through home, a treatment page, a blog post, contact
 ```
