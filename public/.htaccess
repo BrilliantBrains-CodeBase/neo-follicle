@@ -69,12 +69,25 @@ ErrorDocument 404 /404.html
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
+  # robots.txt, sitemaps, llms.txt and the manifest had no Cache-Control, so
+  # caches guessed. One hour: an update is picked up the same day.
+  <FilesMatch "\.(txt|xml|webmanifest)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
 
   # HSTS only on HTTPS responses; no includeSubDomains/preload until every
   # subdomain is confirmed HTTPS-only.
   Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# UTF-8 on text responses. Apache sent bare "text/plain" and "application/xml",
+# so a browser or agent opening llms.txt fell back to Windows-1252 and showed
+# the en dashes and rupee signs as mojibake.
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+  AddCharset UTF-8 .txt .xml .webmanifest .js .css .svg .json
 </IfModule>
 
 # Compression. The old list had `application/javascript` but Apache serves .js
