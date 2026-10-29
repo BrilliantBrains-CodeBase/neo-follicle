@@ -98,8 +98,19 @@ const sorted = [...pages].sort((a, b) => a.slug.localeCompare(b.slug))
 // two link grids and a nine-point checklist, the largest single data module in
 // src/content/treatments/. It is reached from the footer, not from the home
 // page, so there is no reason for the home page's chunk to carry it.
-const SPLIT_SLUGS = new Set(['image-gallery', 'video-gallery', 'hair-conditions-we-treat'])
-const isSplit = (p) => p.type === 'post' || SPLIT_SLUGS.has(p.slug)
+//
+// Oct 2026 SEO audit: the same test applies to every other page too. With only
+// those split, the entry chunk was 714 KB raw / 188 KB gzip and carried the
+// content of ~40 eager pages -- 21 treatment modules, the doctor page, the
+// treatments hub, the LPs, the legal pages -- to every visitor of every page
+// (Lighthouse: 445-479 KiB unused JS per page). So every route is now split
+// except home, which stays in the entry: it is the most-visited landing page
+// and the target of client-side navigation from the logo. The preload in
+// src/main.tsx / entry-server and the modulepreload emitted by
+// scripts/prerender.mjs already cover split routes, so first loads still
+// hydrate the prerendered HTML without suspending.
+const EAGER_SLUGS = new Set(['home'])
+const isSplit = (p) => !EAGER_SLUGS.has(p.slug)
 
 const imports = sorted
   .filter((p) => !isSplit(p))
