@@ -15,7 +15,7 @@ const data: TreatmentPageData = {
   slug: 'dutexome-hair-treatment-in-bangalore',
   hero: {
     eyebrow: 'DHT-Blocking & Regenerative Care',
-    h1: 'Best Dutexome Hair Treatment in Bangalore',
+    h1: 'Dutexome Hair Treatment in Bangalore',
     lede: [
       'A clinically formulated option for selected patients experiencing androgenetic alopecia or diffuse hair thinning.',
       'Neo Follicle uses the genuine Mesoestetic c.prof 231 Dutexome Solution in a doctor-led treatment plan tailored to your scalp and stage of hair loss.',

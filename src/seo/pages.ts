@@ -117,7 +117,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/alopecia-areata-treatment-in-bangalore.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best Alopecia Areata Treatment in Bangalore",
+      "imageAlt": "Alopecia Treatment in Bangalore with Dermatologist-Led Diagnosis",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -127,7 +127,7 @@ export const pages: PageSeo[] = [
       "description": "Sudden bald patches? Dermatologist-led alopecia areata treatment in Bangalore: diagnosis, steroid therapy, PRP and GFC to help regrow hair. Book a visit.",
       "image": "https://neofollicletransplant.com/og/alopecia-areata-treatment-in-bangalore.jpg"
     },
-    "h1": "Best Alopecia Areata Treatment in Bangalore",
+    "h1": "Alopecia Treatment in Bangalore with Dermatologist-Led Diagnosis",
     "inSitemap": true,
     "lastmod": "2026-05-26T16:50:38+05:30"
   },
@@ -213,7 +213,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/best-hair-transplant-in-bangalore.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best Direct Hair Transplant in Bangalore for Natural, Long-Lasting Hair Growth",
+      "imageAlt": "Direct Hair Transplant in Bangalore for Natural-Looking Hair Restoration",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -223,7 +223,7 @@ export const pages: PageSeo[] = [
       "description": "FUE, DHI and NFT hair transplant in Bangalore by a certified DHI Specialist. Doctor-led planning, natural hairline design and personalised aftercare.",
       "image": "https://neofollicletransplant.com/og/best-hair-transplant-in-bangalore.jpg"
     },
-    "h1": "Best Direct Hair Transplant in Bangalore for Natural, Long-Lasting Hair Growth",
+    "h1": "Direct Hair Transplant in Bangalore for Natural-Looking Hair Restoration",
     "inSitemap": true,
     "lastmod": "2026-05-29T19:39:54+05:30"
   },
@@ -309,7 +309,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/best-prp-hair-treatment-in-bangalore.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best PRP Hair Treatment in Bangalore",
+      "imageAlt": "PRP Hair Loss Treatment in Bangalore for Stronger, Healthier Hair",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -319,7 +319,7 @@ export const pages: PageSeo[] = [
       "description": "PRP hair treatment in Bangalore to slow hair fall and thicken thinning hair, delivered by dermatologists at Neo Follicle. See sessions and results.",
       "image": "https://neofollicletransplant.com/og/best-prp-hair-treatment-in-bangalore.jpg"
     },
-    "h1": "Best PRP Hair Treatment in Bangalore",
+    "h1": "PRP Hair Loss Treatment in Bangalore for Stronger, Healthier Hair",
     "inSitemap": true,
     "lastmod": "2026-05-26T16:42:52+05:30"
   },
@@ -501,7 +501,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/dandruff-treatment-in-bangalore.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best Dandruff Treatment in Bangalore",
+      "imageAlt": "Dandruff Solutions in Bangalore for a Healthier Scalp",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -511,7 +511,7 @@ export const pages: PageSeo[] = [
       "description": "Tried every shampoo and still have dandruff? Get dermatologist-led dandruff and scalp treatment in Bangalore for lasting, flake-free relief at Neo Follicle.",
       "image": "https://neofollicletransplant.com/og/dandruff-treatment-in-bangalore.jpg"
     },
-    "h1": "Best Dandruff Treatment in Bangalore",
+    "h1": "Dandruff Solutions in Bangalore for a Healthier Scalp",
     "inSitemap": true,
     "lastmod": "2026-05-26T16:52:07+05:30"
   },
@@ -565,7 +565,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/dr-sandeep-mahapatra-hair-transplant-surgeon.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best Direct Hair Transplant Surgeon in Bangalore",
+      "imageAlt": "Dr. Sandeep Mahapatra, Hair Transplant Surgeon in Bangalore",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -575,7 +575,7 @@ export const pages: PageSeo[] = [
       "description": "Dr. Sandeep Mahapatra: Senior Dermatologist, Hair Transplant Surgeon and certified DHI Specialist (DHI Global, Greece) with 20+ years' experience.",
       "image": "https://neofollicletransplant.com/og/dr-sandeep-mahapatra-hair-transplant-surgeon.jpg"
     },
-    "h1": "Best Direct Hair Transplant Surgeon in Bangalore",
+    "h1": "Dr. Sandeep Mahapatra, Hair Transplant Surgeon in Bangalore",
     "inSitemap": true,
     "lastmod": "2026-05-27T08:17:58+05:30"
   },
@@ -597,7 +597,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/exosome-hair-treatment-in-bangalore.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best Exosome Hair Treatment in Bangalore",
+      "imageAlt": "Exosome Therapy in Bangalore for Advanced Hair Restoration",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -607,7 +607,7 @@ export const pages: PageSeo[] = [
       "description": "Exosome hair treatment in Bangalore: who it suits, how many sessions are needed and how it compares with PRP and GFC. Planned by dermatologists at Neo Follicle.",
       "image": "https://neofollicletransplant.com/og/exosome-hair-treatment-in-bangalore.jpg"
     },
-    "h1": "Best Exosome Hair Treatment in Bangalore",
+    "h1": "Exosome Therapy in Bangalore for Advanced Hair Restoration",
     "inSitemap": true,
     "lastmod": "2026-05-26T16:46:45+05:30"
   },
@@ -629,7 +629,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/eyebrow-restoration-in-bangalore.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best Eyebrow Restoration in Bangalore",
+      "imageAlt": "Eyebrow Restoration in Bangalore for Naturally Fuller Brows",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -639,7 +639,7 @@ export const pages: PageSeo[] = [
       "description": "Eyebrow transplant in Bangalore at Neo Follicle: fuller, natural-looking brows planned around hair direction, angle and density. See before-and-after results.",
       "image": "https://neofollicletransplant.com/og/eyebrow-restoration-in-bangalore.jpg"
     },
-    "h1": "Best Eyebrow Restoration in Bangalore",
+    "h1": "Eyebrow Restoration in Bangalore for Naturally Fuller Brows",
     "inSitemap": true,
     "lastmod": "2026-05-28T14:04:53+05:30"
   },
@@ -821,7 +821,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/gfc-hair-treatment-in-bangalore.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best GFC Hair Treatment in Bangalore",
+      "imageAlt": "Growth Factor Concentrate (GFC) Hair Treatment in Bangalore",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -831,7 +831,7 @@ export const pages: PageSeo[] = [
       "description": "GFC hair treatment in Bangalore: sessions most patients need, results to expect and real before-and-after photos. Dermatologist-led at Neo Follicle.",
       "image": "https://neofollicletransplant.com/og/gfc-hair-treatment-in-bangalore.jpg"
     },
-    "h1": "Best GFC Hair Treatment in Bangalore",
+    "h1": "Growth Factor Concentrate (GFC) Hair Treatment in Bangalore",
     "inSitemap": true,
     "lastmod": "2026-05-26T16:44:19+05:30"
   },
@@ -1333,7 +1333,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/low-level-laser-therapy.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best Low Level Laser Therapy in Bangalore",
+      "imageAlt": "Low Level Laser Hair Therapy in Bangalore",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -1343,7 +1343,7 @@ export const pages: PageSeo[] = [
       "description": "Low level laser therapy (LLLT) in Bangalore: a painless, non-surgical way to stimulate follicles and slow hair fall, supervised by dermatologists.",
       "image": "https://neofollicletransplant.com/og/low-level-laser-therapy.jpg"
     },
-    "h1": "Best Low Level Laser Therapy in Bangalore",
+    "h1": "Low Level Laser Hair Therapy in Bangalore",
     "inSitemap": true,
     "lastmod": "2026-05-26T16:48:31+05:30"
   },
@@ -1653,7 +1653,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/qr678-hair-treatment-in-bangalore.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best QR678 Neo Treatment in Bangalore",
+      "imageAlt": "Neo QR678 Treatment in Bangalore for Advanced Hair Loss Management",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -1663,7 +1663,7 @@ export const pages: PageSeo[] = [
       "description": "QR678 Neo hair treatment in Bangalore: a clinically tested peptide therapy to reduce hair fall and regrow thinning hair, delivered by Neo Follicle doctors.",
       "image": "https://neofollicletransplant.com/og/qr678-hair-treatment-in-bangalore.jpg"
     },
-    "h1": "Best QR678 Neo Treatment in Bangalore",
+    "h1": "Neo QR678 Treatment in Bangalore for Advanced Hair Loss Management",
     "inSitemap": true,
     "lastmod": "2026-05-26T16:45:42+05:30"
   },
@@ -1717,7 +1717,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/scalp-micropigmentation-in-bangalore.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best Scalp Micropigmentation in Bangalore",
+      "imageAlt": "Scalp Micropigmentation in Bangalore for the Appearance of Fuller Hair",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -1727,7 +1727,7 @@ export const pages: PageSeo[] = [
       "description": "Scalp micropigmentation in Bangalore for the look of a fuller head or a crisp shaved style without surgery. Natural, long-lasting SMP at Neo Follicle.",
       "image": "https://neofollicletransplant.com/og/scalp-micropigmentation-in-bangalore.jpg"
     },
-    "h1": "Best Scalp Micropigmentation in Bangalore",
+    "h1": "Scalp Micropigmentation in Bangalore for the Appearance of Fuller Hair",
     "inSitemap": true,
     "lastmod": "2026-05-26T16:49:36+05:30"
   },
@@ -1973,7 +1973,7 @@ export const pages: PageSeo[] = [
       "image": "https://neofollicletransplant.com/og/dutexome-hair-treatment-in-bangalore.jpg",
       "siteName": "Neo Follicle Hair Transplant",
       "locale": "en_IN",
-      "imageAlt": "Best Dutexome Hair Treatment in Bangalore",
+      "imageAlt": "Dutexome Hair Treatment in Bangalore",
       "imageWidth": 1200,
       "imageHeight": 630
     },
@@ -1983,7 +1983,7 @@ export const pages: PageSeo[] = [
       "description": "Explore Dutexome hair treatment in Bangalore at Neo Follicle, a doctor-led microneedling protocol for selected patients with early to moderate hair thinning.",
       "image": "https://neofollicletransplant.com/og/dutexome-hair-treatment-in-bangalore.jpg"
     },
-    "h1": "Best Dutexome Hair Treatment in Bangalore",
+    "h1": "Dutexome Hair Treatment in Bangalore",
     "inSitemap": true,
     "lastmod": "2026-09-22T00:00:00+05:30"
   },
