@@ -1,8 +1,8 @@
 {
   "$comment": "Per-page SEO overrides merged over the WordPress capture by scripts/gen-seo.mjs. Keys are page slugs. Any of: title (<=60 chars), description (70-160), robots, inSitemap. scripts/verify-seo.mjs checks dist against capture+overrides.",
-
   "home": {
-    "description": "FUE and DHI hair transplant in Bangalore at Neo Follicle, led by Dr. Sandeep Mahapatra, certified DHI Specialist. Natural hairlines, personalised planning."
+    "description": "Doctor-led FUE and DHI hair transplant in Bangalore, planned by Dr. Sandeep Mahapatra (MD Dermatology, certified DHI specialist). Get your graft estimate.",
+    "title": "Hair Transplant in Bangalore | FUE & DHI – Neo Follicle"
   },
   "best-hair-transplant-in-bangalore": {
     "description": "FUE, DHI and NFT hair transplant in Bangalore by a certified DHI Specialist. Doctor-led planning, natural hairline design and personalised aftercare."
@@ -20,14 +20,13 @@
   "how-many-grafts-do-i-need-for-hair-transplant": {
     "description": "How hair transplant grafts are calculated from baldness stage, donor density, hair thickness and coverage goals. An expert guide by Neo Follicle Bangalore."
   },
-
   "alopecia-areata-treatment-in-bangalore": {
     "title": "Alopecia Areata Treatment in Bangalore | Neo Follicle",
     "description": "Sudden bald patches? Dermatologist-led alopecia areata treatment in Bangalore: diagnosis, steroid therapy, PRP and GFC to help regrow hair. Book a visit."
   },
   "best-prp-hair-treatment-in-bangalore": {
-    "title": "PRP Hair Treatment in Bangalore | Neo Follicle",
-    "description": "PRP hair treatment in Bangalore to slow hair fall and thicken thinning hair, delivered by dermatologists at Neo Follicle. See costs, sessions and results."
+    "title": "PRP Hair Treatment in Bangalore | Sessions & Results",
+    "description": "PRP hair treatment in Bangalore to slow hair fall and thicken thinning hair, delivered by dermatologists at Neo Follicle. See sessions and results."
   },
   "contact-us": {
     "title": "Contact Neo Follicle Hair Transplant Clinic, Bangalore",
@@ -38,12 +37,12 @@
     "description": "Tried every shampoo and still have dandruff? Get dermatologist-led dandruff and scalp treatment in Bangalore for lasting, flake-free relief at Neo Follicle."
   },
   "exosome-hair-treatment-in-bangalore": {
-    "title": "Exosome Hair Treatment in Bangalore | Neo Follicle",
-    "description": "Exosome hair treatment in Bangalore: a non-surgical regenerative therapy for thinning hair and hair fall, planned by dermatologists at Neo Follicle."
+    "title": "Exosome Hair Treatment in Bangalore | Sessions & Results",
+    "description": "Exosome hair treatment in Bangalore: who it suits, how many sessions are needed and how it compares with PRP and GFC. Planned by dermatologists at Neo Follicle."
   },
   "gfc-hair-treatment-in-bangalore": {
-    "title": "GFC Hair Treatment in Bangalore | Neo Follicle",
-    "description": "GFC (Growth Factor Concentrate) hair treatment in Bangalore to reduce hair fall and boost density. Doctor-led sessions at Neo Follicle. See cost and results."
+    "title": "GFC Hair Treatment in Bangalore | Sessions & Results",
+    "description": "GFC hair treatment in Bangalore: sessions most patients need, results to expect and real before-and-after photos. Dermatologist-led at Neo Follicle."
   },
   "hair-conditions-we-treat": {
     "title": "Hair Conditions We Treat in Bangalore | Neo Follicle",
@@ -78,7 +77,7 @@
     "description": "QR678 Neo hair treatment in Bangalore: a clinically tested peptide therapy to reduce hair fall and regrow thinning hair, delivered by Neo Follicle doctors."
   },
   "scalp-micropigmentation-in-bangalore": {
-    "title": "Scalp Micropigmentation in Bangalore | Neo Follicle",
+    "title": "Scalp Micropigmentation (SMP) in Bangalore | Neo Follicle",
     "description": "Scalp micropigmentation in Bangalore for the look of a fuller head or a crisp shaved style without surgery. Natural, long-lasting SMP at Neo Follicle."
   },
   "stem-cell-therapy-for-hair-loss-in-bangalore": {
@@ -93,7 +92,6 @@
     "title": "Hair Transplant Videos & Patient Stories | Neo Follicle",
     "description": "Watch hair transplant procedures, patient journeys and expert answers on hair loss treatments from Dr. Sandeep Mahapatra at Neo Follicle, Bangalore."
   },
-
   "ai-hair-transplant-cost-calculator": {
     "title": "AI Hair Transplant Cost Calculator | Neo Follicle",
     "description": "Get a free AI hair assessment and an approximate hair transplant cost based on your hair loss stage and graft needs. Neo Follicle Clinic, Bangalore."
@@ -124,7 +122,6 @@
     "robots": "noindex, follow",
     "inSitemap": false
   },
-
   "sample-page": {
     "description": "Neo Follicle Hair Transplant Clinic, Bangalore.",
     "robots": "noindex, follow",
@@ -139,5 +136,23 @@
     "description": "Articles from the Neo Follicle Hair Transplant blog, Bangalore.",
     "robots": "noindex, follow",
     "inSitemap": false
+  },
+  "beard-transplant-in-bangalore": {
+    "title": "Beard Transplant in Bangalore | Grafts, Recovery & Results",
+    "description": "Beard transplant in Bangalore for patchy or uneven beards: graft planning, recovery and before-and-after results, designed by Neo Follicle doctors."
+  },
+  "unshaven-hair-transplant": {
+    "title": "Unshaven (No-Shave) FUE Hair Transplant in Bangalore",
+    "description": "No-shave FUE hair transplant in Bangalore: who qualifies, how many grafts are possible without shaving, recovery and results. Assessment at Neo Follicle."
+  },
+  "eyebrow-restoration-in-bangalore": {
+    "title": "Eyebrow Transplant in Bangalore | Neo Follicle Clinic",
+    "description": "Eyebrow transplant in Bangalore at Neo Follicle: fuller, natural-looking brows planned around hair direction, angle and density. See before-and-after results."
+  },
+  "failed-hair-transplant-repair-in-bangalore": {
+    "title": "Failed Hair Transplant Repair in Bangalore | Revision"
+  },
+  "hair-transplant-cost-in-bangalore": {
+    "title": "Hair Transplant Cost in Bangalore (2026) | Neo Follicle"
   }
 }
