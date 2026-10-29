@@ -13,7 +13,9 @@
  *   B. rules:         indexable titles <= 60 and descriptions 70-160; share
  *                     cards exist at 1200x630; one graph per page with no
  *                     duplicate @id; no dead image or search URLs.
- *   C. site files:    sitemaps, robots.txt, llms.txt, manifest and icons.
+ *   C. site files:    sitemaps, robots.txt (parsed per RFC 9309: every page
+ *                     and asset crawlable, search URLs blocked), llms.txt,
+ *                     manifest and icons.
  *
  * Run after `npm run build`. Exits non-zero on any failure.
  */
@@ -302,9 +304,76 @@ check('sitemap.xml indexes every child sitemap', [
   ...indexed.filter((u) => !fs.existsSync(path.join(dist, new URL(u).pathname))).map((u) => `missing ${u}`),
 ])
 
-fs.readFileSync(path.join(dist, 'robots.txt'), 'utf8').includes(`Sitemap: ${ORIGIN}/sitemap.xml`)
-  ? pass('robots.txt carries the Sitemap directive')
-  : fail('robots.txt carries the Sitemap directive', 'directive missing')
+/* ---- robots.txt, matched the way RFC 9309 and Googlebot match it ------------
+ * A crawler uses only the most specific group naming it (else the * group);
+ * within that, the longest matching rule wins and Allow wins a tie.         */
+function parseRobots(text) {
+  const groups = []
+  const sitemaps = []
+  let group = null
+  let inAgents = false
+  for (const raw of text.split(/\r?\n/)) {
+    const m = raw.replace(/#.*/, '').trim().match(/^([A-Za-z-]+)\s*:\s*(.*)$/)
+    if (!m) continue
+    const key = m[1].toLowerCase()
+    const value = m[2].trim()
+    if (key === 'user-agent') {
+      if (!inAgents) groups.push((group = { agents: [], rules: [] }))
+      group.agents.push(value.toLowerCase())
+      inAgents = true
+    } else if (key === 'allow' || key === 'disallow') {
+      if (group && value) group.rules.push({ allow: key === 'allow', path: value })
+      inAgents = false
+    } else if (key === 'sitemap') {
+      sitemaps.push(value)
+    }
+  }
+  return { groups, sitemaps }
+}
+const ruleRe = (p) => {
+  const anchored = p.endsWith('$')
+  const body = (anchored ? p.slice(0, -1) : p).split('*').map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*')
+  return new RegExp(`^${body}${anchored ? '$' : ''}`)
+}
+function robotsAllows(robots, agent, urlPath) {
+  const own = robots.groups.filter((g) => g.agents.includes(agent.toLowerCase()))
+  const rules = (own.length ? own : robots.groups.filter((g) => g.agents.includes('*'))).flatMap((g) => g.rules)
+  let best = null
+  for (const r of rules) {
+    if (!ruleRe(r.path).test(urlPath)) continue
+    if (!best || r.path.length > best.path.length || (r.path.length === best.path.length && r.allow)) best = r
+  }
+  return best ? best.allow : true
+}
+
+const robots = parseRobots(fs.readFileSync(path.join(dist, 'robots.txt'), 'utf8'))
+check('robots.txt has exactly one Sitemap line, for this origin',
+  robots.sitemaps.length === 1 && robots.sitemaps[0] === `${ORIGIN}/sitemap.xml` ? [] : [`Sitemap lines: ${JSON.stringify(robots.sitemaps)}`],
+  `robots.txt carries exactly one Sitemap directive (${ORIGIN}/sitemap.xml)`)
+
+// Every agent the file names, plus the two search crawlers that fall to *.
+const robotAgents = [...new Set(['Googlebot', 'Bingbot', ...robots.groups.flatMap((g) => g.agents).filter((a) => a !== '*')])]
+// noindex pages included: a crawler must be allowed to fetch a page to see its noindex.
+check('robots.txt lets every crawler fetch every page, noindex ones included',
+  robotAgents.flatMap((a) => expected.filter((p) => !robotsAllows(robots, a, p.path)).map((p) => `${a} blocked from ${p.path}`)),
+  `${robotAgents.length} crawlers may fetch all ${expected.length} pages (${indexable.length} indexable + ${expected.length - indexable.length} noindex)`)
+
+const distFiles = []
+;(function walk(dir) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, e.name)
+    if (e.isDirectory()) walk(full)
+    else if (!e.name.endsWith('.html')) distFiles.push(`/${path.relative(dist, full).split(path.sep).join('/')}`)
+  }
+})(dist)
+check('robots.txt blocks no script, style, font or image Google needs to render',
+  robotAgents.flatMap((a) => distFiles.filter((f) => !robotsAllows(robots, a, f)).map((f) => `${a} blocked from ${f}`)).slice(0, 10),
+  `${distFiles.length} non-HTML files in dist/ crawlable by all ${robotAgents.length} crawlers`)
+
+const mustBlock = ['/?s=hair', '/page/2/?s=hair', '/search/hair/']
+check('robots.txt still keeps crawlers out of the old WordPress search URLs',
+  robotAgents.flatMap((a) => mustBlock.filter((u) => robotsAllows(robots, a, u)).map((u) => `${a} may fetch ${u}`)),
+  `search URLs blocked for all ${robotAgents.length} crawlers`)
 
 const llms = fs.readFileSync(path.join(dist, 'llms.txt'), 'utf8')
 const llmsLinks = new Set([...llms.matchAll(/\]\((https:[^)]+)\)/g)].map((m) => m[1]))

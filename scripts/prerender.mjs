@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Writes one static HTML file per route, plus robots.txt, the sitemaps and
- * llms.txt / llms-full.txt.
+ * Writes one static HTML file per route, plus the sitemaps and
+ * llms.txt / llms-full.txt, and checks public/robots.txt (copied by Vite).
  *
  * Runs after `vite build` (client shell -> dist/index.html) and
  * `vite build --ssr src/entry-server.tsx --outDir dist-ssr`.
@@ -243,23 +243,19 @@ fs.writeFileSync(
 )
 
 // --- robots.txt -----------------------------------------------------------
-// The Sitemap directive carries over (P0). The /wp-admin/ rules are dropped --
-// they are meaningless off WordPress. Search disallows are kept.
-//
-// The AI crawlers are named explicitly, with the same rules: a crawler obeys
-// only the most specific group that matches it, so each group repeats them.
-// Naming them is a statement of intent -- the clinic WANTS to be cited by
-// answer engines -- and makes it a one-line change to opt any of them out.
-const RULES = ['Disallow: /?s=', 'Disallow: /page/*/?s=', 'Disallow: /search/']
-const AI_BOTS = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended']
-fs.writeFileSync(
-  path.join(dist, 'robots.txt'),
-  [
-    ['User-agent: *', ...RULES].join('\n'),
-    [...AI_BOTS.map((b) => `User-agent: ${b}`), 'Allow: /', ...RULES].join('\n'),
-    `Sitemap: ${ORIGIN}/sitemap.xml`,
-  ].join('\n\n') + '\n',
-)
+// The file itself is public/robots.txt -- a real, reviewable file that Vite
+// copies into dist/. It used to be generated here, which left the repo with
+// no robots.txt anyone could find. This only guards it: a build for the
+// production origin must not ship a robots.txt pointing at another host's
+// sitemap. verify-seo.mjs checks what it allows and blocks.
+{
+  const robotsFile = path.join(dist, 'robots.txt')
+  if (!fs.existsSync(robotsFile)) throw new Error('prerender: public/robots.txt is missing from dist/')
+  const sitemapLines = fs.readFileSync(robotsFile, 'utf8').split('\n').filter((l) => /^sitemap:/i.test(l.trim()))
+  if (sitemapLines.length !== 1 || sitemapLines[0].trim() !== `Sitemap: ${ORIGIN}/sitemap.xml`) {
+    throw new Error(`prerender: public/robots.txt must have exactly one "Sitemap: ${ORIGIN}/sitemap.xml" line, found ${JSON.stringify(sitemapLines)}`)
+  }
+}
 
 // --- sitemaps -------------------------------------------------------------
 // sitemap.xml stays the index Search Console already knows. The category
@@ -415,5 +411,5 @@ fs.writeFileSync(
 fs.rmSync(path.join(dist, '.vite'), { recursive: true, force: true })
 
 console.log(`prerender: ${count} pages -> dist/**/index.html`)
-console.log(`           404.html, robots.txt, 3 sitemaps, llms.txt, llms-full.txt`)
+console.log(`           404.html, 3 sitemaps, llms.txt, llms-full.txt (robots.txt checked)`)
 console.log(`           sitemap: ${byType('page').length} page + ${byType('post').length} post = ${inSitemap.length}`)
