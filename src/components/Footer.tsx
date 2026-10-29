@@ -38,7 +38,7 @@ export default function Footer() {
       */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[url('/footer-bg.webp')] bg-cover bg-center bg-no-repeat opacity-[0.07]"
+        className="nf-cta-bg pointer-events-none absolute inset-0 opacity-[0.07]"
       />
 
       <div className="container relative flex flex-col gap-gap-tablet pb-10 pt-16">

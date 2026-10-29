@@ -155,7 +155,9 @@ export default function DoctorHero() {
               is the subject of the section, not decoration.
             */}
             <img
-              src="/about-doctor.webp"
+              src="/img/about-doctor-720.webp"
+              srcSet="/img/about-doctor-480.webp 480w, /img/about-doctor-720.webp 720w, /img/about-doctor-1095.webp 1095w"
+              sizes="(min-width: 768px) 38vw, 100vw"
               alt="Dr. Sandeep Mahapatra, Senior Consultant Dermatologist and Hair Transplant Surgeon, at Neo Follicle Hair Transplant Clinic in Bangalore."
               width={1095}
               height={1280}

@@ -146,9 +146,18 @@ export default function Hero() {
           center. md:+ containers are wide enough that object-left-top shows
           nearly the whole frame, so only the mobile anchor needs to move.
         */}
+        {/*
+          srcSet: phones were downloading the 1672px / 126 KB original for a
+          ~412px-wide box; the 640w file is 22 KB. React 19 turns this
+          fetchPriority="high" + srcSet into the matching responsive preload.
+          alt is descriptive (Oct 2026 SEO audit): the photograph is the LCP
+          image and is indexed in image search, so it carries what it shows.
+        */}
         <img
-          src="/hero.webp"
-          alt=""
+          src="/img/hero-960.webp"
+          srcSet="/img/hero-640.webp 640w, /img/hero-960.webp 960w, /img/hero-1280.webp 1280w, /img/hero-1672.webp 1672w"
+          sizes="100vw"
+          alt="Hair transplant procedure at Neo Follicle, Bangalore: a surgeon wearing magnifying loupes places grafts on a patient's scalp while an assistant watches"
           width={1672}
           height={941}
           fetchPriority="high"

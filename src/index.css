@@ -359,3 +359,22 @@
     border-bottom: 0;
   }
 }
+
+/*
+ * Decorative network texture behind the footer and the closing CTA bands.
+ * Responsive copies of /footer-bg.webp (164 KB): 42 KB below 768px, 101 KB
+ * above. The plain url() line is the fallback for browsers without image-set().
+ */
+.nf-cta-bg {
+  background-color: var(--color-secondary);
+  background-image: url('/img/footer-bg-768.webp');
+  background-image: image-set(url('/img/footer-bg-768.webp') 1x, url('/img/footer-bg-1536.webp') 2x);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .nf-cta-bg {
+    background-image: url('/img/footer-bg-1536.webp');
+  }
+}

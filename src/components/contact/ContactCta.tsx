@@ -44,14 +44,13 @@ export default function ContactCta() {
     <section className="bg-base py-section-y-mobile md:py-section-y-tablet lg:py-section-y">
       <div className="container flex flex-col gap-gap-sm">
         <div className="relative isolate flex min-h-[450px] flex-col items-center justify-center gap-6 overflow-hidden rounded p-5 text-center md:min-h-[500px] lg:min-h-[550px]">
-          <img
-            src="/footer-bg.webp"
-            alt=""
-            width={1920}
-            height={1080}
-            loading="lazy"
-            className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
-          />
+          {/*
+            Decorative texture, so a CSS background (.nf-cta-bg in index.css)
+            rather than an <img alt="">: the Oct 2026 SEO audit (Ryze) flagged
+            the empty alt on every page carrying this band. The footer already
+            loads the same file, so this adds no request.
+          */}
+          <div aria-hidden="true" className="nf-cta-bg absolute inset-0 -z-10" />
           {/* The reference's overlay: `secondary` at --overlay-opacity:0.8. */}
           <div aria-hidden="true" className="absolute inset-0 -z-10 bg-secondary opacity-80" />
 
