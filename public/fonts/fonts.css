@@ -1,3 +1,14 @@
+/*
+ * Google Fonts CSS for Inter and Manrope, self-hosted.
+ *
+ * One local change (Oct 2026 audit): the rupee sign U+20B9 sits in Google's
+ * latin-ext range, so a single "₹" on the home page made every visitor
+ * download the 85 KB Inter latin-ext file. Each latin-ext rule now excludes
+ * U+20B9, and a rule per weight serves it from inter-rupee.woff2 /
+ * manrope-rupee.woff2 -- one-glyph subsets of the same variable fonts
+ * (pyftsubset <latin-ext file> --unicodes=U+20B9 --layout-features='*'
+ * --flavor=woff2). Other latin-ext characters still load the full file.
+ */
 /* cyrillic-ext */
 @font-face {
   font-family: 'Inter';
@@ -50,7 +61,16 @@
   font-weight: 400;
   font-display: swap;
   src: url(/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20B8, U+20BA-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* rupee sign only (split out of latin-ext) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/inter-rupee.woff2) format('woff2');
+  unicode-range: U+20B9;
 }
 /* latin */
 @font-face {
@@ -113,7 +133,16 @@
   font-weight: 500;
   font-display: swap;
   src: url(/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20B8, U+20BA-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* rupee sign only (split out of latin-ext) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/inter-rupee.woff2) format('woff2');
+  unicode-range: U+20B9;
 }
 /* latin */
 @font-face {
@@ -167,7 +196,16 @@
   font-weight: 500;
   font-display: swap;
   src: url(/fonts/xn7gYHE41ni1AdIRggmxSvfedN62Zw.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20B8, U+20BA-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* rupee sign only (split out of latin-ext) */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/manrope-rupee.woff2) format('woff2');
+  unicode-range: U+20B9;
 }
 /* latin */
 @font-face {
@@ -221,7 +259,16 @@
   font-weight: 600;
   font-display: swap;
   src: url(/fonts/xn7gYHE41ni1AdIRggmxSvfedN62Zw.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20B8, U+20BA-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* rupee sign only (split out of latin-ext) */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/manrope-rupee.woff2) format('woff2');
+  unicode-range: U+20B9;
 }
 /* latin */
 @font-face {
@@ -275,7 +322,16 @@
   font-weight: 700;
   font-display: swap;
   src: url(/fonts/xn7gYHE41ni1AdIRggmxSvfedN62Zw.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20B8, U+20BA-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* rupee sign only (split out of latin-ext) */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/manrope-rupee.woff2) format('woff2');
+  unicode-range: U+20B9;
 }
 /* latin */
 @font-face {
