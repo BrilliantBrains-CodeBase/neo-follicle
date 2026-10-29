@@ -115,7 +115,7 @@ const iconLinks =
  * Builds the <head> for one page. Tag order mirrors the captured raw.html:
  * title, robots, description, og:*, twitter:*, canonical, icons, JSON-LD.
  */
-function buildHead(page) {
+function buildHead(page, body = '') {
   let h = ''
   h += `    <title>${esc(page.title)}</title>\n`
   h += meta('robots', page.robots)
@@ -166,6 +166,7 @@ function buildHead(page) {
   // most fragile SEO asset -- 14 FAQPages / 82 questions among the 59 graphs.
   const graph = JSON.parse(fs.readFileSync(path.join(schemaDir, `${page.slug}.json`), 'utf8'))
   addTreatmentFaq(page, graph)
+  syncFaq(page, graph, body)
   for (const block of graph) {
     h += `    <script type="application/ld+json">${JSON.stringify(block)}</script>\n`
   }
@@ -200,6 +201,65 @@ function addTreatmentFaq(page, graph) {
   if (webpage) webpage.hasPart = [...[].concat(webpage.hasPart ?? []), { '@id': faqId }]
 }
 
+/**
+ * Keeps every FAQPage equal to the FAQ the page actually shows. The rendered
+ * accordions (<details name="..."> with "faq" in the name: post-faq,
+ * home-faq, faq-<slug>) are the source of truth:
+ *
+ *   - no FAQPage yet (6 posts the WordPress SEO plugin skipped) -> one is
+ *     built from the accordion;
+ *   - a FAQPage whose questions differ from the visible ones -> its
+ *     mainEntity is rebuilt. The homepage is the case: its captured FAQPage
+ *     held 8 questions from the old WordPress page, including "Why is Neo
+ *     Follicle Transplant considered the Best Hair Transplant Clinic in
+ *     Bangalore?", none of which the page shows any more. Google requires FAQ
+ *     markup to match visible content;
+ *   - otherwise (numbering and dash style aside) the FAQPage is left verbatim.
+ *
+ * Question = the summary h3 without its "01." numbering; answer = the panel text.
+ */
+const FAQ_NUMBER = /^\s*\d+[.)]\s*/
+const normQuestion = (q) => q.replace(FAQ_NUMBER, '').replace(/\s*[\u2013\u2014-]\s*/g, ' - ').replace(/\s+/g, ' ').trim().toLowerCase()
+const faqRebuilt = []
+const faqAdded = []
+function syncFaq(page, graph, body) {
+  if (!page.inSitemap || !/<details[^>]*\sname="[^"]*faq[^"]*"/.test(body)) return
+  const nodes = graph[0]?.['@graph']
+  if (!nodes) return
+  const clean = (t) => t.replace(/\s+/g, ' ').trim()
+  const items = parse(body)
+    .querySelectorAll('details')
+    .filter((d) => /faq/.test(d.getAttribute('name') ?? ''))
+    .map((d) => {
+      const summary = d.querySelector('summary')
+      return {
+        question: clean(summary?.querySelector('h3')?.text ?? summary?.text ?? '').replace(FAQ_NUMBER, ''),
+        answer: clean(d.childNodes.filter((n) => n !== summary).map((n) => n.text).join(' ')),
+      }
+    })
+    .filter((q) => q.question && q.answer)
+  if (!items.length) return
+  const mainEntity = items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  }))
+  const existing = nodes.find((n) => [].concat(n['@type'] ?? []).includes('FAQPage'))
+  if (existing) {
+    const marked = (existing.mainEntity ?? []).map((q) => normQuestion(q.name ?? '')).join('\n')
+    if (marked === items.map((q) => normQuestion(q.question)).join('\n')) return
+    existing.mainEntity = mainEntity
+    faqRebuilt.push(page.slug)
+    return
+  }
+  const url = `${ORIGIN}${page.path}`
+  const faqId = `${url}#faq`
+  nodes.push({ '@type': 'FAQPage', '@id': faqId, mainEntity })
+  const main = nodes.find((n) => n['@id'] === `${url}#webpage`)
+  if (main) main.hasPart = [...[].concat(main.hasPart ?? []), { '@id': faqId }]
+  faqAdded.push(page.slug)
+}
+
 function writeHtml(routePath, html) {
   const rel = routePath === '/' ? 'index.html' : path.join(routePath.replace(/^\/|\/$/g, ''), 'index.html')
   const file = path.join(dist, rel)
@@ -228,7 +288,7 @@ const mains = new Map()
 let count = 0
 for (const page of pages) {
   const body = await render(page.path)
-  writeHtml(page.path, compose(buildHead(page), body))
+  writeHtml(page.path, compose(buildHead(page, body), body))
   mains.set(page.slug, parse(body).querySelector('main'))
   count++
 }
@@ -413,3 +473,4 @@ fs.rmSync(path.join(dist, '.vite'), { recursive: true, force: true })
 console.log(`prerender: ${count} pages -> dist/**/index.html`)
 console.log(`           404.html, 3 sitemaps, llms.txt, llms-full.txt (robots.txt checked)`)
 console.log(`           sitemap: ${byType('page').length} page + ${byType('post').length} post = ${inSitemap.length}`)
+console.log(`           FAQPage from the rendered FAQ: ${faqAdded.length} added, ${faqRebuilt.length} rebuilt${faqRebuilt.length ? ` (${faqRebuilt.join(', ')})` : ''}`)

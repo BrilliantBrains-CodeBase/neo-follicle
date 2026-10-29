@@ -169,7 +169,8 @@ if (run('charset')) {
 /* ---- robots ---------------------------------------------------------------- */
 if (run('robots')) {
   const live = (await get(`${BASE}/robots.txt`)).body.replace(/\r\n/g, '\n').trim()
-  const repo = fs.readFileSync(path.join(root, 'public/robots.txt'), 'utf8').trim()
+  // Normalise both sides: a Windows checkout (core.autocrlf) has CRLF locally.
+  const repo = fs.readFileSync(path.join(root, 'public/robots.txt'), 'utf8').replace(/\r\n/g, '\n').trim()
   if (live === repo) pass('robots', 'live robots.txt is byte-identical to public/robots.txt')
   else fail('robots', 'live robots.txt differs from public/robots.txt (stale deploy, or a host/CDN rewrote it)')
   if (live.includes(`Sitemap: ${PROD}/sitemap.xml`)) pass('robots', 'robots.txt carries the Sitemap directive')
@@ -203,7 +204,8 @@ if (run('pages')) {
     let graph = ''
     try { graph = blocks.map((b) => JSON.stringify(JSON.parse(b[1]))).join('') } catch { problems.jsonld.push(`${p}: does not parse`) }
     if (!blocks.length) problems.jsonld.push(`${p}: no JSON-LD`)
-    if (/<details[^>]*name="faq-/.test(h) && !graph.includes('"FAQPage"')) problems.faq.push(`${p}: visible FAQ, no FAQPage`)
+    // Any accordion with "faq" in its name: faq-<slug>, post-faq, home-faq.
+    if (/<details[^>]*\sname="[^"]*faq[^"]*"/.test(h) && !graph.includes('"FAQPage"')) problems.faq.push(`${p}: visible FAQ, no FAQPage`)
     for (const tag of h.match(/<img\b[^>]*>/g) ?? []) {
       // (?:^|\s) so data-alt= or imagealt= do not count as an alt attribute.
       const alt = tag.match(/(?:^|\s)alt="([^"]*)"/)

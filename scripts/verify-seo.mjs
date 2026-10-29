@@ -168,13 +168,19 @@ for (const p of expected) {
 check('every captured page-specific JSON-LD node survives', lost,
   'every captured and authored page-specific JSON-LD node survives normalisation')
 
-// Every FAQ a visitor can open (<details name="faq-...">) must be marked up,
-// and the FAQPage questions must be the visible questions, in order. Treatment
-// pages get theirs from scripts/prerender.mjs (built from the rendered data);
+// Every FAQ a visitor can open must be marked up, and the FAQPage questions
+// must be the visible questions, in order. Accordions are <details name="...">
+// with "faq" in the name: faq-<slug> (treatment pages), post-faq (blog posts),
+// home-faq, *-lp-faq. Treatment pages and the posts the capture left without
+// one get theirs from scripts/prerender.mjs (built from the rendered data);
 // captured and authored pages keep their own.
 const decode = (s) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim()
 const visibleFaq = (html) =>
-  [...html.matchAll(/<details name="faq-[^"]*"[^>]*>\s*<summary[^>]*>\s*<h3[^>]*>([\s\S]*?)<\/h3>/g)].map((m) => decode(m[1]))
+  [...html.matchAll(/<details name="[^"]*faq[^"]*"[^>]*>\s*<summary[^>]*>\s*<h3[^>]*>([\s\S]*?)<\/h3>/g)].map((m) => decode(m[1]))
+
+// "01. How much…" and "How much…" are the same question; so are an em dash and
+// a spaced hyphen. Mirrors normQuestion in scripts/prerender.mjs.
+const normQ = (q) => q.replace(/^\s*\d+[.)]\s*/, '').replace(/\s*[\u2013\u2014-]\s*/g, ' - ').replace(/\s+/g, ' ').trim().toLowerCase()
 
 let faqPages = 0, faqQuestions = 0
 const faqMismatch = []
@@ -188,13 +194,14 @@ for (const p of expected) {
   if (!p.inSitemap || shown.length === 0) continue
   const marked = (nodes[0]?.mainEntity ?? []).map((q) => q.name)
   if (!nodes.length) faqMismatch.push(`${p.slug}: ${shown.length} visible questions, no FAQPage`)
-  else if (marked.join('\n') !== shown.join('\n')) faqMismatch.push(`${p.slug}: FAQPage questions differ from the visible FAQ`)
+  else if (marked.map(normQ).join('\n') !== shown.map(normQ).join('\n')) faqMismatch.push(`${p.slug}: FAQPage questions differ from the visible FAQ`)
 }
 check('every visible FAQ is marked up, question for question', faqMismatch,
   'every indexable page with a visible FAQ carries a FAQPage that matches it question for question')
 
 // 14 / 82 carried over from the capture, plus whatever the authored pages
-// declare, plus the treatment pages' own FAQs (generated at prerender).
+// declare, plus the FAQs generated at prerender (treatment pages, and the
+// posts whose capture had none).
 const authoredFaqs = authored
   .flatMap((a) => a.schema.flatMap((b) => b['@graph'] ?? [b]))
   .filter((n) => [].concat(n['@type'] ?? []).includes('FAQPage'))
@@ -203,9 +210,21 @@ const capturedFaqSlugs = new Set(expected.filter((p) => {
   return JSON.stringify(source).includes('"FAQPage"')
 }).map((p) => p.slug))
 const generated = expected.filter((p) => p.inSitemap && !capturedFaqSlugs.has(p.slug) && visibleFaq(docs.get(p.slug) ?? '').length)
+// A captured FAQPage whose questions no longer match the page is rebuilt from
+// the visible FAQ at prerender (the homepage: 8 old WordPress questions vs 9
+// shown), so its question count becomes the visible count.
+const rebuiltDelta = expected
+  .filter((p) => p.inSitemap && capturedFaqSlugs.has(p.slug))
+  .reduce((n, p) => {
+    const source = p.captured ? JSON.parse(fs.readFileSync(p.captured, 'utf8')) : authored.find((a) => a.seo.slug === p.slug).schema
+    const node = source.flatMap((b) => b['@graph'] ?? [b]).find((x) => [].concat(x['@type'] ?? []).includes('FAQPage'))
+    const shown = visibleFaq(docs.get(p.slug) ?? '')
+    const was = (node?.mainEntity ?? []).map((q) => q.name)
+    return shown.length && was.map(normQ).join('\n') !== shown.map(normQ).join('\n') ? n + shown.length - was.length : n
+  }, 0)
 const wantPages = 14 + authoredFaqs.length + generated.length
 const wantQuestions = 82 + authoredFaqs.reduce((n, f) => n + (f.mainEntity ?? []).length, 0) +
-  generated.reduce((n, p) => n + visibleFaq(docs.get(p.slug)).length, 0)
+  generated.reduce((n, p) => n + visibleFaq(docs.get(p.slug)).length, 0) + rebuiltDelta
 faqPages === wantPages && faqQuestions === wantQuestions
   ? pass(`${wantPages} FAQPage graphs present, ${wantQuestions} questions total`)
   : fail(`${wantPages} FAQPage graphs / ${wantQuestions} questions`, `got ${faqPages} FAQPages, ${faqQuestions} questions`)
