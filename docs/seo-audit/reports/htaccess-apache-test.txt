@@ -1,0 +1,98 @@
+public/.htaccess on a local Apache — 29 Oct 2026
+Server: Apache/2.4.58 (Ubuntu)  | modules: brotli_module deflate_module filter_module headers_module mime_module rewrite_module 
+Docroot: a full 'npm run build' of seo/ryze-audit-fixes (dist/ + .htaccess). http on :8080, https on :8443 (self-signed).
+Local ports appear in Location headers for relative redirects; production has none.
+Ubuntu's global deflate.conf AddOutputFilterByType lines were disabled so the .htaccess rules are what is tested.
+
+== host
+http://neofollicletransplant.com:8080/                                                       301 https://neofollicletransplant.com/
+http://www.neofollicletransplant.com:8080/contact-us/                                        301 https://neofollicletransplant.com/contact-us/
+https://www.neofollicletransplant.com:8443/?utm_source=google&utm_medium=organic&utm_campaign=gmb 301 https://neofollicletransplant.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb
+https://neofollicletransplant.com:8443/                                                      200 
+https://neofollicletransplant.com:8443/beard-transplant-in-bangalore/                        200 
+== legacy
+https://neofollicletransplant.com:8443/dr-sandeep-mahapatle-hair-transplant-surgeon/         301 https://neofollicletransplant.com:8443/dr-sandeep-mahapatra-hair-transplant-surgeon/
+https://neofollicletransplant.com:8443/dr-sandeep-mahapatra-dermatologist-cosmetologist      301 https://neofollicletransplant.com:8443/dr-sandeep-mahapatra-hair-transplant-surgeon/
+https://neofollicletransplant.com:8443/dr-sandeep-mahapatra-hair-restoration-surgeon/        301 https://neofollicletransplant.com:8443/dr-sandeep-mahapatra-hair-transplant-surgeon/
+https://neofollicletransplant.com:8443/gfc-exosome-vs-qr678-hair-treatment/                  301 https://neofollicletransplant.com:8443/gfc-vs-exosome-vs-qr678-hair-treatment/
+https://neofollicletransplant.com:8443/gfc-v-exosome-vs-qr678-hair-treatment/                301 https://neofollicletransplant.com:8443/gfc-vs-exosome-vs-qr678-hair-treatment/
+https://neofollicletransplant.com:8443/hair-transplant-in-bangalore-cost-graft-clinic/       301 https://neofollicletransplant.com:8443/hair-transplant-cost-in-bangalore/
+https://neofollicletransplant.com:8443/pfc-vs-gfc-for-hair-loss-in-bangalore                 301 https://neofollicletransplant.com:8443/prp-vs-gfc-for-hair-loss/
+https://neofollicletransplant.com:8443/prp-v-gfc-for-hair-loss-in-bangalore-neo-follicle     301 https://neofollicletransplant.com:8443/prp-vs-gfc-for-hair-loss/
+https://neofollicletransplant.com:8443/qr-678-hair-treatment-in-bangalore/                   301 https://neofollicletransplant.com:8443/qr678-hair-treatment-in-bangalore/
+https://neofollicletransplant.com:8443/stem-cell-hair-therapy-for-hair-loss-in-bangalore/    301 https://neofollicletransplant.com:8443/stem-cell-therapy-for-hair-loss-in-bangalore/
+https://neofollicletransplant.com:8443/direct-hair-transplant-clinic-in-bangalore-neo-follicle/ 301 https://neofollicletransplant.com:8443/
+https://neofollicletransplant.com:8443/sitemap_index.xml                                     301 https://neofollicletransplant.com:8443/sitemap.xml
+https://neofollicletransplant.com:8443/post_tag-sitemap.xml                                  301 https://neofollicletransplant.com:8443/sitemap.xml
+https://neofollicletransplant.com:8443/sample-page/                                          301 https://neofollicletransplant.com:8443/
+https://neofollicletransplant.com:8443/maintenance-page/                                     301 https://neofollicletransplant.com:8443/
+https://neofollicletransplant.com:8443/category/uncategorized/                               301 https://neofollicletransplant.com:8443/our-blogs/
+== consolidations stay off (200)
+https://neofollicletransplant.com:8443/best-hair-transplant-in-bangalore/                    200 
+https://neofollicletransplant.com:8443/hair-transplant-cost-bangalore-what-decides-price/    200 
+== compression of /assets/index-BmM22giD.js
+[br, gzip]   Content-Encoding: br bytes=118847 
+[gzip]       Content-Encoding: gzip bytes=128051 
+[identity]   bytes=488078 
+[html br]    Content-Encoding: br bytes=27485 
+== cache headers
+/assets/index-BmM22giD.js                Cache-Control: public, max-age=31536000, immutable 
+/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2 Cache-Control: public, max-age=31536000, immutable 
+/hero.webp                               Cache-Control: public, max-age=2592000, stale-while-revalidate=86400 
+/img/hero-640.webp                       Cache-Control: public, max-age=2592000, stale-while-revalidate=86400 
+/logo.svg                                Cache-Control: public, max-age=2592000, stale-while-revalidate=86400 
+/                                        Cache-Control: no-cache 
+/beard-transplant-in-bangalore/          Cache-Control: no-cache 
+== security headers (https)
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+HSTS on plain-http 301? 0
+404 page: 404
+
+== degraded host 1: mod_brotli disabled (expect gzip, everything else unchanged)
+  /                                            HTTP/1.1 200 OK Content-Encoding: gzip Cache-Control: no-cache Content-Type: text/html; charset=UTF-8 bytes=31755 
+  /assets/index-BmM22giD.js                    HTTP/1.1 200 OK Content-Encoding: gzip Cache-Control: public, max-age=31536000, immutable Content-Type: text/javascript; charset=utf-8 bytes=128051 
+  /llms.txt                                    HTTP/1.1 200 OK Content-Encoding: gzip Cache-Control: public, max-age=3600 Content-Type: text/plain; charset=utf-8 bytes=4997 
+  /does-not-exist/                             HTTP/1.1 404 Not Found Cache-Control: no-cache Content-Type: text/html; charset=UTF-8 bytes=52503 
+  /qr-678-hair-treatment-in-bangalore/         HTTP/1.1 301 Moved Permanently Content-Type: text/html; charset=iso-8859-1 bytes=374 
+
+== degraded host 2: mod_brotli, mod_deflate and mod_headers disabled (expect 200s and redirects, no compression or headers, no 500)
+  /                                            HTTP/1.1 200 OK Content-Type: text/html; charset=UTF-8 bytes=180403 
+  /assets/index-BmM22giD.js                    HTTP/1.1 200 OK Content-Type: text/javascript; charset=utf-8 bytes=488078 
+  /llms.txt                                    HTTP/1.1 200 OK Content-Type: text/plain; charset=utf-8 bytes=16406 
+  /does-not-exist/                             HTTP/1.1 404 Not Found Content-Type: text/html; charset=UTF-8 bytes=52503 
+  /qr-678-hair-treatment-in-bangalore/         HTTP/1.1 301 Moved Permanently Content-Type: text/html; charset=iso-8859-1 bytes=374 
+
+== modules restored
+  /                                            HTTP/1.1 200 OK Content-Encoding: br Cache-Control: no-cache Content-Type: text/html; charset=UTF-8 bytes=27485 
+  /assets/index-BmM22giD.js                    HTTP/1.1 200 OK Content-Encoding: br Cache-Control: public, max-age=31536000, immutable Content-Type: text/javascript; charset=utf-8 bytes=118847 
+  /llms.txt                                    HTTP/1.1 200 OK Content-Encoding: br Cache-Control: public, max-age=3600 Content-Type: text/plain; charset=utf-8 bytes=4791 
+  /does-not-exist/                             HTTP/1.1 404 Not Found Cache-Control: no-cache Content-Type: text/html; charset=UTF-8 bytes=52503 
+  /qr-678-hair-treatment-in-bangalore/         HTTP/1.1 301 Moved Permanently Content-Type: text/html; charset=iso-8859-1 bytes=374 
+
+== npm run verify:live against this server (host checks on via HTTP_BASE/WWW_BASE)
+
+verify-live: https://neofollicletransplant.com:8443  (not production; canonical origin https://neofollicletransplant.com)
+
+  PASS  [host] http:// and www. 301 to the https apex in one hop, query kept
+  PASS  [host] HSTS on https: max-age=31536000
+  PASS  [legacy] all 16 legacy URLs 301 to a page that answers 200
+  PASS  [compression] HTML + 2 JS/CSS files compressed (br)
+  PASS  [cache] Cache-Control right on 7 file types (assets/fonts 1y immutable, images 30d, HTML no-cache, crawler files 1h)
+  PASS  [charset] llms.txt and robots.txt are served as UTF-8
+  PASS  [robots] live robots.txt is byte-identical to public/robots.txt
+  PASS  [robots] robots.txt carries the Sitemap directive
+  PASS  [pages] all 54 sitemap URLs answer 200
+  PASS  [pages] all 54 canonicals self-reference
+  PASS  [pages] all 54 titles <= 60 characters
+  PASS  [pages] all 54 descriptions 70-160 characters
+  PASS  [pages] JSON-LD parses on all 54 pages
+  PASS  [pages] every page with a visible FAQ carries FAQPage
+  PASS  [pages] every <img> on 54 pages has an alt attribute
+  PASS  [pages] no <img alt=""> left for audit tools to flag
+  PASS  [gtm] GTM loader present: immediate for ad-attributable visits and conversion pages, deferred otherwise
+  WARN  [content] the cost page shows no ₹ figure yet (price ranges pending the clinic; docs/seo-audit/03-content-briefs.md s2)
+
+  17 pass, 1 warn, 0 fail
+

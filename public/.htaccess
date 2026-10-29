@@ -3,7 +3,7 @@
 #
 # Tested on Apache 2.4.58 against a full `npm run build` of this repo
 # (docs/seo-audit/reports/htaccess-apache-test.txt). After deploying, run
-# `node scripts/verify-live.mjs --only host,legacy,compression,cache`.
+# `npm run verify:live -- --only host,legacy,compression,cache`.
 
 Options -Indexes
 DirectoryIndex index.html
