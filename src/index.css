@@ -10,6 +10,9 @@
      on white failed Lighthouse colour-contrast. Two steps darker clears it
      (4.59:1) and is not visibly different. (Oct 2026 audit) */
   --color-primary: #3C72D7;
+  /* Text in the brand blue, deep enough for 4.5:1 on white, surface and
+     accent fills alike. Same value as textColor.primary in tailwind.config.js. */
+  --color-primary-text: #2E64C8;
   --color-primary-dark: #1A4FB2;
   --color-secondary: #1A1A1A;
   --color-body: #444444;
@@ -203,7 +206,7 @@
   }
 
   .post-prose a {
-    color: var(--color-primary);
+    color: var(--color-primary-text);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;

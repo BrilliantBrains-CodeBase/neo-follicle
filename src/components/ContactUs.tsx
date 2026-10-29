@@ -298,7 +298,9 @@ export default function ContactUs({
                   {href ? (
                     <a
                       href={href}
-                      aria-label={label}
+                      // Label plus the visible value, so the accessible name
+                      // contains what is on screen (WCAG 2.5.3 label in name).
+                      aria-label={label ? `${label}: ${text}` : undefined}
                       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                       className={`${INFO_CARD} group ${tinted ? 'bg-accent' : 'bg-surface'}`}
                     >

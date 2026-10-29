@@ -194,6 +194,7 @@ export default function DoctorHero() {
               />
             </div>
             <div className="flex-1 rounded bg-primary p-4 animate-fadeInUp motion-reduce:animate-none">
+              {/* Label text-white: text-accent on bg-primary is 3.9:1. (Oct 2026 audit) */}
               <Counter
                 to={10000}
                 suffix="+"
@@ -201,7 +202,7 @@ export default function DoctorHero() {
                 reverse
                 className="flex flex-col gap-gap-xs"
                 numberClassName="font-head text-h4 text-white"
-                labelClassName="text-[14px] leading-[1.3em] text-accent"
+                labelClassName="text-[14px] leading-[1.3em] text-white"
               />
             </div>
           </div>
