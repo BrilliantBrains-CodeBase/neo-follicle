@@ -432,7 +432,9 @@ const data: TreatmentPageData = {
           body: 'Our hair restoration procedures ensure a fuller, thicker, and undetectable hairline with lasting effects.',
         },
         {
-          title: 'Safe, Painless, and Affordable',
+          // Reworded Oct 2026 (SEO audit, healthcare-claims review): "Safe, Painless" are
+          // absolute claims; the body is about comfort and clear costs. Pending medical sign-off.
+          title: 'Comfortable, Doctor-Planned and Affordable',
           body: 'Treatment is planned around your comfort, with clear costs explained before you begin.',
         },
         {

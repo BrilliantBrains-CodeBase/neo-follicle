@@ -80,7 +80,9 @@ const data: TreatmentPageData = {
           body: 'You sit under a clinic device or wear a laser cap while the light is applied.',
         },
         {
-          title: 'Gentle, Painless Stimulation',
+          // Reworded Oct 2026 (SEO audit, healthcare-claims review): "Painless" is an
+          // absolute claim; the body already says "comfortable". Pending medical sign-off.
+          title: 'Gentle, Comfortable Stimulation',
           body: 'The session is comfortable; most people feel mild warmth at most.',
         },
         {
