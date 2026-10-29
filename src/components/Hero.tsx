@@ -43,6 +43,12 @@ import { Play, Square } from './icons'
  *
  * `text-base` is ambiguous here (Tailwind font size vs the `base` colour
  * token), so white text uses `text-white` throughout -- same call as Footer.
+ *
+ * LCP rule (Oct 2026 SEO audit): nothing that can be the page's largest
+ * paint -- eyebrow, h1, lede, hero image -- may start at opacity 0. On mobile
+ * Lighthouse the h1 sat in the prerendered HTML for ~10 s waiting for the main
+ * thread to run its fadeInUp (LCP render delay 10.6 s of 11.8 s). Only the
+ * CTA row and the trust strip below it still rise in.
  */
 
 /** The kit's `float` hover: translateY(-8px) over .3s ease-out (DESIGN.md 5). */
@@ -156,7 +162,7 @@ export default function Hero() {
 
         {/* Left column -- 60% desktop, 65% tablet, full width on mobile. */}
         <div className="flex w-full flex-col justify-between gap-12 md:w-[65%] md:gap-4 lg:w-[60%]">
-          <div className="flex flex-col gap-4 pt-4 animate-fadeInUp motion-reduce:animate-none">
+          <div className="flex flex-col gap-4 pt-4">
             {/* Eyebrow. The 15px is a hard override in the reference, not a token. */}
             <p className="flex items-start gap-2 font-head text-[15px] font-medium leading-[1.2em] tracking-[-0.02em] text-accent">
               <Square className="mt-[2px] h-[14px] w-[14px] shrink-0" />

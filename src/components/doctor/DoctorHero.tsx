@@ -35,6 +35,12 @@ import { CONTACT } from '../../config/site'
  *
  * `text-base` is ambiguous here (Tailwind font size vs the `base` colour
  * token), so white text uses `text-white` throughout -- same call as Hero.
+ *
+ * LCP rule (Oct 2026 SEO audit): nothing that can be the page's largest
+ * paint -- eyebrow, h1, lede, hero image -- may start at opacity 0. On mobile
+ * Lighthouse the h1 sat in the prerendered HTML for ~10 s waiting for the main
+ * thread to run its fadeInUp (LCP render delay 10.6 s of 11.8 s). Only the
+ * CTA row and the trust strip below it still rise in.
  */
 
 /** The kit's `float` hover: translateY(-8px) over .3s ease-out (DESIGN.md 5). */
@@ -65,7 +71,7 @@ export default function DoctorHero() {
         {/* Left column -- 60% desktop, 65% tablet, full width on mobile. */}
         <div className="flex w-full flex-col gap-4 md:w-[60%] lg:w-[58%]">
           {/* Eyebrow. The 15px is a hard override in the reference, not a token. */}
-          <p className="flex items-start gap-2 font-head text-[15px] font-medium leading-[1.2em] tracking-[-0.02em] text-accent animate-fadeInUp motion-reduce:animate-none">
+          <p className="flex items-start gap-2 font-head text-[15px] font-medium leading-[1.2em] tracking-[-0.02em] text-accent">
             <Square className="mt-[2px] h-[14px] w-[14px] shrink-0" />
             About Neo Follicle Hair Transplant Clinic
           </p>
@@ -75,11 +81,11 @@ export default function DoctorHero() {
             doc's heading is not title case and the transform would render
             "10,000+ Hair Transplants In Bangalore". Same call Hero.tsx made.
           */}
-          <h1 className="text-balance font-head text-h1 text-white animate-fadeInUp motion-reduce:animate-none">
+          <h1 className="text-balance font-head text-h1 text-white">
             Meet the Expert Behind 10,000+ Hair Transplants in Bangalore
           </h1>
 
-          <div className="mt-1 flex max-w-[620px] flex-col gap-4 animate-fadeInUp motion-reduce:animate-none">
+          <div className="mt-1 flex max-w-[620px] flex-col gap-4">
             <p className="text-body text-white/90">
               Every successful hair restoration begins with the right diagnosis, the right
               technique, and the right surgeon. At Neo Follicle Hair Transplant Clinic, every
@@ -139,7 +145,7 @@ export default function DoctorHero() {
           and the doc names it as the hero's right half.
         */}
         <div className="relative w-full md:w-[35%] lg:w-[38%]">
-          <div className="relative isolate h-full min-h-[360px] overflow-hidden rounded animate-fadeInUp motion-reduce:animate-none lg:min-h-[520px]">
+          <div className="relative isolate h-full min-h-[360px] overflow-hidden rounded lg:min-h-[520px]">
             {/*
               /about-doctor.webp is a real photograph of Dr. Sandeep, client-
               supplied (Homepage/Doctor Images/Dr-Sandeep-Mahapatra-12.jpeg).

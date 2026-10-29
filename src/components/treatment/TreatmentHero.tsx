@@ -47,6 +47,12 @@
  * Above the fold, so `animate-fadeInUp` directly rather than Reveal -- Reveal
  * no-ops on anything already on screen at mount (see its top-of-viewport
  * guard), which is why both other heroes make the same call.
+ *
+ * LCP rule (Oct 2026 SEO audit): nothing that can be the page's largest
+ * paint -- eyebrow, h1, lede, hero image -- may start at opacity 0. On mobile
+ * Lighthouse the h1 sat in the prerendered HTML for ~10 s waiting for the main
+ * thread to run its fadeInUp (LCP render delay 10.6 s of 11.8 s). Only the
+ * CTA row and the trust strip below it still rise in.
  */
 import type { TreatmentPageData } from '../../content/treatments/types'
 import { Square } from '../icons'
@@ -86,7 +92,7 @@ export default function TreatmentHero({ hero }: { hero: TreatmentPageData['hero'
         {/* Left column -- 60% tablet, 58% desktop, full width on mobile. */}
         <div className="flex w-full flex-col gap-4 md:w-[60%] lg:w-[58%]">
           {/* Eyebrow. The 15px is a hard override in the reference, not a token. */}
-          <p className={`flex items-start gap-2 font-head text-[15px] font-medium leading-[1.2em] tracking-[-0.02em] text-accent ${RISE}`}>
+          <p className={`flex items-start gap-2 font-head text-[15px] font-medium leading-[1.2em] tracking-[-0.02em] text-accent`}>
             <Square className="mt-[2px] h-[14px] w-[14px] shrink-0" />
             {hero.eyebrow}
           </p>
@@ -97,14 +103,14 @@ export default function TreatmentHero({ hero }: { hero: TreatmentPageData['hero'
             case -- it would render "Hair Transplant In Bangalore For
             International Patients". Same call Hero.tsx and DoctorHero made.
           */}
-          <h1 className={`text-balance font-head text-h1 text-white ${RISE}`}>{hero.h1}</h1>
+          <h1 className="text-balance font-head text-h1 text-white">{hero.h1}</h1>
 
           {/*
             Capped measure at `text-body`, not `text-body-lg`. DoctorHero uses
             620px for two paragraphs, Hero 543px for one; the type allows at
             most two here, so 620px is the right one to match.
           */}
-          <div className={`mt-1 flex max-w-[620px] flex-col gap-4 ${RISE}`}>
+          <div className="mt-1 flex max-w-[620px] flex-col gap-4">
             {hero.lede.map((line) => (
               <p key={line} className="text-body text-white/90">
                 {line}
@@ -156,7 +162,7 @@ export default function TreatmentHero({ hero }: { hero: TreatmentPageData['hero'
         */}
         <div className={`relative w-full md:w-[35%] lg:w-[38%] ${whole ? 'md:self-center' : ''}`}>
           <div
-            className={`relative isolate overflow-hidden rounded ${RISE} ${
+            className={`relative isolate overflow-hidden rounded ${
               whole ? 'aspect-square' : 'h-full min-h-[280px] lg:min-h-[440px]'
             }`}
           >
