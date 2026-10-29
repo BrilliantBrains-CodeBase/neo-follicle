@@ -65,10 +65,42 @@ const prop = (property, content) =>
 const GEO_PAGES = new Set(['/', '/contact-us/', DOCTOR.path])
 
 /**
- * Google Tag Manager, as the live site loaded it on every page. Only in the
- * prerendered output -- `npm run dev` stays tag-free.
+ * Google Tag Manager. Only in the prerendered output -- `npm run dev` stays
+ * tag-free.
+ *
+ * Loaded IMMEDIATELY (exactly as before) for every visit Google Ads can
+ * attribute, and DEFERRED for the rest:
+ *
+ *   immediate  - the URL carries an ad click id (gclid / gbraid / wbraid /
+ *                gad_source / dclid). The Conversion Linker must read it on
+ *                landing, before any client-side navigation drops the query.
+ *              - a Google Ads click cookie (_gcl_aw / _gcl_gb / _gcl_dc / _gcl_ag)
+ *                is already set: a returning ad visitor, whose call, WhatsApp or
+ *                form conversion the container's own GTM triggers must catch.
+ *              - thank-you and ad landing pages (`*-lp`, /hair-assessment/),
+ *                where the page view itself is a conversion signal.
+ *   deferred   - everyone else (organic, direct, referral) loads GTM on the
+ *                first interaction, or 3.5 s after `load`, whichever is first.
+ *
+ * Why defer at all: on mobile Lighthouse, GTM was the largest main-thread
+ * cost on the page (~1.5 s of blocking, ~0.5 MB) and it delays LCP. The
+ * deferred visitors carry no ad click to attribute, and GA4 loses nothing:
+ * src/analytics/track.ts pushes its events into window.dataLayer, which GTM
+ * processes when it boots.
+ *
+ * To make even deferred visits fully safe for Ads, move the container's Ads
+ * conversion tags from GTM link-click / form-submit triggers onto the queued
+ * `nf_*` custom events (docs/seo-audit/gtm/README.md).
  */
-const gtmHead = `    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${ANALYTICS.gtmId}');</script>\n`
+const gtmLoader = `(function(w,d,id){w.dataLayer=w.dataLayer||[];var done=false,ev=['pointerdown','touchstart','scroll','keydown','mousemove'];` +
+  `function load(){if(done)return;done=true;ev.forEach(function(e){w.removeEventListener(e,load,{passive:true})});` +
+  `w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var j=d.createElement('script');j.async=true;` +
+  `j.src='https://www.googletagmanager.com/gtm.js?id='+id;d.head.appendChild(j)}` +
+  `var l=w.location,now=/[?&](gclid|gbraid|wbraid|gad_source|dclid)=/.test(l.search)||/(^|; )_gcl_(aw|gb|dc|ag)=/.test(d.cookie)||/^\\/(thank-you|nft-brochure-thank-you|hair-assessment)\\/|-lp\\/$/.test(l.pathname);` +
+  `if(now){load();return}ev.forEach(function(e){w.addEventListener(e,load,{passive:true,once:true})});` +
+  `if(d.readyState==='complete')setTimeout(load,3500);else w.addEventListener('load',function(){setTimeout(load,3500)})` +
+  `})(window,document,'${ANALYTICS.gtmId}');`
+const gtmHead = `    <script>${gtmLoader}</script>\n`
 const gtmBody = `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${ANALYTICS.gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`
 
 /** Icons + manifest. Files come from scripts/gen-icons.mjs. */
