@@ -126,7 +126,11 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Is QR678 safe?',
-        answer: 'Yes! It’s clinically tested, FDA-approved in India, and US-patented. It’s widely used with no reported long-term side effects.',
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "FDA-approved in India" mixes up
+        // regulators (the US FDA does not approve products for India; India's is CDSCO) and "no
+        // reported long-term side effects" is an absolute claim. CLINIC TO CONFIRM the product's
+        // actual regulatory status before adding it back. Pending medical sign-off.
+        answer: 'QR678 is a patented, clinically tested peptide formulation, and it is generally well tolerated. Mild redness or tenderness at the injection sites can occur and usually settles quickly. Your doctor reviews your health history and explains the expected benefits and risks before you start.',
       },
       {
         question: 'How many sessions will I need?',

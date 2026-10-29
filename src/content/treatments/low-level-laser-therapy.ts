@@ -132,7 +132,9 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Is LLLT painful or uncomfortable?',
-        answer: 'Not at all! The treatment is completely painless. Most people feel a mild warming or tingling sensation, but it’s relaxing and comfortable.',
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "completely painless" is an
+        // absolute claim. Pending medical sign-off.
+        answer: 'Most people find it comfortable. You may feel a mild warmth or tingling on the scalp during the session. There are no needles, and you can return to your normal day straight afterwards.',
       },
       {
         question: 'How soon will I see results?',

@@ -163,7 +163,9 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Is PRP therapy safe for hair?',
-        answer: 'Yes, it’s completely safe. PRP uses your own blood, so there’s no risk of allergies or side effects. It’s a natural, low-risk way to stimulate hair growth.',
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "completely safe" / "no risk of
+        // allergies or side effects" are absolute claims. Pending medical sign-off.
+        answer: 'PRP is generally well tolerated. It is prepared from your own blood, so allergic reactions are rare. Mild tenderness, redness or swelling at the injection sites is common and usually settles within a day or two. Your doctor confirms that PRP suits you before treatment.',
       },
       {
         question: 'Does PRP hair treatment hurt?',

@@ -144,7 +144,9 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Is GFC safe and does it have side effects?',
-        answer: 'Yes, it’s completely safe since it uses your own blood. There are no allergic reactions, and side effects are minimal - maybe slight redness or tenderness at the injection site, which usually fades in a few hours.',
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "completely safe" / "no allergic
+        // reactions" are absolute claims. Pending medical sign-off.
+        answer: 'GFC is generally well tolerated because it is prepared from your own blood, so allergic reactions are rare. The most common effects are slight redness or tenderness at the injection sites, which usually fade within a few hours. Your doctor reviews your health history before recommending it.',
       },
       {
         question: 'How many GFC sessions will I need?',
