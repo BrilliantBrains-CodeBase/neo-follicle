@@ -215,8 +215,11 @@
   }
 
   /* External citation URLs run long and would otherwise force a horizontal
-     scrollbar on a phone. */
-  .post-prose .post-prose-small a {
+     scrollbar on a phone. This was scoped to .post-prose-small, but most posts
+     list their references as plain paragraphs and list items, so 12 posts
+     scrolled sideways on a 412px screen (Oct 2026 audit). `anywhere` only
+     breaks a link that cannot otherwise fit, so ordinary links are unchanged. */
+  .post-prose a {
     overflow-wrap: anywhere;
   }
 
