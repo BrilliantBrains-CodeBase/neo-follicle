@@ -166,21 +166,44 @@ for (const p of expected) {
 check('every captured page-specific JSON-LD node survives', lost,
   'every captured and authored page-specific JSON-LD node survives normalisation')
 
+// Every FAQ a visitor can open (<details name="faq-...">) must be marked up,
+// and the FAQPage questions must be the visible questions, in order. Treatment
+// pages get theirs from scripts/prerender.mjs (built from the rendered data);
+// captured and authored pages keep their own.
+const decode = (s) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim()
+const visibleFaq = (html) =>
+  [...html.matchAll(/<details name="faq-[^"]*"[^>]*>\s*<summary[^>]*>\s*<h3[^>]*>([\s\S]*?)<\/h3>/g)].map((m) => decode(m[1]))
+
 let faqPages = 0, faqQuestions = 0
-for (const g of graphs.values()) {
-  for (const node of g[0]?.['@graph'] ?? []) {
-    if ([].concat(node['@type'] ?? []).includes('FAQPage')) {
-      faqPages++
-      faqQuestions += (node.mainEntity ?? []).length
-    }
+const faqMismatch = []
+for (const p of expected) {
+  const nodes = (graphs.get(p.slug)?.[0]?.['@graph'] ?? []).filter((n) => [].concat(n['@type'] ?? []).includes('FAQPage'))
+  const shown = visibleFaq(docs.get(p.slug) ?? '')
+  for (const node of nodes) {
+    faqPages++
+    faqQuestions += (node.mainEntity ?? []).length
   }
+  if (!p.inSitemap || shown.length === 0) continue
+  const marked = (nodes[0]?.mainEntity ?? []).map((q) => q.name)
+  if (!nodes.length) faqMismatch.push(`${p.slug}: ${shown.length} visible questions, no FAQPage`)
+  else if (marked.join('\n') !== shown.join('\n')) faqMismatch.push(`${p.slug}: FAQPage questions differ from the visible FAQ`)
 }
-// 14 / 82 carried over from the capture, plus whatever the authored pages declare.
+check('every visible FAQ is marked up, question for question', faqMismatch,
+  'every indexable page with a visible FAQ carries a FAQPage that matches it question for question')
+
+// 14 / 82 carried over from the capture, plus whatever the authored pages
+// declare, plus the treatment pages' own FAQs (generated at prerender).
 const authoredFaqs = authored
   .flatMap((a) => a.schema.flatMap((b) => b['@graph'] ?? [b]))
   .filter((n) => [].concat(n['@type'] ?? []).includes('FAQPage'))
-const wantPages = 14 + authoredFaqs.length
-const wantQuestions = 82 + authoredFaqs.reduce((n, f) => n + (f.mainEntity ?? []).length, 0)
+const capturedFaqSlugs = new Set(expected.filter((p) => {
+  const source = p.captured ? JSON.parse(fs.readFileSync(p.captured, 'utf8')) : authored.find((a) => a.seo.slug === p.slug).schema
+  return JSON.stringify(source).includes('"FAQPage"')
+}).map((p) => p.slug))
+const generated = expected.filter((p) => p.inSitemap && !capturedFaqSlugs.has(p.slug) && visibleFaq(docs.get(p.slug) ?? '').length)
+const wantPages = 14 + authoredFaqs.length + generated.length
+const wantQuestions = 82 + authoredFaqs.reduce((n, f) => n + (f.mainEntity ?? []).length, 0) +
+  generated.reduce((n, p) => n + visibleFaq(docs.get(p.slug)).length, 0)
 faqPages === wantPages && faqQuestions === wantQuestions
   ? pass(`${wantPages} FAQPage graphs present, ${wantQuestions} questions total`)
   : fail(`${wantPages} FAQPage graphs / ${wantQuestions} questions`, `got ${faqPages} FAQPages, ${faqQuestions} questions`)

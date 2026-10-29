@@ -23,7 +23,7 @@ const schemaDir = path.join(root, 'src', 'seo', 'schema')
 // entry-server re-exports `pages`, so the prerender and the app read the same
 // records -- there is no second copy of the SEO data to drift.
 const ssr = await import(pathToFileURL(path.join(root, 'dist-ssr', 'entry-server.js')).href)
-const { render, pages, headerNav } = ssr
+const { render, pages, headerNav, treatmentFaqs } = ssr
 
 const ORIGIN = SEO.origin
 
@@ -165,12 +165,39 @@ function buildHead(page) {
   // JSON-LD, verbatim from the backup. This is the site's most valuable and
   // most fragile SEO asset -- 14 FAQPages / 82 questions among the 59 graphs.
   const graph = JSON.parse(fs.readFileSync(path.join(schemaDir, `${page.slug}.json`), 'utf8'))
+  addTreatmentFaq(page, graph)
   for (const block of graph) {
     h += `    <script type="application/ld+json">${JSON.stringify(block)}</script>\n`
   }
 
   h += gtmHead
   return h
+}
+
+/**
+ * FAQPage for a treatment page's visible FAQ, built from the same items the
+ * page renders (entry-server's `treatmentFaqs`), so markup and page cannot
+ * drift. Skipped when the captured or authored graph already has one -- those
+ * stay verbatim. Linked from the page's WebPage node as `hasPart`.
+ */
+function addTreatmentFaq(page, graph) {
+  const items = treatmentFaqs?.[page.slug]
+  if (!items?.length || !page.inSitemap) return
+  const nodes = graph[0]?.['@graph']
+  if (!nodes || nodes.some((n) => [].concat(n['@type'] ?? []).includes('FAQPage'))) return
+  const url = `${ORIGIN}${page.path}`
+  const faqId = `${url}#faq`
+  nodes.push({
+    '@type': 'FAQPage',
+    '@id': faqId,
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  })
+  const webpage = nodes.find((n) => n['@id'] === `${url}#webpage`)
+  if (webpage) webpage.hasPart = [...[].concat(webpage.hasPart ?? []), { '@id': faqId }]
 }
 
 function writeHtml(routePath, html) {
