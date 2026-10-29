@@ -7,7 +7,7 @@
  * folixa-design-reference/assets/css/uploads__sites__226__elementor__css__post-31.css:
  *
  *   fill      accent #E2ECFF, radius 8px, padding 10px 20px, gap 10px
- *   hover     primary #3E74D9 with white text
+ *   hover     primary #3C72D7 with white text
  *   disabled  the same accent fill at 50% opacity
  *
  * The reference pages over ajax. This is client state instead: the site is

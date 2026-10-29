@@ -287,7 +287,7 @@ export default function ContactUs({
                       {text}
                     </span>
                     {note && (
-                      <span className="text-[14px] leading-[1.3em] text-body/70">{note}</span>
+                      <span className="text-[14px] leading-[1.3em] text-body/80">{note}</span>
                     )}
                   </span>
                 </>

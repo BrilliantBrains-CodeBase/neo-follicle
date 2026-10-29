@@ -84,7 +84,7 @@ export default function ContactCta() {
           </div>
         </div>
 
-        <p className="text-[14px] leading-[1.6em] text-body/70">{LEGAL.disclaimer}</p>
+        <p className="text-[14px] leading-[1.6em] text-body/80">{LEGAL.disclaimer}</p>
       </div>
     </section>
   )

@@ -13,7 +13,7 @@ export default {
     },
     extend: {
       colors: {
-        "primary": "#3E74D9",  // Brand blue. Buttons, links, icons, active states.
+        "primary": "#3C72D7",  // Brand blue. Buttons, links, icons, active states. Kit value #3E74D9, darkened for 4.5:1 white text -- see src/index.css.
         "primary-dark": "#1A4FB2",  // Button/link hover. Deep blue.
         "secondary": "#1A1A1A",  // All headings h1-h6.
         "body": "#444444",  // Body copy, the kit's default text color.

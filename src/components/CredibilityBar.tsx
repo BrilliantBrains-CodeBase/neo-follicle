@@ -51,8 +51,10 @@ const FIGURES = [
  * ("Hair Transplants Performed") has to survive the ~124px tracks of a 2-up
  * grid at a 320px viewport.
  */
+// text-white, not text-line: #E5E7EB on the primary band is 3.7:1 and these
+// are 13px labels, which need 4.5:1. (Oct 2026 audit)
 const LABEL =
-  'font-head text-[13px] font-semibold uppercase leading-[1.4em] tracking-[0.08em] text-line md:text-[14px]'
+  'font-head text-[13px] font-semibold uppercase leading-[1.4em] tracking-[0.08em] text-white md:text-[14px]'
 
 export default function CredibilityBar() {
   return (

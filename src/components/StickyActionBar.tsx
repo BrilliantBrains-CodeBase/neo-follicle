@@ -130,10 +130,13 @@ export default function StickyActionBar() {
               rather than `absolute`, so the label below it still flows
               normally and the cell keeps the same height as its neighbours.
             */}
+            {/* Label in primary-dark: the bar is bg-base/95 over the page, so on
+                a dark section the 11px "Book" in primary fell to 4.2:1.
+                (Oct 2026 audit) */}
             <Link
               to={headerCta.to}
               aria-label={headerCta.label}
-              className="flex min-h-[64px] flex-col items-center justify-center gap-1 font-head text-[0.6875rem] font-semibold text-primary"
+              className="flex min-h-[64px] flex-col items-center justify-center gap-1 font-head text-[0.6875rem] font-semibold text-primary-dark"
             >
               <span className="-mt-9 grid h-16 w-16 place-items-center rounded-full bg-primary text-base ring-[6px] ring-base transition-colors duration-300 active:bg-primary-dark">
                 <CalendarCheck className="h-7 w-7" />
@@ -157,7 +160,7 @@ export default function StickyActionBar() {
           <li>
             <Link
               to="/ai-hair-transplant-cost-calculator/"
-              aria-label="AI Hair Analysis & Hair Transplant Cost Calculator"
+              aria-label="AI Analysis: hair loss check and hair transplant cost calculator"
               className={CELL}
             >
               <Calculator className="h-5 w-5" />
