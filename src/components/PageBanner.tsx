@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { HERO_PHOTO } from '../config/images'
 
 /**
  * The inset rounded page-title banner.
@@ -54,13 +55,36 @@ type PageBannerProps = {
   children?: React.ReactNode
 }
 
+/*
+ * The theatre photograph is drawn as a real <img> from HERO_PHOTO's srcset
+ * (Oct 2026 audit). As an inline CSS background it was the LCP element on every
+ * blog post, the contact page and the galleries, yet it was invisible to the
+ * preload scanner and always the 1672px / 126 KB original. As an <img> with
+ * fetchPriority="high", React 19 emits a responsive preload for it and a phone
+ * gets the 640/960 copy. object-cover + object-center crops exactly as
+ * bg-cover + bg-center did. Any other `image` still goes through the old
+ * background path.
+ */
 export default function PageBanner({ crumbs, title, image, children }: PageBannerProps) {
+  const photo = image === HERO_PHOTO.original ? HERO_PHOTO : null
   return (
     <div className="px-0 md:px-5 lg:px-10">
       <div
         className="relative isolate flex min-h-[300px] flex-col items-center justify-center gap-4 overflow-hidden bg-secondary bg-cover bg-center bg-no-repeat px-gutter py-12 text-center md:min-h-[400px] md:rounded-lg lg:min-h-[500px]"
-        style={{ backgroundImage: `url('${image}')` }}
+        style={photo ? undefined : { backgroundImage: `url('${image}')` }}
       >
+        {photo && (
+          <img
+            src={photo.src}
+            srcSet={photo.srcSet}
+            sizes="(min-width: 1024px) calc(100vw - 80px), (min-width: 768px) calc(100vw - 40px), 100vw"
+            alt={photo.alt}
+            width={photo.width}
+            height={photo.height}
+            fetchPriority="high"
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+          />
+        )}
         {/* The 0.7 scrim. Its own layer rather than a gradient, so the photo
             underneath can be swapped without retuning the text contrast. */}
         <div className="absolute inset-0 -z-10 bg-secondary/70" aria-hidden="true" />

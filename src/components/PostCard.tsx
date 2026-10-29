@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { blogCardSrcSet } from '../config/images'
 import { ArrowRight } from './icons'
 import type { PostSummary } from '../content/types'
 
@@ -57,6 +58,8 @@ export default function PostCard({ post, eager = false }: PostCardProps) {
     <Link to={post.path} className="group block lg:flex lg:items-center">
       <img
         src={post.card.src}
+        srcSet={blogCardSrcSet(post.card.src, post.card.width)}
+        sizes="(min-width: 1025px) 300px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 40px)"
         alt={post.card.alt}
         width={post.card.width}
         height={post.card.height}

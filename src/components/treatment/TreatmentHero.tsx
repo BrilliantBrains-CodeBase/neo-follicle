@@ -54,6 +54,7 @@
  * thread to run its fadeInUp (LCP render delay 10.6 s of 11.8 s). Only the
  * CTA row and the trust strip below it still rise in.
  */
+import { treatmentHeroSrcSet } from '../../config/images'
 import type { TreatmentPageData } from '../../content/treatments/types'
 import { Square } from '../icons'
 import { CtaRow } from './shell'
@@ -168,6 +169,10 @@ export default function TreatmentHero({ hero }: { hero: TreatmentPageData['hero'
           >
             <img
               src={hero.image.src}
+              // A phone's box is ~372px wide; it was always sent the 1200px
+              // file. sizes mirrors the column widths below. (Oct 2026 audit)
+              srcSet={treatmentHeroSrcSet(hero.image.src, hero.image.width)}
+              sizes="(min-width: 1025px) 38vw, (min-width: 768px) 35vw, calc(100vw - 40px)"
               alt={hero.image.alt}
               width={hero.image.width}
               height={hero.image.height}

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { footerColumns, footerNav } from '../config/nav'
-import { ASSETS, CONTACT, DOCTOR, SOCIAL, copyrightLine, mapLink } from '../config/site'
+import { CONTACT, DOCTOR, SOCIAL, copyrightLine, mapLink } from '../config/site'
+import { LOGO } from '../config/images'
 import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon, socialIcons } from './icons'
 
 /**
@@ -46,7 +47,9 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-between gap-gap-mobile">
           <Link to="/" className="shrink-0">
             <img
-              src={ASSETS.logo}
+              src={LOGO.src}
+              srcSet={LOGO.srcSet}
+              loading="lazy"
               alt="Neo Follicle Hair Transplant Clinic"
               width={172}
               height={65}

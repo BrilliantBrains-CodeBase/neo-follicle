@@ -28,6 +28,12 @@ const outDir = path.join(root, 'public/treatments')
 
 const MAX_WIDTH = 1200
 const QUALITY = 78
+// A 640px copy of each hero wider than that, for TreatmentHero's srcset: on a
+// phone the hero box is ~372px wide, and the 1200x1200 file is what LCP waits
+// for (Oct 2026 audit). Mirrored as TREATMENT_HERO_SMALL in src/config/images.ts.
+// Not recorded in sizes.json -- that file is keyed by <img src>, and the copy is
+// only ever a srcset candidate.
+const HERO_SMALL = 640
 
 const written = []
 async function write(servedPath, src, crop) {
@@ -69,6 +75,18 @@ for (const [slug, set] of Object.entries(TREATMENT_IMAGES)) {
   }
 
   await one('hero', set.hero)
+  const hero = sizes[treatmentImagePath(slug, 'hero')]
+  if (hero.width > HERO_SMALL) {
+    const src = set.hero.local ? path.join(root, set.hero.local) : resolveUpload(`/${set.hero.from}`)
+    const servedSmall = treatmentImagePath(slug, `hero-${HERO_SMALL}`)
+    let img = sharp(src)
+    if (set.hero.crop) img = img.extract(set.hero.crop)
+    const { size, width, height } = await img
+      .resize(HERO_SMALL, null, { withoutEnlargement: true })
+      .webp({ quality: QUALITY })
+      .toFile(path.join(root, 'public', servedSmall.replace(/^\//, '')))
+    written.push({ file: servedSmall, size, width, height })
+  }
   for (const [i, entry] of (set.results ?? []).entries()) await one(`result-${i + 1}`, entry)
   // `sections` is for a photograph that illustrates a band rather than a
   // result -- a checklist's `image`, say. Several of the non-surgical pages

@@ -110,7 +110,7 @@ export default function About() {
             <img
               src="/img/about-doctor-720.webp"
               srcSet="/img/about-doctor-480.webp 480w, /img/about-doctor-720.webp 720w, /img/about-doctor-1095.webp 1095w"
-              sizes="(min-width: 1024px) 50vw, 100vw"
+              sizes="(min-width: 1024px) 50vw, calc(100vw - 40px)"
               alt="Dr. Sandeep Mahapatra beside a Lumenis FoLix laser device at an international hair restoration conference"
               width={1095}
               height={1280}
@@ -167,7 +167,7 @@ export default function About() {
                 <img
                   src="/img/about-stat-800.webp"
                   srcSet="/img/about-stat-480.webp 480w, /img/about-stat-800.webp 800w, /img/about-stat-1200.webp 1200w"
-                  sizes="(min-width: 1024px) 30vw, 100vw"
+                  sizes="(min-width: 1024px) 30vw, calc(100vw - 40px)"
                   alt="Doctor in gloves giving a scalp injection treatment to a patient with thinning hair"
                   width={1200}
                   height={629}

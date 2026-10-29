@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { HERO_PHOTO } from '../config/images'
 import { Play, Square } from './icons'
 
 /**
@@ -154,12 +155,12 @@ export default function Hero() {
           image and is indexed in image search, so it carries what it shows.
         */}
         <img
-          src="/img/hero-960.webp"
-          srcSet="/img/hero-640.webp 640w, /img/hero-960.webp 960w, /img/hero-1280.webp 1280w, /img/hero-1672.webp 1672w"
+          src={HERO_PHOTO.src}
+          srcSet={HERO_PHOTO.srcSet}
           sizes="100vw"
-          alt="Hair transplant procedure at Neo Follicle, Bangalore: a surgeon wearing magnifying loupes places grafts on a patient's scalp while an assistant watches"
-          width={1672}
-          height={941}
+          alt={HERO_PHOTO.alt}
+          width={HERO_PHOTO.width}
+          height={HERO_PHOTO.height}
           fetchPriority="high"
           className="absolute inset-0 -z-10 h-full w-full object-cover object-[60%_top] md:object-left-top"
         />

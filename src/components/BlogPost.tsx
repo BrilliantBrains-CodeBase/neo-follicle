@@ -1,3 +1,4 @@
+import { blogHeroSrcSet } from '../config/images'
 import PageBanner from './PageBanner'
 import PostMeta from './PostMeta'
 import PostProse from './PostProse'
@@ -95,12 +96,22 @@ export default function BlogPost({ post }: { post: Post }) {
       <section className="bg-base py-section-y-mobile md:py-section-y-tablet lg:py-section-y">
         <div className="container flex flex-col gap-gap-mobile md:gap-gap-tablet lg:flex-row lg:items-start lg:gap-gap">
           <article className="flex flex-col gap-6 lg:w-[70%]">
+            {/* srcSet (Oct 2026 audit): phones were sent the 1600px file
+                (68-251 KB) for a ~372px column. sizes mirrors the column:
+                full container width below lg, 70% of the 1240px container
+                above it. The fixed aspect-ratio keeps the box the original's
+                shape: a 640px copy is 640x335, not exactly 1600x837, and h-auto
+                would otherwise shift the article by a pixel. */}
             <img
               src={post.hero.src}
+              srcSet={blogHeroSrcSet(post.hero.src, post.hero.width)}
+              sizes="(min-width: 1280px) 868px, (min-width: 1024px) 66vw, calc(100vw - 40px)"
               alt={post.hero.alt}
               width={post.hero.width}
               height={post.hero.height}
-              className="w-full rounded"
+              decoding="async"
+              style={{ aspectRatio: `${post.hero.width} / ${post.hero.height}` }}
+              className="w-full rounded object-cover"
             />
 
             {/* Tablet and mobile only. The desktop copy lives at the top of the

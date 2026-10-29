@@ -367,8 +367,10 @@
  */
 .nf-cta-bg {
   background-color: var(--color-secondary);
+  /* 768px wide below 768px viewports, whatever the device pixel ratio: phones
+     were picking the 2x file (102 KB) for a texture that sits under a scrim,
+     on every page. (Oct 2026 audit) */
   background-image: url('/img/footer-bg-768.webp');
-  background-image: image-set(url('/img/footer-bg-768.webp') 1x, url('/img/footer-bg-1536.webp') 2x);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -266,6 +266,34 @@ for (const [slug, html] of docs) {
 check('every image URL in the head and JSON-LD is served by dist/', [...urlBad],
   'every same-origin image URL in the head and JSON-LD is served by dist/ (incl. mirrored wp-content)')
 
+// Body images: <img src>, every srcset / imagesrcset candidate (responsive
+// sets are generated files, so a missing width is easy to ship), and every
+// url() in the built CSS (image-set backgrounds, fonts).
+{
+  const missing = new Set()
+  let seen = 0
+  const local = (u) => u.startsWith('/') && !u.startsWith('//')
+  const test = (u, where) => {
+    const clean = unesc(u).split(/[?#]/)[0]
+    if (!local(clean)) return
+    seen++
+    if (!fs.existsSync(path.join(dist, decodeURIComponent(clean)))) missing.add(`${where}: ${clean}`)
+  }
+  for (const [slug, html] of docs) {
+    for (const m of html.matchAll(/<img\b[^>]*?\ssrc="([^"]+)"/gi)) test(m[1], slug)
+    for (const m of html.matchAll(/\s(?:image)?srcset="([^"]+)"/gi)) {
+      for (const cand of unesc(m[1]).split(',')) test(cand.trim().split(/\s+/)[0], slug)
+    }
+  }
+  const cssDir = path.join(dist, 'assets')
+  for (const f of fs.readdirSync(cssDir).filter((n) => n.endsWith('.css'))) {
+    for (const m of fs.readFileSync(path.join(cssDir, f), 'utf8').matchAll(/url\(\s*['"]?([^'")]+)['"]?\s*\)/g)) test(m[1], f)
+  }
+  for (const m of fs.readFileSync(path.join(dist, 'fonts', 'fonts.css'), 'utf8').matchAll(/url\(\s*['"]?([^'")]+)['"]?\s*\)/g)) test(m[1], 'fonts.css')
+  check('every body image, srcset candidate and CSS url() is served by dist/', [...missing],
+    `all ${seen} body image / srcset / CSS url() references resolve in dist/`)
+}
+
 /* ==== C. site files ========================================================= */
 
 /* every nav link resolves to a real route */
