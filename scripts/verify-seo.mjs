@@ -242,17 +242,23 @@ check('indexable descriptions are 70-160 characters',
 
 /*
  * Healthcare claims (docs/seo-audit/05-compliance.md). Superlatives and
- * absolute promises in what a search result or share card shows -- <title>,
- * meta description, og:image:alt (the SEO h1) -- on indexable pages. A hit
- * fails unless it is listed in CLAIM_ALLOW with the reason it is not a claim
- * about the clinic. Add to the list only after a human has read the line.
+ * absolute promises in what a search result, ad landing page or share card
+ * shows -- <title>, meta description, og:image:alt (the SEO h1) -- on every
+ * page, noindex ad landing pages included (they take the paid traffic). A hit
+ * fails unless it is listed in CLAIM_ALLOW with the reason. Add to the list
+ * only after a human has read the line. Body copy is not scanned: it is full of
+ * legitimate negations ("no ethical surgeon promises 100% growth").
  */
 // Word terms need \b on both sides; "#1" and "100%" start/end on non-word
 // characters, so they sit in a second group without the outer \b.
-const CLAIM_RE = /\b(best|no\.?\s?1|number one|top[- ]rated|leading|guarantee[ds]?|permanent(?:ly)?|painless|pain[- ]free|scar[- ]?less|no scars?|no side[- ]effects?|fda[- ]approved|cure[sd]?)\b|(#1\b|100\s?%)/gi
+const CLAIM_RE = /\b(best|no\.?\s?1|number\s(?:1|one)|top[- ]rated|top\s+(?:hair|doctor|surgeon|clinic|dermatologist|trichologist|specialist)s?|leading\s+(?:hair|clinic|surgeon|doctor|dermatologist|trichologist|expert|specialist)s?|guarantee[ds]?|100\s?percent|permanent(?:ly)?|painless|pain[- ]?free|scar[- ]?(?:less|free)|no scars?|(?:no|zero) side[- ]effects?|no risk|risk[- ]free|completely safe|fda[- ]approved|cure[sd]?)\b|(#1\b|100\s?%)/gi
 const CLAIM_ALLOW = {
   // Slug and title keep "Best" until the clinic decides (05-compliance.md s2).
   'best-hair-transplant-in-bangalore': { title: ['best'] },
+  // Google Ads landing pages (noindex): the headline mirrors the ad keyword
+  // for message match. Clinic + Ads decision, 05-compliance.md s2.
+  'best-hair-transplant-clinic-lp': { title: ['best'], h1: ['best'] },
+  'best-hair-transplant-surgeon-in-bangalore-lp': { title: ['top hair'], h1: ['top hair'] },
   // The reader choosing, not the clinic claiming.
   'how-to-choose-the-best-hair-transplant-clinic-bangalore': { title: ['best'], description: ['best'], h1: ['best'] },
   'fue-vs-direct-hair-implantation': { description: ['best'] }, // "...may suit you best"
@@ -262,7 +268,7 @@ const CLAIM_ALLOW = {
 }
 const ogAlt = /<meta property="og:image:alt" content="([^"]*)"/
 const claimHits = []
-for (const p of indexable) {
+for (const p of expected) {
   const html = docs.get(p.slug)
   const fields = { title: pick(html, RE.title), description: pick(html, RE.description), h1: pick(html, ogAlt) }
   for (const [field, text] of Object.entries(fields)) {
@@ -273,7 +279,7 @@ for (const p of indexable) {
   }
 }
 check('no unreviewed superlative or absolute medical claim in titles, descriptions or share-card text', claimHits,
-  `no unreviewed claim terms in the titles, descriptions and share-card text of ${indexable.length} indexable pages (${Object.keys(CLAIM_ALLOW).length} reviewed exceptions)`)
+  `no unreviewed claim terms in the titles, descriptions and share-card text of all ${expected.length} pages (${Object.keys(CLAIM_ALLOW).length} pages with reviewed exceptions)`)
 
 const cardBad = []
 for (const p of expected) {

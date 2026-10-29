@@ -140,7 +140,9 @@ const data: TreatmentPageData = {
         { title: 'Reduces hair fall', body: 'Strengthens weak hair roots and minimises daily shedding over time.' },
         { title: 'Stimulates new growth', body: 'Supports dormant follicles so they can re-enter the growing phase.' },
         { title: 'Improves thickness and density', body: 'Strands read fuller and stronger over a course of sessions.' },
-        { title: 'Safe and non-allergic', body: 'Uses your own blood, so there is no risk of rejection.' },
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "non-allergic" / "no risk"
+        // are absolute claims and contradicted the reworded FAQ on this page. Pending medical sign-off.
+        { title: 'Made from your own blood', body: 'Prepared from your own blood, so allergic reactions are rare.' },
         { title: 'Quick, in-clinic procedure', body: 'Each session takes under an hour, with no recovery time needed.' },
         { title: 'Suitable for men and women', body: 'Planned the same way for either, around the individual diagnosis.' },
       ],

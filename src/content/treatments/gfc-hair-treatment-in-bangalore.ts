@@ -100,7 +100,9 @@ const data: TreatmentPageData = {
         { title: 'Boosts new hair growth', body: 'Activates weak or dormant follicles and encourages fresh regrowth.' },
         { title: 'Improves texture and thickness', body: 'Over a course, hair reads healthier and visibly denser.' },
         { title: 'Fewer sessions than PRP', body: 'GFC is a concentrated preparation, so a course is typically shorter.' },
-        { title: 'Completely non-surgical', body: 'Prepared from your own blood, so there is no risk of an allergic reaction.' },
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "no risk of an allergic
+        // reaction" is absolute and contradicted the reworded FAQ on this page. Pending medical sign-off.
+        { title: 'Completely non-surgical', body: 'Prepared from your own blood, so allergic reactions are rare.' },
         { title: 'No downtime', body: 'You can return to your daily routine immediately after each session.' },
       ],
     },
