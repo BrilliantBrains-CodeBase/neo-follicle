@@ -105,7 +105,10 @@ site swapped for working ones.
 
 ## Still outstanding
 
-- **Google Business Profile URL** -- set `CONTACT.gbpUrl` in `src/config/site.ts`
-  (the `https://www.google.com/maps?cid=...` link). It becomes `hasMap`, joins
-  `sameAs`, and replaces the short link on every "Get directions".
-- **Host redirects** for the retired WordPress URLs, once the deploy target is known.
+- **Google Business Profile URL** -- done Oct 2026: `CONTACT.gbpUrl` is the cid URL
+  read from the verified profile, so it is `hasMap`, in `sameAs`, and on every
+  "Get directions" link.
+- **Host redirects** for the retired WordPress URLs -- done Oct 2026 in
+  `public/.htaccess` (Apache). Port them if the host changes.
+- Everything that needs the clinic, Google Tag Manager, GA4, GBP or Search
+  Console rather than code: `docs/seo-audit/README.md`.

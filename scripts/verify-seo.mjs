@@ -221,6 +221,41 @@ check('indexable descriptions are 70-160 characters',
     .map((p) => `${p.slug}: ${p.description.length} chars`),
   `all ${indexable.length} indexable descriptions are 70-160 characters`)
 
+/*
+ * Healthcare claims (docs/seo-audit/05-compliance.md). Superlatives and
+ * absolute promises in what a search result or share card shows -- <title>,
+ * meta description, og:image:alt (the SEO h1) -- on indexable pages. A hit
+ * fails unless it is listed in CLAIM_ALLOW with the reason it is not a claim
+ * about the clinic. Add to the list only after a human has read the line.
+ */
+// Word terms need \b on both sides; "#1" and "100%" start/end on non-word
+// characters, so they sit in a second group without the outer \b.
+const CLAIM_RE = /\b(best|no\.?\s?1|number one|top[- ]rated|leading|guarantee[ds]?|permanent(?:ly)?|painless|pain[- ]free|scar[- ]?less|no scars?|no side[- ]effects?|fda[- ]approved|cure[sd]?)\b|(#1\b|100\s?%)/gi
+const CLAIM_ALLOW = {
+  // Slug and title keep "Best" until the clinic decides (05-compliance.md s2).
+  'best-hair-transplant-in-bangalore': { title: ['best'] },
+  // The reader choosing, not the clinic claiming.
+  'how-to-choose-the-best-hair-transplant-clinic-bangalore': { title: ['best'], description: ['best'], h1: ['best'] },
+  'fue-vs-direct-hair-implantation': { description: ['best'] }, // "...may suit you best"
+  'prp-vs-gfc-for-hair-loss': { h1: ['best'] }, // "Which Is Best for You?"
+  // The question the post answers; the description hedges ("can last").
+  'is-hair-transplant-permanent': { title: ['permanent'], h1: ['permanent'], description: ['permanently'] },
+}
+const ogAlt = /<meta property="og:image:alt" content="([^"]*)"/
+const claimHits = []
+for (const p of indexable) {
+  const html = docs.get(p.slug)
+  const fields = { title: pick(html, RE.title), description: pick(html, RE.description), h1: pick(html, ogAlt) }
+  for (const [field, text] of Object.entries(fields)) {
+    for (const m of (text ?? '').matchAll(CLAIM_RE)) {
+      const term = (m[1] ?? m[2]).toLowerCase()
+      if (!CLAIM_ALLOW[p.slug]?.[field]?.includes(term)) claimHits.push(`${p.slug} ${field}: "${m[0]}" in "${text}"`)
+    }
+  }
+}
+check('no unreviewed superlative or absolute medical claim in titles, descriptions or share-card text', claimHits,
+  `no unreviewed claim terms in the titles, descriptions and share-card text of ${indexable.length} indexable pages (${Object.keys(CLAIM_ALLOW).length} reviewed exceptions)`)
+
 const cardBad = []
 for (const p of expected) {
   const html = docs.get(p.slug)

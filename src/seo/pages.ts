@@ -1320,14 +1320,14 @@ export const pages: PageSeo[] = [
     "path": "/low-level-laser-therapy/",
     "type": "page",
     "title": "Low Level Laser Hair Therapy in Bangalore | Neo Follicle",
-    "description": "Low level laser therapy (LLLT) in Bangalore: a painless, non-surgical way to stimulate follicles and slow hair fall, supervised by dermatologists.",
+    "description": "Low level laser therapy (LLLT) in Bangalore: a comfortable, non-surgical way to stimulate follicles and slow hair fall, supervised by dermatologists.",
     "needsRewrite": false,
     "descFlagReason": null,
     "canonical": "https://neofollicletransplant.com/low-level-laser-therapy/",
     "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     "og": {
       "title": "Low Level Laser Hair Therapy in Bangalore | Neo Follicle",
-      "description": "Low level laser therapy (LLLT) in Bangalore: a painless, non-surgical way to stimulate follicles and slow hair fall, supervised by dermatologists.",
+      "description": "Low level laser therapy (LLLT) in Bangalore: a comfortable, non-surgical way to stimulate follicles and slow hair fall, supervised by dermatologists.",
       "url": "https://neofollicletransplant.com/low-level-laser-therapy/",
       "type": "article",
       "image": "https://neofollicletransplant.com/og/low-level-laser-therapy.jpg",
@@ -1340,7 +1340,7 @@ export const pages: PageSeo[] = [
     "twitter": {
       "card": "summary_large_image",
       "title": "Low Level Laser Hair Therapy in Bangalore | Neo Follicle",
-      "description": "Low level laser therapy (LLLT) in Bangalore: a painless, non-surgical way to stimulate follicles and slow hair fall, supervised by dermatologists.",
+      "description": "Low level laser therapy (LLLT) in Bangalore: a comfortable, non-surgical way to stimulate follicles and slow hair fall, supervised by dermatologists.",
       "image": "https://neofollicletransplant.com/og/low-level-laser-therapy.jpg"
     },
     "h1": "Low Level Laser Hair Therapy in Bangalore",
