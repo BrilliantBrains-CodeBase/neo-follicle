@@ -13,7 +13,7 @@ Why this matters: the service pages run 579–1,426 words and their FAQ answers 
 **URL:** `/fue-hair-transplant-bangalore/` (keep the slug) · **type:** `post` → `page`
 **Today:** blog post "The Complete Guide to FUE Hair Transplant", 3,858 words, 76 impressions @ pos 25.6, no FAQ schema.
 **Demand evidence:** "fue hair transplant in bangalore" is split across `/` (@13.1), `/unshaven-hair-transplant/` (@12.0) and `/best-hair-transplant-in-bangalore/` (@67.8). Nobody owns it. GBP shows "fue hair transplant" (103 impressions). FUE is listed as a GBP service but has no landing page.
-**Title / meta / H1:** set in `content/seo/overrides.json` (`title`, `description`, `h1`), then `npm run gen:seo`.
+**Title / meta:** `title` and `description` in `content/seo/overrides.json`, then `npm run gen:seo`. **H1:** the visible H1 is the page's own content module (`src/content/treatments/<slug>.ts`, hero `h1`); the `h1` key in `overrides.json` only sets the SEO heading used for the share card, `og:image:alt`, breadcrumb and `llms.txt` — set both to the same text.
 
 **Outline (keep the existing guide body and wrap it in the service template):**
 1. **Hero:** H1 "FUE Hair Transplant in Bangalore", one-line promise (doctor-planned, natural hairline), CTA buttons (Book assessment · WhatsApp photos). Use `TreatmentHero`; it already renders without a fade-in on the LCP elements.
@@ -35,7 +35,7 @@ Why this matters: the service pages run 579–1,426 words and their FAQ answers 
 ## §2 Hair Transplant Cost in Bangalore: merge + price table
 
 **URL:** `/hair-transplant-cost-in-bangalore/` · merge in `/hair-transplant-cost-bangalore-what-decides-price/`, then 301 (implementation step 9; the rule is already in `public/.htaccess`, commented out).
-**Today:** 622 words, 3 FAQ answers averaging 7 words, no ₹ figure. Ranks @20.7 for "hair transplant cost in bangalore" (523 impr) and @15.6 for "hair transplant cost bangalore" (166). The blog on the same topic splits the signals.
+**Today:** 622 words, 3 FAQ answers averaging 7 words, no ₹ figure — although the **homepage FAQ already publishes ₹60–₹100 per graft** ("a 2,000-graft procedure works out to roughly ₹1,20,000 to ₹2,00,000", "EMI options and no hidden charges"). Once the clinic confirms that range, use it here so the two pages say the same thing. Ranks @20.7 for "hair transplant cost in bangalore" (523 impr) and @15.6 for "hair transplant cost bangalore" (166). The blog on the same topic splits the signals.
 **Demand evidence (GBP searches, Jul–Oct):** "hair transplant cost" 965 · "hair transplant cost in bangalore 2026" 187 · "hair transplant cost in bangalore" 136 · "hair plantation cost" 82 · "cost of hair transplant in bangalore" 79 · "how much cost for hair transplant in bangalore" 61 · "hair transplant in bangalore price list" 31 · "hair transplant cost per graft in bangalore" 17.
 **What ranking competitors show:** per-graft ranges and tiers (Venkat Center), per-graft tables by technique (Pristyn Care), min/avg/max (ClinicSpots, Bajaj Finserv Health), a graft calculator (Eugenix).
 

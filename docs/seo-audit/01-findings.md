@@ -19,12 +19,12 @@ good — prerendered HTML, rich schema, `llms.txt`, AI crawlers allowed — but 
 
 | # | Problem | Evidence | Handled by |
 |---|---|---|---|
-| 1 | **Lead tracking was broken** | GA4 logged **1 key event** in 90 days over **16,790 sessions**. GTM had no GA4 event tags and the code never pushed to the dataLayer. Google Ads counted every call **twice** (two tags on the same `tel:` click). | `analytics:` commit + manual steps 2–3 ([gtm/](gtm/README.md)) |
+| 1 | **Lead tracking was broken** | GA4 logged **1 key event** in 90 days over **16,790 sessions**. GTM had no GA4 event tags and the code never pushed to the dataLayer. Google Ads counted every call **twice** (two tags on the same `tel:` click). | `analytics:` commit + steps 3–4 ([gtm/](gtm/README.md)) |
 | 2 | **Mobile speed was poor** | Live Lighthouse mobile **40–45**, LCP **11.1–11.8 s**. The 714 KB JS bundle went out **uncompressed**; the hero H1 started invisible (fade-in), so LCP render delay was 10.5 s. | `server:`, `perf(LCP)`, `perf:` code-split, `perf(images)`, `perf(fonts)` |
-| 3 | **Duplicate hosts** | `http://` and `https://www.` both answered **200**. The GBP website link points at `www` with UTMs. | `server:` commit + manual step 5 |
+| 3 | **Duplicate hosts** | `http://` and `https://www.` both answered **200**. The GBP website link points at `www` with UTMs. | `server:` commit + step 6 (GBP link) |
 | 4 | **Money pages thin and competing** | Service pages 579–1,426 words vs blogs 2,041–5,363. `/best-hair-transplant-in-bangalore/` ranks **49–62** for the terms the homepage ranks ~**10–11** for. There is **no FUE service page**. | Decisions + [03-content-briefs.md](03-content-briefs.md) |
-| 5 | **Price-intent pages show no prices** | "exosomes hair treatment price" ranks **4.7** on 1,821 impressions; no page shows a ₹ figure. Competitors ranking for cost terms all publish ranges. | Clinic decision → [03 §2](03-content-briefs.md) |
-| 6 | **FAQs without markup** | 20 treatment pages showed visible FAQs with no `FAQPage`. | `seo: FAQPage JSON-LD…` (17 → 37 FAQPage graphs, 100 → 234 questions) |
+| 5 | **Price-intent pages show no prices** | "exosomes hair treatment price" ranks **4.7** on 1,821 impressions. The only ₹ figure on the site is in the **homepage FAQ** (₹60–₹100 per graft); the cost, GFC and exosome pages show none. Competitors ranking for cost terms all publish ranges. | Clinic confirms the range → [03 §2](03-content-briefs.md) |
+| 6 | **FAQ markup missing or wrong** | 20 treatment pages and 6 blog posts showed visible FAQs with no `FAQPage`. The homepage's `FAQPage` held the 8 **old WordPress questions** — none of them on the page any more, one asking why the clinic is "the Best Hair Transplant Clinic in Bangalore" — while the page shows 9 different ones. Google requires FAQ markup to match the visible FAQ. | `seo: FAQPage JSON-LD…`, `seo(schema): every FAQPage now matches…` (17 → 43 FAQPage graphs, 100 → 263 questions) |
 
 The Ryze alt-text notice came from one shared component: `/footer-bg.webp` rendered as a
 decorative `<img alt="">` on 24 pages, plus 6 homepage images with empty alt. Main had **34**
@@ -81,9 +81,10 @@ clicks at position 3.9: the local pack, where the clinic already wins.
 | Legacy URLs Google has seen | 11 return 404; 2 Yoast sitemap files | `server:` — 301s, tested |
 | Landing pages (`*-lp`, `/thank-you*`, `/hair-assessment/`) | `noindex, follow` ✔ | Kept; verify asserts it |
 | `/ai-hair-transplant-cost-calculator/` | `noindex` | Kept until 05 §4 is done |
-| GSC sitemaps | 7 registered; **6 stale** (www host, 2017 Yoast) | Manual step 4 |
+| GSC sitemaps | 7 registered; **6 stale** (www host, 2017 Yoast) | Step 5 |
 | Mobile layout | **14 pages wider than a 412px screen** (long reference URLs, one table) | `fix(mobile):` — 0 pages at 412/360/320px |
-| Accessibility | Lighthouse a11y 96 on every template (white on #3E74D9 is 4.46:1) | `a11y:` — 100 |
+| Opening hours on the site | Homepage FAQ: "Open 10 am to 8 pm, all days"; schema, footer and `llms.txt`: 10:00–19:00, closed Tuesday | Homepage FAQ now reads the same `CONTACT` settings; the real closing time is a clinic question (04 §1) |
+| Accessibility | Lighthouse a11y 96 on every template (white on #3E74D9 is 4.46:1). axe-core over all 65 pages with animations off (412px + 1440px): **1,926 violations on every page** — white on brand blue and brand blue on white/light fills (3.9–4.46:1), labels whose accessible name omits the visible text | Two `a11y:` commits — Lighthouse 100; axe 60 left on 5 pages, all aria-hidden decorative step numerals |
 
 ### 2.1 Speed
 
@@ -125,7 +126,7 @@ Measured A/B (same server, Lighthouse median of 3): [reports/lighthouse-2026-10-
 | Item | Finding | Handled by |
 |---|---|---|
 | Place | Verified; Place ID `ChIJ58kfnkMTrjsRmln7SdXU_hI`; `maps?cid=1368765349301541274` | `seo(local):` — the site now links the cid URL (`hasMap`, `sameAs`, directions) |
-| Website URL | `https://www.neofollicletransplant.com/?utm_…` (www host) | Manual step 5 |
+| Website URL | `https://www.neofollicletransplant.com/?utm_…` (www host) | Step 6 |
 | Categories | Primary *Hair transplantation clinic*; additional *Surgeon*, *Dermatologist*, *Hair replacement service* | Review in 04 §1 |
 | Services listed under *Surgeon* | **"Plastic Surgeon"**, **"Cosmetic Surgeon"**, "Cosmetologist", "Hair Transplant Surgeon"; plus "Cosmetic Surgery", "Laser hair reduction", "Skin Care" under the clinic | 04 §1 — in India "plastic surgeon" is read as a surgeon with an MCh/DNB in Plastic Surgery; the doctor's listed qualification is MBBS, MD (Dermatology), so these labels can mislead patients |
 | Service descriptions | "Best trichologist", "one of the best hair transplant surgeon in India", "100% natural human virgin hair", "100% natural looking hair", "no side effects" (PRP, laser), "permanent and natural way" (beard, eyebrow), "US FDA approved cold beam laser", "best possible graft survival" | 04 §1 rewrites; 05 rules |
@@ -144,7 +145,7 @@ Measured A/B (same server, Lighthouse median of 3): [reports/lighthouse-2026-10-
 | Pattern among ranking pages | Neo Follicle |
 |---|---|
 | Hospital authority (Manipal) and aggregators (WhatClinic, ClinicSpots, Bajaj Finserv Health, Pristyn Care) dominate generic terms | Local pack strong (pos 2–3), organic ~10 |
-| Cost pages publish per-graft ranges and tables (Venkat Center, Pristyn Care, ClinicSpots) | No ₹ figure on any page |
+| Cost pages publish per-graft ranges and tables (Venkat Center, Pristyn Care, ClinicSpots) | ₹60–₹100 per graft appears only in the homepage FAQ, not on the cost page |
 | Graft calculators as lead magnets (Eugenix) | Has an AI calculator, `noindex` |
 | Dedicated FUE and DHI service pages | FUE exists only as a blog post |
 | Third-party press (Deccan Herald feature for Assure Clinic) | `/media-coverage/` exists; use it for links |

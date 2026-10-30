@@ -71,7 +71,7 @@ HSTS on plain-http 301? 0
   /does-not-exist/                             HTTP/1.1 404 Not Found Cache-Control: no-cache Content-Type: text/html; charset=UTF-8 bytes=52503 
   /qr-678-hair-treatment-in-bangalore/         HTTP/1.1 301 Moved Permanently Content-Type: text/html; charset=iso-8859-1 bytes=374 
 
-== npm run verify:live against this server (host checks on via HTTP_BASE/WWW_BASE)
+== npm run verify:live against this server (host checks on via HTTP_BASE/WWW_BASE), final commit, 30 Oct 2026
 
 verify-live: https://neofollicletransplant.com:8443  (not production; canonical origin https://neofollicletransplant.com)
 

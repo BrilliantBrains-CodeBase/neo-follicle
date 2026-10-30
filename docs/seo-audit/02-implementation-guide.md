@@ -57,9 +57,13 @@ Then, by hand:
 ## Rollback
 
 - Whole release: redeploy the previous `dist/`.
-- One change: `git revert <commit>`; every commit on this branch is one concern.
-  The two that depend on each other are `perf(images)` (generates the files) and
-  the `verify-seo` srcset check it adds, which live in the same commit.
+- One change: `git revert <commit>`. Each commit is one concern, and most revert
+  cleanly on their own. Revert these together, newest first, or not at all:
+  - `compliance: verify fails on unreviewed medical claims` and `content+compliance:
+    remaining absolute claims…` depend on `seo: stop share cards… "Best…"`
+    (09cd626): without the h1 overrides the claims check fails on 8+ pages.
+  - `a11y: brand-blue text passes…` builds on `a11y: text contrast…`.
+  - `perf(fonts): content-hash…` renames the files `perf(fonts): the rupee sign…` adds.
 - Server only: restore the previous `.htaccess`. A 500 right after deploy means
   the host disallows something in it (`AllowOverride`); the error log names the
   directive.
@@ -97,11 +101,16 @@ lost; expect a 2–6 week wobble on the homepage while Google merges them.
 3. `content/seo/overrides.json`:
    `"best-hair-transplant-in-bangalore": { "inSitemap": false, "robots": "noindex, follow" }`,
    then `npm run gen:seo`.
-4. Repoint internal links. Today they are in `src/config/nav.ts`,
-   `src/components/Services.tsx`, `src/components/doctor/DoctorExpertise.tsx`,
+4. Repoint internal links. Find them all with
+   `git grep -l "/best-hair-transplant-in-bangalore/" -- src ':!src/seo'`; besides the
+   page's own module (`src/content/treatments/best-hair-transplant-in-bangalore.ts`), today that
+   is `src/config/nav.ts`, `src/components/Services.tsx`,
+   `src/components/doctor/DoctorExpertise.tsx`,
    `src/components/treatments/SurgicalTreatments.tsx`,
-   `src/components/treatments/TreatmentCategories.tsx` and 18 blog posts under
-   `src/content/posts/` (`git grep -l /best-hair-transplant-in-bangalore/ src`).
+   `src/components/treatments/TreatmentCategories.tsx`,
+   `src/content/treatments/hair-conditions-we-treat.ts`,
+   `src/content/treatments/hair-transplant-for-men-in-bangalore.ts`, `src/routes.tsx`
+   (generated) and 18 blog posts under `src/content/posts/`.
 5. Uncomment in `public/.htaccess`:
    `RewriteRule ^best-hair-transplant-in-bangalore/?$ / [R=301,L]`
 6. `npm run build && npm run verify`, deploy, `npm run verify:live -- --only legacy,pages`.
@@ -117,8 +126,10 @@ text as the body, and add it to the "Hair Transplant Services" nav.
 
 ### Step 9 — prices and one cost page
 
-1. The clinic supplies ranges it will honour: per graft (FUE, DHI, unshaven), per
-   session (PRP, GFC, exosome), and what is included. Ranges, not "starting at".
+1. The clinic confirms the ranges it will honour. The homepage FAQ already
+   publishes ₹60–₹100 per graft (2,000 grafts ≈ ₹1.2–2 lakh) — confirm it, then
+   add per-session ranges (PRP, GFC, exosome) and what is included. Ranges, not
+   "starting at".
 2. Add a price table and the price FAQs from [03 §2](03-content-briefs.md) to
    `/hair-transplant-cost-in-bangalore/`. Render graft-count examples from the
    ranges in code so the page, FAQ and calculator never disagree.
