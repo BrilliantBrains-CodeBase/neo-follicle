@@ -43,6 +43,7 @@
     "email": "info@neofollicletransplant.com",
     "telephone": "+91-9731207940",
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -115,7 +116,7 @@
      "latitude": 12.956429486014592,
      "longitude": 77.70733394232819
     },
-    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+    "hasMap": "https://www.google.com/maps?cid=1368765349301541274",
     "areaServed": [
      {
       "@type": "City",
@@ -219,6 +220,7 @@
      "@id": "https://neofollicletransplant.com/#organization"
     },
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -400,7 +402,7 @@
     "@id": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/#webpage",
     "url": "https://neofollicletransplant.com/failed-hair-transplant-repair-in-bangalore/",
     "inLanguage": "en-IN",
-    "name": "Failed Hair Transplant Repair in Bangalore | Neo Follicle",
+    "name": "Failed Hair Transplant Repair in Bangalore | Revision",
     "description": "Failed hair transplant repair in Bangalore. Neo Follicle evaluates your previous transplant, donor condition and scalp health before planning a correction.",
     "datePublished": "2025-04-09T11:18:15+05:30",
     "dateModified": "2026-05-26T16:30:16+05:30",

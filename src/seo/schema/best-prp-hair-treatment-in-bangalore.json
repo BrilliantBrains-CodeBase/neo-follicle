@@ -43,6 +43,7 @@
     "email": "info@neofollicletransplant.com",
     "telephone": "+91-9731207940",
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -115,7 +116,7 @@
      "latitude": 12.956429486014592,
      "longitude": 77.70733394232819
     },
-    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+    "hasMap": "https://www.google.com/maps?cid=1368765349301541274",
     "areaServed": [
      {
       "@type": "City",
@@ -219,6 +220,7 @@
      "@id": "https://neofollicletransplant.com/#organization"
     },
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -400,8 +402,8 @@
     "@id": "https://neofollicletransplant.com/best-prp-hair-treatment-in-bangalore/#webpage",
     "url": "https://neofollicletransplant.com/best-prp-hair-treatment-in-bangalore/",
     "inLanguage": "en-IN",
-    "name": "PRP Hair Treatment in Bangalore | Neo Follicle",
-    "description": "PRP hair treatment in Bangalore to slow hair fall and thicken thinning hair, delivered by dermatologists at Neo Follicle. See costs, sessions and results.",
+    "name": "PRP Hair Treatment in Bangalore | Sessions & Results",
+    "description": "PRP hair treatment in Bangalore to slow hair fall and thicken thinning hair, delivered by dermatologists at Neo Follicle. See sessions and results.",
     "datePublished": "2025-04-12T04:56:07+05:30",
     "dateModified": "2026-05-26T16:42:52+05:30",
     "isPartOf": {

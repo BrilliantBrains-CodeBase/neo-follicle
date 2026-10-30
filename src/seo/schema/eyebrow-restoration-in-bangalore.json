@@ -43,6 +43,7 @@
     "email": "info@neofollicletransplant.com",
     "telephone": "+91-9731207940",
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -115,7 +116,7 @@
      "latitude": 12.956429486014592,
      "longitude": 77.70733394232819
     },
-    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+    "hasMap": "https://www.google.com/maps?cid=1368765349301541274",
     "areaServed": [
      {
       "@type": "City",
@@ -219,6 +220,7 @@
      "@id": "https://neofollicletransplant.com/#organization"
     },
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -400,8 +402,8 @@
     "@id": "https://neofollicletransplant.com/eyebrow-restoration-in-bangalore/#webpage",
     "url": "https://neofollicletransplant.com/eyebrow-restoration-in-bangalore/",
     "inLanguage": "en-IN",
-    "name": "Eyebrow Restoration in Bangalore | Neo Follicle Clinic",
-    "description": "Eyebrow restoration in Bangalore at Neo Follicle. Naturally fuller brows planned with careful attention to eyebrow direction, angle and density.",
+    "name": "Eyebrow Transplant in Bangalore | Neo Follicle Clinic",
+    "description": "Eyebrow transplant in Bangalore at Neo Follicle: fuller, natural-looking brows planned around hair direction, angle and density. See before-and-after results.",
     "datePublished": "2025-04-02T07:04:51+05:30",
     "dateModified": "2026-05-28T14:04:53+05:30",
     "isPartOf": {

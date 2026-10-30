@@ -91,8 +91,13 @@ badLd.length
 const referenced = new Set()
 const brokenImgs = []
 for (const [slug, html] of docs) {
-  for (const m of html.matchAll(/(?:src|srcSet)="(\/[^"]+\.(?:webp|png|jpe?g|svg))"/g)) {
-    const src = m[1]
+  // src="..." is one URL; srcSet="..." is a comma-separated candidate list
+  // ("/a-640.webp 640w, /a.webp 1200w"), so split it.
+  const urls = [
+    ...[...html.matchAll(/\ssrc="(\/[^"]+)"/g)].map((m) => m[1]),
+    ...[...html.matchAll(/\ssrcSet="([^"]+)"/gi)].flatMap((m) => m[1].split(',').map((c) => c.trim().split(/\s+/)[0])),
+  ].filter((u) => /^\/[^"]+\.(?:webp|png|jpe?g|svg)$/.test(u))
+  for (const src of urls) {
     if (src.startsWith('/treatments/')) referenced.add(src)
     if (!fs.existsSync(path.join(pub, src.replace(/^\//, '')))) brokenImgs.push(`${slug}: ${src}`)
   }

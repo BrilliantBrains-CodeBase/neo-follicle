@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { headerCta, headerNav, headerPhone } from '../config/nav'
+import { LOGO } from '../config/images'
 import { SITE } from '../seo/site'
 import { ChevronDown, Close, MenuBars, Phone } from './icons'
 
@@ -161,7 +162,8 @@ export default function Header() {
       <div className="container relative flex min-h-[91px] items-center justify-between gap-gap-sm py-gutter">
         <Link to="/" className="shrink-0">
           <img
-            src={SITE.logo}
+            src={LOGO.src}
+            srcSet={LOGO.srcSet}
             alt={SITE.name}
             width={150}
             height={56}
@@ -354,7 +356,8 @@ export default function Header() {
         <div className="flex items-center justify-between p-6">
           <Link to="/" className="shrink-0">
             <img
-              src={SITE.logo}
+              src={LOGO.src}
+              srcSet={LOGO.srcSet}
               alt={SITE.name}
               width={130}
               height={49}

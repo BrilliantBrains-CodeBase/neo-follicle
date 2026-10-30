@@ -71,7 +71,10 @@ export default function TreatmentMatcher() {
           </h2>
         </Reveal>
 
-        <Reveal>
+        {/* min-w-0: a grid item's automatic minimum is its min-content width,
+            so without it the table's 440px min-width widened the whole grid
+            track and the page scrolled sideways on phones (Oct 2026 audit). */}
+        <Reveal className="min-w-0">
           {/*
             `overflow-x-auto` is scoped to this wrapper, never the page. The
             `-mx-gutter ... px-gutter` pair lets the scrollable region bleed

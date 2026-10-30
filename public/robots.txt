@@ -1,0 +1,45 @@
+# robots.txt for neofollicletransplant.com
+#
+# Source of truth: public/robots.txt in the site repo. Vite copies it to
+# dist/ unchanged. `npm run build` fails if the Sitemap line below does not
+# match SEO.origin (src/config/site.ts), and `npm run verify` checks that
+# every indexable page and every asset it needs is crawlable.
+#
+# Pages that carry <meta name="robots" content="noindex"> (thank-you pages,
+# ad landing pages) are NOT disallowed here on purpose: a crawler has to
+# fetch a page to see its noindex. Disallowing them would let them be
+# indexed by URL alone.
+
+# Every crawler, including Googlebot and Bingbot.
+# /?s= and /search/ are the old WordPress search URLs.
+User-agent: *
+Disallow: /?s=
+Disallow: /page/*/?s=
+Disallow: /search/
+
+# AI answer engines, named on purpose: the clinic wants to be found and
+# cited in ChatGPT, Claude, Perplexity, Gemini, Apple, Meta AI, Le Chat and
+# DuckDuckGo answers. A crawler obeys only the most specific group that
+# names it, so this group repeats the rules above. To opt one out, move its
+# line into a group of its own that says "Disallow: /".
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: meta-externalfetcher
+User-agent: meta-webindexer
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /?s=
+Disallow: /page/*/?s=
+Disallow: /search/
+
+Sitemap: https://neofollicletransplant.com/sitemap.xml

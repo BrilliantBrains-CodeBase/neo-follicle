@@ -43,6 +43,7 @@
     "email": "info@neofollicletransplant.com",
     "telephone": "+91-9731207940",
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -115,7 +116,7 @@
      "latitude": 12.956429486014592,
      "longitude": 77.70733394232819
     },
-    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+    "hasMap": "https://www.google.com/maps?cid=1368765349301541274",
     "areaServed": [
      {
       "@type": "City",
@@ -219,6 +220,7 @@
      "@id": "https://neofollicletransplant.com/#organization"
     },
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -401,7 +403,7 @@
     "url": "https://neofollicletransplant.com/low-level-laser-therapy/",
     "inLanguage": "en",
     "name": "Low Level Laser Hair Therapy in Bangalore | Neo Follicle",
-    "description": "Low level laser therapy (LLLT) in Bangalore: a painless, non-surgical way to stimulate follicles and slow hair fall, supervised by dermatologists.",
+    "description": "Low level laser therapy (LLLT) in Bangalore: a comfortable, non-surgical way to stimulate follicles and slow hair fall, supervised by dermatologists.",
     "datePublished": "2025-04-16T17:53:54+05:30",
     "dateModified": "2026-05-26T16:48:31+05:30",
     "isPartOf": {

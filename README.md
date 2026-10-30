@@ -48,8 +48,10 @@ resolves **with its trailing slash** on Netlify, Vercel, Cloudflare Pages and Ap
 The `<head>` — title, robots, description, og, canonical, icons, JSON-LD — is composed from
 `src/seo/pages.ts` and `src/seo/schema/<slug>.json` and written into the served bytes.
 
-It also emits `robots.txt`, `sitemap.xml` (index) + page/post child sitemaps with
-image entries, and `llms.txt` / `llms-full.txt`.
+It also emits `sitemap.xml` (index) + page/post child sitemaps with image entries,
+and `llms.txt` / `llms-full.txt`. `robots.txt` is a plain file, `public/robots.txt`,
+which Vite copies into `dist/`; the build fails if its `Sitemap:` line does not
+point at `SEO.origin`.
 
 ## Where SEO data lives
 
@@ -57,7 +59,9 @@ image entries, and `llms.txt` / `llms-full.txt`.
 |---|---|
 | NAP, hours, geo, doctor, socials, GBP link | `src/config/site.ts` |
 | Site-wide JSON-LD (#website, #organization, #clinic, #physician) | built from site.ts by `scripts/seo/entity-graph.mjs` |
-| Rewritten titles / descriptions / robots | `content/seo/overrides.json` |
+| Rewritten titles / descriptions / robots / SEO h1 | `content/seo/overrides.json` |
+| Crawler rules (`robots.txt`) | `public/robots.txt` |
+| Server: canonical host, 301s, caching, compression | `public/.htaccess` |
 | Pages authored after the capture | `content/seo/<slug>.json` |
 | Everything else per page | `neofollicle-seo-backup/` |
 
@@ -68,21 +72,26 @@ site swapped for working ones.
 
 ## What `npm run verify` asserts
 
-- 63 HTML files at their exact paths
+- 65 HTML files at their exact paths
 - title, description, robots, canonical = capture + `overrides.json`, byte-for-byte
 - every indexable page: self-referencing trailing-slash canonical, title ≤ 60,
   description 70–160, a 1200×630 share card under 300 KB
 - noindex kept on all 6 ad landing pages, which still carry **no** canonical
-- every captured page-specific JSON-LD node survives; 15 FAQPages / 90 questions
+- every captured page-specific JSON-LD node survives; every visible FAQ is marked
+  up question for question (37 FAQPages / 234 questions)
 - one graph per page, no duplicate `@id`, every same-origin image URL served by dist/
 - sitemaps = exactly the indexable URLs, all with `lastmod`; llms.txt links the same set
 - every header/footer link resolves to a real route
+- `robots.txt`, parsed per RFC 9309 for Googlebot, Bingbot and every AI crawler it
+  names: all 65 pages fetchable (noindex ones too, so the noindex is seen), every
+  script/style/font/image in `dist/` fetchable, old WordPress search URLs blocked
 
 ## Deliberate deviations from the original
 
 1. **`contact-us` and `hair-conditions-we-treat` are linked from the footer** (they
    were orphaned). Marked in `src/config/nav.ts`.
-2. **`robots.txt` drops the `/wp-admin/` rules** and names the AI crawlers explicitly.
+2. **`robots.txt` drops the `/wp-admin/` rules** and names the AI crawlers explicitly
+   (see the comments in `public/robots.txt`).
 3. **WordPress images are served from `public/wp-content/` at their original paths**,
    so indexed image URLs survive the cutover.
 4. **`sample-page`, `maintenance-page`, `category/uncategorized` and
@@ -90,11 +99,16 @@ site swapped for working ones.
    first three at the host once it is chosen.
 5. **The Cochin (Maradu) Practo listing is out of `sameAs`**; the site describes
    the Bangalore clinic only. Social URLs lose their tracking parameters.
-6. **GTM (`GTM-NCJCP6NZ`) is injected** into prerendered pages, as on the live site.
+6. **GTM (`GTM-NCJCP6NZ`) is injected** into prerendered pages. Since Oct 2026 it loads
+   immediately for ad-attributable visits and conversion pages, and on first
+   interaction (or after 3.5 s) otherwise. See `docs/seo-audit/gtm/README.md`.
 
 ## Still outstanding
 
-- **Google Business Profile URL** -- set `CONTACT.gbpUrl` in `src/config/site.ts`
-  (the `https://www.google.com/maps?cid=...` link). It becomes `hasMap`, joins
-  `sameAs`, and replaces the short link on every "Get directions".
-- **Host redirects** for the retired WordPress URLs, once the deploy target is known.
+- **Google Business Profile URL** -- done Oct 2026: `CONTACT.gbpUrl` is the cid URL
+  read from the verified profile, so it is `hasMap`, in `sameAs`, and on every
+  "Get directions" link.
+- **Host redirects** for the retired WordPress URLs -- done Oct 2026 in
+  `public/.htaccess` (Apache). Port them if the host changes.
+- Everything that needs the clinic, Google Tag Manager, GA4, GBP or Search
+  Console rather than code: `docs/seo-audit/README.md`.

@@ -8,7 +8,7 @@
  *   site-level/sitemap-post-type-*.xml    lastmod values
  *   pages/<slug>/schema.jsonld            captured JSON-LD
  *   content/seo/*.json                    authored page metadata + JSON-LD
- *   content/seo/overrides.json            rewritten titles/descriptions/robots
+ *   content/seo/overrides.json            rewritten titles/descriptions/robots/h1
  *   src/config/site.ts                    the site-wide JSON-LD entities
  *
  * Every graph goes through normalizeGraph() (scripts/seo/entity-graph.mjs):
@@ -167,7 +167,7 @@ function gitLastmod(slug) {
 function finalise(page) {
   const o = overrides[page.slug] ?? {}
   for (const key of Object.keys(o)) {
-    if (!['title', 'description', 'robots', 'inSitemap'].includes(key)) {
+    if (!['title', 'description', 'robots', 'inSitemap', 'h1'].includes(key)) {
       throw new Error(`overrides.json: unknown field "${key}" on ${page.slug}`)
     }
   }
@@ -175,9 +175,15 @@ function finalise(page) {
 
   const title = o.title ?? page.title
   const description = o.description ?? page.description
+  // h1 here is the SEO record's heading -- the share card text, og:image:alt,
+  // breadcrumb name and llms.txt link text. Treatment pages render their own
+  // visible h1 from src/content/treatments/, so overriding this one changes no
+  // visible copy there.
+  const h1 = o.h1 ?? page.h1
   const image = `${ORIGIN}${ASSETS.ogCardDir}${page.slug}.jpg`
   return {
     ...page,
+    h1,
     title,
     description,
     needsRewrite: o.description ? false : page.needsRewrite,
@@ -189,7 +195,7 @@ function finalise(page) {
       description,
       url: page.og.url ?? `${ORIGIN}${page.path}`,
       image,
-      imageAlt: page.h1 ?? title,
+      imageAlt: h1 ?? title,
       imageWidth: ASSETS.ogImageSize.width,
       imageHeight: ASSETS.ogImageSize.height,
       siteName: BRAND.name,

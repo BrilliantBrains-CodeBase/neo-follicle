@@ -31,9 +31,10 @@ import { DOCTOR } from '../config/site'
  *     medical lines over a photo scrim would fail on contrast, and stacking
  *     them in the right column would push the photo card unreasonably tall.
  *   - Card backgrounds are <img>, not CSS background-image, so they get
- *     loading="lazy" and intrinsic dimensions. Same call as Hero. alt is empty
- *     on both -- they are decorative and the surrounding copy carries the
- *     meaning.
+ *     loading="lazy" and intrinsic dimensions. Same call as Hero. Both now
+ *     carry descriptive alt (Oct 2026 SEO audit: the doctor photograph is the
+ *     one image of Dr. Sandeep on the home page, and empty alt on content
+ *     photos was the audit's only open issue on `/`).
  *   - The photo card's line is a <p> styled text-h4, not the reference's <h4>.
  *     A pull-quote should not enter the outline under a single h1 (content doc
  *     recommendation 1). Same call Hero made for its video card title.
@@ -107,8 +108,10 @@ export default function About() {
               it is the only tall, high-resolution one in the set.
             */}
             <img
-              src="/about-doctor.webp"
-              alt=""
+              src="/img/about-doctor-720.webp"
+              srcSet="/img/about-doctor-480.webp 480w, /img/about-doctor-720.webp 720w, /img/about-doctor-1095.webp 1095w"
+              sizes="(min-width: 1024px) 50vw, calc(100vw - 40px)"
+              alt="Dr. Sandeep Mahapatra beside a Lumenis FoLix laser device at an international hair restoration conference"
               width={1095}
               height={1280}
               loading="lazy"
@@ -162,8 +165,10 @@ export default function About() {
               >
                 {/* TODO: theme stock (PRP-scalp-treatment-in-dermatology-or-hair-clinic.webp). Replace before launch. */}
                 <img
-                  src="/about-stat.webp"
-                  alt=""
+                  src="/img/about-stat-800.webp"
+                  srcSet="/img/about-stat-480.webp 480w, /img/about-stat-800.webp 800w, /img/about-stat-1200.webp 1200w"
+                  sizes="(min-width: 1024px) 30vw, calc(100vw - 40px)"
+                  alt="Doctor in gloves giving a scalp injection treatment to a patient with thinning hair"
                   width={1200}
                   height={629}
                   loading="lazy"

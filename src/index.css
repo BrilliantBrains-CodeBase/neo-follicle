@@ -5,7 +5,14 @@
 /* Folixa design tokens - generated from Elementor Global Kit post-6.css */
 :root {
   /* color */
-  --color-primary: #3E74D9;
+  /* #3C72D7, not the kit's #3E74D9: white on #3E74D9 is 4.46:1, just under
+     WCAG AA's 4.5:1, and every primary button, the stat band and primary links
+     on white failed Lighthouse colour-contrast. Two steps darker clears it
+     (4.59:1) and is not visibly different. (Oct 2026 audit) */
+  --color-primary: #3C72D7;
+  /* Text in the brand blue, deep enough for 4.5:1 on white, surface and
+     accent fills alike. Same value as textColor.primary in tailwind.config.js. */
+  --color-primary-text: #2E64C8;
   --color-primary-dark: #1A4FB2;
   --color-secondary: #1A1A1A;
   --color-body: #444444;
@@ -199,7 +206,7 @@
   }
 
   .post-prose a {
-    color: var(--color-primary);
+    color: var(--color-primary-text);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
@@ -211,8 +218,11 @@
   }
 
   /* External citation URLs run long and would otherwise force a horizontal
-     scrollbar on a phone. */
-  .post-prose .post-prose-small a {
+     scrollbar on a phone. This was scoped to .post-prose-small, but most posts
+     list their references as plain paragraphs and list items, so 12 posts
+     scrolled sideways on a 412px screen (Oct 2026 audit). `anywhere` only
+     breaks a link that cannot otherwise fit, so ordinary links are unchanged. */
+  .post-prose a {
     overflow-wrap: anywhere;
   }
 
@@ -357,5 +367,26 @@
   .post-prose-table tr:last-child th,
   .post-prose-table tr:last-child td {
     border-bottom: 0;
+  }
+}
+
+/*
+ * Decorative network texture behind the footer and the closing CTA bands.
+ * Responsive copies of /footer-bg.webp (164 KB): 42 KB below 768px, 101 KB
+ * above. The plain url() line is the fallback for browsers without image-set().
+ */
+.nf-cta-bg {
+  background-color: var(--color-secondary);
+  /* 768px wide below 768px viewports, whatever the device pixel ratio: phones
+     were picking the 2x file (102 KB) for a texture that sits under a scrim,
+     on every page. (Oct 2026 audit) */
+  background-image: url('/img/footer-bg-768.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .nf-cta-bg {
+    background-image: url('/img/footer-bg-1536.webp');
   }
 }

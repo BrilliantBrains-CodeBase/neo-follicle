@@ -68,8 +68,10 @@ export type StatFigure = {
 /**
  * DoctorStats' original label styling, kept as the default so that band's
  * markup is unchanged by the extraction. CredibilityBar overrides it.
+ * text-white, not text-line: #E5E7EB on bg-primary is 3.7:1, under the 4.5:1
+ * a 16px label needs. (Oct 2026 audit)
  */
-const DEFAULT_LABEL = 'font-head text-[16px] font-medium leading-[1.3em] text-line'
+const DEFAULT_LABEL = 'font-head text-[16px] font-medium leading-[1.3em] text-white'
 
 /**
  * Hairlines between the five cells, at `xl` only -- that is the one width where

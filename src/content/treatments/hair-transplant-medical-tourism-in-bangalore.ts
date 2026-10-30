@@ -305,7 +305,9 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Is the transplant result permanent?',
-        answer: 'Yes, transplanted hair is permanent, natural, and grows for life. We also provide guidance on scalp care post-treatment.',
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "permanent ... grows for life"
+        // promises an outcome. Pending medical sign-off.
+        answer: 'Transplanted follicles are taken from areas that are usually resistant to hair loss, so they typically keep growing long-term. Your existing, non-transplanted hair can still thin over time, so we also guide you on scalp care and, where needed, medical treatment to protect it.',
       },
       {
         question: 'Can I continue follow-up from my country?',

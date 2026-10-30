@@ -140,7 +140,9 @@ const data: TreatmentPageData = {
         { title: 'Reduces hair fall', body: 'Strengthens weak hair roots and minimises daily shedding over time.' },
         { title: 'Stimulates new growth', body: 'Supports dormant follicles so they can re-enter the growing phase.' },
         { title: 'Improves thickness and density', body: 'Strands read fuller and stronger over a course of sessions.' },
-        { title: 'Safe and non-allergic', body: 'Uses your own blood, so there is no risk of rejection.' },
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "non-allergic" / "no risk"
+        // are absolute claims and contradicted the reworded FAQ on this page. Pending medical sign-off.
+        { title: 'Made from your own blood', body: 'Prepared from your own blood, so allergic reactions are rare.' },
         { title: 'Quick, in-clinic procedure', body: 'Each session takes under an hour, with no recovery time needed.' },
         { title: 'Suitable for men and women', body: 'Planned the same way for either, around the individual diagnosis.' },
       ],
@@ -163,7 +165,9 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Is PRP therapy safe for hair?',
-        answer: 'Yes, it’s completely safe. PRP uses your own blood, so there’s no risk of allergies or side effects. It’s a natural, low-risk way to stimulate hair growth.',
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "completely safe" / "no risk of
+        // allergies or side effects" are absolute claims. Pending medical sign-off.
+        answer: 'PRP is generally well tolerated. It is prepared from your own blood, so allergic reactions are rare. Mild tenderness, redness or swelling at the injection sites is common and usually settles within a day or two. Your doctor confirms that PRP suits you before treatment.',
       },
       {
         question: 'Does PRP hair treatment hurt?',

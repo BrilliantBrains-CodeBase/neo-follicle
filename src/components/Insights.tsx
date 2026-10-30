@@ -88,6 +88,7 @@ const GUIDES = [
       'Learn how hair transplant grafts are calculated based on baldness stage, donor density, hair thickness, and coverage needs.',
     to: '/how-many-grafts-do-i-need-for-hair-transplant/',
     img: '/insights/grafts.webp',
+    alt: "Infographic of crown and hairline graft zones marked on a man's scalp",
   },
   {
     title: 'Why Hair Transplants Fail: Causes, Signs and Prevention',
@@ -95,6 +96,7 @@ const GUIDES = [
       'Learn why hair transplants fail, common warning signs, and how Neo Follicle in Bangalore protects graft survival with safe surgical protocols.',
     to: '/why-hair-transplants-fail/',
     img: '/insights/failures.webp',
+    alt: 'Infographic of four causes of transplant failure: damaged grafts, donor over-harvesting, wrong implantation angle and ongoing hair loss',
   },
   {
     title: 'How to Choose the Best Hair Transplant Clinic in Bangalore',
@@ -102,6 +104,7 @@ const GUIDES = [
       'Learn how to choose the best hair transplant clinic in Bangalore with expert tips on surgeon involvement, safety, graft count, hygiene, cost, and red flags.',
     to: '/how-to-choose-the-best-hair-transplant-clinic-bangalore/',
     img: '/insights/clinic.webp',
+    alt: 'Illustration of a doctor walking a patient through a clinic-selection checklist',
   },
 ]
 
@@ -143,18 +146,18 @@ export default function Insights() {
           columns belong to the mobile track (carousel.ts) instead of a grid.
         */}
         <ul className={`${SCROLLER} gap-6 md:grid-cols-1 lg:grid-cols-3 lg:gap-8`}>
-          {GUIDES.map(({ title, excerpt, to, img }, i) => (
+          {GUIDES.map(({ title, excerpt, to, img, alt }, i) => (
             <Reveal key={to} as="li" delay={i * 100} className={SLIDE}>
               <Link to={to} className="group flex h-full flex-col">
                 {/*
-                  alt="" is deliberate. The banner's only content is the guide's
-                  title, which the <h3> below already gives the link its
-                  accessible name -- describing it again would read the heading
-                  twice. The standard teaser-thumbnail pattern.
+                  alt describes the infographic itself, NOT the guide's title:
+                  the <h3> below already names the link, so repeating it would
+                  read the heading twice. Empty alt here was flagged by the
+                  Oct 2026 SEO audit (Ryze) on the home page.
                 */}
                 <img
                   src={img}
-                  alt=""
+                  alt={alt}
                   width={1200}
                   height={628}
                   loading="lazy"

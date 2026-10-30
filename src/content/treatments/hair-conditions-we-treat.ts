@@ -421,18 +421,24 @@ const data: TreatmentPageData = {
         },
         {
           title: 'State-of-the-Art Implanters',
-          body: 'Advanced FUE and Implanter techniques for scar-free precision.',
+          // Reworded Oct 2026 (SEO audit, healthcare-claims review): "scar-free" is an
+          // absolute claim; FUE leaves tiny dot scars. Pending medical sign-off.
+          body: 'Advanced FUE and implanter techniques for precise, minimally visible extraction.',
         },
         {
           title: 'Customized Treatment Plans',
           body: 'Every patient is unique, and so is our approach.',
         },
         {
-          title: 'Natural & Permanent Results',
-          body: 'Our hair restoration procedures ensure a fuller, thicker, and undetectable hairline with lasting effects.',
+          // Reworded Oct 2026 (SEO audit, healthcare-claims review): "Permanent", "ensure"
+          // and "undetectable" promise an outcome. Pending medical sign-off.
+          title: 'Natural-Looking, Long-Lasting Results',
+          body: 'Hairlines are designed to look natural and fuller, using donor hair that usually keeps growing long-term.',
         },
         {
-          title: 'Safe, Painless, and Affordable',
+          // Reworded Oct 2026 (SEO audit, healthcare-claims review): "Safe, Painless" are
+          // absolute claims; the body is about comfort and clear costs. Pending medical sign-off.
+          title: 'Comfortable, Doctor-Planned and Affordable',
           body: 'Treatment is planned around your comfort, with clear costs explained before you begin.',
         },
         {

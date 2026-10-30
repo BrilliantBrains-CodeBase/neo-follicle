@@ -116,11 +116,15 @@ export const CONTACT = {
   mapUrl: 'https://maps.app.goo.gl/jKaWhcfQuKZXRvE48',
   /**
    * The Google Business Profile's own URL (https://www.google.com/maps?cid=...).
-   * NOT YET SUPPLIED by the clinic. When set, it becomes the JSON-LD `hasMap`,
-   * joins `sameAs`, and replaces mapUrl on every "Get directions" link -- a
-   * cid URL ties the site to the GBP entity more firmly than a short link.
+   * It is the JSON-LD `hasMap`, joins `sameAs`, and replaces mapUrl on every
+   * "Get directions" link -- a cid URL ties the site to the GBP entity more
+   * firmly than a short link.
+   *
+   * Read from the verified profile through the GBP API on 29 Oct 2026:
+   * "Neo Follicle Hair Transplant", Place ID ChIJ58kfnkMTrjsRmln7SdXU_hI,
+   * mapsUri ...maps?cid=1368765349301541274.
    */
-  gbpUrl: null as string | null,
+  gbpUrl: 'https://www.google.com/maps?cid=1368765349301541274' as string | null,
 
   /**
    * Tuesday is deliberately absent -- the clinic is closed. This matches the

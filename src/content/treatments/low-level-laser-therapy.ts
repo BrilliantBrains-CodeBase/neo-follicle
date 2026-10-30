@@ -80,7 +80,9 @@ const data: TreatmentPageData = {
           body: 'You sit under a clinic device or wear a laser cap while the light is applied.',
         },
         {
-          title: 'Gentle, Painless Stimulation',
+          // Reworded Oct 2026 (SEO audit, healthcare-claims review): "Painless" is an
+          // absolute claim; the body already says "comfortable". Pending medical sign-off.
+          title: 'Gentle, Comfortable Stimulation',
           body: 'The session is comfortable; most people feel mild warmth at most.',
         },
         {
@@ -132,7 +134,9 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Is LLLT painful or uncomfortable?',
-        answer: 'Not at all! The treatment is completely painless. Most people feel a mild warming or tingling sensation, but it’s relaxing and comfortable.',
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "completely painless" is an
+        // absolute claim. Pending medical sign-off.
+        answer: 'Most people find it comfortable. You may feel a mild warmth or tingling on the scalp during the session. There are no needles, and you can return to your normal day straight afterwards.',
       },
       {
         question: 'How soon will I see results?',

@@ -46,6 +46,12 @@ import { CONTACT } from '../../config/site'
  *
  * `text-base` is ambiguous here (Tailwind font size vs the `base` colour
  * token), so white text uses `text-white` throughout -- same call as Hero.
+ *
+ * LCP rule (Oct 2026 SEO audit): nothing that can be the page's largest
+ * paint -- eyebrow, h1, lede, hero image -- may start at opacity 0. On mobile
+ * Lighthouse the h1 sat in the prerendered HTML for ~10 s waiting for the main
+ * thread to run its fadeInUp (LCP render delay 10.6 s of 11.8 s). Only the
+ * CTA row and the trust strip below it still rise in.
  */
 
 /** The kit's `float` hover: translateY(-8px) over .3s ease-out (DESIGN.md 5). */
@@ -66,7 +72,7 @@ export default function TreatmentsHero() {
       <div className="relative isolate flex flex-col items-start gap-4 overflow-hidden rounded-none bg-secondary px-gutter py-16 md:rounded-lg lg:p-20">
         {/* Eyebrow. The 15px is a hard override in the reference, not a token.
             The line is the content doc's own SECTION 1 heading -- see above. */}
-        <p className="flex items-center gap-2 font-head text-[15px] font-medium leading-[1.2em] tracking-[-0.02em] text-accent animate-fadeInUp motion-reduce:animate-none">
+        <p className="flex items-center gap-2 font-head text-[15px] font-medium leading-[1.2em] tracking-[-0.02em] text-accent">
           <Square className="h-[14px] w-[14px] shrink-0" />
           Complete Hair Restoration Treatments in Bangalore
         </p>
@@ -76,12 +82,12 @@ export default function TreatmentsHero() {
           is already correctly cased and the transform would render "For Men And
           Women". Same call Hero.tsx and DoctorHero.tsx made.
         */}
-        <h1 className="text-balance font-head text-h1 text-white animate-fadeInUp motion-reduce:animate-none lg:max-w-[16ch]">
+        <h1 className="text-balance font-head text-h1 text-white lg:max-w-[16ch]">
           Advanced Hair Loss Treatment in Bangalore for Men and Women
         </h1>
 
         {/* SECTION 1's body paragraph, verbatim. */}
-        <p className="mt-1 max-w-[68ch] text-body text-white/90 animate-fadeInUp motion-reduce:animate-none">
+        <p className="mt-1 max-w-[68ch] text-body text-white/90">
           Whether you&rsquo;re experiencing early hair thinning, a receding hairline, bald patches,
           beard gaps, or female pattern hair loss, Neo Follicle offers both surgical and
           non-surgical treatments designed around your individual diagnosis - not a

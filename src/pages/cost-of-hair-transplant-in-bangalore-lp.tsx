@@ -204,7 +204,7 @@ export default function CostOfHairTransplantInBangaloreLp() {
           {
             question: 'How does Neo Follicle’s pricing compare to other clinics?',
             answer:
-              'While we may not be the cheapest, we focus on delivering long-term value. Our price reflects skilled surgical execution, advanced scarless techniques (like NFT), proper hygiene, and high patient satisfaction.',
+              'While we may not be the cheapest, we focus on delivering long-term value. Our price reflects skilled surgical execution, minimally invasive techniques (like NFT), proper hygiene, and high patient satisfaction.',
           },
           {
             question: 'What’s the ROI of getting a hair transplant?',

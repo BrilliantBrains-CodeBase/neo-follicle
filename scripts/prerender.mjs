@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Writes one static HTML file per route, plus robots.txt, the sitemaps and
- * llms.txt / llms-full.txt.
+ * Writes one static HTML file per route, plus the sitemaps and
+ * llms.txt / llms-full.txt, and checks public/robots.txt (copied by Vite).
  *
  * Runs after `vite build` (client shell -> dist/index.html) and
  * `vite build --ssr src/entry-server.tsx --outDir dist-ssr`.
@@ -23,7 +23,7 @@ const schemaDir = path.join(root, 'src', 'seo', 'schema')
 // entry-server re-exports `pages`, so the prerender and the app read the same
 // records -- there is no second copy of the SEO data to drift.
 const ssr = await import(pathToFileURL(path.join(root, 'dist-ssr', 'entry-server.js')).href)
-const { render, pages, headerNav } = ssr
+const { render, pages, headerNav, treatmentFaqs } = ssr
 
 const ORIGIN = SEO.origin
 
@@ -65,10 +65,42 @@ const prop = (property, content) =>
 const GEO_PAGES = new Set(['/', '/contact-us/', DOCTOR.path])
 
 /**
- * Google Tag Manager, as the live site loaded it on every page. Only in the
- * prerendered output -- `npm run dev` stays tag-free.
+ * Google Tag Manager. Only in the prerendered output -- `npm run dev` stays
+ * tag-free.
+ *
+ * Loaded IMMEDIATELY (exactly as before) for every visit Google Ads can
+ * attribute, and DEFERRED for the rest:
+ *
+ *   immediate  - the URL carries an ad click id (gclid / gbraid / wbraid /
+ *                gad_source / dclid). The Conversion Linker must read it on
+ *                landing, before any client-side navigation drops the query.
+ *              - a Google Ads click cookie (_gcl_aw / _gcl_gb / _gcl_dc / _gcl_ag)
+ *                is already set: a returning ad visitor, whose call, WhatsApp or
+ *                form conversion the container's own GTM triggers must catch.
+ *              - thank-you and ad landing pages (`*-lp`, /hair-assessment/),
+ *                where the page view itself is a conversion signal.
+ *   deferred   - everyone else (organic, direct, referral) loads GTM on the
+ *                first interaction, or 3.5 s after `load`, whichever is first.
+ *
+ * Why defer at all: on mobile Lighthouse, GTM was the largest main-thread
+ * cost on the page (~1.5 s of blocking, ~0.5 MB) and it delays LCP. The
+ * deferred visitors carry no ad click to attribute, and GA4 loses nothing:
+ * src/analytics/track.ts pushes its events into window.dataLayer, which GTM
+ * processes when it boots.
+ *
+ * To make even deferred visits fully safe for Ads, move the container's Ads
+ * conversion tags from GTM link-click / form-submit triggers onto the queued
+ * `nf_*` custom events (docs/seo-audit/gtm/README.md).
  */
-const gtmHead = `    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${ANALYTICS.gtmId}');</script>\n`
+const gtmLoader = `(function(w,d,id){w.dataLayer=w.dataLayer||[];var done=false,ev=['pointerdown','touchstart','scroll','keydown','mousemove'];` +
+  `function load(){if(done)return;done=true;ev.forEach(function(e){w.removeEventListener(e,load,{passive:true})});` +
+  `w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var j=d.createElement('script');j.async=true;` +
+  `j.src='https://www.googletagmanager.com/gtm.js?id='+id;d.head.appendChild(j)}` +
+  `var l=w.location,now=/[?&](gclid|gbraid|wbraid|gad_source|dclid)=/.test(l.search)||/(^|; )_gcl_(aw|gb|dc|ag)=/.test(d.cookie)||/^\\/(thank-you|nft-brochure-thank-you|hair-assessment)\\/|-lp\\/$/.test(l.pathname);` +
+  `if(now){load();return}ev.forEach(function(e){w.addEventListener(e,load,{passive:true,once:true})});` +
+  `if(d.readyState==='complete')setTimeout(load,3500);else w.addEventListener('load',function(){setTimeout(load,3500)})` +
+  `})(window,document,'${ANALYTICS.gtmId}');`
+const gtmHead = `    <script>${gtmLoader}</script>\n`
 const gtmBody = `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${ANALYTICS.gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`
 
 /** Icons + manifest. Files come from scripts/gen-icons.mjs. */
@@ -83,7 +115,7 @@ const iconLinks =
  * Builds the <head> for one page. Tag order mirrors the captured raw.html:
  * title, robots, description, og:*, twitter:*, canonical, icons, JSON-LD.
  */
-function buildHead(page) {
+function buildHead(page, body = '') {
   let h = ''
   h += `    <title>${esc(page.title)}</title>\n`
   h += meta('robots', page.robots)
@@ -133,12 +165,99 @@ function buildHead(page) {
   // JSON-LD, verbatim from the backup. This is the site's most valuable and
   // most fragile SEO asset -- 14 FAQPages / 82 questions among the 59 graphs.
   const graph = JSON.parse(fs.readFileSync(path.join(schemaDir, `${page.slug}.json`), 'utf8'))
+  addTreatmentFaq(page, graph)
+  syncFaq(page, graph, body)
   for (const block of graph) {
     h += `    <script type="application/ld+json">${JSON.stringify(block)}</script>\n`
   }
 
   h += gtmHead
   return h
+}
+
+/**
+ * FAQPage for a treatment page's visible FAQ, built from the same items the
+ * page renders (entry-server's `treatmentFaqs`), so markup and page cannot
+ * drift. Skipped when the captured or authored graph already has one -- those
+ * stay verbatim. Linked from the page's WebPage node as `hasPart`.
+ */
+function addTreatmentFaq(page, graph) {
+  const items = treatmentFaqs?.[page.slug]
+  if (!items?.length || !page.inSitemap) return
+  const nodes = graph[0]?.['@graph']
+  if (!nodes || nodes.some((n) => [].concat(n['@type'] ?? []).includes('FAQPage'))) return
+  const url = `${ORIGIN}${page.path}`
+  const faqId = `${url}#faq`
+  nodes.push({
+    '@type': 'FAQPage',
+    '@id': faqId,
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  })
+  const webpage = nodes.find((n) => n['@id'] === `${url}#webpage`)
+  if (webpage) webpage.hasPart = [...[].concat(webpage.hasPart ?? []), { '@id': faqId }]
+}
+
+/**
+ * Keeps every FAQPage equal to the FAQ the page actually shows. The rendered
+ * accordions (<details name="..."> with "faq" in the name: post-faq,
+ * home-faq, faq-<slug>) are the source of truth:
+ *
+ *   - no FAQPage yet (6 posts the WordPress SEO plugin skipped) -> one is
+ *     built from the accordion;
+ *   - a FAQPage whose questions differ from the visible ones -> its
+ *     mainEntity is rebuilt. The homepage is the case: its captured FAQPage
+ *     held 8 questions from the old WordPress page, including "Why is Neo
+ *     Follicle Transplant considered the Best Hair Transplant Clinic in
+ *     Bangalore?", none of which the page shows any more. Google requires FAQ
+ *     markup to match visible content;
+ *   - otherwise (numbering and dash style aside) the FAQPage is left verbatim.
+ *
+ * Question = the summary h3 without its "01." numbering; answer = the panel text.
+ */
+const FAQ_NUMBER = /^\s*\d+[.)]\s*/
+const normQuestion = (q) => q.replace(FAQ_NUMBER, '').replace(/\s*[\u2013\u2014-]\s*/g, ' - ').replace(/\s+/g, ' ').trim().toLowerCase()
+const faqRebuilt = []
+const faqAdded = []
+function syncFaq(page, graph, body) {
+  if (!page.inSitemap || !/<details[^>]*\sname="[^"]*faq[^"]*"/.test(body)) return
+  const nodes = graph[0]?.['@graph']
+  if (!nodes) return
+  const clean = (t) => t.replace(/\s+/g, ' ').trim()
+  const items = parse(body)
+    .querySelectorAll('details')
+    .filter((d) => /faq/.test(d.getAttribute('name') ?? ''))
+    .map((d) => {
+      const summary = d.querySelector('summary')
+      return {
+        question: clean(summary?.querySelector('h3')?.text ?? summary?.text ?? '').replace(FAQ_NUMBER, ''),
+        answer: clean(d.childNodes.filter((n) => n !== summary).map((n) => n.text).join(' ')),
+      }
+    })
+    .filter((q) => q.question && q.answer)
+  if (!items.length) return
+  const mainEntity = items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  }))
+  const existing = nodes.find((n) => [].concat(n['@type'] ?? []).includes('FAQPage'))
+  if (existing) {
+    const marked = (existing.mainEntity ?? []).map((q) => normQuestion(q.name ?? '')).join('\n')
+    if (marked === items.map((q) => normQuestion(q.question)).join('\n')) return
+    existing.mainEntity = mainEntity
+    faqRebuilt.push(page.slug)
+    return
+  }
+  const url = `${ORIGIN}${page.path}`
+  const faqId = `${url}#faq`
+  nodes.push({ '@type': 'FAQPage', '@id': faqId, mainEntity })
+  const main = nodes.find((n) => n['@id'] === `${url}#webpage`)
+  if (main) main.hasPart = [...[].concat(main.hasPart ?? []), { '@id': faqId }]
+  faqAdded.push(page.slug)
 }
 
 function writeHtml(routePath, html) {
@@ -169,7 +288,7 @@ const mains = new Map()
 let count = 0
 for (const page of pages) {
   const body = await render(page.path)
-  writeHtml(page.path, compose(buildHead(page), body))
+  writeHtml(page.path, compose(buildHead(page, body), body))
   mains.set(page.slug, parse(body).querySelector('main'))
   count++
 }
@@ -184,23 +303,19 @@ fs.writeFileSync(
 )
 
 // --- robots.txt -----------------------------------------------------------
-// The Sitemap directive carries over (P0). The /wp-admin/ rules are dropped --
-// they are meaningless off WordPress. Search disallows are kept.
-//
-// The AI crawlers are named explicitly, with the same rules: a crawler obeys
-// only the most specific group that matches it, so each group repeats them.
-// Naming them is a statement of intent -- the clinic WANTS to be cited by
-// answer engines -- and makes it a one-line change to opt any of them out.
-const RULES = ['Disallow: /?s=', 'Disallow: /page/*/?s=', 'Disallow: /search/']
-const AI_BOTS = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended']
-fs.writeFileSync(
-  path.join(dist, 'robots.txt'),
-  [
-    ['User-agent: *', ...RULES].join('\n'),
-    [...AI_BOTS.map((b) => `User-agent: ${b}`), 'Allow: /', ...RULES].join('\n'),
-    `Sitemap: ${ORIGIN}/sitemap.xml`,
-  ].join('\n\n') + '\n',
-)
+// The file itself is public/robots.txt -- a real, reviewable file that Vite
+// copies into dist/. It used to be generated here, which left the repo with
+// no robots.txt anyone could find. This only guards it: a build for the
+// production origin must not ship a robots.txt pointing at another host's
+// sitemap. verify-seo.mjs checks what it allows and blocks.
+{
+  const robotsFile = path.join(dist, 'robots.txt')
+  if (!fs.existsSync(robotsFile)) throw new Error('prerender: public/robots.txt is missing from dist/')
+  const sitemapLines = fs.readFileSync(robotsFile, 'utf8').split('\n').filter((l) => /^sitemap:/i.test(l.trim()))
+  if (sitemapLines.length !== 1 || sitemapLines[0].trim() !== `Sitemap: ${ORIGIN}/sitemap.xml`) {
+    throw new Error(`prerender: public/robots.txt must have exactly one "Sitemap: ${ORIGIN}/sitemap.xml" line, found ${JSON.stringify(sitemapLines)}`)
+  }
+}
 
 // --- sitemaps -------------------------------------------------------------
 // sitemap.xml stays the index Search Console already knows. The category
@@ -356,5 +471,6 @@ fs.writeFileSync(
 fs.rmSync(path.join(dist, '.vite'), { recursive: true, force: true })
 
 console.log(`prerender: ${count} pages -> dist/**/index.html`)
-console.log(`           404.html, robots.txt, 3 sitemaps, llms.txt, llms-full.txt`)
+console.log(`           404.html, 3 sitemaps, llms.txt, llms-full.txt (robots.txt checked)`)
 console.log(`           sitemap: ${byType('page').length} page + ${byType('post').length} post = ${inSitemap.length}`)
+console.log(`           FAQPage from the rendered FAQ: ${faqAdded.length} added, ${faqRebuilt.length} rebuilt${faqRebuilt.length ? ` (${faqRebuilt.join(', ')})` : ''}`)

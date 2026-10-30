@@ -2,8 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
+import { initContactClickTracking } from './analytics/track'
 import { preloadPath } from './routeView'
 import './index.css'
+
+// Before hydration, so a tap on Call or WhatsApp in the first second counts.
+initContactClickTracking()
 
 const root = document.getElementById('root')!
 

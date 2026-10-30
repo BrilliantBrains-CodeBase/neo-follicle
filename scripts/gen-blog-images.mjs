@@ -13,7 +13,16 @@
 // set (public/insights/*.webp is 1200x628 at 83-112 KB):
 //
 //   public/blog/<slug>.webp        1200x628   listing card + related-posts card
+//   public/blog/<slug>-480.webp, -768.webp
+//                                  smaller copies for the card's srcset; a card
+//                                  is ~300-380px wide (Oct 2026 audit). Widths
+//                                  mirrored in src/config/images.ts.
 //   public/blog/<slug>-hero.webp   1600 wide  detail page featured image
+//   public/blog/<slug>-hero-640.webp, -960.webp
+//                                  smaller copies for the hero's srcset, so a
+//                                  phone is not sent the 1600px file for a
+//                                  ~372px column (Oct 2026 audit). The widths
+//                                  are mirrored in src/config/images.ts.
 //   public/blog/body/<name>.webp              in-article images
 //
 // Body images keep the size the old markup asked for: a `-150x150` src is a
@@ -28,6 +37,8 @@ const outDir = path.join(root, 'public/blog')
 
 const CARD = { width: 1200, height: 628, quality: 78 }
 const HERO = { width: 1600, quality: 80 }
+const HERO_SRCSET_WIDTHS = [640, 960]
+const CARD_SRCSET_WIDTHS = [480, 768]
 const BODY_MAX = 860
 const BODY_QUALITY = 78
 
@@ -45,20 +56,37 @@ async function write(servedPath, pipeline) {
 
 fs.rmSync(outDir, { recursive: true, force: true })
 
+async function writeCard(slug, src) {
+  for (const width of [CARD.width, ...CARD_SRCSET_WIDTHS]) {
+    const height = Math.round((width * CARD.height) / CARD.width)
+    await write(
+      width === CARD.width ? `/blog/${slug}.webp` : `/blog/${slug}-${width}.webp`,
+      sharp(src).resize(width, height, { fit: 'cover', position: 'centre' }).webp({ quality: CARD.quality }),
+    )
+  }
+}
+
+async function writeHero(slug, src) {
+  await write(
+    `/blog/${slug}-hero.webp`,
+    sharp(src).resize(HERO.width, null, { withoutEnlargement: true }).webp({ quality: HERO.quality }),
+  )
+  for (const width of HERO_SRCSET_WIDTHS) {
+    await write(
+      `/blog/${slug}-hero-${width}.webp`,
+      sharp(src).resize(width, null, { withoutEnlargement: true }).webp({ quality: HERO.quality }),
+    )
+  }
+}
+
 /* ---- featured images: one card crop + one hero per post -------------------- */
 for (const post of posts) {
   const item = mediaById.get(post.featured_media)
   if (!item) throw new Error(`${post.slug}: featured_media ${post.featured_media} not in manifest`)
   const src = resolveUpload(item.source_url)
 
-  await write(
-    `/blog/${post.slug}.webp`,
-    sharp(src).resize(CARD.width, CARD.height, { fit: 'cover', position: 'centre' }).webp({ quality: CARD.quality }),
-  )
-  await write(
-    `/blog/${post.slug}-hero.webp`,
-    sharp(src).resize(HERO.width, null, { withoutEnlargement: true }).webp({ quality: HERO.quality }),
-  )
+  await writeCard(post.slug, src)
+  await writeHero(post.slug, src)
 }
 
 /* ---- authored posts: featured image from content/posts/<slug>.json --------- */
@@ -69,14 +97,8 @@ for (const file of authored) {
   const { image } = JSON.parse(fs.readFileSync(path.join(authoredDir, file), 'utf8'))
   const src = path.join(authoredDir, image.file)
 
-  await write(
-    `/blog/${slug}.webp`,
-    sharp(src).resize(CARD.width, CARD.height, { fit: 'cover', position: 'centre' }).webp({ quality: CARD.quality }),
-  )
-  await write(
-    `/blog/${slug}-hero.webp`,
-    sharp(src).resize(HERO.width, null, { withoutEnlargement: true }).webp({ quality: HERO.quality }),
-  )
+  await writeCard(slug, src)
+  await writeHero(slug, src)
 }
 
 /* ---- in-article images ----------------------------------------------------- */
@@ -105,7 +127,7 @@ const kb = (n) => `${(n / 1024).toFixed(0)} KB`
 
 console.log(`gen-blog-images: ${written.length} files -> public/blog/ (${kb(total)} total)`)
 const postCount = posts.length + authored.length
-console.log(`                 ${postCount} cards, ${postCount} heroes, ${bodySrcs.size} body images`)
+console.log(`                 ${postCount} cards, ${postCount} heroes (cards and heroes +${CARD_SRCSET_WIDTHS.length}/+${HERO_SRCSET_WIDTHS.length} srcset sizes each), ${bodySrcs.size} body images`)
 console.log('                 largest:')
 for (const w of [...written].sort((a, b) => b.size - a.size).slice(0, 5)) {
   console.log(`                   ${kb(w.size).padStart(7)}  ${w.file}`)

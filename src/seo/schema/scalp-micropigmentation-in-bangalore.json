@@ -43,6 +43,7 @@
     "email": "info@neofollicletransplant.com",
     "telephone": "+91-9731207940",
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -115,7 +116,7 @@
      "latitude": 12.956429486014592,
      "longitude": 77.70733394232819
     },
-    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+    "hasMap": "https://www.google.com/maps?cid=1368765349301541274",
     "areaServed": [
      {
       "@type": "City",
@@ -219,6 +220,7 @@
      "@id": "https://neofollicletransplant.com/#organization"
     },
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -400,7 +402,7 @@
     "@id": "https://neofollicletransplant.com/scalp-micropigmentation-in-bangalore/#webpage",
     "url": "https://neofollicletransplant.com/scalp-micropigmentation-in-bangalore/",
     "inLanguage": "en",
-    "name": "Scalp Micropigmentation in Bangalore | Neo Follicle",
+    "name": "Scalp Micropigmentation (SMP) in Bangalore | Neo Follicle",
     "description": "Scalp micropigmentation in Bangalore for the look of a fuller head or a crisp shaved style without surgery. Natural, long-lasting SMP at Neo Follicle.",
     "datePublished": "2025-04-19T16:56:15+05:30",
     "dateModified": "2026-05-26T16:49:36+05:30",

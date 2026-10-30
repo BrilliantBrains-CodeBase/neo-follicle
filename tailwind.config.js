@@ -12,8 +12,16 @@ export default {
       xl: '1240px',
     },
     extend: {
+      // `text-primary` only: the brand blue is 4.58:1 on white but 4.38:1 on
+      // bg-surface and 3.86:1 on bg-accent, where the site puts card links,
+      // "Read More" and open-FAQ panels. Text gets a deeper shade of the same
+      // blue (5.57 / 5.32 / 4.68); bg-, border- and ring-primary keep #3C72D7.
+      // Mirrored as --color-primary-text in src/index.css. (Oct 2026 audit)
+      textColor: {
+        primary: '#2E64C8',
+      },
       colors: {
-        "primary": "#3E74D9",  // Brand blue. Buttons, links, icons, active states.
+        "primary": "#3C72D7",  // Brand blue. Buttons, links, icons, active states. Kit value #3E74D9, darkened for 4.5:1 white text -- see src/index.css.
         "primary-dark": "#1A4FB2",  // Button/link hover. Deep blue.
         "secondary": "#1A1A1A",  // All headings h1-h6.
         "body": "#444444",  // Body copy, the kit's default text color.

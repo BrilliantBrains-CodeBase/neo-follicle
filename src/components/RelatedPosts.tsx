@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { blogCardSrcSet } from '../config/images'
 import { postSummaryBySlug } from '../content'
 import { ArrowRight, Square } from './icons'
 import Reveal from './Reveal'
@@ -51,6 +52,8 @@ export default function RelatedPosts({ slugs }: { slugs: string[] }) {
               <Link to={post.path} className="group flex h-full flex-col">
                 <img
                   src={post.card.src}
+                  srcSet={blogCardSrcSet(post.card.src, post.card.width)}
+                  sizes="(min-width: 1025px) 380px, calc(100vw - 40px)"
                   alt={post.card.alt}
                   width={post.card.width}
                   height={post.card.height}

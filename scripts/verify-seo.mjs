@@ -13,7 +13,9 @@
  *   B. rules:         indexable titles <= 60 and descriptions 70-160; share
  *                     cards exist at 1200x630; one graph per page with no
  *                     duplicate @id; no dead image or search URLs.
- *   C. site files:    sitemaps, robots.txt, llms.txt, manifest and icons.
+ *   C. site files:    sitemaps, robots.txt (parsed per RFC 9309: every page
+ *                     and asset crawlable, search URLs blocked), llms.txt,
+ *                     manifest and icons.
  *
  * Run after `npm run build`. Exits non-zero on any failure.
  */
@@ -166,21 +168,63 @@ for (const p of expected) {
 check('every captured page-specific JSON-LD node survives', lost,
   'every captured and authored page-specific JSON-LD node survives normalisation')
 
+// Every FAQ a visitor can open must be marked up, and the FAQPage questions
+// must be the visible questions, in order. Accordions are <details name="...">
+// with "faq" in the name: faq-<slug> (treatment pages), post-faq (blog posts),
+// home-faq, *-lp-faq. Treatment pages and the posts the capture left without
+// one get theirs from scripts/prerender.mjs (built from the rendered data);
+// captured and authored pages keep their own.
+const decode = (s) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim()
+const visibleFaq = (html) =>
+  [...html.matchAll(/<details name="[^"]*faq[^"]*"[^>]*>\s*<summary[^>]*>\s*<h3[^>]*>([\s\S]*?)<\/h3>/g)].map((m) => decode(m[1]))
+
+// "01. How much…" and "How much…" are the same question; so are an em dash and
+// a spaced hyphen. Mirrors normQuestion in scripts/prerender.mjs.
+const normQ = (q) => q.replace(/^\s*\d+[.)]\s*/, '').replace(/\s*[\u2013\u2014-]\s*/g, ' - ').replace(/\s+/g, ' ').trim().toLowerCase()
+
 let faqPages = 0, faqQuestions = 0
-for (const g of graphs.values()) {
-  for (const node of g[0]?.['@graph'] ?? []) {
-    if ([].concat(node['@type'] ?? []).includes('FAQPage')) {
-      faqPages++
-      faqQuestions += (node.mainEntity ?? []).length
-    }
+const faqMismatch = []
+for (const p of expected) {
+  const nodes = (graphs.get(p.slug)?.[0]?.['@graph'] ?? []).filter((n) => [].concat(n['@type'] ?? []).includes('FAQPage'))
+  const shown = visibleFaq(docs.get(p.slug) ?? '')
+  for (const node of nodes) {
+    faqPages++
+    faqQuestions += (node.mainEntity ?? []).length
   }
+  if (!p.inSitemap || shown.length === 0) continue
+  const marked = (nodes[0]?.mainEntity ?? []).map((q) => q.name)
+  if (!nodes.length) faqMismatch.push(`${p.slug}: ${shown.length} visible questions, no FAQPage`)
+  else if (marked.map(normQ).join('\n') !== shown.map(normQ).join('\n')) faqMismatch.push(`${p.slug}: FAQPage questions differ from the visible FAQ`)
 }
-// 14 / 82 carried over from the capture, plus whatever the authored pages declare.
+check('every visible FAQ is marked up, question for question', faqMismatch,
+  'every indexable page with a visible FAQ carries a FAQPage that matches it question for question')
+
+// 14 / 82 carried over from the capture, plus whatever the authored pages
+// declare, plus the FAQs generated at prerender (treatment pages, and the
+// posts whose capture had none).
 const authoredFaqs = authored
   .flatMap((a) => a.schema.flatMap((b) => b['@graph'] ?? [b]))
   .filter((n) => [].concat(n['@type'] ?? []).includes('FAQPage'))
-const wantPages = 14 + authoredFaqs.length
-const wantQuestions = 82 + authoredFaqs.reduce((n, f) => n + (f.mainEntity ?? []).length, 0)
+const capturedFaqSlugs = new Set(expected.filter((p) => {
+  const source = p.captured ? JSON.parse(fs.readFileSync(p.captured, 'utf8')) : authored.find((a) => a.seo.slug === p.slug).schema
+  return JSON.stringify(source).includes('"FAQPage"')
+}).map((p) => p.slug))
+const generated = expected.filter((p) => p.inSitemap && !capturedFaqSlugs.has(p.slug) && visibleFaq(docs.get(p.slug) ?? '').length)
+// A captured FAQPage whose questions no longer match the page is rebuilt from
+// the visible FAQ at prerender (the homepage: 8 old WordPress questions vs 9
+// shown), so its question count becomes the visible count.
+const rebuiltDelta = expected
+  .filter((p) => p.inSitemap && capturedFaqSlugs.has(p.slug))
+  .reduce((n, p) => {
+    const source = p.captured ? JSON.parse(fs.readFileSync(p.captured, 'utf8')) : authored.find((a) => a.seo.slug === p.slug).schema
+    const node = source.flatMap((b) => b['@graph'] ?? [b]).find((x) => [].concat(x['@type'] ?? []).includes('FAQPage'))
+    const shown = visibleFaq(docs.get(p.slug) ?? '')
+    const was = (node?.mainEntity ?? []).map((q) => q.name)
+    return shown.length && was.map(normQ).join('\n') !== shown.map(normQ).join('\n') ? n + shown.length - was.length : n
+  }, 0)
+const wantPages = 14 + authoredFaqs.length + generated.length
+const wantQuestions = 82 + authoredFaqs.reduce((n, f) => n + (f.mainEntity ?? []).length, 0) +
+  generated.reduce((n, p) => n + visibleFaq(docs.get(p.slug)).length, 0) + rebuiltDelta
 faqPages === wantPages && faqQuestions === wantQuestions
   ? pass(`${wantPages} FAQPage graphs present, ${wantQuestions} questions total`)
   : fail(`${wantPages} FAQPage graphs / ${wantQuestions} questions`, `got ${faqPages} FAQPages, ${faqQuestions} questions`)
@@ -195,6 +239,47 @@ check('indexable descriptions are 70-160 characters',
   indexable.filter((p) => p.description.length < 70 || p.description.length > 160)
     .map((p) => `${p.slug}: ${p.description.length} chars`),
   `all ${indexable.length} indexable descriptions are 70-160 characters`)
+
+/*
+ * Healthcare claims (docs/seo-audit/05-compliance.md). Superlatives and
+ * absolute promises in what a search result, ad landing page or share card
+ * shows -- <title>, meta description, og:image:alt (the SEO h1) -- on every
+ * page, noindex ad landing pages included (they take the paid traffic). A hit
+ * fails unless it is listed in CLAIM_ALLOW with the reason. Add to the list
+ * only after a human has read the line. Body copy is not scanned: it is full of
+ * legitimate negations ("no ethical surgeon promises 100% growth").
+ */
+// Word terms need \b on both sides; "#1" and "100%" start/end on non-word
+// characters, so they sit in a second group without the outer \b.
+const CLAIM_RE = /\b(best|no\.?\s?1|number\s(?:1|one)|top[- ]rated|top\s+(?:hair|doctor|surgeon|clinic|dermatologist|trichologist|specialist)s?|leading\s+(?:hair|clinic|surgeon|doctor|dermatologist|trichologist|expert|specialist)s?|guarantee[ds]?|100\s?percent|permanent(?:ly)?|painless|pain[- ]?free|scar[- ]?(?:less|free)|no scars?|(?:no|zero) side[- ]effects?|no risk|risk[- ]free|completely safe|fda[- ]approved|cure[sd]?)\b|(#1\b|100\s?%)/gi
+const CLAIM_ALLOW = {
+  // Slug and title keep "Best" until the clinic decides (05-compliance.md s2).
+  'best-hair-transplant-in-bangalore': { title: ['best'] },
+  // Google Ads landing pages (noindex): the headline mirrors the ad keyword
+  // for message match. Clinic + Ads decision, 05-compliance.md s2.
+  'best-hair-transplant-clinic-lp': { title: ['best'], h1: ['best'] },
+  'best-hair-transplant-surgeon-in-bangalore-lp': { title: ['top hair'], h1: ['top hair'] },
+  // The reader choosing, not the clinic claiming.
+  'how-to-choose-the-best-hair-transplant-clinic-bangalore': { title: ['best'], description: ['best'], h1: ['best'] },
+  'fue-vs-direct-hair-implantation': { description: ['best'] }, // "...may suit you best"
+  'prp-vs-gfc-for-hair-loss': { h1: ['best'] }, // "Which Is Best for You?"
+  // The question the post answers; the description hedges ("can last").
+  'is-hair-transplant-permanent': { title: ['permanent'], h1: ['permanent'], description: ['permanently'] },
+}
+const ogAlt = /<meta property="og:image:alt" content="([^"]*)"/
+const claimHits = []
+for (const p of expected) {
+  const html = docs.get(p.slug)
+  const fields = { title: pick(html, RE.title), description: pick(html, RE.description), h1: pick(html, ogAlt) }
+  for (const [field, text] of Object.entries(fields)) {
+    for (const m of (text ?? '').matchAll(CLAIM_RE)) {
+      const term = (m[1] ?? m[2]).toLowerCase()
+      if (!CLAIM_ALLOW[p.slug]?.[field]?.includes(term)) claimHits.push(`${p.slug} ${field}: "${m[0]}" in "${text}"`)
+    }
+  }
+}
+check('no unreviewed superlative or absolute medical claim in titles, descriptions or share-card text', claimHits,
+  `no unreviewed claim terms in the titles, descriptions and share-card text of all ${expected.length} pages (${Object.keys(CLAIM_ALLOW).length} pages with reviewed exceptions)`)
 
 const cardBad = []
 for (const p of expected) {
@@ -241,6 +326,34 @@ for (const [slug, html] of docs) {
 check('every image URL in the head and JSON-LD is served by dist/', [...urlBad],
   'every same-origin image URL in the head and JSON-LD is served by dist/ (incl. mirrored wp-content)')
 
+// Body images: <img src>, every srcset / imagesrcset candidate (responsive
+// sets are generated files, so a missing width is easy to ship), and every
+// url() in the built CSS (image-set backgrounds, fonts).
+{
+  const missing = new Set()
+  let seen = 0
+  const local = (u) => u.startsWith('/') && !u.startsWith('//')
+  const test = (u, where) => {
+    const clean = unesc(u).split(/[?#]/)[0]
+    if (!local(clean)) return
+    seen++
+    if (!fs.existsSync(path.join(dist, decodeURIComponent(clean)))) missing.add(`${where}: ${clean}`)
+  }
+  for (const [slug, html] of docs) {
+    for (const m of html.matchAll(/<img\b[^>]*?\ssrc="([^"]+)"/gi)) test(m[1], slug)
+    for (const m of html.matchAll(/\s(?:image)?srcset="([^"]+)"/gi)) {
+      for (const cand of unesc(m[1]).split(',')) test(cand.trim().split(/\s+/)[0], slug)
+    }
+  }
+  const cssDir = path.join(dist, 'assets')
+  for (const f of fs.readdirSync(cssDir).filter((n) => n.endsWith('.css'))) {
+    for (const m of fs.readFileSync(path.join(cssDir, f), 'utf8').matchAll(/url\(\s*['"]?([^'")]+)['"]?\s*\)/g)) test(m[1], f)
+  }
+  for (const m of fs.readFileSync(path.join(dist, 'fonts', 'fonts.css'), 'utf8').matchAll(/url\(\s*['"]?([^'")]+)['"]?\s*\)/g)) test(m[1], 'fonts.css')
+  check('every body image, srcset candidate and CSS url() is served by dist/', [...missing],
+    `all ${seen} body image / srcset / CSS url() references resolve in dist/`)
+}
+
 /* ==== C. site files ========================================================= */
 
 /* every nav link resolves to a real route */
@@ -279,9 +392,76 @@ check('sitemap.xml indexes every child sitemap', [
   ...indexed.filter((u) => !fs.existsSync(path.join(dist, new URL(u).pathname))).map((u) => `missing ${u}`),
 ])
 
-fs.readFileSync(path.join(dist, 'robots.txt'), 'utf8').includes(`Sitemap: ${ORIGIN}/sitemap.xml`)
-  ? pass('robots.txt carries the Sitemap directive')
-  : fail('robots.txt carries the Sitemap directive', 'directive missing')
+/* ---- robots.txt, matched the way RFC 9309 and Googlebot match it ------------
+ * A crawler uses only the most specific group naming it (else the * group);
+ * within that, the longest matching rule wins and Allow wins a tie.         */
+function parseRobots(text) {
+  const groups = []
+  const sitemaps = []
+  let group = null
+  let inAgents = false
+  for (const raw of text.split(/\r?\n/)) {
+    const m = raw.replace(/#.*/, '').trim().match(/^([A-Za-z-]+)\s*:\s*(.*)$/)
+    if (!m) continue
+    const key = m[1].toLowerCase()
+    const value = m[2].trim()
+    if (key === 'user-agent') {
+      if (!inAgents) groups.push((group = { agents: [], rules: [] }))
+      group.agents.push(value.toLowerCase())
+      inAgents = true
+    } else if (key === 'allow' || key === 'disallow') {
+      if (group && value) group.rules.push({ allow: key === 'allow', path: value })
+      inAgents = false
+    } else if (key === 'sitemap') {
+      sitemaps.push(value)
+    }
+  }
+  return { groups, sitemaps }
+}
+const ruleRe = (p) => {
+  const anchored = p.endsWith('$')
+  const body = (anchored ? p.slice(0, -1) : p).split('*').map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*')
+  return new RegExp(`^${body}${anchored ? '$' : ''}`)
+}
+function robotsAllows(robots, agent, urlPath) {
+  const own = robots.groups.filter((g) => g.agents.includes(agent.toLowerCase()))
+  const rules = (own.length ? own : robots.groups.filter((g) => g.agents.includes('*'))).flatMap((g) => g.rules)
+  let best = null
+  for (const r of rules) {
+    if (!ruleRe(r.path).test(urlPath)) continue
+    if (!best || r.path.length > best.path.length || (r.path.length === best.path.length && r.allow)) best = r
+  }
+  return best ? best.allow : true
+}
+
+const robots = parseRobots(fs.readFileSync(path.join(dist, 'robots.txt'), 'utf8'))
+check('robots.txt has exactly one Sitemap line, for this origin',
+  robots.sitemaps.length === 1 && robots.sitemaps[0] === `${ORIGIN}/sitemap.xml` ? [] : [`Sitemap lines: ${JSON.stringify(robots.sitemaps)}`],
+  `robots.txt carries exactly one Sitemap directive (${ORIGIN}/sitemap.xml)`)
+
+// Every agent the file names, plus the two search crawlers that fall to *.
+const robotAgents = [...new Set(['Googlebot', 'Bingbot', ...robots.groups.flatMap((g) => g.agents).filter((a) => a !== '*')])]
+// noindex pages included: a crawler must be allowed to fetch a page to see its noindex.
+check('robots.txt lets every crawler fetch every page, noindex ones included',
+  robotAgents.flatMap((a) => expected.filter((p) => !robotsAllows(robots, a, p.path)).map((p) => `${a} blocked from ${p.path}`)),
+  `${robotAgents.length} crawlers may fetch all ${expected.length} pages (${indexable.length} indexable + ${expected.length - indexable.length} noindex)`)
+
+const distFiles = []
+;(function walk(dir) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, e.name)
+    if (e.isDirectory()) walk(full)
+    else if (!e.name.endsWith('.html')) distFiles.push(`/${path.relative(dist, full).split(path.sep).join('/')}`)
+  }
+})(dist)
+check('robots.txt blocks no script, style, font or image Google needs to render',
+  robotAgents.flatMap((a) => distFiles.filter((f) => !robotsAllows(robots, a, f)).map((f) => `${a} blocked from ${f}`)).slice(0, 10),
+  `${distFiles.length} non-HTML files in dist/ crawlable by all ${robotAgents.length} crawlers`)
+
+const mustBlock = ['/?s=hair', '/page/2/?s=hair', '/search/hair/']
+check('robots.txt still keeps crawlers out of the old WordPress search URLs',
+  robotAgents.flatMap((a) => mustBlock.filter((u) => robotsAllows(robots, a, u)).map((u) => `${a} may fetch ${u}`)),
+  `search URLs blocked for all ${robotAgents.length} crawlers`)
 
 const llms = fs.readFileSync(path.join(dist, 'llms.txt'), 'utf8')
 const llmsLinks = new Set([...llms.matchAll(/\]\((https:[^)]+)\)/g)].map((m) => m[1]))

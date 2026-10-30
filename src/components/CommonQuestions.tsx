@@ -1,3 +1,4 @@
+import { CONTACT } from '../config/site'
 import Faq from './Faq'
 import { Square } from './icons'
 import Reveal from './Reveal'
@@ -73,7 +74,8 @@ const QUESTIONS = [
   },
   {
     q: 'Is a hair transplant safe, and are there side effects?',
-    a: 'Performed under local anaesthesia by a qualified surgeon, it is a safe day-care procedure. Temporary redness, mild swelling or scabbing can occur and settles within a few days. A medical evaluation checks for risks before your procedure.',
+    // "generally": Oct 2026 healthcare-claims review. Pending medical sign-off.
+    a: 'Performed under local anaesthesia by a qualified surgeon, it is generally a safe day-care procedure. Temporary redness, mild swelling or scabbing can occur and settles within a few days. A medical evaluation checks for risks before your procedure.',
   },
   {
     q: 'Who performs the hair transplant at Neo Follicle?',
@@ -97,11 +99,17 @@ const QUESTIONS = [
   },
   {
     q: 'Where is Neo Follicle located?',
-    a: 'Marathahalli, Bangalore, near Marathahalli Bridge, serving Whitefield, Bellandur, Brookefield, Sarjapur Road, HSR Layout, Koramangala and nearby areas. Open 10 am to 8 pm, all days.',
+    // Hours from CONTACT (Oct 2026 audit): this said "Open 10 am to 8 pm, all
+    // days", which contradicted the site's schema and the Google Business
+    // Profile (both: closed Tuesday). CLINIC TO CONFIRM the closing time --
+    // GBP says 7:30 pm, CONTACT says 7 pm.
+    a: `Marathahalli, Bangalore, near Marathahalli Bridge, serving Whitefield, Bellandur, Brookefield, Sarjapur Road, HSR Layout, Koramangala and nearby areas. Hours: ${CONTACT.openingHoursDisplay}. ${CONTACT.closedDayDisplay}.`,
   },
   {
     q: 'Are the results permanent and natural?',
-    a: 'Transplanted follicles are taken from permanent donor zones and continue to grow for life. Results are designed to blend with your natural growth, with new growth appearing gradually over 3 to 12 months.',
+    // Reworded Oct 2026 (SEO audit, healthcare-claims review): "continue to grow
+    // for life" promises an outcome; same rewrite as the medical-tourism FAQ. Pending medical sign-off.
+    a: 'Transplanted follicles are taken from donor areas that are usually resistant to hair loss, so they typically keep growing long-term. Results are designed to blend with your natural growth, with new growth appearing gradually over 3 to 12 months. Your existing hair can still thin, so we also guide you on protecting it.',
   },
 ]
 

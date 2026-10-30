@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent, ReactElement } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CONTACT, FORMS, mapLink } from '../config/site'
+import { trackLead } from '../analytics/track'
 import { readAttribution } from './attribution'
 import { ChevronDown, MailIcon, MapPinIcon, PhoneIcon, Square } from './icons'
 import Reveal from './Reveal'
@@ -210,7 +211,10 @@ export default function ContactUs({
    * Called on both success paths. The form is reset first so a back-navigation
    * to this page does not find the visitor's details still sitting in it.
    */
-  function succeeded(form: HTMLFormElement) {
+  function succeeded(form: HTMLFormElement, service?: string) {
+    // GA4 `generate_lead` (no personal data). Only reached after the endpoint
+    // confirms the lead, so rejected or failed posts never count.
+    trackLead(formId, service)
     setStatus('sent')
     form.reset()
     if (successTo) navigate(successTo)
@@ -239,7 +243,7 @@ export default function ContactUs({
       // Apps Script answers 200 even when it rejects the lead; the verdict is in the body.
       const result = (await response.json()) as { ok?: boolean }
       if (!result.ok) throw new Error('rejected')
-      succeeded(form)
+      succeeded(form, data.service)
     } catch {
       setStatus('error')
     }
@@ -283,7 +287,7 @@ export default function ContactUs({
                       {text}
                     </span>
                     {note && (
-                      <span className="text-[14px] leading-[1.3em] text-body/70">{note}</span>
+                      <span className="text-[14px] leading-[1.3em] text-body/80">{note}</span>
                     )}
                   </span>
                 </>
@@ -294,7 +298,9 @@ export default function ContactUs({
                   {href ? (
                     <a
                       href={href}
-                      aria-label={label}
+                      // Label plus the visible value, so the accessible name
+                      // contains what is on screen (WCAG 2.5.3 label in name).
+                      aria-label={label ? `${label}: ${text}` : undefined}
                       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                       className={`${INFO_CARD} group ${tinted ? 'bg-accent' : 'bg-surface'}`}
                     >

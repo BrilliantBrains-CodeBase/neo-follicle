@@ -100,7 +100,9 @@ const data: TreatmentPageData = {
         { title: 'Boosts new hair growth', body: 'Activates weak or dormant follicles and encourages fresh regrowth.' },
         { title: 'Improves texture and thickness', body: 'Over a course, hair reads healthier and visibly denser.' },
         { title: 'Fewer sessions than PRP', body: 'GFC is a concentrated preparation, so a course is typically shorter.' },
-        { title: 'Completely non-surgical', body: 'Prepared from your own blood, so there is no risk of an allergic reaction.' },
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "no risk of an allergic
+        // reaction" is absolute and contradicted the reworded FAQ on this page. Pending medical sign-off.
+        { title: 'Completely non-surgical', body: 'Prepared from your own blood, so allergic reactions are rare.' },
         { title: 'No downtime', body: 'You can return to your daily routine immediately after each session.' },
       ],
     },
@@ -144,7 +146,9 @@ const data: TreatmentPageData = {
       },
       {
         question: 'Is GFC safe and does it have side effects?',
-        answer: 'Yes, it’s completely safe since it uses your own blood. There are no allergic reactions, and side effects are minimal - maybe slight redness or tenderness at the injection site, which usually fades in a few hours.',
+        // Reworded Oct 2026 (SEO audit, healthcare-claims review): "completely safe" / "no allergic
+        // reactions" are absolute claims. Pending medical sign-off.
+        answer: 'GFC is generally well tolerated because it is prepared from your own blood, so allergic reactions are rare. The most common effects are slight redness or tenderness at the injection sites, which usually fade within a few hours. Your doctor reviews your health history before recommending it.',
       },
       {
         question: 'How many GFC sessions will I need?',

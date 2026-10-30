@@ -43,6 +43,7 @@
     "email": "info@neofollicletransplant.com",
     "telephone": "+91-9731207940",
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -115,7 +116,7 @@
      "latitude": 12.956429486014592,
      "longitude": 77.70733394232819
     },
-    "hasMap": "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
+    "hasMap": "https://www.google.com/maps?cid=1368765349301541274",
     "areaServed": [
      {
       "@type": "City",
@@ -219,6 +220,7 @@
      "@id": "https://neofollicletransplant.com/#organization"
     },
     "sameAs": [
+     "https://www.google.com/maps?cid=1368765349301541274",
      "https://maps.app.goo.gl/jKaWhcfQuKZXRvE48",
      "https://www.facebook.com/NeoFollicleHairTransplantClinic/",
      "https://www.instagram.com/neo_follicle_hair_transplant/",
@@ -400,8 +402,8 @@
     "@id": "https://neofollicletransplant.com/unshaven-hair-transplant/#webpage",
     "url": "https://neofollicletransplant.com/unshaven-hair-transplant/",
     "inLanguage": "en-IN",
-    "name": "Unshaven Hair Transplant – Neo Follicle Hair Transplant",
-    "description": "Unshaven hair transplant in Bangalore at Neo Follicle, for patients who want to keep their existing hairstyle. Suitability is decided by clinical evaluation.",
+    "name": "Unshaven (No-Shave) FUE Hair Transplant in Bangalore",
+    "description": "No-shave FUE hair transplant in Bangalore: who qualifies, how many grafts are possible without shaving, recovery and results. Assessment at Neo Follicle.",
     "datePublished": "2025-05-15T06:13:45+05:30",
     "dateModified": "2026-05-26T16:38:27+05:30",
     "isPartOf": {
