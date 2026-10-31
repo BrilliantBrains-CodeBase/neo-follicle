@@ -99,9 +99,12 @@ site swapped for working ones.
    first three at the host once it is chosen.
 5. **The Cochin (Maradu) Practo listing is out of `sameAs`**; the site describes
    the Bangalore clinic only. Social URLs lose their tracking parameters.
-6. **GTM (`GTM-NCJCP6NZ`) is injected** into prerendered pages. Since Oct 2026 it loads
-   immediately for ad-attributable visits and conversion pages, and on first
-   interaction (or after 3.5 s) otherwise. See `docs/seo-audit/gtm/README.md`.
+6. **GTM (`GTM-NCJCP6NZ`) is Google's standard snippet, written in `index.html`**:
+   the script first in `<head>`, the `<noscript>` first in `<body>`. It loads on
+   every visit, and Search Console can verify ownership through it. The build
+   and `npm run verify` fail if it goes missing or moves. To change the
+   container, edit both `index.html` and `ANALYTICS.gtmId` in `src/config/site.ts`.
+   See `docs/seo-audit/gtm/README.md`.
 
 ## Still outstanding
 

@@ -65,43 +65,15 @@ const prop = (property, content) =>
 const GEO_PAGES = new Set(['/', '/contact-us/', DOCTOR.path])
 
 /**
- * Google Tag Manager. Only in the prerendered output -- `npm run dev` stays
- * tag-free.
- *
- * Loaded IMMEDIATELY (exactly as before) for every visit Google Ads can
- * attribute, and DEFERRED for the rest:
- *
- *   immediate  - the URL carries an ad click id (gclid / gbraid / wbraid /
- *                gad_source / dclid). The Conversion Linker must read it on
- *                landing, before any client-side navigation drops the query.
- *              - a Google Ads click cookie (_gcl_aw / _gcl_gb / _gcl_dc / _gcl_ag)
- *                is already set: a returning ad visitor, whose call, WhatsApp or
- *                form conversion the container's own GTM triggers must catch.
- *              - thank-you and ad landing pages (`*-lp`, /hair-assessment/),
- *                where the page view itself is a conversion signal.
- *   deferred   - everyone else (organic, direct, referral) loads GTM on the
- *                first interaction, or 3.5 s after `load`, whichever is first.
- *
- * Why defer at all: on mobile Lighthouse, GTM was the largest main-thread
- * cost on the page (~1.5 s of blocking, ~0.5 MB) and it delays LCP. The
- * deferred visitors carry no ad click to attribute, and GA4 loses nothing:
- * src/analytics/track.ts pushes its events into window.dataLayer, which GTM
- * processes when it boots.
- *
- * To make even deferred visits fully safe for Ads, move the container's Ads
- * conversion tags from GTM link-click / form-submit triggers onto the queued
- * `nf_*` custom events (docs/seo-audit/gtm/README.md).
+ * Google Tag Manager is NOT added here. Google's standard snippet lives in the
+ * source index.html (top of <head> + <noscript> after <body>), so every page,
+ * 404 included, ships it exactly as GTM provides it -- which is also what
+ * Search Console's "Google Tag Manager" verification looks for. This only
+ * checks that the shell still carries it, for the container in site.ts.
  */
-const gtmLoader = `(function(w,d,id){w.dataLayer=w.dataLayer||[];var done=false,ev=['pointerdown','touchstart','scroll','keydown','mousemove'];` +
-  `function load(){if(done)return;done=true;ev.forEach(function(e){w.removeEventListener(e,load,{passive:true})});` +
-  `w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var j=d.createElement('script');j.async=true;` +
-  `j.src='https://www.googletagmanager.com/gtm.js?id='+id;d.head.appendChild(j)}` +
-  `var l=w.location,now=/[?&](gclid|gbraid|wbraid|gad_source|dclid)=/.test(l.search)||/(^|; )_gcl_(aw|gb|dc|ag)=/.test(d.cookie)||/^\\/(thank-you|nft-brochure-thank-you|hair-assessment)\\/|-lp\\/$/.test(l.pathname);` +
-  `if(now){load();return}ev.forEach(function(e){w.addEventListener(e,load,{passive:true,once:true})});` +
-  `if(d.readyState==='complete')setTimeout(load,3500);else w.addEventListener('load',function(){setTimeout(load,3500)})` +
-  `})(window,document,'${ANALYTICS.gtmId}');`
-const gtmHead = `    <script>${gtmLoader}</script>\n`
-const gtmBody = `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${ANALYTICS.gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`
+const GTM_HEAD = `'https://www.googletagmanager.com/gtm.js?id='+i+dl`
+const GTM_ID = `'dataLayer','${ANALYTICS.gtmId}')`
+const GTM_NOSCRIPT = `https://www.googletagmanager.com/ns.html?id=${ANALYTICS.gtmId}`
 
 /** Icons + manifest. Files come from scripts/gen-icons.mjs. */
 const iconLinks =
@@ -171,7 +143,6 @@ function buildHead(page, body = '') {
     h += `    <script type="application/ld+json">${JSON.stringify(block)}</script>\n`
   }
 
-  h += gtmHead
   return h
 }
 
@@ -272,11 +243,18 @@ const raw = fs.readFileSync(path.join(dist, 'index.html'), 'utf8')
 if (!raw.includes('<!--ssr-outlet-->') || !raw.includes('<!--seo-head-->')) {
   throw new Error('dist/index.html is missing <!--ssr-outlet--> or <!--seo-head--> markers')
 }
-// Drop the shell's placeholder <title>; every page supplies its own. The GTM
-// noscript must be the first thing in <body>.
-const shell = raw
-  .replace(/\s*<title>[\s\S]*?<\/title>/, '')
-  .replace(/<body([^>]*)>/, `<body$1>\n    ${gtmBody}`)
+// GTM comes from index.html as-is. Fail the build if it went missing or names
+// a different container from src/config/site.ts.
+const headStart = raw.slice(raw.indexOf('<head>'), raw.indexOf('<meta'))
+if (!headStart.includes(GTM_HEAD) || !headStart.includes(GTM_ID)) {
+  throw new Error(`dist/index.html: the GTM snippet for ${ANALYTICS.gtmId} must be the first thing in <head>`)
+}
+const bodyStart = raw.slice(raw.indexOf('<body'), raw.indexOf('<div id="root">'))
+if (!bodyStart.includes(GTM_NOSCRIPT)) {
+  throw new Error(`dist/index.html: the GTM <noscript> for ${ANALYTICS.gtmId} must be the first thing in <body>`)
+}
+// Drop the shell's placeholder <title>; every page supplies its own.
+const shell = raw.replace(/\s*<title>[\s\S]*?<\/title>/, '')
 
 /** Splice one page's head and body into the built shell. */
 const compose = (head, body) =>
@@ -297,7 +275,7 @@ for (const page of pages) {
 fs.writeFileSync(
   path.join(dist, '404.html'),
   compose(
-    `    <title>Page Not Found</title>\n    <meta name="robots" content="noindex, follow" />\n${iconLinks}${gtmHead}`,
+    `    <title>Page Not Found</title>\n    <meta name="robots" content="noindex, follow" />\n${iconLinks}`,
     await render('/__not-found__'),
   ),
 )

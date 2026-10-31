@@ -73,7 +73,7 @@ exceptions are listed in 02 (Rollback). The ones most worth a careful read:
 | Commit | Why it deserves attention |
 |---|---|
 | `server: canonical https apex host…` | Redirect rules. Tested on Apache 2.4.58, including hosts without mod_brotli or mod_headers ([reports/htaccess-apache-test.txt](reports/htaccess-apache-test.txt)). If the host is behind a TLS-terminating proxy/CDN, swap the `%{HTTPS}` condition as the comment says. |
-| `analytics: GA4 lead/call/WhatsApp events…` | GTM now loads immediately for ad clicks and conversion pages, and on first interaction (or 3.5 s) for everyone else. |
+| `analytics: GA4 lead/call/WhatsApp events…` | GTM loads immediately for ad clicks and conversion pages, and on first interaction (or 3.5 s) for everyone else. *(Superseded Oct 31 2026: GTM is now the standard snippet in `index.html`, loading on every visit.)* |
 | `perf: code-split every route except home` | Hydration was tested on 8 templates: same H1 node, 0 replaced nodes. |
 | `a11y: text contrast…`, `a11y: brand-blue text passes…` | Backgrounds/buttons move from #3E74D9 to #3C72D7 (2/255 per channel); `text-primary` alone becomes #2E64C8 so links pass 4.5:1 on the light fills. Brand owner may want to know. |
 | `seo(schema): every FAQPage now matches…` | The homepage FAQPage is rebuilt from the visible FAQ (the old one described a different page). |

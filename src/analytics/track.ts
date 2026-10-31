@@ -7,9 +7,9 @@
  * is the site half; docs/seo-audit/gtm/ is the container half (5 GA4 event
  * tags to import).
  *
- * Events are pushed whether or not GTM has loaded yet. scripts/prerender.mjs
- * defers GTM for some visitors, and anything pushed before it boots waits in
- * window.dataLayer and is processed the moment it does, so nothing is lost.
+ * Events are pushed whether or not GTM has loaded yet. GTM loads async (the
+ * standard snippet in index.html), and anything pushed before it boots waits
+ * in window.dataLayer and is processed the moment it does, so nothing is lost.
  *
  * No personal data, ever: name, phone and email never enter the dataLayer
  * (GA4's terms forbid PII). Only the form id, the chosen service, the page and

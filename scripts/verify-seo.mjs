@@ -23,7 +23,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
-import { SEO } from '../src/config/site.ts'
+import { ANALYTICS, SEO } from '../src/config/site.ts'
 import { BROKEN_IMAGE_MAP } from './seo/entity-graph.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -474,6 +474,24 @@ check('llms.txt links every indexable page and nothing else', [
 const siteFiles = ['favicon.ico', 'favicon.svg', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'site.webmanifest']
 check('icons and manifest are in dist', siteFiles.filter((f) => !fs.existsSync(path.join(dist, f))).map((f) => `missing ${f}`),
   `icons and web manifest present (${siteFiles.length} files)`)
+
+// Google Tag Manager: the standard snippet from index.html, once per page,
+// first in <head> with its noscript first in <body>. Search Console's GTM
+// verification method depends on this placement.
+{
+  const id = ANALYTICS.gtmId
+  const pagesToCheck = [...docs.entries(), ['404', fs.readFileSync(path.join(dist, '404.html'), 'utf8')]]
+  const problems = []
+  for (const [slug, html] of pagesToCheck) {
+    const head = html.slice(html.indexOf('<head>'), html.indexOf('<meta'))
+    const body = html.slice(html.indexOf('<body'), html.indexOf('<div id="root">'))
+    if (!/\(function\(w,d,s,l,i\)\{/.test(head) || !head.includes(`'dataLayer','${id}')`)) problems.push(`${slug}: GTM snippet not first in <head>`)
+    if (!body.includes(`googletagmanager.com/ns.html?id=${id}`)) problems.push(`${slug}: GTM noscript not first in <body>`)
+    if ((html.match(/googletagmanager\.com\/gtm\.js/g) || []).length !== 1) problems.push(`${slug}: GTM loaded more than once`)
+  }
+  check('GTM standard snippet on every page', problems,
+    `GTM ${id}: standard snippet first in <head>, noscript first in <body>, once, on all ${pagesToCheck.length} pages`)
+}
 
 /* ---- report ---------------------------------------------------------------- */
 function report() {

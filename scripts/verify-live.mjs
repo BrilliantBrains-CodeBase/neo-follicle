@@ -231,14 +231,17 @@ if (run('pages')) {
 if (run('gtm')) {
   const h = home.body
   const bad = []
-  if (!h.includes(ANALYTICS.gtmId)) bad.push(`container ${ANALYTICS.gtmId} not referenced on /`)
-  // The stock GTM snippet loads at once on every visit; the loader in
-  // scripts/prerender.mjs replaced it. Its signature means a stale deploy.
-  if (/\(function\(w,d,s,l,i\)\{/.test(h)) bad.push('the old synchronous GTM snippet is still on / (stale build?)')
-  if (!/gclid\|gbraid\|wbraid/.test(h)) bad.push('the conditional loader (immediate for ad clicks) is not on /')
-  const ty = await get(`${BASE}/thank-you/`)
-  if (ty.status === 200 && !/thank-you\|nft-brochure-thank-you/.test(ty.body)) bad.push('/thank-you/ does not carry the loader that fires GTM immediately')
-  check('gtm', 'GTM is the conditional loader from this repo', bad, 'GTM loader present: immediate for ad-attributable visits and conversion pages, deferred otherwise')
+  // Google's standard snippet, straight from index.html: the script first in
+  // <head>, the noscript iframe first in <body>. Search Console's GTM
+  // verification needs exactly this.
+  const head = h.slice(h.indexOf('<head>'), h.indexOf('<meta'))
+  if (!/\(function\(w,d,s,l,i\)\{/.test(head) || !head.includes(`'dataLayer','${ANALYTICS.gtmId}')`))
+    bad.push(`the standard GTM snippet for ${ANALYTICS.gtmId} is not the first thing in <head> on /`)
+  const body = h.slice(h.indexOf('<body'), h.indexOf('<div id="root">'))
+  if (!body.includes(`ns.html?id=${ANALYTICS.gtmId}`)) bad.push('the GTM <noscript> is not the first thing in <body> on /')
+  if (/gclid\|gbraid\|wbraid/.test(h)) bad.push('the old deferred GTM loader is still on / (stale build?)')
+  if ((h.match(/googletagmanager\.com\/gtm\.js/g) || []).length !== 1) bad.push('GTM is loaded more than once on /')
+  check('gtm', 'GTM is the standard snippet', bad, `standard GTM snippet for ${ANALYTICS.gtmId} at the top of <head>, noscript at the top of <body>`)
 }
 
 /* ---- content: things that need the clinic, reported not failed ------------- */
