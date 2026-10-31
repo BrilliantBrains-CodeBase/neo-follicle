@@ -1,51 +1,18 @@
 import { Link } from 'react-router-dom'
 import { blogCardSrcSet } from '../config/images'
+import { topicLabelFor } from '../config/blogTopics'
 import { ArrowRight } from './icons'
 import type { PostSummary } from '../content/types'
 
 /**
- * One blog card.
+ * One blog card on /our-blogs/: a white card with the featured image on top,
+ * then a topic chip, the title, a two-line excerpt and "Read guide".
  *
- * Design ported from the Folixa reference blog archive -- the `jkit_post_block`
- * widget `b2b038c` in `postblock-type-1`. Values resolved from
- * folixa-design-reference/assets/css/uploads__sites__226__elementor__css__post-31.css
- * and .../plugins__jeg-elementor-kit__assets__css__elements__main.css. Visual
- * target is
- * folixa-design-reference/pages/blog/sections/03-helpful-guides-for-hair-transplant-patients.png.
- *
- * The widget's own settings are definitive about what the card shows:
- * `sg_content_element_order: "title,excerpt,read"`, with
- * `sg_content_category_enable`, `sg_content_meta_enable` and
- * `sg_content_comment_enable` all off. So there is no category chip, no date,
- * no author and no read time here -- those belong to the detail page. The
- * reference's excerpt is truncated at 15 words; ours uses each post's real
- * WordPress excerpt, which is hand-written for exactly this slot.
- *
- * Layout, which changes shape twice:
- *
- *   >= 1025px  image left at 50%, text right with 24px of padding, and the
- *              text block vertically centred against the image
- *   768-1024   image on top, text below
- *   <= 767px   same, one column
- *
- * Deliberate departure: the image keeps its own 1.91:1 aspect rather than the
- * reference's fixed-height crop box (270 / 220 / 190px). At the 2-up column
- * width the image half is ~300px, so a 270px-tall box is very nearly square and
- * crops these wide banners to about half their width. That is survivable for
- * Folixa's photographs and not for ours: every featured image here is an
- * infographic with type set into it, and cropping cuts the words in half.
- * Insights.tsx made the same call for the same images on the home page and
- * documents the same reason.
- *
- * The Read More affordance is a text link with a 1px rule under it, not a
- * filled button -- the reference overrides the kit's default blue pill with
- * `background-color: #FFFFFF`. On hover the text and arrow go to `secondary`
- * while the rule stays `primary`. Insights uses the same treatment; the class
- * string is duplicated rather than shared because the two differ in gap.
+ * The image keeps its own 1200:628 shape rather than a fixed-height crop:
+ * every featured image is an infographic with words set into it, and cropping
+ * would cut them. The excerpt is clamped to two lines visually; the full text
+ * stays in the HTML. The whole card is one link, so the title is its name.
  */
-
-const READ_MORE =
-  'inline-flex items-center border-b border-primary pb-[2px] font-head text-button text-primary transition-colors group-hover:text-secondary'
 
 type PostCardProps = {
   post: PostSummary
@@ -55,31 +22,34 @@ type PostCardProps = {
 
 export default function PostCard({ post, eager = false }: PostCardProps) {
   return (
-    <Link to={post.path} className="group block lg:flex lg:items-center">
-      <img
-        src={post.card.src}
-        srcSet={blogCardSrcSet(post.card.src, post.card.width)}
-        sizes="(min-width: 1025px) 300px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 40px)"
-        alt={post.card.alt}
-        width={post.card.width}
-        height={post.card.height}
-        loading={eager ? 'eager' : 'lazy'}
-        // `w-full` is right below `lg`, where the card is a plain block. At `lg`
-        // it must be overridden: `width: 100%` on a flex item that also refuses
-        // to shrink claims the whole card and squeezes the text to nothing.
-        className="aspect-[1200/628] w-full rounded object-cover lg:w-1/2 lg:shrink-0"
-      />
+    <Link
+      to={post.path}
+      className="group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-base shadow-[0_1px_2px_rgba(16,24,40,0.04),0_4px_16px_rgba(16,24,40,0.06)] transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_32px_rgba(16,24,40,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+    >
+      <div className="overflow-hidden bg-surface">
+        <img
+          src={post.card.src}
+          srcSet={blogCardSrcSet(post.card.src, post.card.width)}
+          sizes="(min-width: 1025px) 380px, (min-width: 768px) calc(50vw - 48px), calc(100vw - 40px)"
+          alt={post.card.alt}
+          width={post.card.width}
+          height={post.card.height}
+          loading={eager ? 'eager' : 'lazy'}
+          className="aspect-[1200/628] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+      </div>
 
-      <div className="mt-4 lg:mt-0 lg:min-w-0 lg:flex-1 lg:pl-6">
-        <h3 className="font-head text-h4 text-secondary transition-colors group-hover:text-primary">
+      <div className="flex flex-1 flex-col p-5 lg:p-6">
+        <span className="self-start rounded-pill bg-accent px-3 py-1 text-[0.8125rem] font-medium leading-5 text-primary-dark">
+          {topicLabelFor(post)}
+        </span>
+        <h3 className="mt-3 font-head text-h5 font-bold text-secondary transition-colors group-hover:text-primary">
           {post.title}
         </h3>
-        <p className="mt-4 text-body">{post.excerpt}</p>
-        <span className="mt-6 block">
-          <span className={READ_MORE}>
-            Read More
-            <ArrowRight className="ml-4 h-4 w-4" />
-          </span>
+        <p className="mt-3 line-clamp-2 text-body">{post.excerpt}</p>
+        <span className="mt-auto inline-flex items-center gap-2 pt-5 font-head text-[1rem] font-semibold text-primary">
+          Read guide
+          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </span>
       </div>
     </Link>
