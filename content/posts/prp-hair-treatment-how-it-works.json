@@ -1,0 +1,11 @@
+{
+  "$comment": "Authored post (written after the WordPress capture). Body copy is the sibling .html file, parsed by scripts/gen-posts.mjs exactly like a captured post. SEO metadata and JSON-LD (dates, articleSection, keywords) live in content/seo/<slug>.json.",
+  "title": "PRP Hair Treatment: How It Works, Sessions and What to Expect",
+  "excerpt": "A plain guide to PRP hair treatment: how it works, who may benefit, sessions, safety, what affects cost and what the evidence shows.",
+  "summary": "",
+  "category": "Hair Loss Treatment",
+  "image": {
+    "file": "images/prp-hair-treatment-how-it-works.png",
+    "alt": "Illustration of how platelet-rich plasma is prepared and used for hair treatment"
+  }
+}

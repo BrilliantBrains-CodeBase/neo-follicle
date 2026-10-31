@@ -481,7 +481,7 @@ export const pages: PageSeo[] = [
     },
     "h1": "Hair Transplant Cost in Bangalore",
     "inSitemap": false,
-    "lastmod": "2026-09-21T14:23:11+05:30"
+    "lastmod": "2026-10-29T13:52:08+00:00"
   },
   {
     "slug": "dandruff-treatment-in-bangalore",
@@ -2082,6 +2082,38 @@ export const pages: PageSeo[] = [
     "h1": "Dr. Sandeep Mahapatra in the Media",
     "inSitemap": true,
     "lastmod": "2026-09-25T00:00:00+05:30"
+  },
+  {
+    "slug": "prp-hair-treatment-how-it-works",
+    "path": "/prp-hair-treatment-how-it-works/",
+    "type": "post",
+    "title": "PRP Hair Treatment: How It Works and What to Expect",
+    "description": "A plain guide to PRP hair treatment: how it works, who may benefit, sessions, safety, what affects cost and what the evidence shows.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": "https://neofollicletransplant.com/prp-hair-treatment-how-it-works/",
+    "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og": {
+      "title": "PRP Hair Treatment: How It Works and What to Expect",
+      "description": "A plain guide to PRP hair treatment: how it works, who may benefit, sessions, safety, what affects cost and what the evidence shows.",
+      "url": "https://neofollicletransplant.com/prp-hair-treatment-how-it-works/",
+      "type": "article",
+      "image": "https://neofollicletransplant.com/og/prp-hair-treatment-how-it-works.jpg",
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en_IN",
+      "imageAlt": "PRP Hair Treatment: How It Works, Sessions and What to Expect",
+      "imageWidth": 1200,
+      "imageHeight": 630
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "PRP Hair Treatment: How It Works and What to Expect",
+      "description": "A plain guide to PRP hair treatment: how it works, who may benefit, sessions, safety, what affects cost and what the evidence shows.",
+      "image": "https://neofollicletransplant.com/og/prp-hair-treatment-how-it-works.jpg"
+    },
+    "h1": "PRP Hair Treatment: How It Works, Sessions and What to Expect",
+    "inSitemap": true,
+    "lastmod": "2026-10-31T09:00:00+05:30"
   },
   {
     "slug": "thank-you",

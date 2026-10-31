@@ -4758,9 +4758,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "prp-hair-treatment-how-it-works",
     "how-to-stop-hair-fall-causes-treatments",
-    "hair-transplant-cost-bangalore-what-decides-price",
-    "why-hair-transplants-fail"
+    "hair-transplant-cost-bangalore-what-decides-price"
   ]
 }
 

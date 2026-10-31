@@ -709,9 +709,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "prp-hair-treatment-how-it-works",
     "how-many-grafts-do-i-need-for-hair-transplant",
-    "hair-transplant-cost-bangalore-what-decides-price",
-    "donor-area-planning-hair-transplant"
+    "hair-transplant-cost-bangalore-what-decides-price"
   ]
 }
 

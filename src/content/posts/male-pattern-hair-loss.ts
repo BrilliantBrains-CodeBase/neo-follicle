@@ -3842,7 +3842,7 @@ const post: Post = {
   "related": [
     "hair-transplant-for-receding-hairline",
     "fue-vs-direct-hair-implantation",
-    "how-to-stop-hair-fall-causes-treatments"
+    "prp-hair-treatment-how-it-works"
   ]
 }
 

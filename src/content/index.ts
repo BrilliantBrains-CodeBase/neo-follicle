@@ -8,6 +8,29 @@ import type { PostSummary } from './types'
 
 export const postSummaries: PostSummary[] = [
   {
+    "slug": "prp-hair-treatment-how-it-works",
+    "path": "/prp-hair-treatment-how-it-works/",
+    "title": "PRP Hair Treatment: How It Works, Sessions and What to Expect",
+    "excerpt": "A plain guide to PRP hair treatment: how it works, who may benefit, sessions, safety, what affects cost and what the evidence shows.",
+    "summary": "",
+    "category": "Hair Loss Treatment",
+    "datePublished": "2026-10-31T09:00:00+05:30",
+    "dateModified": "2026-10-31T09:00:00+05:30",
+    "readingMinutes": 6,
+    "card": {
+      "src": "/blog/prp-hair-treatment-how-it-works.webp",
+      "alt": "Illustration of how platelet-rich plasma is prepared and used for hair treatment",
+      "width": 1200,
+      "height": 628
+    },
+    "hero": {
+      "src": "/blog/prp-hair-treatment-how-it-works-hero.webp",
+      "alt": "Illustration of how platelet-rich plasma is prepared and used for hair treatment",
+      "width": 1600,
+      "height": 837
+    }
+  },
+  {
     "slug": "how-to-stop-hair-fall-causes-treatments",
     "path": "/how-to-stop-hair-fall-causes-treatments/",
     "title": "How to Stop Hair Fall: Causes, Treatments and When to See a Doctor",

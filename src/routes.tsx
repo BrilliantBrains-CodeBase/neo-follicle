@@ -73,6 +73,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/nft-brochure-thank-you/', load: () => import('./pages/nft-brochure-thank-you'), slug: 'nft-brochure-thank-you' },
   { path: '/our-blogs/', load: () => import('./pages/our-blogs'), slug: 'our-blogs' },
   { path: '/privacy-policy/', load: () => import('./pages/privacy-policy'), slug: 'privacy-policy' },
+  { path: '/prp-hair-treatment-how-it-works/', load: () => import('./pages/prp-hair-treatment-how-it-works'), slug: 'prp-hair-treatment-how-it-works' },
   { path: '/prp-vs-gfc-for-hair-loss/', load: () => import('./pages/prp-vs-gfc-for-hair-loss'), slug: 'prp-vs-gfc-for-hair-loss' },
   { path: '/qr678-hair-treatment-in-bangalore/', load: () => import('./pages/qr678-hair-treatment-in-bangalore'), slug: 'qr678-hair-treatment-in-bangalore' },
   { path: '/sample-page/', load: () => import('./pages/sample-page'), slug: 'sample-page' },

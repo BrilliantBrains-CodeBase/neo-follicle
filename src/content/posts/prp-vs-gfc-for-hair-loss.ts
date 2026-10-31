@@ -3714,9 +3714,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "prp-hair-treatment-how-it-works",
     "how-many-grafts-do-i-need-for-hair-transplant",
-    "is-hair-transplant-permanent",
-    "hair-transplant-for-receding-hairline"
+    "is-hair-transplant-permanent"
   ]
 }
 
