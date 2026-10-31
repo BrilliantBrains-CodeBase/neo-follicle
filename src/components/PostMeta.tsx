@@ -32,9 +32,19 @@ const PAIR = 'flex flex-col gap-gap-xs'
 const LABEL = 'text-body'
 const VALUE = 'font-head text-h6 text-secondary'
 
-/** "17 June 2026" -- the reference's format, and unambiguous internationally. */
+/**
+ * "17 June 2026" -- the reference's format, and unambiguous internationally.
+ * Always in India time: a post stamped 05:00 IST is the previous day in UTC,
+ * so without this the CI build (UTC) and visitors abroad would see a
+ * different date from the one the clinic published.
+ */
 export function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+  return new Date(iso).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'Asia/Kolkata',
+  })
 }
 
 type PostMetaProps = {
