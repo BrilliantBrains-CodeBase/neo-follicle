@@ -14,7 +14,7 @@
  * from an unrelated blog. None is used. The gallery below is Neo Follicle's own
  * before/after capture -- see scripts/treatment-assets.mjs.
  */
-import { ANALYSIS, BOOK, CALL } from './ctas'
+import { /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
 
 const img = (n: string, alt: string) => ({
@@ -43,7 +43,7 @@ const data: TreatmentPageData = {
       height: 1200,
     },
     badges: ['Same-Day Procedure', 'Doctor-Led Planning', 'Natural Hairline Design', 'DHI-Certified Surgeon'],
-    ctas: [BOOK, ANALYSIS, CALL],
+    ctas: [BOOK, /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ CALL],
   },
 
   sections: [
@@ -197,7 +197,7 @@ const data: TreatmentPageData = {
   cta: {
     heading: 'Restore Your Hair with Expert Planning',
     body: 'Every hair transplant at Neo Follicle begins with a detailed consultation - not a standard package.',
-    ctas: [BOOK, ANALYSIS, CALL],
+    ctas: [BOOK, /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ CALL],
   },
 }
 

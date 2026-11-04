@@ -15,7 +15,7 @@
  * Ours do, so these now work as a summary of what follows.
  */
 import { SOCIAL } from '../../config/site'
-import { BOOK, ANALYSIS, CALL } from '../treatments/ctas'
+import { BOOK, /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ CALL } from '../treatments/ctas'
 import type { VideoGalleryData } from './types'
 
 /** Reads the footer profile rather than restating the URL. */
@@ -77,7 +77,7 @@ const data: VideoGalleryData = {
     body:
       'Every case is different. Book a consultation and Dr. Sandeep Mahapatra will answer it against ' +
       'your own scalp, donor area and grade of hair loss.',
-    ctas: [BOOK, ANALYSIS, CALL],
+    ctas: [BOOK, /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ CALL],
   },
 }
 

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { CONTACT, SOCIAL } from '../config/site'
 import { headerCta } from '../config/nav'
 import {
-  Calculator,
+  // HAIR-ASSESSMENT-OFF: uncomment with the AI Analysis cell below.
+  // Calculator,
   CalendarCheck,
   FollowIcon,
   Phone,
@@ -71,7 +72,8 @@ export default function StickyActionBar() {
         aria-label="Quick actions"
         className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-base/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden"
       >
-        <ul className="grid grid-cols-5">
+        {/* HAIR-ASSESSMENT-OFF: back to grid-cols-5 when the AI Analysis cell returns. */}
+        <ul className="grid grid-cols-4">
           <li className="relative">
             {/*
               w-full is load-bearing here in a way it isn't on the <a> cells
@@ -157,6 +159,7 @@ export default function StickyActionBar() {
             </a>
           </li>
 
+          {/* HAIR-ASSESSMENT-OFF: uncomment when the client turns the assessment back on.
           <li>
             <Link
               to="/ai-hair-transplant-cost-calculator/"
@@ -167,6 +170,7 @@ export default function StickyActionBar() {
               AI Analysis
             </Link>
           </li>
+          */}
         </ul>
       </nav>
     </Fragment>

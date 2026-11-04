@@ -86,12 +86,14 @@ export default function TreatmentsCta() {
               WhatsApp
             </a>
 
+            {/* HAIR-ASSESSMENT-OFF: uncomment when the client turns the assessment back on.
             <Link
               to="/hair-assessment/"
               className={`${BUTTON} border border-line bg-base text-secondary hover:border-primary hover:text-primary`}
             >
               AI Hair Analysis
             </Link>
+            */}
           </div>
         </Reveal>
       </div>

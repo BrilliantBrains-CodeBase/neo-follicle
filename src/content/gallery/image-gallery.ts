@@ -12,7 +12,7 @@
  * nav links to them and verify-gallery.mjs asserts the graph and the DOM
  * agree. The order here is the order the old page rendered.
  */
-import { BOOK, ANALYSIS, CALL } from '../treatments/ctas'
+import { BOOK, /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ CALL } from '../treatments/ctas'
 import type { ImageGalleryData } from './types'
 
 const data: ImageGalleryData = {
@@ -134,7 +134,7 @@ const data: ImageGalleryData = {
     body:
       'Bring it to a consultation. Dr. Sandeep Mahapatra will assess your donor area, grade your ' +
       'hair loss and tell you plainly what is achievable in your case.',
-    ctas: [BOOK, ANALYSIS, CALL],
+    ctas: [BOOK, /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ CALL],
   },
 }
 

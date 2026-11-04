@@ -2,7 +2,7 @@
  * PAGE 10 of content/treatments/Neo Follicle Website Content-3.md (lines
  * 1024-1155).
  */
-import { ANALYSIS, BOOK, CALL } from './ctas'
+import { /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
 
 /** The three body-hair captures are 512x512, not the 650x450 of every other set. */
@@ -130,7 +130,7 @@ const data: TreatmentPageData = {
   cta: {
     heading: 'Build a Long-Term Hair Restoration Plan Around Your Donor Strength',
     body: 'Whether scalp donor hair is sufficient or additional planning is needed, every consultation focuses on finding the most appropriate solution for your hair restoration journey.',
-    ctas: [BOOK, ANALYSIS, CALL],
+    ctas: [BOOK, /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ CALL],
   },
 }
 

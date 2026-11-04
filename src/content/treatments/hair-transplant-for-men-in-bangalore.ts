@@ -9,7 +9,7 @@
  * neofollicle-seo-backup/01-SEO-MASTER.csv with its own hand-written title,
  * description and JSON-LD graph, and src/config/nav.ts re-pointed to it.
  */
-import { ANALYSIS, BOOK, CALL } from './ctas'
+import { /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
 
 const img = (n: string, alt: string) => ({
@@ -161,7 +161,7 @@ const data: TreatmentPageData = {
   cta: {
     heading: 'Restore Your Hair with a Personalized Treatment Plan',
     body: 'Every consultation focuses on understanding your scalp - not selling you a procedure.',
-    ctas: [BOOK, ANALYSIS, CALL],
+    ctas: [BOOK, /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ CALL],
   },
 }
 

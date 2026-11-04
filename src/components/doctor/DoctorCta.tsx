@@ -79,12 +79,14 @@ export default function DoctorCta() {
             >
               Book Appointment →
             </Link>
+            {/* HAIR-ASSESSMENT-OFF: uncomment when the client turns the assessment back on.
             <Link
               to="/hair-assessment/"
               className={`${BUTTON} border border-white/70 text-white/70 hover:border-white hover:text-white`}
             >
               AI Hair Analysis →
             </Link>
+            */}
             {/* tel: is not a route, so an <a> rather than a router Link. */}
             <a
               href={CONTACT.phoneHref}

@@ -1,5 +1,5 @@
 import ThankYouPanel from '../components/ThankYouPanel'
-import { ANALYSIS, CALL } from '../content/treatments/ctas'
+import { /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ CALL } from '../content/treatments/ctas'
 
 /**
  * /thank-you/ -- where the home and /contact-us/ forms land once the lead is
@@ -21,8 +21,12 @@ export default function ThankYou() {
     <ThankYouPanel
       heading="Thank You"
       lines={['We have received your details. Our team will call you back shortly to plan your consultation.']}
+      /* HAIR-ASSESSMENT-OFF: original note and CTAs, restore together.
       note="Want to talk sooner? Call us during clinic hours, or take the free AI hair analysis while you wait."
       ctas={[CALL, ANALYSIS]}
+      */
+      note="Want to talk sooner? Call us during clinic hours."
+      ctas={[CALL]}
     />
   )
 }

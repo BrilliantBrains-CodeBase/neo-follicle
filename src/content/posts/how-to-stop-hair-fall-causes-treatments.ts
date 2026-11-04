@@ -379,21 +379,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "If you are searching for hair fall treatment near me, look for a registered doctor who examines you and explains the diagnosis first. A dermatologist will take a history, examine the scalp and may advise blood tests. If you want a starting point, the "
-        },
-        {
-          "t": "a",
-          "href": "/hair-assessment/",
-          "c": [
-            {
-              "t": "text",
-              "v": "online hair assessment"
-            }
-          ]
-        },
-        {
-          "t": "text",
-          "v": " can help you describe your pattern before a visit."
+          "v": "If you are searching for hair fall treatment near me, look for a registered doctor who examines you and explains the diagnosis first. A dermatologist will take a history, examine the scalp and may advise blood tests."
         }
       ]
     },

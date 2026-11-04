@@ -350,21 +350,7 @@ const post: Post = {
       "c": [
         {
           "t": "text",
-          "v": "The most dependable estimate comes from an in-person examination. Before that, an online tool such as the "
-        },
-        {
-          "t": "a",
-          "href": "/ai-hair-transplant-cost-calculator/",
-          "c": [
-            {
-              "t": "text",
-              "v": "AI hair transplant cost calculator"
-            }
-          ]
-        },
-        {
-          "t": "text",
-          "v": " can give a rough starting point, though it cannot replace an examination of your scalp and donor area."
+          "v": "The most dependable estimate comes from an in-person examination."
         }
       ]
     },

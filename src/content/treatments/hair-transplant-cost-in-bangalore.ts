@@ -10,7 +10,7 @@
  * the brief deliberately refuses to, and the old page's per-graft range lives
  * in the SEO description, not the body.
  */
-import { BOOK, CALL, COST, ANALYSIS } from './ctas'
+import { BOOK, CALL /* HAIR-ASSESSMENT-OFF: , COST, ANALYSIS */ } from './ctas'
 import type { TreatmentPageData } from './types'
 
 const data: TreatmentPageData = {
@@ -29,7 +29,7 @@ const data: TreatmentPageData = {
       width: 1200,
       height: 792,
     },
-    ctas: [COST, CALL],
+    ctas: [/* HAIR-ASSESSMENT-OFF: was COST */ BOOK, CALL],
   },
 
   sections: [
@@ -81,7 +81,7 @@ const data: TreatmentPageData = {
 
   cta: {
     heading: 'Get a Personalized Hair Transplant Cost Estimate',
-    ctas: [BOOK, ANALYSIS, CALL],
+    ctas: [BOOK, /* HAIR-ASSESSMENT-OFF: ANALYSIS, */ CALL],
   },
 }
 

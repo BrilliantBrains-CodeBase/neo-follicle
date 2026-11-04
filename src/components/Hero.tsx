@@ -199,12 +199,14 @@ export default function Hero() {
               >
                 Book a Hair Consultation →
               </Link>
+              {/* HAIR-ASSESSMENT-OFF: uncomment when the client turns the assessment back on.
               <Link
                 to="/hair-assessment/"
                 className={`${BUTTON} border border-white/70 text-white/70 hover:border-white hover:text-white`}
               >
                 Get Your AI Hair Analysis &amp; Cost Estimate →
               </Link>
+              */}
             </div>
           </div>
 
