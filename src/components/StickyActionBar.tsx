@@ -1,21 +1,25 @@
-import { Fragment, useState } from 'react'
+import { Fragment /* HAIR-ASSESSMENT-OFF: , useState */ } from 'react'
 import { Link } from 'react-router-dom'
-import { CONTACT, SOCIAL } from '../config/site'
+import { CONTACT /* HAIR-ASSESSMENT-OFF: , SOCIAL */ } from '../config/site'
 import { headerCta } from '../config/nav'
 import {
   // HAIR-ASSESSMENT-OFF: uncomment with the AI Analysis cell below.
   // Calculator,
   CalendarCheck,
-  FollowIcon,
+  // HAIR-ASSESSMENT-OFF: uncomment with the Follow cell below.
+  // FollowIcon,
   Phone,
-  SOCIAL_COLORS,
+  // SOCIAL_COLORS,
   WhatsAppIcon,
-  socialIcons,
+  // socialIcons,
 } from './icons'
 
 /**
  * Persistent Follow / Call / Book / WhatsApp / AI Analysis bar, pinned to the
  * bottom below `lg`.
+ *
+ * HAIR-ASSESSMENT-OFF: Follow and AI Analysis are commented out, leaving Call / Book /
+ * WhatsApp with Book centred. Restore both together so Book stays centred.
  *
  * Why it exists: the header's CTA cluster is `hidden ... lg:flex`, so on a phone
  * the only booking path is inside the hamburger drawer. Anyone reading the
@@ -44,7 +48,10 @@ import {
  *      for `fixed` descendants (same rule as `filter`/`transform`), so a
  *      `fixed inset-0` backdrop nested inside `<nav>` would only ever cover
  *      `<nav>`'s own small box, not the viewport.
- *   3. No drop shadow. The Folixa kit is shadow-free and tailwind.config.js
+ *   3. The Follow <button> needs w-full: unlike a block-level element, a flex
+ *      <button> does not stretch to fill its grid column, so without it Follow
+ *      renders shrink-to-fit and left-aligned instead of centered.
+ *   4. No drop shadow. The Folixa kit is shadow-free and tailwind.config.js
  *      ships no shadow scale, so glow effects are reproduced as a white
  *      `ring` halo instead.
  */
@@ -54,10 +61,12 @@ const CELL =
   'flex min-h-[64px] flex-col items-center justify-center gap-1 font-head text-[0.6875rem] font-semibold text-secondary transition-colors duration-300 active:text-primary'
 
 export default function StickyActionBar() {
-  const [isFollowOpen, setIsFollowOpen] = useState(false)
+  // HAIR-ASSESSMENT-OFF: uncomment with the Follow cell below.
+  // const [isFollowOpen, setIsFollowOpen] = useState(false)
 
   return (
     <Fragment>
+      {/* HAIR-ASSESSMENT-OFF: uncomment with the Follow cell below.
       {isFollowOpen && (
         <button
           type="button"
@@ -67,21 +76,16 @@ export default function StickyActionBar() {
           className="fixed inset-0 z-20 lg:hidden"
         />
       )}
+      */}
 
       <nav
         aria-label="Quick actions"
         className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-base/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden"
       >
-        {/* HAIR-ASSESSMENT-OFF: back to grid-cols-5 when the AI Analysis cell returns. */}
-        <ul className="grid grid-cols-4">
+        {/* HAIR-ASSESSMENT-OFF: back to grid-cols-5 when Follow and AI Analysis return. */}
+        <ul className="grid grid-cols-3">
+          {/* HAIR-ASSESSMENT-OFF: uncomment when the client turns the assessment back on.
           <li className="relative">
-            {/*
-              w-full is load-bearing here in a way it isn't on the <a> cells
-              below: unlike a block-level element, a <button> with `flex` does
-              not stretch to fill its grid column on its own -- it sizes to
-              its content -- so without it Follow renders shrink-to-fit and
-              left-aligned instead of centered in its column like its siblings.
-            */}
             <button
               type="button"
               aria-expanded={isFollowOpen}
@@ -118,6 +122,7 @@ export default function StickyActionBar() {
               </ul>
             )}
           </li>
+          */}
 
           <li>
             <a href={CONTACT.phoneHref} className={CELL}>
