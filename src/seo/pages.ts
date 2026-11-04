@@ -1988,6 +1988,38 @@ export const pages: PageSeo[] = [
     "lastmod": "2026-09-22T00:00:00+05:30"
   },
   {
+    "slug": "gfc-hair-treatment-who-it-may-suit",
+    "path": "/gfc-hair-treatment-who-it-may-suit/",
+    "type": "post",
+    "title": "GFC Hair Treatment: What It Is and Who It May Suit",
+    "description": "Understand GFC hair treatment: how growth factor concentrate works, how it differs from PRP, who may benefit and what the evidence shows.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": "https://neofollicletransplant.com/gfc-hair-treatment-who-it-may-suit/",
+    "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og": {
+      "title": "GFC Hair Treatment: What It Is and Who It May Suit",
+      "description": "Understand GFC hair treatment: how growth factor concentrate works, how it differs from PRP, who may benefit and what the evidence shows.",
+      "url": "https://neofollicletransplant.com/gfc-hair-treatment-who-it-may-suit/",
+      "type": "article",
+      "image": "https://neofollicletransplant.com/og/gfc-hair-treatment-who-it-may-suit.jpg",
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en_IN",
+      "imageAlt": "GFC Hair Treatment: What It Is and Who It May Suit",
+      "imageWidth": 1200,
+      "imageHeight": 630
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "GFC Hair Treatment: What It Is and Who It May Suit",
+      "description": "Understand GFC hair treatment: how growth factor concentrate works, how it differs from PRP, who may benefit and what the evidence shows.",
+      "image": "https://neofollicletransplant.com/og/gfc-hair-treatment-who-it-may-suit.jpg"
+    },
+    "h1": "GFC Hair Treatment: What It Is and Who It May Suit",
+    "inSitemap": true,
+    "lastmod": "2026-11-04T09:00:00+05:30"
+  },
+  {
     "slug": "hair-transplant-cost-bangalore-what-decides-price",
     "path": "/hair-transplant-cost-bangalore-what-decides-price/",
     "type": "post",

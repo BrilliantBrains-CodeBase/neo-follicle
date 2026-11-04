@@ -4758,9 +4758,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "gfc-hair-treatment-who-it-may-suit",
     "prp-hair-treatment-how-it-works",
-    "how-to-stop-hair-fall-causes-treatments",
-    "hair-transplant-cost-bangalore-what-decides-price"
+    "how-to-stop-hair-fall-causes-treatments"
   ]
 }
 

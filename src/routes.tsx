@@ -44,6 +44,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/fue-hair-transplant-bangalore/', load: () => import('./pages/fue-hair-transplant-bangalore'), slug: 'fue-hair-transplant-bangalore' },
   { path: '/fue-vs-direct-hair-implantation/', load: () => import('./pages/fue-vs-direct-hair-implantation'), slug: 'fue-vs-direct-hair-implantation' },
   { path: '/gfc-hair-treatment-in-bangalore/', load: () => import('./pages/gfc-hair-treatment-in-bangalore'), slug: 'gfc-hair-treatment-in-bangalore' },
+  { path: '/gfc-hair-treatment-who-it-may-suit/', load: () => import('./pages/gfc-hair-treatment-who-it-may-suit'), slug: 'gfc-hair-treatment-who-it-may-suit' },
   { path: '/gfc-vs-exosome-vs-qr678-hair-treatment/', load: () => import('./pages/gfc-vs-exosome-vs-qr678-hair-treatment'), slug: 'gfc-vs-exosome-vs-qr678-hair-treatment' },
   { path: '/hair-assessment/', load: () => import('./pages/hair-assessment'), slug: 'hair-assessment' },
   { path: '/hair-conditions-we-treat/', load: () => import('./pages/hair-conditions-we-treat'), slug: 'hair-conditions-we-treat' },

@@ -8,6 +8,29 @@ import type { PostSummary } from './types'
 
 export const postSummaries: PostSummary[] = [
   {
+    "slug": "gfc-hair-treatment-who-it-may-suit",
+    "path": "/gfc-hair-treatment-who-it-may-suit/",
+    "title": "GFC Hair Treatment: What It Is and Who It May Suit",
+    "excerpt": "Understand GFC hair treatment: how growth factor concentrate works, how it differs from PRP, who may benefit and what the evidence shows.",
+    "summary": "",
+    "category": "Hair Loss Treatment",
+    "datePublished": "2026-11-04T09:00:00+05:30",
+    "dateModified": "2026-11-04T09:00:00+05:30",
+    "readingMinutes": 7,
+    "card": {
+      "src": "/blog/gfc-hair-treatment-who-it-may-suit.webp",
+      "alt": "Illustration of growth factors supporting a hair follicle",
+      "width": 1200,
+      "height": 628
+    },
+    "hero": {
+      "src": "/blog/gfc-hair-treatment-who-it-may-suit-hero.webp",
+      "alt": "Illustration of growth factors supporting a hair follicle",
+      "width": 1600,
+      "height": 837
+    }
+  },
+  {
     "slug": "prp-hair-treatment-how-it-works",
     "path": "/prp-hair-treatment-how-it-works/",
     "title": "PRP Hair Treatment: How It Works, Sessions and What to Expect",

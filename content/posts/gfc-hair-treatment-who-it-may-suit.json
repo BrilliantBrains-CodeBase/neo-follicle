@@ -1,0 +1,11 @@
+{
+  "$comment": "Authored post. The article body is in the sibling .html file; SEO metadata and JSON-LD are in content/seo/gfc-hair-treatment-who-it-may-suit.json.",
+  "title": "GFC Hair Treatment: What It Is and Who It May Suit",
+  "excerpt": "Understand GFC hair treatment: how growth factor concentrate works, how it differs from PRP, who may benefit and what the evidence shows.",
+  "summary": "",
+  "category": "Hair Loss Treatment",
+  "image": {
+    "file": "images/gfc-hair-treatment-who-it-may-suit.png",
+    "alt": "Illustration of growth factors supporting a hair follicle"
+  }
+}

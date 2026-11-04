@@ -628,9 +628,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "gfc-hair-treatment-who-it-may-suit",
     "how-to-stop-hair-fall-causes-treatments",
-    "prp-vs-gfc-for-hair-loss",
-    "hair-transplant-for-receding-hairline"
+    "prp-vs-gfc-for-hair-loss"
   ]
 }
 

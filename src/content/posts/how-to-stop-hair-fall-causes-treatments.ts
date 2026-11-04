@@ -695,9 +695,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "gfc-hair-treatment-who-it-may-suit",
     "prp-hair-treatment-how-it-works",
-    "how-many-grafts-do-i-need-for-hair-transplant",
-    "hair-transplant-cost-bangalore-what-decides-price"
+    "how-many-grafts-do-i-need-for-hair-transplant"
   ]
 }
 

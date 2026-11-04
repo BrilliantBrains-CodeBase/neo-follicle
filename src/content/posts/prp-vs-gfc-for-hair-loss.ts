@@ -3714,9 +3714,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "gfc-hair-treatment-who-it-may-suit",
     "prp-hair-treatment-how-it-works",
-    "how-many-grafts-do-i-need-for-hair-transplant",
-    "is-hair-transplant-permanent"
+    "how-many-grafts-do-i-need-for-hair-transplant"
   ]
 }
 

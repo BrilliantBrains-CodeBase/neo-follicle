@@ -3841,8 +3841,8 @@ const post: Post = {
   ],
   "related": [
     "hair-transplant-for-receding-hairline",
-    "fue-vs-direct-hair-implantation",
-    "prp-hair-treatment-how-it-works"
+    "gfc-hair-treatment-who-it-may-suit",
+    "fue-vs-direct-hair-implantation"
   ]
 }
 
