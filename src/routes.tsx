@@ -24,6 +24,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/ai-hair-transplant-cost-calculator/', load: () => import('./pages/ai-hair-transplant-cost-calculator'), slug: 'ai-hair-transplant-cost-calculator' },
   { path: '/alopecia-areata-treatment-in-bangalore/', load: () => import('./pages/alopecia-areata-treatment-in-bangalore'), slug: 'alopecia-areata-treatment-in-bangalore' },
   { path: '/beard-transplant-in-bangalore/', load: () => import('./pages/beard-transplant-in-bangalore'), slug: 'beard-transplant-in-bangalore' },
+  { path: '/beard-transplant-who-it-suits-recovery/', load: () => import('./pages/beard-transplant-who-it-suits-recovery'), slug: 'beard-transplant-who-it-suits-recovery' },
   { path: '/best-hair-transplant-clinic-lp/', load: () => import('./pages/best-hair-transplant-clinic-lp'), slug: 'best-hair-transplant-clinic-lp' },
   { path: '/best-hair-transplant-in-bangalore/', load: () => import('./pages/best-hair-transplant-in-bangalore'), slug: 'best-hair-transplant-in-bangalore' },
   { path: '/best-hair-transplant-surgeon-in-bangalore-lp/', load: () => import('./pages/best-hair-transplant-surgeon-in-bangalore-lp'), slug: 'best-hair-transplant-surgeon-in-bangalore-lp' },

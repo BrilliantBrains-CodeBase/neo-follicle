@@ -4758,9 +4758,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "beard-transplant-who-it-suits-recovery",
     "gfc-hair-treatment-who-it-may-suit",
-    "prp-hair-treatment-how-it-works",
-    "how-to-stop-hair-fall-causes-treatments"
+    "prp-hair-treatment-how-it-works"
   ]
 }
 

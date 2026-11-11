@@ -8,6 +8,29 @@ import type { PostSummary } from './types'
 
 export const postSummaries: PostSummary[] = [
   {
+    "slug": "beard-transplant-who-it-suits-recovery",
+    "path": "/beard-transplant-who-it-suits-recovery/",
+    "title": "Beard Transplant: Who It Suits, Recovery and What Affects Cost",
+    "excerpt": "A clear guide to beard transplant: who may be a candidate, how the procedure works, recovery, results and what affects the cost.",
+    "summary": "",
+    "category": "Hair Transplant",
+    "datePublished": "2026-11-11T09:00:00+05:30",
+    "dateModified": "2026-11-11T09:00:00+05:30",
+    "readingMinutes": 7,
+    "card": {
+      "src": "/blog/beard-transplant-who-it-suits-recovery.webp",
+      "alt": "Illustration of donor hair being moved to a patchy beard area",
+      "width": 1200,
+      "height": 628
+    },
+    "hero": {
+      "src": "/blog/beard-transplant-who-it-suits-recovery-hero.webp",
+      "alt": "Illustration of donor hair being moved to a patchy beard area",
+      "width": 1600,
+      "height": 837
+    }
+  },
+  {
     "slug": "gfc-hair-treatment-who-it-may-suit",
     "path": "/gfc-hair-treatment-who-it-may-suit/",
     "title": "GFC Hair Treatment: What It Is and Who It May Suit",

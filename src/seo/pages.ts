@@ -1956,6 +1956,38 @@ export const pages: PageSeo[] = [
     "lastmod": "2026-07-07T06:13:57+05:30"
   },
   {
+    "slug": "beard-transplant-who-it-suits-recovery",
+    "path": "/beard-transplant-who-it-suits-recovery/",
+    "type": "post",
+    "title": "Beard Transplant: Who It Suits and What to Expect",
+    "description": "A clear guide to beard transplant: who may be a candidate, how the procedure works, recovery, results and what affects the cost.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": "https://neofollicletransplant.com/beard-transplant-who-it-suits-recovery/",
+    "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og": {
+      "title": "Beard Transplant: Who It Suits and What to Expect",
+      "description": "A clear guide to beard transplant: who may be a candidate, how the procedure works, recovery, results and what affects the cost.",
+      "url": "https://neofollicletransplant.com/beard-transplant-who-it-suits-recovery/",
+      "type": "article",
+      "image": "https://neofollicletransplant.com/og/beard-transplant-who-it-suits-recovery.jpg",
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en_IN",
+      "imageAlt": "Beard Transplant: Who It Suits, Recovery and What Affects Cost",
+      "imageWidth": 1200,
+      "imageHeight": 630
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Beard Transplant: Who It Suits and What to Expect",
+      "description": "A clear guide to beard transplant: who may be a candidate, how the procedure works, recovery, results and what affects the cost.",
+      "image": "https://neofollicletransplant.com/og/beard-transplant-who-it-suits-recovery.jpg"
+    },
+    "h1": "Beard Transplant: Who It Suits, Recovery and What Affects Cost",
+    "inSitemap": true,
+    "lastmod": "2026-11-11T09:00:00+05:30"
+  },
+  {
     "slug": "dutexome-hair-treatment-in-bangalore",
     "path": "/dutexome-hair-treatment-in-bangalore/",
     "type": "page",
@@ -2177,7 +2209,7 @@ export const pages: PageSeo[] = [
     },
     "h1": "Thank You",
     "inSitemap": false,
-    "lastmod": "2026-09-25T16:10:01+05:30"
+    "lastmod": "2026-11-04T10:41:51+05:30"
   }
 ]
 
