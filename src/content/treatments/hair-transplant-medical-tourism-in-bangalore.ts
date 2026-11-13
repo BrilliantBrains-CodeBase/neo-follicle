@@ -47,7 +47,6 @@
 import { BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
 import { TREATMENT_VIDEOS } from './videos.generated'
-import { GALLERY_IMAGES } from '../gallery/image-gallery.generated'
 
 /**
  * Intrinsic sizes are the real ones from public/treatments/sizes.json, written
@@ -60,11 +59,6 @@ const img = (n: string, alt: string, width = 650, height = 450) => ({
   width,
   height,
 })
-
-/** Representative hair-transplant cases from the verified full gallery. */
-const BEFORE_AFTER_RESULTS = (GALLERY_IMAGES['hair-transplant-results'] ?? [])
-  .slice(0, 3)
-  .map(({ thumb, alt }) => ({ ...thumb, alt }))
 
 const data: TreatmentPageData = {
   slug: 'hair-transplant-medical-tourism-in-bangalore',
@@ -140,8 +134,15 @@ const data: TreatmentPageData = {
       kind: 'results',
       heading: 'Before & After Hair Transplant Results',
       lede:
-        'Explore representative hair transplant transformations from Neo Follicle. Individual outcomes depend on the hair loss pattern, donor availability, treatment plan, recovery and aftercare.',
-      images: BEFORE_AFTER_RESULTS,
+        'Explore before and after hair transplant results from international and NRI patients. Individual outcomes depend on the hair loss pattern, donor availability, treatment plan, recovery and aftercare.',
+      images: [
+        img('result-1', 'Before and after hair transplant result for an international patient, shown from the front.', 1024, 768),
+        img('result-2', 'Before and after hair transplant result for an international patient, showing frontal coverage.', 1024, 768),
+        img('result-3', 'Before and after hair transplant result for an international patient, showing the restored frontal hairline.', 1024, 768),
+        img('result-4', 'Before and after hair transplant result for an international patient, showing frontal hair restoration.', 1024, 768),
+        img('result-5', 'Before and after NRI patient hair transplant result labelled 4,500 grafts after one year.', 1024, 768),
+        img('result-6', 'Before and after NRI patient hair transplant result labelled 4,000 grafts after nine months.', 1024, 768),
+      ],
       closing:
         'These images show treatment possibilities, not a guaranteed outcome. A consultation is required to understand what is realistic for you.',
       link: {

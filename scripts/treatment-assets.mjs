@@ -268,6 +268,15 @@ export const TREATMENT_IMAGES = {
   'hair-transplant-medical-tourism-in-bangalore': {
     hero: { local: z('Hair Transplant Medical Tourism.png'),
             alt: 'A traveller holding a passport and boarding pass in an airport departures hall, with Bangalore and a clinical procedure shown alongside.' },
+    // Client-supplied Foreign Client and NRI Client before/after composites.
+    results: [
+      { local: 'content/treatments/images/international-patients-result-1.png', alt: 'Before and after hair transplant result for an international patient, shown from the front.' },
+      { local: 'content/treatments/images/international-patients-result-2.png', alt: 'Before and after hair transplant result for an international patient, showing frontal coverage.' },
+      { local: 'content/treatments/images/international-patients-result-3.png', alt: 'Before and after hair transplant result for an international patient, showing the restored frontal hairline.' },
+      { local: 'content/treatments/images/international-patients-result-4.png', alt: 'Before and after hair transplant result for an international patient, showing frontal hair restoration.' },
+      { local: 'content/treatments/images/international-patients-result-5.png', alt: 'Before and after NRI patient hair transplant result labelled 4,500 grafts after one year.' },
+      { local: 'content/treatments/images/international-patients-result-6.png', alt: 'Before and after NRI patient hair transplant result labelled 4,000 grafts after nine months.' },
+    ],
     // Client-supplied illustrative images, replacing the two premises photos.
     // The explicit names give each replacement a new URL because treatment
     // images are cached for 30 days in public/.htaccess.
