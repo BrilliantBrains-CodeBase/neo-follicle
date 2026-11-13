@@ -42,7 +42,7 @@ const PHILOSOPHY = [
 ]
 
 /**
- * SECTION 3 "Credentials", verbatim.
+ * SECTION 3 "Credentials", with client-requested profile additions.
  *
  * Deliberately NOT assembled from DOCTOR.credentials / .memberships in
  * config/site.ts -- that data is transcribed from the indexed JSON-LD and is a
@@ -54,6 +54,8 @@ const PHILOSOPHY = [
 const CREDENTIALS = [
   'MBBS',
   'MD (Dermatology)',
+  'Gold Medalist with Honours in MD Dermatology',
+  'Fellowship in Hair Transplant (DHI)',
   'Senior Consultant Dermatologist',
   'Cosmetic Expert',
   'Hair Transplant Surgeon',
