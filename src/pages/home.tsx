@@ -31,11 +31,11 @@ export default function Home() {
       <About />
       <Services />
       <Celebrities />
+      <InternationalPatients />
       <TreatmentGallery />
       <Process />
       <WhyNeoFollicle />
       <Videos />
-      <InternationalPatients />
       <CommonQuestions />
       <ContactUs />
       <Insights />

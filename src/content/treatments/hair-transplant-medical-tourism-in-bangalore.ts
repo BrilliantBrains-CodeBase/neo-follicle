@@ -47,6 +47,7 @@
 import { BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
 import { TREATMENT_VIDEOS } from './videos.generated'
+import { GALLERY_IMAGES } from '../gallery/image-gallery.generated'
 
 /**
  * Intrinsic sizes are the real ones from public/treatments/sizes.json, written
@@ -59,6 +60,11 @@ const img = (n: string, alt: string, width = 650, height = 450) => ({
   width,
   height,
 })
+
+/** Representative hair-transplant cases from the verified full gallery. */
+const BEFORE_AFTER_RESULTS = (GALLERY_IMAGES['hair-transplant-results'] ?? [])
+  .slice(0, 3)
+  .map(({ thumb, alt }) => ({ ...thumb, alt }))
 
 const data: TreatmentPageData = {
   slug: 'hair-transplant-medical-tourism-in-bangalore',
@@ -129,6 +135,19 @@ const data: TreatmentPageData = {
       lede: 'Watch patients share their experiences travelling to Bangalore for hair transplant care.',
       videos: TREATMENT_VIDEOS['hair-transplant-medical-tourism-in-bangalore'],
       link: { label: 'Watch more patient videos', to: '/video-gallery/' },
+    },
+    {
+      kind: 'results',
+      heading: 'Before & After Hair Transplant Results',
+      lede:
+        'Explore representative hair transplant transformations from Neo Follicle. Individual outcomes depend on the hair loss pattern, donor availability, treatment plan, recovery and aftercare.',
+      images: BEFORE_AFTER_RESULTS,
+      closing:
+        'These images show treatment possibilities, not a guaranteed outcome. A consultation is required to understand what is realistic for you.',
+      link: {
+        label: 'View All Before & After Results',
+        to: '/image-gallery/#hair-transplant-results',
+      },
     },
     {
       kind: 'process',

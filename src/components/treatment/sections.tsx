@@ -465,10 +465,24 @@ function Results({ section, ground }: { section: Extract<TreatmentSection, { kin
         stranded. No tinted panel around it: `Pills` fills opposite to the
         ground, so a panel would land on the chips' own fill and flatten them,
         the trap recorded on the checklist's secondary panel.
+
+        A results block with a gallery link is the compact preview variant:
+        its two note lines and CTA are centred beneath the images. Results
+        sections with factor chips keep the left-aligned treatment above.
       */}
-      {(section.lede || section.points || section.closing) && (
-        <div className="flex flex-col gap-5">
-          {section.lede && <p className="max-w-[68ch] text-body">{section.lede}</p>}
+      {(section.lede || section.points || section.closing || section.link) && (
+        <div className={`flex flex-col gap-5 ${section.link ? 'items-center text-center' : ''}`}>
+          {section.lede && (
+            <p
+              className={`max-w-[68ch] ${
+                section.link
+                  ? 'text-[14px] leading-[1.6em] text-body/80'
+                  : 'text-body'
+              }`}
+            >
+              {section.lede}
+            </p>
+          )}
 
           {section.points &&
             (usePills(section.points) ? (
@@ -477,10 +491,25 @@ function Results({ section, ground }: { section: Extract<TreatmentSection, { kin
               <Points points={section.points} />
             ))}
 
-          {/* The ethical punchline on a medical page, so it carries a little
-              weight rather than trailing off as another body line. */}
           {section.closing && (
-            <p className="font-head text-h6 text-secondary">{section.closing}</p>
+            <p
+              className={`max-w-[68ch] ${
+                section.link
+                  ? 'text-[14px] leading-[1.6em] text-body/80'
+                  : 'font-head text-h6 text-secondary'
+              }`}
+            >
+              {section.closing}
+            </p>
+          )}
+
+          {section.link && (
+            <Reveal className="flex w-full justify-center">
+              <CtaButton
+                cta={section.link}
+                className={`${BUTTON} bg-primary text-white hover:bg-primary-dark`}
+              />
+            </Reveal>
           )}
         </div>
       )}
@@ -716,7 +745,10 @@ function Videos({ section, ground }: { section: Extract<TreatmentSection, { kind
     const node = sectionRef.current
     if (!node) return
     const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), {
-      threshold: 0.35,
+      // Start as soon as the carousel is meaningfully visible. Requiring 35%
+      // prevented autoplay on shorter laptop viewports where the controls and
+      // cards could not occupy that much of the screen at once.
+      threshold: 0.1,
     })
     observer.observe(node)
     return () => observer.disconnect()
@@ -760,8 +792,8 @@ function Videos({ section, ground }: { section: Extract<TreatmentSection, { kind
         role="region"
         aria-roledescription="carousel"
         aria-label={section.heading}
-        onMouseEnter={() => setInteractionPause(true)}
-        onMouseLeave={() => setInteractionPause(false)}
+        // Passive pointer hover must not stop the requested auto-slide. Active
+        // touch/drag interaction and keyboard focus still pause movement.
         onFocusCapture={() => setInteractionPause(true)}
         onBlurCapture={(event) => {
           if (!event.currentTarget.contains(event.relatedTarget)) setInteractionPause(false)

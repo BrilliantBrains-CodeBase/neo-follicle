@@ -53,7 +53,6 @@ const PHILOSOPHY = [
  */
 const CREDENTIALS = [
   'MBBS',
-  'MD (Dermatology)',
   'Gold Medalist with Honours in MD Dermatology',
   'Fellowship in Hair Transplant (DHI)',
   'Senior Consultant Dermatologist',

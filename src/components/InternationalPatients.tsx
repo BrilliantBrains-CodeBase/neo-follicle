@@ -8,9 +8,9 @@ import { BUTTON, CtaButton, Section } from './treatment/shell'
  * Homepage gateway for overseas visitors, sourced from the authored medical
  * tourism page and SECTION 11 of the homepage brief.
  *
- * This sits after Videos and before CommonQuestions: visitors have already
- * seen the clinic's general proof, while the detailed international route is
- * still offered before the FAQ and lead form. Services keeps its earlier,
+ * This sits immediately after Celebrities: visitors move from social proof to
+ * the dedicated international-patient route before entering the treatment
+ * gallery and the rest of the homepage journey. Services keeps its earlier,
  * shorter international-patient signpost.
  *
  * FLAGGED FOR CLIENT REVIEW: the detailed page contains additional claims

@@ -165,7 +165,16 @@ export type TreatmentSection =
    * module and in scripts/treatment-assets.mjs -- that is a note to us, and
    * rendering it to patients would be worse than not having it.
    */
-  | { kind: 'results'; heading: string; lede?: string; images: TreatmentImage[]; points?: string[]; closing?: string }
+  | {
+      kind: 'results'
+      heading: string
+      lede?: string
+      images: TreatmentImage[]
+      points?: string[]
+      closing?: string
+      /** Optional route to the complete results gallery. */
+      link?: Cta
+    }
   /** The recovery table. */
   | { kind: 'timeline'; heading: string; lede?: string; columns: [string, string]; rows: TimelineRow[] }
   /**
