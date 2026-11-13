@@ -14,10 +14,12 @@
 //      behind by an edit to treatment-assets.mjs)
 //   5. every internal href resolves to a real route, trailing slash included
 //   6. no section rendered empty, and no stub text survived
+//   7. treatment videos remain local-poster facades with real accessible names
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { TREATMENT_IMAGES } from './treatment-assets.mjs'
+import { TREATMENT_VIDEO_IDS, videoPosterPath } from './gallery-assets.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const dist = path.join(root, 'dist')
@@ -165,6 +167,50 @@ for (const [slug, html] of docs) {
 stubs.length
   ? fail('no stub text and no empty sections', stubs.join('\n      '))
   : pass('no stub text, no empty headings, no leaked review flags')
+
+/* ---- 7. local, accessible video facades ----------------------------------- */
+const videoBad = []
+for (const [slug, html] of docs) {
+  // GTM's fallback is the only allowed static iframe, and it is inert when
+  // JavaScript is enabled. A YouTube player must not exist until activation.
+  const withoutNoscript = html.replace(/<noscript>[\s\S]*?<\/noscript>/g, '')
+  if (/<iframe[\s>]/.test(withoutNoscript)) {
+    videoBad.push(`${slug}: iframe shipped in prerendered HTML`)
+  }
+  if (/(?:i\.ytimg\.com|img\.youtube\.com)/.test(html)) {
+    videoBad.push(`${slug}: hotlinks a YouTube poster`)
+  }
+}
+
+for (const [slug, ids] of Object.entries(TREATMENT_VIDEO_IDS)) {
+  const html = docs.get(slug)
+  if (!html) continue
+  const rendered = new Set(
+    [...html.matchAll(/src="(\/video-gallery\/[^\"]+\.webp)"/g)].map((m) => m[1]),
+  )
+  const expected = new Set(ids.map(videoPosterPath))
+  if (rendered.size !== expected.size) {
+    videoBad.push(`${slug}: ${rendered.size} posters rendered, expected ${expected.size}`)
+  }
+
+  for (const id of ids) {
+    const posterPath = videoPosterPath(id)
+    const tag = [...html.matchAll(/<img\b[^>]*>/g)].find((m) => m[0].includes(`src="${posterPath}"`))?.[0]
+    const alt = tag?.match(/\balt="([^"]*)"/)?.[1] ?? ''
+    if (!tag) videoBad.push(`${slug}: missing local poster for ${id}`)
+    else if (!alt || alt === id) videoBad.push(`${slug}: ${id} has no real accessible title`)
+    if (!html.includes(`href="https://www.youtube.com/watch?v=${id}"`)) {
+      videoBad.push(`${slug}: missing no-JS YouTube link for ${id}`)
+    }
+    if (!fs.existsSync(path.join(pub, posterPath.replace(/^\//, '')))) {
+      videoBad.push(`${slug}: ${posterPath} is not on disk`)
+    }
+  }
+}
+
+videoBad.length
+  ? fail('treatment videos are local click-to-play facades', [...new Set(videoBad)].slice(0, 10).join('\n      '))
+  : pass('treatment videos use local titled posters and ship no YouTube iframe before a click')
 
 /* ---- report ---------------------------------------------------------------- */
 function report() {

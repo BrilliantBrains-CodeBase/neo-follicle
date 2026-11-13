@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 /**
  * A YouTube video as a click-to-play facade.
@@ -38,6 +38,8 @@ type Props = {
   className?: string
   /** Poster loading strategy. The first row of a grid may want 'eager'. */
   loading?: 'lazy' | 'eager'
+  /** Lets a carousel stop moving as soon as this video starts playing. */
+  onPlay?: () => void
 }
 
 /**
@@ -68,8 +70,16 @@ export default function YouTubeFacade({
   mode = 'link',
   className = '',
   loading = 'lazy',
+  onPlay,
 }: Props) {
   const [playing, setPlaying] = useState(false)
+  const frameRef = useRef<HTMLIFrameElement>(null)
+
+  // The facade anchor disappears after keyboard activation. Move focus into
+  // the replacement player rather than dropping the visitor back to <body>.
+  useEffect(() => {
+    if (playing) frameRef.current?.focus()
+  }, [playing])
 
   const frame = `not-prose group relative block aspect-video overflow-hidden rounded ${className}`
 
@@ -77,6 +87,7 @@ export default function YouTubeFacade({
     return (
       <div className={frame}>
         <iframe
+          ref={frameRef}
           src={`https://www.youtube-nocookie.com/embed/${videoId}?${PARAMS}`}
           title={title}
           loading="lazy"
@@ -102,6 +113,7 @@ export default function YouTubeFacade({
         // people do with a grid of forty-five of them.
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
         e.preventDefault()
+        onPlay?.()
         setPlaying(true)
       }}
     >

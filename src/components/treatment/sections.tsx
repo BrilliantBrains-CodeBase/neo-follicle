@@ -21,9 +21,11 @@ import type {
   TreatmentImage,
   TreatmentSection,
 } from '../../content/treatments/types'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle } from '../icons'
 import Reveal from '../Reveal'
+import YouTubeFacade from '../YouTubeFacade'
 import { SCROLLER, SLIDE } from '../carousel'
 import { BUTTON, CtaButton, FLOAT, Section, SectionHead, Split, type Ground } from './shell'
 
@@ -640,6 +642,227 @@ function Personalities({
   )
 }
 
+const VIDEO_AUTOPLAY_MS = 5500
+
+/**
+ * Patient journeys as first-party poster facades in an auto-advancing,
+ * swipeable carousel. Every poster stays in the DOM for no-JS readability;
+ * JavaScript only adds measured scrolling and controls.
+ */
+function Videos({ section, ground }: { section: Extract<TreatmentSection, { kind: 'videos' }>; ground: Ground }) {
+  const trackRef = useRef<HTMLUListElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const slideRefs = useRef<Array<HTMLLIElement | null>>([])
+  const scrollTimer = useRef<number | undefined>(undefined)
+  const [active, setActive] = useState(0)
+  const [visibleCount, setVisibleCount] = useState(1)
+  const [manualPause, setManualPause] = useState(false)
+  const [interactionPause, setInteractionPause] = useState(false)
+  const [inView, setInView] = useState(false)
+  const [reducedMotion, setReducedMotion] = useState(false)
+
+  const maxStart = Math.max(0, section.videos.length - visibleCount)
+
+  const goTo = useCallback(
+    (requested: number) => {
+      const track = trackRef.current
+      if (!track) return
+
+      const next = requested < 0 ? maxStart : requested > maxStart ? 0 : requested
+      const slide = slideRefs.current[next]
+      if (!slide) return
+
+      const trackBox = track.getBoundingClientRect()
+      const slideBox = slide.getBoundingClientRect()
+      track.scrollTo({
+        left: track.scrollLeft + slideBox.left - trackBox.left,
+        behavior: reducedMotion ? 'auto' : 'smooth',
+      })
+      setActive(next)
+    },
+    [maxStart, reducedMotion],
+  )
+
+  // Derive how many cards are actually visible from their rendered width so
+  // the same carousel works at one, two and three cards per viewport.
+  useEffect(() => {
+    const track = trackRef.current
+    const first = slideRefs.current[0]
+    if (!track || !first) return
+
+    const measure = () => {
+      const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0
+      const itemWidth = first.getBoundingClientRect().width
+      const count = Math.max(1, Math.floor((track.clientWidth + gap) / (itemWidth + gap) + 0.01))
+      setVisibleCount(count)
+      setActive((current) => Math.min(current, Math.max(0, section.videos.length - count)))
+    }
+
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(track)
+    return () => observer.disconnect()
+  }, [section.videos.length])
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setReducedMotion(media.matches)
+    update()
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    const node = sectionRef.current
+    if (!node) return
+    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), {
+      threshold: 0.35,
+    })
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!inView || manualPause || interactionPause || reducedMotion || maxStart === 0) return
+    const timer = window.setTimeout(() => goTo(active + 1), VIDEO_AUTOPLAY_MS)
+    return () => window.clearTimeout(timer)
+  }, [active, goTo, inView, interactionPause, manualPause, maxStart, reducedMotion])
+
+  const syncActiveToScroll = () => {
+    window.clearTimeout(scrollTimer.current)
+    scrollTimer.current = window.setTimeout(() => {
+      const track = trackRef.current
+      if (!track) return
+      const left = track.getBoundingClientRect().left
+      let closest = 0
+      let distance = Number.POSITIVE_INFINITY
+      slideRefs.current.forEach((slide, index) => {
+        if (!slide) return
+        const nextDistance = Math.abs(slide.getBoundingClientRect().left - left)
+        if (nextDistance < distance) {
+          closest = index
+          distance = nextDistance
+        }
+      })
+      setActive(Math.min(closest, maxStart))
+    }, 100)
+  }
+
+  useEffect(() => () => window.clearTimeout(scrollTimer.current), [])
+
+  const rangeEnd = Math.min(section.videos.length, active + visibleCount)
+
+  return (
+    <Section ground={ground}>
+      <SectionHead heading={section.heading} lede={section.lede} />
+      <div
+        ref={sectionRef}
+        role="region"
+        aria-roledescription="carousel"
+        aria-label={section.heading}
+        onMouseEnter={() => setInteractionPause(true)}
+        onMouseLeave={() => setInteractionPause(false)}
+        onFocusCapture={() => setInteractionPause(true)}
+        onBlurCapture={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) setInteractionPause(false)
+        }}
+        onPointerDown={() => setInteractionPause(true)}
+        onPointerUp={() => setInteractionPause(false)}
+        onPointerCancel={() => setInteractionPause(false)}
+        className="flex flex-col gap-5"
+      >
+        <ul
+          ref={trackRef}
+          onScroll={syncActiveToScroll}
+          className="-mx-gutter flex snap-x snap-mandatory gap-gap-sm overflow-x-auto overflow-y-hidden scroll-smooth px-gutter py-2 [scrollbar-width:none] motion-reduce:scroll-auto [&::-webkit-scrollbar]:hidden md:mx-0 md:gap-8 md:px-0"
+        >
+          {section.videos.map((video, i) => (
+            <li
+              key={video.id}
+              className="w-[85%] shrink-0 snap-start md:w-[calc((100%_-_2rem)/2)] lg:w-[calc((100%_-_4rem)/3)]"
+              ref={(node: HTMLLIElement | null) => {
+                slideRefs.current[i] = node
+              }}
+              aria-label={`Slide ${i + 1} of ${section.videos.length}`}
+            >
+              <Reveal delay={(i % 3) * 100} className="flex flex-col gap-3">
+                <YouTubeFacade
+                  videoId={video.id}
+                  title={video.title}
+                  poster={video.poster}
+                  mode="inline"
+                  onPlay={() => setManualPause(true)}
+                  className="border border-line focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                />
+                <p className="font-head text-h6 text-secondary">{video.title}</p>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => goTo(active - 1)}
+            disabled={maxStart === 0}
+            aria-label="Previous patient videos"
+            className="grid h-11 w-11 place-items-center rounded-full border border-line text-secondary transition hover:border-secondary disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            <ArrowRight className="h-4 w-4 rotate-180" />
+          </button>
+
+          <div className="flex items-center gap-2" aria-label="Choose carousel position">
+            {Array.from({ length: maxStart + 1 }, (_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => goTo(i)}
+                aria-label={`Show patient videos ${i + 1} to ${Math.min(section.videos.length, i + visibleCount)}`}
+                aria-current={active === i ? 'true' : undefined}
+                className={`h-2.5 rounded-full transition-all ${
+                  active === i ? 'w-8 bg-primary' : 'w-2.5 bg-line hover:bg-secondary/40'
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => goTo(active + 1)}
+            disabled={maxStart === 0}
+            aria-label="Next patient videos"
+            className="grid h-11 w-11 place-items-center rounded-full border border-line text-secondary transition hover:border-secondary disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            <ArrowRight className="h-4 w-4" />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setManualPause((paused) => !paused)}
+            disabled={reducedMotion || maxStart === 0}
+            aria-label={manualPause ? 'Start automatic carousel rotation' : 'Pause automatic carousel rotation'}
+            className="min-h-11 rounded-pill border border-line px-4 font-head text-body text-secondary transition hover:border-secondary disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {reducedMotion ? 'Auto-play off' : manualPause ? 'Play' : 'Pause'}
+          </button>
+        </div>
+
+        <p className="sr-only" aria-live="polite">
+          Showing patient videos {active + 1} to {rangeEnd} of {section.videos.length}
+        </p>
+      </div>
+      {section.link && (
+        <Reveal className="flex justify-center">
+          <CtaButton
+            cta={section.link}
+            className={`${BUTTON} border border-line text-secondary hover:border-secondary`}
+          />
+        </Reveal>
+      )}
+    </Section>
+  )
+}
+
 /** Dispatches on `kind`. Exhaustive -- a new kind is a type error here. */
 export default function TreatmentSectionView({
   section,
@@ -667,5 +890,7 @@ export default function TreatmentSectionView({
       return <Table section={section} ground={ground} />
     case 'personalities':
       return <Personalities section={section} ground={ground} />
+    case 'videos':
+      return <Videos section={section} ground={ground} />
   }
 }

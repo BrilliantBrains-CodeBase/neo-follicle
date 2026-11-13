@@ -93,7 +93,12 @@ for (const [slug, set] of Object.entries(TREATMENT_IMAGES)) {
   // have exactly two usable originals in their capture, and without this the
   // second one could not be served at all: verify-treatments.mjs check 4 fails
   // on any generated file no page references, so an unused key is not an option.
-  for (const [i, entry] of (set.sections ?? []).entries()) await one(`section-${i + 1}`, entry)
+  // `name` lets a replaced section photograph get a new URL. public/.htaccess
+  // caches these files for 30 days, so reusing section-N.webp would leave
+  // returning visitors on the previous image until that cache expires.
+  for (const [i, entry] of (set.sections ?? []).entries()) {
+    await one(entry.name ?? `section-${i + 1}`, entry)
+  }
   for (const entry of set.people ?? []) {
     await one(entry.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'), entry)
   }

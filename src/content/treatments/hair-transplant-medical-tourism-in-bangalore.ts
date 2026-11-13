@@ -13,12 +13,11 @@
  *
  * IMAGE NOTE: the hero is the client's travel illustration (an airport
  * departures hall with Bangalore signage), from the set in content/Zoho
- * WorkDrive-3/. The two section photographs are still the clinic's own premises
- * from the old page's capture -- a consulting room and a procedure room -- so
- * the page keeps what a patient will actually sit in alongside the picture of
- * the journey. The old reception hero was replaced. The capture also holds
- * QMCH-branded lab and pharmacy photographs; those are a different organisation
- * and are deliberately not used.
+ * WorkDrive-3/. The two section images are client-supplied illustrations of
+ * hairline planning and a remote consultation, replacing the consulting-room
+ * and procedure-room photographs at the client's request. The capture also
+ * holds QMCH-branded lab and pharmacy photographs; those are a different
+ * organisation and are deliberately not used.
  *
  * COST: the live page publishes a region-by-region price comparison table in US
  * dollars. It is not reproduced -- the figures carry no date, and an undated
@@ -47,6 +46,7 @@
  */
 import { BOOK, CALL } from './ctas'
 import type { TreatmentPageData } from './types'
+import { TREATMENT_VIDEOS } from './videos.generated'
 
 /**
  * Intrinsic sizes are the real ones from public/treatments/sizes.json, written
@@ -102,7 +102,12 @@ const data: TreatmentPageData = {
         'Long-term donor preservation',
         'Structured follow-up care',
       ],
-      image: img('section-1', 'A consulting room at Neo Follicle Hair Transplant Clinic, Bangalore.', 1200, 816),
+      image: img(
+        'hairline-marking',
+        'A clinician in a mask and gloves drawing a hairline design on a man’s forehead, with magnified scalp images on a monitor behind.',
+        1200,
+        800,
+      ),
       closing: 'Rather than offering identical treatment packages, every recommendation is tailored to your hair loss pattern, donor strength, and long-term restoration goals.',
     },
     {
@@ -117,6 +122,13 @@ const data: TreatmentPageData = {
         'Gulf Countries',
         'Other international destinations',
       ],
+    },
+    {
+      kind: 'videos',
+      heading: 'International Patient Journeys',
+      lede: 'Watch patients share their experiences travelling to Bangalore for hair transplant care.',
+      videos: TREATMENT_VIDEOS['hair-transplant-medical-tourism-in-bangalore'],
+      link: { label: 'Watch more patient videos', to: '/video-gallery/' },
     },
     {
       kind: 'process',
@@ -180,7 +192,12 @@ const data: TreatmentPageData = {
         'Progress monitoring',
         'Virtual follow-ups where appropriate',
       ],
-      image: img('section-2', 'A procedure room at Neo Follicle Hair Transplant Clinic, Bangalore.', 1200, 900),
+      image: img(
+        'video-consultation',
+        'A man at home on a video consultation, wearing a wireless earbud and looking at his laptop.',
+        1200,
+        900,
+      ),
       closing: 'This continuity of care helps patients feel supported even after returning home.',
     },
     {

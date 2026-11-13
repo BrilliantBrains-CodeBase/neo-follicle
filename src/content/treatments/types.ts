@@ -18,6 +18,8 @@
  * its brief actually contains rather than filling in a fixed template.
  */
 
+import type { VideoItem } from '../gallery/types'
+
 /** A button. Exactly one of `to` (a route) or `href` (tel:, external) is set. */
 export type Cta = {
   label: string
@@ -194,6 +196,8 @@ export type TreatmentSection =
     }
   /** Celebrity page only. */
   | { kind: 'personalities'; heading: string; lede?: string; people: Person[]; closing?: string }
+  /** Local-poster, click-to-play YouTube facades. */
+  | { kind: 'videos'; heading: string; lede?: string; videos: VideoItem[]; link?: Cta }
 
 export type TreatmentPageData = {
   /** Used for the FAQ accordion's `name`, which must be unique per page. */

@@ -268,9 +268,20 @@ export const TREATMENT_IMAGES = {
   'hair-transplant-medical-tourism-in-bangalore': {
     hero: { local: z('Hair Transplant Medical Tourism.png'),
             alt: 'A traveller holding a passport and boarding pass in an airport departures hall, with Bangalore and a clinical procedure shown alongside.' },
+    // Client-supplied illustrative images, replacing the two premises photos.
+    // The explicit names give each replacement a new URL because treatment
+    // images are cached for 30 days in public/.htaccess.
     sections: [
-      { from: u('2025/05/Consulting-Room-1.jpeg'), alt: 'A consulting room at Neo Follicle Hair Transplant Clinic, Bangalore.' },
-      { from: u('2025/05/NFT-Procedure-Room-2.jpeg'), alt: 'A procedure room at Neo Follicle Hair Transplant Clinic, Bangalore.' },
+      {
+        local: 'content/treatments/images/international-patients-hairline-marking.png',
+        name: 'hairline-marking',
+        alt: 'A clinician in a mask and gloves drawing a hairline design on a man’s forehead, with magnified scalp images on a monitor behind.',
+      },
+      {
+        local: 'content/treatments/images/international-patients-video-consultation.png',
+        name: 'video-consultation',
+        alt: 'A man at home on a video consultation, wearing a wireless earbud and looking at his laptop.',
+      },
     ],
   },
 

@@ -5,6 +5,7 @@ import ContactUs from '../components/ContactUs'
 import CredibilityBar from '../components/CredibilityBar'
 import Hero from '../components/Hero'
 import Insights from '../components/Insights'
+import InternationalPatients from '../components/InternationalPatients'
 import Process from '../components/Process'
 import Services from '../components/Services'
 import TreatmentGallery from '../components/TreatmentGallery'
@@ -29,20 +30,17 @@ export default function Home() {
       <CredibilityBar />
       <About />
       <Services />
+      <Celebrities />
       <TreatmentGallery />
       <Process />
-      <Celebrities />
       <WhyNeoFollicle />
       <Videos />
+      <InternationalPatients />
       <CommonQuestions />
       <ContactUs />
       <Insights />
 
       {/*
-        Still to build from content/home-page/Neo-Follicle-Website-Content.md:
-        International (SECTION 11), which belongs between Celebrities and
-        CommonQuestions when it lands.
-
         SECTION 10's testimonial half is NOT on the page. Celebrities renders
         only that section's celebrity claim; the three patient quotes are kept
         verbatim in a TODO at the top of that component and still need a home.

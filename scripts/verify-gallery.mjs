@@ -17,7 +17,12 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { GALLERY_SECTIONS, VIDEO_SECTIONS, videoPosterPath } from './gallery-assets.mjs'
+import {
+  GALLERY_SECTIONS,
+  TREATMENT_VIDEO_IDS,
+  VIDEO_SECTIONS,
+  videoPosterPath,
+} from './gallery-assets.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const dist = path.join(root, 'dist')
@@ -111,11 +116,10 @@ for (const dir of ['image-gallery', 'video-gallery']) {
   walk(base)
 }
 /*
-  `referenced` is built from the two GALLERY pages. Four video posters are used
-  by BLOG POSTS instead -- gen-video-gallery.mjs scans src/content/posts for
-  embedded ids and cuts a poster for each, whether or not it also appears in
-  /video-gallery/. Six of the ten overlap; these four do not, and they are used,
-  not orphaned. Check 14 below is what proves each one actually renders.
+  `referenced` is built from the two GALLERY pages. Additional video posters
+  are used by BLOG POSTS and TREATMENT pages instead. gen-video-gallery.mjs
+  creates the shared first-party poster cache for all three consumers; the
+  consumer-specific checks below prove those files actually render.
 */
 const blogPosters = new Set(
   fs
@@ -129,12 +133,17 @@ const blogPosters = new Set(
       ].map((m) => `/video-gallery/${m[1]}.webp`),
     ),
 )
-const orphans = onDisk.filter((f) => !referenced.has(f) && !blogPosters.has(f))
+const treatmentPosters = new Set(
+  Object.values(TREATMENT_VIDEO_IDS).flat().map(videoPosterPath),
+)
+const orphans = onDisk.filter(
+  (f) => !referenced.has(f) && !blogPosters.has(f) && !treatmentPosters.has(f),
+)
 orphans.length
   ? fail('no orphaned generated images', `${orphans.length}: ${orphans.slice(0, 8).join(', ')}`)
   : pass(
       `no orphaned generated images -- all ${onDisk.length} generated files are used ` +
-        `(${blogPosters.size} of them by blog posts)`,
+        `(${blogPosters.size} by blog posts, ${treatmentPosters.size} by treatment pages)`,
     )
 
 /* ---- 6. chip anchors resolve to a real id ------------------------------------ */

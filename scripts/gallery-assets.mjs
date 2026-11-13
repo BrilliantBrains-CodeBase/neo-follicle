@@ -409,3 +409,20 @@ export const VIDEO_SECTIONS = [
     ],
   },
 ]
+
+/**
+ * YouTube ids embedded on treatment pages, keyed by slug. Posters share the
+ * first-party /video-gallery/<id>.webp cache with the gallery and blog posts.
+ * Keep the order authored here: it is the order rendered on the page.
+ */
+export const TREATMENT_VIDEO_IDS = {
+  'hair-transplant-medical-tourism-in-bangalore': [
+    'eAT_93p1-t8',
+    'T4TSLQGjI-0',
+    '87j1PurAKz0',
+    'wL-Y4asxqXg',
+    '3-TALeVf8mw',
+    'aDR18wcuotA',
+    'KxpobtlREE4',
+  ],
+}
