@@ -67,25 +67,11 @@ export default function DoctorProfile() {
       <div className="container flex flex-col gap-gap-mobile md:flex-row md:gap-gap-tablet lg:gap-gap">
         {/* Left -- the reference's `surface` card, image inset by its padding. */}
         <div className="flex rounded bg-surface p-4 animate-fadeInUp motion-reduce:animate-none md:w-1/2 md:p-6 lg:p-8">
-          {/*
-            FLAGGED FOR CLIENT REVIEW. Client-supplied via the content doc
-            (content/About & Doctor Page/images/image5.jpg), but it is generic
-            stock: the clinician shown is not Dr. Sandeep and the room is not
-            Neo Follicle. On-topic and free of burned-in text or third-party
-            branding, which is why it survived the cull -- see the note in
-            DoctorPhilosophy for the four images that did not. Real photographs
-            of Dr. Sandeep exist at neofollicle-seo-backup/media/files/
-            wp-content/uploads/2025/05/Dr-Sandeep-Mahapatra-*.jpg if the client
-            prefers authentic imagery here.
-
-            alt describes what is depicted and names no one, because the people
-            in it are models.
-          */}
           <img
             src="/about/doctor-profile.webp"
             alt="Dr. Sandeep Mahapatra, Senior Consultant Dermatologist and Hair Transplant Surgeon."
-            width={900}
-            height={1200}
+            width={768}
+            height={1024}
             loading="lazy"
             className="h-full min-h-[280px] w-full rounded object-cover lg:min-h-[420px]"
           />

@@ -36,23 +36,6 @@ import Reveal from '../Reveal'
  *     of equal weight; here the second row is a photograph beside a panel and
  *     the overlap reads as a mistake.
  *
- * IMAGE PROVENANCE, and why there is only one image in this section.
- * The content doc supplies eight images. Four are not publishable and are
- * excluded:
- *   - image3: AI-generated, and carries a real third-party brand mark (a
- *     "FOUR SEASONS" logo on the wall) plus garbled text on the monitor.
- *   - image6 and image7: graphic post-operative close-ups of an unidentified
- *     person, with no evidence of patient consent. image7 is also 399x407,
- *     below any usable size.
- *   - image8: a before/after results grid with "Before / Day1 / 2 Weeks ..."
- *     burned into the pixels. Burned-in text is the exact defect Process.tsx
- *     rejected an image for -- it crops unpredictably, duplicates the page's
- *     own copy, and is invisible to screen readers and translation. It is also
- *     a treatment-outcome claim attributed to no verified patient.
- * Of the four that remain, three are used once each on this page. The fourth
- * (image2, a PRP injection) is 500x500; every remaining slot on the page is a
- * wide band, and filling one would mean upscaling it to roughly 1240px. It is
- * left out rather than shipped soft. A larger copy would be usable.
  */
 
 /** The kit's `float` hover: translateY(-8px) over .3s ease-out (DESIGN.md 5). */
@@ -107,13 +90,11 @@ export default function DoctorPhilosophy() {
         {/* The reference's asymmetric second row: 1fr image, 1.5fr panel. */}
         <div className="flex flex-col gap-gap-sm md:flex-row md:gap-8">
           <Reveal className="md:w-2/5">
-            {/* FLAGGED FOR CLIENT REVIEW -- stock, not Neo Follicle. See the
-                header note. Depicts the doc's diagnosis-first argument. */}
             <img
               src="/about/philosophy-new.webp"
               alt="A clinician consulting with a patient about hair restoration."
-              width={1200}
-              height={670}
+              width={1024}
+              height={768}
               loading="lazy"
               className="h-full min-h-[240px] w-full rounded object-cover"
             />

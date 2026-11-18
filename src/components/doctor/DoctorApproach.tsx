@@ -59,13 +59,11 @@ export default function DoctorApproach() {
 
         <div className="flex flex-col gap-gap-sm md:flex-row md:gap-8">
           <Reveal className="md:w-2/5">
-            {/* FLAGGED FOR CLIENT REVIEW -- stock, not Neo Follicle. See the
-                image-provenance note in DoctorPhilosophy. */}
             <img
               src="/about/approach-new.webp"
               alt="A clinician marking a planned hairline on a patient's scalp."
-              width={1200}
-              height={800}
+              width={1024}
+              height={768}
               loading="lazy"
               className="h-full min-h-[240px] w-full rounded object-cover"
             />

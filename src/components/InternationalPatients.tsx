@@ -59,8 +59,8 @@ export default function InternationalPatients() {
           <img
             src="/international-patients/section.webp"
             alt="International patient care at Neo Follicle Hair Transplant Clinic in Bangalore."
-            width={1200}
-            height={800}
+            width={1149}
+            height={768}
             loading="lazy"
             decoding="async"
             className="aspect-[4/3] h-full w-full rounded object-cover object-center md:aspect-[16/9] lg:aspect-auto lg:min-h-[420px]"
