@@ -106,7 +106,14 @@ jobs:
             echo "ssh-keyscan attempt $attempt failed: $(cat /tmp/keyscan_err)"
             sleep $((attempt * 10))
           done
-          echo "::error::Could not reach $SSH_HOST:$SSH_PORT for its host key after 5 attempts"
+          # Diagnostics. Secret values are masked in logs, so print comparisons
+          # against the known server instead of the values themselves.
+          echo "--- diagnostics"
+          echo "runner public IP: $(curl -s --max-time 10 https://api.ipify.org)"
+          [ "$SSH_HOST" = "148.66.138.156" ] && echo "SSH_HOST secret: matches 148.66.138.156" || echo "SSH_HOST secret: DOES NOT match 148.66.138.156 (length ${#SSH_HOST})"
+          [ "$SSH_PORT" = "22" ] && echo "SSH_PORT secret: matches 22" || echo "SSH_PORT secret: DOES NOT match 22 (length ${#SSH_PORT})"
+          timeout 15 bash -c 'exec 3<>/dev/tcp/148.66.138.156/22' && echo "TCP to 148.66.138.156:22: open" || echo "TCP to 148.66.138.156:22: blocked or timed out"
+          echo "::error::Could not reach the SSH host for its host key after 5 attempts"
           exit 1
 
       # -c compares by checksum, so only files whose content changed are sent
