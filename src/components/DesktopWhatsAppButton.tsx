@@ -9,12 +9,13 @@ import { WhatsAppIcon, FollowIcon, SOCIAL_COLORS, socialIcons } from './icons'
  * shared Layout makes the action available on every route without duplicating
  * page-specific markup. Only the Follow button reveals the social tower;
  * focus-within mirrors hover so keyboard users can reach every link as well.
+ * Pinned bottom-left because the chatbot widget (index.html) owns bottom-right.
  */
 export default function DesktopWhatsAppButton() {
   return (
     <nav
       aria-label="Social media shortcuts"
-      className="fixed bottom-8 right-8 z-30 hidden flex-col-reverse items-center gap-3 lg:flex"
+      className="fixed bottom-8 left-8 z-30 hidden flex-col-reverse items-center gap-3 lg:flex"
     >
       <a
         href={CONTACT.whatsapp}
