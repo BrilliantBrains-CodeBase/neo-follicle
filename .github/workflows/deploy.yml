@@ -96,7 +96,18 @@ jobs:
           mkdir -p ~/.ssh
           printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          # GoDaddy sometimes drops or refuses a runner's first connection, so
+          # retry, and show ssh-keyscan's own error if every attempt fails.
+          for attempt in 1 2 3 4 5; do
+            if ssh-keyscan -T 20 -p "$SSH_PORT" -H "$SSH_HOST" > /tmp/host_keys 2> /tmp/keyscan_err && [ -s /tmp/host_keys ]; then
+              cat /tmp/host_keys >> ~/.ssh/known_hosts
+              exit 0
+            fi
+            echo "ssh-keyscan attempt $attempt failed: $(cat /tmp/keyscan_err)"
+            sleep $((attempt * 10))
+          done
+          echo "::error::Could not reach $SSH_HOST:$SSH_PORT for its host key after 5 attempts"
+          exit 1
 
       # -c compares by checksum, so only files whose content changed are sent
       # (every build rewrites timestamps). --chmod gives the web server the
