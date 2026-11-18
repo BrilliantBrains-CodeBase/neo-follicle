@@ -110,8 +110,8 @@ export default function DoctorPhilosophy() {
             {/* FLAGGED FOR CLIENT REVIEW -- stock, not Neo Follicle. See the
                 header note. Depicts the doc's diagnosis-first argument. */}
             <img
-              src="/about/philosophy.webp"
-              alt="A dermatologist using a trichoscope on a seated patient while reviewing the magnified scalp image on a tablet."
+              src="/about/philosophy-new.webp"
+              alt="A clinician consulting with a patient about hair restoration."
               width={1200}
               height={670}
               loading="lazy"

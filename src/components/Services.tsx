@@ -118,11 +118,11 @@ const SERVICES = [
     alt: 'Profile view of a man with a full, closely trimmed beard.',
   },
   {
-    title: 'Eyebrow Restoration',
-    copy: 'Rebuild thin, over-plucked or scarred brows with single-hair precision and natural angle.',
-    to: '/eyebrow-restoration-in-bangalore/',
-    img: '/services/eyebrow.webp',
-    alt: 'Close-up of an eyebrow being marked out and treated by a gloved practitioner.',
+    title: 'Female Hair Restoration',
+    copy: 'For thinning, widening partings and female pattern hair loss, planned only after the cause is diagnosed.',
+    to: '/female-hair-transplant-in-bangalore/',
+    img: '/services/female.webp',
+    alt: 'A woman resting in a treatment chair during a female hair restoration consultation.',
   },
   {
     title: 'Failed Hair Transplant Repair',

@@ -139,9 +139,9 @@ const CATEGORIES = [
     alt: 'A clinician performing a female hair restoration treatment along the frontal hairline.',
   },
   {
-    label: 'Eyebrow',
-    img: '/gallery/eyebrow.webp',
-    alt: 'A precision device being used for an eyebrow treatment while the patient wears eye protection.',
+    label: 'Female Hair Restoration',
+    img: '/gallery/female-restoration.webp',
+    alt: 'A clinician performing female hair restoration along a patient’s frontal hairline.',
   },
   {
     label: 'Failed Repair',

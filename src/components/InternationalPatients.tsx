@@ -13,12 +13,6 @@ import { BUTTON, CtaButton, Section } from './treatment/shell'
  * gallery and the rest of the homepage journey. Services keeps its earlier,
  * shorter international-patient signpost.
  *
- * FLAGGED FOR CLIENT REVIEW: the detailed page contains additional claims
- * about patient volume, travel logistics, cost, packages and stay duration.
- * They are deliberately omitted here until their currency and consistency are
- * confirmed. This teaser makes only the restrained claims already supported
- * across the page's consultation, travel-guidance and aftercare sections.
- *
  * CtaRow is not used because its light-ground secondary is an outline whose
  * line colour nearly disappears on this accent panel. The white secondary
  * button below is the stronger existing Celebrities-on-accent idiom.
@@ -27,10 +21,10 @@ import { BUTTON, CtaButton, Section } from './treatment/shell'
 const ROUTE = '/hair-transplant-medical-tourism-in-bangalore/'
 
 const POINTS = [
-  'Virtual consultation before you travel',
-  'Doctor-led planning with Dr. Sandeep Mahapatra',
-  'Guidance on procedure scheduling, recovery time and return travel',
-  'Follow-up guidance after you return home',
+  'Online Consultation Before You Travel',
+  'Doctor-Led Hairline Design & Treatment Planning',
+  'Assistance With Travel & Stay Arrangements',
+  'Post-Transplant Care & Virtual Follow-Ups',
 ] as const
 
 const FOCUS =
@@ -43,14 +37,18 @@ export default function InternationalPatients() {
         <Reveal className="flex flex-col gap-4 lg:col-start-1 lg:row-start-1">
           <p className="flex items-center gap-[5px] font-head text-h6 text-secondary">
             <Square className="h-[14px] w-[14px] shrink-0 text-primary" />
-            Before You Travel
+            International Patients
           </p>
           <h2 className="text-balance font-head text-h2 text-secondary">
-            Hair Transplant for International Patients
+            Your Hair Restoration Journey, Beyond Borders.
           </h2>
           <p className="text-body-lg text-body">
-            Planning a hair transplant abroad should feel organized - not overwhelming. Your consultation can
-            start online, long before your flight.
+            Planning a Hair Transplant in Bangalore? We&rsquo;re Here to Guide You.
+          </p>
+          <p className="text-body">
+            At Neo Follicle, we make hair restoration planning easier for international patients
+            with expert consultations, personalised treatment plans and dedicated support
+            throughout their journey, from the first virtual consultation to recovery back home.
           </p>
         </Reveal>
 
@@ -59,13 +57,13 @@ export default function InternationalPatients() {
           className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-full lg:self-stretch"
         >
           <img
-            src="/treatments/hair-transplant-medical-tourism-in-bangalore/video-consultation.webp"
-            alt="A man at home on a video consultation, wearing a wireless earbud and looking at his laptop."
+            src="/international-patients/section.webp"
+            alt="International patient care at Neo Follicle Hair Transplant Clinic in Bangalore."
             width={1200}
-            height={900}
+            height={800}
             loading="lazy"
             decoding="async"
-            className="aspect-[4/3] h-full w-full rounded object-cover md:aspect-[16/9] md:object-[50%_20%] lg:aspect-auto lg:min-h-[420px] lg:object-[40%_center]"
+            className="aspect-[4/3] h-full w-full rounded object-cover object-center md:aspect-[16/9] lg:aspect-auto lg:min-h-[420px]"
           />
         </Reveal>
 
@@ -80,8 +78,9 @@ export default function InternationalPatients() {
           </ul>
 
           <p className="text-body">
-            Patients have travelled to Neo Follicle from the United States, the United Kingdom, Europe, Australia
-            and the Gulf.
+            <span className="font-head text-h6 text-secondary">500+ International Patients</span>
+            <span aria-hidden="true"> | </span>
+            Dr. Sandeep Mahapatra
           </p>
 
           <div className="flex flex-col gap-gap-sm md:flex-row md:flex-wrap">
@@ -89,7 +88,7 @@ export default function InternationalPatients() {
               to={ROUTE}
               className={`${BUTTON} bg-primary text-white hover:bg-primary-dark ${FOCUS}`}
             >
-              Plan Your Treatment Visit
+              Explore International Patient Care
               <ArrowRight className="h-4 w-4 shrink-0" />
             </Link>
             <CtaButton

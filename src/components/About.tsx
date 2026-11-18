@@ -203,6 +203,12 @@ export default function About() {
                   He evaluates your scalp, identifies the cause of hair loss, and recommends a
                   transplant, non-surgical treatment or combination before booking.
                 </p>
+                <p className="text-body">
+                  Neo Follicle is a doctor-led hair transplant and hair loss clinic with locations
+                  in Marathahalli and Whitefield, Bangalore. Every case is diagnosed, designed and
+                  performed under the guidance of Dr. Sandeep Mahapatra, a senior dermatologist
+                  and hair transplant surgeon.
+                </p>
               </div>
 
               <Link

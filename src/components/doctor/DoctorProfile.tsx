@@ -82,10 +82,10 @@ export default function DoctorProfile() {
             in it are models.
           */}
           <img
-            src="/about/profile.webp"
-            alt="A dermatologist examining a seated patient's hairline across a consultation desk."
+            src="/about/doctor-profile.webp"
+            alt="Dr. Sandeep Mahapatra, Senior Consultant Dermatologist and Hair Transplant Surgeon."
             width={900}
-            height={507}
+            height={1200}
             loading="lazy"
             className="h-full min-h-[280px] w-full rounded object-cover lg:min-h-[420px]"
           />

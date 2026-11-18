@@ -62,8 +62,8 @@ export default function DoctorApproach() {
             {/* FLAGGED FOR CLIENT REVIEW -- stock, not Neo Follicle. See the
                 image-provenance note in DoctorPhilosophy. */}
             <img
-              src="/about/approach.webp"
-              alt="A gloved clinician marking a planned hairline on a patient's scalp."
+              src="/about/approach-new.webp"
+              alt="A clinician marking a planned hairline on a patient's scalp."
               width={1200}
               height={800}
               loading="lazy"
