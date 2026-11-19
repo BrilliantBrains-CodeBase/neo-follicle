@@ -105,8 +105,8 @@ const data: TreatmentPageData = {
       image: img(
         'hairline-marking',
         'A clinician in a mask and gloves drawing a hairline design on a man’s forehead, with magnified scalp images on a monitor behind.',
-        1200,
-        800,
+        768,
+        960,
       ),
       closing: 'Rather than offering identical treatment packages, every recommendation is tailored to your hair loss pattern, donor strength, and long-term restoration goals.',
     },
@@ -215,8 +215,8 @@ const data: TreatmentPageData = {
       image: img(
         'video-consultation',
         'A man at home on a video consultation, wearing a wireless earbud and looking at his laptop.',
-        1200,
-        900,
+        768,
+        1024,
       ),
       closing: 'This continuity of care helps patients feel supported even after returning home.',
     },
