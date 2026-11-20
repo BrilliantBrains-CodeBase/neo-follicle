@@ -1,0 +1,203 @@
+{
+  "seo": {
+    "slug": "dhi-hair-transplant-process-recovery",
+    "path": "/dhi-hair-transplant-process-recovery/",
+    "type": "post",
+    "title": "DHI Hair Transplant: Process, Recovery and Suitability",
+    "description": "How a DHI hair transplant works, how it differs from FUE, recovery, who may be suitable and what to ask your hair transplant surgeon.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/",
+    "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og": {
+      "title": "DHI Hair Transplant: Process, Recovery and Suitability",
+      "description": "How a DHI hair transplant works, how it differs from FUE, recovery, who may be suitable and what to ask your hair transplant surgeon.",
+      "url": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/",
+      "type": "article",
+      "image": "https://neofollicletransplant.com/blog/dhi-hair-transplant-process-recovery-hero.webp",
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "DHI Hair Transplant: Process, Recovery and Suitability"
+    },
+    "h1": "DHI Hair Transplant: Process, Recovery and Suitability",
+    "inSitemap": true,
+    "lastmod": "2026-11-20T09:00:00+05:30"
+  },
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://neofollicletransplant.com/#website",
+          "url": "https://neofollicletransplant.com/",
+          "name": "Neo Follicle Hair Transplant Clinic",
+          "inLanguage": "en-IN",
+          "publisher": {
+            "@id": "https://neofollicletransplant.com/#clinic"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/#breadcrumblist",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://neofollicletransplant.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Our Blogs",
+              "item": "https://neofollicletransplant.com/our-blogs/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "DHI Hair Transplant: Process, Recovery and Suitability"
+            }
+          ]
+        },
+        {
+          "@type": "MedicalWebPage",
+          "@id": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/#webpage",
+          "url": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/",
+          "inLanguage": "en-IN",
+          "name": "DHI Hair Transplant: Process, Recovery and Suitability",
+          "description": "How a DHI hair transplant works, how it differs from FUE, recovery, who may be suitable and what to ask your hair transplant surgeon.",
+          "datePublished": "2026-11-20T09:00:00+05:30",
+          "dateModified": "2026-11-20T09:00:00+05:30",
+          "isPartOf": {
+            "@id": "https://neofollicletransplant.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/#breadcrumblist"
+          },
+          "primaryImageOfPage": {
+            "@id": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/#primaryimage"
+          },
+          "mainEntity": {
+            "@id": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/#blogposting"
+          },
+          "about": [
+            {
+              "@type": "MedicalCondition",
+              "name": "Hair Loss"
+            },
+            {
+              "@type": "Thing",
+              "name": "DHI Hair Transplant"
+            }
+          ],
+          "lastReviewed": "2026-11-20",
+          "reviewedBy": {
+            "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+          }
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/#primaryimage",
+          "url": "https://neofollicletransplant.com/blog/dhi-hair-transplant-process-recovery-hero.webp",
+          "contentUrl": "https://neofollicletransplant.com/blog/dhi-hair-transplant-process-recovery-hero.webp",
+          "width": 1600,
+          "height": 837,
+          "caption": "Illustration of an implanter pen placing a follicle into the scalp",
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/#blogposting",
+          "mainEntityOfPage": {
+            "@id": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/#webpage"
+          },
+          "headline": "DHI Hair Transplant: Process, Recovery and Suitability",
+          "description": "How a DHI hair transplant works, how it differs from FUE, recovery, who may be suitable and what to ask your hair transplant surgeon.",
+          "image": {
+            "@id": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/#primaryimage"
+          },
+          "author": {
+            "@id": "https://neofollicletransplant.com/dr-sandeep-mahapatra-hair-transplant-surgeon/#physician"
+          },
+          "publisher": {
+            "@id": "https://neofollicletransplant.com/#clinic"
+          },
+          "datePublished": "2026-11-20T09:00:00+05:30",
+          "dateModified": "2026-11-20T09:00:00+05:30",
+          "inLanguage": "en-IN",
+          "isAccessibleForFree": true,
+          "articleSection": [
+            "Hair Transplant",
+            "DHI Hair Transplant"
+          ],
+          "keywords": [
+            "DHI hair transplant",
+            "hair transplant surgeon",
+            "hair transplant specialist",
+            "latest hair transplant technology"
+          ],
+          "about": [
+            {
+              "@type": "MedicalCondition",
+              "name": "Hair Loss"
+            },
+            {
+              "@type": "MedicalProcedure",
+              "name": "DHI Hair Transplant"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is DHI better than FUE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not in every case. Each has its place, and the right choice depends on your hair loss, your donor hair and the surgeon's experience."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a DHI hair transplant painful?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Local anaesthesia numbs the area, so most people feel pressure rather than sharp pain. Some soreness afterwards is common and can be managed."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to shave my head for DHI?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The donor area is usually trimmed, but how much depends on the plan and technique. Ask what applies to you."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long until I see results?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Growth usually begins after a few months and keeps building. Final results are generally judged after about a year."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can a hair transplant fail?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Poor growth or complications can occur. That is why careful planning and a qualified, registered surgeon matter, along with following the aftercare advice."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

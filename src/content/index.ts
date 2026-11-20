@@ -8,6 +8,29 @@ import type { PostSummary } from './types'
 
 export const postSummaries: PostSummary[] = [
   {
+    "slug": "dhi-hair-transplant-process-recovery",
+    "path": "/dhi-hair-transplant-process-recovery/",
+    "title": "DHI Hair Transplant: Process, Recovery and Suitability",
+    "excerpt": "How a DHI hair transplant works, how it differs from FUE, recovery, who may be suitable and what to ask your hair transplant surgeon.",
+    "summary": "",
+    "category": "Hair Transplant",
+    "datePublished": "2026-11-20T09:00:00+05:30",
+    "dateModified": "2026-11-20T09:00:00+05:30",
+    "readingMinutes": 7,
+    "card": {
+      "src": "/blog/dhi-hair-transplant-process-recovery.webp",
+      "alt": "Illustration of an implanter pen placing a follicle into the scalp",
+      "width": 1200,
+      "height": 628
+    },
+    "hero": {
+      "src": "/blog/dhi-hair-transplant-process-recovery-hero.webp",
+      "alt": "Illustration of an implanter pen placing a follicle into the scalp",
+      "width": 1600,
+      "height": 837
+    }
+  },
+  {
     "slug": "beard-transplant-who-it-suits-recovery",
     "path": "/beard-transplant-who-it-suits-recovery/",
     "title": "Beard Transplant: Who It Suits, Recovery and What Affects Cost",

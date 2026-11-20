@@ -34,6 +34,7 @@ export const appRoutes: AppRoute[] = [
   { path: '/contact-us/', load: () => import('./pages/contact-us'), slug: 'contact-us' },
   { path: '/cost-of-hair-transplant-in-bangalore-lp/', load: () => import('./pages/cost-of-hair-transplant-in-bangalore-lp'), slug: 'cost-of-hair-transplant-in-bangalore-lp' },
   { path: '/dandruff-treatment-in-bangalore/', load: () => import('./pages/dandruff-treatment-in-bangalore'), slug: 'dandruff-treatment-in-bangalore' },
+  { path: '/dhi-hair-transplant-process-recovery/', load: () => import('./pages/dhi-hair-transplant-process-recovery'), slug: 'dhi-hair-transplant-process-recovery' },
   { path: '/donor-area-planning-hair-transplant/', load: () => import('./pages/donor-area-planning-hair-transplant'), slug: 'donor-area-planning-hair-transplant' },
   { path: '/dr-sandeep-mahapatra-hair-transplant-surgeon/', load: () => import('./pages/dr-sandeep-mahapatra-hair-transplant-surgeon'), slug: 'dr-sandeep-mahapatra-hair-transplant-surgeon' },
   { path: '/dutexome-hair-treatment-in-bangalore/', load: () => import('./pages/dutexome-hair-treatment-in-bangalore'), slug: 'dutexome-hair-treatment-in-bangalore' },

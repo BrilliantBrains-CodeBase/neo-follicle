@@ -1988,6 +1988,38 @@ export const pages: PageSeo[] = [
     "lastmod": "2026-11-11T09:00:00+05:30"
   },
   {
+    "slug": "dhi-hair-transplant-process-recovery",
+    "path": "/dhi-hair-transplant-process-recovery/",
+    "type": "post",
+    "title": "DHI Hair Transplant: Process, Recovery and Suitability",
+    "description": "How a DHI hair transplant works, how it differs from FUE, recovery, who may be suitable and what to ask your hair transplant surgeon.",
+    "needsRewrite": false,
+    "descFlagReason": null,
+    "canonical": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/",
+    "robots": "max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og": {
+      "title": "DHI Hair Transplant: Process, Recovery and Suitability",
+      "description": "How a DHI hair transplant works, how it differs from FUE, recovery, who may be suitable and what to ask your hair transplant surgeon.",
+      "url": "https://neofollicletransplant.com/dhi-hair-transplant-process-recovery/",
+      "type": "article",
+      "image": "https://neofollicletransplant.com/og/dhi-hair-transplant-process-recovery.jpg",
+      "siteName": "Neo Follicle Hair Transplant",
+      "locale": "en_IN",
+      "imageAlt": "DHI Hair Transplant: Process, Recovery and Suitability",
+      "imageWidth": 1200,
+      "imageHeight": 630
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "DHI Hair Transplant: Process, Recovery and Suitability",
+      "description": "How a DHI hair transplant works, how it differs from FUE, recovery, who may be suitable and what to ask your hair transplant surgeon.",
+      "image": "https://neofollicletransplant.com/og/dhi-hair-transplant-process-recovery.jpg"
+    },
+    "h1": "DHI Hair Transplant: Process, Recovery and Suitability",
+    "inSitemap": true,
+    "lastmod": "2026-11-20T09:00:00+05:30"
+  },
+  {
     "slug": "dutexome-hair-treatment-in-bangalore",
     "path": "/dutexome-hair-treatment-in-bangalore/",
     "type": "page",

@@ -3566,8 +3566,8 @@ const post: Post = {
   ],
   "related": [
     "natural-hairline-design-hair-transplants",
-    "donor-area-planning-hair-transplant",
-    "how-many-grafts-do-i-need-for-hair-transplant"
+    "dhi-hair-transplant-process-recovery",
+    "donor-area-planning-hair-transplant"
   ]
 }
 

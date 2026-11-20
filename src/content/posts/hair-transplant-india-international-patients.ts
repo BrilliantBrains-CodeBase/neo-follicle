@@ -4758,9 +4758,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "dhi-hair-transplant-process-recovery",
     "beard-transplant-who-it-suits-recovery",
-    "gfc-hair-treatment-who-it-may-suit",
-    "prp-hair-treatment-how-it-works"
+    "gfc-hair-treatment-who-it-may-suit"
   ]
 }
 

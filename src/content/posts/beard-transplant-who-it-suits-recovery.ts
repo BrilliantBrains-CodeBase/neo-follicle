@@ -656,9 +656,9 @@ const post: Post = {
     }
   ],
   "related": [
+    "dhi-hair-transplant-process-recovery",
     "hair-transplant-cost-bangalore-what-decides-price",
-    "donor-area-planning-hair-transplant",
-    "hair-transplant-for-receding-hairline"
+    "donor-area-planning-hair-transplant"
   ]
 }
 
